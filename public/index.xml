@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>A Moment&#39;s Rest</title>
+        <link>http://localhost:1313/</link>
+        <description>Recent content on A Moment&#39;s Rest</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <lastBuildDate>Fri, 01 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Baby Rudin 读后感</title>
+        <link>http://localhost:1313/p/baby-rudin-%E8%AF%BB%E5%90%8E%E6%84%9F/</link>
+        <pubDate>Fri, 01 Nov 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/baby-rudin-%E8%AF%BB%E5%90%8E%E6%84%9F/</guid>
+        <description>&lt;img src="http://localhost:1313/p/baby-rudin-%E8%AF%BB%E5%90%8E%E6%84%9F/yoyoko.jpeg" alt="Featured image of post Baby Rudin 读后感" /&gt;&lt;p&gt;&lt;em&gt;本文写于9月22日，因为这是我读完的第一本数学专业的书，故而感觉很有必要记下来点什么，于是就有了这么一篇流水账。作为 Mathematics 部分的
+第一篇博文正是再好不过&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Principles of Mathematical Analysis&lt;/em&gt;, Walter Rudin (May 2, 1921 – May 20, 2010)
+所写的一本“ &lt;a class=&#34;link&#34; href=&#34;https://www.zhihu.com/question/559683007/answer/3502165974&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;适合于高年级本科生或数学系一年级学生&lt;/a&gt; ”
+的数学分析
+教材, 因其作为 Rudin 所著的三本分析学教材 (另外两本为 &lt;em&gt;Real and ComplexAnalysis&lt;/em&gt; 与
+&lt;em&gt;Functional Analysis&lt;/em&gt;) 中最“小”的一本，故而得名 Baby Rudin (另外
+两本也被分别称为 &lt;em&gt;Papa/Big Rudin&lt;/em&gt; 与 &lt;em&gt;Grandpa Rudin&lt;/em&gt;), 作为我在课外自己读完
+(但几乎什么题都没写) 的第一本数学专业书, 在断断续续读了一年多以后终
+于读完了. 说来惭愧, 本来是适合本科生的数学书, 却是拖到了研二才读完, 还
+好我不是数学专业的. 本人作为一个门外汉, 抱着喜悦的心情, 简单分享下自
+己读后的感想.&lt;/p&gt;
+&lt;p&gt;即便从大三以后随着兴趣瞎读了很多数学书, 在我看来我“认真读过”的
+数学书也许也只有&lt;em&gt;微积分学教程&lt;/em&gt; (菲赫金哥尔茨著), &lt;em&gt;Algebra: Chapter 0&lt;/em&gt; (Paolo
+Aluffi 著) , &lt;em&gt;An Introduction to Manifolds&lt;/em&gt; (Loring W. Tu 著) 以及这本&lt;em&gt;Baby Rudin&lt;/em&gt;.
+除此之外的书几乎都是简单翻阅过, 并没有细看. Thomas W. Hungerford 所写
+的大名鼎鼎的 &lt;em&gt;GTM 73&lt;/em&gt; 我虽然想过仔细阅读, 但是还是没有坚持下来. 到头来
+唯有这本 &lt;em&gt;Baby Rudin&lt;/em&gt; 是从头到尾几乎处处的看完了 (这里指除了至多可数个
+的习题). 不过这些翻阅过的书也算是给了我一些勇气和底气, 让我去对一本
+数学专业教材评头论足.&lt;/p&gt;
+&lt;p&gt;这本书处处体现着“惜墨如金”四个字, 而且不似其他很多作者那般喜欢
+使用比较形式化的语言 (比如, 用一些记号, 如$\left( X, A, \mu \right)$三元组来表示度量空
+间), 反而对符号的使用相当克制. 最令我惊讶的是, 直到最后一章的第三小
+节, Rudin 才引入了用代表元来表示集合的记号 $\{ x \vert P \}$ . 虽然分析学也许并不
+会像代数学那样大量使用元素性质各异的各类集合, 但能把这么常用的符号
+放到这么后面才介绍, 也许的确称得上是“惜字如金”. 不过换个角度来讲, 也
+许也正是不过多借助符号, 反而更多采用文字描述的方式介绍数学概念, 这
+本 &lt;em&gt;Baby Rudin&lt;/em&gt; 才会有其独特的魅力.&lt;/p&gt;
+&lt;p&gt;这本书的内容编排上, 在我看来也与众不同. 这本书在构造实数的过程
+中, 捎带手把复数一并处理了, 甚至还在第一章末尾专门单开了一个部分用
+来从头到尾地叙述实数的构造. 随后第二章也并没有急于引入数列或者极限,
+而是这时才引入函数这一概念, 再在集合和函数的基础上讲起点集拓扑, 而
+且 “limit” 一词也是作为点集拓扑中的 “极限点 (limit points)” 出现的, 而非传
+统的序列极限引入. 这里还要提一嘴, “Topology” 这个词全文中只在标题和
+两处提到拓扑学的三角剖分的句子中出现了, 而在主讲拓扑的第二章正文中
+更是一次也没有出现过. 第二章中没有拓扑一词, 但却通过引入距离 (度量)
+而切实地讨论了对分析学而言更有意义的拓扑空间, 实在是很新奇的阅读体
+验. 拓扑概念的引入对后续的内容有极大的影响. 提前引入拓扑语言的好处
+在于能更细致地刻画拓扑与分析学之间的关系. 如后面函数的连续性一章,
+就积极地引入了 “开集的原像是开集” 这个与传统连续性定义等价的描述.&lt;/p&gt;
+&lt;p&gt;在做完数域, 拓扑等概念的铺垫后, 迎接读者的不仅是数列这一常见的
+用以引入函数极限的概念, 还顺势加入了级数的介绍. 这与许多教材将级数
+等内容放置于教材内容偏后位置的做法不同, 不仅更早引入收敛, 而且更好
+地联系起了“序列极限”与 “无穷级数”两者, 并立刻用到上一章所介绍的拓扑
+概念, 给出了完备性与序列之间的关系.&lt;/p&gt;
+&lt;p&gt;在微积分的三大部分(微分, 积分, 函数序列/级数)中, 最具特色的地方
+当属函数积分在简单引入黎曼积分后, 更广泛地讨论黎曼-斯蒂尔切斯积分
+(Riemann-Stieltjes Integration), 以及由于拓扑, 完备等内容的引入而讨论的完
+备函数空间等. 常见教材经常会更多地讨论黎曼积分的性质, 并在靠后的内
+容中直接引入勒贝格积分. 而本书则在定义了黎曼积分后直接给出了更加广
+泛的黎曼-斯蒂尔切斯积分, 并更多地讨论它的性质. 而且归功于度量, 完备性
+等的引入, 函数序列/极限部分还讨论了函数空间的拓扑性质, 且这一部分最
+后的 Stone-Weierstrass 定理更是提出了从多项式逼近函数, 从一些代数的角
+度研究了多项式空间和函数空间, 这些特点无不令我大开眼界.&lt;/p&gt;
+&lt;p&gt;而在讨论完这些微积分的常见内容后, Rudin终于决定讲一些常见的, 比
+较特殊的函数 (不是&lt;em&gt;特殊函数论&lt;/em&gt;的特殊函数). 最有趣的应该是三角函数的定
+义并没有采用常见的定义方式, 而是积极使用了本书中早早提到的复数/复变
+函数, 采用复指数函数的方式定义了三角函数, 用意想不到的方式给出了𝜋的
+定义, 然后告诉读者我们现在处在一个可以简单证明复数域代数完备性的位
+置上, 并用约一页的篇幅证明了这个著名的定理.&lt;/p&gt;
+&lt;p&gt;多变量函数部分最让我印象深刻的是解决了我一个长久以来的疑问: 多
+变量函数的&lt;em&gt;导数&lt;/em&gt;(非偏导数)到底是什么? Rudin 在引入线性映射这一和微积
+分看似联系不大的概念后, 给出了多变量函数求导的结果: 一个 $\mathbb{R}^n$ 到 $\mathbb{R}^n$ 的
+线性映射! 这一结果让我对数学概念推广的认知更进了一步. 除了这点令我
+如醍醐灌顶的部分外, 其余部分就显得有点晦涩难懂了. 特别是在隐函数定
+理和秩定理两部分, Rudin的证法在我看来无疑是天书. 最后还是在互联网的
+帮助下似懂非懂, 逃离了这部分.&lt;/p&gt;
+&lt;p&gt;最后两章算是一般数学分析教材的 One More Thing 部分, 微分形式上的
+积分以及勒贝格积分. 微分形式上的积分在没有流形工具的辅助下显得有点
+苍白, 但作为对多变量函数和向量值函数积分的补充部分, Stokes’ 定理给出
+的结论还是一如既往的优美. 而勒贝格积分 (Lebesgue Integration) 的内容总
+算是让我知道了鼎鼎大名的勒贝格积分与黎曼积分之间的异同. 勒贝格积分
+部分的最后引入的 $\mathcal{L}^2$ 空间部分也解答了我的疑问: 为什么调和分析要从 $\mathcal{L}^2$
+空间讲起, 它究竟有何优越性. $\mathcal{L}^2$ 空间下的函数总是在给定一组基底(正交函
+数类)后有一个平方收敛级数与之一一对应, 或者说, $\mathcal{L}^2$ 是一个无穷维的, 元
+素为函数的线性空间, 并配备有 $L^2$ 范数.&lt;/p&gt;
+&lt;p&gt;总的来讲, &lt;em&gt;Baby Rudin&lt;/em&gt; 是一本从各个方面都让我大开眼界的书. 毫无疑
+问, 它带我从一个新的角度去审视分析, 无论是拓扑的引入, 多元函数求导, 还
+是微分形式上的积分, 勒贝格积分, 这本书带给我的新概念和该年间的新联
+系都丰富了我的视野. 不过, 这本书即便是正文, 有一些内容依然是比较难以
+理解的, 特别是对符号使用的克制, 有时觉得有些古色古香, 有时又让我感到
+有些找不着北. 而且, 据说本文最精华的是每章最后的习题, 这些部分我都是
+扫了一眼, 大概看看几个可能会提出较新概念新定义的问题, 并没有深入去
+做. 也许我就是所谓的名词党吧, 不怎么做题, 应该是学不到什么真材实料的.
+不过作为一个爱好者, 感觉也没有什么太大的问题吧. 下一本书可能是读完
+回国前正在看的 &lt;em&gt;Intro to Manifolds&lt;/em&gt;, 也可能是还在国外的时候看的 &lt;em&gt;Chap 0&lt;/em&gt;, 但
+是最有可能的应该是暂时放下数学.&lt;/p&gt;
+&lt;p&gt;最后, 我想对沃兹基德讨论组的小顾同学表达感谢, 没有他组织的倒霉
+蛋抽奖环节, 我不可能有机会一览这本经典分析学教材的风采. 希望后来的
+倒霉蛋抽奖能帮助到更多人, 也祝愿沃兹基德讨论组越来越好.&lt;/p&gt;</description>
+        </item>
+        <item>
+        <title>First Blog: 搭建这个博客</title>
+        <link>http://localhost:1313/p/first-blog-%E6%90%AD%E5%BB%BA%E8%BF%99%E4%B8%AA%E5%8D%9A%E5%AE%A2/</link>
+        <pubDate>Fri, 01 Nov 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/first-blog-%E6%90%AD%E5%BB%BA%E8%BF%99%E4%B8%AA%E5%8D%9A%E5%AE%A2/</guid>
+        <description>&lt;img src="http://localhost:1313/p/first-blog-%E6%90%AD%E5%BB%BA%E8%BF%99%E4%B8%AA%E5%8D%9A%E5%AE%A2/Reimu.png" alt="Featured image of post First Blog: 搭建这个博客" /&gt;&lt;p&gt;简单记录一下自己搭建博客的经历。&lt;/p&gt;
+&lt;h2 id=&#34;begin-好想搭博客&#34;&gt;Begin: 好想搭博客
+&lt;/h2&gt;&lt;p&gt;网上高强度冲浪的过程中，发现很多人都有自己的博客，特别是在读过几篇博文之后，对会搭建博客的大佬的艳羡之情愈发激烈，同时也很想在网上
+搭一个自己的小窝，记录一下自己的学习和生活（以便于跻身大佬的行列（在心理上））。 于是，在若干的纠结与选择之后，决定尝试用 Hexo + GitHub pages 的方式
+搭建一个自己的博客。&lt;/p&gt;
+&lt;h2 id=&#34;try初试-hexo&#34;&gt;Try：初试 Hexo
+&lt;/h2&gt;&lt;p&gt;其实在10月份左右的时候，我就已经尝试开始搭建博客了。但是网上教程纷繁复杂，Hexo的文档貌似也很久没有更新了，在写完 About 之后
+便陷入了各种方面的自定义，然后失败循环，结果便是迟迟没有推进博客搭建。期间找到过一个很喜欢的主题，结果因为中英文混排导致字符间距过大的问题，
+一怒之下怒删文件。结果便是把搭建博客的计划一拖再拖。（其实还是没有找到合适的喜欢的主题:P ）&lt;/p&gt;
+&lt;p&gt;不过10月份失败的经历也算是一点点积累，给了我一点关于 YAML 和 TOML 的知识储备，以及让我（也许）学会了如何高效地搜索教程。不算太亏。&lt;/p&gt;
+&lt;h2 id=&#34;again再试-hexo&#34;&gt;Again：再试 Hexo
+&lt;/h2&gt;&lt;p&gt;转眼到了10月底，准确来讲就是昨天，10月31日。心血来潮的我再次向Hexo博客发起冲击。然而拦住我的不只是又没有找到好看的主题（这次是按照Github
+的Star数选的，也许是我审美太小众？），还有烦人的网络问题。一会儿是用 &lt;code&gt;npm&lt;/code&gt; 拉取不到内容，一会儿又是 &lt;code&gt;git&lt;/code&gt; 连接不到仓库。虽然后面网上搜索到
+是我科学上网姿势不对，需要跑全局，并且 &lt;code&gt;npm&lt;/code&gt; 换成淘宝源(&lt;a class=&#34;link&#34; href=&#34;https://npmmirror.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://npmmirror.com/&lt;/a&gt;)就可以轻松解决，然而接连的 Error 还是耗尽了我的耐心。&lt;/p&gt;
+&lt;p&gt;对吗？真的要搭博客吗？师兄这晚告诉我，可以考虑搞个微信公众号，要吗？&lt;/p&gt;
+&lt;h2 id=&#34;-受不了hugo吧&#34;&gt;?: 受不了，Hugo吧
+&lt;/h2&gt;&lt;p&gt;还是不想搞公众号，感觉太公众了。虽然也有博客的功能，但是我的主题这块儿谁来给我补呀（？）。是时，我又想起昨晚网上冲浪时发现的另一个构建框架：
+&lt;em&gt;Hugo&lt;/em&gt;。于是当机立断，立刻冲向 Github 看看有什么好的主题，最后便相中了这款 &lt;strong&gt;stack&lt;/strong&gt;。简约界面深得我意的同时，又满足了我对页面版式的需求（好怪哦）。
+最重要的时，这个主题的模板目录结构很清晰！我也是摸索着添加了几个icon后配置出了令我满意的结果。感谢你，&lt;a class=&#34;link&#34; href=&#34;https://jimmycai.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Jimmy Cai&lt;/a&gt;!&lt;/p&gt;
+&lt;h2 id=&#34;end-好耶&#34;&gt;End: 好耶
+&lt;/h2&gt;&lt;p&gt;第一次搭建博客，踩的坑自己觉得不算少。不过大部分的坑都是因为不熟悉前端造成的。啊，要是我是一个搞计科软工前端XXX的学生那该多好啊，可惜，改不得。
+而且另一个角度来讲，踩坑也是一种学习过程嘛。日后也许会往博客上加点新的玩意儿，搞得更花哨一些~&lt;/p&gt;
+&lt;p&gt;还有一件事让我背后直冒冷汗，在部署页面的时候犯蠢把github上的所有我自己的改动全给删了，差点以为全都找不回来了……好在 GitHub Desktop 在
+Discard Stash 的时候是把改动文件全都删除到回收站，这才找回来这些配置。Git 操作还是要小心呀。&lt;/p&gt;
+&lt;p&gt;也许会有人问我为什么花了大把时间在纠结主题上，说博客最重要的是内容。我也很同意内容为王的观点，但是用着不满意的主题，总感觉写起来不得劲儿。
+我比较相信 “工欲善其事，必先利其器”，反正是第一次搭博客，对主题的试错成本几乎是无限低 (不需要考虑迁移问题)，那么为何不多尝试不同的主题，
+一次配好一劳永逸呢？&lt;/p&gt;
+&lt;p&gt;So, that&amp;rsquo;s it. Thanks for reading~!&lt;/p&gt;</description>
+        </item>
+        <item>
+        <title>Python &#43; VSCode 快速配置</title>
+        <link>http://localhost:1313/p/python--vscode-%E5%BF%AB%E9%80%9F%E9%85%8D%E7%BD%AE/</link>
+        <pubDate>Fri, 01 Nov 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/python--vscode-%E5%BF%AB%E9%80%9F%E9%85%8D%E7%BD%AE/</guid>
+        <description>&lt;img src="http://localhost:1313/p/python--vscode-%E5%BF%AB%E9%80%9F%E9%85%8D%E7%BD%AE/%E5%A6%B9%E7%BA%A2.jpeg" alt="Featured image of post Python &#43; VSCode 快速配置" /&gt;&lt;p&gt;&lt;em&gt;这是一篇写给初学 Python 的同学的教程，帮助使用 VS Code 快速配置好 Python 的开发环境，写于今年9月14日，
+先搬运至此并改为 Markdown，作为 Programming部分的第一篇博文&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;简介&#34;&gt;简介
+&lt;/h2&gt;&lt;p&gt;Python, 一门伟大的语言. 简易的, 贴合人类语言的语法, 丰富的生态, 强
+大的功能让Python近几年来几乎稳坐最受欢迎编程语言的宝座. 然而, 对于
+刚开始接触编程语言的初学者而言, 最麻烦的可能并非学习语法或者处理报
+错, 而是搭建一个简单易用的开发环境. 本文将尽笔者所能, 介绍如何配置出
+一套使用 VSCode+Python 的新手或轻度使用者适用的编程环境, 以供新手平
+稳度过前期繁琐的边角料过程, 尽快开始主菜.&lt;/p&gt;
+&lt;p&gt;然而需要提醒各位读者的是, 笔者本人并非Python主力用户, Python于笔
+者而言仅为日常处理数据之用. 因此如有不正之处, 请与笔者联系修改, 如有
+遗漏或不妥之处, 欢迎联系笔者. 在本文写作过程中, 笔者并没有将自己搭
+建的环境删除后重新搭建以完成本文, 因此可能会有很多与实际不相符之处.
+笔者的新电脑很快就到了, 届时会根据本文对照搭建对应环境以检测本文内
+容是否合适, 还请读者朋友包容. 本文也假设读者您使用的是Windows10或以
+上的系统. 如果您是Linux或其他系统的用户, 我相信您不需要本文也可以快
+速搭建好环境.&lt;/p&gt;
+&lt;h2 id=&#34;python-解释器的下载&#34;&gt;Python 解释器的下载
+&lt;/h2&gt;&lt;p&gt;Python语言的运行依靠Python解释器对编写好的Python脚本进行逐行解
+释, 也可以通过交互式的方法, 在解释器读取到输入内容后立即执行. 因
+此, Python的语言解释器对学习Python是必要的. 下载Python解释器请前往
+&lt;a class=&#34;link&#34; href=&#34;https://www.python.org/downloads/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Python官网&lt;/a&gt; . 初学者可以不用太过在意语言版本的问题 (语言版本过新可
+能会导致某些未进行适配的库无法正常使用), 只需要保证您下载的版本
+是Python3即可(版本号以3开头).
+Python3与Python2有着很多基础语法上的
+区别, 且很多库目前不怎么支持Python2. 当然, 为了省事, 直接下载最新版也
+是没有任何问题的, 在后续遇到实际需要时再进行版本修改也是没有问题的.&lt;/p&gt;
+&lt;p&gt;在下载好Python解释器后, 便可以进行安装.&lt;strong&gt;请注意勾选添加到 PATH(ADD
+TO PATH)以避免后续复杂的手动添加环境变量的过程!&lt;/strong&gt; 当然, 如果不幸, 您已
+经在没有勾选此选项的情况下安装了Python解释器, 您可以考虑卸载后重装
+或者考虑手动添加Python路径到环境变量中. 这里不再赘述.&lt;/p&gt;
+&lt;p&gt;其余选项都可以一路默认. 有个选项会提示您是否为所有用户安装, 如
+果读者您使用的计算机内仅有一个账户(或者通俗而言, 仅有您一人使用该计
+算机), 那么是否选择此选项一般而言是无关紧要的. 如果您使用公共电脑或
+者服务器, 请不要勾选此选项, 亦即仅为自己安装.&lt;/p&gt;
+&lt;p&gt;最后, 请检查您是否成功安装了Python解释器. 您可以在键盘上按下 Win+R 键
+打开运行对话框, 在对话框中输入 cmd 后确认, 您将会进入一个 “黑框”(命令
+提示符)中. 此时在其中输入 python -V (请注意是大写的V)或者 python &amp;ndash;version ,
+如果成功安装了Python并添加到了环境变量中, 则界面中将会出现您所安装
+的Python解释器的版本. 否则, 如果您看到类似于找不到Python定义之类的报
+错, 那么有可能您的安装失败或者安装过程中没有将Python添加到环境变量
+中.&lt;/p&gt;
+&lt;p&gt;以上便是安装Python解释器的过程.&lt;/p&gt;
+&lt;h2 id=&#34;vscode-的安装与配置&#34;&gt;VSCode 的安装与配置
+&lt;/h2&gt;&lt;p&gt;这一步与上一步是平行的, 没有先后顺序一说, 您可以自由选择先进
+行哪个部分.
+但建议您先进行上一部分, 在本部分结束后您将可以直接
+在VSCode中开始Python编程.&lt;/p&gt;
+&lt;p&gt;VSCode是一个强大的文本编辑器.
+其最大的特点是其优秀的插件生
+态以及众多的语言支持(也是通过插件实现的). 通过VSCode与插件之间的
+配合, 可以实现媲美IDE的开发环境搭建.
+笔者推荐由VSCode官方出品的
+在VSCode中使用Python的引导文档: &lt;a class=&#34;link&#34; href=&#34;https://code.visualstudio.com/docs/languages/python&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Python in Visual Studio Code&lt;/a&gt; , 该文档详
+细介绍了如何从0开始在VSCode上使用Python, 除了是英文内容外几乎没有
+缺点(当然, 您可以选择网页翻译). 下面笔者将自行介绍如何安装VSCode与
+相关插件.&lt;/p&gt;
+&lt;p&gt;点击 &lt;a class=&#34;link&#34; href=&#34;https://code.visualstudio.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;此处&lt;/a&gt; 即可打开 VSCode 官网. VSCode的安装可以全部选择默认安
+装, 如此便可使用VSCode的基础功能. 安装插件可以在侧边栏选择或者使用
+快捷键 Ctrl+Shift+X 打开插件市场, 在页面上方框中输入相应关键词即可
+检索相关插件. 如要进行Python开发, 请安装如下插件.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Chinese (Simplified)(简体中文) Language Pack for Visual Studio Code: 可
+以使VSCode的语言显示变为中文显示.&lt;/li&gt;
+&lt;li&gt;Python Extension Pack: VSCode上的Python插件全家桶. 安装这个比较
+省事.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;python-脚本试运行&#34;&gt;Python 脚本试运行
+&lt;/h2&gt;&lt;p&gt;在以上所述的步骤完成后, 您便可以开始编写您的第一个Python脚本以
+检测您的环境是否搭建完成. 下面是一些简单的步骤:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;新建一个文件, 将之按照自己喜欢的名字命名, 并修改其后缀为 &lt;code&gt;.py&lt;/code&gt; .&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;右键该文件, 选择用VSCode打开. 打开VSCode界面后, 此时VSCode可
+能会询问您是否信任该文件夹. 请选择”信任”以使您安装的插件正常
+运行, 否则插件可能会被VSCode所屏蔽.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;现在您可以编辑该文件了. 输入一些Python代码, 下面是一个简单的测
+试代码:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Hello Python!&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;请写好并保存该文件.&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;现在请尝试运行该脚本. 如果您成功安装Python插件, 该文件界面的
+右上角应该会出现一个小的向右的箭头. 点击该箭头即可开始运行.
+由于您很有可能是第一次在VSCode中运行Python脚本, 因此右下角会
+弹出一个通知框, 通知您还未选择Python解释器. 此时界面上方会出
+现一个对话框, 让您选择您需要的Python解释器. 您可能会看到多个
+解释器(如您下载了多个解释器版本)或者 创建虚拟环境(Create Virtual
+Environment). 您可以先暂时不考虑设置虚拟环境, 先使用已有的全局
+生效的Python解释器.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;选择好后, 请再次重复上一步, 按下小箭头. 这是, VSCode界面下方会出
+现一个新的窗口界面, 显示的便是您程序运行的结果. 此时您便已经成
+功运行了该Python脚本, 也说明您的Python运行环境已经搭建成功了.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;python-debug-pip-jupyter-notebook&#34;&gt;Python Debug, Pip, Jupyter Notebook
+&lt;/h2&gt;&lt;p&gt;本节将简要介绍有关Python与VSCode的其他方面.&lt;/p&gt;
+&lt;h3 id=&#34;调试-debug&#34;&gt;调试 (Debug)
+&lt;/h3&gt;&lt;p&gt;调试是用以排查程序运行错漏的操作. 代码一次写成, 运行良好固然很
+好, 但这种情况在实际开发中很难遇到. 实际开发中常会遇到各种各样的问
+题阻碍开发进展. 这些程序中或逻辑或语法的错误就被称为Bug, 在程序中排
+查Bug并修正以使程序得以正常运行的过程即是调试, 亦即所谓的Debug.&lt;/p&gt;
+&lt;p&gt;最简单的调试方法即将程序在某一步的数据通过 &lt;code&gt;cout&lt;/code&gt;(C++), &lt;code&gt;printf&lt;/code&gt;(C) 或 &lt;code&gt;print&lt;/code&gt;(Python) 输
+出到控制台上.
+但这种方法毕竟还是比较繁琐, 特别是遇到难以输出到
+屏幕上的数据, 此时输出的方式便会失灵.
+现代程序开发过程中, 经常使
+用调试器(Debugger)来逐步运行程序, 以此尝试发现程序中隐藏的问题. 虽
+然Python本身已经是解释型语言, 逐行运行已有的程序, 但是通过调试器的诸
+多功能, 仍可以为寻找程序漏洞问题提供帮助.&lt;/p&gt;
+&lt;p&gt;首先介绍断点, 程序在运行至断点后将会停在该处之前, 等待用户的下
+一步命令. 断点的插入在代码编辑器中一般处于左侧的行号附近 (VSCode在
+行号的左侧), 插入成功后会出现一个小红点. 当程序停在断点处时, 您可以查
+看变量的值, 函数调用栈等多种信息, 随后您可以逐步向下运行程序, 中断调
+试或者向步入函数内部(VSCode通过右上角小框控制).&lt;/p&gt;
+&lt;p&gt;要进入VSCode的Debug模式, 请在运行Python脚本时, 在右上角的代表运
+行的箭头旁找到一个向下的箭头, 点击展开菜单后选择 Python调试器: 调
+试Python文件(Python Debugger: Debug Python File), 随后便可进入调试模式.
+请注意此选项不仅会启动调试, 也会改变右上角的默认启动模式为调试. 调
+试模式下, 该三角旁会出现一个小虫子, 代表此时处于调试模式.&lt;/p&gt;
+&lt;p&gt;请善用调试模式与调试器.&lt;/p&gt;
+&lt;h3 id=&#34;pip&#34;&gt;Pip
+&lt;/h3&gt;&lt;p&gt;Pip(Package Installer for Python)是Python的包管理器.
+所谓的“包”指的
+是Python运行过程中需要调用的函数库, 类库等等. Python的优点很大一部分
+来自于Python活跃的生态, 指的便是丰富的第三方库, 或者, 第三方包. 甚至
+于有人说, Python是一门胶水语言, 其就是用来将各种库粘合在一起以发挥作
+用. 无论如何, 包对于Python的意义是毋庸置疑的, 而作为Python自带的默认
+包管理器, Pip的基础操作也是值得简单学习的. 下面介绍Pip的一些简单命令,
+并以安装Python下著名的科学运算库Numpy为例演示Pip的使用方法.
+Pip的常用命令和参数有:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;help&lt;/code&gt; : 弹出帮助信息, 会提示您命令的功能.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;install&lt;/code&gt; :指示Pip进入下载模式. 在Pip后附加包名称即可下载该包. 如
+果需要更新某个包, 请在包名前加上 &amp;ndash;upgrade 以提示Pip更新此包而
+非安装.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;uninstall&lt;/code&gt; : 卸载某个Python包. 在该命令后附加包名即可.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;list&lt;/code&gt; : 列出所有您已安装的Python包.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;接下来介绍如何安装Numpy:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;请打开命令提示符, 并输入 &lt;code&gt;pip&lt;/code&gt; 以检查Pip是否正常可用. 如果可用则
+会弹出部分帮助文本, 不会有报错信息,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;您可能会看到您的Pip有可用的更新. 若在使用 &lt;code&gt;pip&lt;/code&gt; 命令后, Pip提示您
+可以更新到最新的版本, 您可以选择根据提示输入命令进行更新.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;输入 &lt;code&gt;pip install numpy&lt;/code&gt; 以安装Numpy. 稍等片刻您便可以安装好Numpy以
+供全局使用. 注意, 您在全局环境下下载的Numpy将对全局生效.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;jupyter-notebook&#34;&gt;Jupyter Notebook
+&lt;/h3&gt;&lt;p&gt;Python脚本经常需要写好后一次性从头执行到尾, 而使用交互模式(在
+命令提示符中打开Python( &lt;code&gt;python&lt;/code&gt; )将会进入交互模式)时Python会执行每次
+用户所输入的命令.
+前者不够灵活, 而后者容易丧失上下文. 是否有一种
+更加具有交互性的, 但又不丧失上下文环境的Python使用方法呢?
+Jupyter
+Notebook提供了这样的方法.&lt;/p&gt;
+&lt;p&gt;Jupyter Notebook集成了Python环境和Markdown, 可以使您在代码框中
+使用并运行Python脚本, 并在Markdown框中使用Markdown语法编辑文字. 两
+种框的位置十分灵活, 且Notebook可以打开在浏览器中直接使用, 省去专门
+的编辑器的麻烦, 也可以选择在VSCode中使用. 下面将介绍如何安装和使
+用Jupyter Notebook.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;请使用Pip安装Jupyter: &lt;code&gt;pip install jupyter&lt;/code&gt; 并等待安装完成.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;输入 &lt;code&gt;jupyter notebook&lt;/code&gt; 并回车. 请注意不要关闭该窗口, 该窗口将作
+为服务器运行, 若关闭将会导致Jupyter Notebook无法使用.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;稍等片刻, 此时您的默认浏览器将会弹出一个窗口, 左上角显示着Jupyter,
+而下方主页面则是您的用户文件夹. 您可以双击已有的以 &lt;code&gt;.ipynb&lt;/code&gt; 后
+缀结尾的文件以打开一个已有的Jupyter Notebook文件, 或者请点击右
+侧的新建(New)→Notebook, 便会在当前文件夹下新建一个Jupyter Note-
+book 并打开在您的浏览器的新页面中.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;此时新页面会请求选择一个Python内核. 采用默认设置即可, 此时您便
+已经新建了一个Jupyter Notebook了. 默认的第一个框将是程序输入框,
+点击页面中央的框进入输入模式, 输入Python代码后 &lt;code&gt;Ctrl + Enter&lt;/code&gt; 以
+运行代码, 结果将展现在该代码框的下方.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;您可以通过上方的工具栏新建, 插入, 删除, 运行代码框或者Markdown框.
+更多功能请自行探索.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;以上, 您便成功安装并试运行了Jupyter Notebook.&lt;/p&gt;
+&lt;p&gt;除了在浏览器中使用原生的JupyterNotebook以外, 您还可以在安装好Jupyter后
+在VSCode中启动. 请安装好Jupyter的插件后, 在VSCode中使用快捷键 &lt;code&gt;Ctrl + Shift + P&lt;/code&gt; ,
+或点击VSCode最上侧的搜索框后输入 &lt;code&gt;&amp;gt;&lt;/code&gt; 以进入命令模式, 然后输入 &lt;code&gt;jupyter&lt;/code&gt; ,
+此时对话框会提示您所有的可用命令, 点击创建: 新Jupyter Notebook(Create:
+New Jupyter Notebook)即可创建新的Jupyter Notebook. 后续操作类似于网页
+端操作. 该方法不需要自行打开一个Jupyter服务器, VSCode中安装的Jupyter插
+件将在VSCode的后台自行启动一个Jupyter 服务器.&lt;/p&gt;
+&lt;h2 id=&#34;后记&#34;&gt;后记
+&lt;/h2&gt;&lt;p&gt;笔者希望通过该文章将笔者自认为好的且简单方便的Python使用开发环
+境介绍给本文的读者. 然而作为一个非Python主力的用户, 本文的内容纰漏&lt;/p&gt;
+&lt;p&gt;在所难免, 且 $\LaTeX$ 的插图体验并不优秀, 笔者没有向文章中插入图片而是采
+用语言描述的方法, 希望读者能谅解.
+感谢您能读到这里. 如果您对本文的内容有何看法或意见, 欢迎联系笔
+者. 最后, 希望本文能真的实现, 并帮助您实现Python的那句名言:&lt;/p&gt;
+&lt;blockquote&gt;
+    &lt;p&gt;&lt;p&gt;人生苦短, 我用Python. &lt;p&gt;
+Life is short, I use Python.&lt;/p&gt;
+&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;祝您生活愉快.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>About</title>
+        <link>http://localhost:1313/about/</link>
+        <pubDate>Wed, 09 Oct 2024 14:34:18 +0000</pubDate>
+        
+        <guid>http://localhost:1313/about/</guid>
+        <description>&lt;img src="http://localhost:1313/about/Reimu.png" alt="Featured image of post About" /&gt;&lt;h1 id=&#34;a-moment-rest-amoments-blog&#34;&gt;A Moment Rest: AMoment&amp;rsquo;s Blog
+&lt;/h1&gt;&lt;p&gt;Welcome! Come and have a rest here~&lt;/p&gt;
+&lt;h2 id=&#34;who-are-you--你谁&#34;&gt;Who are you? | 你谁？
+&lt;/h2&gt;&lt;p&gt;I&amp;rsquo;m a 24 year-old graduate student in &lt;del&gt;Counter Strike University&lt;/del&gt; Central South University, major in Material Sci &amp;amp; Eng.&lt;/p&gt;
+&lt;p&gt;24岁，是&lt;del&gt;中南大学的&lt;/del&gt;研究生，主修材料科学与工程。&lt;/p&gt;
+&lt;h2 id=&#34;what-are-you-studying--你在学什么&#34;&gt;What are you studying? | 你在学什么？
+&lt;/h2&gt;&lt;p&gt;Currently, my research topic is about phase-field modelling/simulation, a material simulatiion method showing the mesoscale structure evolution under various condition.To carry out a simulation, programming skill is a must. Thanks for this, I have a chance to learn some skills like programming, Linux, et.al.&lt;/p&gt;
+&lt;p&gt;现在的研究方向主要是相场方法模拟。相场法可以通过自己编写计算程序来模拟材料介观尺度结构组织的演化过程。正因如此，我也得以有机会学习编程，Linux之类。&lt;/p&gt;
+&lt;h2 id=&#34;what-can-you-do--你能干嘛&#34;&gt;What can you do? | 你能干嘛？
+&lt;/h2&gt;&lt;p&gt;If you mean my skill, currently, I can code with C++, Python, several LaTeX and a little bit Javascript, with GOP style( GOP: Google-Oriented Programming). I know a little about undergraduate-level mathematics, mainly some fancy concepts. I maybe could also do something else, while I can&amp;rsquo;t remind myself now.&lt;/p&gt;
+&lt;p&gt;如果是指我的技能，我会 C++，Python，一些 LaTeX 以及一点点的Javascript 的面向Google编程。我还会一些本科生级别的数学，主要是一点神奇的概念。我应该还能做点什么，但是我一时间想不起来。&lt;/p&gt;
+&lt;p&gt;If you mean &amp;ldquo;What Can You Do&amp;rdquo; literaturally, I can do something as normal people do. I&amp;rsquo;m a normal, ordinary one. Thanks.&lt;/p&gt;
+&lt;p&gt;如果是字面意义上地问“你能干嘛”，我能做正常人能做的事。我是个正常的普通人，谢谢。&lt;/p&gt;
+&lt;h2 id=&#34;what-can-i-do-here--我在这里能做什么&#34;&gt;What can I do here? | 我在这里能做什么？
+&lt;/h2&gt;&lt;p&gt;As you can see, A Moment Rest. Wish you can have a rest here, together with me. Here might be the place for me to put my notes and thoughts in. Hope you enjoy.&lt;/p&gt;
+&lt;p&gt;如副题，A Moment Rest。你可以在这里和我一起歇一歇。我会把一些笔记和想法放在这个地方。希望你喜欢。&lt;/p&gt;
+&lt;h2 id=&#34;what-have-you-done--你都做了些什么&#34;&gt;What have you done? | 你都做了些什么？
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/A-moment096/MInDes&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;MInDes&lt;/a&gt; : A phase-field simulation package developed by our research team. I forked one from the main repo. 一款相场模拟软件，由我们课题组开发。我fork了一份。&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/A-moment096/MInDes_Documents&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;MInDes_Documents&lt;/a&gt; : The documentation set of MInDes. Also, forked from main repo. 相场模拟软件的文档，我也fork了一份。&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/A-moment096/MInDes-LSP&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;MInDes_LSP&lt;/a&gt; : A little VSCode extension to provide syntax highlighting for MInDes input script file. 一款VSCode插件，可以提供代码高亮等功能给MInDes的输入文件。&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/A-moment096/Python-with-VSCode&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Python-with-VSCode&lt;/a&gt; : A simple LaTeX project providing simple introduction and instruction about how to setup Python environment with VSCode. 一个简单的 LaTeX 文档，提供了VSCode+Python初学入门环境配置的简单教程。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can also check them in my &lt;a class=&#34;link&#34; href=&#34;https://github.com/A-moment096&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt; page.&lt;/p&gt;
+&lt;p&gt;你也可以从我的&lt;a class=&#34;link&#34; href=&#34;https://github.com/A-moment096&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;主页查看。&lt;/p&gt;
+&lt;h2 id=&#34;what-do-you-like--兴趣爱好&#34;&gt;What do you like? | 兴趣爱好？
+&lt;/h2&gt;&lt;p&gt;I&amp;rsquo;m interested in mathematics, programming, Linux and anything related with computer, but feel satisfied easily. I like music (VOCALOID, Toho, Game OST) and anime (as an average fan). Maybe I also like reading, guitar, PC off-line games. I&amp;rsquo;m not very sure about myself.&lt;/p&gt;
+&lt;p&gt;我对数学，程序, Linux 等和计算机相关的话题都感兴趣，不过都是浅尝辄止。我还喜欢音乐（VOCALOID(日Ｖ)，东方，游戏原声）和动漫（普通爱好者）。可能我也算喜欢读书，吉他，单机游戏之类。我自己也不怎么了解我自己。&lt;/p&gt;
+&lt;h2 id=&#34;how-to-contact-you--怎么联系你&#34;&gt;How to contact you? | 怎么联系你？
+&lt;/h2&gt;&lt;p&gt;You can &lt;a class=&#34;link&#34; href=&#34;mailto:amoment096@gmail.com&#34; &gt;mail me&lt;/a&gt; if you would like.&lt;/p&gt;
+&lt;p&gt;你可以通过&lt;a class=&#34;link&#34; href=&#34;mailto:amoment096@gmail.com&#34; &gt;邮箱&lt;/a&gt;联系到我。&lt;/p&gt;
+&lt;h2 id=&#34;this-page-is-bilingual-why-others-not--为什么这个页面有中英文-别的没有&#34;&gt;This page is bilingual, why others not? | 为什么这个页面有中英文, 别的没有？
+&lt;/h2&gt;&lt;p&gt;This self-intro (might) have used up my effort. Maybe he will translate other pages into English/Chinese in the future, far or further future.&lt;/p&gt;
+&lt;p&gt;我是蓝狗。&lt;/p&gt;</description>
+        </item>
+        <item>
+        <title>Archives</title>
+        <link>http://localhost:1313/archives/</link>
+        <pubDate>Sun, 06 Mar 2022 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/archives/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Links</title>
+        <link>http://localhost:1313/links/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/links/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Search</title>
+        <link>http://localhost:1313/search/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/search/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
+</rss>

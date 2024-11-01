@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Tags on A Moment&#39;s Rest</title>
+        <link>http://localhost:1313/tags/</link>
+        <description>Recent content in Tags on A Moment&#39;s Rest</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <lastBuildDate>Fri, 01 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Build Blog</title>
+        <link>http://localhost:1313/tags/build-blog/</link>
+        <pubDate>Fri, 01 Nov 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/tags/build-blog/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Document</title>
+        <link>http://localhost:1313/tags/document/</link>
+        <pubDate>Fri, 01 Nov 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/tags/document/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Experience</title>
+        <link>http://localhost:1313/tags/experience/</link>
+        <pubDate>Fri, 01 Nov 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/tags/experience/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Mathematical Analysis</title>
+        <link>http://localhost:1313/tags/mathematical-analysis/</link>
+        <pubDate>Fri, 01 Nov 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/tags/mathematical-analysis/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Python</title>
+        <link>http://localhost:1313/tags/python/</link>
+        <pubDate>Fri, 01 Nov 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/tags/python/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>VS Code</title>
+        <link>http://localhost:1313/tags/vs-code/</link>
+        <pubDate>Fri, 01 Nov 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/tags/vs-code/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
+</rss>
