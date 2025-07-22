@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python on A Moment's Rest</title><link>https://a-moment096.github.io/tags/python/</link><description>Recent content in Python on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 20 Mar 2025 17:40:56 +0800</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/python/index.xml" rel="self" type="application/rss+xml"/><item><title>Phase Field: 相场模拟学习笔记 II</title><link>https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-ii/</link><pubDate>Fri, 22 Nov 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-ii/</guid><description>&lt;img src="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-ii/Skadi.png" alt="Featured image of post Phase Field: 相场模拟学习笔记 II" />&lt;p>&lt;em>接上一节内容, 这节会简单介绍 Python 的一些语法知识, 以及尝试使用 Python 实现上节所列出来的部分算法.&lt;/em>&lt;/p>
+&lt;h2 id="python-初探索">Python 初探索
+&lt;/h2>&lt;h3 id="简介">简介
+&lt;/h3>&lt;p>Python 是一种蟒蛇, 而在编程语境下, Python 则是一门十分受欢迎的编程语言. Python 具有语法友好 (接近英语), 功能强大 (感谢开源与社区), 社区活跃等优秀的特点, 让 Python 成为入门编程的一个好选择.&lt;/p>
+&lt;p>为什么选择 Python 来实现上节内容提到的算法呢? 主要原因有二: 一是 Python 的语法实在是太友好, 对于没有学习过或者对编程不甚了解的同学而言, 先尝试 Python 的话不容易因为语言的问题劝退. 相比于直接介绍下一节要讲的 C++, 先用 Python 熟悉一些编程中常见的概念也是有好处的. 其二可能是出于我个人的私心吧, 因为 Python 真的太好用了, 我个人而言希望能稍微做一些推广. 作为一门好用的工具语言, 它在很多情况下都可以帮助完成一些琐碎的工作. 特别是如画图, 我很喜欢用 Python 绘制函数图像之类, 非常好用.&lt;/p>
+&lt;p>总之, 这里选择使用 Python 来作为程序的入门. 相信在通过 Python 了解一定的编程基础之后, 再去了解别的语言也不会显得那么吃力了 (比如, C++).&lt;/p>
+&lt;h3 id="解释器安装与环境配置">解释器安装与环境配置
+&lt;/h3>&lt;h4 id="python-解释器">Python 解释器
+&lt;/h4>&lt;p>Python 的运行是需要其解释器的. 目前最新版的 Python 解释器可以直接在 &lt;a class="link" href="https://www.python.org/downloads/" target="_blank" rel="noopener"
+>Python 官网&lt;/a> 下载. Linux 平台用户可以考虑使用各自发行版的包管理器实现 Python 的安装. 安装时请切记选择 &lt;strong>ADD TO PATH&lt;/strong>, 否则可能需要手动调整环境变量以让 Shell 能找到 Python.&lt;/p>
+&lt;p>&lt;strong>解释器&lt;/strong>是什么? 简单来说, 就是&lt;em>逐行&lt;/em>把写的脚本翻译为机器所能理解的代码指令, 然后执行. 所以 Python 是逐行运行的, 这点非常适合 Debug, 也许也是 Python 受人欢迎的原因之一. 与&lt;strong>解释器&lt;/strong>相对的一个概念是&lt;strong>编译器&lt;/strong>. 这里所指的编译器应该是狭义上的编译器, 广义上的编译器应该也包含 Python 这类的解释器. 编译器不会逐行解释代码, 而是将代码作为一个整体, 然后处理翻译, 最后形成机器能阅读并执行的内容后进行执行. 这种方式让编译器可以为代码做出很多的优化, 但是也一定程度上牺牲了 &amp;ldquo;逐行运行&amp;rdquo; 的便利. C/C++, Rust 等语言都是需要编译器进行编译的. 为了弥补无法原生逐行运行的缺陷, 这些语言使用了调试器 (Debugger) 以及调试符号 (Debug Symbol) 等技术来在编译完成后, 根据符号表一一对照并运行代码, 呈现出逐行运行的效果. 然而这种方法依旧会损失一定的运行性能.&lt;/p>
+&lt;p>Python 解释器拥有多个版本, 每个版本对语言的语法都有一定的调整. 有些调整影响巨大 (比如从 Python2 到 Python3 的转变), 另一些可能因为其语法特性不常用, 不会直接影响到用户体验. Python 解释器也不一定是最新版就最好, 需要考虑项目的适配以及对应包的版本需求. 不过在这里我们并不太依赖 Python 解释器的版本, 只要保证是比较新的 Python 解释器版本, 并且主流的科学计算库, 如 &lt;code>numpy&lt;/code>, &lt;code>matplotlib&lt;/code>, &lt;code>scipy&lt;/code> 等即可.&lt;/p>
+&lt;h4 id="编辑器-与-visual-studio-code">编辑器 与 Visual Studio Code
+&lt;/h4>&lt;p>在安装好 Python 解释器之后其实就已经可以开始 Python 编程了 (没错, 就是传说中的记事本编程). 然而这当然不是最好的方法, 这种方法光是考虑到没有代码高亮就让人很难以接受了. 这里我个人推荐 Visual Studio Code (以下简称 VSC).&lt;/p>
+&lt;p>VSC 功能强大, &lt;a class="link" href="https://code.visualstudio.com/" target="_blank" rel="noopener"
+>安装&lt;/a>方便, 插件生态极其丰富, 通过合理的配置近乎可以达到 IDE (Integrated Development Environment, 集成开发环境) 的水平. 我个人在写简单的 Python 脚本时几乎都是使用 VSC 写的. 一路默认安装后, 根据需要安装中文插件, 然后再在插件页面搜索 Python 即可安装 Python 插件全家桶, 然后就可以开始使用 VSC 写 Python 代码 (脚本)了. VSC 的安装与环境配置也可以参考我之前写的&lt;a class="link" href="https://a-moment096.github.io/p/python--vscode-%E5%BF%AB%E9%80%9F%E9%85%8D%E7%BD%AE/" target="_blank" rel="noopener"
+>博客文章&lt;/a>.&lt;/p>
+&lt;p>这里没有推荐 IDE, 因为 IDE 对这里仅仅使用 Python 做一些简单应用而言太过 &amp;ldquo;全能&amp;rdquo;, 或者说, 负担太重. 当然, 如果感兴趣, 可以考虑使用大名鼎鼎的 PyCharm. 这里不再赘述.&lt;/p>
+&lt;h4 id="虚拟环境-venv-和-pip">虚拟环境, venv 和 pip
+&lt;/h4>&lt;p>这里简单介绍一下虚拟环境. 因为 Python 的生态丰富, 可能会碰到某些依赖相互冲突的情况, 尤其是在多人共同开发的情况下, 每个人的开发环境配置不同, 很容易导致依赖冲突. 为解决这种情况, 可以考虑使用 Python 的虚拟环境 &lt;code>virtualenv&lt;/code>. 创建的虚拟环境下有该虚拟环境所自有的一些包, 并且和该虚拟环境以外的部分是相互独立的. 使用 VSC 创建 &lt;code>virtualenv&lt;/code> 虚拟环境非常简单, 只需要 &lt;code>Ctrl+Shift+P&lt;/code> 打开 VSC 的命令, 然后搜索 &lt;code>Python: Create Environment&lt;/code> 即可根据向导一步步搭建虚拟环境.&lt;/p>
+&lt;p>搭建好的虚拟环境会存放在 &lt;code>.venv&lt;/code> 的文件夹中. 这里面将会包含所有该虚拟环境的内容, 包括在该虚拟环境下安装的各种包. 如果不想再使用该虚拟环境, 只需要删除该文件夹即可. VSC 会自动检测是否存在虚拟环境, 并且自动切换到虚拟环境下. 如果您使用 Shell, 可以手动在命令行中运行 &lt;code>.venv&lt;/code> 文件夹内的 &lt;code>acitvate&lt;/code> 脚本 (Windows 在子文件夹 &lt;code>Scripts&lt;/code> 中, Linux 则一般在 &lt;code>bin&lt;/code> 子文件夹中), 即可启动该虚拟环境.&lt;/p>
+&lt;p>在搭建好虚拟环境 (或者不使用虚拟环境) 之后, 需要从网上下载需要的包来帮助 Python 脚本的运行, 实现各种功能. 这时就需要用到&lt;em>包管理器&lt;/em>. Python 默认的包管理器为 &lt;code>pip&lt;/code>, 使用 &lt;code>pip&lt;/code> 安装或者更新包都十分简单, 以安装 &lt;code>matplotlib&lt;/code> 举例, 输入命令 &lt;code>pip install matplotlib&lt;/code> 即可. 要更新包, 则使用 &lt;code>pip install --upgrade matplotlib&lt;/code> 就可以. 如果有一份使用 &lt;code>pip freeze&lt;/code> 所生成的软件包列表 (一般该列表文件名为 &lt;code>requirements.txt&lt;/code>), 则可以使用命令 &lt;code>pip install -r requirements.txt&lt;/code> 即可根据该列表中的内容进行安装.&lt;/p>
+&lt;h3 id="python-语法基础">Python 语法基础
+&lt;/h3>&lt;p>上面的废话可能有点多了, 下面就介绍 Python 最主要的语法点, 作为使用 Python 的基础, 同时提出一些编程语言中所拥有的共性:&lt;/p>
+&lt;h4 id="类型">类型
+&lt;/h4>&lt;p>虽然 Python 是一门动态类型的语言, 数据在 Python 中是根据上下文做出类型判断的, 然而这里还是简单介绍一下 Python 中常用的变量类型. 其中最常用的就是一些基础类型, 如 &lt;code>int&lt;/code>, &lt;code>float&lt;/code>, &lt;code>str&lt;/code>, &lt;code>bool&lt;/code> 等, 它们分别代表&lt;em>整数&lt;/em>, &lt;em>浮点数&lt;/em>, &lt;em>字符串&lt;/em>, &lt;em>布尔值&lt;/em>. 这些类型是 Python 所天然支持的, 也是一般语言中常常原生支持的类型. 除了这些基础类型外, 还有很多的组合类型, 如 &lt;code>List&lt;/code> (列表), &lt;code>Dict&lt;/code> (字典), &lt;code>Tuple&lt;/code> (元组) 等等. 这些类型通常是由一些基础类型所产生, 比如列表, 就是由不同类型的内容组合在一起形成的类似于容器的数据结构.&lt;/p>
+&lt;p>Python 中的类型通常其本身也是一个&lt;em>类&lt;/em> (&lt;code>class&lt;/code>), 意味着它们也有一些成员函数可以进行操作. 这里就不详细叙述了.&lt;/p>
+&lt;p>此外, 尽管 Python 是动态类型语言, 其依旧支持对类型的标注. Python 采取后置类型标记方法, 在变量的后面添加 &lt;code>:&lt;/code> 然后跟上对应的类型名即可标注其类型. 值得注意的是, 尽管有了类型标注, 这个标注更应该作为仅对程序开发者或使用者的提示, 这里标注的任何类型&lt;em>都没有任何的约束力&lt;/em>.&lt;/p>
+&lt;h4 id="变量声明">变量声明
+&lt;/h4>&lt;p>Python 的变量声明非常简单, 只需要遵循 &lt;code>name = value&lt;/code> 的规则即可声明并初始化一个变量. 顺带一提, Python 中变量的赋值也是同样的语法, 而 Python 中的变量又具有唯一的名称, 因此在使用 &lt;code>name = value&lt;/code> 的语句时, 如果前面已经声明了 &lt;code>name&lt;/code> 这个变量, 则会直接使用新的值覆盖掉原有的值. 而且由于是动态类型语言, 这里不会因为类型不匹配而报错. 因此你可以随时让一个变量拥有别的类型. 这一点十分灵活, 尤其是在确定某个变量的值不再使用, 而该变量的名称又很适合用作下一个值的名称时, 即可立刻覆盖掉原有的值.&lt;/p>
+&lt;h4 id="作用域">作用域
+&lt;/h4>&lt;p>编程语言中常常拥有&lt;em>作用域&lt;/em>这一概念. 这个概念可以认为是为了约束变量的生存周期而存在的. 一般而言, 一个变量的作用域在没有特殊声明的情况下, 只能对自己所在的区域以及该区域下的子区域可见.&lt;/p>
+&lt;p>Python 这门语言其中的一个特别之处就在于, Python 的作用域划分是通过缩进完成的. 当代码顶格写成时, 这些语句的作用域即为全局作用域. 而如果有代码需要在某个作用域内时 (比如, 定义的函数内, &lt;code>for&lt;/code> 循环中, 条件判断中), 则需要使用冒号 &lt;code>:&lt;/code> 打开一个新的子区域, 然后使用缩进去标识哪些部分是属于该作用域的. 这一点褒贬不一, 有人认为这个方法很简洁, 避免了过多的符号; 也有人认为这种风格让 Python 的代码逻辑可能不清晰, 造成阅读困难. 但是, 无论如何, Python 的作用域是这样通过缩进定义的. 那么, 在上一层的作用域中所定义的变量对下一级的子作用域是可见的, 而子作用域内定义的变量会在程序脱离该作用域之后消失, 因此子作用域的变量对外部是不可见的. 这一点几乎是所有编程语言所通用的.&lt;/p>
+&lt;p>举个例子:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="n">i&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">&lt;span class="n">outside&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl">&lt;span class="k">if&lt;/span> &lt;span class="n">i&lt;/span> &lt;span class="o">&amp;gt;&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl"> &lt;span class="n">inside&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl"> &lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">outside&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">6&lt;/span>&lt;span class="cl">&lt;span class="c1"># 下面这句会报错, 找不到定义. 因为在前面离开作用域的时候, inside就被回收然后消失了.&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">7&lt;/span>&lt;span class="cl">&lt;span class="c1"># print(inside) &lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>其中 &lt;code>if&lt;/code> 就开启了一个新的子作用域, 其中定义的变量 &lt;code>inside&lt;/code> 在外面是看不到的, 而其中是可以看到 &lt;code>outside&lt;/code> 变量的.&lt;/p>
+&lt;h4 id="控制流-循环和判断语句">控制流, 循环和判断语句
+&lt;/h4>&lt;p>Python 中可以使用 &lt;code>for&lt;/code> 循环, &lt;code>while&lt;/code> 循环以及其他的循环. 其中, &lt;code>for&lt;/code> 循环比较特殊, 只能在某个范围内循环, 而这个循环需要是 &lt;em>iterable&lt;/em> 的. 这个所谓的 iterable 可以翻译为&lt;em>可迭代的&lt;/em>, 比如 &lt;code>range&lt;/code> 函数所生成的范围, 一个 List, 一个 Tuple 等等. 其语法为:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="k">for&lt;/span> &lt;span class="n">i&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">iterable&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl"> &lt;span class="c1"># Do something&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl"> &lt;span class="c1"># And something more&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">&lt;span class="c1"># Here is not inside the for loop.&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>其中的 &lt;code>i&lt;/code> 会从 &lt;code>iterable&lt;/code> 的第一个元素开始, 每过一个循环体便会让 &lt;code>i&lt;/code> 变成 &lt;code>iterable&lt;/code> 中的下一个元素, 直到 &lt;code>iterable&lt;/code> 中的元素被取完. 而 &lt;code>while&lt;/code> 循环则比较简单, 只要判断条件为真则一直循环, 当检测到条件为假时则终止循环. 语法为:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="k">while&lt;/span> &lt;span class="n">something_is_true&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl"> &lt;span class="c1"># Do something&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl"> &lt;span class="c1"># And something more&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">&lt;span class="c1"># Here is not inside the while loop.&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>所以一般而言, 使用 &lt;code>while&lt;/code> 循环时需要在循环体中让循环条件在某时不满足, 以跳出循环.&lt;/p>
+&lt;p>Python 中的判断语句是较为通用的形式, 这里只介绍 &lt;code>if else&lt;/code> 循环:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="k">if&lt;/span> &lt;span class="n">something_might_be_true&lt;/span> &lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl"> &lt;span class="c1"># Do something&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl">&lt;span class="k">elif&lt;/span> &lt;span class="n">something_might_also_be_true&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl"> &lt;span class="c1"># Do another thing&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl">&lt;span class="k">else&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">6&lt;/span>&lt;span class="cl"> &lt;span class="c1"># No other condition is satisfied&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">7&lt;/span>&lt;span class="cl">&lt;span class="c1"># Not in condition &lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>其语法也是十分的简单. Python 还支持一行式的判断, 可以对标 C/C++ 的三元表达式:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="n">do_something&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="n">condition_is_true&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="n">do_other_things&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这个语法非常贴近英语语法, 且避免了难以理解的三元表达式. 但为了代码结构清晰, 请尽量使用完整的 &lt;code>if else&lt;/code> 判断语句.&lt;/p>
+&lt;h4 id="函数">函数
+&lt;/h4>&lt;p>函数是众多编程语言的一大组成部分. Python 由于对类型不敏感, Python 的函数定义非常地简单:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">Some_function&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">parameter_1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">parameter_2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">parameter_with_init_value&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">init_value&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl"> &lt;span class="c1"># Do something&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl"> &lt;span class="c1"># Do other things&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">some_value&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>像这样就能成功地定义了一个函数. 其中 &lt;code>Some_function&lt;/code> 为函数名, 其本身也是一个变量, 所以在重新定义时实际上是为这个变量赋了新的值.&lt;/p>
+&lt;p>&lt;code>parameter*&lt;/code> 即为函数参数, 这些参数名将用作外界参数传入函数内时使用的占位符, 并且这些参数名将用在函数体内部. 且其中最后一个参数 &lt;code>parameter_with_init_value&lt;/code> 是具有默认值的参数, 其默认值为 &lt;code>init_value&lt;/code>. 具有默认值也就意味着这个函数可以不传入这个参数以代表传入默认参数. 在向函数传参时, 可以按照函数参数的顺序传入参数, 也可以显式地指明某个参数的值是什么, 如 &lt;code>Some_function(parameter_2 = 1, parameter_1 = 3)&lt;/code> 这种写法是合法的.&lt;/p>
+&lt;p>最后的 &lt;code>return&lt;/code> 代表返回的值. 所谓返回值, 可以认为是函数运算的结果. 这个结果需要手动通过 &lt;code>return&lt;/code> 关键字指定, 这里使用了变量 &lt;code>some_value&lt;/code> 作为占位符.&lt;/p>
+&lt;p>函数除了便于代码复用之外, 还可以让代码结构更加清晰, 以及控制一段逻辑的&lt;em>输入-输出&lt;/em>结构. 这里不介绍 &lt;em>lambda&lt;/em> 表达式, 这是一类匿名函数, 没有函数名, 但是具有函数的功能 (参数列表, 返回值), 即便目前大部分编程语言已经支持这一特性.&lt;/p>
+&lt;h3 id="python-面向对象-numpy-matplotlib">Python 面向对象, numpy, matplotlib
+&lt;/h3>&lt;p>这里简单介绍一些进阶的语言特性, 以及展示两个常用包的使用.&lt;/p>
+&lt;h4 id="面向对象与类">面向对象与类
+&lt;/h4>&lt;p>面向对象是目前十分热门的编程范式, 其通过将数据以及对数据的操作等打包为一个&lt;em>对象&lt;/em>, 从而实现对数据的统筹管理. 而为了实现面向对象, 就需要某种方式实现这种打包, 这一方法即为所谓的&lt;em>类&lt;/em> (class). 各个语言对面向对象的实现均有其特点, 在 Python 中对类的声明与定义语法如下:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="ln"> 1&lt;/span>&lt;span class="cl">&lt;span class="k">class&lt;/span> &lt;span class="nc">some_class&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 2&lt;/span>&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="fm">__init__&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">param_1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">param_2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">param_default&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">default_val&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 3&lt;/span>&lt;span class="cl"> &lt;span class="c1"># Define class members&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 4&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 5&lt;/span>&lt;span class="cl"> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">member_1&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">param_1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 6&lt;/span>&lt;span class="cl"> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">member_2&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">param_2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 7&lt;/span>&lt;span class="cl"> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">some_member&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">param_default&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 8&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 9&lt;/span>&lt;span class="cl"> &lt;span class="c1"># Do something, just like in a function&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">10&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">11&lt;/span>&lt;span class="cl"> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">do_something&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">12&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">13&lt;/span>&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="nf">do_something&lt;/span>&lt;span class="p">():&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">14&lt;/span>&lt;span class="cl"> &lt;span class="c1"># Do something&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">15&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">16&lt;/span>&lt;span class="cl">&lt;span class="c1"># End of definition&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">17&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">18&lt;/span>&lt;span class="cl">&lt;span class="n">my_variable&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">some_class&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">val_1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">val_2&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">19&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">20&lt;/span>&lt;span class="cl">&lt;span class="c1"># Use Inheritance from some_class&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">21&lt;/span>&lt;span class="cl">&lt;span class="k">class&lt;/span> &lt;span class="nc">derived_class&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">some_class&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">22&lt;/span>&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="fm">__init__&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">para_1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">para_2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">sub_para&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">para_default&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">default&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">23&lt;/span>&lt;span class="cl"> &lt;span class="c1"># Must call parent class&amp;#39;s __init__ method to avoid overwritting __init__ of parent class.&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">24&lt;/span>&lt;span class="cl"> &lt;span class="n">some_class&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="fm">__init__&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">para_1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">para_2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">para_default&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">25&lt;/span>&lt;span class="cl"> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">sub_member&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">sub_para&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">26&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">27&lt;/span>&lt;span class="cl"> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">sub_class_method&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">28&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">29&lt;/span>&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="nf">sub_class_method&lt;/span>&lt;span class="p">():&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">30&lt;/span>&lt;span class="cl"> &lt;span class="c1"># Do sub_class things&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">31&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">32&lt;/span>&lt;span class="cl">&lt;span class="n">my_sub_variable&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">derived_class&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>可以看到, Python 可以通过定义 &lt;code>__init__&lt;/code> 函数来定义类里面都有什么成员变量, 并且调用一些成员函数. 定义成员函数时语法同定义普通函数别无二致, 而在调用类中的内容时需要使用关键字 &lt;code>self&lt;/code>. 并且在使用类定义变量时, 直接可以通过类的名称来作为函数名并传入 &lt;code>__init__&lt;/code> 函数中规定的参数即可调用成员函数 &lt;code>__init__&lt;/code>. 最后这里要提到的是, Python 的类成员访问控制符通过变量的名字进行控制, 如双下划线代表成员是&lt;em>私有&lt;/em> (private) 的, 单下划线代表成员是&lt;em>保护&lt;/em> (protect) 的, 而其余普通名称则为&lt;em>公开&lt;/em> (public) 的.&lt;/p>
+&lt;p>所谓私有成员, 即只有该类内部可以使用的成员变量或方法. 这些变量或方法在类外是不可见的. 而所谓保护成员则是只在类内部以及&lt;em>子类&lt;/em> (派生类) 内部可以使用的成员, 公开成员即为没有访问限制的成员, 无论是外部还是内部都可以取得. 使用访问控制可以控制 &amp;ldquo;谁能取到类内的数据&amp;rdquo;, 从而保护数据不会被意外读取或者篡改. 对访问控制的理解也决定着对面向对象范式的理解.&lt;/p>
+&lt;p>然而我们这里并不对面向对象做要求 (主要是我也不太懂 Python 的面向对象), 这里就仅作一个介绍, 并使用其最基础的部分而已.&lt;/p>
+&lt;h4 id="包-numpy-matplotlib">包, numpy, matplotlib
+&lt;/h4>&lt;p>Python 最强大的部分当属其活跃的社区所贡献的大量好用的包. 为了实现科学运算, 常用的数学库即为 &lt;code>numpy&lt;/code>, 而画图则有 &lt;code>matplotlib&lt;/code>. 这里大概介绍二者的基础使用.&lt;/p>
+&lt;p>为了引入包, 需要使用关键字 &lt;code>import&lt;/code>. 通常, 为了使用 &lt;code>numpy&lt;/code> 与 &lt;code>matplotlib&lt;/code>, 有如下代码:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">numpy&lt;/span> &lt;span class="k">as&lt;/span> &lt;span class="nn">np&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">matplotlib.pyplot&lt;/span> &lt;span class="k">as&lt;/span> &lt;span class="nn">plt&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl">&lt;span class="c1"># from matplotlib import pyplot as plt&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>底下注释的内容和上一行内容的功能相同. 可以看到使用 &lt;code>as&lt;/code> 关键字可以为包引入别名, 而为了导入子模块可以使用 &lt;code>from&lt;/code> 关键字, 也可以直接 &lt;code>.&lt;/code> 出来并引入.&lt;/p>
+&lt;p>首先介绍 &lt;code>numpy&lt;/code> 的一些使用. &lt;code>numpy&lt;/code> 主要提供了一种数据结构: &lt;code>numpy.array&lt;/code>, 这种结构可以用来存储数组, 矩阵等数学对象, 且支持对其进行遍历, 切片以及常见数学运算等操作; &lt;code>numpy.array&lt;/code> 可以通过 Python 原生的 &lt;code>List&lt;/code> 来初始化一个数组. 对于尺寸相符的数组, 可以进行加减乘除等运算, 包括数组间运算, 数组与标量运算等, 非常方便. 除此之外, &lt;code>numpy&lt;/code> 还提供了大量的数学函数以供使用, 比如 &lt;code>numpy.exp&lt;/code>, &lt;code>numpy.sin&lt;/code> 等, 以及对文件的一些操作, 将文件中的数据加载为 &lt;code>numpy.array&lt;/code>.&lt;/p>
+&lt;p>然后介绍 &lt;code>matplotlib.pyplot&lt;/code>, 这是一个绘制图形的库, 通常与 &lt;code>numpy&lt;/code> 搭配使用, 可以高质量地将数据可视化. 下面举一个绘制 $y = sin(2x)+1$ 的图像的例子, 作为 &lt;code>numpy&lt;/code> 以及 &lt;code>matplotlib&lt;/code> 的应用.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="ln"> 1&lt;/span>&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">numpy&lt;/span> &lt;span class="k">as&lt;/span> &lt;span class="nn">np&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 2&lt;/span>&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">matplotlib&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">pyplot&lt;/span> &lt;span class="k">as&lt;/span> &lt;span class="n">plt&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 3&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 4&lt;/span>&lt;span class="cl">&lt;span class="n">x&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">np&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">linspace&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="n">np&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">pi&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">10000&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 5&lt;/span>&lt;span class="cl">&lt;span class="n">y&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">np&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">sin&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="n">x&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="mi">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 6&lt;/span>&lt;span class="cl">&lt;span class="n">plt&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">plot&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">x&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">y&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="s2">&amp;#34;-b&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">label&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;$y = \sin(2x)+1$&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 7&lt;/span>&lt;span class="cl">&lt;span class="n">plt&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">xlabel&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;x&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 8&lt;/span>&lt;span class="cl">&lt;span class="n">plt&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">ylabel&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;y&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 9&lt;/span>&lt;span class="cl">&lt;span class="n">plt&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">legend&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">loc&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">10&lt;/span>&lt;span class="cl">&lt;span class="n">plt&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">show&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>上述代码首先定义了一个从 $0$ 开始到 $2\pi$ 结束的, 总数据量为 10000 的一个 &lt;code>numpy.array&lt;/code> 并命名为 &lt;code>x&lt;/code>, 然后使用 &lt;code>x&lt;/code> 通过运算定义了名为 &lt;code>y&lt;/code> 的数组, 最后使用 &lt;code>matplotlib.pyplot.plot&lt;/code> 函数进行绘制并进行图像处理. 可以看到 &lt;code>matplotlib&lt;/code> 是支持 $\LaTeX$ 语法的.&lt;/p>
+&lt;p>Python 还有海量的包可以调用, 大多数都拥有友好的 API 且易于上手. 这里就不再赘述.&lt;/p>
+&lt;h3 id="算法实现">算法实现
+&lt;/h3>&lt;p>Python 的基础语法以及进阶语法先告一段落. 接下来会演示上一章节内容所展示的算法如何使用 Python 进行实现. 要实现的算法如下:&lt;/p>
+&lt;ul>
+&lt;li>向前欧拉法&lt;/li>
+&lt;li>数值积分方法&lt;/li>
+&lt;li>有限差分法求梯度与拉普拉斯&lt;/li>
+&lt;/ul>
+&lt;h4 id="向前欧拉法">向前欧拉法
+&lt;/h4>&lt;p>向前欧拉法的实现主要依赖于其显式公式部分. 设待求 ODE 为:
+&lt;/p>
+$$
+\dfrac{\partial y}{\partial x} = F(x, y),
+$$&lt;p>
+且解满足初值 $(x_0, y_0)$, 要求求解范围为 $[x_0, x_t]$, 则根据向前欧拉法, 选择合适的步长 $\Delta x$ 后, 有:
+&lt;/p>
+$$
+y_{n+1} = y_{n} + \Delta x \cdot F(x_n, y_n)
+$$&lt;p>因此, 为了实现这一算法, 该算法实现的函数有如下几点:&lt;/p>
+&lt;blockquote>
+&lt;p>接收参数:&lt;/p>
+&lt;ul>
+&lt;li>$x$ 轴的离散信息 (初始位置, 结束位置, 步长)&lt;/li>
+&lt;li>解的初始值 $y_0$&lt;/li>
+&lt;li>ODE 右端的函数 $F(x,y)$ 的显式表达&lt;/li>
+&lt;/ul>
+&lt;p>返回值:&lt;/p>
+&lt;ul>
+&lt;li>一个数组, 作为解得的 $y$ 的函数值&lt;/li>
+&lt;/ul>&lt;/blockquote>
+&lt;p>则有如下 Python 实现:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="ln"> 1&lt;/span>&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">typing&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">Callable&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 2&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 3&lt;/span>&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">forwardEuler&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 4&lt;/span>&lt;span class="cl"> &lt;span class="n">x_0&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="nb">float&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 5&lt;/span>&lt;span class="cl"> &lt;span class="n">x_end&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="nb">float&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 6&lt;/span>&lt;span class="cl"> &lt;span class="n">dx&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="nb">float&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 7&lt;/span>&lt;span class="cl"> &lt;span class="n">y_0&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="nb">float&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 8&lt;/span>&lt;span class="cl"> &lt;span class="n">F_x_y&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">Callable&lt;/span>&lt;span class="p">[[&lt;/span>&lt;span class="nb">float&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nb">float&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="nb">float&lt;/span>&lt;span class="p">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 9&lt;/span>&lt;span class="cl">&lt;span class="p">)&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="nb">list&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nb">float&lt;/span>&lt;span class="p">]:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">10&lt;/span>&lt;span class="cl"> &lt;span class="n">result&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="nb">list&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nb">float&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="n">y_0&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">11&lt;/span>&lt;span class="cl"> &lt;span class="n">this_x&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">x_0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">12&lt;/span>&lt;span class="cl"> &lt;span class="n">this_y&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">y_0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">13&lt;/span>&lt;span class="cl"> &lt;span class="k">while&lt;/span> &lt;span class="n">this_x&lt;/span> &lt;span class="o">&amp;lt;=&lt;/span> &lt;span class="n">x_end&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">14&lt;/span>&lt;span class="cl"> &lt;span class="n">this_y&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">this_y&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">dx&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="n">F_x_y&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">this_x&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">this_y&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">15&lt;/span>&lt;span class="cl"> &lt;span class="n">result&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">append&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">this_y&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">16&lt;/span>&lt;span class="cl"> &lt;span class="n">this_x&lt;/span> &lt;span class="o">+=&lt;/span> &lt;span class="n">dx&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">17&lt;/span>&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">result&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="数值积分">数值积分
+&lt;/h4>&lt;p>数值积分的实现同样比较简单, 分析该算法的输入输出如下:&lt;/p>
+&lt;blockquote>
+&lt;p>接收参数:&lt;/p>
+&lt;ul>
+&lt;li>$x$ 轴的离散信息 (初始位置, 结束位置, 步长)&lt;/li>
+&lt;li>被积函数&lt;/li>
+&lt;/ul>
+&lt;p>返回值:&lt;/p>
+&lt;ul>
+&lt;li>一个数, 作为积分值&lt;/li>
+&lt;/ul>&lt;/blockquote>
+&lt;p>根据不同的积分算法, 可以有多种不同的实现. 下面实现四种算法: &amp;ldquo;黎曼&amp;quot;式积分法, 梯形公式, Simpson 公式, Newton-Cotes 公式.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="ln"> 1&lt;/span>&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">typing&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">Callable&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 2&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 3&lt;/span>&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">RiemannIntegral&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 4&lt;/span>&lt;span class="cl"> &lt;span class="n">f&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">Callable&lt;/span>&lt;span class="p">[[&lt;/span>&lt;span class="nb">float&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="nb">float&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="n">x_start&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="nb">float&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">x_end&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="nb">float&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">dx&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="nb">float&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 5&lt;/span>&lt;span class="cl">&lt;span class="p">)&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="nb">float&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 6&lt;/span>&lt;span class="cl"> &lt;span class="nb">sum&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 7&lt;/span>&lt;span class="cl"> &lt;span class="n">x&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">x_start&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 8&lt;/span>&lt;span class="cl"> &lt;span class="k">while&lt;/span> &lt;span class="n">x&lt;/span> &lt;span class="o">&amp;lt;&lt;/span> &lt;span class="n">x_end&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 9&lt;/span>&lt;span class="cl"> &lt;span class="nb">sum&lt;/span> &lt;span class="o">+=&lt;/span> &lt;span class="n">f&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">x&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">10&lt;/span>&lt;span class="cl"> &lt;span class="n">x&lt;/span> &lt;span class="o">+=&lt;/span> &lt;span class="n">dx&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">11&lt;/span>&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nb">sum&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="n">dx&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">12&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">13&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">14&lt;/span>&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">QuadratureIntegral&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">15&lt;/span>&lt;span class="cl"> &lt;span class="n">f&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">Callable&lt;/span>&lt;span class="p">[[&lt;/span>&lt;span class="nb">float&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="nb">float&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="n">x_start&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="nb">float&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">x_end&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="nb">float&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">dx&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="nb">float&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">16&lt;/span>&lt;span class="cl">&lt;span class="p">)&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="nb">float&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">17&lt;/span>&lt;span class="cl"> &lt;span class="nb">sum&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">18&lt;/span>&lt;span class="cl"> &lt;span class="n">x&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">x_start&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">19&lt;/span>&lt;span class="cl"> &lt;span class="k">while&lt;/span> &lt;span class="n">x&lt;/span> &lt;span class="o">&amp;lt;&lt;/span> &lt;span class="n">x_end&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">20&lt;/span>&lt;span class="cl"> &lt;span class="nb">sum&lt;/span> &lt;span class="o">+=&lt;/span> &lt;span class="n">f&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">x&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">21&lt;/span>&lt;span class="cl"> &lt;span class="n">x&lt;/span> &lt;span class="o">+=&lt;/span> &lt;span class="n">dx&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">22&lt;/span>&lt;span class="cl"> &lt;span class="nb">sum&lt;/span> &lt;span class="o">-=&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">f&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">x_start&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">f&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">x_end&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="o">/&lt;/span> &lt;span class="mi">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">23&lt;/span>&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nb">sum&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="n">dx&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">24&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">25&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">26&lt;/span>&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">SimpsonIntegral&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">27&lt;/span>&lt;span class="cl"> &lt;span class="n">f&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">Callable&lt;/span>&lt;span class="p">[[&lt;/span>&lt;span class="nb">float&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="nb">float&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="n">x_start&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="nb">float&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">x_end&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="nb">float&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">dx&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="nb">float&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">28&lt;/span>&lt;span class="cl">&lt;span class="p">)&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="nb">float&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">29&lt;/span>&lt;span class="cl"> &lt;span class="nb">sum&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">30&lt;/span>&lt;span class="cl"> &lt;span class="n">x&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">x_start&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">31&lt;/span>&lt;span class="cl"> &lt;span class="k">while&lt;/span> &lt;span class="n">x&lt;/span> &lt;span class="o">&amp;lt;&lt;/span> &lt;span class="n">x_end&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">32&lt;/span>&lt;span class="cl"> &lt;span class="nb">sum&lt;/span> &lt;span class="o">+=&lt;/span> &lt;span class="mi">4&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="n">f&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">x&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">dx&lt;/span> &lt;span class="o">/&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">33&lt;/span>&lt;span class="cl"> &lt;span class="nb">sum&lt;/span> &lt;span class="o">+=&lt;/span> &lt;span class="mi">2&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="n">f&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">x&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">34&lt;/span>&lt;span class="cl"> &lt;span class="n">x&lt;/span> &lt;span class="o">+=&lt;/span> &lt;span class="n">dx&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">35&lt;/span>&lt;span class="cl"> &lt;span class="nb">sum&lt;/span> &lt;span class="o">-=&lt;/span> &lt;span class="n">f&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">x_start&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">f&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">x_end&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">36&lt;/span>&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nb">sum&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="n">dx&lt;/span> &lt;span class="o">/&lt;/span> &lt;span class="mi">6&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">37&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">38&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">39&lt;/span>&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">N_C_Integral&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">40&lt;/span>&lt;span class="cl"> &lt;span class="n">f&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">Callable&lt;/span>&lt;span class="p">[[&lt;/span>&lt;span class="nb">float&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="nb">float&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="n">x_start&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="nb">float&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">x_end&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="nb">float&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">dx&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="nb">float&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">41&lt;/span>&lt;span class="cl">&lt;span class="p">)&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="nb">float&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">42&lt;/span>&lt;span class="cl"> &lt;span class="nb">sum&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">43&lt;/span>&lt;span class="cl"> &lt;span class="n">x&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">x_start&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">44&lt;/span>&lt;span class="cl"> &lt;span class="k">while&lt;/span> &lt;span class="n">x&lt;/span> &lt;span class="o">&amp;lt;&lt;/span> &lt;span class="n">x_end&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">45&lt;/span>&lt;span class="cl"> &lt;span class="nb">sum&lt;/span> &lt;span class="o">+=&lt;/span> &lt;span class="mi">32&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="n">f&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">x&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">dx&lt;/span> &lt;span class="o">/&lt;/span> &lt;span class="mi">4&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">46&lt;/span>&lt;span class="cl"> &lt;span class="nb">sum&lt;/span> &lt;span class="o">+=&lt;/span> &lt;span class="mi">12&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="n">f&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">x&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">dx&lt;/span> &lt;span class="o">/&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">47&lt;/span>&lt;span class="cl"> &lt;span class="nb">sum&lt;/span> &lt;span class="o">+=&lt;/span> &lt;span class="mi">32&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="n">f&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">x&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="mi">3&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="n">dx&lt;/span> &lt;span class="o">/&lt;/span> &lt;span class="mi">4&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">48&lt;/span>&lt;span class="cl"> &lt;span class="nb">sum&lt;/span> &lt;span class="o">+=&lt;/span> &lt;span class="mi">14&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="n">f&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">x&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">49&lt;/span>&lt;span class="cl"> &lt;span class="n">x&lt;/span> &lt;span class="o">+=&lt;/span> &lt;span class="n">dx&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">50&lt;/span>&lt;span class="cl"> &lt;span class="nb">sum&lt;/span> &lt;span class="o">-=&lt;/span> &lt;span class="mi">7&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">f&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">x_start&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">f&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">x_end&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">51&lt;/span>&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nb">sum&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="n">dx&lt;/span> &lt;span class="o">/&lt;/span> &lt;span class="mi">90&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="梯度与拉普拉斯">梯度与拉普拉斯
+&lt;/h4>&lt;p>这里针对二维情况进行计算. 同上, 考虑算法的输入输出:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>梯度:&lt;/p>
+&lt;blockquote>
+&lt;p>输入&lt;/p>
+&lt;ul>
+&lt;li>待计算网格(二维列表)&lt;/li>
+&lt;li>网格步长&lt;/li>
+&lt;li>边界条件字段 (这里固定为周期边界以便实现)&lt;/li>
+&lt;/ul>
+&lt;p>输出&lt;/p>
+&lt;ul>
+&lt;li>两个二维列表, 分别为对 $x$ 方向的梯度和对 $y$ 方向的梯度&lt;/li>
+&lt;/ul>&lt;/blockquote>
+&lt;/li>
+&lt;li>
+&lt;p>拉普拉斯&lt;/p>
+&lt;blockquote>
+&lt;p>输入&lt;/p>
+&lt;ul>
+&lt;li>同上&lt;/li>
+&lt;/ul>
+&lt;p>输出&lt;/p>
+&lt;ul>
+&lt;li>一个二维列表, 存储每个网格点的拉普拉斯&lt;/li>
+&lt;/ul>&lt;/blockquote>
+&lt;/li>
+&lt;/ul>
+&lt;p>以下是代码实现:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="ln"> 1&lt;/span>&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">calc_grad&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 2&lt;/span>&lt;span class="cl"> &lt;span class="n">mesh&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="nb">list&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nb">list&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nb">float&lt;/span>&lt;span class="p">]],&lt;/span> &lt;span class="n">dx&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="nb">float&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">boundary&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="nb">str&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;Periodic&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 3&lt;/span>&lt;span class="cl">&lt;span class="p">)&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="nb">tuple&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nb">list&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nb">list&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nb">float&lt;/span>&lt;span class="p">]],&lt;/span> &lt;span class="nb">list&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nb">list&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nb">float&lt;/span>&lt;span class="p">]]]:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 4&lt;/span>&lt;span class="cl"> &lt;span class="n">Nx&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">len&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">mesh&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 5&lt;/span>&lt;span class="cl"> &lt;span class="n">Ny&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">len&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">mesh&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 6&lt;/span>&lt;span class="cl"> &lt;span class="n">grad_x&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">mesh&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 7&lt;/span>&lt;span class="cl"> &lt;span class="n">grad_y&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">mesh&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 8&lt;/span>&lt;span class="cl"> &lt;span class="k">for&lt;/span> &lt;span class="n">i&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="nb">range&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">Nx&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 9&lt;/span>&lt;span class="cl"> &lt;span class="k">for&lt;/span> &lt;span class="n">j&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="nb">range&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">Ny&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">10&lt;/span>&lt;span class="cl"> &lt;span class="n">v_l&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">11&lt;/span>&lt;span class="cl"> &lt;span class="n">v_d&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">12&lt;/span>&lt;span class="cl"> &lt;span class="n">v_r&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">13&lt;/span>&lt;span class="cl"> &lt;span class="n">v_u&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">14&lt;/span>&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">boundary&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="s2">&amp;#34;Periodic&amp;#34;&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">15&lt;/span>&lt;span class="cl"> &lt;span class="n">v_l&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">mesh&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">i&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="n">j&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="n">i&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="n">mesh&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">Nx&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="n">j&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">16&lt;/span>&lt;span class="cl"> &lt;span class="n">v_d&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">mesh&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">i&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="n">j&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="n">j&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="n">mesh&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">i&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="n">Ny&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">17&lt;/span>&lt;span class="cl"> &lt;span class="n">v_r&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">mesh&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">i&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="n">j&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="n">i&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="n">Nx&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="n">mesh&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="n">j&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">18&lt;/span>&lt;span class="cl"> &lt;span class="n">v_u&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">mesh&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">i&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="n">j&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="n">j&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="n">Nx&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="n">mesh&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">i&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">19&lt;/span>&lt;span class="cl"> &lt;span class="c1"># elif (boundary == &amp;#34;Fixed&amp;#34;):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">20&lt;/span>&lt;span class="cl"> &lt;span class="c1"># XXX&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">21&lt;/span>&lt;span class="cl"> &lt;span class="n">grad_x&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">i&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="n">j&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">v_r&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="n">v_l&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">/&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="mi">2&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="n">dx&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">22&lt;/span>&lt;span class="cl"> &lt;span class="n">grad_y&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">i&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="n">j&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">v_u&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="n">v_d&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">/&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="mi">2&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="n">dx&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">23&lt;/span>&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">grad_x&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">grad_y&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">24&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">25&lt;/span>&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">calc_laps&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">26&lt;/span>&lt;span class="cl"> &lt;span class="n">mesh&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="nb">list&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nb">list&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nb">float&lt;/span>&lt;span class="p">]],&lt;/span> &lt;span class="n">dx&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="nb">float&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">boundary&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="nb">str&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;Periodic&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">27&lt;/span>&lt;span class="cl">&lt;span class="p">)&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="nb">list&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nb">list&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nb">float&lt;/span>&lt;span class="p">]]:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">28&lt;/span>&lt;span class="cl"> &lt;span class="n">Nx&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">len&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">mesh&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">29&lt;/span>&lt;span class="cl"> &lt;span class="n">Ny&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">len&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">mesh&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">30&lt;/span>&lt;span class="cl"> &lt;span class="n">laps&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">mesh&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">31&lt;/span>&lt;span class="cl"> &lt;span class="k">for&lt;/span> &lt;span class="n">i&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="nb">range&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">Nx&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">32&lt;/span>&lt;span class="cl"> &lt;span class="k">for&lt;/span> &lt;span class="n">j&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="nb">range&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">Ny&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">33&lt;/span>&lt;span class="cl"> &lt;span class="n">v_l&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">34&lt;/span>&lt;span class="cl"> &lt;span class="n">v_d&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">35&lt;/span>&lt;span class="cl"> &lt;span class="n">v_r&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">36&lt;/span>&lt;span class="cl"> &lt;span class="n">v_u&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">37&lt;/span>&lt;span class="cl"> &lt;span class="n">v_c&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">mesh&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">i&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="n">j&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">38&lt;/span>&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="n">boundary&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="s2">&amp;#34;Periodic&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">39&lt;/span>&lt;span class="cl"> &lt;span class="n">v_l&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">mesh&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">i&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="n">j&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="n">i&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="n">mesh&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">Nx&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="n">j&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">40&lt;/span>&lt;span class="cl"> &lt;span class="n">v_d&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">mesh&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">i&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="n">j&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="n">j&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="n">mesh&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">i&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="n">Ny&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">41&lt;/span>&lt;span class="cl"> &lt;span class="n">v_r&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">mesh&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">i&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="n">j&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="n">i&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="n">Nx&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="n">mesh&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="n">j&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">42&lt;/span>&lt;span class="cl"> &lt;span class="n">v_u&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">mesh&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">i&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="n">j&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="n">j&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="n">Nx&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="n">mesh&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">i&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">43&lt;/span>&lt;span class="cl"> &lt;span class="c1"># elif (boundary == &amp;#34;Fixed&amp;#34;):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">44&lt;/span>&lt;span class="cl"> &lt;span class="c1"># XXX&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">45&lt;/span>&lt;span class="cl"> &lt;span class="n">laps&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">i&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="n">j&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">v_l&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">v_d&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">v_r&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">v_u&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="mi">4&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="n">v_c&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">/&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">dx&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="n">dx&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">46&lt;/span>&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">laps&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>至此, 我们使用 Python 实现了我们将在相场模拟中使用的大部分算法. 具体的模拟过程中, 我们可能不需要用函数的方式将这些算法打包起来, 只需要直接实现即可.&lt;/p>
+&lt;h3 id="总结">总结
+&lt;/h3>&lt;p>这部分内容希望能对上一章节中的算法内容有更进一步的补充, 并且希望能对算法如何实现为代码的过程起到促进理解的作用. 同时, 希望这里介绍的 Python 能成为您日常学习生活中的另一件有利工具, 并且能对编程这门技术有一定的入门理解, 为后续的程序编写提供基本的认识. 下一章节将会介绍如何使用 C++ 来实现这些算法, 并使用 C++ 完成一个小型的模拟, 尝试从这个小型模拟中了解模拟过程中会面临的问题, 以及数据最后的可视化方法.&lt;/p></description></item><item><title>Python + VSCode 快速配置</title><link>https://a-moment096.github.io/p/python--vscode-%E5%BF%AB%E9%80%9F%E9%85%8D%E7%BD%AE/</link><pubDate>Fri, 01 Nov 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/p/python--vscode-%E5%BF%AB%E9%80%9F%E9%85%8D%E7%BD%AE/</guid><description>&lt;img src="https://a-moment096.github.io/p/python--vscode-%E5%BF%AB%E9%80%9F%E9%85%8D%E7%BD%AE/%E5%A6%B9%E7%BA%A2.jpeg" alt="Featured image of post Python + VSCode 快速配置" />&lt;p>&lt;em>这是一篇写给初学 Python 的同学的教程，帮助使用 VS Code 快速配置好 Python 的开发环境，写于今年9月14日，
+先搬运至此并改为 Markdown，作为 Programming部分的第一篇博文&lt;/em>&lt;/p>
+&lt;h2 id="简介">简介
+&lt;/h2>&lt;p>Python, 一门伟大的语言. 简易的, 贴合人类语言的语法, 丰富的生态, 强
+大的功能让Python近几年来几乎稳坐最受欢迎编程语言的宝座. 然而, 对于
+刚开始接触编程语言的初学者而言, 最麻烦的可能并非学习语法或者处理报
+错, 而是搭建一个简单易用的开发环境. 本文将尽笔者所能, 介绍如何配置出
+一套使用 VSCode+Python 的新手或轻度使用者适用的编程环境, 以供新手平
+稳度过前期繁琐的边角料过程, 尽快开始主菜.&lt;/p>
+&lt;p>然而需要提醒各位读者的是, 笔者本人并非Python主力用户, Python于笔
+者而言仅为日常处理数据之用. 因此如有不正之处, 请与笔者联系修改, 如有
+遗漏或不妥之处, 欢迎联系笔者. 在本文写作过程中, 笔者并没有将自己搭
+建的环境删除后重新搭建以完成本文, 因此可能会有很多与实际不相符之处.
+笔者的新电脑很快就到了, 届时会根据本文对照搭建对应环境以检测本文内
+容是否合适, 还请读者朋友包容. 本文也假设读者您使用的是Windows10或以
+上的系统. 如果您是Linux或其他系统的用户, 我相信您不需要本文也可以快
+速搭建好环境.&lt;/p>
+&lt;h2 id="python-解释器的下载">Python 解释器的下载
+&lt;/h2>&lt;p>Python语言的运行依靠Python解释器对编写好的Python脚本进行逐行解
+释, 也可以通过交互式的方法, 在解释器读取到输入内容后立即执行. 因
+此, Python的语言解释器对学习Python是必要的. 下载Python解释器请前往
+&lt;a class="link" href="https://www.python.org/downloads/" target="_blank" rel="noopener"
+>Python官网&lt;/a> . 初学者可以不用太过在意语言版本的问题 (语言版本过新可
+能会导致某些未进行适配的库无法正常使用), 只需要保证您下载的版本
+是Python3即可(版本号以3开头).
+Python3与Python2有着很多基础语法上的
+区别, 且很多库目前不怎么支持Python2. 当然, 为了省事, 直接下载最新版也
+是没有任何问题的, 在后续遇到实际需要时再进行版本修改也是没有问题的.&lt;/p>
+&lt;p>在下载好Python解释器后, 便可以进行安装.&lt;strong>请注意勾选添加到 PATH(ADD
+TO PATH)以避免后续复杂的手动添加环境变量的过程!&lt;/strong> 当然, 如果不幸, 您已
+经在没有勾选此选项的情况下安装了Python解释器, 您可以考虑卸载后重装
+或者考虑手动添加Python路径到环境变量中. 这里不再赘述.&lt;/p>
+&lt;p>其余选项都可以一路默认. 有个选项会提示您是否为所有用户安装, 如
+果读者您使用的计算机内仅有一个账户(或者通俗而言, 仅有您一人使用该计
+算机), 那么是否选择此选项一般而言是无关紧要的. 如果您使用公共电脑或
+者服务器, 请不要勾选此选项, 亦即仅为自己安装.&lt;/p>
+&lt;p>最后, 请检查您是否成功安装了Python解释器. 您可以在键盘上按下 Win+R 键
+打开运行对话框, 在对话框中输入 cmd 后确认, 您将会进入一个 “黑框”(命令
+提示符)中. 此时在其中输入 python -V (请注意是大写的V)或者 python &amp;ndash;version ,
+如果成功安装了Python并添加到了环境变量中, 则界面中将会出现您所安装
+的Python解释器的版本. 否则, 如果您看到类似于找不到Python定义之类的报
+错, 那么有可能您的安装失败或者安装过程中没有将Python添加到环境变量
+中.&lt;/p>
+&lt;p>以上便是安装Python解释器的过程.&lt;/p>
+&lt;h2 id="vscode-的安装与配置">VSCode 的安装与配置
+&lt;/h2>&lt;p>这一步与上一步是平行的, 没有先后顺序一说, 您可以自由选择先进
+行哪个部分.
+但建议您先进行上一部分, 在本部分结束后您将可以直接
+在VSCode中开始Python编程.&lt;/p>
+&lt;p>VSCode是一个强大的文本编辑器.
+其最大的特点是其优秀的插件生
+态以及众多的语言支持(也是通过插件实现的). 通过VSCode与插件之间的
+配合, 可以实现媲美IDE的开发环境搭建.
+笔者推荐由VSCode官方出品的
+在VSCode中使用Python的引导文档: &lt;a class="link" href="https://code.visualstudio.com/docs/languages/python" target="_blank" rel="noopener"
+>Python in Visual Studio Code&lt;/a> , 该文档详
+细介绍了如何从0开始在VSCode上使用Python, 除了是英文内容外几乎没有
+缺点(当然, 您可以选择网页翻译). 下面笔者将自行介绍如何安装VSCode与
+相关插件.&lt;/p>
+&lt;p>点击 &lt;a class="link" href="https://code.visualstudio.com/" target="_blank" rel="noopener"
+>此处&lt;/a> 即可打开 VSCode 官网. VSCode的安装可以全部选择默认安
+装, 如此便可使用VSCode的基础功能. 安装插件可以在侧边栏选择或者使用
+快捷键 Ctrl+Shift+X 打开插件市场, 在页面上方框中输入相应关键词即可
+检索相关插件. 如要进行Python开发, 请安装如下插件.&lt;/p>
+&lt;ul>
+&lt;li>Chinese (Simplified)(简体中文) Language Pack for Visual Studio Code: 可
+以使VSCode的语言显示变为中文显示.&lt;/li>
+&lt;li>Python Extension Pack: VSCode上的Python插件全家桶. 安装这个比较
+省事.&lt;/li>
+&lt;/ul>
+&lt;h2 id="python-脚本试运行">Python 脚本试运行
+&lt;/h2>&lt;p>在以上所述的步骤完成后, 您便可以开始编写您的第一个Python脚本以
+检测您的环境是否搭建完成. 下面是一些简单的步骤:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>新建一个文件, 将之按照自己喜欢的名字命名, 并修改其后缀为 &lt;code>.py&lt;/code> .&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>右键该文件, 选择用VSCode打开. 打开VSCode界面后, 此时VSCode可
+能会询问您是否信任该文件夹. 请选择”信任”以使您安装的插件正常
+运行, 否则插件可能会被VSCode所屏蔽.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>现在您可以编辑该文件了. 输入一些Python代码, 下面是一个简单的测试代码:&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;Hello Python!&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>请写好并保存该文件.&lt;/p>
+&lt;ol start="4">
+&lt;li>
+&lt;p>现在请尝试运行该脚本. 如果您成功安装Python插件, 该文件界面的
+右上角应该会出现一个小的向右的箭头. 点击该箭头即可开始运行.
+由于您很有可能是第一次在VSCode中运行Python脚本, 因此右下角会
+弹出一个通知框, 通知您还未选择Python解释器. 此时界面上方会出
+现一个对话框, 让您选择您需要的Python解释器. 您可能会看到多个
+解释器(如您下载了多个解释器版本)或者 创建虚拟环境(Create Virtual
+Environment). 您可以先暂时不考虑设置虚拟环境, 先使用已有的全局
+生效的Python解释器.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>选择好后, 请再次重复上一步, 按下小箭头. 这是, VSCode界面下方会出
+现一个新的窗口界面, 显示的便是您程序运行的结果. 此时您便已经成
+功运行了该Python脚本, 也说明您的Python运行环境已经搭建成功了.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="python-debug-pip-jupyter-notebook">Python Debug, Pip, Jupyter Notebook
+&lt;/h2>&lt;p>本节将简要介绍有关Python与VSCode的其他方面.&lt;/p>
+&lt;h3 id="调试-debug">调试 (Debug)
+&lt;/h3>&lt;p>调试是用以排查程序运行错漏的操作. 代码一次写成, 运行良好固然很
+好, 但这种情况在实际开发中很难遇到. 实际开发中常会遇到各种各样的问
+题阻碍开发进展. 这些程序中或逻辑或语法的错误就被称为Bug, 在程序中排
+查Bug并修正以使程序得以正常运行的过程即是调试, 亦即所谓的Debug.&lt;/p>
+&lt;p>最简单的调试方法即将程序在某一步的数据通过 &lt;code>cout&lt;/code>(C++), &lt;code>printf&lt;/code>(C) 或 &lt;code>print&lt;/code>(Python) 输
+出到控制台上.
+但这种方法毕竟还是比较繁琐, 特别是遇到难以输出到
+屏幕上的数据, 此时输出的方式便会失灵.
+现代程序开发过程中, 经常使
+用调试器(Debugger)来逐步运行程序, 以此尝试发现程序中隐藏的问题. 虽
+然Python本身已经是解释型语言, 逐行运行已有的程序, 但是通过调试器的诸
+多功能, 仍可以为寻找程序漏洞问题提供帮助.&lt;/p>
+&lt;p>首先介绍断点, 程序在运行至断点后将会停在该处之前, 等待用户的下
+一步命令. 断点的插入在代码编辑器中一般处于左侧的行号附近 (VSCode在
+行号的左侧), 插入成功后会出现一个小红点. 当程序停在断点处时, 您可以查
+看变量的值, 函数调用栈等多种信息, 随后您可以逐步向下运行程序, 中断调
+试或者向步入函数内部(VSCode通过右上角小框控制).&lt;/p>
+&lt;p>要进入VSCode的Debug模式, 请在运行Python脚本时, 在右上角的代表运
+行的箭头旁找到一个向下的箭头, 点击展开菜单后选择 Python调试器: 调
+试Python文件(Python Debugger: Debug Python File), 随后便可进入调试模式.
+请注意此选项不仅会启动调试, 也会改变右上角的默认启动模式为调试. 调
+试模式下, 该三角旁会出现一个小虫子, 代表此时处于调试模式.&lt;/p>
+&lt;p>请善用调试模式与调试器.&lt;/p>
+&lt;h3 id="pip">Pip
+&lt;/h3>&lt;p>Pip(Package Installer for Python)是Python的包管理器.
+所谓的“包”指的
+是Python运行过程中需要调用的函数库, 类库等等. Python的优点很大一部分
+来自于Python活跃的生态, 指的便是丰富的第三方库, 或者, 第三方包. 甚至
+于有人说, Python是一门胶水语言, 其就是用来将各种库粘合在一起以发挥作
+用. 无论如何, 包对于Python的意义是毋庸置疑的, 而作为Python自带的默认
+包管理器, Pip的基础操作也是值得简单学习的. 下面介绍Pip的一些简单命令,
+并以安装Python下著名的科学运算库Numpy为例演示Pip的使用方法.
+Pip的常用命令和参数有:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>help&lt;/code> : 弹出帮助信息, 会提示您命令的功能.&lt;/li>
+&lt;li>&lt;code>install&lt;/code> :指示Pip进入下载模式. 在Pip后附加包名称即可下载该包. 如
+果需要更新某个包, 请在包名前加上 &amp;ndash;upgrade 以提示Pip更新此包而
+非安装.&lt;/li>
+&lt;li>&lt;code>uninstall&lt;/code> : 卸载某个Python包. 在该命令后附加包名即可.&lt;/li>
+&lt;li>&lt;code>list&lt;/code> : 列出所有您已安装的Python包.&lt;/li>
+&lt;/ul>
+&lt;p>接下来介绍如何安装Numpy:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>请打开命令提示符, 并输入 &lt;code>pip&lt;/code> 以检查Pip是否正常可用. 如果可用则
+会弹出部分帮助文本, 不会有报错信息,&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>您可能会看到您的Pip有可用的更新. 若在使用 &lt;code>pip&lt;/code> 命令后, Pip提示您
+可以更新到最新的版本, 您可以选择根据提示输入命令进行更新.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>输入 &lt;code>pip install numpy&lt;/code> 以安装Numpy. 稍等片刻您便可以安装好Numpy以
+供全局使用. 注意, 您在全局环境下下载的Numpy将对全局生效.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="jupyter-notebook">Jupyter Notebook
+&lt;/h3>&lt;p>Python脚本经常需要写好后一次性从头执行到尾, 而使用交互模式(在
+命令提示符中打开Python( &lt;code>python&lt;/code> )将会进入交互模式)时Python会执行每次
+用户所输入的命令.
+前者不够灵活, 而后者容易丧失上下文. 是否有一种
+更加具有交互性的, 但又不丧失上下文环境的Python使用方法呢?
+Jupyter
+Notebook提供了这样的方法.&lt;/p>
+&lt;p>Jupyter Notebook集成了Python环境和Markdown, 可以使您在代码框中
+使用并运行Python脚本, 并在Markdown框中使用Markdown语法编辑文字. 两
+种框的位置十分灵活, 且Notebook可以打开在浏览器中直接使用, 省去专门
+的编辑器的麻烦, 也可以选择在VSCode中使用. 下面将介绍如何安装和使
+用Jupyter Notebook.&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>请使用Pip安装Jupyter: &lt;code>pip install jupyter&lt;/code> 并等待安装完成.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>输入 &lt;code>jupyter notebook&lt;/code> 并回车. 请注意不要关闭该窗口, 该窗口将作
+为服务器运行, 若关闭将会导致Jupyter Notebook无法使用.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>稍等片刻, 此时您的默认浏览器将会弹出一个窗口, 左上角显示着Jupyter,
+而下方主页面则是您的用户文件夹. 您可以双击已有的以 &lt;code>.ipynb&lt;/code> 后
+缀结尾的文件以打开一个已有的Jupyter Notebook文件, 或者请点击右
+侧的新建(New)→Notebook, 便会在当前文件夹下新建一个Jupyter Note-
+book 并打开在您的浏览器的新页面中.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>此时新页面会请求选择一个Python内核. 采用默认设置即可, 此时您便
+已经新建了一个Jupyter Notebook了. 默认的第一个框将是程序输入框,
+点击页面中央的框进入输入模式, 输入Python代码后 &lt;code>Ctrl + Enter&lt;/code> 以
+运行代码, 结果将展现在该代码框的下方.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>您可以通过上方的工具栏新建, 插入, 删除, 运行代码框或者Markdown框.
+更多功能请自行探索.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>以上, 您便成功安装并试运行了Jupyter Notebook.&lt;/p>
+&lt;p>除了在浏览器中使用原生的JupyterNotebook以外, 您还可以在安装好Jupyter后
+在VSCode中启动. 请安装好Jupyter的插件后, 在VSCode中使用快捷键 &lt;code>Ctrl + Shift + P&lt;/code> ,
+或点击VSCode最上侧的搜索框后输入 &lt;code>&amp;gt;&lt;/code> 以进入命令模式, 然后输入 &lt;code>jupyter&lt;/code> ,
+此时对话框会提示您所有的可用命令, 点击创建: 新Jupyter Notebook(Create:
+New Jupyter Notebook)即可创建新的Jupyter Notebook. 后续操作类似于网页
+端操作. 该方法不需要自行打开一个Jupyter服务器, VSCode中安装的Jupyter插
+件将在VSCode的后台自行启动一个Jupyter 服务器.&lt;/p>
+&lt;h2 id="后记">后记
+&lt;/h2>&lt;p>笔者希望通过该文章将笔者自认为好的且简单方便的Python使用开发环
+境介绍给本文的读者. 然而作为一个非Python主力的用户, 本文的内容纰漏&lt;/p>
+&lt;p>在所难免, 且 $\LaTeX$ 的插图体验并不优秀, 笔者没有向文章中插入图片而是采
+用语言描述的方法, 希望读者能谅解.
+感谢您能读到这里. 如果您对本文的内容有何看法或意见, 欢迎联系笔
+者. 最后, 希望本文能真的实现, 并帮助您实现Python的那句名言:&lt;/p>
+&lt;blockquote>
+&lt;p>人生苦短, 我用Python. &lt;p>
+Life is short, I use Python.&lt;/p>&lt;/blockquote>
+&lt;p>祝您生活愉快.&lt;/p></description></item></channel></rss>

@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简单记录一下自己搭建 FRP 服务的过程">
+<title>搭建 FRP 服务</title>
+
+<link rel='canonical' href='http://localhost:1313/p/%E6%90%AD%E5%BB%BA-frp-%E6%9C%8D%E5%8A%A1/'>
+
+<link rel="stylesheet" href="/scss/style.min.36d1397c965f9b0dd2fd4ad7ace64e8508f8b93cf93f11215f7632cad11d78b2.css"><meta property='og:title' content="搭建 FRP 服务">
+<meta property='og:description' content="简单记录一下自己搭建 FRP 服务的过程">
+<meta property='og:url' content='http://localhost:1313/p/%E6%90%AD%E5%BB%BA-frp-%E6%9C%8D%E5%8A%A1/'>
+<meta property='og:site_name' content='A Moment&#39;s Rest'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='Linux' /><meta property='article:tag' content='Software' /><meta property='article:tag' content='Server' /><meta property='article:published_time' content='2025-05-23T09:26:16&#43;08:00'/><meta property='article:modified_time' content='2025-07-22T10:25:47&#43;08:00'/>
+<meta name="twitter:title" content="搭建 FRP 服务">
+<meta name="twitter:description" content="简单记录一下自己搭建 FRP 服务的过程">
+    <link rel="shortcut icon" href="/coffee.png" />
+
+
+
+
+<div id="back-top" style="display: none;">
+    <a href="#top" title="To Top">
+        <img src="/back_top.svg" alt="Back to Top" />
+    </a>
+</div>
+
+<style>
+    #back-top {
+        position: fixed;
+        bottom: 30px;
+        right: 80px;
+        background: #dbdbd9;
+        border-radius: 7px;
+        padding: 10px;
+        transition: background-color 0.3s;
+    }
+
+    #back-top a {
+        text-decoration: none;
+        color: black;
+    }
+
+    #back-top:hover {
+        background-color: #4b4b4b42;
+    }
+</style>
+
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function () {
+        var backTopButton = document.getElementById('back-top');
+
+        window.onscroll = function () {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                backTopButton.style.display = 'block';
+            } else {
+                backTopButton.style.display = 'none';
+            }
+        };
+
+        backTopButton.onclick = function (event) {
+            event.preventDefault(); 
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' 
+            });
+        };
+    });
+</script>
+
+<link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_f9fb3a9e39cbb917.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">💦</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">A Moment&#39;s Rest</a></h1>
+            <h2 class="site-description">AMoment 的 Blog</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/A-moment096'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://space.bilibili.com/44789578'
+                        target="_blank"
+                        title="Bilibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-device-tv"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" /><path d="M16 3l-4 4l-4 -4" /></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='mailto:amoment096@gmail.com'
+                        target="_blank"
+                        title="Contact Me"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-mail"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" /><path d="M3 7l9 6l9 -6" /></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='/index.xml'
+                        target="_blank"
+                        title="RSS"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-rss" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="5" cy="19" r="1" />
+  <path d="M4 4a16 16 0 0 1 16 16" />
+  <path d="M4 11a9 9 0 0 1 9 9" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/thoughts/' >
+                
+                
+                
+                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-sticker-2"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 4h12a2 2 0 0 1 2 2v7h-5a2 2 0 0 0 -2 2v5h-7a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2z" /><path d="M20 13v.172a2 2 0 0 1 -.586 1.414l-4.828 4.828a2 2 0 0 1 -1.414 .586h-.172" /></svg>
+                
+                <span>Thoughts</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Friends</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#引子为什么要跳板机">引子：为什么要跳板机</a></li>
+    <li><a href="#搭建也许需要个-tldr">搭建：也许需要个 TL;DR</a>
+      <ol>
+        <li><a href="#tldr">TL;DR</a></li>
+        <li><a href="#详细步骤呢">详细步骤呢？</a>
+          <ol>
+            <li><a href="#加密非对称式加密和密钥">加密，非对称式加密和密钥</a></li>
+            <li></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/others/" style="background-color: #2a9d8f; color: #fff;">
+                Others
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/%E6%90%AD%E5%BB%BA-frp-%E6%9C%8D%E5%8A%A1/">搭建 FRP 服务</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            简单记录一下自己搭建 FRP 服务的过程
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">May 23, 2025</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 6 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p><em>美妙的五一假期，怎么可能只给自己笔记本装个 Arch Linux 就收手？就自己搭个 <code>frp</code> 服务咯</em></p>
+<h2 id="引子为什么要跳板机">引子：为什么要跳板机
+</h2><p>为了方便提交任务，做相场计算，组里配了一台计算服务器，一个管理节点+两个计算节点，劲呀！然而坏消息是：组里没有多余的空间放置服务器了，只能托管到另一个老师那里。</p>
+<p>OK，没什么关系，给服务器配个公网IP，那不就和在自己组里一样咯？可是实际上并没有那样的好事，公网IP也不是想申请就申请的。课题组内貌似对网络配置这块不了解，也不打算了解，所以就只能交给装机的小哥处理。而他和那边老师协商后，决定采用的方案是：使用 ToDesk 连接到和服务器处于同一公网下的 Windows 电脑，再用那个 Windows 电脑 SSH 到服务器上。</p>
+<p>这个方案，说实在的感觉很蠢。一个服务器，搭载着多用户操作系统，竟然必须用 Windows 做跳板然后跳过去！？这不就意味着，如果有两个人同时使用服务器，我就会和对方产生会话冲突？而且如果有人盯着那台 Windows 电脑的屏幕，我的操作不就暴露地清清楚楚了！？怎么想都是很愚蠢的做法，不过也能理解：这应该（也许）是一个临时的解决方案。而后面谁来解决这个问题呢？</p>
+<p>那必须是我了！</p>
+<h2 id="搭建也许需要个-tldr">搭建：也许需要个 TL;DR
+</h2><p>我觉得也许应该先写一下 frp 技术是什么以及介绍一下这中间的网络通信过程是什么样的，然而我相信，来看这个博文的朋友应该都是需要一份切实可行的执行过程的。所以下面的第一步是：</p>
+<h3 id="tldr">TL;DR
+</h3><p><em>下面的流程大量参考自开源教程：<a class="link" href="https://github.com/CNFlyCat/UsefulTutorials/"  target="_blank" rel="noopener"
+    >Frp内网穿透搭建教学</a>，内容非常详细，感觉这里不清楚的可以去看看</em></p>
+<ol>
+<li>租个服务器：在阿里云用学生认证白嫖三个月的便宜服务器，有个公网IP就行，待会儿会用这个IP</li>
+<li>先用 ToDesk 连到远程计算服务器上，然后用 <code>curl ifconfig.me</code> 得到服务器所在公网的公网IP，待会儿会用到</li>
+<li>在计算服务器上下载 frp:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="ln">1</span><span class="cl"><span class="c1">#  如果有 wget 的话：</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">wget https://github.com/fatedier/frp/releases/download/v0.61.1/frp_0.61.1_linux_amd64.tar.gz
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="c1">#  如果没有 wget，可以试试 curl：</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">curl -LO https://github.com/fatedier/frp/releases/download/v0.61.1/frp_0.61.1_linux_amd64.tar.gz
+</span></span></code></pre></div><ol start="4">
+<li>用 <code>tar</code> 解压压缩包：<code>tar xzf frp_0.61.1_linux_amd64.tar.gz</code></li>
+<li>进入文件夹，配置 <code>frpc.toml</code>，内容为：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="c"># 服务端地址（这里要填你有公网IP的服务器的IP或者是服务器的域名）</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="nx">serverAddr</span> <span class="p">=</span> <span class="s2">&#34;192.xxx.x.x&#34;</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="c"># 服务器端口（Frp 服务端监听的端口）</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="nx">serverPort</span> <span class="p">=</span> <span class="mi">7000</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="c"># 连接协议</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="nx">transport</span><span class="p">.</span><span class="nx">protocol</span> <span class="p">=</span> <span class="s2">&#34;tcp&#34;</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="c"># 代理配置</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="p">[[</span><span class="nx">proxies</span><span class="p">]]</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="c"># 代理名称（标识该代理的名称，根据你的喜好填写）</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;comp_server&#34;</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="nx">type</span> <span class="p">=</span> <span class="s2">&#34;tcp&#34;</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="nx">localIP</span> <span class="p">=</span> <span class="s2">&#34;127.0.0.1&#34;</span> <span class="c">#这里就是这个，代表本机IP</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="nx">localPort</span> <span class="p">=</span> <span class="mi">6000</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">
+</span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="nx">remotePort</span> <span class="p">=</span> <span class="mi">6000</span>
+</span></span></code></pre></div><ol start="6">
+<li>启动 frpc：<code>./frpc -c ./frpc.toml</code></li>
+<li>在公网服务器上进行类似操作，这里我没有改 <code>frps.toml</code>，其中内容只有一行：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="ln">1</span><span class="cl"><span class="nx">bindPort</span> <span class="p">=</span> <span class="mi">7000</span>
+</span></span></code></pre></div><!-- 这样的服务器端配置显得有些简陋了，不过目前来讲是完全够用的。然而如果你需要更详细的配置，或者更完善的配置的话，可以参考上述的开源教程。需要注意的是，这个地方的 `7000` 完全是默认的一个值，而这个值是可以自己选择的。一般来讲端口号会尽量选择比较大的数字（高位端口），目的主要是为了安全着想。如果这个地方你在上面的客户端使用的 `ServerPort` 是别的端口号，请在下面的 `bindPort` 中保持一致。 -->
+<ol start="8">
+<li>
+<p>启动 frps: <code>./frps -c ./frps.toml</code></p>
+</li>
+<li>
+<p>从第三台电脑测试链接：<code>ssh username@192.xxx.x.x -p 6000</code>, 这会让你通过公网服务器的 <code>6000</code> 端口把访问转发到计算服务器上。</p>
+</li>
+</ol>
+<p>整个流程大概就是这样啦，看起来挺长的，实际上只需要寥寥几步就OK了。</p>
+<h3 id="详细步骤呢">详细步骤呢？
+</h3><p>有了 TL;DR，也许你可以从这些步骤上看到整个搭建过程的轮廓。虽然说这里要将详细步骤，实际上也只是对上面的内容进行一些简单的补充而已。</p>
+<p>首先是租用服务器。只需要最低配置的服务器就可以运行 FRP 服务了（我猜，因为这个转发过程我很难想象需要多大的内存和多么强大的算力）。在租用的时候可以注意看看各家云服务器厂商都怎么提供的优惠，特别是学生优惠。一般来讲，学生都有一些不错的优惠或者白嫖额度，可以先用着试试看。服务器的密码要注意<strong>使用强密码</strong>，不要用什么个人信息之类的。因为公网服务器毕竟是暴露在危险的公网上的，简单的密码很容易被强行爆破，如果密码里面有一些个人信息（生日，电话，QQ什么的），那就一锅端了。总之，公网上一切小心，密码要搞复杂点，记在什么纸上或者什么密码服务器里都可以。</p>
+<p>配好服务器之后，可以考虑只使用 SSH 加密钥来登录。密钥最大的好处有两个，一个是可以免密码，另一个就是安全。由于 SSH 只会允许拥有通过验证的机器来登录，验证方式是查看是否具有可以匹配的私钥。</p>
+<p>诶~！那既然聊到这里了，就简单说说密钥和加密是怎么个事儿吧。</p>
+<h4 id="加密非对称式加密和密钥">加密，非对称式加密和密钥
+</h4><p>加密是什么？也许这个问题很蠢，但是我们可以把它的几个特点抽象出来：加密不能摧毁原有的信息（不能加密完东西没了/不全了）；加密不能没法解密（得有还原方法）；加密的信息不希望他人能轻易解密（恢复所需要的东西具有复杂性且难以被摸透）。</p>
+<p>那么有了上面的几个特点，我们起码可以说什么不是加密。比如，内容哈希不是加密，因为会摧毁原有信息；使用一个用完就扔随机数对内容搞个什么可逆算法捏一起也不是加密，因为恢复不回来也会烂完。把信息随便用个什么简单密码套一下，是加密，但是是很烂的加密：如果有人对这个信息感兴趣，随便爆破一下都能找出来答案，那不是烂完是什么。也许你对密码爆破没有什么概念，但是长度一般的纯数字密码使用哈希碰撞进行爆破的时间在一台家用电脑上基本不会超过一天。即便稍微复杂一些的密码，只要长度不够且攻击者有兴趣，花个几天也能攻破。不要太相信自己的密码。</p>
+<p>下面我们讲讲加密算法。现行的加密算法非常的多，不过一般用户不需要太关心加密算法具体怎么工作，只需要知道哪些算法应用广泛，哪些算法安全性好，加密时的哪些东西重要，就可以了。使用 <code>ssh-keygen</code> 时默认使用的算法应该是 ed25519，这个名字奇怪的算法有很不错的安全性，且也算应用广泛，只要不是很老的机器基本都可以接受通过这个加密算法进行通信。另外还有所谓的 RSA 等算法，这里就不一一介绍，默认的基本就是最合适的选择了。这里要特别指出的是，这里的算法都是所谓的非对称加密算法。</p>
+<p>非对称加密算法是一种很神奇的算法，用来加密的口令/密钥和用来解密的口令/密钥是不一样的。加密时将使用公开的密钥进行加密，被称为<em>公钥</em>，而解密时则需要用户使用非公开的<em>私钥</em>。它主要是区别于所谓的对称加密，也就是加密和解密使用统一口令/密钥的算法。为什么要有非对称加密搞两套密钥呢？主要原因是为了避免中间人攻击。简单解释，就是说为了防止传递消息（特别是传递密钥）的过程出现篡改内容的情况。如果使用对称加密，想解密消息的人就必须拥有密钥的原文，这个密钥原文必须通过危险的网络进行传输，传输过程中第三者对密钥进行篡改后，消息接受者是无法验证密钥是原本的密钥还是攻击者提供的密钥。而使用非对称加密就避免了这样的问题：只能使用公钥加密，用私钥解密，被加密的消息是否被篡改只需要观察能否使用私钥进行解密即可。</p>
+<p>最后我们再来解释一下什么是密钥。所谓密钥，其实和密码，口令什么的一模一样，有了这么个东西，你就能做些什么；没有它或者不知道它，那就不行。不过在 SSH 的语境下，密钥、密码、口令三个的区别在于：密钥是机器负责自动验证的，你的机器上有这个密钥，对方的机器在被 SSH 时就会读取并自动进行验证；密码是在没有密钥的时候为了登录而输入的账户的密码，说白了就是账户对应的密码；口令则是在使用密钥的时候的另外一层保险，也就是说密钥验证成功之后还需要认为输入一次口令进行验证，以此来增强安全性。</p>
+<p>一般私人电脑登录远程服务器，有个密钥就可以了，不太需要再设个口令难为自己。不过在公用电脑上，设置口令是个好选择：防止有人方便地登录你的账户。不推荐密码的主要原因是密码是不管从哪个机器进行登录的，弱密码一旦攻破谁也救不了，而密钥因为要绑定机器，会安全很多，至少陌生的机器是没法登录你的账户的。</p>
+<h4 id="">
+</h4>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/linux/">Linux</a>
+        
+            <a href="/tags/software/">Software</a>
+        
+            <a href="/tags/server/">Server</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            最后更新于 Jul 22, 2025 10:25 CST
+        </span>
+    </section></footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/%E5%AE%89%E8%A3%85-arch-linux%E4%BD%86%E6%98%AF%E7%AC%94%E8%AE%B0%E6%9C%AC%E7%89%A9%E7%90%86%E6%9C%BA/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E5%AE%89%E8%A3%85-arch-linux%E4%BD%86%E6%98%AF%E7%AC%94%E8%AE%B0%E6%9C%AC%E7%89%A9%E7%90%86%E6%9C%BA/imgs/Alice.5c77449a0fe272b87bde11e0f337cfab_hu_a87f8b34d4e94a2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 安装 Arch Linux，但是笔记本物理机"
+                        
+                        data-hash="md5-XHdEmg/icrh73hHg8zfPqw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">安装 Arch Linux，但是笔记本物理机</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/%E5%B8%AE%E5%88%B0%E8%BF%87%E6%88%91%E7%9A%84%E9%93%BE%E6%8E%A5%E4%BB%AC/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E5%B8%AE%E5%88%B0%E8%BF%87%E6%88%91%E7%9A%84%E9%93%BE%E6%8E%A5%E4%BB%AC/star%20river.cc25e3f8f188b4ec1f1d378d1961d3e2_hu_b3002d080feae488.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 帮到过我的链接们"
+                        
+                        data-hash="md5-zCXj&#43;PGItOwfHTeNGWHT4g==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">帮到过我的链接们</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/Reimu_Water.91d9dda02b8b7b40aac8bc5f5081da4b_hu_c778cb22896e78f0.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 从零开始的 Arch Linux 安装"
+                        
+                        data-hash="md5-kdndoCuLe0CqyLxfUIHaSw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">从零开始的 Arch Linux 安装</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/first-blog-%E6%90%AD%E5%BB%BA%E8%BF%99%E4%B8%AA%E5%8D%9A%E5%AE%A2/">
+        
+        
+            <div class="article-image">
+                <img src="/p/first-blog-%E6%90%AD%E5%BB%BA%E8%BF%99%E4%B8%AA%E5%8D%9A%E5%AE%A2/Reimu.f65bd60666fcc9b39b96f6f795cd9774_hu_b8ce4e79ae622a02.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post First Blog: 搭建这个博客"
+                        
+                        data-hash="md5-9lvWBmb8ybOblvb3lc2XdA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">First Blog: 搭建这个博客</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo="A-moment096/A-moment096.github.io"
+        issue-term="title"
+        
+        label="Comment"
+        
+        crossorigin="anonymous"
+        async
+        >
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+<script>
+    let utterancesLoaded = false;
+
+    function setUtterancesTheme(theme) {
+        let utterances = document.querySelector('.utterances iframe');
+        if (utterances) {
+            utterances.contentWindow.postMessage(
+                {
+                    type: 'set-theme',
+                    theme: `github-${theme}`
+                },
+                'https://utteranc.es'
+            );
+        }
+    }
+
+    addEventListener('message', event => {
+        if (event.origin !== 'https://utteranc.es') return;
+
+        
+        utterancesLoaded = true;
+        setUtterancesTheme(document.documentElement.dataset.scheme)
+    });
+
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (!utterancesLoaded) return;
+        setUtterancesTheme(e.detail)
+    })
+</script>
+
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2025 A Moment&#39;s Rest
+    </section>
+    
+    <section class="powerby">
+        
+            <a href="https://icp.gov.moe/?keyword=20257072" target="_blank">萌ICP备20257072号</a> <br/>
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.0c443a60c9013404d9e580f6b033ad778f8484d8953a69c4fcee9971c4870ed3.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+<script
+    src="https://cdn.jsdelivr.net/gh/zhixuan2333/gh-blog@v0.1.0/js/nprogress.min.js"
+    integrity="sha384-bHDlAEUFxsRI7JfULv3DTpL2IXbbgn4JHQJibgo5iiXSK6Iu8muwqHANhun74Cqg"
+    crossorigin="anonymous"
+></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/zhixuan2333/gh-blog@v0.1.0/css/nprogress.css"
+    integrity="sha384-KJyhr2syt5+4M9Pz5dipCvTrtvOmLk/olWVdfhAp858UCa64Ia5GFpTN7+G4BWpE"
+    crossorigin="anonymous"
+/>
+<script>
+    NProgress.start();
+    document.addEventListener("readystatechange", () => {
+        if (document.readyState === "interactive") NProgress.inc(0.8);
+        if (document.readyState === "complete") NProgress.done();
+    });
+</script>
+    </body>
+</html>

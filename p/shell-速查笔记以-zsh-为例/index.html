@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="一份（也许）简单的 Shell 速查笔记">
+<title>Shell 速查笔记：以 ZSH 为例</title>
+
+<link rel='canonical' href='http://localhost:1313/p/shell-%E9%80%9F%E6%9F%A5%E7%AC%94%E8%AE%B0%E4%BB%A5-zsh-%E4%B8%BA%E4%BE%8B/'>
+
+<link rel="stylesheet" href="/scss/style.min.36d1397c965f9b0dd2fd4ad7ace64e8508f8b93cf93f11215f7632cad11d78b2.css"><meta property='og:title' content="Shell 速查笔记：以 ZSH 为例">
+<meta property='og:description' content="一份（也许）简单的 Shell 速查笔记">
+<meta property='og:url' content='http://localhost:1313/p/shell-%E9%80%9F%E6%9F%A5%E7%AC%94%E8%AE%B0%E4%BB%A5-zsh-%E4%B8%BA%E4%BE%8B/'>
+<meta property='og:site_name' content='A Moment&#39;s Rest'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='Linux' /><meta property='article:tag' content='Shell' /><meta property='article:tag' content='Note' /><meta property='article:published_time' content='2025-06-04T15:09:18&#43;08:00'/><meta property='article:modified_time' content='2025-07-22T10:25:47&#43;08:00'/><meta property='og:image' content='http://localhost:1313/p/shell-%E9%80%9F%E6%9F%A5%E7%AC%94%E8%AE%B0%E4%BB%A5-zsh-%E4%B8%BA%E4%BE%8B/SEASIDE_SOLILOQUIES.png' />
+<meta name="twitter:title" content="Shell 速查笔记：以 ZSH 为例">
+<meta name="twitter:description" content="一份（也许）简单的 Shell 速查笔记"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:1313/p/shell-%E9%80%9F%E6%9F%A5%E7%AC%94%E8%AE%B0%E4%BB%A5-zsh-%E4%B8%BA%E4%BE%8B/SEASIDE_SOLILOQUIES.png' />
+    <link rel="shortcut icon" href="/coffee.png" />
+
+
+
+
+<div id="back-top" style="display: none;">
+    <a href="#top" title="To Top">
+        <img src="/back_top.svg" alt="Back to Top" />
+    </a>
+</div>
+
+<style>
+    #back-top {
+        position: fixed;
+        bottom: 30px;
+        right: 80px;
+        background: #dbdbd9;
+        border-radius: 7px;
+        padding: 10px;
+        transition: background-color 0.3s;
+    }
+
+    #back-top a {
+        text-decoration: none;
+        color: black;
+    }
+
+    #back-top:hover {
+        background-color: #4b4b4b42;
+    }
+</style>
+
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function () {
+        var backTopButton = document.getElementById('back-top');
+
+        window.onscroll = function () {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                backTopButton.style.display = 'block';
+            } else {
+                backTopButton.style.display = 'none';
+            }
+        };
+
+        backTopButton.onclick = function (event) {
+            event.preventDefault(); 
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' 
+            });
+        };
+    });
+</script>
+
+<link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_f9fb3a9e39cbb917.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">💦</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">A Moment&#39;s Rest</a></h1>
+            <h2 class="site-description">AMoment 的 Blog</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/A-moment096'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://space.bilibili.com/44789578'
+                        target="_blank"
+                        title="Bilibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-device-tv"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" /><path d="M16 3l-4 4l-4 -4" /></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='mailto:amoment096@gmail.com'
+                        target="_blank"
+                        title="Contact Me"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-mail"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" /><path d="M3 7l9 6l9 -6" /></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='/index.xml'
+                        target="_blank"
+                        title="RSS"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-rss" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="5" cy="19" r="1" />
+  <path d="M4 4a16 16 0 0 1 16 16" />
+  <path d="M4 11a9 9 0 0 1 9 9" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/thoughts/' >
+                
+                
+                
+                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-sticker-2"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 4h12a2 2 0 0 1 2 2v7h-5a2 2 0 0 0 -2 2v5h-7a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2z" /><path d="M20 13v.172a2 2 0 0 1 -.586 1.414l-4.828 4.828a2 2 0 0 1 -1.414 .586h-.172" /></svg>
+                
+                <span>Thoughts</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Friends</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#使用的配置">使用的配置</a></li>
+    <li><a href="#历史命令操作">历史命令操作</a>
+      <ol>
+        <li><a href="#使用场景">使用场景</a></li>
+        <li><a href="#使用案例">使用案例</a></li>
+        <li><a href="#tldr">TL;DR</a>
+          <ol>
+            <li><a href="#命令选择使用-">命令选择（使用 <code>!</code>）</a></li>
+            <li><a href="#参数选择-使用-">参数选择 （使用 <code>:</code>）</a></li>
+            <li><a href="#参数修饰">参数修饰</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#使用-rsync-进行同步">使用 <code>rsync</code> 进行同步</a>
+      <ol>
+        <li><a href="#使用场景-1">使用场景</a>
+          <ol>
+            <li><a href="#使用方法">使用方法</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#帮到我的链接">帮到我的链接</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/shell-%E9%80%9F%E6%9F%A5%E7%AC%94%E8%AE%B0%E4%BB%A5-zsh-%E4%B8%BA%E4%BE%8B/">
+                <img src="/p/shell-%E9%80%9F%E6%9F%A5%E7%AC%94%E8%AE%B0%E4%BB%A5-zsh-%E4%B8%BA%E4%BE%8B/SEASIDE_SOLILOQUIES_hu_2761920eeb78ef62.png"
+                        srcset="/p/shell-%E9%80%9F%E6%9F%A5%E7%AC%94%E8%AE%B0%E4%BB%A5-zsh-%E4%B8%BA%E4%BE%8B/SEASIDE_SOLILOQUIES_hu_2761920eeb78ef62.png 800w, /p/shell-%E9%80%9F%E6%9F%A5%E7%AC%94%E8%AE%B0%E4%BB%A5-zsh-%E4%B8%BA%E4%BE%8B/SEASIDE_SOLILOQUIES_hu_b6fa43f821e9538f.png 1600w"
+                        width="800" 
+                        height="800" 
+                        loading="lazy"
+                        alt="Featured image of post Shell 速查笔记：以 ZSH 为例" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/programming/" style="background-color: #2a9d8f; color: #fff;">
+                Programming
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/shell-%E9%80%9F%E6%9F%A5%E7%AC%94%E8%AE%B0%E4%BB%A5-zsh-%E4%B8%BA%E4%BE%8B/">Shell 速查笔记：以 ZSH 为例</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            一份（也许）简单的 Shell 速查笔记
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jun 04, 2025</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 5 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p><em>学了一些 <code>bash</code> 命令（然而也许是 <code>zsh</code>），感觉随时会忘，就干脆在这里记一下好了</em></p>
+<p><em>头图出自 Orangestar 的专辑 <strong>SEASIDE SOLILOQUIES</strong>, 好看又好听。所以这里贴曲就贴这个专辑的主打歌好了：一首 <strong>Alice in 冷凍庫</strong>，希望你喜欢。</em></p>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<style type="text/css">.dark-theme .aplayer{background:#212121}.dark-theme .aplayer.aplayer-withlist .aplayer-info{border-bottom-color:#5c5c5c}.dark-theme .aplayer.aplayer-fixed .aplayer-list{border-color:#5c5c5c}.dark-theme .aplayer .aplayer-body{background-color:#212121}.dark-theme .aplayer .aplayer-info{border-top-color:#212121}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-title{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-author{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time{color:#eee}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path{fill:#eee}.dark-theme .aplayer .aplayer-list{background-color:#212121}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb{background-color:#999}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover{background-color:#bbb}.dark-theme .aplayer .aplayer-list li{color:#fff;border-top-color:#666}.dark-theme .aplayer .aplayer-list li:hover{background:#4e4e4e}.dark-theme .aplayer .aplayer-list li.aplayer-list-light{background:#6c6c6c}.dark-theme .aplayer .aplayer-list li .aplayer-list-index{color:#ddd}.dark-theme .aplayer .aplayer-list li .aplayer-list-author{color:#ddd}.dark-theme .aplayer .aplayer-lrc{text-shadow:-1px -1px 0 #666}.dark-theme .aplayer .aplayer-lrc:before{background:-moz-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:-webkit-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:linear-gradient(to bottom, #212121 0%, rgba(33,33,33,0) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#212121', endColorstr='#00212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc:after{background:-moz-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:-webkit-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:linear-gradient(to bottom, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#00212121', endColorstr='#cc212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc p{color:#fff}.dark-theme .aplayer .aplayer-miniswitcher{background:#484848}.dark-theme .aplayer .aplayer-miniswitcher .aplayer-icon path{fill:#eee}</style>
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script><meting-js auto="https://music.163.com/#/song?id=458231453" theme="#2980b9" loop="none"></meting-js>
+<h2 id="使用的配置">使用的配置
+</h2><p>目前我使用了 <code>oh-my-zsh</code> 做插件管理，好用。几乎所有配置都是默认配置，因为默认就挺不错的。插件使用了 <code>colored-man-pages</code>, <code>git</code>, <code>zsh-vi-mode</code>。</p>
+<h2 id="历史命令操作">历史命令操作
+</h2><h3 id="使用场景">使用场景
+</h3><p>有时候我们写了一长串命令，比如有很麻烦的路径之类的，这时候我们可能会希望用某个符号来自动地填上命令里的某些参数。<code>zsh</code> 的一些交互命令提供了这个方法：使用 <code>!</code>，感叹号。</p>
+<h3 id="使用案例">使用案例
+</h3><ol>
+<li><code>!!</code> = <code>!-1</code>，代表 “上一个执行了的命令”。比如如下操作：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">$ <span class="nb">echo</span> hello bash world!
+</span></span><span class="line"><span class="ln">2</span><span class="cl">hello bash world!
+</span></span><span class="line"><span class="ln">3</span><span class="cl">$ <span class="nb">echo</span> !! <span class="c1"># !! 替换了上面整个执行了的命令，也就是替换了 &#34;echo hello bash world&#34;</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="nb">echo</span> hello bash world!
+</span></span><span class="line"><span class="ln">5</span><span class="cl">$ <span class="nb">echo</span> !-1 <span class="c1"># 同上,也是替换上面执行的命令，所以替换了 &#34;echo echo hello bash world&#34;</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="nb">echo</span> <span class="nb">echo</span> hello bash world! 
+</span></span></code></pre></div><ol start="2">
+<li><code>!&lt;num&gt;</code> 来选择某个历史命令。我们先用 <code>head</code> 来查看一下我们的命令历史里最早有一些什么：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">$ head ~/.zsh_history <span class="c1"># 这里我的 zsh 命令历史存在这个文件里，可以用 head 查看前几个命令</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">: 12345:0<span class="p">;</span>clear
+</span></span><span class="line"><span class="ln">3</span><span class="cl">: 12346:0<span class="p">;</span><span class="nb">echo</span> hello
+</span></span><span class="line"><span class="ln">4</span><span class="cl">: 12347:0<span class="p">;</span>ls
+</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="c1">## ... ... </span>
+</span></span></code></pre></div><p>随后我们可以使用 <code>!1</code> 来选择历史命令中的第一个命令，这里的第一个命令就是 <code>clear</code>：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">$ !1 <span class="c1"># 执行第一个历史命令，也就是 clear，会直接清空屏幕；</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">$ !2 <span class="c1"># 执行第二个历史命令，会打印 hello；</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">hello
+</span></span><span class="line"><span class="ln">4</span><span class="cl">$ !3 <span class="c1"># 执行第三个历史命令，会打印当前文件夹下的内容</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">file1 file2 file3
+</span></span></code></pre></div><p>从这个例子可以看到，<code>!</code> 后面跟着的数字实际上表示了“第几个命令”，而举一反三，<code>!-1</code> 则代表的是“最后一个命令”，即上一个命令，那么 <code>!-2</code> 就是倒数第二个命令。</p>
+<blockquote>
+<p>有了这两个命令，我们可以很方便地在忘记使用 <code>sudo</code> 权限时，使用 <code>sudo !!</code> 或者选择某个历史命令，来快速使用 <code>sudo</code> 权限执行命令。</p></blockquote>
+<ol start="3">
+<li>使用 <code>:&lt;num&gt;</code> 来选择第几个参数。它需要配合 <code>!</code> 进行使用。参数从 1 开始，而 0 有特殊含义，代表命令。比如：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">$ <span class="nb">echo</span> one two three
+</span></span><span class="line"><span class="ln">2</span><span class="cl">one two three
+</span></span><span class="line"><span class="ln">3</span><span class="cl">$ <span class="nb">echo</span> !-1:2 <span class="c1"># 相当于 echo two</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">two
+</span></span><span class="line"><span class="ln">5</span><span class="cl">$ <span class="nb">echo</span> !:0 <span class="c1"># 上个命令使用了 echo，所以 0 代表 echo，这个命令相当于 echo echo</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="nb">echo</span>
+</span></span></code></pre></div><p>当使用 <code>:</code> 来进行参数选择时，如果是从上一个命令中选择则可以简写为 <code>!:&lt;num1&gt;-&lt;num2&gt;</code>。</p>
+<ol start="4">
+<li>使用 <code>:&lt;num1&gt;-&lt;num2&gt;</code> 来范围式地选择命令的参数。比如，使用 <code>!!:1-2</code> 就说明要取第一个和第二个参数。（注意这里是参数，不是空格分隔的字符串，也不包含第一个词（也就是命令））。比如：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln"> 1</span><span class="cl">$ <span class="nb">echo</span> one two three four
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">one two three four
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">$ <span class="nb">echo</span> !!:1-2 <span class="c1"># 相当于 echo one two </span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">one two
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">$ <span class="nb">echo</span> one two three four <span class="c1"># 这行用来重置最后一个命令</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">one two three four
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">$ <span class="nb">echo</span> !!:-3 <span class="c1"># 没有 &lt;num1&gt; 则会自动替换为0，相当于 echo echo one two three</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="nb">echo</span> one two three
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">$ <span class="nb">echo</span> !-2:1-2 <span class="c1"># 配合 !&lt;num&gt; 使用，相当于 echo one two </span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">one two 
+</span></span><span class="line"><span class="ln">11</span><span class="cl">$ <span class="nb">echo</span> !-3:1- <span class="c1"># 没有 &lt;num2&gt; 则会匹配到除了最后一个参数外的参数，相当于 echo one two three</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">one two three
+</span></span><span class="line"><span class="ln">13</span><span class="cl">$ <span class="nb">echo</span> !-4:$ <span class="c1"># 使用 $ 来获取最后一个参数，相当于 echo four</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">four
+</span></span><span class="line"><span class="ln">15</span><span class="cl">$ <span class="nb">echo</span> !-5:3-$ <span class="c1"># 同样 $ 也支持范围选择，相当于 echo three four</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">three four
+</span></span><span class="line"><span class="ln">17</span><span class="cl">$ <span class="nb">echo</span> !-6:* <span class="c1"># 使用 * 来表示所有的参数，相当于 echo !-6:1-$，也就是 echo one two three four</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">one two three four 
+</span></span><span class="line"><span class="ln">19</span><span class="cl">$ <span class="nb">echo</span> !:* <span class="c1"># !: 是在使用冒号时 !!: 或者 !-1: 的简写，相当于 echo one two three four</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">one two three four 
+</span></span></code></pre></div><p>如果没有 <code>&lt;num1&gt;</code>，则默认从 <code>0</code> 开始，也就是会包含所有内容；如果没有 <code>&lt;num2&gt;</code>，则默认停在最后一个参数前。可以使用 <code>*</code> 来选择所有的参数，使用 <code>$</code> 选择最后一个参数。</p>
+<ol start="5">
+<li>在冒号后使用一些字母来做相应的处理。假设有命令 <code>ls /path/to/a/file.txt</code>，则下面的参数选择器可以做到：</li>
+</ol>
+<ul>
+<li><code>:r</code>（root）取文件的完整文件名，结果为 <code>/path/to/a/file</code></li>
+<li><code>:e</code>（extension）取文件的后缀名，结果为 <code>txt</code></li>
+<li><code>:h</code>（head）取文件路径的地址，结果为 <code>/path/to/a/</code></li>
+<li><code>:t</code>（tail）取文件的名称，结果为 <code>file.txt</code></li>
+<li><code>:s/to/has</code>（search）可以在参数中寻找<em>第一个</em> <code>to</code> 并替换为 <code>has</code>，结果为 <code>/path/has/a/file.txt</code></li>
+<li><code>:gs/to/has</code>（global search）同上，但是全局查找替换。</li>
+</ul>
+<h3 id="tldr">TL;DR
+</h3><p>下面是一个表格简单描述这些用法</p>
+<h4 id="命令选择使用-">命令选择（使用 <code>!</code>）
+</h4><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>语法</th>
+          <th>含义</th>
+          <th>示例</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>!!</code></td>
+          <td>上一条命令</td>
+          <td><code>sudo !!</code></td>
+      </tr>
+      <tr>
+          <td><code>!-n</code></td>
+          <td>倒数第 n 条命令</td>
+          <td><code>!-2</code></td>
+      </tr>
+      <tr>
+          <td><code>!n</code></td>
+          <td>第 n 条历史命令</td>
+          <td><code>!42</code></td>
+      </tr>
+      <tr>
+          <td><code>!字符串</code></td>
+          <td>最近以该字符串开头的命令</td>
+          <td><code>!ls</code></td>
+      </tr>
+      <tr>
+          <td><code>!?字符串?</code></td>
+          <td>最近包含该字符串的命令</td>
+          <td><code>!?foo?</code></td>
+      </tr>
+      <tr>
+          <td><code>^旧^新</code></td>
+          <td>将上一条命令中第一个“旧”替换为“新”</td>
+          <td><code>^cat^bat</code></td>
+      </tr>
+  </tbody>
+</table></div>
+<h4 id="参数选择-使用-">参数选择 （使用 <code>:</code>）
+</h4><p>下面的示例命令使用 <code>echo file.txt</code> 来做演示。</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>语法</th>
+          <th>含义</th>
+          <th>示例</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>!!:0</code></td>
+          <td>上一条命令的命令名</td>
+          <td><code>!!:0</code> → <code>echo</code></td>
+      </tr>
+      <tr>
+          <td><code>!!:1</code></td>
+          <td>第一个参数</td>
+          <td><code>!!:1</code> → <code>file.txt</code></td>
+      </tr>
+      <tr>
+          <td><code>!!:2</code></td>
+          <td>第二个参数</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>!!:$</code></td>
+          <td>最后一个参数</td>
+          <td><code>!!:$</code></td>
+      </tr>
+      <tr>
+          <td><code>!!:*</code></td>
+          <td>所有参数（等同于 <code>!!:1-$</code>）</td>
+          <td><code>!!:*</code></td>
+      </tr>
+      <tr>
+          <td><code>!!:1-3</code></td>
+          <td>第 1 到第 3 个参数</td>
+          <td><code>!!:1-3</code></td>
+      </tr>
+      <tr>
+          <td><code>!!:2-$</code></td>
+          <td>从第 2 个到最后一个参数</td>
+          <td><code>!!:2-$</code></td>
+      </tr>
+      <tr>
+          <td><code>!$</code></td>
+          <td>上一条命令的最后一个参数 (可以省略冒号)</td>
+          <td><code>cat !$</code></td>
+      </tr>
+      <tr>
+          <td><code>!*</code></td>
+          <td>上一条命令的所有参数（可以省略冒号）</td>
+          <td><code>rm !*</code></td>
+      </tr>
+  </tbody>
+</table></div>
+<h4 id="参数修饰">参数修饰
+</h4><p>下面的示例命令使用 <code>echo /path/to/file.txt</code> 来做演示。</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>修饰符</th>
+          <th>含义</th>
+          <th>示例</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>:p</code></td>
+          <td>只打印命令，不执行</td>
+          <td><code>sudo !!:p</code></td>
+      </tr>
+      <tr>
+          <td><code>:q</code></td>
+          <td>给参数加引号，避免空格或特殊字符问题</td>
+          <td><code>echo !!:1:q</code></td>
+      </tr>
+      <tr>
+          <td><code>:h</code></td>
+          <td>获取路径头部（类似 <code>dirname</code>）</td>
+          <td><code>echo !!:1:h</code> → <code>/path/to</code></td>
+      </tr>
+      <tr>
+          <td><code>:t</code></td>
+          <td>获取路径尾部（类似 <code>basename</code>）</td>
+          <td><code>echo !!:1:t</code> → <code>file.txt</code></td>
+      </tr>
+      <tr>
+          <td><code>:r</code></td>
+          <td>去掉文件扩展名（保留主名）</td>
+          <td><code>echo !!:1:r</code> → <code>file</code></td>
+      </tr>
+      <tr>
+          <td><code>:e</code></td>
+          <td>获取文件扩展名</td>
+          <td><code>echo !!:1:e</code> → <code>txt</code></td>
+      </tr>
+      <tr>
+          <td><code>:s/旧/新/</code></td>
+          <td>替换第一个出现的子串</td>
+          <td><code>!!:1:s/foo/bar/</code></td>
+      </tr>
+      <tr>
+          <td><code>:gs/旧/新/</code></td>
+          <td>替换所有出现的子串</td>
+          <td><code>!!:1:gs/foo/bar/</code></td>
+      </tr>
+  </tbody>
+</table></div>
+<h2 id="使用-rsync-进行同步">使用 <code>rsync</code> 进行同步
+</h2><h3 id="使用场景-1">使用场景
+</h3><p>有时候我们有多个远程电脑，或者是服务器，上面的文件内容我们希望下载到本地。我们通常有这么几个选择：使用一些功能成熟的，专用于 SSH 连接的终端模拟器，比如 MobaXTerm 这样的软件；或者我们可以使用 <code>scp</code>，<code>sftp</code> 这样的工具，但是界面有点简陋，特别是 <code>sftp</code>，需要反复确认文件名是否输入错误。而且有时我们只需要下载不同的部分，不希望重复下载已经有了的部分。这时候，<code>rsync</code> 作为 <em>remote sync</em> 的工具，就到了发挥其作用的地方了。</p>
+<h4 id="使用方法">使用方法
+</h4><p><code>rsync</code> 命令使用方法是：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">rsync --option1 --option2 /pass/files/from/here/ /path/file/to/here
+</span></span></code></pre></div><p>所以大概就是遵循：<code>命令，选项，从哪里来，到哪里去</code> 这样的规则。另外，既然 <code>rsync</code> 是 <em>remote sync</em> 的简称，自然这个命令也是可以被用于远程服务器之间的文件传输的。方法也很简单，就是给对应的文件路径添加上使用 <code>ssh</code> 的用户名、服务器地址等信息。具体用法我们下面介绍。</p>
+<p>首先，这里需要强调的是，请注意 <code>从哪里来</code> 的</p>
+<h2 id="帮到我的链接">帮到我的链接
+</h2><p>这里简单记录一些我学习这些命令时用到的网页链接。感谢~</p>
+<ul>
+<li>首先，ChatGPT 和 Deepseek，完全不了解的时候和这些 AI 问一下还是挺好用的；</li>
+<li><a class="link" href="https://www.digitalocean.com/community/tutorials/how-to-use-rsync-to-sync-local-and-remote-directories"  target="_blank" rel="noopener"
+    >rsync tutorial</a>: 一个简单的 rsync walkthrough，帮了我很多；</li>
+</ul>
+<!-- - [](https://www.digitalocean.com/community/tutorials/how-to-use-rsync-to-sync-local-and-remote-directories) -->
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/linux/">Linux</a>
+        
+            <a href="/tags/shell/">Shell</a>
+        
+            <a href="/tags/note/">Note</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            最后更新于 Jul 22, 2025 10:25 CST
+        </span>
+    </section></footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+	const mainArticleElement = document.querySelector(".main-article");
+        renderMathInElement(mainArticleElement, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/c-vector-%E7%9A%84%E5%86%85%E5%AD%98%E5%B8%83%E5%B1%80/">
+        
+        
+            <div class="article-image">
+                <img src="/p/c-vector-%E7%9A%84%E5%86%85%E5%AD%98%E5%B8%83%E5%B1%80/Bamboo_Reimu.152def03936fb3dae4dc1841bf28c5f4_hu_afa6b1a10c5e1fff.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post C&#43;&#43; Vector 的内存布局"
+                        
+                        data-hash="md5-FS3vA5Nvs9rk3BhBvyjF9A==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">C&#43;&#43; Vector 的内存布局</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/%E6%9C%89%E9%99%90%E5%85%83%E6%96%B9%E6%B3%95%E7%AC%94%E8%AE%B0/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">有限元方法笔记</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/Reimu_Water.91d9dda02b8b7b40aac8bc5f5081da4b_hu_c778cb22896e78f0.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 从零开始的 Arch Linux 安装"
+                        
+                        data-hash="md5-kdndoCuLe0CqyLxfUIHaSw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">从零开始的 Arch Linux 安装</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/%E5%85%B3%E4%BA%8E%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E8%BD%AF%E4%BB%B6%E7%9A%84%E8%AE%BE%E6%83%B3/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="/star%20river.png" loading="lazy" data-key="" data-hash="/star river.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">关于相场模拟软件的设想</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-v/">
+        
+        
+            <div class="article-image">
+                <img src="/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-v/Skadi.9084df9cb625e786ad7339ca6c1a830e_hu_586e2e9f7ff909f6.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Phase Field: 相场模拟学习笔记 V"
+                        
+                        data-hash="md5-kITfnLYl54atcznKbBqDDg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Phase Field: 相场模拟学习笔记 V</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo="A-moment096/A-moment096.github.io"
+        issue-term="title"
+        
+        label="Comment"
+        
+        crossorigin="anonymous"
+        async
+        >
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+<script>
+    let utterancesLoaded = false;
+
+    function setUtterancesTheme(theme) {
+        let utterances = document.querySelector('.utterances iframe');
+        if (utterances) {
+            utterances.contentWindow.postMessage(
+                {
+                    type: 'set-theme',
+                    theme: `github-${theme}`
+                },
+                'https://utteranc.es'
+            );
+        }
+    }
+
+    addEventListener('message', event => {
+        if (event.origin !== 'https://utteranc.es') return;
+
+        
+        utterancesLoaded = true;
+        setUtterancesTheme(document.documentElement.dataset.scheme)
+    });
+
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (!utterancesLoaded) return;
+        setUtterancesTheme(e.detail)
+    })
+</script>
+
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2025 A Moment&#39;s Rest
+    </section>
+    
+    <section class="powerby">
+        
+            <a href="https://icp.gov.moe/?keyword=20257072" target="_blank">萌ICP备20257072号</a> <br/>
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.0c443a60c9013404d9e580f6b033ad778f8484d8953a69c4fcee9971c4870ed3.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+<script
+    src="https://cdn.jsdelivr.net/gh/zhixuan2333/gh-blog@v0.1.0/js/nprogress.min.js"
+    integrity="sha384-bHDlAEUFxsRI7JfULv3DTpL2IXbbgn4JHQJibgo5iiXSK6Iu8muwqHANhun74Cqg"
+    crossorigin="anonymous"
+></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/zhixuan2333/gh-blog@v0.1.0/css/nprogress.css"
+    integrity="sha384-KJyhr2syt5+4M9Pz5dipCvTrtvOmLk/olWVdfhAp858UCa64Ia5GFpTN7+G4BWpE"
+    crossorigin="anonymous"
+/>
+<script>
+    NProgress.start();
+    document.addEventListener("readystatechange", () => {
+        if (document.readyState === "interactive") NProgress.inc(0.8);
+        if (document.readyState === "complete") NProgress.done();
+    });
+</script>
+    </body>
+</html>

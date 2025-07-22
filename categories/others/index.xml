@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Others on A Moment's Rest</title><link>https://a-moment096.github.io/categories/others/</link><description>Recent content in Others on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><atom:link href="https://a-moment096.github.io/categories/others/index.xml" rel="self" type="application/rss+xml"/><item><title>安装 Arch Linux，但是笔记本物理机</title><link>https://a-moment096.github.io/p/%E5%AE%89%E8%A3%85-arch-linux%E4%BD%86%E6%98%AF%E7%AC%94%E8%AE%B0%E6%9C%AC%E7%89%A9%E7%90%86%E6%9C%BA/</link><pubDate>Fri, 02 May 2025 16:12:04 +0800</pubDate><guid>https://a-moment096.github.io/p/%E5%AE%89%E8%A3%85-arch-linux%E4%BD%86%E6%98%AF%E7%AC%94%E8%AE%B0%E6%9C%AC%E7%89%A9%E7%90%86%E6%9C%BA/</guid><description>&lt;img src="https://a-moment096.github.io/p/%E5%AE%89%E8%A3%85-arch-linux%E4%BD%86%E6%98%AF%E7%AC%94%E8%AE%B0%E6%9C%AC%E7%89%A9%E7%90%86%E6%9C%BA/imgs/Alice.png" alt="Featured image of post 安装 Arch Linux，但是笔记本物理机" />&lt;p>&lt;em>之前在虚拟机上面装的 Arch Linux 根本不过瘾（搞笑，你根本就没更完(❌)），这次就把自己的小轻薄改成 Arch 好了。顺带，也记录一下实体机上安装可能会遇到的坑？&lt;/em>&lt;/p>
+&lt;p>&lt;em>头图出自 R Sound Design 的新曲 《アリス？》，一首很轻快的 V曲~&lt;/em>&lt;/p>
+&lt;!--
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+&lt;style type="text/css">.dark-theme .aplayer{background:#212121}.dark-theme .aplayer.aplayer-withlist .aplayer-info{border-bottom-color:#5c5c5c}.dark-theme .aplayer.aplayer-fixed .aplayer-list{border-color:#5c5c5c}.dark-theme .aplayer .aplayer-body{background-color:#212121}.dark-theme .aplayer .aplayer-info{border-top-color:#212121}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-title{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-author{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time{color:#eee}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path{fill:#eee}.dark-theme .aplayer .aplayer-list{background-color:#212121}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb{background-color:#999}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover{background-color:#bbb}.dark-theme .aplayer .aplayer-list li{color:#fff;border-top-color:#666}.dark-theme .aplayer .aplayer-list li:hover{background:#4e4e4e}.dark-theme .aplayer .aplayer-list li.aplayer-list-light{background:#6c6c6c}.dark-theme .aplayer .aplayer-list li .aplayer-list-index{color:#ddd}.dark-theme .aplayer .aplayer-list li .aplayer-list-author{color:#ddd}.dark-theme .aplayer .aplayer-lrc{text-shadow:-1px -1px 0 #666}.dark-theme .aplayer .aplayer-lrc:before{background:-moz-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:-webkit-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:linear-gradient(to bottom, #212121 0%, rgba(33,33,33,0) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#212121', endColorstr='#00212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc:after{background:-moz-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:-webkit-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:linear-gradient(to bottom, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#00212121', endColorstr='#cc212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc p{color:#fff}.dark-theme .aplayer .aplayer-miniswitcher{background:#484848}.dark-theme .aplayer .aplayer-miniswitcher .aplayer-icon path{fill:#eee}&lt;/style>
+&lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js">&lt;/script>
+&lt;script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js">&lt;/script>&lt;meting-js auto="https://music.163.com/#/song?id=750876" theme="#2980b9" loop="none">&lt;/meting-js> -->
+&lt;p>&lt;em>很可惜 网易云/QQ音乐 都暂时没有这首歌，所以只能劳驾移步B站欣赏了。一旦有更新就会贴在这里的&lt;/em>&lt;/p>
+&lt;p>&lt;em>B站&lt;a class="link" href="https://www.bilibili.com/video/BV1UtV5zqEjC/" target="_blank" rel="noopener"
+>投稿&lt;/a>&lt;/em>&lt;/p>
+&lt;h2 id="引子我好急怎么耗电这么大">引子：我好急，怎么耗电这么大
+&lt;/h2>&lt;blockquote>
+&lt;p>亲爱的笔记本：&lt;/p>
+&lt;p style="text-indent: 50px">插电如面，自从我们相逢已有一年有余。上次见面，仿佛还是上次。传统派的我那时我刚刚给你刷上 Windows 10 系统，因为 Windows 11 的审美实在是在狠狠强碱我的眼睛。我们一路克服了艰难险阻，安装了各种乱七八糟的驱动，最后终于是让你成功跑了起来。虽然你的内存不大，硬盘不多，CPU 一般，显卡集成，但你要相信我，我心里面是有你的。&lt;/p>
+&lt;p style="text-indent: 50px">然而，你身上的 Windows 10 虽然让我倍感熟悉，你的耗电量实在是高得吓人。我接受不了一旦不插电就几乎是和时间赛跑的工作流。我将这一切归咎于可恶的微软，可恶的 Windows 10。这不是你的错，但是我还是想告诉你：你马上就会搭载一个新的系统。她轻便灵巧的同时，又大胆火辣，相信你一定会和她打成一片的。&lt;/p>
+&lt;p align="right">Love, &lt;/p>
+&lt;p align="right">A Moment&lt;/p>&lt;/blockquote>
+&lt;p>美丽的五一假期，不折腾点狠活儿实在是说不过去。看着越来越不顺眼的 Windows 10 笔记本，以及我的心逐渐被 Linux（特指 Arch Linux）所俘获，我决定：干掉 Windows 10, 彻底迎接 Arch Linux。想必有了之前安装 Arch Linux 的经验，这次的安装之旅肯定是一马平川了。开始吧。&lt;/p>
+&lt;h2 id="准备资料备份以及准备启动盘">准备：资料备份以及准备启动盘
+&lt;/h2>&lt;p>首先肯定是先把电脑上已有的资料都备份好。其实说实话没太多文件，主要是两个没打完的 Gal 吧（心虚），因为大部分的文件都其实已经搞到台式机上面了。一开始是想着把这些文件放在一块精心规划的小硬盘上，安装的时候不格式化就行了，但是感觉还是有点点点点危险，所以干脆还是挪到另一台机器上，把这台小本的硬盘全部格式化了得了。不过也许我应该考虑更加智能的备份方案？算了，以后再考虑（挖坑）。&lt;/p>
+&lt;p>其次就是准备启动盘。本来这次想要换一种安装媒介来着，比如光盘？（没错我有光盘刻录机，为了听 CD 买的 ()），结果还是嫌麻烦，放弃了。给虚拟机安装的时候不是已经有了镜像了吗？为什么不直接用呢？至于为什么没有下载最新的（最新的就是昨天刚出的，5月1日版本），是因为我刚准备下载的时候看到最上面一行小字：&lt;/p>
+&lt;p>&lt;img src="https://a-moment096.github.io/p/%E5%AE%89%E8%A3%85-arch-linux%E4%BD%86%E6%98%AF%E7%AC%94%E8%AE%B0%E6%9C%AC%E7%89%A9%E7%90%86%E6%9C%BA/imgs/no_need_for_download.png"
+width="1277"
+height="133"
+srcset="https://a-moment096.github.io/p/%E5%AE%89%E8%A3%85-arch-linux%E4%BD%86%E6%98%AF%E7%AC%94%E8%AE%B0%E6%9C%AC%E7%89%A9%E7%90%86%E6%9C%BA/imgs/no_need_for_download_hu_7fda391d774b472e.png 480w, https://a-moment096.github.io/p/%E5%AE%89%E8%A3%85-arch-linux%E4%BD%86%E6%98%AF%E7%AC%94%E8%AE%B0%E6%9C%AC%E7%89%A9%E7%90%86%E6%9C%BA/imgs/no_need_for_download_hu_d075c299b95d14fd.png 1024w"
+loading="lazy"
+alt="安装好再更新不挺好？（滚挂警告）"
+class="gallery-image"
+data-flex-grow="960"
+data-flex-basis="2304px"
+>&lt;/p>
+&lt;p>So, why not?&lt;/p>
+&lt;p>镜像依旧是用 &lt;code>rufus&lt;/code> 烧录到陪伴了我6+年的小U盘上，什么格式化之类的 &lt;code>rufus&lt;/code> 会自动帮我搞好的。中间有个小插曲好像是 &lt;code>rufus&lt;/code> 不太支持最新的 syslinux 版本，需要额外下载两个小库。无所谓（）我选择相信。&lt;/p>
+&lt;p>到这里，基本上就已经准备好安装工作了。相信根据这些东西，来个老手估计三下五除二就安装好整个系统了。当然，我是新手，还是一步步来吧。这大概也是这篇（以及上一篇）文章的目的：记录自己安装系统时蠢蠢的样子。&lt;/p>
+&lt;h2 id="开始启动安装引导咯">开始：启动安装引导咯~
+&lt;/h2>&lt;h3 id="先进安装引导再说吧">先进安装引导再说吧
+&lt;/h3>&lt;p>激动的心，颤抖的手，插入U盘后从U盘启动会不会有？&lt;/p>
+&lt;p>太坏了，secure boot 没关，没有。上网搜索我的笔记本的 BIOS 设置方法，Redmi Book 14 需要开机后按下 F2 进入 BIOS，然后在启动设置里 &lt;strong>先设置管理员密码&lt;/strong> 之后才能设置是否关闭安全启动。有一点点脱裤子放屁的感觉……算了。总之就是进来了，进到安装引导了。这下真是激动的心，颤抖的手了。&lt;/p>
+&lt;p>（由于屏幕反光，就不拍屏了，其实和上次的屏幕一模一样咯）&lt;/p>
+&lt;p>这次就得格外小心了：这可不是虚拟机。虽然说搞砸了也能重来（电脑上没什么别的重要文件了，打算全部格式化），但是一想到是实体机，还是有一些些的紧张。&lt;/p>
+&lt;p>&lt;del>其实这篇文章是在我进来安装引导之后才开始动笔写的。一开始没打算写来着，不过鉴于好久没有更新博客了，还是水一篇吧（）&lt;/del>&lt;/p>
+&lt;h3 id="还是先进行前期验证和网络配置">还是先进行前期验证和网络配置
+&lt;/h3>&lt;p>这次由于有上次安装的记录，所以其实可以直接参考以前写的那个东西。感谢代码高亮，我立马就敲下了 &lt;code>localectl list-keymaps&lt;/code>。然而：没什么卵用。Bro，你就用的是美式键盘呀！？还列出来看个der呀……算了，不管了。不过验证启动模式也许还是有必要的？依旧，&lt;code>cat /sys/firmware/efi/fw_platform_size&lt;/code>，结果是&lt;code>64&lt;/code>。这个应该是说我的启动模式的系统是64位的吧？&lt;/p>
+&lt;p>随后是验证网络。这步我其实是有点心虚来着，会不会这个安装引导不支持我的电脑网卡？害怕。但还是先试一试吧。&lt;/p>
+&lt;p>从结果来看，我有一个 &lt;code>lo&lt;/code>，&lt;em>virtual loopback interface&lt;/em>，不管；一个 &lt;code>wlan0&lt;/code>，看来是认出我的无线网卡了，好耶。然而它的 &lt;code>state&lt;/code> 是 &lt;strong>DOWN&lt;/strong>，emmm……&lt;/p>
+&lt;p>（找找办法……）&lt;/p>
+&lt;p>太愚蠢了，&lt;strong>DOWN&lt;/strong>不就是说我没连上网嘛…… 不过根据 ArchWiki，还是先用 &lt;code>rfkill&lt;/code> 命令检查我的无线网卡是不是被 &lt;em>block&lt;/em> 了（屏蔽？也许？），好消息是没有；接着就使用 &lt;code>iwctl&lt;/code> 工具进行联网。这个步骤我感觉有一点点繁琐，先要在交互界面使用 &lt;code>device list&lt;/code> 列出设备，很幸运我这里是直接 &lt;code>wlan0 powered on&lt;/code> 状态，这里的 &lt;code>wlan0&lt;/code> 就是我的设备名了；接着就用 &lt;code>station wlan0 scan&lt;/code> 扫描可用网络，然后用 &lt;code>station wlan0 get-networks&lt;/code> 列出可用网络。这里有个很神奇的点：能连上我的校园网吗？用 &lt;code>station wlan0 connect CSU-WIFI&lt;/code> 试试。这里 &lt;code>CSU-WIFI&lt;/code> 就是我们的校园网了。好消息是成功了，不知道怎么做到的。本身链接我们学校校园网是需要使用一个网页进行验证的，不过也许是因为我在 Windows 系统上刚刚连过一次网络，所以成功重连上了？不清楚，不过也算可喜可贺。最后在用 &lt;code>exit&lt;/code> 退出 &lt;code>iwctl&lt;/code> 的交互界面后再 &lt;code>ip link&lt;/code> 一下检查是否连上：没问题。绿色的 &lt;code>UP&lt;/code> 真好看，诶嘿。&lt;/p>
+&lt;p>动态IP应该是自动配置的（ArchWiki讲是 &lt;em>out of box&lt;/em>），所以不管。也许后面我会想搞个静态的？唉，不懂网络真头痛呀。不管不管。直接 &lt;code>ping archlinux.org&lt;/code> 试试。&lt;/p>
+&lt;p>烂了，没有数据返回。烂完了。&lt;/p>
+&lt;p>（找找办法x2……）&lt;/p>
+&lt;p>顺从。又不是没有别的 WIFI 能用。直接连上办公室 WIFI好了。当然，这里也贴一下我参考了的连接校园网的方法的博文：&lt;a class="link" href="https://www.cnblogs.com/holaworld/p/17839616.html" target="_blank" rel="noopener"
+>链接1&lt;/a> 以及 &lt;a class="link" href="https://www.bilibili.com/opus/852262124483772422" target="_blank" rel="noopener"
+>链接2&lt;/a>。&lt;/p>
+&lt;p>最后网络这里还有要设置一下系统时间。用 &lt;code>timedatectl&lt;/code> 就可以。 感谢 &lt;code>zsh&lt;/code> 和这些工具带上的自动补全，&lt;code>timedatectl --help&lt;/code> 一下，跟着感觉走，最后就得到了 &lt;code>timedatectl set-timezone Asia/Shanghai&lt;/code> 了。相当简单。&lt;/p>
+&lt;h3 id="再见我的旧文件们">再见，我的（旧）文件们
+&lt;/h3>&lt;p>又到了每次装系统最喜欢也最提心吊胆的磁盘分区了。总有一种破后而立的感觉，感觉在磁盘格式化之后，这台电脑就变成全新的了诶。还是一样，&lt;code>fdisk -l&lt;/code> 列一下可用分区。一下出来了一堆呀，删了删了，全部删了。&lt;/p>
+&lt;p>又看到一次我的硬盘大小，只有 476.94 GiB，Sad。不过，轻薄本，出差顺带干活用的，无所谓了吧？后面再考虑加容量之类的吧，也许还可以考虑直接换台新本（好奢侈（））。&lt;/p>
+&lt;p>开始分区吧，直接 &lt;code>fdisk /dev/nvme0n1&lt;/code> 进入交互模式 （这里我的硬盘只有一个，就是在 &lt;code>fdisk -l&lt;/code> 里列出的 &lt;code>/dev/nvme0n1&lt;/code>，所以就把它传入参数就好）。由于硬盘太小，我也对文件管理没有什么特别多的想法，干脆就是一个 &lt;code>SWAP&lt;/code> 一个 &lt;code>/&lt;/code> 好了。至于分区表，依旧选用 GPT 分区表。貌似 GPT 的功能更加强大？已经完全超越了老旧的 MBR？其实按理来说我应该先多了解一下这些东西再下判断来着，不过这里就还是先相信互联网吧（）&lt;/p>
+&lt;p>这里搞了个大乌龙：我不小心把启动盘 &lt;code>/dev/sda&lt;/code> 给分区了。有一说一，挺愚蠢的……目前先这么搞吧，安装引导也没断，后面不碰它应该就没问题，吧？下次还是要注意：根据 ArchWiki 上的指导，实际上应该先将分区表进行备份才对，命令是 &lt;code>sfdisk -d /dev/sda &amp;gt; sda.dump&lt;/code>（这里 &lt;code>/dev/sda&lt;/code> 是要备份分区表的硬盘）。下次一定注意，唉。&lt;/p>
+&lt;p>接下来就是使用 &lt;code>mkfs&lt;/code> 等进行文件系统格式化了。这里很多人推荐 &lt;code>Btrfs&lt;/code>，所谓的 &lt;em>B Tree File System&lt;/em>（我一开始以为是 &lt;em>Better File System&lt;/em> 来着），因为它貌似是支持自动压缩和别的一些高级功能，还有快照之类，很方便个人用户使用。这次就不用传统的 &lt;code>ext4&lt;/code> 了，尝尝鲜。使用命令 &lt;code>mkfs.btrfs /dev/nvme0n1p1&lt;/code> 就可以把第一个分区格式化为 Btrfs 格式了。我还留了一个分区作为 Swap 使用，大小设置为了8G。要创建 Swap 分区只需要 &lt;code>mkswap /dev/nvme0n1p2&lt;/code> 即可。&lt;/p>
+&lt;p>分好了区，就需要挂载文件系统了。用 &lt;code>mount /dev/nvme0n1p1 /mnt&lt;/code> 就可以。Swap 则使用 &lt;code>swapon /dev/nvme0n1p2&lt;/code> 就行了。这样一来，我们就在硬盘上做好了准备，马上就要把 Arch Linux 安装在这个临时挂载于 &lt;code>/mnt&lt;/code> 的主硬盘了。&lt;/p>
+&lt;h2 id="安装冲刺冲刺冲刺">安装：冲刺！冲刺！冲刺！
+&lt;/h2>&lt;p>Arch Linux 的灵魂之一也许就是 &lt;code>pacman&lt;/code> 包管理器了。安装 Arch Linux 实际上也是使用 Pacman 进行的。因此首先就是对 Pacman 进行必要的配置。&lt;/p>
+&lt;p>首先还是要选择镜像，可选的镜像站放在了 &lt;code>/etc/pacman.d/mirrorlist&lt;/code> 里。这里直接借鉴上次安装的经验好了，使用 &lt;code>reflector --latest 10 --sort rate&lt;/code> 来排出最快的10个服务器。结果出来之后可以考虑在这条命令的后面加上 &lt;code>--save /etc/pacman.d/mirrorlist&lt;/code> 来保存下来。当然，在这之前（吸取刚刚的教训）我把原文件复制了一份作为备份。&lt;/p>
+&lt;p>下来就是安装必要的包，命令为 &lt;code>pacstrap -K /mnt base linux linux-firmware&lt;/code>。这里的 &lt;code>-K&lt;/code> 是指在目标处生成一空的 密钥环。（至于密钥环是什么，对不起，我不知道。后面会学的（））&lt;/p>
+&lt;p>经过漫长的等待，我的安装它：报错了。先是安装的特别慢，可能是因为源的问题吧，我还是尝试了 &lt;code>reflector --country China --age 12 --sort rate&lt;/code> 这个命令获取了国内的镜像源；后面是变快了，但是突然又报 &lt;em>error: GPGME error: No data&lt;/em>，不管我怎么操作 &lt;code>pacman&lt;/code>，都没有用。我估计是密钥环之类的东西坏掉了吧，看来是前面对U盘瞎JB分区导致的。这下只能关机拔掉U盘，重新烧录，格式化电脑硬盘然后重新安装。好在这次安装地很快，这个插曲也算是过去了吧。&lt;/p>
+&lt;p>现在安装的应该是一些最最基础的软件包。为了安装好后有一些别的功能能用（比如联网），还是需要再安装一些别的软件包。这里我计划是安装 &lt;code>vim&lt;/code> ，&lt;code>dhcpcd&lt;/code> 以及 &lt;code>networkmanager&lt;/code>。不过这些就等到之后 &lt;code>chroot&lt;/code> 后再搞吧。&lt;/p>
+&lt;p>(安装中……)&lt;/p>
+&lt;hr>
+&lt;p>&lt;em>我们就当这个傻孩子搞了一通之后算是安装好了吧，其实中间应该还有一些插曲，然而他安装好之后真的一路冲刺，就安装完了抱回宿舍继续折腾了。等他再想起来写这个博客的时候已经过了10天了。原谅他吧，好多细节他也记不清了。&lt;/em>&lt;/p>
+&lt;hr>
+&lt;p>这下好了，安装成功咧，下面怎么装修好呢？&lt;/p>
+&lt;h2 id="装修还是先试试-kde吧顺带处理一下输入法字体网络的坑">装修：还是先试试 KDE吧，顺带处理一下输入法、字体、网络的坑
+&lt;/h2>&lt;p>&lt;em>后面的内容都是这个傻孩子回忆出来的，很多都不对劲了（也许），请谨慎参考&lt;/em>&lt;/p>
+&lt;h3 id="不知道先看看-kde-plasma">不知道，先看看 KDE Plasma
+&lt;/h3>&lt;p>直接照搬上次安装的 KDE Plasma 的流程了。安装的东西，设置的玩意儿，几乎一模一样。可能区别是 &lt;code>loacle&lt;/code> 的设置和上次相比更复杂一些？记不太清楚了。主要要处理的问题就是，每次使用 &lt;code>man&lt;/code> 的时候，都会报 &lt;code>locale&lt;/code> 的设置错误问题。解决方法也很简单：照着 ArchWiki 的 Installation Guide 的地区设置那里，再重新搞一次。剩下的什么设置 Taskbar 呀设置 Terminal 什么的，基本都没什么变化。&lt;/p>
+&lt;p>KDE Plasma 很不错的一点就是，它几乎就是开箱即用的，除了两个很重要但是没有强制安装的东西：文件管理器和终端模拟器。理论上讲，应该是用同属 KDE 的 &lt;code>Dolphin&lt;/code> 和 &lt;code>Konsole&lt;/code> 的，这样能获得最好的体验（也许），然而在体验过 &lt;code>Konsole&lt;/code> 略显（真的只是略显）老旧的 UI 之后，我还是选择了使用 &lt;code>kitty&lt;/code>。它能原生支持查看图片，算是一个杀手锏级别的功能了吧，其次就是它自带多标签的功能，分栏也很方便，用着挺顺手的。至于文件管理器，目前还没有什么想法，先用着 &lt;code>Dolphin&lt;/code> 好了。&lt;/p>
+&lt;h3 id="输入法还是使用小企鹅fcitx5以及中州韵rime">输入法：还是使用小企鹅（fcitx5）以及中州韵（Rime）
+&lt;/h3>&lt;p>其实应该直接说“同上”或者什么的，因为实际上最后的效果和之前在虚拟机上安装的过程是一样的，除了最后我没有导入在 Winodws 上已经配置好的配置文件，仅此而已。然而这个过程还是感觉有一点坑呀，特别是不停地纠结输入法设置到底在哪里之类的问题的时候。实际上，根据 fcitx5 的文档，在使用 Wayland 的时候，直接按照教程设置变量之后重启电脑，就可以在输入法那里看到效果了。（也许不需要重启，只需要登出后重新登录就可以？）&lt;/p>
+&lt;p>实际上默认的中州韵已经挺好用了。然而问题是，它的默认输入是中文，然而在 Linux 的命令行里几乎很少用到中文。每次的误输入都能让人燃气无名怒火，解决方案也很简单：把英文输入法放在首选。这里不是说让中州韵的英文成为首选，而是再装一个默认的英文输入法，并且把它放在首位。实际上我在 Winodws 上也是这么设置的。日用挺舒服。&lt;/p>
+&lt;h3 id="网络科学上网不容易呀">网络：科学上网不容易呀
+&lt;/h3>&lt;p>在孜孜不倦的努力以及不厌其烦的打扰 AI 下，我成功找到了在我的小破本上科学上网的方法。这里不多讲，但是核心只有一个：使用 TUN 模式。启用 TUN 之后，一切都对了，全对！感谢 AI，感谢 DeepSeek，感谢 ChatGPT！伟大，无需多言。&lt;/p>
+&lt;h3 id="字体照着教程开抄">字体：照着教程开抄
+&lt;/h3>&lt;p>之前在虚拟机上进行安装的时候实际上没太注意字体的问题。这次因为是日常自用，还是留意了一下，毕竟每天看着奇形怪状的汉字真的很别扭。字体的设置基本就是参考 &lt;a class="link" href="https://catcat.cc/post/2021-03-07/" target="_blank" rel="noopener"
+>这篇博文&lt;/a>，谢谢你，大佬。不过也要注意，读的时候（或者，抄的时候）还是要仔细一些，有一些设置实际上不是最好的设置，可以用出现在底下的更好的配置替代。也算是挡住了一些些伸手党？也许？&lt;/p>
+&lt;h3 id="指纹呜呜呜呜呜怎么硬件还能不开源呀">指纹：呜呜呜呜呜怎么硬件还能不开源呀
+&lt;/h3>&lt;p>我的笔记本最让我自豪的一点就是她有非常好用的指纹识别。这个本来应该没什么要紧的，但是想到之后就很像折腾一下。特别是回回输入密码，真的有点累。虽然这个本是我自己用，里面也没啥东西，但是还是不太想无密码裸奔。而如果有了指纹，一切都变得熟悉了。啊，那该是多么美妙呀。&lt;/p>
+&lt;p>直到我花了两个小时多把指纹识别都配置的差不多了的时候，我才发现，愚蠢的小米旗下的 Redmi Book 14 使用的指纹识别模块是闭源的，也没有相关的逆向工程尝试，现在没有任何驱动能启用它。&lt;/p>
+&lt;p>泪就这样拉了出来。特别是愚蠢的 Firefox 还始终坚持认为我的笔记本是带了可用的指纹识别的，想生成个 Github 的 token 都不行，非得要我按指纹。我按个大头鬼。&lt;/p>
+&lt;p>唉。&lt;/p>
+&lt;h2 id="收尾又是一篇流水账但是还是做一些总结">收尾：又是一篇流水账，但是还是做一些总结
+&lt;/h2>&lt;p>感觉这篇没写什么正经东西，又是纯粹地做了一些记录，然后就是磨磨叽叽自说自话了。鉴于此，我决定总结一下一路遇到的主要的坑在哪里，以及安装的大致流程，做一个 quick reference。&lt;/p>
+&lt;h3 id="quick-reference-installation">Quick Reference: Installation
+&lt;/h3>&lt;p>以下是从最初的准备工作到得到可用系统的过程：&lt;/p>
+&lt;ol start="0">
+&lt;li>准备启动盘，备份，barabara&lt;/li>
+&lt;li>加载系统，从启动盘启动，进入 shell，执行基本检查（系统架构，键盘设置，网络验证，时区设置……）&lt;/li>
+&lt;li>磁盘分区（重要）并进行格式化，挂载文件系统&lt;/li>
+&lt;li>检测 &lt;code>pacman&lt;/code> 镜像速度并选择，安装必要包（base, linux, linux-firmware）&lt;/li>
+&lt;li>&lt;code>chroot&lt;/code> 进挂载的文件系统，安装必要工具（网络管理，文本编辑器，pager，man-page）&lt;/li>
+&lt;li>设置 bootloader（重要且坑），需要仔细阅读文档&lt;/li>
+&lt;li>尝试重启并用 bootloader 启动，进入 &lt;code>tty1&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;h3 id="quick-reference-customization">Quick Reference: Customization
+&lt;/h3>&lt;p>以下是得到我目前使用的环境的部分配置过程：&lt;/p>
+&lt;ol start="0">
+&lt;li>安装好，保证能正确启动 Arch Linux&lt;/li>
+&lt;li>用 &lt;code>nmcli con up&lt;/code> 启动网络（后面发现可以用 &lt;code>nmtui&lt;/code>），保证网络畅通&lt;/li>
+&lt;li>添加 &lt;code>archlinuxcn&lt;/code> 源&lt;/li>
+&lt;li>执行更新，安装软件包。我安装了 &lt;code>vi&lt;/code>, &lt;code>sudo&lt;/code>, &lt;code>git&lt;/code>, &lt;code>eza&lt;/code>, &lt;code>zsh&lt;/code>, &lt;code>nvim&lt;/code>, &lt;code>kitty&lt;/code>, &lt;code>firefox&lt;/code> 等基础工具&lt;/li>
+&lt;li>安装 &lt;code>oh-my-zsh&lt;/code> 与 &lt;code>oh-my-posh&lt;/code>，导入已有配置，添加常用别名如 &lt;code>l&lt;/code>, &lt;code>la&lt;/code>, &lt;code>l.&lt;/code>, &lt;code>ls.&lt;/code> 等&lt;/li>
+&lt;li>安装窗口管理器，这里一开始使用 &lt;code>KDE plasma&lt;/code> 作为 “起码能用” 的桌面环境，以及套件 &lt;code>dolphin&lt;/code> 作文文件管理器&lt;/li>
+&lt;li>安装中文输入法 &lt;code>fcitx5-im&lt;/code> 以及 &lt;code>fcitx5-rime&lt;/code>，进行必要配置（XDG 配置等）&lt;/li>
+&lt;li>更改 &lt;code>localectl&lt;/code> 以便正常使用 &lt;code>man&lt;/code>&lt;/li>
+&lt;li>安装 &lt;code>yay&lt;/code> 以及尝试科学上网&lt;/li>
+&lt;/ol>
+&lt;h3 id="遇到的坑">遇到的坑：
+&lt;/h3>&lt;p>下面是花费时间比较多的部分，这里列举一下：&lt;/p>
+&lt;ol>
+&lt;li>分盘搞错盘了，本来内存是 nvme 结果分到 sda 了；&lt;/li>
+&lt;li>分盘的时候没想清楚到底该怎么分，瞎分最后还得重来&lt;/li>
+&lt;li>没有检查镜像速度导致龟速下载（唉，Arch Linux，必须依赖网络，可惜）&lt;/li>
+&lt;li>&lt;code>umount&lt;/code> 的时候没有 &lt;code>umount&lt;/code> 干净导致烂掉&lt;/li>
+&lt;li>&lt;code>mount&lt;/code> 的时候没有检查是否正确 &lt;code>mount&lt;/code> 到挂载点&lt;/li>
+&lt;li>忘记安装网络管理器，编辑器等等&lt;/li>
+&lt;li>没有正确设置 &lt;code>bootloader&lt;/code> (一定要读完 &lt;code>bootloader&lt;/code> 的 &lt;code>ArchWiki&lt;/code> 词条！)&lt;/li>
+&lt;li>没有搞好 &lt;code>localectl&lt;/code> 和 &lt;code>local&lt;/code>&lt;/li>
+&lt;li>安装 &lt;code>fcitx5&lt;/code> 之后不重启（记得感觉配好之后就重启试试）&lt;/li>
+&lt;/ol>
+&lt;p>希望这些总结的东西会帮到你吧，让这篇文章不是那么水。&lt;/p>
+&lt;h2 id="后记我一定是对-linux-有什么奇怪的幻想">后记：我一定是对 Linux 有什么奇怪的幻想
+&lt;/h2>&lt;blockquote>
+&lt;p>亲爱的 Arch Linux 笔记本：&lt;/p>
+&lt;p style="text-indent: 50px"> 终于，BTW, I USE ARCH!!! 谢谢你和我走过的一路。自从安装了 Arch Linux，你真的跑的飞快。我还没有回过神来，你就已经启动了。KISS 的原则，pacman 与 AUR 达成的简洁与丰富的平衡，滚动发行带来的刺激，这一切都太令人兴奋了。先进的 Arch Linux 已经完全地超越了老旧的 Windows！ &lt;/p>
+&lt;p style="text-indent: 50px"> 然而，也许我还是对你有太多的误会。装上 Arch Linux 的你没有变得更加省电，反而似乎更加费电了？我希望这是我没有搞好电池方案配置的锅，但是为什么你不能帮我搞好呢？我懂，我们 Linux 是讲究过生日先从办养鸡场和农场开始的，但是为什么呢？还有，为什么搞不定闭源驱动呢？不能上兼容层吗？说起来就气，怎么你的配置文件还是能变得和 Windows 一样杂乱不堪？怎么软件包随处大小便的时候你还是不管管？道理我都懂，但是系统管理员也不能每天都被埋在这些东西里面吧？还有呀……&lt;/p>
+&lt;p align="middle"> -- 此处省略牢骚 2000 字 -- &lt;/p>
+&lt;p style="text-indent: 50px"> 但是，你懂的，你可是 Linux，对吧？你已经是一个成熟的操作系统了，应该学会自己面对这些问题了，对吧？
+&lt;p align="right">Yours, &lt;/p>
+&lt;p align="right">A Moment&lt;/p>&lt;/blockquote>
+&lt;p>谢谢你能看到这里。看完这一大堆废话，说实话也挺累的。如果这些整活儿的内容让你能开心一下，那就太好了。最后，一如既往，就祝您身心健康吧。&lt;/p></description></item><item><title>First Blog: 搭建这个博客</title><link>https://a-moment096.github.io/p/first-blog-%E6%90%AD%E5%BB%BA%E8%BF%99%E4%B8%AA%E5%8D%9A%E5%AE%A2/</link><pubDate>Fri, 01 Nov 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/p/first-blog-%E6%90%AD%E5%BB%BA%E8%BF%99%E4%B8%AA%E5%8D%9A%E5%AE%A2/</guid><description>&lt;img src="https://a-moment096.github.io/p/first-blog-%E6%90%AD%E5%BB%BA%E8%BF%99%E4%B8%AA%E5%8D%9A%E5%AE%A2/Reimu.png" alt="Featured image of post First Blog: 搭建这个博客" />&lt;p>简单记录一下自己搭建博客的经历。&lt;/p>
+&lt;h2 id="begin-好想搭博客">Begin: 好想搭博客
+&lt;/h2>&lt;p>网上高强度冲浪的过程中，发现很多人都有自己的博客，特别是在读过几篇博文之后，对会搭建博客的大佬的艳羡之情愈发激烈，同时也很想在网上
+搭一个自己的小窝，记录一下自己的学习和生活（以便于跻身大佬的行列（在心理上））。 于是，在若干的纠结与选择之后，决定尝试用 Hexo + GitHub pages 的方式
+搭建一个自己的博客。&lt;/p>
+&lt;h2 id="try初试-hexo">Try：初试 Hexo
+&lt;/h2>&lt;p>其实在10月份左右的时候，我就已经尝试开始搭建博客了。但是网上教程纷繁复杂，Hexo的文档貌似也很久没有更新了，在写完 About 之后
+便陷入了各种方面的自定义，然后失败循环，结果便是迟迟没有推进博客搭建。期间找到过一个很喜欢的主题，结果因为中英文混排导致字符间距过大的问题，
+一怒之下怒删文件。结果便是把搭建博客的计划一拖再拖。（其实还是没有找到合适的喜欢的主题:P ）&lt;/p>
+&lt;p>不过10月份失败的经历也算是一点点积累，给了我一点关于 YAML 和 TOML 的知识储备，以及让我（也许）学会了如何高效地搜索教程。不算太亏。&lt;/p>
+&lt;h2 id="again再试-hexo">Again：再试 Hexo
+&lt;/h2>&lt;p>转眼到了10月底，准确来讲就是昨天，10月31日。心血来潮的我再次向Hexo博客发起冲击。然而拦住我的不只是又没有找到好看的主题（这次是按照Github
+的Star数选的，也许是我审美太小众？），还有烦人的网络问题。一会儿是用 &lt;code>npm&lt;/code> 拉取不到内容，一会儿又是 &lt;code>git&lt;/code> 连接不到仓库。虽然后面网上搜索到
+是我科学上网姿势不对，需要跑全局，并且 &lt;code>npm&lt;/code> 换成淘宝源(&lt;a class="link" href="https://npmmirror.com/" target="_blank" rel="noopener"
+>https://npmmirror.com/&lt;/a>)就可以轻松解决，然而接连的 Error 还是耗尽了我的耐心。&lt;/p>
+&lt;p>对吗？真的要搭博客吗？师兄这晚告诉我，可以考虑搞个微信公众号，要吗？&lt;/p>
+&lt;h2 id="-受不了hugo吧">?: 受不了，Hugo吧
+&lt;/h2>&lt;p>还是不想搞公众号，感觉太公众了。虽然也有博客的功能，但是我的主题这块儿谁来给我补呀（？）。是时，我又想起昨晚网上冲浪时发现的另一个构建框架：
+&lt;em>Hugo&lt;/em>。于是当机立断，立刻冲向 Github 看看有什么好的主题，最后便相中了这款 &lt;strong>stack&lt;/strong>。简约界面深得我意的同时，又满足了我对页面版式的需求（好怪哦）。
+最重要的时，这个主题的模板目录结构很清晰！我也是摸索着添加了几个icon后配置出了令我满意的结果。感谢你，&lt;a class="link" href="https://jimmycai.com/" target="_blank" rel="noopener"
+>Jimmy Cai&lt;/a>!&lt;/p>
+&lt;h2 id="end-好耶">End: 好耶
+&lt;/h2>&lt;p>第一次搭建博客，踩的坑自己觉得不算少。不过大部分的坑都是因为不熟悉前端造成的。啊，要是我是一个搞计科软工前端XXX的学生那该多好啊，可惜，改不得。
+而且另一个角度来讲，踩坑也是一种学习过程嘛。日后也许会往博客上加点新的玩意儿，搞得更花哨一些~&lt;/p>
+&lt;p>还有一件事让我背后直冒冷汗，在部署页面的时候犯蠢把github上的所有我自己的改动全给删了，差点以为全都找不回来了……好在 GitHub Desktop 在
+Discard Stash 的时候是把改动文件全都删除到回收站，这才找回来这些配置。Git 操作还是要小心呀。&lt;/p>
+&lt;p>也许会有人问我为什么花了大把时间在纠结主题上，说博客最重要的是内容。我也很同意内容为王的观点，但是用着不满意的主题，总感觉写起来不得劲儿。
+我比较相信 “工欲善其事，必先利其器”，反正是第一次搭博客，对主题的试错成本几乎是无限低 (不需要考虑迁移问题)，那么为何不多尝试不同的主题，
+一次配好一劳永逸呢？&lt;/p>
+&lt;p>So, that&amp;rsquo;s it. Thanks for reading~!&lt;/p></description></item></channel></rss>
