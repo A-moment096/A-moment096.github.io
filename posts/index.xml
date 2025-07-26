@@ -1,4 +1,242 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on A Moment's Rest</title><link>https://a-moment096.github.io/posts/</link><description>Recent content in Posts on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sat, 26 Jul 2025 12:05:07 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>微积分的符号</title><link>https://a-moment096.github.io/p/%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E7%AC%A6%E5%8F%B7/</link><pubDate>Thu, 24 Jul 2025 15:16:10 +0800</pubDate><guid>https://a-moment096.github.io/p/%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E7%AC%A6%E5%8F%B7/</guid><description>&lt;img src="https://a-moment096.github.io/p/%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E7%AC%A6%E5%8F%B7/Postscript.png" alt="Featured image of post 微积分的符号" />&lt;p>&lt;em>数学的一大特征大概就是多种多样的符号了吧。提到数学，大家总是能想起各种各样的公式，即便在我心目中，物理也许更能用各式各样的公式凸显自己的高深莫测，然而作为一种逻辑严密的学科，依旧少不了用各种符号来代指各种数学对象。本文就 &lt;strong>微积分&lt;/strong> 这一个子方向，浅谈这些风格迥异的记号，也方便接触不同领域的文献。&lt;/em>&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on A Moment's Rest</title><link>https://a-moment096.github.io/posts/</link><description>Recent content in Posts on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sat, 26 Jul 2025 12:14:48 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>上一个命令是什么？</title><link>https://a-moment096.github.io/p/%E4%B8%8A%E4%B8%80%E4%B8%AA%E5%91%BD%E4%BB%A4%E6%98%AF%E4%BB%80%E4%B9%88/</link><pubDate>Sat, 26 Jul 2025 20:09:18 +0800</pubDate><guid>https://a-moment096.github.io/p/%E4%B8%8A%E4%B8%80%E4%B8%AA%E5%91%BD%E4%BB%A4%E6%98%AF%E4%BB%80%E4%B9%88/</guid><description>&lt;img src="https://a-moment096.github.io/p/%E4%B8%8A%E4%B8%80%E4%B8%AA%E5%91%BD%E4%BB%A4%E6%98%AF%E4%BB%80%E4%B9%88/SEASIDE_SOLILOQUIES.png" alt="Featured image of post 上一个命令是什么？" />&lt;p>&lt;em>曾经总会好奇：怎么获取上一个命令呢？应该很简单才对吧？简单的搜索后，下面是我得到的结果，就记录一下吧&lt;/em>&lt;/p>
+&lt;p>&lt;em>头图出自 Orangestar 的专辑 &lt;strong>SEASIDE SOLILOQUIES&lt;/strong>, 好看又好听。所以这里贴曲就贴这个专辑的主打歌好了：一首 &lt;strong>Alice in 冷凍庫&lt;/strong>，希望你喜欢。&lt;/em>&lt;/p>
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+&lt;style type="text/css">.dark-theme .aplayer{background:#212121}.dark-theme .aplayer.aplayer-withlist .aplayer-info{border-bottom-color:#5c5c5c}.dark-theme .aplayer.aplayer-fixed .aplayer-list{border-color:#5c5c5c}.dark-theme .aplayer .aplayer-body{background-color:#212121}.dark-theme .aplayer .aplayer-info{border-top-color:#212121}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-title{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-author{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time{color:#eee}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path{fill:#eee}.dark-theme .aplayer .aplayer-list{background-color:#212121}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb{background-color:#999}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover{background-color:#bbb}.dark-theme .aplayer .aplayer-list li{color:#fff;border-top-color:#666}.dark-theme .aplayer .aplayer-list li:hover{background:#4e4e4e}.dark-theme .aplayer .aplayer-list li.aplayer-list-light{background:#6c6c6c}.dark-theme .aplayer .aplayer-list li .aplayer-list-index{color:#ddd}.dark-theme .aplayer .aplayer-list li .aplayer-list-author{color:#ddd}.dark-theme .aplayer .aplayer-lrc{text-shadow:-1px -1px 0 #666}.dark-theme .aplayer .aplayer-lrc:before{background:-moz-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:-webkit-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:linear-gradient(to bottom, #212121 0%, rgba(33,33,33,0) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#212121', endColorstr='#00212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc:after{background:-moz-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:-webkit-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:linear-gradient(to bottom, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#00212121', endColorstr='#cc212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc p{color:#fff}.dark-theme .aplayer .aplayer-miniswitcher{background:#484848}.dark-theme .aplayer .aplayer-miniswitcher .aplayer-icon path{fill:#eee}&lt;/style>
+&lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js">&lt;/script>
+&lt;script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js">&lt;/script>&lt;meting-js auto="https://music.163.com/#/song?id=458231453" theme="#2980b9" loop="none">&lt;/meting-js>
+&lt;h2 id="什么时候要用这个">什么时候要用这个？
+&lt;/h2>&lt;p>有时候我们写了一长串命令，比如有很麻烦的路径之类的，这时候我们可能会希望用某个符号来自动地填上命令里的某些参数。一个最常见的例子，当我要安装某些软件包的时候，偶尔会忘记加上 &lt;code>sudo&lt;/code> 来以管理员权限运行。这时候把上面的命令复制一遍再补上 &lt;code>sudo&lt;/code> 实在是太慢了，而按下上箭头后在把光标挪到第一行，最后补上 &lt;code>sudo&lt;/code> 总是感觉很累，手的移动距离感觉好远。除此之外，有时输入的一长串命令/参数并运行之后，我需要接着上面的参数继续运行别的命令，此时要是用命令行历史的话，就又得用光标定位之后，再删掉没有用的东西，最后再填上要替换的内容。这实在是太慢了。&lt;/p>
+&lt;p>好在这时候，我们还可以使用 &lt;code>zsh&lt;/code> 交互模式下的一个内置宏：使用 &lt;code>!&lt;/code>，感叹号，以及其对应的一些变体，来获取上个命令中的参数/整个命令等。下面就来介绍怎么使用吧。&lt;/p>
+&lt;h2 id="我需要取整个命令">我需要取整个命令
+&lt;/h2>&lt;h3 id="上个命令是什么">上个命令是什么？
+&lt;/h3>&lt;p>我们可以用 &lt;code>!!&lt;/code>，或者 &lt;code>!-1&lt;/code>， 来获取 “上一个执行了的命令”。比如如下操作：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">$ &lt;span class="nb">echo&lt;/span> hello bash world!
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">hello bash world!
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl">$ &lt;span class="nb">echo&lt;/span> !! &lt;span class="c1"># !! 替换了上面整个执行了的命令，也就是替换了 &amp;#34;echo hello bash world&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">&lt;span class="nb">echo&lt;/span> hello bash world!
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl">$ &lt;span class="nb">echo&lt;/span> !-1 &lt;span class="c1"># 同上,也是替换上面执行的命令，所以替换了 &amp;#34;echo echo hello bash world&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">6&lt;/span>&lt;span class="cl">&lt;span class="nb">echo&lt;/span> &lt;span class="nb">echo&lt;/span> hello bash world!
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="我要调用历史命令">我要调用历史命令
+&lt;/h3>&lt;p>我们还可以用 &lt;code>!&amp;lt;num&amp;gt;&lt;/code> 来选择某个历史命令。我们可以先用 &lt;code>head&lt;/code> 来查看一下我们的命令历史里最早有一些什么：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">$ head ~/.zsh_history &lt;span class="c1"># 这里我的 zsh 命令历史存在这个文件里，可以用 head 查看前几个命令&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">: 12345:0&lt;span class="p">;&lt;/span>clear
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl">: 12346:0&lt;span class="p">;&lt;/span>&lt;span class="nb">echo&lt;/span> hello
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">: 12347:0&lt;span class="p">;&lt;/span>ls
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl">&lt;span class="c1">## ... ... &lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>随后我们可以使用 &lt;code>!1&lt;/code> 来选择历史命令中的第一个命令，这里的第一个命令就是 &lt;code>clear&lt;/code>：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">$ !1 &lt;span class="c1"># 执行第一个历史命令，也就是 clear，会直接清空屏幕；&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">$ !2 &lt;span class="c1"># 执行第二个历史命令，会打印 hello；&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl">hello
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">$ !3 &lt;span class="c1"># 执行第三个历史命令，会打印当前文件夹下的内容&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl">file1 file2 file3
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="小结">小结
+&lt;/h3>&lt;p>我们可以看到，后面跟着的数字实际上表示了“第几个命令”，而举一反三，&lt;code>!-1&lt;/code> 则代表的是“最后一个命令”，即上一个命令，那么 &lt;code>!-2&lt;/code> 就是倒数第二个命令。&lt;/p>
+&lt;blockquote>
+&lt;p>有了这两个命令，我们可以很方便地在忘记使用 &lt;code>sudo&lt;/code> 权限时，使用 &lt;code>sudo !!&lt;/code> 或者选择某个历史命令，来快速使用 &lt;code>sudo&lt;/code> 权限执行命令。&lt;/p>&lt;/blockquote>
+&lt;h2 id="我需要取几个参数">我需要取几个参数
+&lt;/h2>&lt;h3 id="我需要某个参数">我需要某个参数
+&lt;/h3>&lt;p>我们可以使用 &lt;code>:&amp;lt;num&amp;gt;&lt;/code> 来选择第几个参数。它需要配合 &lt;code>!&lt;/code> 进行使用。参数从 1 开始，而 0 有特殊含义，代表命令。比如：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">$ &lt;span class="nb">echo&lt;/span> one two three
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">one two three
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl">$ &lt;span class="nb">echo&lt;/span> !-1:2 &lt;span class="c1"># 相当于 echo two&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">two
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl">$ &lt;span class="nb">echo&lt;/span> !:0 &lt;span class="c1"># 上个命令使用了 echo，所以 0 代表 echo，这个命令相当于 echo echo&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">6&lt;/span>&lt;span class="cl">&lt;span class="nb">echo&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>当使用 &lt;code>:&lt;/code> 来进行参数选择时，如果是从上一个命令中选择则可以简写为 &lt;code>!:&amp;lt;num1&amp;gt;-&amp;lt;num2&amp;gt;&lt;/code>。&lt;/p>
+&lt;h3 id="我需要这几个参数">我需要这几个参数
+&lt;/h3>&lt;p>我们还能用 &lt;code>:&amp;lt;num1&amp;gt;-&amp;lt;num2&amp;gt;&lt;/code> 来范围式地选择命令的参数。比如，使用 &lt;code>!!:1-2&lt;/code> 就说明要取第一个和第二个参数。（注意这里是参数，不是空格分隔的字符串，也不包含第一个词（也就是命令））。比如：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="ln"> 1&lt;/span>&lt;span class="cl">$ &lt;span class="nb">echo&lt;/span> one two three four
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 2&lt;/span>&lt;span class="cl">one two three four
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 3&lt;/span>&lt;span class="cl">$ &lt;span class="nb">echo&lt;/span> !!:1-2 &lt;span class="c1"># 相当于 echo one two &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 4&lt;/span>&lt;span class="cl">one two
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 5&lt;/span>&lt;span class="cl">$ &lt;span class="nb">echo&lt;/span> one two three four &lt;span class="c1"># 这行用来重置最后一个命令&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 6&lt;/span>&lt;span class="cl">one two three four
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 7&lt;/span>&lt;span class="cl">$ &lt;span class="nb">echo&lt;/span> !!:-3 &lt;span class="c1"># 没有 &amp;lt;num1&amp;gt; 则会自动替换为0，相当于 echo echo one two three&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 8&lt;/span>&lt;span class="cl">&lt;span class="nb">echo&lt;/span> one two three
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 9&lt;/span>&lt;span class="cl">$ &lt;span class="nb">echo&lt;/span> !-2:1-2 &lt;span class="c1"># 配合 !&amp;lt;num&amp;gt; 使用，相当于 echo one two &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">10&lt;/span>&lt;span class="cl">one two
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">11&lt;/span>&lt;span class="cl">$ &lt;span class="nb">echo&lt;/span> !-3:1- &lt;span class="c1"># 没有 &amp;lt;num2&amp;gt; 则会匹配到除了最后一个参数外的参数，相当于 echo one two three&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">12&lt;/span>&lt;span class="cl">one two three
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">13&lt;/span>&lt;span class="cl">$ &lt;span class="nb">echo&lt;/span> !-4:$ &lt;span class="c1"># 使用 $ 来获取最后一个参数，相当于 echo four&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">14&lt;/span>&lt;span class="cl">four
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">15&lt;/span>&lt;span class="cl">$ &lt;span class="nb">echo&lt;/span> !-5:3-$ &lt;span class="c1"># 同样 $ 也支持范围选择，相当于 echo three four&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">16&lt;/span>&lt;span class="cl">three four
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">17&lt;/span>&lt;span class="cl">$ &lt;span class="nb">echo&lt;/span> !-6:* &lt;span class="c1"># 使用 * 来表示所有的参数，相当于 echo !-6:1-$，也就是 echo one two three four&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">18&lt;/span>&lt;span class="cl">one two three four
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">19&lt;/span>&lt;span class="cl">$ &lt;span class="nb">echo&lt;/span> !:* &lt;span class="c1"># !: 是在使用冒号时 !!: 或者 !-1: 的简写，相当于 echo one two three four&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">20&lt;/span>&lt;span class="cl">one two three four
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>如果没有 &lt;code>&amp;lt;num1&amp;gt;&lt;/code>，则默认从 &lt;code>0&lt;/code> 开始，也就是会包含所有内容；如果没有 &lt;code>&amp;lt;num2&amp;gt;&lt;/code>，则默认停在最后一个参数前。可以使用 &lt;code>*&lt;/code> 来选择所有的参数，使用 &lt;code>$&lt;/code> 选择最后一个参数。&lt;/p>
+&lt;h2 id="我要对字符串做处理">我要对字符串做处理
+&lt;/h2>&lt;p>在冒号后使用一些字母来做相应的处理。假设有命令 &lt;code>ls /path/to/a/file.txt&lt;/code> 并且我们使用 &lt;code>echo !:1&lt;/code> 尝试调用这个 &lt;code>ls&lt;/code> 的命令，则下面的参数选择器可以做到：&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>:p&lt;/code> (print) 只打印，不运行，或者说提供一个预览。ZSH 用户也许不需要担心这一点。&lt;/li>
+&lt;li>&lt;code>:q&lt;/code> (quote) 对选中字段加上引号，结果为 &lt;code>'/path/to/a/file'&lt;/code>&lt;/li>
+&lt;li>&lt;code>:r&lt;/code>（root）取文件的完整文件名，结果为 &lt;code>/path/to/a/file&lt;/code>&lt;/li>
+&lt;li>&lt;code>:e&lt;/code>（extension）取文件的后缀名，结果为 &lt;code>txt&lt;/code>&lt;/li>
+&lt;li>&lt;code>:h&lt;/code>（head）取文件路径的地址，结果为 &lt;code>/path/to/a/&lt;/code>&lt;/li>
+&lt;li>&lt;code>:t&lt;/code>（tail）取文件的名称，结果为 &lt;code>file.txt&lt;/code>&lt;/li>
+&lt;li>&lt;code>:s/to/has&lt;/code>（search）可以在参数中寻找&lt;em>第一个&lt;/em> &lt;code>to&lt;/code> 并替换为 &lt;code>has&lt;/code>，结果为 &lt;code>/path/has/a/file.txt&lt;/code>&lt;/li>
+&lt;li>&lt;code>:gs/to/has&lt;/code>（global search）同上，但是全局查找替换。&lt;/li>
+&lt;/ul>
+&lt;h2 id="tldr">TL;DR
+&lt;/h2>&lt;p>下面是一个表格简单描述这些用法&lt;/p>
+&lt;h3 id="命令选择使用-">命令选择（使用 &lt;code>!&lt;/code>）
+&lt;/h3>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>语法&lt;/th>
+&lt;th>含义&lt;/th>
+&lt;th>示例&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>!!&lt;/code>&lt;/td>
+&lt;td>上一条命令&lt;/td>
+&lt;td>&lt;code>sudo !!&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>!-n&lt;/code>&lt;/td>
+&lt;td>倒数第 n 条命令&lt;/td>
+&lt;td>&lt;code>!-2&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>!n&lt;/code>&lt;/td>
+&lt;td>第 n 条历史命令&lt;/td>
+&lt;td>&lt;code>!42&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>!字符串&lt;/code>&lt;/td>
+&lt;td>最近以该字符串开头的命令&lt;/td>
+&lt;td>&lt;code>!ls&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>!?字符串?&lt;/code>&lt;/td>
+&lt;td>最近包含该字符串的命令&lt;/td>
+&lt;td>&lt;code>!?foo?&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>^旧^新&lt;/code>&lt;/td>
+&lt;td>将上一条命令中第一个“旧”替换为“新”&lt;/td>
+&lt;td>&lt;code>^cat^bat&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="参数选择-使用-">参数选择 （使用 &lt;code>:&lt;/code>）
+&lt;/h3>&lt;p>下面的示例命令使用 &lt;code>echo file.txt&lt;/code> 来做演示。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>语法&lt;/th>
+&lt;th>含义&lt;/th>
+&lt;th>示例&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>!!:0&lt;/code>&lt;/td>
+&lt;td>上一条命令的命令名&lt;/td>
+&lt;td>&lt;code>!!:0&lt;/code> → &lt;code>echo&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>!!:1&lt;/code>&lt;/td>
+&lt;td>第一个参数&lt;/td>
+&lt;td>&lt;code>!!:1&lt;/code> → &lt;code>file.txt&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>!!:2&lt;/code>&lt;/td>
+&lt;td>第二个参数&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>!!:$&lt;/code>&lt;/td>
+&lt;td>最后一个参数&lt;/td>
+&lt;td>&lt;code>!!:$&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>!!:*&lt;/code>&lt;/td>
+&lt;td>所有参数（等同于 &lt;code>!!:1-$&lt;/code>）&lt;/td>
+&lt;td>&lt;code>!!:*&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>!!:1-3&lt;/code>&lt;/td>
+&lt;td>第 1 到第 3 个参数&lt;/td>
+&lt;td>&lt;code>!!:1-3&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>!!:2-$&lt;/code>&lt;/td>
+&lt;td>从第 2 个到最后一个参数&lt;/td>
+&lt;td>&lt;code>!!:2-$&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>!$&lt;/code>&lt;/td>
+&lt;td>上一条命令的最后一个参数 (可以省略冒号)&lt;/td>
+&lt;td>&lt;code>cat !$&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>!*&lt;/code>&lt;/td>
+&lt;td>上一条命令的所有参数（可以省略冒号）&lt;/td>
+&lt;td>&lt;code>rm !*&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="参数修饰">参数修饰
+&lt;/h3>&lt;p>下面的示例命令使用 &lt;code>echo /path/to/file.txt&lt;/code> 来做演示。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>修饰符&lt;/th>
+&lt;th>含义&lt;/th>
+&lt;th>示例&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>:p&lt;/code>&lt;/td>
+&lt;td>只打印命令，不执行&lt;/td>
+&lt;td>&lt;code>sudo !!:p&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>:q&lt;/code>&lt;/td>
+&lt;td>给参数加引号，避免空格或特殊字符问题&lt;/td>
+&lt;td>&lt;code>echo !!:1:q&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>:h&lt;/code>&lt;/td>
+&lt;td>获取路径头部（类似 &lt;code>dirname&lt;/code>）&lt;/td>
+&lt;td>&lt;code>echo !!:1:h&lt;/code> → &lt;code>/path/to&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>:t&lt;/code>&lt;/td>
+&lt;td>获取路径尾部（类似 &lt;code>basename&lt;/code>）&lt;/td>
+&lt;td>&lt;code>echo !!:1:t&lt;/code> → &lt;code>file.txt&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>:r&lt;/code>&lt;/td>
+&lt;td>去掉文件扩展名（保留主名）&lt;/td>
+&lt;td>&lt;code>echo !!:1:r&lt;/code> → &lt;code>file&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>:e&lt;/code>&lt;/td>
+&lt;td>获取文件扩展名&lt;/td>
+&lt;td>&lt;code>echo !!:1:e&lt;/code> → &lt;code>txt&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>:s/旧/新/&lt;/code>&lt;/td>
+&lt;td>替换第一个出现的子串&lt;/td>
+&lt;td>&lt;code>!!:1:s/foo/bar/&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>:gs/旧/新/&lt;/code>&lt;/td>
+&lt;td>替换所有出现的子串&lt;/td>
+&lt;td>&lt;code>!!:1:gs/foo/bar/&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="总结">总结
+&lt;/h2>&lt;p>这里其实应该没有写完，不过就这些已经列出来的方法而言，我个人感觉是已经挺够用的了。毕竟，平时最常用的也就是 &lt;code>sudo !!&lt;/code> 来给 &lt;code>pamcan -Syu&lt;/code> 补上管理员权限而已，或者是在 &lt;code>ls -l /path/to/file&lt;/code> 确定文件/文件夹存在后用 &lt;code>vim&lt;/code> 或者 &lt;code>cd&lt;/code> 打开它罢了。&lt;/p>
+&lt;p>还有一点要注意的是，&lt;code>bash&lt;/code> 默认是不会像 &lt;code>zsh&lt;/code> 一样先提供一个预览，让你看看会发生什么的，而是直接就运行命令了。所以也许在 &lt;code>bash&lt;/code> 中使用这个功能时需要额外注意，特别是涉及一些比较危险的动作，比如 &lt;code>rm&lt;/code> 这类命令。此时你可以尝试先用 &lt;code>:p&lt;/code> 来打印出来要运行的命令，没啥问题就可以运行了。印象中应该还有一个办法，来让 &lt;code>bash&lt;/code> 也先提供一个预览而非直接运行。不过，因为我用的是 &lt;code>zsh&lt;/code>，就不纠结这个问题了。也许以后我还会更新这篇文章呢？哈哈。&lt;/p>
+&lt;p>那么，感谢你看到这里，祝您身心愉悦，身体健康~&lt;/p></description></item><item><title>微积分的符号</title><link>https://a-moment096.github.io/p/%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E7%AC%A6%E5%8F%B7/</link><pubDate>Thu, 24 Jul 2025 15:16:10 +0800</pubDate><guid>https://a-moment096.github.io/p/%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E7%AC%A6%E5%8F%B7/</guid><description>&lt;img src="https://a-moment096.github.io/p/%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E7%AC%A6%E5%8F%B7/Postscript.png" alt="Featured image of post 微积分的符号" />&lt;p>&lt;em>数学的一大特征大概就是多种多样的符号了吧。提到数学，大家总是能想起各种各样的公式，即便在我心目中，物理也许更能用各式各样的公式凸显自己的高深莫测，然而作为一种逻辑严密的学科，依旧少不了用各种符号来代指各种数学对象。本文就 &lt;strong>微积分&lt;/strong> 这一个子方向，浅谈这些风格迥异的记号，也方便接触不同领域的文献。&lt;/em>&lt;/p>
 &lt;p>&lt;em>最近很喜欢橘星（Orangestar）的这首 《Postscript》，夏背画的 MV 也很好看。所以就都放上来吧~ 可惜这首歌是要 VIP 的，想畅听的话可以试试&lt;a class="link" href="https://www.bilibili.com/video/BV1Qf421q7RA" target="_blank" rel="noopener"
 >B站链接&lt;/a>&lt;/em>&lt;/p>
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
