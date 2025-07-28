@@ -1456,8 +1456,7 @@ data-flex-basis="315px"
 &lt;h4 id="编辑器-与-visual-studio-code">编辑器 与 Visual Studio Code
 &lt;/h4>&lt;p>在安装好 Python 解释器之后其实就已经可以开始 Python 编程了 (没错, 就是传说中的记事本编程). 然而这当然不是最好的方法, 这种方法光是考虑到没有代码高亮就让人很难以接受了. 这里我个人推荐 Visual Studio Code (以下简称 VSC).&lt;/p>
 &lt;p>VSC 功能强大, &lt;a class="link" href="https://code.visualstudio.com/" target="_blank" rel="noopener"
->安装&lt;/a>方便, 插件生态极其丰富, 通过合理的配置近乎可以达到 IDE (Integrated Development Environment, 集成开发环境) 的水平. 我个人在写简单的 Python 脚本时几乎都是使用 VSC 写的. 一路默认安装后, 根据需要安装中文插件, 然后再在插件页面搜索 Python 即可安装 Python 插件全家桶, 然后就可以开始使用 VSC 写 Python 代码 (脚本)了. VSC 的安装与环境配置也可以参考我之前写的&lt;a class="link" href="https://a-moment096.github.io/p/python--vscode-%E5%BF%AB%E9%80%9F%E9%85%8D%E7%BD%AE/" target="_blank" rel="noopener"
->博客文章&lt;/a>.&lt;/p>
+>安装&lt;/a>方便, 插件生态极其丰富, 通过合理的配置近乎可以达到 IDE (Integrated Development Environment, 集成开发环境) 的水平. 我个人在写简单的 Python 脚本时几乎都是使用 VSC 写的. 一路默认安装后, 根据需要安装中文插件, 然后再在插件页面搜索 Python 即可安装 Python 插件全家桶, 然后就可以开始使用 VSC 写 Python 代码 (脚本)了. VSC 的安装与环境配置也可以参考我之前写的&lt;a class="link" href="https://a-moment096.github.io/p/python--vscode-%E5%BF%AB%E9%80%9F%E9%85%8D%E7%BD%AE/" >博客文章&lt;/a>.&lt;/p>
 &lt;p>这里没有推荐 IDE, 因为 IDE 对这里仅仅使用 Python 做一些简单应用而言太过 &amp;ldquo;全能&amp;rdquo;, 或者说, 负担太重. 当然, 如果感兴趣, 可以考虑使用大名鼎鼎的 PyCharm. 这里不再赘述.&lt;/p>
 &lt;h4 id="虚拟环境-venv-和-pip">虚拟环境, venv 和 pip
 &lt;/h4>&lt;p>这里简单介绍一下虚拟环境. 因为 Python 的生态丰富, 可能会碰到某些依赖相互冲突的情况, 尤其是在多人共同开发的情况下, 每个人的开发环境配置不同, 很容易导致依赖冲突. 为解决这种情况, 可以考虑使用 Python 的虚拟环境 &lt;code>virtualenv&lt;/code>. 创建的虚拟环境下有该虚拟环境所自有的一些包, 并且和该虚拟环境以外的部分是相互独立的. 使用 VSC 创建 &lt;code>virtualenv&lt;/code> 虚拟环境非常简单, 只需要 &lt;code>Ctrl+Shift+P&lt;/code> 打开 VSC 的命令, 然后搜索 &lt;code>Python: Create Environment&lt;/code> 即可根据向导一步步搭建虚拟环境.&lt;/p>
