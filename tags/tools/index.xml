@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tools on A Moment's Rest</title><link>https://a-moment096.github.io/tags/tools/</link><description>Recent content in Tools on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 28 Jul 2025 06:46:57 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/tools/index.xml" rel="self" type="application/rss+xml"/><item><title>使用 `rsync` 进行同步</title><link>https://a-moment096.github.io/p/%E4%BD%BF%E7%94%A8-rsync-%E8%BF%9B%E8%A1%8C%E5%90%8C%E6%AD%A5/</link><pubDate>Mon, 28 Jul 2025 12:43:39 +0800</pubDate><guid>https://a-moment096.github.io/p/%E4%BD%BF%E7%94%A8-rsync-%E8%BF%9B%E8%A1%8C%E5%90%8C%E6%AD%A5/</guid><description>&lt;img src="https://a-moment096.github.io/p/%E4%BD%BF%E7%94%A8-rsync-%E8%BF%9B%E8%A1%8C%E5%90%8C%E6%AD%A5/Pianist.jpg" alt="Featured image of post 使用 `rsync` 进行同步" />&lt;p>&lt;em>有点受不太了 &lt;code>scp&lt;/code> 和 &lt;code>sftp&lt;/code> 了，也许是食用姿势不对吧，总之我选择 &lt;code>rsync&lt;/code>！&lt;/em>&lt;/p>
+&lt;p>&lt;em>图源找不到诶……从朋友那里薅过来的图，很漂亮就放在这里了。既然如此就分享一首钢琴曲吧。一首 &lt;strong>騎士王の誇り&lt;/strong> (骑士王的荣耀) 送给大家。&lt;/em>&lt;/p>
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+&lt;style type="text/css">.dark-theme .aplayer{background:#212121}.dark-theme .aplayer.aplayer-withlist .aplayer-info{border-bottom-color:#5c5c5c}.dark-theme .aplayer.aplayer-fixed .aplayer-list{border-color:#5c5c5c}.dark-theme .aplayer .aplayer-body{background-color:#212121}.dark-theme .aplayer .aplayer-info{border-top-color:#212121}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-title{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-author{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time{color:#eee}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path{fill:#eee}.dark-theme .aplayer .aplayer-list{background-color:#212121}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb{background-color:#999}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover{background-color:#bbb}.dark-theme .aplayer .aplayer-list li{color:#fff;border-top-color:#666}.dark-theme .aplayer .aplayer-list li:hover{background:#4e4e4e}.dark-theme .aplayer .aplayer-list li.aplayer-list-light{background:#6c6c6c}.dark-theme .aplayer .aplayer-list li .aplayer-list-index{color:#ddd}.dark-theme .aplayer .aplayer-list li .aplayer-list-author{color:#ddd}.dark-theme .aplayer .aplayer-lrc{text-shadow:-1px -1px 0 #666}.dark-theme .aplayer .aplayer-lrc:before{background:-moz-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:-webkit-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:linear-gradient(to bottom, #212121 0%, rgba(33,33,33,0) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#212121', endColorstr='#00212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc:after{background:-moz-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:-webkit-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:linear-gradient(to bottom, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#00212121', endColorstr='#cc212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc p{color:#fff}.dark-theme .aplayer .aplayer-miniswitcher{background:#484848}.dark-theme .aplayer .aplayer-miniswitcher .aplayer-icon path{fill:#eee}&lt;/style>
+&lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js">&lt;/script>
+&lt;script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js">&lt;/script>&lt;meting-js auto="https://music.163.com/#/song?id=448119" theme="#2980b9" loop="never">&lt;/meting-js>
+&lt;h2 id="为什么要选择-rsync-呢">为什么要选择 &lt;code>rsync&lt;/code> 呢？
+&lt;/h2>&lt;p>有时候我们有多个远程电脑，或者是服务器，上面的文件内容我们希望下载到本地。我们通常有这么几个选择：使用一些功能成熟的，专用于 SSH 连接的终端模拟器，比如 MobaXTerm 这样的软件；或者我们可以使用 &lt;code>scp&lt;/code>，&lt;code>sftp&lt;/code> 这样的工具，但是界面有点简陋，特别是 &lt;code>sftp&lt;/code>，需要反复确认文件名是否输入错误。而且有时我们只需要下载不同的部分，不希望重复下载已经有了的部分。这时候，&lt;code>rsync&lt;/code> 作为 &lt;em>remote sync&lt;/em> 的工具，就到了发挥其作用的地方了。&lt;/p>
+&lt;h2 id="使用方法">使用方法
+&lt;/h2>&lt;h3 id="命令结构">命令结构
+&lt;/h3>&lt;p>&lt;code>rsync&lt;/code> 命令使用方法是：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-console" data-lang="console">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="go">rsync --option1 --option2 /pass/files/from/this/ /path/files/to/here
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>所以大概就是遵循：&lt;code>命令，选项，从哪里来，到哪里去&lt;/code> 这样的规则。另外，既然 &lt;code>rsync&lt;/code> 是 &lt;em>remote sync&lt;/em> 的简称，自然这个命令也是可以被用于远程服务器之间的文件传输的。方法也很简单，就是给对应的文件路径添加上使用 &lt;code>ssh&lt;/code> 的用户名、服务器地址等信息。具体用法我们下面介绍。&lt;/p>
+&lt;h3 id="注意路径分隔符-">注意路径分隔符 &lt;code>/&lt;/code>
+&lt;/h3>&lt;p>首先，这里需要强调的是，请注意 &lt;code>从哪里来&lt;/code>，也就是发送端的这一部分，这里明显是一个文件夹，因为路径的最后有一个 &lt;code>/&lt;/code> 符号。也许有人会问：我知道它是文件夹，我能不要那个 &lt;code>/&lt;/code> 吗？比如使用&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-console" data-lang="console">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="go">rsync --opt1 --opt2 /pass/files/from/this /path/files/to/here
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这样的命令，来把文件夹传过去，可以吗？&lt;/p>
+&lt;p>答案很有趣：是的，你可以传过去，但是也许不会以你预期的方式传过去。由于 &lt;code>rsync&lt;/code> 会默认传过去的位置是个文件夹，如果你不带上这个斜杠的话，&lt;code>rsync&lt;/code> 会认为你打算把 &lt;code>/pass/files/from/this&lt;/code> 这个文件夹 &lt;strong>放在目标位置的里面&lt;/strong>。如果你的确打算这么做，那没什么问题。比如你在本地有一个文件夹 &lt;code>$HOME/mydocuments&lt;/code>，你在远程的服务器的接收端上也有这么个文件夹，位置一模一样，那么就可以尝试&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">rsync -r $HOME/mydocuments me@remote:/home/me
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这会直接把 &lt;code>$HOME/mydocuments&lt;/code> 传到远程的 &lt;code>/home/me&lt;/code> 文件夹下，形成 &lt;code>/home/me/mydocuments&lt;/code> 这样的结构。&lt;/p>
+&lt;p>那么假如你是想说，我要把 &lt;code>$HOME/mydocuments&lt;/code> &lt;strong>里面的内容&lt;/strong> 传到 &lt;code>/home/me/another/position&lt;/code> 的话，那你就需要带上这个斜杠了，因为 &lt;code>rsync&lt;/code> 就会聪明地帮你把文件夹里面的所有内容传到目标位置的那个文件夹里。也许也算是符合 “一切皆文件” 的思想了吧，如果你不带分隔符，就会以文件形式把这个 &lt;em>文件&lt;/em> 传到文件夹里；而如果带上路径分隔符，则说明你要传的是文件夹的内容。&lt;/p>
+&lt;h3 id="远程链接">远程链接
+&lt;/h3>&lt;p>作为一款远程同步软件，自然需要有办法告诉 &lt;code>rsync&lt;/code> 要把文件从哪里发到哪里。好消息是，&lt;code>rsync&lt;/code> 支持我们通过 SSH 传输文件，而方法也特别简单。只需要在文件路径前面添加上你的用户名和主机名就可以了。如果你设置了 SSH 的主机名，甚至可以更方便。&lt;/p>
+&lt;p>这里举个很简单的例子，从本机传到本机，但是通过 SSH 进行。我们可以通过 &lt;code>ssh &amp;lt;user&amp;gt;@localhost&lt;/code> 来登录到本机的本地账户上，我的用户名是 &lt;code>amoment&lt;/code>，所以就会用 &lt;code>ssh amoment@localhost&lt;/code> 来登录到本机。那么我们就可以这样告诉 &lt;code>rsync&lt;/code>：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-console" data-lang="console">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="go">rsync -r /home/amoment/myfiles/ amoment@localhost:/home/amoment/somefolder
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>来把我家目录下的 &lt;code>myfiles&lt;/code> 文件夹里的内容复制/同步到同在家目录下的 &lt;code>somefolder&lt;/code> 文件夹下。有了这个例子，你应该也明白怎么跨设备使用 &lt;code>rsync&lt;/code> 通过 SSH 进行连接与文件传输了吧。&lt;/p>
+&lt;p>除了使用 SSH 协议以外，&lt;code>rsync&lt;/code> 还支持一些其他的协议，比如所谓的 RSH，或者 &lt;code>rsync&lt;/code> 自带的 &lt;code>rsync://&lt;/code> 协议。但是由于 SSH 的支持还是更加广泛，我们这里还是只介绍该方案。如果感兴趣的话，可以查阅 &lt;code>rsync&lt;/code> 的手册或者文档等资料。&lt;/p>
+&lt;h3 id="一些重要的参数">一些重要的参数
+&lt;/h3>&lt;p>下面列举一些重要的，可能会经常使用到的参数。我们按一个大致的类别做区分，方便查找。&lt;/p>
+&lt;h4 id="文件操作">文件操作
+&lt;/h4>&lt;ul>
+&lt;li>&lt;code>-r --recursive&lt;/code>: 递归模式&lt;/li>
+&lt;/ul>
+&lt;p>它的意思是 &lt;em>recursive&lt;/em>，也就是递归地把所有内容都传过去。如果不加这个东西，会发生什么呢？好消息是你照样能完成传输，但是坏消息是，你 &lt;strong>只传过去了文件夹&lt;/strong>。也就是说，如果你不是只想在目标位置创建一个可能是新的文件夹的话，而是想把文件都传过去，请记得带上 &lt;code>-r&lt;/code>。&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>-a -- archive&lt;/code>: 存档模式&lt;/li>
+&lt;/ul>
+&lt;p>你也可以选择不使用 &lt;code>-r&lt;/code> 而是使用 &lt;code>-a&lt;/code>，使用 &lt;code>-a&lt;/code> 会以存档方式传输文件，也就是说，文件夹内的所有东西都会 &lt;em>保持原样&lt;/em> 地传过去：不论是文件，文件夹，还是链接，设备描述符等，全都会原样传过去。&lt;code>-a&lt;/code> 实际上是一系列参数的总和。根据帮助文档所述，是 &lt;code>-rlptgoD&lt;/code>。还挺多的……&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>--delete&lt;/code>: 允许删除不同步的内容&lt;/li>
+&lt;/ul>
+&lt;p>因为 &lt;code>rsync&lt;/code> 如其名所示，是 &lt;em>同步软件&lt;/em>，因此我们也许希望不是 “上传” 文件，而是 &lt;em>把本地文件结构同步到远程&lt;/em>。此时，我们需要用到 &lt;code>--delete&lt;/code> 这个参数，它给了 &lt;code>rsync&lt;/code> 删除目标文件夹内多余文件的权利，从而保证你确实是在 &lt;em>同步&lt;/em> 内容。&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>--exclude&lt;/code> &lt;code>--include&lt;/code>: 按模式进行排除/包含&lt;/li>
+&lt;/ul>
+&lt;p>这两个参数我们放在一起讲。如其名称所述，是用来告诉 &lt;code>rsync&lt;/code> 排除哪些文件或者包含哪些文件用的。如果你有些文件不想传/特意要传，请设置这两个参数。&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>--ignore-existing&lt;/code>: 跳过传输同名文件&lt;/li>
+&lt;/ul>
+&lt;p>加上这个参数会让 &lt;code>rsync&lt;/code> 检查接收端已有文件的名字，如果本地和接收端都有这么个文件（名称相同），则会跳过这个文件不进行传输。&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>-u --update&lt;/code>: 只传输更新的内容&lt;/li>
+&lt;/ul>
+&lt;p>这个参数意味着你是打算 &lt;em>更新&lt;/em> 文件们。那么，如果接收端的文件比发送端更新（还要新）呢？答案就是不会碰这些文件。&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>-z --compress&lt;/code>: 先压缩一下&lt;/li>
+&lt;/ul>
+&lt;p>这个参数会告诉 &lt;code>rsync&lt;/code> 传输前先帮你把要传的东西压缩一下。&lt;code>rsync&lt;/code> 会自己选择一个压缩方法，所以一般不用担心。&lt;/p>
+&lt;h4 id="信息提供">信息提供
+&lt;/h4>&lt;ul>
+&lt;li>&lt;code>-n --dry-run&lt;/code>: 试运行&lt;/li>
+&lt;/ul>
+&lt;p>你要是担心传过去的内容不是你实际打算传的东西，你可以先让 &lt;code>rsync&lt;/code> 告诉你目前的命令会传些什么，且不真的开始工作，只需要加上 &lt;code>-n&lt;/code> 就可以。你可以把它理解为 &lt;em>no&lt;/em>，即便实际上它对应的长参数是 &lt;code>--dry-run&lt;/code>。拿不准会传些什么过去的时候，这个命令会很有用。&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>-v --verbose&lt;/code>: 更啰嗦一些&lt;/li>
+&lt;/ul>
+&lt;p>几乎所有（较复杂）的命令行程序都会内置这样一个命令，来把工作信息 “更啰嗦” 地显示出来。如果你需要额外的信息，请使用这个参数。&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>-P&lt;/code>: 进度条&lt;/li>
+&lt;/ul>
+&lt;p>就是让 &lt;code>rsync&lt;/code> 报告当前的传输进度。我很喜欢用。&lt;/p>
+&lt;h4 id="涉及-rsync-本身--远程协作">涉及 &lt;code>rsync&lt;/code> 本身 / 远程协作
+&lt;/h4>&lt;ul>
+&lt;li>&lt;code>-e --rsh&lt;/code>: 指定传输协议&lt;/li>
+&lt;/ul>
+&lt;p>可能我们要传输的设备开放的 SSH 端口不在默认的 &lt;code>22&lt;/code> 而是一个自定义的端口。此时我们就需要 &lt;code>-e&lt;/code> 然后在后面带上一个字符串来表示使用的 shell 是哪个。比如我的远程接收端接口是 &lt;code>1145&lt;/code>，则我会使用&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-console" data-lang="console">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="go">rsync -r -e &amp;#34;ssh -p 1145&amp;#34; /myfiles/ me@remote:/myfiles
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>来让 &lt;code>rsync&lt;/code> 尝试使用 &lt;code>1145&lt;/code> 端口进行 SSH 通信与文件传输。&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>--rsync-path&lt;/code>: &lt;code>rsync&lt;/code> 在哪？&lt;/li>
+&lt;/ul>
+&lt;p>有可能我们需要帮助本地的 &lt;code>rsync&lt;/code> 来寻找到另一个 &lt;code>rsync&lt;/code> 究竟在哪。此时我们就需要这个参数来发挥作用，在后面带上找到 &lt;code>rsync&lt;/code> 的方法：不论是 &lt;code>rsync&lt;/code> 的路径，还是别的方式，都可以。比如希望传输的设备有 &lt;code>rsync&lt;/code>，但是在 WSL 上。此时我们就可以&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-console" data-lang="console">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="go">rsync -r --rsync-path &amp;#39;wsl rsync&amp;#39; me@remote:/myfiles/ /myfiles
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>来让远程使用 WSL 上的 &lt;code>rsync&lt;/code> 为我进行工作。&lt;/p>
+&lt;h2 id="后记">后记
+&lt;/h2>&lt;p>我一开始使用 &lt;code>rsync&lt;/code> 的主要理由其实是为了在不同的设备之间同步我的歌曲库。由于我有一些歌曲通过移动硬盘已经移动了一部分，而还有一部分没有同步，在另一台电脑上我甚至新添加了一张专辑，所以感觉单纯地自己手动搜索要迁移的文件有点太累了。而此时，&lt;code>rsync&lt;/code> 用它 &lt;strong>增量同步&lt;/strong> 的特性吸引了我，我便使用这么个方式来把远程的歌曲同步到本地电脑上来。&lt;/p>
+&lt;p>&lt;code>rsync&lt;/code> 还是挺好用的，它的语法可能没有那么智能，但是已经足以应付我遇到的问题了。印象中还有一些别的同步软件，比如朋友推荐的 &lt;code>Syncthing&lt;/code>，也许后面会尝试使用一下。&lt;/p>
+&lt;p>另外不得不提的是我在准备该文章时查阅过的信息源。非常感谢！&lt;/p>
+&lt;ul>
+&lt;li>首先，ChatGPT 和 Deepseek，完全不了解的时候和这些 AI 问一下还是挺好用的；&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.digitalocean.com/community/tutorials/how-to-use-rsync-to-sync-local-and-remote-directories" target="_blank" rel="noopener"
+>rsync tutorial&lt;/a>: 一个简单的 rsync walkthrough，帮了我很多；&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.geeksforgeeks.org/linux-unix/rsync-command-in-linux-with-examples/" target="_blank" rel="noopener"
+>rsync command in Linux with Examples&lt;/a>: GeeksForGeeks 下的一个博客，内容很丰富。&lt;/li>
+&lt;/ul>
+&lt;p>最后，感谢您能看到这里，祝您身体健康，心情愉悦~&lt;/p></description></item><item><title>上一个命令是什么？</title><link>https://a-moment096.github.io/p/%E4%B8%8A%E4%B8%80%E4%B8%AA%E5%91%BD%E4%BB%A4%E6%98%AF%E4%BB%80%E4%B9%88/</link><pubDate>Sat, 26 Jul 2025 20:09:18 +0800</pubDate><guid>https://a-moment096.github.io/p/%E4%B8%8A%E4%B8%80%E4%B8%AA%E5%91%BD%E4%BB%A4%E6%98%AF%E4%BB%80%E4%B9%88/</guid><description>&lt;img src="https://a-moment096.github.io/p/%E4%B8%8A%E4%B8%80%E4%B8%AA%E5%91%BD%E4%BB%A4%E6%98%AF%E4%BB%80%E4%B9%88/SEASIDE_SOLILOQUIES.png" alt="Featured image of post 上一个命令是什么？" />&lt;p>&lt;em>曾经总会好奇：怎么获取上一个命令呢？应该很简单才对吧？简单的搜索后，下面是我得到的结果，就记录一下吧&lt;/em>&lt;/p>
+&lt;p>&lt;em>头图出自 Orangestar 的专辑 &lt;strong>SEASIDE SOLILOQUIES&lt;/strong>, 好看又好听。所以这里贴曲就贴这个专辑的主打歌好了：一首 &lt;strong>Alice in 冷凍庫&lt;/strong>，希望你喜欢。&lt;/em>&lt;/p>
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+&lt;style type="text/css">.dark-theme .aplayer{background:#212121}.dark-theme .aplayer.aplayer-withlist .aplayer-info{border-bottom-color:#5c5c5c}.dark-theme .aplayer.aplayer-fixed .aplayer-list{border-color:#5c5c5c}.dark-theme .aplayer .aplayer-body{background-color:#212121}.dark-theme .aplayer .aplayer-info{border-top-color:#212121}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-title{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-author{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time{color:#eee}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path{fill:#eee}.dark-theme .aplayer .aplayer-list{background-color:#212121}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb{background-color:#999}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover{background-color:#bbb}.dark-theme .aplayer .aplayer-list li{color:#fff;border-top-color:#666}.dark-theme .aplayer .aplayer-list li:hover{background:#4e4e4e}.dark-theme .aplayer .aplayer-list li.aplayer-list-light{background:#6c6c6c}.dark-theme .aplayer .aplayer-list li .aplayer-list-index{color:#ddd}.dark-theme .aplayer .aplayer-list li .aplayer-list-author{color:#ddd}.dark-theme .aplayer .aplayer-lrc{text-shadow:-1px -1px 0 #666}.dark-theme .aplayer .aplayer-lrc:before{background:-moz-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:-webkit-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:linear-gradient(to bottom, #212121 0%, rgba(33,33,33,0) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#212121', endColorstr='#00212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc:after{background:-moz-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:-webkit-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:linear-gradient(to bottom, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#00212121', endColorstr='#cc212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc p{color:#fff}.dark-theme .aplayer .aplayer-miniswitcher{background:#484848}.dark-theme .aplayer .aplayer-miniswitcher .aplayer-icon path{fill:#eee}&lt;/style>
+&lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js">&lt;/script>
+&lt;script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js">&lt;/script>&lt;meting-js auto="https://music.163.com/#/song?id=458231453" theme="#2980b9" loop="none">&lt;/meting-js>
+&lt;h2 id="什么时候要用这个">什么时候要用这个？
+&lt;/h2>&lt;p>有时候我们写了一长串命令，比如有很麻烦的路径之类的，这时候我们可能会希望用某个符号来自动地填上命令里的某些参数。一个最常见的例子，当我要安装某些软件包的时候，偶尔会忘记加上 &lt;code>sudo&lt;/code> 来以管理员权限运行。这时候把上面的命令复制一遍再补上 &lt;code>sudo&lt;/code> 实在是太慢了，而按下上箭头后在把光标挪到第一行，最后补上 &lt;code>sudo&lt;/code> 总是感觉很累，手的移动距离感觉好远。除此之外，有时输入的一长串命令/参数并运行之后，我需要接着上面的参数继续运行别的命令，此时要是用命令行历史的话，就又得用光标定位之后，再删掉没有用的东西，最后再填上要替换的内容。这实在是太慢了。&lt;/p>
+&lt;p>好在这时候，我们还可以使用 &lt;code>zsh&lt;/code> 交互模式下的一个内置宏：使用 &lt;code>!&lt;/code>，感叹号，以及其对应的一些变体，来获取上个命令中的参数/整个命令等。下面就来介绍怎么使用吧。&lt;/p>
+&lt;h2 id="我需要取整个命令">我需要取整个命令
+&lt;/h2>&lt;h3 id="上个命令是什么">上个命令是什么？
+&lt;/h3>&lt;p>我们可以用 &lt;code>!!&lt;/code>，或者 &lt;code>!-1&lt;/code>， 来获取 “上一个执行了的命令”。比如如下操作：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">$ &lt;span class="nb">echo&lt;/span> hello bash world!
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">hello bash world!
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl">$ &lt;span class="nb">echo&lt;/span> !! &lt;span class="c1"># !! 替换了上面整个执行了的命令，也就是替换了 &amp;#34;echo hello bash world&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">&lt;span class="nb">echo&lt;/span> hello bash world!
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl">$ &lt;span class="nb">echo&lt;/span> !-1 &lt;span class="c1"># 同上,也是替换上面执行的命令，所以替换了 &amp;#34;echo echo hello bash world&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">6&lt;/span>&lt;span class="cl">&lt;span class="nb">echo&lt;/span> &lt;span class="nb">echo&lt;/span> hello bash world!
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="我要调用历史命令">我要调用历史命令
+&lt;/h3>&lt;p>我们还可以用 &lt;code>!&amp;lt;num&amp;gt;&lt;/code> 来选择某个历史命令。我们可以先用 &lt;code>head&lt;/code> 来查看一下我们的命令历史里最早有一些什么：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">$ head ~/.zsh_history &lt;span class="c1"># 这里我的 zsh 命令历史存在这个文件里，可以用 head 查看前几个命令&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">: 12345:0&lt;span class="p">;&lt;/span>clear
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl">: 12346:0&lt;span class="p">;&lt;/span>&lt;span class="nb">echo&lt;/span> hello
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">: 12347:0&lt;span class="p">;&lt;/span>ls
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl">&lt;span class="c1">## ... ... &lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>随后我们可以使用 &lt;code>!1&lt;/code> 来选择历史命令中的第一个命令，这里的第一个命令就是 &lt;code>clear&lt;/code>：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">$ !1 &lt;span class="c1"># 执行第一个历史命令，也就是 clear，会直接清空屏幕；&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">$ !2 &lt;span class="c1"># 执行第二个历史命令，会打印 hello；&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl">hello
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">$ !3 &lt;span class="c1"># 执行第三个历史命令，会打印当前文件夹下的内容&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl">file1 file2 file3
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="小结">小结
+&lt;/h3>&lt;p>我们可以看到，后面跟着的数字实际上表示了“第几个命令”，而举一反三，&lt;code>!-1&lt;/code> 则代表的是“最后一个命令”，即上一个命令，那么 &lt;code>!-2&lt;/code> 就是倒数第二个命令。&lt;/p>
+&lt;blockquote>
+&lt;p>有了这两个命令，我们可以很方便地在忘记使用 &lt;code>sudo&lt;/code> 权限时，使用 &lt;code>sudo !!&lt;/code> 或者选择某个历史命令，来快速使用 &lt;code>sudo&lt;/code> 权限执行命令。&lt;/p>&lt;/blockquote>
+&lt;h2 id="我需要取几个参数">我需要取几个参数
+&lt;/h2>&lt;h3 id="我需要某个参数">我需要某个参数
+&lt;/h3>&lt;p>我们可以使用 &lt;code>:&amp;lt;num&amp;gt;&lt;/code> 来选择第几个参数。它需要配合 &lt;code>!&lt;/code> 进行使用。参数从 1 开始，而 0 有特殊含义，代表命令。比如：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">$ &lt;span class="nb">echo&lt;/span> one two three
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">one two three
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl">$ &lt;span class="nb">echo&lt;/span> !-1:2 &lt;span class="c1"># 相当于 echo two&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">two
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl">$ &lt;span class="nb">echo&lt;/span> !:0 &lt;span class="c1"># 上个命令使用了 echo，所以 0 代表 echo，这个命令相当于 echo echo&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">6&lt;/span>&lt;span class="cl">&lt;span class="nb">echo&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>当使用 &lt;code>:&lt;/code> 来进行参数选择时，如果是从上一个命令中选择则可以简写为 &lt;code>!:&amp;lt;num1&amp;gt;-&amp;lt;num2&amp;gt;&lt;/code>。&lt;/p>
+&lt;h3 id="我需要这几个参数">我需要这几个参数
+&lt;/h3>&lt;p>我们还能用 &lt;code>:&amp;lt;num1&amp;gt;-&amp;lt;num2&amp;gt;&lt;/code> 来范围式地选择命令的参数。比如，使用 &lt;code>!!:1-2&lt;/code> 就说明要取第一个和第二个参数。（注意这里是参数，不是空格分隔的字符串，也不包含第一个词（也就是命令））。比如：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="ln"> 1&lt;/span>&lt;span class="cl">$ &lt;span class="nb">echo&lt;/span> one two three four
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 2&lt;/span>&lt;span class="cl">one two three four
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 3&lt;/span>&lt;span class="cl">$ &lt;span class="nb">echo&lt;/span> !!:1-2 &lt;span class="c1"># 相当于 echo one two &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 4&lt;/span>&lt;span class="cl">one two
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 5&lt;/span>&lt;span class="cl">$ &lt;span class="nb">echo&lt;/span> one two three four &lt;span class="c1"># 这行用来重置最后一个命令&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 6&lt;/span>&lt;span class="cl">one two three four
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 7&lt;/span>&lt;span class="cl">$ &lt;span class="nb">echo&lt;/span> !!:-3 &lt;span class="c1"># 没有 &amp;lt;num1&amp;gt; 则会自动替换为0，相当于 echo echo one two three&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 8&lt;/span>&lt;span class="cl">&lt;span class="nb">echo&lt;/span> one two three
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 9&lt;/span>&lt;span class="cl">$ &lt;span class="nb">echo&lt;/span> !-2:1-2 &lt;span class="c1"># 配合 !&amp;lt;num&amp;gt; 使用，相当于 echo one two &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">10&lt;/span>&lt;span class="cl">one two
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">11&lt;/span>&lt;span class="cl">$ &lt;span class="nb">echo&lt;/span> !-3:1- &lt;span class="c1"># 没有 &amp;lt;num2&amp;gt; 则会匹配到除了最后一个参数外的参数，相当于 echo one two three&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">12&lt;/span>&lt;span class="cl">one two three
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">13&lt;/span>&lt;span class="cl">$ &lt;span class="nb">echo&lt;/span> !-4:$ &lt;span class="c1"># 使用 $ 来获取最后一个参数，相当于 echo four&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">14&lt;/span>&lt;span class="cl">four
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">15&lt;/span>&lt;span class="cl">$ &lt;span class="nb">echo&lt;/span> !-5:3-$ &lt;span class="c1"># 同样 $ 也支持范围选择，相当于 echo three four&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">16&lt;/span>&lt;span class="cl">three four
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">17&lt;/span>&lt;span class="cl">$ &lt;span class="nb">echo&lt;/span> !-6:* &lt;span class="c1"># 使用 * 来表示所有的参数，相当于 echo !-6:1-$，也就是 echo one two three four&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">18&lt;/span>&lt;span class="cl">one two three four
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">19&lt;/span>&lt;span class="cl">$ &lt;span class="nb">echo&lt;/span> !:* &lt;span class="c1"># !: 是在使用冒号时 !!: 或者 !-1: 的简写，相当于 echo one two three four&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">20&lt;/span>&lt;span class="cl">one two three four
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>如果没有 &lt;code>&amp;lt;num1&amp;gt;&lt;/code>，则默认从 &lt;code>0&lt;/code> 开始，也就是会包含所有内容；如果没有 &lt;code>&amp;lt;num2&amp;gt;&lt;/code>，则默认停在最后一个参数前。可以使用 &lt;code>*&lt;/code> 来选择所有的参数，使用 &lt;code>$&lt;/code> 选择最后一个参数。&lt;/p>
+&lt;h2 id="我要对字符串做处理">我要对字符串做处理
+&lt;/h2>&lt;p>在冒号后使用一些字母来做相应的处理。假设有命令 &lt;code>ls /path/to/a/file.txt&lt;/code> 并且我们使用 &lt;code>echo !:1&lt;/code> 尝试调用这个 &lt;code>ls&lt;/code> 的命令，则下面的参数选择器可以做到：&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>:p&lt;/code> (print) 只打印，不运行，或者说提供一个预览。ZSH 用户也许不需要担心这一点。&lt;/li>
+&lt;li>&lt;code>:q&lt;/code> (quote) 对选中字段加上引号，结果为 &lt;code>'/path/to/a/file'&lt;/code>&lt;/li>
+&lt;li>&lt;code>:r&lt;/code>（root）取文件的完整文件名，结果为 &lt;code>/path/to/a/file&lt;/code>&lt;/li>
+&lt;li>&lt;code>:e&lt;/code>（extension）取文件的后缀名，结果为 &lt;code>txt&lt;/code>&lt;/li>
+&lt;li>&lt;code>:h&lt;/code>（head）取文件路径的地址，结果为 &lt;code>/path/to/a/&lt;/code>&lt;/li>
+&lt;li>&lt;code>:t&lt;/code>（tail）取文件的名称，结果为 &lt;code>file.txt&lt;/code>&lt;/li>
+&lt;li>&lt;code>:s/to/has&lt;/code>（search）可以在参数中寻找&lt;em>第一个&lt;/em> &lt;code>to&lt;/code> 并替换为 &lt;code>has&lt;/code>，结果为 &lt;code>/path/has/a/file.txt&lt;/code>&lt;/li>
+&lt;li>&lt;code>:gs/to/has&lt;/code>（global search）同上，但是全局查找替换。&lt;/li>
+&lt;/ul>
+&lt;h2 id="tldr">TL;DR
+&lt;/h2>&lt;p>下面是一个表格简单描述这些用法&lt;/p>
+&lt;h3 id="命令选择使用-">命令选择（使用 &lt;code>!&lt;/code>）
+&lt;/h3>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>语法&lt;/th>
+&lt;th>含义&lt;/th>
+&lt;th>示例&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>!!&lt;/code>&lt;/td>
+&lt;td>上一条命令&lt;/td>
+&lt;td>&lt;code>sudo !!&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>!-n&lt;/code>&lt;/td>
+&lt;td>倒数第 n 条命令&lt;/td>
+&lt;td>&lt;code>!-2&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>!n&lt;/code>&lt;/td>
+&lt;td>第 n 条历史命令&lt;/td>
+&lt;td>&lt;code>!42&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>!字符串&lt;/code>&lt;/td>
+&lt;td>最近以该字符串开头的命令&lt;/td>
+&lt;td>&lt;code>!ls&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>!?字符串?&lt;/code>&lt;/td>
+&lt;td>最近包含该字符串的命令&lt;/td>
+&lt;td>&lt;code>!?foo?&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>^旧^新&lt;/code>&lt;/td>
+&lt;td>将上一条命令中第一个“旧”替换为“新”&lt;/td>
+&lt;td>&lt;code>^cat^bat&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="参数选择-使用-">参数选择 （使用 &lt;code>:&lt;/code>）
+&lt;/h3>&lt;p>下面的示例命令使用 &lt;code>echo file.txt&lt;/code> 来做演示。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>语法&lt;/th>
+&lt;th>含义&lt;/th>
+&lt;th>示例&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>!!:0&lt;/code>&lt;/td>
+&lt;td>上一条命令的命令名&lt;/td>
+&lt;td>&lt;code>!!:0&lt;/code> → &lt;code>echo&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>!!:1&lt;/code>&lt;/td>
+&lt;td>第一个参数&lt;/td>
+&lt;td>&lt;code>!!:1&lt;/code> → &lt;code>file.txt&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>!!:2&lt;/code>&lt;/td>
+&lt;td>第二个参数&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>!!:$&lt;/code>&lt;/td>
+&lt;td>最后一个参数&lt;/td>
+&lt;td>&lt;code>!!:$&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>!!:*&lt;/code>&lt;/td>
+&lt;td>所有参数（等同于 &lt;code>!!:1-$&lt;/code>）&lt;/td>
+&lt;td>&lt;code>!!:*&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>!!:1-3&lt;/code>&lt;/td>
+&lt;td>第 1 到第 3 个参数&lt;/td>
+&lt;td>&lt;code>!!:1-3&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>!!:2-$&lt;/code>&lt;/td>
+&lt;td>从第 2 个到最后一个参数&lt;/td>
+&lt;td>&lt;code>!!:2-$&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>!$&lt;/code>&lt;/td>
+&lt;td>上一条命令的最后一个参数 (可以省略冒号)&lt;/td>
+&lt;td>&lt;code>cat !$&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>!*&lt;/code>&lt;/td>
+&lt;td>上一条命令的所有参数（可以省略冒号）&lt;/td>
+&lt;td>&lt;code>rm !*&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="参数修饰">参数修饰
+&lt;/h3>&lt;p>下面的示例命令使用 &lt;code>echo /path/to/file.txt&lt;/code> 来做演示。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>修饰符&lt;/th>
+&lt;th>含义&lt;/th>
+&lt;th>示例&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>:p&lt;/code>&lt;/td>
+&lt;td>只打印命令，不执行&lt;/td>
+&lt;td>&lt;code>sudo !!:p&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>:q&lt;/code>&lt;/td>
+&lt;td>给参数加引号，避免空格或特殊字符问题&lt;/td>
+&lt;td>&lt;code>echo !!:1:q&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>:h&lt;/code>&lt;/td>
+&lt;td>获取路径头部（类似 &lt;code>dirname&lt;/code>）&lt;/td>
+&lt;td>&lt;code>echo !!:1:h&lt;/code> → &lt;code>/path/to&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>:t&lt;/code>&lt;/td>
+&lt;td>获取路径尾部（类似 &lt;code>basename&lt;/code>）&lt;/td>
+&lt;td>&lt;code>echo !!:1:t&lt;/code> → &lt;code>file.txt&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>:r&lt;/code>&lt;/td>
+&lt;td>去掉文件扩展名（保留主名）&lt;/td>
+&lt;td>&lt;code>echo !!:1:r&lt;/code> → &lt;code>file&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>:e&lt;/code>&lt;/td>
+&lt;td>获取文件扩展名&lt;/td>
+&lt;td>&lt;code>echo !!:1:e&lt;/code> → &lt;code>txt&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>:s/旧/新/&lt;/code>&lt;/td>
+&lt;td>替换第一个出现的子串&lt;/td>
+&lt;td>&lt;code>!!:1:s/foo/bar/&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>:gs/旧/新/&lt;/code>&lt;/td>
+&lt;td>替换所有出现的子串&lt;/td>
+&lt;td>&lt;code>!!:1:gs/foo/bar/&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="总结">总结
+&lt;/h2>&lt;p>这里其实应该没有写完，不过就这些已经列出来的方法而言，我个人感觉是已经挺够用的了。毕竟，平时最常用的也就是 &lt;code>sudo !!&lt;/code> 来给 &lt;code>pamcan -Syu&lt;/code> 补上管理员权限而已，或者是在 &lt;code>ls -l /path/to/file&lt;/code> 确定文件/文件夹存在后用 &lt;code>vim&lt;/code> 或者 &lt;code>cd&lt;/code> 打开它罢了。&lt;/p>
+&lt;p>还有一点要注意的是，&lt;code>bash&lt;/code> 默认是不会像 &lt;code>zsh&lt;/code> 一样先提供一个预览，让你看看会发生什么的，而是直接就运行命令了。所以也许在 &lt;code>bash&lt;/code> 中使用这个功能时需要额外注意，特别是涉及一些比较危险的动作，比如 &lt;code>rm&lt;/code> 这类命令。此时你可以尝试先用 &lt;code>:p&lt;/code> 来打印出来要运行的命令，没啥问题就可以运行了。印象中应该还有一个办法，来让 &lt;code>bash&lt;/code> 也先提供一个预览而非直接运行。不过，因为我用的是 &lt;code>zsh&lt;/code>，就不纠结这个问题了。也许以后我还会更新这篇文章呢？哈哈。&lt;/p>
+&lt;p>那么，感谢你看到这里，祝您身心愉悦，身体健康~&lt;/p></description></item></channel></rss>
