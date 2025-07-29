@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tools on A Moment's Rest</title><link>https://a-moment096.github.io/tags/tools/</link><description>Recent content in Tools on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Tue, 29 Jul 2025 09:04:35 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/tools/index.xml" rel="self" type="application/rss+xml"/><item><title>Git，你能帮帮我吗？其一</title><link>https://a-moment096.github.io/p/git%E4%BD%A0%E8%83%BD%E5%B8%AE%E5%B8%AE%E6%88%91%E5%90%97%E5%85%B6%E4%B8%80/</link><pubDate>Mon, 28 Jul 2025 22:49:16 +0800</pubDate><guid>https://a-moment096.github.io/p/git%E4%BD%A0%E8%83%BD%E5%B8%AE%E5%B8%AE%E6%88%91%E5%90%97%E5%85%B6%E4%B8%80/</guid><description>&lt;img src="https://a-moment096.github.io/posts/Shell_Note/Git_How/Tatara%20Kogasa.jpg" alt="Featured image of post Git，你能帮帮我吗？其一" />&lt;p>&lt;em>Git 真的很好用，但是 Git 的命令真的好复杂。尝试从使用目的/使用流程上来写一写可以怎么用 Git 吧~&lt;/em>&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tools on A Moment's Rest</title><link>https://a-moment096.github.io/tags/tools/</link><description>Recent content in Tools on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Tue, 29 Jul 2025 10:00:11 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/tools/index.xml" rel="self" type="application/rss+xml"/><item><title>（也许是）一个 Git 教程？其一</title><link>https://a-moment096.github.io/p/%E4%B9%9F%E8%AE%B8%E6%98%AF%E4%B8%80%E4%B8%AA-git-%E6%95%99%E7%A8%8B%E5%85%B6%E4%B8%80/</link><pubDate>Mon, 28 Jul 2025 22:49:16 +0800</pubDate><guid>https://a-moment096.github.io/p/%E4%B9%9F%E8%AE%B8%E6%98%AF%E4%B8%80%E4%B8%AA-git-%E6%95%99%E7%A8%8B%E5%85%B6%E4%B8%80/</guid><description>&lt;img src="https://a-moment096.github.io/posts/Shell_Note/Git_How/Tatara%20Kogasa.jpg" alt="Featured image of post （也许是）一个 Git 教程？其一" />&lt;p>&lt;em>Git 真的很好用，但是 Git 的命令真的好复杂。简单整理一下，就当写个教程好了~&lt;/em>&lt;/p>
 &lt;p>&lt;em>头图出自 &lt;a class="link" href="https://www.pixiv.net/en/users/75383094" target="_blank" rel="noopener"
 >夏空&lt;/a> 太太所画的 &lt;a class="link" href="https://www.pixiv.net/en/artworks/116876998" target="_blank" rel="noopener"
 >多多良 小伞&lt;/a>，可爱捏~ 那就来一曲小伞的个人曲吧&lt;/em>&lt;/p>
@@ -6,22 +6,22 @@
 &lt;style type="text/css">.dark-theme .aplayer{background:#212121}.dark-theme .aplayer.aplayer-withlist .aplayer-info{border-bottom-color:#5c5c5c}.dark-theme .aplayer.aplayer-fixed .aplayer-list{border-color:#5c5c5c}.dark-theme .aplayer .aplayer-body{background-color:#212121}.dark-theme .aplayer .aplayer-info{border-top-color:#212121}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-title{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-author{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time{color:#eee}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path{fill:#eee}.dark-theme .aplayer .aplayer-list{background-color:#212121}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb{background-color:#999}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover{background-color:#bbb}.dark-theme .aplayer .aplayer-list li{color:#fff;border-top-color:#666}.dark-theme .aplayer .aplayer-list li:hover{background:#4e4e4e}.dark-theme .aplayer .aplayer-list li.aplayer-list-light{background:#6c6c6c}.dark-theme .aplayer .aplayer-list li .aplayer-list-index{color:#ddd}.dark-theme .aplayer .aplayer-list li .aplayer-list-author{color:#ddd}.dark-theme .aplayer .aplayer-lrc{text-shadow:-1px -1px 0 #666}.dark-theme .aplayer .aplayer-lrc:before{background:-moz-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:-webkit-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:linear-gradient(to bottom, #212121 0%, rgba(33,33,33,0) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#212121', endColorstr='#00212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc:after{background:-moz-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:-webkit-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:linear-gradient(to bottom, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#00212121', endColorstr='#cc212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc p{color:#fff}.dark-theme .aplayer .aplayer-miniswitcher{background:#484848}.dark-theme .aplayer .aplayer-miniswitcher .aplayer-icon path{fill:#eee}&lt;/style>
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js">&lt;/script>
 &lt;script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js">&lt;/script>&lt;meting-js auto="https://music.163.com/#/song?id=22636608" theme="#2980b9" loop="never">&lt;/meting-js>
-&lt;h2 id="如果你几乎没听说过-git-">如果你几乎没听说过 Git ……
-&lt;/h2>&lt;p>也许是所处环境的原因，也有可能，事实就是如此，我身边很多人不知道 Git 是什么。大家都听过 &lt;em>Github&lt;/em>，但很多人却只知道上面好多程序和程序员。虽然也没错，但是并不准确；当我说我在用 &lt;em>Git&lt;/em> 的时候，会有人把 &lt;em>Git&lt;/em> 和 &lt;em>Github&lt;/em> 混为一谈…… 说实在的，大家对它的误解有点大了。&lt;/p>
-&lt;p>所以，如果您不了解 Git 是什么，那我很荣幸能在这里向您简单介绍它是什么。如果您就是想看看 Git 要怎么用，请跳过这一节。&lt;/p>
+&lt;h2 id="git熟悉又陌生的名字-">Git，熟悉又陌生的名字 ……
+&lt;/h2>&lt;p>也许是所处环境的原因，我身边有很多人不知道 Git 是什么。他们都听过 &lt;em>Github&lt;/em>，但很多却只知道上面有好多程序和程序员。虽然也没错，但是并不准确；而当我说我在用 &lt;em>Git&lt;/em> 的时候，会有人把 &lt;em>Git&lt;/em> 和 &lt;em>Github&lt;/em> 混为一谈；很多人觉得 Git 很复杂，顺带觉得 Github 也很复杂…… 为此，我想分享一下我对 Git 和 Github 的理解，聊聊 Git 和 Github 都是什么。&lt;/p>
+&lt;p>所以，如果你不了解 Git 是什么，那我很荣幸能在这里向你简单介绍它。&lt;/p>
 &lt;h3 id="所以到底什么是-git版本控制啊">所以到底什么是 Git？版本控制？啊？
 &lt;/h3>&lt;p>所谓的 Git，它就是：&lt;/p>
 &lt;p>&lt;strong>&lt;center>一款为程序开发的存档系统。&lt;/center>&lt;/strong>&lt;/p>
-&lt;p>是的，事实就是这样。游戏存档。卡关的时候/做支线的时候/后悔的时候可以进度回溯的游戏存档。如果您在翻阅 &lt;em>ProGit&lt;/em> 或者某些教程时不太明白什么是 &lt;em>版本控制系统&lt;/em>，没关系，就是游戏存档（程序用）的比较花哨的名字。&lt;/p>
+&lt;p>是的，事实就是这样。游戏存档。卡关的时候/做支线的时候/后悔的时候可以进度回溯的游戏存档。如果你在翻阅 &lt;em>ProGit&lt;/em> 或者某些教程时不太明白什么是 &lt;em>版本控制系统&lt;/em>，没关系，就是游戏存档（程序用）的比较花哨的名字。&lt;/p>
 &lt;p>不过，为了能高效地，更好地服务程序员，Git 自然有了一大票复杂的功能，且每个子功能还会做特别多的细分，另外对每个存档都可以有非常复杂 &lt;del>（麻烦）&lt;/del> 的，细致 &lt;del>（啰嗦）&lt;/del> 的控制。然而，这依旧不能让它摆脱它就是个存档系统的事实。&lt;/p>
-&lt;p>一旦您接受了这个设定，那么 Git 就其实没有多少秘密了。&lt;/p>
+&lt;p>一旦你接受了这个设定，那么 Git 就其实没有多少秘密了。&lt;/p>
 &lt;h3 id="ok但是听你说好像很麻烦">OK，但是听你说好像很麻烦……
-&lt;/h3>&lt;p>不得不承认的是，正如上面所说的那样，Git 的命令实际上可以非常地复杂。如果您愿意翻阅它的 man-page，你会发现内容出奇地长。而当你尝试用 &lt;code>git --help&lt;/code> 来获取一些简单有效的信息的时候，很抱歉，&lt;code>git --help&lt;/code> 只会告诉你你能怎么做，并伴随着看不太懂的 usage，却不太会告诉你怎么做能做什么。&lt;/p>
+&lt;/h3>&lt;p>不得不承认的是，正如上面所说的那样，Git 的命令实际上可以非常地复杂。如果你愿意翻阅它的 man-page，你会发现内容出奇地长；而当你尝试用 &lt;code>git --help&lt;/code> 来获取一些简单有效的信息的时候，很抱歉，&lt;code>git --help&lt;/code> 只会告诉你你能怎么做，并伴随着看不太懂的 usage，却不太会告诉你怎么做能做什么。&lt;/p>
 &lt;p>然而，转折来了。首先，如果你受环境所限，只能从命令行操作 Git，待会儿介绍的四五个命令几乎就能覆盖 80% 的使用场景了。而如果你的环境支持你使用图形化的界面，那么如果不是命令行的忠实用户，完全可以挑个 GUI 程序，比如和 Github 集成度高的 &lt;em>Github Desktop&lt;/em>，界面美观现代，功能也已经足够丰富，没必要和自己过不去。&lt;/p>
-&lt;p>所以，结论是：Git 很复杂，但是我们可以用的很简单呀。它很强大，很好，但这不影响我只需要那几个最基础的功能。最重要的是，当你需要更复杂的功能的时候，互联网永远是你的好朋友。你完全可以现场上网搜索，大概率会有来自 StackOverflow 的朋友向您答疑解惑（贴答案）（好几年前且点赞特别高的）。&lt;/p>
+&lt;p>所以，结论是：Git 很复杂，但是我们可以用的很简单呀。它很强大，很好，但这不影响我只需要那几个最基础的功能。最重要的是，当你需要更复杂的功能的时候，互联网永远是你的好朋友。你完全可以现场上网搜索，大概率会有来自 StackOverflow 的朋友向你答疑解惑（贴答案）（好几年前且点赞特别高的）。&lt;/p>
 &lt;p>So, don&amp;rsquo;t be afraid! Just try it!&lt;/p>
 &lt;h3 id="行但是-git-和-github-到底是什么关系">行，但是 Git 和 Github 到底是什么关系？
-&lt;/h3>&lt;p>这算是 FAQ （Frequently Asked Questions）了。解释起来也很简单：云存档功能。就像 Steam 有游戏云存档一样，Git 也可以有个云存档。只不过，Steam 有个专门的服务器来帮你自动地存好你的游戏内容，而 Git 则可以允许你选择你喜欢的地方存你的代码存档。&lt;/p>
+&lt;/h3>&lt;p>这算是很常见的问题了。解释起来也很简单：Github 能提供云存档功能。就像 Steam 有游戏云存档一样，Git 也可以有个云存档。只不过，Steam 有个专门的服务器来帮你自动地存好你的游戏内容，而 Git 则可以允许你选择你喜欢的地方存你的代码存档。&lt;/p>
 &lt;p>而 Github，正是那个大部分程序员都喜欢的选择。不仅如此，Github 上传的存档还兼具展示功能，大家可以在 Github 上给自己喜欢的代码存档投票，也可以把别人的存档下载到自己电脑上，甚至可以尝试和别人一起组排。所以，说是交友网站，也未尝不可（也许）&lt;/p>
 &lt;p>那么我可以选择别的地方存放存档吗？当然可以！除了 Github，还有很多很多的 Git 服务提供商。你还可以 &lt;em>自建 Git 服务&lt;/em>！甚至，Github 显得有些 “&lt;em>违背&lt;/em>” Git 的初衷：分布式的存档存储。什么意思呢？Git 一开始是打算，让所有的代码开发者（玩家）都留一份存档，然后大家就可以一起攻略组排了。大家都保留一份源码，这不就相当于大家都做存储功能了吗？只不过随着合作要求的提高和开源社区的扩大，Github 这样一个公开自己代码的地方就这么自发地出现了。&lt;/p>
 &lt;p>总而言之，Git 是存档工具，Github 是大家上传/分享/讨论/合作云存档的地方。&lt;/p>
@@ -29,7 +29,7 @@
 &lt;/h3>&lt;p>是这样的，Git 就是做这么个事儿。也许你会看到一些介绍一开始会提 Git 使用的技术多么先进，多么高效，多么体现开源精神，然后不明所以。然而 Git 就是做这么个代码存档的东西，为了使用它以期了解它的话，大框架就是这样的。&lt;/p>
 &lt;p>然而这里还是要提个醒：上面也许的确抓住了 Git 的核心目的，但是依旧是很粗糙的，非常概括性的。上面的文字只能帮助 &lt;em>了解 Git 是什么&lt;/em>，并不能告诉你 &lt;em>Git 怎么做的&lt;/em>。另外，使用 Git 的命令完成最基础的工作是很简单，但是在切实明白一条命令到底在做什么前，&lt;strong>请最好不要盲目运行这条命令&lt;/strong>。实际上，要想运用好 Git 管理你的代码/项目，还是需要了解一些关于 Git 究竟在背后怎么做的知识的。&lt;/p>
 &lt;p>所以，如果你还对 Git 感兴趣，或者想把 Git 用起来的话，我们就来讲一些技术细节吧~&lt;/p>
-&lt;h2 id="git-怎么存的档">Git 怎么存的档？
+&lt;h2 id="要怎么用-git-存档">要怎么用 Git 存档？
 &lt;/h2>&lt;p>想解答这个问题，我们不可避免地要接触一些没啥意思的概念。与其直接介绍它们，我们先来看看，日常开发会怎么使用 Git 吧。&lt;/p>
 &lt;h3 id="tig-的一天">Tig 的一天
 &lt;/h3>&lt;p>Tig 是热爱 Minecraft 的忠实玩家。他很享受创造神的感觉，毕竟他就是被游戏名吸引而来的。今天他计划开展一个新的工作：制作一个百万刷铁机！&lt;/p>
