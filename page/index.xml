@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pages on A Moment's Rest</title><link>https://a-moment096.github.io/page/</link><description>Recent content in Pages on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 30 Jul 2025 19:20:24 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/page/index.xml" rel="self" type="application/rss+xml"/><item><title>Thoughts</title><link>https://a-moment096.github.io/page/thoughts/</link><pubDate>Sat, 02 Nov 2024 14:34:18 +0800</pubDate><guid>https://a-moment096.github.io/page/thoughts/</guid><description>&lt;!-- 由 LeanCloud + Artitalk 驱动 --></description></item><item><title>About</title><link>https://a-moment096.github.io/page/about/</link><pubDate>Wed, 09 Oct 2024 14:34:18 +0800</pubDate><guid>https://a-moment096.github.io/page/about/</guid><description>&lt;img src="https://a-moment096.github.io/page/about/Reimu.png" alt="Featured image of post About" />&lt;h1 id="a-moment-rest-amoments-blog">A Moment Rest: AMoment&amp;rsquo;s Blog
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pages on A Moment's Rest</title><link>https://a-moment096.github.io/page/</link><description>Recent content in Pages on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 14 Aug 2025 09:04:37 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/page/index.xml" rel="self" type="application/rss+xml"/><item><title>Thoughts</title><link>https://a-moment096.github.io/page/thoughts/</link><pubDate>Sat, 02 Nov 2024 14:34:18 +0800</pubDate><guid>https://a-moment096.github.io/page/thoughts/</guid><description>&lt;!-- 由 LeanCloud + Artitalk 驱动 --></description></item><item><title>About</title><link>https://a-moment096.github.io/page/about/</link><pubDate>Wed, 09 Oct 2024 14:34:18 +0800</pubDate><guid>https://a-moment096.github.io/page/about/</guid><description>&lt;img src="https://a-moment096.github.io/page/about/Reimu.png" alt="Featured image of post About" />&lt;h1 id="a-moment-rest-amoments-blog">A Moment Rest: AMoment&amp;rsquo;s Blog
 &lt;/h1>&lt;p>Welcome! Come and have a rest here~&lt;/p>
 &lt;h2 id="who-are-you--你谁">Who are you? | 你谁？
 &lt;/h2>&lt;p>I&amp;rsquo;m a 24 year-old graduate student in &lt;del>Counter Strike University&lt;/del> Central South University, major in Material Sci &amp;amp; Eng.&lt;/p>
@@ -106,7 +106,30 @@ a.k.a. 寒武纪的三叶虫?
 &lt;/footer>
 &lt;/div>
 &lt;div class="article-image">
-&lt;img src="http://blog.cloverta.top/wp-content/uploads/2025/04/512x512-1.jpg" loading="lazy">
+&lt;img src="https://avatars.githubusercontent.com/u/168412973?v=4" loading="lazy">
+&lt;/div>
+&lt;/a>
+&lt;/article>
+&lt;article>
+&lt;a href="https://namenotneeded.github.io/" target="_blank" rel="noopener">
+&lt;div class="article-details">
+&lt;h2 class="article-title">NameNotNeeded&lt;/h2>
+&lt;/div>
+&lt;div class="article-image">
+&lt;img src="https://namenotneeded.github.io/avatar/avatar.webp" loading="lazy">
+&lt;/div>
+&lt;/a>
+&lt;/article>
+&lt;article>
+&lt;a href="https://oneis2much.github.io/" target="_blank" rel="noopener">
+&lt;div class="article-details">
+&lt;h2 class="article-title">奇奇怪怪的博客&lt;/h2>
+&lt;footer class="article-time">
+无病呻吟
+&lt;/footer>
+&lt;/div>
+&lt;div class="article-image">
+&lt;img src="https://avatars.githubusercontent.com/u/146634708?v=4" loading="lazy">
 &lt;/div>
 &lt;/a>
 &lt;/article>
@@ -123,11 +146,26 @@ a.k.a. 寒武纪的三叶虫?
 &lt;h2 id="应该有个简单的说明">应该有个简单的说明
 &lt;/h2>&lt;p>这篇文章在我预想中应该搜集整理了我博客中出现过的信息类的链接，包括但不限于博客文章，Github 项目，项目文档，视频，论文等等。也许是个收藏夹？希望对你有用。&lt;/p>
 &lt;p>欢迎投稿哦~ 你可以把你觉得好用的网站链接发到这里来。&lt;/p>
+&lt;h2 id="觉得特别好所以很值得一个手动置顶">觉得特别好所以很值得一个手动置顶
+&lt;/h2>&lt;ul>
+&lt;li>
+&lt;p>&lt;a class="link" href="https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md" target="_blank" rel="noopener"
+>&lt;strong>提问的智慧&lt;/strong>&lt;/a>&lt;/p>
+&lt;p>每当有问题/有点子，在上群组/论坛查消息/看帖子的时候，又或是看到网上的逆天提问/爷新出现的时候，我总是会想起大一网上冲浪时，某早已记不得的链接带领我点进这篇文章的下午。虽然通篇其实是面向在 “黑客” 或者极客群体论坛/群组/邮件列表提问时的注意事项（甚至有点黑客群体自白的意思？），但是我感觉内容完全不需要拘束于某几个特定领域。&lt;em>提问的智慧&lt;/em> 这个名称恰如其分。&lt;/p>
+&lt;p>这里还是贴上本文的&lt;a class="link" href="http://www.catb.org/~esr/faqs/smart-questions.html" target="_blank" rel="noopener"
+>英文原文&lt;/a>以及本中文文档的&lt;a class="link" href="https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way" target="_blank" rel="noopener"
+>原繁中仓库&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
 &lt;h2 id="工具类网站">工具类网站
-&lt;/h2>&lt;p>&lt;a class="link" href="https://blocks.jkniest.dev/" target="_blank" rel="noopener"
->Comment Block Generator&lt;/a>: 生成注释块，格式化注释很漂亮
-&lt;a class="link" href="https://www.mermaidchart.com/play" target="_blank" rel="noopener"
->Mermaid Chart&lt;/a>: Mermaid Playground，可以用来画图/预览图&lt;/p>
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://blocks.jkniest.dev/" target="_blank" rel="noopener"
+>Comment Block Generator&lt;/a>: 生成注释块，格式化注释很漂亮&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.mermaidchart.com/play" target="_blank" rel="noopener"
+>Mermaid Chart&lt;/a>: Mermaid Playground，可以用来画图/预览图&lt;/li>
+&lt;li>&lt;a class="link" href="https://it-tools.tech/" target="_blank" rel="noopener"
+>IT-TOOLS&lt;/a>: 非常好工具站，使我大脑旋转&lt;/li>
+&lt;/ul>
 &lt;h2 id="blog-装修">Blog 装修
 &lt;/h2>&lt;ul>
 &lt;li>&lt;a class="link" href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener"
@@ -180,6 +218,8 @@ a.k.a. 寒武纪的三叶虫?
 &lt;/h3>&lt;ul>
 &lt;li>&lt;a class="link" href="https://www.bilibili.com/video/BV1Hkr7YYEh8" target="_blank" rel="noopener"
 >给傻子的 Git 教程&lt;/a>: 非常好的教程，使我大脑旋转&lt;/li>
+&lt;li>&lt;a class="link" href="https://learngitbranching.js.org/" target="_blank" rel="noopener"
+>Learn Git Branching&lt;/a>: 很不错的 Git 分支操作游戏，在实际操作中了解如何管理 Git 分支。我玩了一下午通关了，很好玩。&lt;/li>
 &lt;/ul>
 &lt;h2 id="数学笔记">数学笔记
 &lt;/h2>&lt;ul>
