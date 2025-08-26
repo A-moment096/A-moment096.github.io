@@ -1,12 +1,98 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VCS on A Moment's Rest</title><link>https://a-moment096.github.io/tags/vcs/</link><description>Recent content in VCS on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 25 Aug 2025 11:13:13 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/vcs/index.xml" rel="self" type="application/rss+xml"/><item><title>Git，你能帮帮我吗？其三</title><link>https://a-moment096.github.io/p/git%E4%BD%A0%E8%83%BD%E5%B8%AE%E5%B8%AE%E6%88%91%E5%90%97%E5%85%B6%E4%B8%89/</link><pubDate>Sat, 16 Aug 2025 16:49:16 +0800</pubDate><guid>https://a-moment096.github.io/p/git%E4%BD%A0%E8%83%BD%E5%B8%AE%E5%B8%AE%E6%88%91%E5%90%97%E5%85%B6%E4%B8%89/</guid><description>&lt;img src="https://a-moment096.github.io/posts/Shell_Note/Git_How/Tatara%20Kogasa.jpg" alt="Featured image of post Git，你能帮帮我吗？其三" />&lt;p>&lt;em>最后一节，聊聊如何在 GitHub 上进行多人协作吧~&lt;/em>&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VCS on A Moment's Rest</title><link>https://a-moment096.github.io/tags/vcs/</link><description>Recent content in VCS on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Tue, 26 Aug 2025 10:31:40 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/vcs/index.xml" rel="self" type="application/rss+xml"/><item><title>（也许是）一个 Git 教程？其三</title><link>https://a-moment096.github.io/p/%E4%B9%9F%E8%AE%B8%E6%98%AF%E4%B8%80%E4%B8%AA-git-%E6%95%99%E7%A8%8B%E5%85%B6%E4%B8%89/</link><pubDate>Tue, 26 Aug 2025 18:28:16 +0800</pubDate><guid>https://a-moment096.github.io/p/%E4%B9%9F%E8%AE%B8%E6%98%AF%E4%B8%80%E4%B8%AA-git-%E6%95%99%E7%A8%8B%E5%85%B6%E4%B8%89/</guid><description>&lt;img src="https://a-moment096.github.io/posts/Shell_Note/Git_How/Tatara%20Kogasa.jpg" alt="Featured image of post （也许是）一个 Git 教程？其三" />&lt;p>&lt;em>最后一节，聊聊如何在 GitHub 上进行多人协作吧~&lt;/em>&lt;/p>
 &lt;p>&lt;em>头图信息请参考第一节内容，谢谢~&lt;/em>&lt;/p>
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
 &lt;style type="text/css">.dark-theme .aplayer{background:#212121}.dark-theme .aplayer.aplayer-withlist .aplayer-info{border-bottom-color:#5c5c5c}.dark-theme .aplayer.aplayer-fixed .aplayer-list{border-color:#5c5c5c}.dark-theme .aplayer .aplayer-body{background-color:#212121}.dark-theme .aplayer .aplayer-info{border-top-color:#212121}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-title{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-author{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time{color:#eee}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path{fill:#eee}.dark-theme .aplayer .aplayer-list{background-color:#212121}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb{background-color:#999}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover{background-color:#bbb}.dark-theme .aplayer .aplayer-list li{color:#fff;border-top-color:#666}.dark-theme .aplayer .aplayer-list li:hover{background:#4e4e4e}.dark-theme .aplayer .aplayer-list li.aplayer-list-light{background:#6c6c6c}.dark-theme .aplayer .aplayer-list li .aplayer-list-index{color:#ddd}.dark-theme .aplayer .aplayer-list li .aplayer-list-author{color:#ddd}.dark-theme .aplayer .aplayer-lrc{text-shadow:-1px -1px 0 #666}.dark-theme .aplayer .aplayer-lrc:before{background:-moz-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:-webkit-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:linear-gradient(to bottom, #212121 0%, rgba(33,33,33,0) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#212121', endColorstr='#00212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc:after{background:-moz-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:-webkit-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:linear-gradient(to bottom, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#00212121', endColorstr='#cc212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc p{color:#fff}.dark-theme .aplayer .aplayer-miniswitcher{background:#484848}.dark-theme .aplayer .aplayer-miniswitcher .aplayer-icon path{fill:#eee}&lt;/style>
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js">&lt;/script>
 &lt;script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js">&lt;/script>&lt;meting-js auto="https://music.163.com/#/song?id=455026" theme="#2980b9" loop="never">&lt;/meting-js>
-&lt;h2 id="所以git-怎么实现多人协作">所以，Git 怎么实现多人协作？
-&lt;/h2>&lt;h2 id="后记">后记
-&lt;/h2></description></item><item><title>Git，你能帮帮我吗？其二</title><link>https://a-moment096.github.io/p/git%E4%BD%A0%E8%83%BD%E5%B8%AE%E5%B8%AE%E6%88%91%E5%90%97%E5%85%B6%E4%BA%8C/</link><pubDate>Thu, 14 Aug 2025 16:49:16 +0800</pubDate><guid>https://a-moment096.github.io/p/git%E4%BD%A0%E8%83%BD%E5%B8%AE%E5%B8%AE%E6%88%91%E5%90%97%E5%85%B6%E4%BA%8C/</guid><description>&lt;img src="https://a-moment096.github.io/posts/Shell_Note/Git_How/Tatara%20Kogasa.jpg" alt="Featured image of post Git，你能帮帮我吗？其二" />&lt;p>&lt;em>上一节已经介绍了平时会怎么用 Git 进行单分支仓库的管理，这一节就来讲讲 Git 要怎么进行多分支协作吧！&lt;/em>&lt;/p>
+&lt;h2 id="所以git-的远程到底是什么东西">所以，Git 的远程到底是什么东西？
+&lt;/h2>&lt;p>我们之前提过，Git 通过 &lt;em>远程 (Remote)&lt;/em> 来实现和他人合作。我们甚至已经介绍了一些和远程进行交互的命令了。然而，Git 究竟是怎么实现这一功能的？这个功能有什么特点呢？我们和他人进行协作开发时，有什么要注意的点呢？我们一点点来介绍。我们先系统地介绍一下 &lt;em>远程&lt;/em> 是什么东西吧。&lt;/p>
+&lt;h3 id="远程不过是另一台装了-git-的机器">远程：不过是另一台装了 Git 的机器
+&lt;/h3>&lt;p>实际上远程并不神秘。得益于 Git 分布式的特性，每一台安装了 Git 且拥有项目源码的机器都可以说是某个远程。或者说远程是相对的：有两台机器 A 和 B，都拥有同一个项目的源码并安装了 Git，那么对于 A 来讲 B就是远程，而对 B 来讲 A 也是远程。而不同机器之间的通信则可以通过 SSH 完成，如果是比较老的项目，或者不希望通过 SSH 来连接的情况，我们甚至可以使用邮件进行通信，传递代码，就像 Linux 内核，GCC 等项目那样。总之，通过这种 &lt;em>每个设备都存储一份代码&lt;/em> 的形式， Git 就实现了分布式的代码存储，每个设备既可以是正在工作的仓库，又可以是为他人提供源码的仓库。&lt;/p>
+&lt;p>然而，大量的实践证明，有时候有一个中心服务器真的会很省事。大家把代码的更新放在一台公开的服务器上，然后可以从这一个服务器上拉取代码，可以很好地保证开发进度以及代码的一致性。不过这样又失去了 Git 天生的分布式特性。所以，到底哪个更好呢？真分布式还是采用某个中心的代码服务器？&lt;/p>
+&lt;h3 id="对比真分布式-vs-中心仓库">对比：&lt;em>真&lt;/em>分布式 vs 中心仓库
+&lt;/h3>&lt;p>Git 一开始就是支持分布式存储的，这样最大的好处在于，每一个人拥有的仓库都是这个代码的一份备份。假如一个项目参与的人越多，这个项目的备份就会越多。而且每个人都是自己拥有的这份代码的主人，自己对代码拥有完全的掌控权，可以自行决定自己的代码要不要提交给别人，或者要不要接受来自他人的变更等。这种去中心化的，人人平等的思想非常符合自由开源的精神。另外这种方式不是很依赖某个中心设备，不会因为这一个设备断掉而直接完全不可用。如 Linux 内核，GCC 编译工具链等都没有一个一般意义上的中心代码服务器用来让所有合作者都往里面推送代码或者从里面拉取更新。&lt;/p>
+&lt;p>然而中心化的服务器自然是有它的好处的。比如说有三个人在同一个项目工作，三人没有一个中心代码仓库而是互相传递更新的代码，如果三位都对代码进行了不同的且有一定冲突的代码，那么在同步时肯定会面临很多的麻烦。而如果他们的代码存放在一个中心服务器上，那这个服务器就会忠实地记录每个人对它的修改，进而避免所有人的代码一起涌上来的尴尬，同时保持大家的进度都在同一阶段，避免每个人有自己的想法进而没法合并（即便其实可以用分支也是可以的）。另外如果在某个项目里，开发团队是有明确分工的，那么这时候应该有一个人负责对代码进行审阅修改，而此时中心服务器的优势就体现出来了，让审阅者（们）单独拥有对中心服务器代码的修改权，然后审阅者（们）就可以直接在该服务器上进行审阅合并等操作，且所有的合作者都可以直接从该位置拉取最新的代码。也许有人说，把代码直接交给审阅者不就行了，为什么非得有个中心服务器的参与？然而如果真是这样的话，审阅者他自己的电脑也在某种程度上成为了那个中心服务器了。就我个人而言，我是想不到什么普通项目有必须使用去中心化工作流程的必要的。一般来讲都还是有一个（当然也可以多个）代码托管处会好很多。&lt;/p>
+&lt;p>那么，谁是这个星球上最受欢迎的 &lt;em>中心代码仓库&lt;/em> 呢？&lt;/p>
+&lt;h2 id="代码托管平台们">代码托管平台们
+&lt;/h2>&lt;h3 id="github-the-blessed-one">GitHub: The blessed one
+&lt;/h3>&lt;p>向您隆重介绍，这个星球最受欢迎代码托管平台，汇集无数人智慧结晶，全世界最大同性（？）交友网站（&lt;a class="link" href="https://www.flysnow.org/2019/01/09/github-milestones" target="_blank" rel="noopener"
+>迫真&lt;/a>，95%以上的用户都是男性），GitHub。第一期其实已经有介绍过，GitHub 和 Git 之间的关系是什么样的，以及大家可以怎么使用 GitHub。这里我们再多聊两句。&lt;/p>
+&lt;p>上面我们说 GitHub 是代码仓库，其实是不太严谨的，应该说它是一个代码托管平台，任何人都可以在上面创建自己的仓库，然后把代码放在上面。当然，GitHub 的功能肯定不仅限于此，它上面集成了很多很好用的功能，比如 Issues, Pull Requests, GitHub Actions 等，也提供了非常美观现代化的图形界面，能让大家直观地看到代码仓库的变更历史。它甚至提供了 GitHub Pages 来让开发者可以把静态的网页托管在上面，这让很多项目得以拥有自己的网页，或是用来做文档，或是用来宣传，功能非常多样。顺带一提，本博客就是托管在 GitHub Pages 服务上的。GitHub，伟大无需多言。&lt;/p>
+&lt;p>目前 GitHub 上已经有了 &lt;a class="link" href="https://gitcharts.com/" target="_blank" rel="noopener"
+>2亿6千万以上（268 million+）的公开仓库了&lt;/a>，仓库来源于全世界各地，且每天都有大量的信件仓库，大量的拉取请求，以及大量的代码提交。大家在 GitHub 上的活动已经远不止简单的提交自己的代码这么简单，开发者们会在一个项目内合作开发，设定开发目标，合并他人的拉取请求，为感兴趣的项目做贡献或者提出问题，帮助他人解答问题等等。其仓库类型也是多种多样，有各种语言写成的千奇百怪的项目，也有一些很不错的资源整合项目，甚至你还会看到很多令人难绷的小作文以及互联网记忆。总之，除了托管自己的代码之外，你还可以看看别人的代码，玩玩别人的项目，和别的开发者讨论（&lt;del>吵架&lt;/del>），给别的项目做贡献（&lt;del>改错别字&lt;/del>）。用途多种多样，就看怎么用了。&lt;/p>
+&lt;p>GitHub 起源于 2007 年，至今已经 18 年历史了。18年来，GitHub 变得越来越完善，功能越来越丰富。2018 年的时候微软收购了它，在那之后就成了微软的一个子公司，而 2019 年的时候 GitHub 宣布它支持个人创建任意多个私有仓库，将 GitHub 的受欢迎程度推上了一个新台阶。而就在前不久（2025年8月11日），其 CEO 宣布卸任，GitHub 被合并在微软的 Core AI 部门。我个人认为这应该算是坏消息，毕竟 GitHub 作为全世界最大的代码托管平台，几乎已经是 &lt;em>开源精神&lt;/em> 的代言人了。本来还是一个比较独立的子公司的 GitHub 现在被微软直接合并进一个部门内，怎么想都感觉其独立性要进一步下降了。是在令人感到可惜。但是就目前而言，GitHub 也依旧是同类产品中知名度最高的一个，甚至可以说是某种标准了。所以，还是先用着吧。如果 GitHub 哪一天真倒了的话，肯定还会出现新的继任者的。&lt;/p>
+&lt;h3 id="gitlab-强大的自动化以及自托管">GitLab: 强大的自动化以及自托管
+&lt;/h3>&lt;p>除了 GitHub 以外，当然还有别的托管平台。其中另一个比较受欢迎的项目就是 GitLab，它除了托管到 GitLab 的服务器上以外，还支持在自己的服务器上自行搭建代码托管平台，其中也支持和 GitHub 类似的很多功能，比如查看源码，Issues, Merge Request（对应 GitHub 中的 Pull Request），CI/CD（持续集成/持续部署）等等。其中的 CI/CD 是 GitLab 最出众的特点，以速度快效率高而著称。而且由于它提供自托管（通过 GitLab Community Edition）的特性，对于那些需要较强独立性的，不希望受到 GitHub 控制的（理由嘛……我也不知道），或者就是某些公司希望保持私密性的项目，GitLab 是一个很不错的选择。有很多项目都是使用 GitLab 进行托管的，比如 KDE，Paraview 等。相较于 GitHub 而言，GitLab 的隐私性还是更强一些。然而坏消息是，GitLab 在 24 年的时候宣布不再直接为中国地区提供服务，转而由本地服务提供商 &lt;em>极狐&lt;/em> 提供。我也很难讲究竟应该用哪个……&lt;/p>
+&lt;p>GitLab 的功能是非常全面的，如果你并不想要这么完善的功能，只是想在自己的服务器上搭一个轻量化的 Git 托管平台，你也可以选择 Gitea。它最大的特点就是轻量化了，拥有最基础的 Git 托管服务器所应该有的功能，不过随之而来的就是一些更复杂的功能可能没有，自动化相关的内容也许需要自己手动实现等等。&lt;/p>
+&lt;p>讲了这么多，Git 到底应该怎么实现和远程服务器的交互呢？&lt;/p>
+&lt;h2 id="git-与远程的交互方式">Git 与远程的交互方式
+&lt;/h2>&lt;p>下面我们就来介绍一下 Git 和远程进行交互时会用到的一些命令吧。&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>git remote&lt;/code>&lt;/p>
+&lt;p>这个命令正如它的名字，是用来管理和远程相关内容的一个子命令。而且，就像 &lt;code>git branch&lt;/code> 那样，如果你不带任何的参数，它会告诉你都有哪些远程是可用的。一般来讲，仓库会有一个名为 &lt;code>origin&lt;/code> 的远程库，它一般就是你在 GitHub 上托管的位置了。如果你想确认远程的具体信息的话，你可以用 &lt;code>-v&lt;/code> 或者 &lt;code>--verbose&lt;/code> 来让 Git 把该仓库的所有远程地址都告诉你。你也可以用 &lt;code>show&lt;/code> 子命令来让 Git 告诉你关于某个远程的详细信息，包括它会从哪里拉取代码，往哪里推送代码，当前分支和最新提交等等。&lt;/p>
+&lt;p>而假如你的仓库还没有可用的远程，你可以使用 &lt;code>add&lt;/code> 子命令来让 Git 添加一个远程仓库作为你这个仓库的远程位置。比如说你在个人 GitHub 账号下有一个空仓库，地址是 &lt;code>https://github.com/abc/test_repo&lt;/code>，其中 &lt;code>abc&lt;/code> 是用户名而 &lt;code>test_repo&lt;/code> 则是仓库名，此时你就可以使用 &lt;code>git remote add origin https://github.com/abc/test_repo.git&lt;/code> 来把这个仓库作为远程仓库添加到当前仓库名下，并给它以 &lt;code>origin&lt;/code> 的名字。你当然也可以修改这个远程仓库的地址咯，使用 &lt;code>set-url&lt;/code> 即可，用法和 &lt;code>add&lt;/code> 差不多，只不过远程名必须是已经有了的远程名字。&lt;/p>
+&lt;p>假如你感觉某个远程仓库名让你很不爽，你可以使用 &lt;code>rename &amp;lt;old-name&amp;gt; &amp;lt;new-name&amp;gt;&lt;/code> 来修改它；如果这个远程已经不需要了，或者你因为什么其他的原因要删除它，也很简单，使用 &lt;code>remove &amp;lt;remote-name&amp;gt;&lt;/code> 子命令就可以啦。还是比较简单易懂的。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>git clone&lt;/code>&lt;/p>
+&lt;p>除了给现有的仓库添加远程，我们当然还可以从远程仓库复制一份到本地来呀。通过使用 &lt;code>git clone &amp;lt;repo-url&amp;gt;&lt;/code> 命令就可以把一个远程仓库下载到本地。下载下来的仓库会默认放在当前文件夹下的和仓库名同名的文件夹里，且仓库名默认会是和远程仓库的名字一样的，且由于是从远程克隆下来的，它会自动设置好远程的位置（起名也是默认的 &lt;code>origin&lt;/code>）。当然如果你想把该仓库下载到其他位置的话，也可以在仓库的 URL 后面添加上你要下载到的文件夹。&lt;/p>
+&lt;p>一般来讲，使用这个命令就已经足够了。然而有时候，也许你会遇到仓库里使用了 Git Submodules（Git 子模块）的情况。我们这里不打算介绍 Git 子模块，然而如果你在克隆一个带有子模块的项目时没有顺带让仓库克隆其内部的子模块，后面在使用过程中又得重新搞一些有的没的。为了避免这样的麻烦，在克隆时可以直接带上 &lt;code>--recursive&lt;/code> 的参数，告诉 Git “帮我把这个仓库里所有的 Git 子模块也一并下载下来”。这样就省去了后面重新配置 Git 子模块的麻烦。&lt;/p>
+&lt;p>另外也许有时候你克隆一个仓库的目的并不是在仓库里做开发，而是直接使用它（像一些 ZSH 插件是托管在 GitHub 上的），此时你也许不关心它的提交历史，或者这个仓库太大了而你又不需要用上过去的所有提交历史的时候，你会希望只获取到最新的几个提交就够了。Git 非常贴心地提供了 &lt;code>--depth &amp;lt;number&amp;gt;&lt;/code> 的参数，你可以指定你只想克隆到最近的多少个提交即可。这样能非常好地节约克隆的时间，对磁盘和网络都比较友好。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>git push&lt;/code>&lt;/p>
+&lt;p>当我们本地做出一些修改，有了一些和远程不一样的提交之后，我们就可以把本地的提交推送到远程仓库了。当我们直接使用这个命令的时候，Git 会默认推送当前分支到远程仓库的对应分支上。默认的操作就是最高频的操作了，这一点很不错。而当我们需要推送到某个特定分支（比如远程分支和当前分支名称不一样的时候），我们可以先写上远程分支的名字，再写上当前分支的名字：&lt;code>git push &amp;lt;remote-branch&amp;gt; &amp;lt;local-branch&amp;gt;&lt;/code>。我们也可以通过加上参数 &lt;code>-u&lt;/code> 或者 &lt;code>--set-upstream&lt;/code> 来修改推送的默认分支。&lt;/p>
+&lt;p>也许我们的仓库拥有不止一个远程，这时候我们可能需要指定我们要推送的是哪个分支。这时候 &lt;code>push&lt;/code> 的写法会有一定的变化：&lt;code>git push &amp;lt;remote-name&amp;gt; &amp;lt;local-branch&amp;gt;:&amp;lt;remote-branch&amp;gt;&lt;/code>，即我们要先指定推送到哪个远程上，然后用冒号分割本地分支和远程分支。&lt;/p>
+&lt;p>这个写法完全地指定了所有推送的信息，而且这个写法还有一个隐藏功能：如果我们不写本地分支，直接写 &lt;code>git push &amp;lt;remote-name&amp;gt; :&amp;lt;remote-branch&amp;gt;&lt;/code>，意思就是告诉 Git “我要把空分支推送到远程覆盖那个远程分支”，结果就是让 Git 删除远程分支。当然，删除远程分支也可以使用 &lt;code>git push &amp;lt;remote-name&amp;gt; -d &amp;lt;remote-branch&amp;gt;&lt;/code> （或者用 &lt;code>--delete&lt;/code>）来实现，这样的语义更加明确，不过我猜也是给上面的方法一个新的包装而已。也许我们远程的分支太多了，我们不想要远程的那些没有本地对应的分支，此时我们就可以使用 &lt;code>git push --prune &amp;lt;remote-name&amp;gt;&lt;/code> 来删掉（修剪）那些多出来的分支了。&lt;/p>
+&lt;p>除了我们可以推送分支外，&lt;code>push&lt;/code> 还兼并了推送标签（Tag）的功能。我们可以直接使用 &lt;code>git push --tags&lt;/code> 来推送所有的标签，也可以 &lt;code>git push &amp;lt;remote-name&amp;gt; tag &amp;lt;tag-name&amp;gt;&lt;/code> 来推送某一个标签。至于标签是什么你可以认为它是一个独立于分支树之外的持久性的快照，会保存某一时刻的信息，且不会强依附于某个分支，一般是在发行时会给某个版本打上一个标签，没错，就是那个 xx.xx.xx，一般标签都会这么打。我们这里就不过多介绍了。&lt;/p>
+&lt;p>最后在这里要留一个提醒。有很多教程推荐在 &lt;code>push&lt;/code> 出问题的时候使用 &lt;code>-f&lt;/code> 或者 &lt;code>--force&lt;/code> 参数。这个参数的功能是让 Git 不做任何的检查，用本地的状态去强行覆盖远程仓库的状态。如果你真的是在和别人一起协作的话，不要这么做。会被人移交蔡司。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>git fetch&lt;/code>&lt;/p>
+&lt;p>这个命令是用来让我们从远程获取更新使用的。它默认会获取默认远程的所有分支的最新更新，如果我们要指定是从哪个远程获取，只需要把那个远程的名称放在后面即可。如果我们想从所有的远程都拉取更新，则可以使用 &lt;code>--all&lt;/code> 来告诉 Git。类似于 &lt;code>git push&lt;/code>，我们还可以在 &lt;code>git fetch&lt;/code> 的后面加上 &lt;code>-t&lt;/code> 或者 &lt;code>--tags&lt;/code> 来让它从远程获取所有的标签信息，或者用 &lt;code>git fetch --prune&lt;/code> 或 &lt;code>git fetch -p&lt;/code> 来让 Git 删除掉本地多出来的，远程没有的分支。&lt;/p>
+&lt;p>需要注意的是，Git 在设计上让 &lt;code>fetch&lt;/code> 子命令不直接把远程的内容和本地进行合并。也就是说，&lt;code>git fetch&lt;/code> 只会更新 &lt;em>本地的远程数据库&lt;/em>，而不会把远程的数据直接放在本地的工作目录里。如果想要这么做的话，我们可以把远程的分支 通过 &lt;code>git merge&lt;/code> 来 &lt;em>合并&lt;/em> 到本地上。要指定远程分支，我们需要用 &lt;code>&amp;lt;remote-name&amp;gt;/&amp;lt;remote-branch&amp;gt;&lt;/code> 来告诉 Git 我们要的是在 &lt;code>&amp;lt;remote-name&amp;gt;&lt;/code> 上的 &lt;code>&amp;lt;remote-branch&amp;gt;&lt;/code> 分支。&lt;/p>
+&lt;p>如果你感觉这实在是太麻烦了（真的很麻烦），我们可以使用下面这个融合了 &lt;code>fetch&lt;/code> 和 &lt;code>merge&lt;/code> 的命令：&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>git pull&lt;/code>&lt;/p>
+&lt;p>当我们很明确地是要把远程的变更直接应用到本地仓库时，我们可以直接 &lt;code>git pull&lt;/code> 来拉取远程更新。由于它涉及 “合并” 的步骤，所以它的默认行为是把默认远程的变更获取到本地后把当前分支对应的远程变更应用到本分支上。也就是说，默认行为是从远程更新当前分支状态。&lt;/p>
+&lt;p>自然，我们可以指定它的更新对象。我们使用 &lt;code>git pull &amp;lt;remote-name&amp;gt; &amp;lt;branch&amp;gt;&lt;/code> 就可以指定要拉取的远程是哪个，并且指定要更新的分支是谁。需要注意的是，新仓库里执行 &lt;code>git pull&lt;/code> 时它可能并不知道要使用什么方式把远程的变更应用到本地分支，因为除了可以使用 &lt;code>merge&lt;/code> 外，还可以用变基操作 &lt;code>rebase&lt;/code> 来做这件事。因此可能 Git 会询问你，是要使用哪种方法。一般我们直接用 &lt;code>fast-forward&lt;/code> 就可以了，最简单方便的方式，且不会让 Git 提交历史出现一大坨自己都不认识的分支。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>Git 的远程命令我们就介绍这么多。实际上在单人开发时，几乎不会用到这么复杂的命令。平时就是简单的 &lt;code>git pull&lt;/code> 更新一下，然后做好变更之后就 &lt;code>git push&lt;/code> 上去，就可以了。新仓库可能得用 &lt;code>remote&lt;/code> 来添加一个远程仓库，平时都不怎么用管的。&lt;/p>
+&lt;h2 id="和别人协作时要注意些什么">和别人协作时要注意些什么
+&lt;/h2>&lt;p>然而，和他人共同协作时，并不是只要知道这些命令就 OK 了，光是知道这些命令并不能帮你成为开源领域大神，不慎的操作很有可能换来别人的嘲讽…… 下面就简单提个几点吧~&lt;/p>
+&lt;p>另外，我其实也没有参与很多开源项目，如果你觉得我下面的建议不够权威，那确实是不好意思，实力不够（）不过我个人认为还算实用/中肯吧。总之希望能帮到你。&lt;/p>
+&lt;h3 id="阅读项目说明">阅读项目说明
+&lt;/h3>&lt;p>参与到项目前首先应该尝试阅读这个项目的说明。如果你对某个项目感兴趣的话，相信 README 应该是已经看过了。然而如果要参与开发，光是读 README 很有可能不够。大型项目一般有所谓的 Code of Conduct，也就是所谓的行为准则。如果有这么个东西或者类似的要求的话，请阅读这些内容后再开始尝试给这个项目做贡献，不然项目的代码审核很有可能会直接拒绝你的 PR （Pull Request）。&lt;/p>
+&lt;h3 id="先查查-issues">先查查 Issues
+&lt;/h3>&lt;p>协作开发一般是以某个 Issues 开始的，毕竟有了这样的问题，就有了针对这个问题进行开发的目标了嘛。查看 Issues 的主要目的是看看当前项目有哪些问题等待改善，另外也是看看有没有人已经尝试解决某个问题了。如果你感兴趣的问题已经有人在跟进了，这时候最好和跟进的人商量一下看看有没有什么可以帮忙的。不要稀里糊涂地直接提交一个 PR 上去。&lt;/p>
+&lt;h3 id="也许你需要单开一个-issue">也许你需要单开一个 Issue
+&lt;/h3>&lt;p>有些项目会要求说，如果你想提交 PR，请给这个 PR 一个对应的 Issue，或者开启一个 Issue。这是一个不错的实践方式，让每个 PR 都有明确的目的性。之前我提交的 PR 就有被要求过开一个 Issue，并在 PR 里写明对应是要解决哪个 Issue。坏消息是我的 PR 好像没有通过自动检查…… 明明是一个很简单的 PR 的说……&lt;/p>
+&lt;h3 id="等下pr-到底是啥">等下，PR 到底是啥？
+&lt;/h3>&lt;p>也许你早就想问这个问题了。我也是，经常听到别人说什么 “欢迎 PR”，“提个 PR”，“合并 PR” 之类的话，但是一直不清楚这到底是什么意思。我故意保留了这个风味，直到现在才解释，这样你才知道开发这块儿有多少谜语人 &lt;del>（bushi，补药打死窝呜呜呜）&lt;/del>。&lt;/p>
+&lt;p>PR 的全称是 Pull Request，也就是所谓的拉取请求。什么？拉取请求？我在请求什么东西？拉取？我一开始也想不通我要请求什么拉取，后来借助 AI 的伟力以及一些别的资料，我终于明白了：Pull Request 就是请别人审阅你提交的代码然后把它合并进项目里。所谓的 “提 PR” 就是发起合并请求罢了。&lt;/p>
+&lt;p>那么，既然 PR 是合并请求，为什么不是 &lt;em>Merge Request&lt;/em> 呢？没错，GitLab 就是这么干的。GitLab 里你不提 &lt;em>PR&lt;/em> 而是提 &lt;em>MR&lt;/em>。两个名词指代的是同一个操作。那么 PR 的 P 究竟是为什么呢？根据一些信源的解释，PR 的 Pull 的意思是说，你想让别人把你的修改 Pull 到他们那里。就好比说，我给项目搞了个很牛的特性，但是现在只在我自己的电脑里。我希望别人也能用上我写的这个特性，所以我要写个说明文字来介绍我这个修改都干了些啥，为什么牛逼，以及为什么推荐他们都把你的这份变更 pull 到他们那里。相比起来，&lt;em>Merge Request&lt;/em> 就很直白了：我做了有一份更改，现在请你把这份更改合并到你们的分支里。&lt;/p>
+&lt;p>从语气上来讲，PR 显然更客气一些。我在知道这个解释之后第一反应是，PR 想表达的是，如果你觉得我的变更很棒，你就可以把我的这份放到你那里。如果你觉得我的修改不好，你不 pull 就是了。而 MR 的话，相比之下就略显强硬了：你能不能把我的更改合并到你那里。也有可能是我神经过敏吧，反正在知道 PR 的词源之后，反而更喜欢这个名字了，感觉 MR 反而有点奇怪，哈哈。&lt;/p>
+&lt;p>不过你也应该明白了，在提交 PR 时应该给你想提交的变更做出一些说明，比如你改的东西的简要总结，为什么要改，改了之后会怎么样之类的。如果只是光秃秃地要求把代码合并进去，代码审核者估计也懒得细看你的代码究竟都干了些啥，进而选择不管你的提交。&lt;/p>
+&lt;h3 id="为什么不直接把变更推送进仓库">为什么不直接把变更推送进仓库？
+&lt;/h3>&lt;p>一般而言，仓库都是有所有权的，即便它是公开仓库，它也不是允许所有人都直接向仓库里提交代码的，一般只有直接维护者有权利变更仓库内的内容。如果一个外来者希望修改仓库内容，基本都是通过 PR 的方式来把代码变更交给审核者，让审核者决定要不要合并进仓库里。当然，如果你就是仓库拥有者或者拥有仓库的编辑权限，那你也许是被允许直接提交代码的。然而，如果你是在和好几个人一起合作的话，最好还是有个 PR 的过程，毕竟 PR 提供了一个交流讨论的地方，直接提交代码的话也很难说这个提交就一定是最合适的。&lt;/p>
+&lt;h3 id="注重交流合作语气这一块儿">注重交流合作，语气这一块儿
+&lt;/h3>&lt;p>可以发现，在 GitHub 上合作开发肯定是避免不了和别人交流沟通的。作为国际化的平台，一般而言还是推荐用英语交流，除非是一眼国人项目/国人特供项目/没有外国人用的项目，比如某些国内特产（科学上网），近乎是用不上英文的。如果您的英文不是很好，emmm，我想说现在的翻译软件都很好用，也不一定非得只能把英文翻译成中文，也可以把中文翻译成英文嘛。&lt;/p>
+&lt;p>另外就是注意礼貌这块儿（）没人会喜欢和一个没素质的人合作的，一般而言。不过呢，有时候也不是说没礼貌吧，可能就是单纯的就事论事而已。记得之前看过的 &lt;em>黑客的自白&lt;/em> 里说过，很多人其实单纯地就是懒得用那些套话，喜欢只针对问题做出提问，并解决问题。这一点我的建议是自行把握吧，我本人持 “礼多人不怪” 的态度，不过如果有人不喜欢这套，那我也无所谓，只要别骂人就行。&lt;/p>
+&lt;h3 id="别在-issue-里面灌水">别在 Issue 里面灌水
+&lt;/h3>&lt;p>很明显的一点。GitHub Issue 提供的本来是一个关于问题的讨论平台，不宜在里面灌水聊天，搞一些跑题。然而这点好像在某些仓库里没有很重要？毕竟当大家发现跑题了的时候，一般也不是刚刚才开始跑题吧。&lt;/p>
+&lt;p>目前就只想到这几点了。如果你有别的觉得可以补充的，欢迎告诉我。我会补在里面的！真的！&lt;/p>
+&lt;h2 id="后记">后记
+&lt;/h2>&lt;p>说实在的，写这篇的时候有点江郎才尽了。因为我本来也是正在学习 Git 的来着，写这些东西有一部分理由是为了复习巩固/趁机学习 Git 命令的。因此，如果里面有什么内容上的纰漏，还望海涵。&lt;/p>
+&lt;p>也许有人会问，现在 Git 的 GUI 客户端已经这么多了，为什么还要学习 Git 的命令行操作？你说得很对：Git 现在有很多 GUI，甚至它本身已经带了一个 GUI 来着。但是，我还是觉得命令行最贴近 Git 在设计之初的使用方式。另外得益于 Git 命令行交互功能非常完善，有时候我们可以写一个简单的脚本来自动化 Git 的一些工作。而这些，GUI 是没法替我们办到的。然而不可否认的是，GUI 真的很不错。至少，Git 的分支状态在命令行下还是不够直观的，这一点必须承认。而有了 GUI 的 Git 它们的分支图一般都画的很漂亮。实不相瞒，有时候我也会直接用 VS Code 的 Git 集成来进行提交。因为很方便嘛，哈哈哈。&lt;/p>
+&lt;p>还有人问，现在好用的 VCS（版本控制系统）也早已经不止 Git 一个了，为什么不介绍更新的工具，而是这个老套到甚至有点老掉牙的，对用户并不是非常友好的 Git 呢？我的回答是，它第一没有那么不堪，第二实际上它也许已经成为了某种事实标准，第三它真的很好用。再加上几乎所有的 VCS 都会提供从 Git 仓库转换到其他格式的仓库的功能，这更说明了 Git 在版本控制系统这个领域的重要地位。如果您会使用 Git 的话，相信其他的 VCS 系统也不会难到您。当然，我也很愿意尝试一下别的工具，比如最近风头正盛的，使用 Rust 编写的 Jujutsu。不过这也是后话了。（Git 真的很好用了）&lt;/p>
+&lt;p>这篇都快写完的时候我才意识到，我还没有介绍 Git 怎么查看提交历史。感觉放在这一篇里还是有点尴尬，毕竟这一篇主要还是在讲怎么和其他人协作，而 Git 的历史查看功能放在这里就不太合适了。思来想去，我放在了上一篇里，因为它和分支还是有很大的关系的。如果你看过了上一篇，结果又没有收到上一篇的更新的话，我建议你可以回去看看（）&lt;/p>
+&lt;p>另外，这个系列真的离不开一些工具，比如 &lt;code>tldr&lt;/code>（包名是 &lt;code>tealdeer&lt;/code>，不过其他版本的也很不错），以及 ChatGPT，DeepSeek 等 AI 工具的协助。当然 Git 自带的文档也很不错，在 Linux 上可以直接 &lt;code>man git&lt;/code> 查看总的介绍，使用 &lt;code>man git-add&lt;/code> 这样的格式来查看 Git 各个子命令（这里是 &lt;code>add&lt;/code>）的使用方式。而在 Windows 上，由于没有 &lt;code>man&lt;/code>，你可以使用 &lt;code>git help git-add&lt;/code> 或者更简单的 &lt;code>git add --help&lt;/code> 来查看在安装 Git 时就已经附赠的 Git 的文档。而且 Git 也有自己的 “官方教材”: &lt;a class="link" href="https://git-scm.com/book/id/v2" target="_blank" rel="noopener"
+>&lt;em>ProGit&lt;/em>&lt;/a>，它有多种语言的版本，作为教程而言自然是比 Git 的文档写的好懂的多。不过 Git 的文档写的也很不错就是了。&lt;/p>
+&lt;p>最后，非常感谢您能看到这里。如果你看完了这三篇的话，我更是感激不尽。如果这些文字能帮到你那就太好了，如果没有起太大帮助的话，希望能逗你一笑。哎呀至少笑一下吧，显得这个系列的文章也不是一无是处嘛。&lt;del>（之前写的那个 &lt;a class="link" href="https://a-moment096.github.io/content/posts/Math_Note/Snake_Lemma/index.md" >关于蛇引理的文章&lt;/a> 里也说如果能博读者一笑就好了，结果发现，根本没几个人看呀可恶…… 更别说逗大家笑了，唉，实在是太失败了。）&lt;/del>&lt;/p>
+&lt;p>那么，一如既往地，祝您身心愉快，工作顺利，少出 Bug ~！&lt;/p></description></item><item><title>（也许是）一个 Git 教程？其二</title><link>https://a-moment096.github.io/p/%E4%B9%9F%E8%AE%B8%E6%98%AF%E4%B8%80%E4%B8%AA-git-%E6%95%99%E7%A8%8B%E5%85%B6%E4%BA%8C/</link><pubDate>Thu, 14 Aug 2025 16:49:16 +0800</pubDate><guid>https://a-moment096.github.io/p/%E4%B9%9F%E8%AE%B8%E6%98%AF%E4%B8%80%E4%B8%AA-git-%E6%95%99%E7%A8%8B%E5%85%B6%E4%BA%8C/</guid><description>&lt;img src="https://a-moment096.github.io/posts/Shell_Note/Git_How/Tatara%20Kogasa.jpg" alt="Featured image of post （也许是）一个 Git 教程？其二" />&lt;p>&lt;em>上一节已经介绍了平时会怎么用 Git 进行单分支仓库的管理，这一节就来讲讲 Git 要怎么进行多分支协作吧！&lt;/em>&lt;/p>
 &lt;p>&lt;em>头图信息请参考上一节内容，谢谢~&lt;/em>&lt;/p>
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
 &lt;style type="text/css">.dark-theme .aplayer{background:#212121}.dark-theme .aplayer.aplayer-withlist .aplayer-info{border-bottom-color:#5c5c5c}.dark-theme .aplayer.aplayer-fixed .aplayer-list{border-color:#5c5c5c}.dark-theme .aplayer .aplayer-body{background-color:#212121}.dark-theme .aplayer .aplayer-info{border-top-color:#212121}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-title{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-author{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time{color:#eee}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path{fill:#eee}.dark-theme .aplayer .aplayer-list{background-color:#212121}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb{background-color:#999}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover{background-color:#bbb}.dark-theme .aplayer .aplayer-list li{color:#fff;border-top-color:#666}.dark-theme .aplayer .aplayer-list li:hover{background:#4e4e4e}.dark-theme .aplayer .aplayer-list li.aplayer-list-light{background:#6c6c6c}.dark-theme .aplayer .aplayer-list li .aplayer-list-index{color:#ddd}.dark-theme .aplayer .aplayer-list li .aplayer-list-author{color:#ddd}.dark-theme .aplayer .aplayer-lrc{text-shadow:-1px -1px 0 #666}.dark-theme .aplayer .aplayer-lrc:before{background:-moz-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:-webkit-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:linear-gradient(to bottom, #212121 0%, rgba(33,33,33,0) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#212121', endColorstr='#00212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc:after{background:-moz-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:-webkit-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:linear-gradient(to bottom, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#00212121', endColorstr='#cc212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc p{color:#fff}.dark-theme .aplayer .aplayer-miniswitcher{background:#484848}.dark-theme .aplayer .aplayer-miniswitcher .aplayer-icon path{fill:#eee}&lt;/style>
@@ -92,6 +178,14 @@ merge feature2 id: "finish, merge feat2"
 &lt;p>其实解决冲突就是一个 “选择应用谁的代码” 的过程。Git 会在发生冲突的地方用箭头标出来本分支和被合并分支的内容，你要做的就是把你不要的那个部分删掉然后保存。另外，合并会创建一个新的提交。如果你不喜欢默认提交信息，可以考虑使用 &lt;code>-e&lt;/code> 参数来告诉 Git 你打算自己编辑合并产生的提交的提交信息。&lt;/p>
 &lt;p>最后就是 Git 合并时有不同的策略。我们这里不多介绍，大部分情况可以使用 &lt;code>ff&lt;/code> 模式，即 &lt;em>Fast Forward&lt;/em> 模式。这个模式会让你的提交树看起来是一条直线，即如果历史提交相同的话就让两个分支有同样的提交了。&lt;/p>
 &lt;/li>
+&lt;li>
+&lt;p>&lt;code>git log&lt;/code>&lt;/p>
+&lt;p>这个命令正如它名字所说的，会输出 Git 的分支记录。假如不跟任何的参数的话，它会简单地打印当前分支的提交记录们，信息包括提交的 SHA1 哈希结果，提交的作者/邮箱，提交日期，以及提交的信息。此时，Git 会进入自己的分页器方便你上下滚动浏览，支持 Vim 式的操作，比如 &lt;code>jk&lt;/code> 翻页，&lt;code>/？&lt;/code> 查询等等。自然，退出这个状态则需要按下 &lt;code>q&lt;/code>。&lt;/p>
+&lt;p>这个命令当然没有这么枯燥。事实上，你可以自定义的部分特别多。例如，你可以使用 &lt;code>--graph&lt;/code> 来在每个提交的最左边显示分支图（虽然不是很好辨认），你还可以使用 &lt;code>--all&lt;/code> 来显示所有分支的历史记录。如果想让历史记录不要搞个好多行，而是只想看看每个提交的大概信息的话，你可以使用 &lt;code>--oneline&lt;/code> 来让每个提交都变成短短的一行。上面说的这三个参数你可以组合在一起，来快速浏览提交历史是什么样的。而如果你希望显示全面的信息，比如哪些文件发生了什么更改，你可以使用 &lt;code>--stat&lt;/code> ，这样 Git 就会有个统计信息，告诉你哪些文件发生了什么变化。&lt;/p>
+&lt;p>你看到了提交的时间了吧？&lt;code>git log --before &amp;lt;date&amp;gt; --after &amp;lt;date&amp;gt;&lt;/code> 还可以让你选定只查看某个时间段内的提交！时间的格式则是 &lt;code>yyyy-mm-dd&lt;/code>，实在是非常方便的功能。&lt;/p>
+&lt;p>然而这个命令最神奇的地方在于，你实际上可以自定义输出格式。使用 &lt;code>--pretty&lt;/code> 格式，你就可以用一些字段来控制 Git 日志的输出格式。这里有一个&lt;a class="link" href="https://devhints.io/git-log-format" target="_blank" rel="noopener"
+>参考表&lt;/a>，感兴趣的话可以看看，试用一下。&lt;/p>
+&lt;/li>
 &lt;/ul>
 &lt;p>分支相关的基本命令我们就先介绍到这里吧。有了上面的介绍，相信你已经可以运用 Git 的分支功能了吧~&lt;/p>
 &lt;h2 id="git-的概念们">Git 的概念们
@@ -134,7 +228,7 @@ merge feature2 id: "finish, merge feat2"
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js">&lt;/script>
 &lt;script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js">&lt;/script>&lt;meting-js auto="https://music.163.com/#/song?id=22636608" theme="#2980b9" loop="never">&lt;/meting-js>
 &lt;h2 id="git熟悉又陌生的名字-">Git，熟悉又陌生的名字 ……
-&lt;/h2>&lt;p>也许是所处环境的原因，我身边有很多人不知道 Git 是什么。他们都听过 &lt;em>Github&lt;/em>，但很多却只知道上面有好多程序和程序员。虽然也没错，但是并不准确；而当我说我在用 &lt;em>Git&lt;/em> 的时候，会有人把 &lt;em>Git&lt;/em> 和 &lt;em>Github&lt;/em> 混为一谈；很多人觉得 Git 很复杂，顺带觉得 Github 也很复杂…… 为此，我想分享一下我对 Git 和 Github 的理解，聊聊 Git 和 Github 都是什么。&lt;/p>
+&lt;/h2>&lt;p>也许是所处环境的原因，我身边有很多人不知道 Git 是什么。他们都听过 &lt;em>GitHub&lt;/em>，但很多却只知道上面有好多程序和程序员。虽然也没错，但是并不准确；而当我说我在用 &lt;em>Git&lt;/em> 的时候，会有人把 &lt;em>Git&lt;/em> 和 &lt;em>GitHub&lt;/em> 混为一谈；很多人觉得 Git 很复杂，顺带觉得 GitHub 也很复杂…… 为此，我想分享一下我对 Git 和 GitHub 的理解，聊聊 Git 和 GitHub 都是什么。&lt;/p>
 &lt;p>所以，如果你不了解 Git 是什么，那我很荣幸能在这里向你简单介绍它。&lt;/p>
 &lt;h3 id="所以到底什么是-git版本控制啊">所以到底什么是 Git？版本控制？啊？
 &lt;/h3>&lt;p>所谓的 Git，它就是：&lt;/p>
@@ -144,14 +238,14 @@ merge feature2 id: "finish, merge feat2"
 &lt;p>一旦你接受了这个设定，那么 Git 就其实没有多少秘密了。&lt;/p>
 &lt;h3 id="ok但是听你说好像很麻烦">OK，但是听你说好像很麻烦……
 &lt;/h3>&lt;p>不得不承认的是，正如上面所说的那样，Git 的命令实际上可以非常地复杂。如果你愿意翻阅它的 man-page，你会发现内容出奇地长；而当你尝试用 &lt;code>git --help&lt;/code> 来获取一些简单有效的信息的时候，很抱歉，&lt;code>git --help&lt;/code> 只会告诉你你能怎么做，并伴随着看不太懂的 usage，却不太会告诉你怎么做能做什么。&lt;/p>
-&lt;p>然而，转折来了。首先，如果你受环境所限，只能从命令行操作 Git，待会儿介绍的四五个命令几乎就能覆盖 80% 的使用场景了。而如果你的环境支持你使用图形化的界面，那么如果不是命令行的忠实用户，完全可以挑个 GUI 程序，比如和 Github 集成度高的 &lt;em>Github Desktop&lt;/em>，界面美观现代，功能也已经足够丰富，没必要和自己过不去。&lt;/p>
+&lt;p>然而，转折来了。首先，如果你受环境所限，只能从命令行操作 Git，待会儿介绍的四五个命令几乎就能覆盖 80% 的使用场景了。而如果你的环境支持你使用图形化的界面，那么如果不是命令行的忠实用户，完全可以挑个 GUI 程序，比如和 GitHub 集成度高的 &lt;em>GitHub Desktop&lt;/em>，界面美观现代，功能也已经足够丰富，没必要和自己过不去。&lt;/p>
 &lt;p>所以，结论是：Git 很复杂，但是我们可以用的很简单呀。它很强大，很好，但这不影响我只需要那几个最基础的功能。最重要的是，当你需要更复杂的功能的时候，互联网永远是你的好朋友。你完全可以现场上网搜索，大概率会有来自 StackOverflow 的朋友向你答疑解惑（贴答案）（好几年前且点赞特别高的）。&lt;/p>
 &lt;p>So, don&amp;rsquo;t be afraid! Just try it!&lt;/p>
-&lt;h3 id="行但是-git-和-github-到底是什么关系">行，但是 Git 和 Github 到底是什么关系？
-&lt;/h3>&lt;p>这算是很常见的问题了。解释起来也很简单：Github 能提供云存档功能。就像 Steam 有游戏云存档一样，Git 也可以有个云存档。只不过，Steam 有个专门的服务器来帮你自动地存好你的游戏内容，而 Git 则可以允许你选择你喜欢的地方存你的代码存档。&lt;/p>
-&lt;p>而 Github，正是那个大部分程序员都喜欢的选择。不仅如此，Github 上传的存档还兼具展示功能，大家可以在 Github 上给自己喜欢的代码存档投票，也可以把别人的存档下载到自己电脑上，甚至可以尝试和别人一起组排。所以，说是交友网站，也未尝不可（也许）&lt;/p>
-&lt;p>那么我可以选择别的地方存放存档吗？当然可以！除了 Github，还有很多很多的 Git 服务提供商。你还可以 &lt;em>自建 Git 服务&lt;/em>！甚至，Github 显得有些 “&lt;em>违背&lt;/em>” Git 的初衷：分布式的存档存储。什么意思呢？Git 一开始是打算，让所有的代码开发者（玩家）都留一份存档，然后大家就可以一起攻略组排了。大家都保留一份源码，这不就相当于大家都做存储功能了吗？只不过随着合作要求的提高和开源社区的扩大，Github 这样一个公开自己代码的地方就这么自发地出现了。&lt;/p>
-&lt;p>总而言之，Git 是存档工具，Github 是大家上传/分享/讨论/合作云存档的地方。&lt;/p>
+&lt;h3 id="行但是-git-和-github-到底是什么关系">行，但是 Git 和 GitHub 到底是什么关系？
+&lt;/h3>&lt;p>这算是很常见的问题了。解释起来也很简单：GitHub 能提供云存档功能。就像 Steam 有游戏云存档一样，Git 也可以有个云存档。只不过，Steam 有个专门的服务器来帮你自动地存好你的游戏内容，而 Git 则可以允许你选择你喜欢的地方存你的代码存档。&lt;/p>
+&lt;p>而 GitHub，正是那个大部分程序员都喜欢的选择。不仅如此，GitHub 上传的存档还兼具展示功能，大家可以在 GitHub 上给自己喜欢的代码存档投票，也可以把别人的存档下载到自己电脑上，甚至可以尝试和别人一起组排。所以，说是交友网站，也未尝不可（也许）&lt;/p>
+&lt;p>那么我可以选择别的地方存放存档吗？当然可以！除了 GitHub，还有很多很多的 Git 服务提供商。你还可以 &lt;em>自建 Git 服务&lt;/em>！甚至，GitHub 显得有些 “&lt;em>违背&lt;/em>” Git 的初衷：分布式的存档存储。什么意思呢？Git 一开始是打算，让所有的代码开发者（玩家）都留一份存档，然后大家就可以一起攻略组排了。大家都保留一份源码，这不就相当于大家都做存储功能了吗？只不过随着合作要求的提高和开源社区的扩大，GitHub 这样一个公开自己代码的地方就这么自发地出现了。&lt;/p>
+&lt;p>总而言之，Git 是存档工具，GitHub 是大家上传/分享/讨论/合作云存档的地方。&lt;/p>
 &lt;h3 id="好耶我逐渐理解一切">好耶，我逐渐理解一切！
 &lt;/h3>&lt;p>是这样的，Git 就是做这么个事儿。也许你会看到一些介绍一开始会提 Git 使用的技术多么先进，多么高效，多么体现开源精神，然后不明所以。然而 Git 就是做这么个代码存档的东西，为了使用它以期了解它的话，大框架就是这样的。&lt;/p>
 &lt;p>然而这里还是要提个醒：上面也许的确抓住了 Git 的核心目的，但是依旧是很粗糙的，非常概括性的。上面的文字只能帮助 &lt;em>了解 Git 是什么&lt;/em>，并不能告诉你 &lt;em>Git 怎么做的&lt;/em>。另外，使用 Git 的命令完成最基础的工作是很简单，但是在切实明白一条命令到底在做什么前，&lt;strong>请最好不要盲目运行这条命令&lt;/strong>。实际上，要想运用好 Git 管理你的代码/项目，还是需要了解一些关于 Git 究竟在背后怎么做的知识的。&lt;/p>
@@ -164,8 +258,8 @@ merge feature2 id: "finish, merge feat2"
 &lt;p>于是，Tig 用 &lt;code>git init&lt;/code> 创建了一个空世界的存档。然后就开始在存档里用代码一行行写他在这个世界里要做些什么……&lt;/p>
 &lt;p>过了一会儿，Tig 妈妈喊他要他吃午饭了。虽然不愿意，Tig 还是要先放下手上的工作。他打算先暂时保存一下，于是使用 &lt;code>git add .&lt;/code> 来保存好自己手上的所有写好的代码。毕竟，他也不知道是不是有的地方有点问题，带会儿还要调一下，他现在也是被拉过去吃饭的。&lt;/p>
 &lt;p>吃完饭后还睡了个午觉，Tig 回来又写了一会儿。他对自己的成果很满意，因为他已经想办法把村里的刁民挪到了高空中了。这实在是不太容易，他不希望待会儿犯蠢丢掉这几个村民。于是他决定要存档。他先用 &lt;code>git add .&lt;/code> 来保存所有文件的所有改动，然后用 &lt;code>git status&lt;/code> 查看了改动的文件们。感觉没什么问题，他使用 &lt;code>git commit&lt;/code> 来正式保存了这个存档。存档系统问他要他给自己的改动写个简述，他写了 &lt;code>村民挪好了，准备搭框架&lt;/code>。&lt;/p>
-&lt;p>过了一个下午和一个晚上，Tig 终于在睡觉前把刷铁机搞好了！实在是一个无比伟大的创举，Tig 忍不住把它分享出去，也方便自己在其他电脑上继续工作。他创建了 Github 账号和一个仓库，并且用 &lt;code>git push&lt;/code> 把这个存档放在了它的仓库里。然而睡前他还是想先在另一台电脑上先把存档下下来，于是使用 &lt;code>git clone &amp;lt;git-link&amp;gt;&lt;/code> 来把仓库克隆到本地。&lt;/p>
-&lt;p>晚上躺在床上，他一想到以后就可以把存档用 &lt;code>git push&lt;/code> 方便地推送到 Github 上，并且用 &lt;code>git pull&lt;/code> 在另一台电脑上来获取最新的改动了，他就不自觉地笑出声，心里盘算着怎么在明天做一些改善，给刷铁机套个好看的壳子之类的……&lt;/p>
+&lt;p>过了一个下午和一个晚上，Tig 终于在睡觉前把刷铁机搞好了！实在是一个无比伟大的创举，Tig 忍不住把它分享出去，也方便自己在其他电脑上继续工作。他创建了 GitHub 账号和一个仓库，并且用 &lt;code>git push&lt;/code> 把这个存档放在了它的仓库里。然而睡前他还是想先在另一台电脑上先把存档下下来，于是使用 &lt;code>git clone &amp;lt;git-link&amp;gt;&lt;/code> 来把仓库克隆到本地。&lt;/p>
+&lt;p>晚上躺在床上，他一想到以后就可以把存档用 &lt;code>git push&lt;/code> 方便地推送到 GitHub 上，并且用 &lt;code>git pull&lt;/code> 在另一台电脑上来获取最新的改动了，他就不自觉地笑出声，心里盘算着怎么在明天做一些改善，给刷铁机套个好看的壳子之类的……&lt;/p>
 &lt;p>可喜可贺，可喜可贺！~&lt;/p>
 &lt;h3 id="所以他都干了些啥">所以，他都干了些啥？
 &lt;/h3>&lt;p>Tig 的故事貌似有点无聊，毕竟，给 Git 硬套个背景，貌似有点牵强；更重要的是，谁家好人这么玩 Minecraft 呀！然而他用到的命令，几乎就是我平时常用的所有命令了。我们来总结一下吧。我们就不再多提游戏的事，毕竟好像都戳穿了是在写代码……&lt;/p>
@@ -199,7 +293,7 @@ merge feature2 id: "finish, merge feat2"
 &lt;ul>
 &lt;li>&lt;code>git clone&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;p>把 git 仓库从远程下载到本地。后面跟上仓库的链接就好。如果你是从 Github 来克隆到本地的话，点绿色按钮的 Clone 就会看到你可以怎么做。你可以直接复制里面的命令然后执行。&lt;/p>
+&lt;p>把 git 仓库从远程下载到本地。后面跟上仓库的链接就好。如果你是从 GitHub 来克隆到本地的话，点绿色按钮的 Clone 就会看到你可以怎么做。你可以直接复制里面的命令然后执行。&lt;/p>
 &lt;ul>
 &lt;li>&lt;code>git pull&lt;/code>&lt;/li>
 &lt;/ul>
