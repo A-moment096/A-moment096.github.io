@@ -1,110 +1,110 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shell on A Moment's Rest</title><link>https://a-moment096.github.io/tags/shell/</link><description>Recent content in Shell on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Tue, 26 Aug 2025 10:31:40 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/shell/index.xml" rel="self" type="application/rss+xml"/><item><title>（也许是）一个 Git 教程？其三</title><link>https://a-moment096.github.io/p/%E4%B9%9F%E8%AE%B8%E6%98%AF%E4%B8%80%E4%B8%AA-git-%E6%95%99%E7%A8%8B%E5%85%B6%E4%B8%89/</link><pubDate>Tue, 26 Aug 2025 18:28:16 +0800</pubDate><guid>https://a-moment096.github.io/p/%E4%B9%9F%E8%AE%B8%E6%98%AF%E4%B8%80%E4%B8%AA-git-%E6%95%99%E7%A8%8B%E5%85%B6%E4%B8%89/</guid><description>&lt;img src="https://a-moment096.github.io/posts/Shell_Note/Git_How/Tatara%20Kogasa.jpg" alt="Featured image of post （也许是）一个 Git 教程？其三" />&lt;p>&lt;em>最后一节，聊聊如何在 GitHub 上进行多人协作吧~&lt;/em>&lt;/p>
-&lt;p>&lt;em>头图信息请参考第一节内容，谢谢~&lt;/em>&lt;/p>
-&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
-&lt;style type="text/css">.dark-theme .aplayer{background:#212121}.dark-theme .aplayer.aplayer-withlist .aplayer-info{border-bottom-color:#5c5c5c}.dark-theme .aplayer.aplayer-fixed .aplayer-list{border-color:#5c5c5c}.dark-theme .aplayer .aplayer-body{background-color:#212121}.dark-theme .aplayer .aplayer-info{border-top-color:#212121}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-title{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-author{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time{color:#eee}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path{fill:#eee}.dark-theme .aplayer .aplayer-list{background-color:#212121}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb{background-color:#999}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover{background-color:#bbb}.dark-theme .aplayer .aplayer-list li{color:#fff;border-top-color:#666}.dark-theme .aplayer .aplayer-list li:hover{background:#4e4e4e}.dark-theme .aplayer .aplayer-list li.aplayer-list-light{background:#6c6c6c}.dark-theme .aplayer .aplayer-list li .aplayer-list-index{color:#ddd}.dark-theme .aplayer .aplayer-list li .aplayer-list-author{color:#ddd}.dark-theme .aplayer .aplayer-lrc{text-shadow:-1px -1px 0 #666}.dark-theme .aplayer .aplayer-lrc:before{background:-moz-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:-webkit-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:linear-gradient(to bottom, #212121 0%, rgba(33,33,33,0) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#212121', endColorstr='#00212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc:after{background:-moz-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:-webkit-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:linear-gradient(to bottom, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#00212121', endColorstr='#cc212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc p{color:#fff}.dark-theme .aplayer .aplayer-miniswitcher{background:#484848}.dark-theme .aplayer .aplayer-miniswitcher .aplayer-icon path{fill:#eee}&lt;/style>
-&lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js">&lt;/script>
-&lt;script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js">&lt;/script>&lt;meting-js auto="https://music.163.com/#/song?id=455026" theme="#2980b9" loop="never">&lt;/meting-js>
-&lt;h2 id="所以git-的远程到底是什么东西">所以，Git 的远程到底是什么东西？
-&lt;/h2>&lt;p>我们之前提过，Git 通过 &lt;em>远程 (Remote)&lt;/em> 来实现和他人合作。我们甚至已经介绍了一些和远程进行交互的命令了。然而，Git 究竟是怎么实现这一功能的？这个功能有什么特点呢？我们和他人进行协作开发时，有什么要注意的点呢？我们一点点来介绍。我们先系统地介绍一下 &lt;em>远程&lt;/em> 是什么东西吧。&lt;/p>
-&lt;h3 id="远程不过是另一台装了-git-的机器">远程：不过是另一台装了 Git 的机器
-&lt;/h3>&lt;p>实际上远程并不神秘。得益于 Git 分布式的特性，每一台安装了 Git 且拥有项目源码的机器都可以说是某个远程。或者说远程是相对的：有两台机器 A 和 B，都拥有同一个项目的源码并安装了 Git，那么对于 A 来讲 B就是远程，而对 B 来讲 A 也是远程。而不同机器之间的通信则可以通过 SSH 完成，如果是比较老的项目，或者不希望通过 SSH 来连接的情况，我们甚至可以使用邮件进行通信，传递代码，就像 Linux 内核，GCC 等项目那样。总之，通过这种 &lt;em>每个设备都存储一份代码&lt;/em> 的形式， Git 就实现了分布式的代码存储，每个设备既可以是正在工作的仓库，又可以是为他人提供源码的仓库。&lt;/p>
-&lt;p>然而，大量的实践证明，有时候有一个中心服务器真的会很省事。大家把代码的更新放在一台公开的服务器上，然后可以从这一个服务器上拉取代码，可以很好地保证开发进度以及代码的一致性。不过这样又失去了 Git 天生的分布式特性。所以，到底哪个更好呢？真分布式还是采用某个中心的代码服务器？&lt;/p>
-&lt;h3 id="对比真分布式-vs-中心仓库">对比：&lt;em>真&lt;/em>分布式 vs 中心仓库
-&lt;/h3>&lt;p>Git 一开始就是支持分布式存储的，这样最大的好处在于，每一个人拥有的仓库都是这个代码的一份备份。假如一个项目参与的人越多，这个项目的备份就会越多。而且每个人都是自己拥有的这份代码的主人，自己对代码拥有完全的掌控权，可以自行决定自己的代码要不要提交给别人，或者要不要接受来自他人的变更等。这种去中心化的，人人平等的思想非常符合自由开源的精神。另外这种方式不是很依赖某个中心设备，不会因为这一个设备断掉而直接完全不可用。如 Linux 内核，GCC 编译工具链等都没有一个一般意义上的中心代码服务器用来让所有合作者都往里面推送代码或者从里面拉取更新。&lt;/p>
-&lt;p>然而中心化的服务器自然是有它的好处的。比如说有三个人在同一个项目工作，三人没有一个中心代码仓库而是互相传递更新的代码，如果三位都对代码进行了不同的且有一定冲突的代码，那么在同步时肯定会面临很多的麻烦。而如果他们的代码存放在一个中心服务器上，那这个服务器就会忠实地记录每个人对它的修改，进而避免所有人的代码一起涌上来的尴尬，同时保持大家的进度都在同一阶段，避免每个人有自己的想法进而没法合并（即便其实可以用分支也是可以的）。另外如果在某个项目里，开发团队是有明确分工的，那么这时候应该有一个人负责对代码进行审阅修改，而此时中心服务器的优势就体现出来了，让审阅者（们）单独拥有对中心服务器代码的修改权，然后审阅者（们）就可以直接在该服务器上进行审阅合并等操作，且所有的合作者都可以直接从该位置拉取最新的代码。也许有人说，把代码直接交给审阅者不就行了，为什么非得有个中心服务器的参与？然而如果真是这样的话，审阅者他自己的电脑也在某种程度上成为了那个中心服务器了。就我个人而言，我是想不到什么普通项目有必须使用去中心化工作流程的必要的。一般来讲都还是有一个（当然也可以多个）代码托管处会好很多。&lt;/p>
-&lt;p>那么，谁是这个星球上最受欢迎的 &lt;em>中心代码仓库&lt;/em> 呢？&lt;/p>
-&lt;h2 id="代码托管平台们">代码托管平台们
-&lt;/h2>&lt;h3 id="github-the-blessed-one">GitHub: The blessed one
-&lt;/h3>&lt;p>向您隆重介绍，这个星球最受欢迎代码托管平台，汇集无数人智慧结晶，全世界最大同性（？）交友网站（&lt;a class="link" href="https://www.flysnow.org/2019/01/09/github-milestones" target="_blank" rel="noopener"
->迫真&lt;/a>，95%以上的用户都是男性），GitHub。第一期其实已经有介绍过，GitHub 和 Git 之间的关系是什么样的，以及大家可以怎么使用 GitHub。这里我们再多聊两句。&lt;/p>
-&lt;p>上面我们说 GitHub 是代码仓库，其实是不太严谨的，应该说它是一个代码托管平台，任何人都可以在上面创建自己的仓库，然后把代码放在上面。当然，GitHub 的功能肯定不仅限于此，它上面集成了很多很好用的功能，比如 Issues, Pull Requests, GitHub Actions 等，也提供了非常美观现代化的图形界面，能让大家直观地看到代码仓库的变更历史。它甚至提供了 GitHub Pages 来让开发者可以把静态的网页托管在上面，这让很多项目得以拥有自己的网页，或是用来做文档，或是用来宣传，功能非常多样。顺带一提，本博客就是托管在 GitHub Pages 服务上的。GitHub，伟大无需多言。&lt;/p>
-&lt;p>目前 GitHub 上已经有了 &lt;a class="link" href="https://gitcharts.com/" target="_blank" rel="noopener"
->2亿6千万以上（268 million+）的公开仓库了&lt;/a>，仓库来源于全世界各地，且每天都有大量的信件仓库，大量的拉取请求，以及大量的代码提交。大家在 GitHub 上的活动已经远不止简单的提交自己的代码这么简单，开发者们会在一个项目内合作开发，设定开发目标，合并他人的拉取请求，为感兴趣的项目做贡献或者提出问题，帮助他人解答问题等等。其仓库类型也是多种多样，有各种语言写成的千奇百怪的项目，也有一些很不错的资源整合项目，甚至你还会看到很多令人难绷的小作文以及互联网记忆。总之，除了托管自己的代码之外，你还可以看看别人的代码，玩玩别人的项目，和别的开发者讨论（&lt;del>吵架&lt;/del>），给别的项目做贡献（&lt;del>改错别字&lt;/del>）。用途多种多样，就看怎么用了。&lt;/p>
-&lt;p>GitHub 起源于 2007 年，至今已经 18 年历史了。18年来，GitHub 变得越来越完善，功能越来越丰富。2018 年的时候微软收购了它，在那之后就成了微软的一个子公司，而 2019 年的时候 GitHub 宣布它支持个人创建任意多个私有仓库，将 GitHub 的受欢迎程度推上了一个新台阶。而就在前不久（2025年8月11日），其 CEO 宣布卸任，GitHub 被合并在微软的 Core AI 部门。我个人认为这应该算是坏消息，毕竟 GitHub 作为全世界最大的代码托管平台，几乎已经是 &lt;em>开源精神&lt;/em> 的代言人了。本来还是一个比较独立的子公司的 GitHub 现在被微软直接合并进一个部门内，怎么想都感觉其独立性要进一步下降了。是在令人感到可惜。但是就目前而言，GitHub 也依旧是同类产品中知名度最高的一个，甚至可以说是某种标准了。所以，还是先用着吧。如果 GitHub 哪一天真倒了的话，肯定还会出现新的继任者的。&lt;/p>
-&lt;h3 id="gitlab-强大的自动化以及自托管">GitLab: 强大的自动化以及自托管
-&lt;/h3>&lt;p>除了 GitHub 以外，当然还有别的托管平台。其中另一个比较受欢迎的项目就是 GitLab，它除了托管到 GitLab 的服务器上以外，还支持在自己的服务器上自行搭建代码托管平台，其中也支持和 GitHub 类似的很多功能，比如查看源码，Issues, Merge Request（对应 GitHub 中的 Pull Request），CI/CD（持续集成/持续部署）等等。其中的 CI/CD 是 GitLab 最出众的特点，以速度快效率高而著称。而且由于它提供自托管（通过 GitLab Community Edition）的特性，对于那些需要较强独立性的，不希望受到 GitHub 控制的（理由嘛……我也不知道），或者就是某些公司希望保持私密性的项目，GitLab 是一个很不错的选择。有很多项目都是使用 GitLab 进行托管的，比如 KDE，Paraview 等。相较于 GitHub 而言，GitLab 的隐私性还是更强一些。然而坏消息是，GitLab 在 24 年的时候宣布不再直接为中国地区提供服务，转而由本地服务提供商 &lt;em>极狐&lt;/em> 提供。我也很难讲究竟应该用哪个……&lt;/p>
-&lt;p>GitLab 的功能是非常全面的，如果你并不想要这么完善的功能，只是想在自己的服务器上搭一个轻量化的 Git 托管平台，你也可以选择 Gitea。它最大的特点就是轻量化了，拥有最基础的 Git 托管服务器所应该有的功能，不过随之而来的就是一些更复杂的功能可能没有，自动化相关的内容也许需要自己手动实现等等。&lt;/p>
-&lt;p>讲了这么多，Git 到底应该怎么实现和远程服务器的交互呢？&lt;/p>
-&lt;h2 id="git-与远程的交互方式">Git 与远程的交互方式
-&lt;/h2>&lt;p>下面我们就来介绍一下 Git 和远程进行交互时会用到的一些命令吧。&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;p>&lt;code>git remote&lt;/code>&lt;/p>
-&lt;p>这个命令正如它的名字，是用来管理和远程相关内容的一个子命令。而且，就像 &lt;code>git branch&lt;/code> 那样，如果你不带任何的参数，它会告诉你都有哪些远程是可用的。一般来讲，仓库会有一个名为 &lt;code>origin&lt;/code> 的远程库，它一般就是你在 GitHub 上托管的位置了。如果你想确认远程的具体信息的话，你可以用 &lt;code>-v&lt;/code> 或者 &lt;code>--verbose&lt;/code> 来让 Git 把该仓库的所有远程地址都告诉你。你也可以用 &lt;code>show&lt;/code> 子命令来让 Git 告诉你关于某个远程的详细信息，包括它会从哪里拉取代码，往哪里推送代码，当前分支和最新提交等等。&lt;/p>
-&lt;p>而假如你的仓库还没有可用的远程，你可以使用 &lt;code>add&lt;/code> 子命令来让 Git 添加一个远程仓库作为你这个仓库的远程位置。比如说你在个人 GitHub 账号下有一个空仓库，地址是 &lt;code>https://github.com/abc/test_repo&lt;/code>，其中 &lt;code>abc&lt;/code> 是用户名而 &lt;code>test_repo&lt;/code> 则是仓库名，此时你就可以使用 &lt;code>git remote add origin https://github.com/abc/test_repo.git&lt;/code> 来把这个仓库作为远程仓库添加到当前仓库名下，并给它以 &lt;code>origin&lt;/code> 的名字。你当然也可以修改这个远程仓库的地址咯，使用 &lt;code>set-url&lt;/code> 即可，用法和 &lt;code>add&lt;/code> 差不多，只不过远程名必须是已经有了的远程名字。&lt;/p>
-&lt;p>假如你感觉某个远程仓库名让你很不爽，你可以使用 &lt;code>rename &amp;lt;old-name&amp;gt; &amp;lt;new-name&amp;gt;&lt;/code> 来修改它；如果这个远程已经不需要了，或者你因为什么其他的原因要删除它，也很简单，使用 &lt;code>remove &amp;lt;remote-name&amp;gt;&lt;/code> 子命令就可以啦。还是比较简单易懂的。&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;code>git clone&lt;/code>&lt;/p>
-&lt;p>除了给现有的仓库添加远程，我们当然还可以从远程仓库复制一份到本地来呀。通过使用 &lt;code>git clone &amp;lt;repo-url&amp;gt;&lt;/code> 命令就可以把一个远程仓库下载到本地。下载下来的仓库会默认放在当前文件夹下的和仓库名同名的文件夹里，且仓库名默认会是和远程仓库的名字一样的，且由于是从远程克隆下来的，它会自动设置好远程的位置（起名也是默认的 &lt;code>origin&lt;/code>）。当然如果你想把该仓库下载到其他位置的话，也可以在仓库的 URL 后面添加上你要下载到的文件夹。&lt;/p>
-&lt;p>一般来讲，使用这个命令就已经足够了。然而有时候，也许你会遇到仓库里使用了 Git Submodules（Git 子模块）的情况。我们这里不打算介绍 Git 子模块，然而如果你在克隆一个带有子模块的项目时没有顺带让仓库克隆其内部的子模块，后面在使用过程中又得重新搞一些有的没的。为了避免这样的麻烦，在克隆时可以直接带上 &lt;code>--recursive&lt;/code> 的参数，告诉 Git “帮我把这个仓库里所有的 Git 子模块也一并下载下来”。这样就省去了后面重新配置 Git 子模块的麻烦。&lt;/p>
-&lt;p>另外也许有时候你克隆一个仓库的目的并不是在仓库里做开发，而是直接使用它（像一些 ZSH 插件是托管在 GitHub 上的），此时你也许不关心它的提交历史，或者这个仓库太大了而你又不需要用上过去的所有提交历史的时候，你会希望只获取到最新的几个提交就够了。Git 非常贴心地提供了 &lt;code>--depth &amp;lt;number&amp;gt;&lt;/code> 的参数，你可以指定你只想克隆到最近的多少个提交即可。这样能非常好地节约克隆的时间，对磁盘和网络都比较友好。&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;code>git push&lt;/code>&lt;/p>
-&lt;p>当我们本地做出一些修改，有了一些和远程不一样的提交之后，我们就可以把本地的提交推送到远程仓库了。当我们直接使用这个命令的时候，Git 会默认推送当前分支到远程仓库的对应分支上。默认的操作就是最高频的操作了，这一点很不错。而当我们需要推送到某个特定分支（比如远程分支和当前分支名称不一样的时候），我们可以先写上远程分支的名字，再写上当前分支的名字：&lt;code>git push &amp;lt;remote-branch&amp;gt; &amp;lt;local-branch&amp;gt;&lt;/code>。我们也可以通过加上参数 &lt;code>-u&lt;/code> 或者 &lt;code>--set-upstream&lt;/code> 来修改推送的默认分支。&lt;/p>
-&lt;p>也许我们的仓库拥有不止一个远程，这时候我们可能需要指定我们要推送的是哪个分支。这时候 &lt;code>push&lt;/code> 的写法会有一定的变化：&lt;code>git push &amp;lt;remote-name&amp;gt; &amp;lt;local-branch&amp;gt;:&amp;lt;remote-branch&amp;gt;&lt;/code>，即我们要先指定推送到哪个远程上，然后用冒号分割本地分支和远程分支。&lt;/p>
-&lt;p>这个写法完全地指定了所有推送的信息，而且这个写法还有一个隐藏功能：如果我们不写本地分支，直接写 &lt;code>git push &amp;lt;remote-name&amp;gt; :&amp;lt;remote-branch&amp;gt;&lt;/code>，意思就是告诉 Git “我要把空分支推送到远程覆盖那个远程分支”，结果就是让 Git 删除远程分支。当然，删除远程分支也可以使用 &lt;code>git push &amp;lt;remote-name&amp;gt; -d &amp;lt;remote-branch&amp;gt;&lt;/code> （或者用 &lt;code>--delete&lt;/code>）来实现，这样的语义更加明确，不过我猜也是给上面的方法一个新的包装而已。也许我们远程的分支太多了，我们不想要远程的那些没有本地对应的分支，此时我们就可以使用 &lt;code>git push --prune &amp;lt;remote-name&amp;gt;&lt;/code> 来删掉（修剪）那些多出来的分支了。&lt;/p>
-&lt;p>除了我们可以推送分支外，&lt;code>push&lt;/code> 还兼并了推送标签（Tag）的功能。我们可以直接使用 &lt;code>git push --tags&lt;/code> 来推送所有的标签，也可以 &lt;code>git push &amp;lt;remote-name&amp;gt; tag &amp;lt;tag-name&amp;gt;&lt;/code> 来推送某一个标签。至于标签是什么你可以认为它是一个独立于分支树之外的持久性的快照，会保存某一时刻的信息，且不会强依附于某个分支，一般是在发行时会给某个版本打上一个标签，没错，就是那个 xx.xx.xx，一般标签都会这么打。我们这里就不过多介绍了。&lt;/p>
-&lt;p>最后在这里要留一个提醒。有很多教程推荐在 &lt;code>push&lt;/code> 出问题的时候使用 &lt;code>-f&lt;/code> 或者 &lt;code>--force&lt;/code> 参数。这个参数的功能是让 Git 不做任何的检查，用本地的状态去强行覆盖远程仓库的状态。如果你真的是在和别人一起协作的话，不要这么做。会被人移交蔡司。&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;code>git fetch&lt;/code>&lt;/p>
-&lt;p>这个命令是用来让我们从远程获取更新使用的。它默认会获取默认远程的所有分支的最新更新，如果我们要指定是从哪个远程获取，只需要把那个远程的名称放在后面即可。如果我们想从所有的远程都拉取更新，则可以使用 &lt;code>--all&lt;/code> 来告诉 Git。类似于 &lt;code>git push&lt;/code>，我们还可以在 &lt;code>git fetch&lt;/code> 的后面加上 &lt;code>-t&lt;/code> 或者 &lt;code>--tags&lt;/code> 来让它从远程获取所有的标签信息，或者用 &lt;code>git fetch --prune&lt;/code> 或 &lt;code>git fetch -p&lt;/code> 来让 Git 删除掉本地多出来的，远程没有的分支。&lt;/p>
-&lt;p>需要注意的是，Git 在设计上让 &lt;code>fetch&lt;/code> 子命令不直接把远程的内容和本地进行合并。也就是说，&lt;code>git fetch&lt;/code> 只会更新 &lt;em>本地的远程数据库&lt;/em>，而不会把远程的数据直接放在本地的工作目录里。如果想要这么做的话，我们可以把远程的分支 通过 &lt;code>git merge&lt;/code> 来 &lt;em>合并&lt;/em> 到本地上。要指定远程分支，我们需要用 &lt;code>&amp;lt;remote-name&amp;gt;/&amp;lt;remote-branch&amp;gt;&lt;/code> 来告诉 Git 我们要的是在 &lt;code>&amp;lt;remote-name&amp;gt;&lt;/code> 上的 &lt;code>&amp;lt;remote-branch&amp;gt;&lt;/code> 分支。&lt;/p>
-&lt;p>如果你感觉这实在是太麻烦了（真的很麻烦），我们可以使用下面这个融合了 &lt;code>fetch&lt;/code> 和 &lt;code>merge&lt;/code> 的命令：&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;code>git pull&lt;/code>&lt;/p>
-&lt;p>当我们很明确地是要把远程的变更直接应用到本地仓库时，我们可以直接 &lt;code>git pull&lt;/code> 来拉取远程更新。由于它涉及 “合并” 的步骤，所以它的默认行为是把默认远程的变更获取到本地后把当前分支对应的远程变更应用到本分支上。也就是说，默认行为是从远程更新当前分支状态。&lt;/p>
-&lt;p>自然，我们可以指定它的更新对象。我们使用 &lt;code>git pull &amp;lt;remote-name&amp;gt; &amp;lt;branch&amp;gt;&lt;/code> 就可以指定要拉取的远程是哪个，并且指定要更新的分支是谁。需要注意的是，新仓库里执行 &lt;code>git pull&lt;/code> 时它可能并不知道要使用什么方式把远程的变更应用到本地分支，因为除了可以使用 &lt;code>merge&lt;/code> 外，还可以用变基操作 &lt;code>rebase&lt;/code> 来做这件事。因此可能 Git 会询问你，是要使用哪种方法。一般我们直接用 &lt;code>fast-forward&lt;/code> 就可以了，最简单方便的方式，且不会让 Git 提交历史出现一大坨自己都不认识的分支。&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;p>Git 的远程命令我们就介绍这么多。实际上在单人开发时，几乎不会用到这么复杂的命令。平时就是简单的 &lt;code>git pull&lt;/code> 更新一下，然后做好变更之后就 &lt;code>git push&lt;/code> 上去，就可以了。新仓库可能得用 &lt;code>remote&lt;/code> 来添加一个远程仓库，平时都不怎么用管的。&lt;/p>
-&lt;h2 id="和别人协作时要注意些什么">和别人协作时要注意些什么
-&lt;/h2>&lt;p>然而，和他人共同协作时，并不是只要知道这些命令就 OK 了，光是知道这些命令并不能帮你成为开源领域大神，不慎的操作很有可能换来别人的嘲讽…… 下面就简单提个几点吧~&lt;/p>
-&lt;p>另外，我其实也没有参与很多开源项目，如果你觉得我下面的建议不够权威，那确实是不好意思，实力不够（）不过我个人认为还算实用/中肯吧。总之希望能帮到你。&lt;/p>
-&lt;h3 id="阅读项目说明">阅读项目说明
-&lt;/h3>&lt;p>参与到项目前首先应该尝试阅读这个项目的说明。如果你对某个项目感兴趣的话，相信 README 应该是已经看过了。然而如果要参与开发，光是读 README 很有可能不够。大型项目一般有所谓的 Code of Conduct，也就是所谓的行为准则。如果有这么个东西或者类似的要求的话，请阅读这些内容后再开始尝试给这个项目做贡献，不然项目的代码审核很有可能会直接拒绝你的 PR （Pull Request）。&lt;/p>
-&lt;h3 id="先查查-issues">先查查 Issues
-&lt;/h3>&lt;p>协作开发一般是以某个 Issues 开始的，毕竟有了这样的问题，就有了针对这个问题进行开发的目标了嘛。查看 Issues 的主要目的是看看当前项目有哪些问题等待改善，另外也是看看有没有人已经尝试解决某个问题了。如果你感兴趣的问题已经有人在跟进了，这时候最好和跟进的人商量一下看看有没有什么可以帮忙的。不要稀里糊涂地直接提交一个 PR 上去。&lt;/p>
-&lt;h3 id="也许你需要单开一个-issue">也许你需要单开一个 Issue
-&lt;/h3>&lt;p>有些项目会要求说，如果你想提交 PR，请给这个 PR 一个对应的 Issue，或者开启一个 Issue。这是一个不错的实践方式，让每个 PR 都有明确的目的性。之前我提交的 PR 就有被要求过开一个 Issue，并在 PR 里写明对应是要解决哪个 Issue。坏消息是我的 PR 好像没有通过自动检查…… 明明是一个很简单的 PR 的说……&lt;/p>
-&lt;h3 id="等下pr-到底是啥">等下，PR 到底是啥？
-&lt;/h3>&lt;p>也许你早就想问这个问题了。我也是，经常听到别人说什么 “欢迎 PR”，“提个 PR”，“合并 PR” 之类的话，但是一直不清楚这到底是什么意思。我故意保留了这个风味，直到现在才解释，这样你才知道开发这块儿有多少谜语人 &lt;del>（bushi，补药打死窝呜呜呜）&lt;/del>。&lt;/p>
-&lt;p>PR 的全称是 Pull Request，也就是所谓的拉取请求。什么？拉取请求？我在请求什么东西？拉取？我一开始也想不通我要请求什么拉取，后来借助 AI 的伟力以及一些别的资料，我终于明白了：Pull Request 就是请别人审阅你提交的代码然后把它合并进项目里。所谓的 “提 PR” 就是发起合并请求罢了。&lt;/p>
-&lt;p>那么，既然 PR 是合并请求，为什么不是 &lt;em>Merge Request&lt;/em> 呢？没错，GitLab 就是这么干的。GitLab 里你不提 &lt;em>PR&lt;/em> 而是提 &lt;em>MR&lt;/em>。两个名词指代的是同一个操作。那么 PR 的 P 究竟是为什么呢？根据一些信源的解释，PR 的 Pull 的意思是说，你想让别人把你的修改 Pull 到他们那里。就好比说，我给项目搞了个很牛的特性，但是现在只在我自己的电脑里。我希望别人也能用上我写的这个特性，所以我要写个说明文字来介绍我这个修改都干了些啥，为什么牛逼，以及为什么推荐他们都把你的这份变更 pull 到他们那里。相比起来，&lt;em>Merge Request&lt;/em> 就很直白了：我做了有一份更改，现在请你把这份更改合并到你们的分支里。&lt;/p>
-&lt;p>从语气上来讲，PR 显然更客气一些。我在知道这个解释之后第一反应是，PR 想表达的是，如果你觉得我的变更很棒，你就可以把我的这份放到你那里。如果你觉得我的修改不好，你不 pull 就是了。而 MR 的话，相比之下就略显强硬了：你能不能把我的更改合并到你那里。也有可能是我神经过敏吧，反正在知道 PR 的词源之后，反而更喜欢这个名字了，感觉 MR 反而有点奇怪，哈哈。&lt;/p>
-&lt;p>不过你也应该明白了，在提交 PR 时应该给你想提交的变更做出一些说明，比如你改的东西的简要总结，为什么要改，改了之后会怎么样之类的。如果只是光秃秃地要求把代码合并进去，代码审核者估计也懒得细看你的代码究竟都干了些啥，进而选择不管你的提交。&lt;/p>
-&lt;h3 id="为什么不直接把变更推送进仓库">为什么不直接把变更推送进仓库？
-&lt;/h3>&lt;p>一般而言，仓库都是有所有权的，即便它是公开仓库，它也不是允许所有人都直接向仓库里提交代码的，一般只有直接维护者有权利变更仓库内的内容。如果一个外来者希望修改仓库内容，基本都是通过 PR 的方式来把代码变更交给审核者，让审核者决定要不要合并进仓库里。当然，如果你就是仓库拥有者或者拥有仓库的编辑权限，那你也许是被允许直接提交代码的。然而，如果你是在和好几个人一起合作的话，最好还是有个 PR 的过程，毕竟 PR 提供了一个交流讨论的地方，直接提交代码的话也很难说这个提交就一定是最合适的。&lt;/p>
-&lt;h3 id="注重交流合作语气这一块儿">注重交流合作，语气这一块儿
-&lt;/h3>&lt;p>可以发现，在 GitHub 上合作开发肯定是避免不了和别人交流沟通的。作为国际化的平台，一般而言还是推荐用英语交流，除非是一眼国人项目/国人特供项目/没有外国人用的项目，比如某些国内特产（科学上网），近乎是用不上英文的。如果您的英文不是很好，emmm，我想说现在的翻译软件都很好用，也不一定非得只能把英文翻译成中文，也可以把中文翻译成英文嘛。&lt;/p>
-&lt;p>另外就是注意礼貌这块儿（）没人会喜欢和一个没素质的人合作的，一般而言。不过呢，有时候也不是说没礼貌吧，可能就是单纯的就事论事而已。记得之前看过的 &lt;em>黑客的自白&lt;/em> 里说过，很多人其实单纯地就是懒得用那些套话，喜欢只针对问题做出提问，并解决问题。这一点我的建议是自行把握吧，我本人持 “礼多人不怪” 的态度，不过如果有人不喜欢这套，那我也无所谓，只要别骂人就行。&lt;/p>
-&lt;h3 id="别在-issue-里面灌水">别在 Issue 里面灌水
-&lt;/h3>&lt;p>很明显的一点。GitHub Issue 提供的本来是一个关于问题的讨论平台，不宜在里面灌水聊天，搞一些跑题。然而这点好像在某些仓库里没有很重要？毕竟当大家发现跑题了的时候，一般也不是刚刚才开始跑题吧。&lt;/p>
-&lt;p>目前就只想到这几点了。如果你有别的觉得可以补充的，欢迎告诉我。我会补在里面的！真的！&lt;/p>
-&lt;h2 id="后记">后记
-&lt;/h2>&lt;p>说实在的，写这篇的时候有点江郎才尽了。因为我本来也是正在学习 Git 的来着，写这些东西有一部分理由是为了复习巩固/趁机学习 Git 命令的。因此，如果里面有什么内容上的纰漏，还望海涵。&lt;/p>
-&lt;p>也许有人会问，现在 Git 的 GUI 客户端已经这么多了，为什么还要学习 Git 的命令行操作？你说得很对：Git 现在有很多 GUI，甚至它本身已经带了一个 GUI 来着。但是，我还是觉得命令行最贴近 Git 在设计之初的使用方式。另外得益于 Git 命令行交互功能非常完善，有时候我们可以写一个简单的脚本来自动化 Git 的一些工作。而这些，GUI 是没法替我们办到的。然而不可否认的是，GUI 真的很不错。至少，Git 的分支状态在命令行下还是不够直观的，这一点必须承认。而有了 GUI 的 Git 它们的分支图一般都画的很漂亮。实不相瞒，有时候我也会直接用 VS Code 的 Git 集成来进行提交。因为很方便嘛，哈哈哈。&lt;/p>
-&lt;p>还有人问，现在好用的 VCS（版本控制系统）也早已经不止 Git 一个了，为什么不介绍更新的工具，而是这个老套到甚至有点老掉牙的，对用户并不是非常友好的 Git 呢？我的回答是，它第一没有那么不堪，第二实际上它也许已经成为了某种事实标准，第三它真的很好用。再加上几乎所有的 VCS 都会提供从 Git 仓库转换到其他格式的仓库的功能，这更说明了 Git 在版本控制系统这个领域的重要地位。如果您会使用 Git 的话，相信其他的 VCS 系统也不会难到您。当然，我也很愿意尝试一下别的工具，比如最近风头正盛的，使用 Rust 编写的 Jujutsu。不过这也是后话了。（Git 真的很好用了）&lt;/p>
-&lt;p>这篇都快写完的时候我才意识到，我还没有介绍 Git 怎么查看提交历史。感觉放在这一篇里还是有点尴尬，毕竟这一篇主要还是在讲怎么和其他人协作，而 Git 的历史查看功能放在这里就不太合适了。思来想去，我放在了上一篇里，因为它和分支还是有很大的关系的。如果你看过了上一篇，结果又没有收到上一篇的更新的话，我建议你可以回去看看（）&lt;/p>
-&lt;p>另外，这个系列真的离不开一些工具，比如 &lt;code>tldr&lt;/code>（包名是 &lt;code>tealdeer&lt;/code>，不过其他版本的也很不错），以及 ChatGPT，DeepSeek 等 AI 工具的协助。当然 Git 自带的文档也很不错，在 Linux 上可以直接 &lt;code>man git&lt;/code> 查看总的介绍，使用 &lt;code>man git-add&lt;/code> 这样的格式来查看 Git 各个子命令（这里是 &lt;code>add&lt;/code>）的使用方式。而在 Windows 上，由于没有 &lt;code>man&lt;/code>，你可以使用 &lt;code>git help git-add&lt;/code> 或者更简单的 &lt;code>git add --help&lt;/code> 来查看在安装 Git 时就已经附赠的 Git 的文档。而且 Git 也有自己的 “官方教材”: &lt;a class="link" href="https://git-scm.com/book/id/v2" target="_blank" rel="noopener"
->&lt;em>ProGit&lt;/em>&lt;/a>，它有多种语言的版本，作为教程而言自然是比 Git 的文档写的好懂的多。不过 Git 的文档写的也很不错就是了。&lt;/p>
-&lt;p>最后，非常感谢您能看到这里。如果你看完了这三篇的话，我更是感激不尽。如果这些文字能帮到你那就太好了，如果没有起太大帮助的话，希望能逗你一笑。哎呀至少笑一下吧，显得这个系列的文章也不是一无是处嘛。&lt;del>（之前写的那个 &lt;a class="link" href="https://a-moment096.github.io/content/posts/Math_Note/Snake_Lemma/index.md" >关于蛇引理的文章&lt;/a> 里也说如果能博读者一笑就好了，结果发现，根本没几个人看呀可恶…… 更别说逗大家笑了，唉，实在是太失败了。）&lt;/del>&lt;/p>
-&lt;p>那么，一如既往地，祝您身心愉快，工作顺利，少出 Bug ~！&lt;/p></description></item><item><title>（也许是）一个 Git 教程？其二</title><link>https://a-moment096.github.io/p/%E4%B9%9F%E8%AE%B8%E6%98%AF%E4%B8%80%E4%B8%AA-git-%E6%95%99%E7%A8%8B%E5%85%B6%E4%BA%8C/</link><pubDate>Thu, 14 Aug 2025 16:49:16 +0800</pubDate><guid>https://a-moment096.github.io/p/%E4%B9%9F%E8%AE%B8%E6%98%AF%E4%B8%80%E4%B8%AA-git-%E6%95%99%E7%A8%8B%E5%85%B6%E4%BA%8C/</guid><description>&lt;img src="https://a-moment096.github.io/posts/Shell_Note/Git_How/Tatara%20Kogasa.jpg" alt="Featured image of post （也许是）一个 Git 教程？其二" />&lt;p>&lt;em>上一节已经介绍了平时会怎么用 Git 进行单分支仓库的管理，这一节就来讲讲 Git 要怎么进行多分支协作吧！&lt;/em>&lt;/p>
-&lt;p>&lt;em>头图信息请参考上一节内容，谢谢~&lt;/em>&lt;/p>
-&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
-&lt;style type="text/css">.dark-theme .aplayer{background:#212121}.dark-theme .aplayer.aplayer-withlist .aplayer-info{border-bottom-color:#5c5c5c}.dark-theme .aplayer.aplayer-fixed .aplayer-list{border-color:#5c5c5c}.dark-theme .aplayer .aplayer-body{background-color:#212121}.dark-theme .aplayer .aplayer-info{border-top-color:#212121}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-title{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-author{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time{color:#eee}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path{fill:#eee}.dark-theme .aplayer .aplayer-list{background-color:#212121}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb{background-color:#999}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover{background-color:#bbb}.dark-theme .aplayer .aplayer-list li{color:#fff;border-top-color:#666}.dark-theme .aplayer .aplayer-list li:hover{background:#4e4e4e}.dark-theme .aplayer .aplayer-list li.aplayer-list-light{background:#6c6c6c}.dark-theme .aplayer .aplayer-list li .aplayer-list-index{color:#ddd}.dark-theme .aplayer .aplayer-list li .aplayer-list-author{color:#ddd}.dark-theme .aplayer .aplayer-lrc{text-shadow:-1px -1px 0 #666}.dark-theme .aplayer .aplayer-lrc:before{background:-moz-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:-webkit-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:linear-gradient(to bottom, #212121 0%, rgba(33,33,33,0) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#212121', endColorstr='#00212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc:after{background:-moz-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:-webkit-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:linear-gradient(to bottom, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#00212121', endColorstr='#cc212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc p{color:#fff}.dark-theme .aplayer .aplayer-miniswitcher{background:#484848}.dark-theme .aplayer .aplayer-miniswitcher .aplayer-icon path{fill:#eee}&lt;/style>
-&lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js">&lt;/script>
-&lt;script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js">&lt;/script>&lt;meting-js auto="https://music.163.com/#/song?id=785695" theme="#2980b9" loop="never">&lt;/meting-js>
-&lt;h2 id="分支是那个分支吗">分支，是那个分支吗？
-&lt;/h2>&lt;p>我们上一节已经了解过 Git 在单分支下的日常工作流了。值得注意的是，我们说的是 “单分支”，那么自然，Git 是支持，同时鼓励使用多分支的。那么分支是什么呢？&lt;/p>
-&lt;p>也许有过 Galgame 经验，或者玩过有分支剧情游戏的你已经想到所谓的 “分支” 是什么东西了。没错，很像这么回事儿，不过功能更丰富一些，因为你不止是体验若干个分支的剧情，Git 甚至可以允许你在没有冲突的前提下合并两个分支！如果有一款游戏支持用 Git 来操控分支的话，也许就可以手动后宫了……&lt;/p>
-&lt;p>咳咳，不开玩笑了。我们来看看分支具体是什么样的。先来个分支图：&lt;/p>
-&lt;h3 id="一个也许简单的-git-分支示意图">一个也许简单的 Git 分支示意图
-&lt;/h3>&lt;figure class="mermaid-container">
-&lt;div class="mermaid">gitGraph
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shell on A Moment's Rest</title><link>https://a-moment096.github.io/tags/shell/</link><description>Recent content in Shell on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 29 Aug 2025 10:00:29 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/shell/index.xml" rel="self" type="application/rss+xml"/><item><title>（也许是）一个 Git 教程？其三</title><link>https://a-moment096.github.io/p/%E4%B9%9F%E8%AE%B8%E6%98%AF%E4%B8%80%E4%B8%AA-git-%E6%95%99%E7%A8%8B%E5%85%B6%E4%B8%89/</link><pubDate>Tue, 26 Aug 2025 18:28:16 +0800</pubDate><guid>https://a-moment096.github.io/p/%E4%B9%9F%E8%AE%B8%E6%98%AF%E4%B8%80%E4%B8%AA-git-%E6%95%99%E7%A8%8B%E5%85%B6%E4%B8%89/</guid><description>&lt;img src="https://a-moment096.github.io/posts/Shell_Note/Git_How/Tatara%20Kogasa.jpg" alt="Featured image of post （也许是）一个 Git 教程？其三" /&gt;&lt;p&gt;&lt;em&gt;最后一节，聊聊如何在 GitHub 上进行多人协作吧~&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;头图信息请参考第一节内容，谢谢~&lt;/em&gt;&lt;/p&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
+&lt;style type="text/css"&gt;.dark-theme .aplayer{background:#212121}.dark-theme .aplayer.aplayer-withlist .aplayer-info{border-bottom-color:#5c5c5c}.dark-theme .aplayer.aplayer-fixed .aplayer-list{border-color:#5c5c5c}.dark-theme .aplayer .aplayer-body{background-color:#212121}.dark-theme .aplayer .aplayer-info{border-top-color:#212121}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-title{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-author{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time{color:#eee}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path{fill:#eee}.dark-theme .aplayer .aplayer-list{background-color:#212121}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb{background-color:#999}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover{background-color:#bbb}.dark-theme .aplayer .aplayer-list li{color:#fff;border-top-color:#666}.dark-theme .aplayer .aplayer-list li:hover{background:#4e4e4e}.dark-theme .aplayer .aplayer-list li.aplayer-list-light{background:#6c6c6c}.dark-theme .aplayer .aplayer-list li .aplayer-list-index{color:#ddd}.dark-theme .aplayer .aplayer-list li .aplayer-list-author{color:#ddd}.dark-theme .aplayer .aplayer-lrc{text-shadow:-1px -1px 0 #666}.dark-theme .aplayer .aplayer-lrc:before{background:-moz-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:-webkit-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:linear-gradient(to bottom, #212121 0%, rgba(33,33,33,0) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#212121', endColorstr='#00212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc:after{background:-moz-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:-webkit-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:linear-gradient(to bottom, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#00212121', endColorstr='#cc212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc p{color:#fff}.dark-theme .aplayer .aplayer-miniswitcher{background:#484848}.dark-theme .aplayer .aplayer-miniswitcher .aplayer-icon path{fill:#eee}&lt;/style&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=455026" theme="#2980b9" loop="never"&gt;&lt;/meting-js&gt;
+&lt;h2 id="所以git-的远程到底是什么东西"&gt;所以，Git 的远程到底是什么东西？
+&lt;/h2&gt;&lt;p&gt;我们之前提过，Git 通过 &lt;em&gt;远程 (Remote)&lt;/em&gt; 来实现和他人合作。我们甚至已经介绍了一些和远程进行交互的命令了。然而，Git 究竟是怎么实现这一功能的？这个功能有什么特点呢？我们和他人进行协作开发时，有什么要注意的点呢？我们一点点来介绍。我们先系统地介绍一下 &lt;em&gt;远程&lt;/em&gt; 是什么东西吧。&lt;/p&gt;
+&lt;h3 id="远程不过是另一台装了-git-的机器"&gt;远程：不过是另一台装了 Git 的机器
+&lt;/h3&gt;&lt;p&gt;实际上远程并不神秘。得益于 Git 分布式的特性，每一台安装了 Git 且拥有项目源码的机器都可以说是某个远程。或者说远程是相对的：有两台机器 A 和 B，都拥有同一个项目的源码并安装了 Git，那么对于 A 来讲 B就是远程，而对 B 来讲 A 也是远程。而不同机器之间的通信则可以通过 SSH 完成，如果是比较老的项目，或者不希望通过 SSH 来连接的情况，我们甚至可以使用邮件进行通信，传递代码，就像 Linux 内核，GCC 等项目那样。总之，通过这种 &lt;em&gt;每个设备都存储一份代码&lt;/em&gt; 的形式， Git 就实现了分布式的代码存储，每个设备既可以是正在工作的仓库，又可以是为他人提供源码的仓库。&lt;/p&gt;
+&lt;p&gt;然而，大量的实践证明，有时候有一个中心服务器真的会很省事。大家把代码的更新放在一台公开的服务器上，然后可以从这一个服务器上拉取代码，可以很好地保证开发进度以及代码的一致性。不过这样又失去了 Git 天生的分布式特性。所以，到底哪个更好呢？真分布式还是采用某个中心的代码服务器？&lt;/p&gt;
+&lt;h3 id="对比真分布式-vs-中心仓库"&gt;对比：&lt;em&gt;真&lt;/em&gt;分布式 vs 中心仓库
+&lt;/h3&gt;&lt;p&gt;Git 一开始就是支持分布式存储的，这样最大的好处在于，每一个人拥有的仓库都是这个代码的一份备份。假如一个项目参与的人越多，这个项目的备份就会越多。而且每个人都是自己拥有的这份代码的主人，自己对代码拥有完全的掌控权，可以自行决定自己的代码要不要提交给别人，或者要不要接受来自他人的变更等。这种去中心化的，人人平等的思想非常符合自由开源的精神。另外这种方式不是很依赖某个中心设备，不会因为这一个设备断掉而直接完全不可用。如 Linux 内核，GCC 编译工具链等都没有一个一般意义上的中心代码服务器用来让所有合作者都往里面推送代码或者从里面拉取更新。&lt;/p&gt;
+&lt;p&gt;然而中心化的服务器自然是有它的好处的。比如说有三个人在同一个项目工作，三人没有一个中心代码仓库而是互相传递更新的代码，如果三位都对代码进行了不同的且有一定冲突的代码，那么在同步时肯定会面临很多的麻烦。而如果他们的代码存放在一个中心服务器上，那这个服务器就会忠实地记录每个人对它的修改，进而避免所有人的代码一起涌上来的尴尬，同时保持大家的进度都在同一阶段，避免每个人有自己的想法进而没法合并（即便其实可以用分支也是可以的）。另外如果在某个项目里，开发团队是有明确分工的，那么这时候应该有一个人负责对代码进行审阅修改，而此时中心服务器的优势就体现出来了，让审阅者（们）单独拥有对中心服务器代码的修改权，然后审阅者（们）就可以直接在该服务器上进行审阅合并等操作，且所有的合作者都可以直接从该位置拉取最新的代码。也许有人说，把代码直接交给审阅者不就行了，为什么非得有个中心服务器的参与？然而如果真是这样的话，审阅者他自己的电脑也在某种程度上成为了那个中心服务器了。就我个人而言，我是想不到什么普通项目有必须使用去中心化工作流程的必要的。一般来讲都还是有一个（当然也可以多个）代码托管处会好很多。&lt;/p&gt;
+&lt;p&gt;那么，谁是这个星球上最受欢迎的 &lt;em&gt;中心代码仓库&lt;/em&gt; 呢？&lt;/p&gt;
+&lt;h2 id="代码托管平台们"&gt;代码托管平台们
+&lt;/h2&gt;&lt;h3 id="github-the-blessed-one"&gt;GitHub: The blessed one
+&lt;/h3&gt;&lt;p&gt;向您隆重介绍，这个星球最受欢迎代码托管平台，汇集无数人智慧结晶，全世界最大同性（？）交友网站（&lt;a class="link" href="https://www.flysnow.org/2019/01/09/github-milestones" target="_blank" rel="noopener"
+&gt;迫真&lt;/a&gt;，95%以上的用户都是男性），GitHub。第一期其实已经有介绍过，GitHub 和 Git 之间的关系是什么样的，以及大家可以怎么使用 GitHub。这里我们再多聊两句。&lt;/p&gt;
+&lt;p&gt;上面我们说 GitHub 是代码仓库，其实是不太严谨的，应该说它是一个代码托管平台，任何人都可以在上面创建自己的仓库，然后把代码放在上面。当然，GitHub 的功能肯定不仅限于此，它上面集成了很多很好用的功能，比如 Issues, Pull Requests, GitHub Actions 等，也提供了非常美观现代化的图形界面，能让大家直观地看到代码仓库的变更历史。它甚至提供了 GitHub Pages 来让开发者可以把静态的网页托管在上面，这让很多项目得以拥有自己的网页，或是用来做文档，或是用来宣传，功能非常多样。顺带一提，本博客就是托管在 GitHub Pages 服务上的。GitHub，伟大无需多言。&lt;/p&gt;
+&lt;p&gt;目前 GitHub 上已经有了 &lt;a class="link" href="https://gitcharts.com/" target="_blank" rel="noopener"
+&gt;2亿6千万以上（268 million+）的公开仓库了&lt;/a&gt;，仓库来源于全世界各地，且每天都有大量的信件仓库，大量的拉取请求，以及大量的代码提交。大家在 GitHub 上的活动已经远不止简单的提交自己的代码这么简单，开发者们会在一个项目内合作开发，设定开发目标，合并他人的拉取请求，为感兴趣的项目做贡献或者提出问题，帮助他人解答问题等等。其仓库类型也是多种多样，有各种语言写成的千奇百怪的项目，也有一些很不错的资源整合项目，甚至你还会看到很多令人难绷的小作文以及互联网记忆。总之，除了托管自己的代码之外，你还可以看看别人的代码，玩玩别人的项目，和别的开发者讨论（&lt;del&gt;吵架&lt;/del&gt;），给别的项目做贡献（&lt;del&gt;改错别字&lt;/del&gt;）。用途多种多样，就看怎么用了。&lt;/p&gt;
+&lt;p&gt;GitHub 起源于 2007 年，至今已经 18 年历史了。18年来，GitHub 变得越来越完善，功能越来越丰富。2018 年的时候微软收购了它，在那之后就成了微软的一个子公司，而 2019 年的时候 GitHub 宣布它支持个人创建任意多个私有仓库，将 GitHub 的受欢迎程度推上了一个新台阶。而就在前不久（2025年8月11日），其 CEO 宣布卸任，GitHub 被合并在微软的 Core AI 部门。我个人认为这应该算是坏消息，毕竟 GitHub 作为全世界最大的代码托管平台，几乎已经是 &lt;em&gt;开源精神&lt;/em&gt; 的代言人了。本来还是一个比较独立的子公司的 GitHub 现在被微软直接合并进一个部门内，怎么想都感觉其独立性要进一步下降了。是在令人感到可惜。但是就目前而言，GitHub 也依旧是同类产品中知名度最高的一个，甚至可以说是某种标准了。所以，还是先用着吧。如果 GitHub 哪一天真倒了的话，肯定还会出现新的继任者的。&lt;/p&gt;
+&lt;h3 id="gitlab-强大的自动化以及自托管"&gt;GitLab: 强大的自动化以及自托管
+&lt;/h3&gt;&lt;p&gt;除了 GitHub 以外，当然还有别的托管平台。其中另一个比较受欢迎的项目就是 GitLab，它除了托管到 GitLab 的服务器上以外，还支持在自己的服务器上自行搭建代码托管平台，其中也支持和 GitHub 类似的很多功能，比如查看源码，Issues, Merge Request（对应 GitHub 中的 Pull Request），CI/CD（持续集成/持续部署）等等。其中的 CI/CD 是 GitLab 最出众的特点，以速度快效率高而著称。而且由于它提供自托管（通过 GitLab Community Edition）的特性，对于那些需要较强独立性的，不希望受到 GitHub 控制的（理由嘛……我也不知道），或者就是某些公司希望保持私密性的项目，GitLab 是一个很不错的选择。有很多项目都是使用 GitLab 进行托管的，比如 KDE，Paraview 等。相较于 GitHub 而言，GitLab 的隐私性还是更强一些。然而坏消息是，GitLab 在 24 年的时候宣布不再直接为中国地区提供服务，转而由本地服务提供商 &lt;em&gt;极狐&lt;/em&gt; 提供。我也很难讲究竟应该用哪个……&lt;/p&gt;
+&lt;p&gt;GitLab 的功能是非常全面的，如果你并不想要这么完善的功能，只是想在自己的服务器上搭一个轻量化的 Git 托管平台，你也可以选择 Gitea。它最大的特点就是轻量化了，拥有最基础的 Git 托管服务器所应该有的功能，不过随之而来的就是一些更复杂的功能可能没有，自动化相关的内容也许需要自己手动实现等等。&lt;/p&gt;
+&lt;p&gt;讲了这么多，Git 到底应该怎么实现和远程服务器的交互呢？&lt;/p&gt;
+&lt;h2 id="git-与远程的交互方式"&gt;Git 与远程的交互方式
+&lt;/h2&gt;&lt;p&gt;下面我们就来介绍一下 Git 和远程进行交互时会用到的一些命令吧。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;git remote&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;这个命令正如它的名字，是用来管理和远程相关内容的一个子命令。而且，就像 &lt;code&gt;git branch&lt;/code&gt; 那样，如果你不带任何的参数，它会告诉你都有哪些远程是可用的。一般来讲，仓库会有一个名为 &lt;code&gt;origin&lt;/code&gt; 的远程库，它一般就是你在 GitHub 上托管的位置了。如果你想确认远程的具体信息的话，你可以用 &lt;code&gt;-v&lt;/code&gt; 或者 &lt;code&gt;--verbose&lt;/code&gt; 来让 Git 把该仓库的所有远程地址都告诉你。你也可以用 &lt;code&gt;show&lt;/code&gt; 子命令来让 Git 告诉你关于某个远程的详细信息，包括它会从哪里拉取代码，往哪里推送代码，当前分支和最新提交等等。&lt;/p&gt;
+&lt;p&gt;而假如你的仓库还没有可用的远程，你可以使用 &lt;code&gt;add&lt;/code&gt; 子命令来让 Git 添加一个远程仓库作为你这个仓库的远程位置。比如说你在个人 GitHub 账号下有一个空仓库，地址是 &lt;code&gt;https://github.com/abc/test_repo&lt;/code&gt;，其中 &lt;code&gt;abc&lt;/code&gt; 是用户名而 &lt;code&gt;test_repo&lt;/code&gt; 则是仓库名，此时你就可以使用 &lt;code&gt;git remote add origin https://github.com/abc/test_repo.git&lt;/code&gt; 来把这个仓库作为远程仓库添加到当前仓库名下，并给它以 &lt;code&gt;origin&lt;/code&gt; 的名字。你当然也可以修改这个远程仓库的地址咯，使用 &lt;code&gt;set-url&lt;/code&gt; 即可，用法和 &lt;code&gt;add&lt;/code&gt; 差不多，只不过远程名必须是已经有了的远程名字。&lt;/p&gt;
+&lt;p&gt;假如你感觉某个远程仓库名让你很不爽，你可以使用 &lt;code&gt;rename &amp;lt;old-name&amp;gt; &amp;lt;new-name&amp;gt;&lt;/code&gt; 来修改它；如果这个远程已经不需要了，或者你因为什么其他的原因要删除它，也很简单，使用 &lt;code&gt;remove &amp;lt;remote-name&amp;gt;&lt;/code&gt; 子命令就可以啦。还是比较简单易懂的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;git clone&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;除了给现有的仓库添加远程，我们当然还可以从远程仓库复制一份到本地来呀。通过使用 &lt;code&gt;git clone &amp;lt;repo-url&amp;gt;&lt;/code&gt; 命令就可以把一个远程仓库下载到本地。下载下来的仓库会默认放在当前文件夹下的和仓库名同名的文件夹里，且仓库名默认会是和远程仓库的名字一样的，且由于是从远程克隆下来的，它会自动设置好远程的位置（起名也是默认的 &lt;code&gt;origin&lt;/code&gt;）。当然如果你想把该仓库下载到其他位置的话，也可以在仓库的 URL 后面添加上你要下载到的文件夹。&lt;/p&gt;
+&lt;p&gt;一般来讲，使用这个命令就已经足够了。然而有时候，也许你会遇到仓库里使用了 Git Submodules（Git 子模块）的情况。我们这里不打算介绍 Git 子模块，然而如果你在克隆一个带有子模块的项目时没有顺带让仓库克隆其内部的子模块，后面在使用过程中又得重新搞一些有的没的。为了避免这样的麻烦，在克隆时可以直接带上 &lt;code&gt;--recursive&lt;/code&gt; 的参数，告诉 Git “帮我把这个仓库里所有的 Git 子模块也一并下载下来”。这样就省去了后面重新配置 Git 子模块的麻烦。&lt;/p&gt;
+&lt;p&gt;另外也许有时候你克隆一个仓库的目的并不是在仓库里做开发，而是直接使用它（像一些 ZSH 插件是托管在 GitHub 上的），此时你也许不关心它的提交历史，或者这个仓库太大了而你又不需要用上过去的所有提交历史的时候，你会希望只获取到最新的几个提交就够了。Git 非常贴心地提供了 &lt;code&gt;--depth &amp;lt;number&amp;gt;&lt;/code&gt; 的参数，你可以指定你只想克隆到最近的多少个提交即可。这样能非常好地节约克隆的时间，对磁盘和网络都比较友好。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;git push&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;当我们本地做出一些修改，有了一些和远程不一样的提交之后，我们就可以把本地的提交推送到远程仓库了。当我们直接使用这个命令的时候，Git 会默认推送当前分支到远程仓库的对应分支上。默认的操作就是最高频的操作了，这一点很不错。而当我们需要推送到某个特定分支（比如远程分支和当前分支名称不一样的时候），我们可以先写上远程分支的名字，再写上当前分支的名字：&lt;code&gt;git push &amp;lt;remote-branch&amp;gt; &amp;lt;local-branch&amp;gt;&lt;/code&gt;。我们也可以通过加上参数 &lt;code&gt;-u&lt;/code&gt; 或者 &lt;code&gt;--set-upstream&lt;/code&gt; 来修改推送的默认分支。&lt;/p&gt;
+&lt;p&gt;也许我们的仓库拥有不止一个远程，这时候我们可能需要指定我们要推送的是哪个分支。这时候 &lt;code&gt;push&lt;/code&gt; 的写法会有一定的变化：&lt;code&gt;git push &amp;lt;remote-name&amp;gt; &amp;lt;local-branch&amp;gt;:&amp;lt;remote-branch&amp;gt;&lt;/code&gt;，即我们要先指定推送到哪个远程上，然后用冒号分割本地分支和远程分支。&lt;/p&gt;
+&lt;p&gt;这个写法完全地指定了所有推送的信息，而且这个写法还有一个隐藏功能：如果我们不写本地分支，直接写 &lt;code&gt;git push &amp;lt;remote-name&amp;gt; :&amp;lt;remote-branch&amp;gt;&lt;/code&gt;，意思就是告诉 Git “我要把空分支推送到远程覆盖那个远程分支”，结果就是让 Git 删除远程分支。当然，删除远程分支也可以使用 &lt;code&gt;git push &amp;lt;remote-name&amp;gt; -d &amp;lt;remote-branch&amp;gt;&lt;/code&gt; （或者用 &lt;code&gt;--delete&lt;/code&gt;）来实现，这样的语义更加明确，不过我猜也是给上面的方法一个新的包装而已。也许我们远程的分支太多了，我们不想要远程的那些没有本地对应的分支，此时我们就可以使用 &lt;code&gt;git push --prune &amp;lt;remote-name&amp;gt;&lt;/code&gt; 来删掉（修剪）那些多出来的分支了。&lt;/p&gt;
+&lt;p&gt;除了我们可以推送分支外，&lt;code&gt;push&lt;/code&gt; 还兼并了推送标签（Tag）的功能。我们可以直接使用 &lt;code&gt;git push --tags&lt;/code&gt; 来推送所有的标签，也可以 &lt;code&gt;git push &amp;lt;remote-name&amp;gt; tag &amp;lt;tag-name&amp;gt;&lt;/code&gt; 来推送某一个标签。至于标签是什么你可以认为它是一个独立于分支树之外的持久性的快照，会保存某一时刻的信息，且不会强依附于某个分支，一般是在发行时会给某个版本打上一个标签，没错，就是那个 xx.xx.xx，一般标签都会这么打。我们这里就不过多介绍了。&lt;/p&gt;
+&lt;p&gt;最后在这里要留一个提醒。有很多教程推荐在 &lt;code&gt;push&lt;/code&gt; 出问题的时候使用 &lt;code&gt;-f&lt;/code&gt; 或者 &lt;code&gt;--force&lt;/code&gt; 参数。这个参数的功能是让 Git 不做任何的检查，用本地的状态去强行覆盖远程仓库的状态。如果你真的是在和别人一起协作的话，不要这么做。会被人移交蔡司。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;git fetch&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;这个命令是用来让我们从远程获取更新使用的。它默认会获取默认远程的所有分支的最新更新，如果我们要指定是从哪个远程获取，只需要把那个远程的名称放在后面即可。如果我们想从所有的远程都拉取更新，则可以使用 &lt;code&gt;--all&lt;/code&gt; 来告诉 Git。类似于 &lt;code&gt;git push&lt;/code&gt;，我们还可以在 &lt;code&gt;git fetch&lt;/code&gt; 的后面加上 &lt;code&gt;-t&lt;/code&gt; 或者 &lt;code&gt;--tags&lt;/code&gt; 来让它从远程获取所有的标签信息，或者用 &lt;code&gt;git fetch --prune&lt;/code&gt; 或 &lt;code&gt;git fetch -p&lt;/code&gt; 来让 Git 删除掉本地多出来的，远程没有的分支。&lt;/p&gt;
+&lt;p&gt;需要注意的是，Git 在设计上让 &lt;code&gt;fetch&lt;/code&gt; 子命令不直接把远程的内容和本地进行合并。也就是说，&lt;code&gt;git fetch&lt;/code&gt; 只会更新 &lt;em&gt;本地的远程数据库&lt;/em&gt;，而不会把远程的数据直接放在本地的工作目录里。如果想要这么做的话，我们可以把远程的分支 通过 &lt;code&gt;git merge&lt;/code&gt; 来 &lt;em&gt;合并&lt;/em&gt; 到本地上。要指定远程分支，我们需要用 &lt;code&gt;&amp;lt;remote-name&amp;gt;/&amp;lt;remote-branch&amp;gt;&lt;/code&gt; 来告诉 Git 我们要的是在 &lt;code&gt;&amp;lt;remote-name&amp;gt;&lt;/code&gt; 上的 &lt;code&gt;&amp;lt;remote-branch&amp;gt;&lt;/code&gt; 分支。&lt;/p&gt;
+&lt;p&gt;如果你感觉这实在是太麻烦了（真的很麻烦），我们可以使用下面这个融合了 &lt;code&gt;fetch&lt;/code&gt; 和 &lt;code&gt;merge&lt;/code&gt; 的命令：&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;git pull&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;当我们很明确地是要把远程的变更直接应用到本地仓库时，我们可以直接 &lt;code&gt;git pull&lt;/code&gt; 来拉取远程更新。由于它涉及 “合并” 的步骤，所以它的默认行为是把默认远程的变更获取到本地后把当前分支对应的远程变更应用到本分支上。也就是说，默认行为是从远程更新当前分支状态。&lt;/p&gt;
+&lt;p&gt;自然，我们可以指定它的更新对象。我们使用 &lt;code&gt;git pull &amp;lt;remote-name&amp;gt; &amp;lt;branch&amp;gt;&lt;/code&gt; 就可以指定要拉取的远程是哪个，并且指定要更新的分支是谁。需要注意的是，新仓库里执行 &lt;code&gt;git pull&lt;/code&gt; 时它可能并不知道要使用什么方式把远程的变更应用到本地分支，因为除了可以使用 &lt;code&gt;merge&lt;/code&gt; 外，还可以用变基操作 &lt;code&gt;rebase&lt;/code&gt; 来做这件事。因此可能 Git 会询问你，是要使用哪种方法。一般我们直接用 &lt;code&gt;fast-forward&lt;/code&gt; 就可以了，最简单方便的方式，且不会让 Git 提交历史出现一大坨自己都不认识的分支。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Git 的远程命令我们就介绍这么多。实际上在单人开发时，几乎不会用到这么复杂的命令。平时就是简单的 &lt;code&gt;git pull&lt;/code&gt; 更新一下，然后做好变更之后就 &lt;code&gt;git push&lt;/code&gt; 上去，就可以了。新仓库可能得用 &lt;code&gt;remote&lt;/code&gt; 来添加一个远程仓库，平时都不怎么用管的。&lt;/p&gt;
+&lt;h2 id="和别人协作时要注意些什么"&gt;和别人协作时要注意些什么
+&lt;/h2&gt;&lt;p&gt;然而，和他人共同协作时，并不是只要知道这些命令就 OK 了，光是知道这些命令并不能帮你成为开源领域大神，不慎的操作很有可能换来别人的嘲讽…… 下面就简单提个几点吧~&lt;/p&gt;
+&lt;p&gt;另外，我其实也没有参与很多开源项目，如果你觉得我下面的建议不够权威，那确实是不好意思，实力不够（）不过我个人认为还算实用/中肯吧。总之希望能帮到你。&lt;/p&gt;
+&lt;h3 id="阅读项目说明"&gt;阅读项目说明
+&lt;/h3&gt;&lt;p&gt;参与到项目前首先应该尝试阅读这个项目的说明。如果你对某个项目感兴趣的话，相信 README 应该是已经看过了。然而如果要参与开发，光是读 README 很有可能不够。大型项目一般有所谓的 Code of Conduct，也就是所谓的行为准则。如果有这么个东西或者类似的要求的话，请阅读这些内容后再开始尝试给这个项目做贡献，不然项目的代码审核很有可能会直接拒绝你的 PR （Pull Request）。&lt;/p&gt;
+&lt;h3 id="先查查-issues"&gt;先查查 Issues
+&lt;/h3&gt;&lt;p&gt;协作开发一般是以某个 Issues 开始的，毕竟有了这样的问题，就有了针对这个问题进行开发的目标了嘛。查看 Issues 的主要目的是看看当前项目有哪些问题等待改善，另外也是看看有没有人已经尝试解决某个问题了。如果你感兴趣的问题已经有人在跟进了，这时候最好和跟进的人商量一下看看有没有什么可以帮忙的。不要稀里糊涂地直接提交一个 PR 上去。&lt;/p&gt;
+&lt;h3 id="也许你需要单开一个-issue"&gt;也许你需要单开一个 Issue
+&lt;/h3&gt;&lt;p&gt;有些项目会要求说，如果你想提交 PR，请给这个 PR 一个对应的 Issue，或者开启一个 Issue。这是一个不错的实践方式，让每个 PR 都有明确的目的性。之前我提交的 PR 就有被要求过开一个 Issue，并在 PR 里写明对应是要解决哪个 Issue。坏消息是我的 PR 好像没有通过自动检查…… 明明是一个很简单的 PR 的说……&lt;/p&gt;
+&lt;h3 id="等下pr-到底是啥"&gt;等下，PR 到底是啥？
+&lt;/h3&gt;&lt;p&gt;也许你早就想问这个问题了。我也是，经常听到别人说什么 “欢迎 PR”，“提个 PR”，“合并 PR” 之类的话，但是一直不清楚这到底是什么意思。我故意保留了这个风味，直到现在才解释，这样你才知道开发这块儿有多少谜语人 &lt;del&gt;（bushi，补药打死窝呜呜呜）&lt;/del&gt;。&lt;/p&gt;
+&lt;p&gt;PR 的全称是 Pull Request，也就是所谓的拉取请求。什么？拉取请求？我在请求什么东西？拉取？我一开始也想不通我要请求什么拉取，后来借助 AI 的伟力以及一些别的资料，我终于明白了：Pull Request 就是请别人审阅你提交的代码然后把它合并进项目里。所谓的 “提 PR” 就是发起合并请求罢了。&lt;/p&gt;
+&lt;p&gt;那么，既然 PR 是合并请求，为什么不是 &lt;em&gt;Merge Request&lt;/em&gt; 呢？没错，GitLab 就是这么干的。GitLab 里你不提 &lt;em&gt;PR&lt;/em&gt; 而是提 &lt;em&gt;MR&lt;/em&gt;。两个名词指代的是同一个操作。那么 PR 的 P 究竟是为什么呢？根据一些信源的解释，PR 的 Pull 的意思是说，你想让别人把你的修改 Pull 到他们那里。就好比说，我给项目搞了个很牛的特性，但是现在只在我自己的电脑里。我希望别人也能用上我写的这个特性，所以我要写个说明文字来介绍我这个修改都干了些啥，为什么牛逼，以及为什么推荐他们都把你的这份变更 pull 到他们那里。相比起来，&lt;em&gt;Merge Request&lt;/em&gt; 就很直白了：我做了有一份更改，现在请你把这份更改合并到你们的分支里。&lt;/p&gt;
+&lt;p&gt;从语气上来讲，PR 显然更客气一些。我在知道这个解释之后第一反应是，PR 想表达的是，如果你觉得我的变更很棒，你就可以把我的这份放到你那里。如果你觉得我的修改不好，你不 pull 就是了。而 MR 的话，相比之下就略显强硬了：你能不能把我的更改合并到你那里。也有可能是我神经过敏吧，反正在知道 PR 的词源之后，反而更喜欢这个名字了，感觉 MR 反而有点奇怪，哈哈。&lt;/p&gt;
+&lt;p&gt;不过你也应该明白了，在提交 PR 时应该给你想提交的变更做出一些说明，比如你改的东西的简要总结，为什么要改，改了之后会怎么样之类的。如果只是光秃秃地要求把代码合并进去，代码审核者估计也懒得细看你的代码究竟都干了些啥，进而选择不管你的提交。&lt;/p&gt;
+&lt;h3 id="为什么不直接把变更推送进仓库"&gt;为什么不直接把变更推送进仓库？
+&lt;/h3&gt;&lt;p&gt;一般而言，仓库都是有所有权的，即便它是公开仓库，它也不是允许所有人都直接向仓库里提交代码的，一般只有直接维护者有权利变更仓库内的内容。如果一个外来者希望修改仓库内容，基本都是通过 PR 的方式来把代码变更交给审核者，让审核者决定要不要合并进仓库里。当然，如果你就是仓库拥有者或者拥有仓库的编辑权限，那你也许是被允许直接提交代码的。然而，如果你是在和好几个人一起合作的话，最好还是有个 PR 的过程，毕竟 PR 提供了一个交流讨论的地方，直接提交代码的话也很难说这个提交就一定是最合适的。&lt;/p&gt;
+&lt;h3 id="注重交流合作语气这一块儿"&gt;注重交流合作，语气这一块儿
+&lt;/h3&gt;&lt;p&gt;可以发现，在 GitHub 上合作开发肯定是避免不了和别人交流沟通的。作为国际化的平台，一般而言还是推荐用英语交流，除非是一眼国人项目/国人特供项目/没有外国人用的项目，比如某些国内特产（科学上网），近乎是用不上英文的。如果您的英文不是很好，emmm，我想说现在的翻译软件都很好用，也不一定非得只能把英文翻译成中文，也可以把中文翻译成英文嘛。&lt;/p&gt;
+&lt;p&gt;另外就是注意礼貌这块儿（）没人会喜欢和一个没素质的人合作的，一般而言。不过呢，有时候也不是说没礼貌吧，可能就是单纯的就事论事而已。记得之前看过的 &lt;em&gt;黑客的自白&lt;/em&gt; 里说过，很多人其实单纯地就是懒得用那些套话，喜欢只针对问题做出提问，并解决问题。这一点我的建议是自行把握吧，我本人持 “礼多人不怪” 的态度，不过如果有人不喜欢这套，那我也无所谓，只要别骂人就行。&lt;/p&gt;
+&lt;h3 id="别在-issue-里面灌水"&gt;别在 Issue 里面灌水
+&lt;/h3&gt;&lt;p&gt;很明显的一点。GitHub Issue 提供的本来是一个关于问题的讨论平台，不宜在里面灌水聊天，搞一些跑题。然而这点好像在某些仓库里没有很重要？毕竟当大家发现跑题了的时候，一般也不是刚刚才开始跑题吧。&lt;/p&gt;
+&lt;p&gt;目前就只想到这几点了。如果你有别的觉得可以补充的，欢迎告诉我。我会补在里面的！真的！&lt;/p&gt;
+&lt;h2 id="后记"&gt;后记
+&lt;/h2&gt;&lt;p&gt;说实在的，写这篇的时候有点江郎才尽了。因为我本来也是正在学习 Git 的来着，写这些东西有一部分理由是为了复习巩固/趁机学习 Git 命令的。因此，如果里面有什么内容上的纰漏，还望海涵。&lt;/p&gt;
+&lt;p&gt;也许有人会问，现在 Git 的 GUI 客户端已经这么多了，为什么还要学习 Git 的命令行操作？你说得很对：Git 现在有很多 GUI，甚至它本身已经带了一个 GUI 来着。但是，我还是觉得命令行最贴近 Git 在设计之初的使用方式。另外得益于 Git 命令行交互功能非常完善，有时候我们可以写一个简单的脚本来自动化 Git 的一些工作。而这些，GUI 是没法替我们办到的。然而不可否认的是，GUI 真的很不错。至少，Git 的分支状态在命令行下还是不够直观的，这一点必须承认。而有了 GUI 的 Git 它们的分支图一般都画的很漂亮。实不相瞒，有时候我也会直接用 VS Code 的 Git 集成来进行提交。因为很方便嘛，哈哈哈。&lt;/p&gt;
+&lt;p&gt;还有人问，现在好用的 VCS（版本控制系统）也早已经不止 Git 一个了，为什么不介绍更新的工具，而是这个老套到甚至有点老掉牙的，对用户并不是非常友好的 Git 呢？我的回答是，它第一没有那么不堪，第二实际上它也许已经成为了某种事实标准，第三它真的很好用。再加上几乎所有的 VCS 都会提供从 Git 仓库转换到其他格式的仓库的功能，这更说明了 Git 在版本控制系统这个领域的重要地位。如果您会使用 Git 的话，相信其他的 VCS 系统也不会难到您。当然，我也很愿意尝试一下别的工具，比如最近风头正盛的，使用 Rust 编写的 Jujutsu。不过这也是后话了。（Git 真的很好用了）&lt;/p&gt;
+&lt;p&gt;这篇都快写完的时候我才意识到，我还没有介绍 Git 怎么查看提交历史。感觉放在这一篇里还是有点尴尬，毕竟这一篇主要还是在讲怎么和其他人协作，而 Git 的历史查看功能放在这里就不太合适了。思来想去，我放在了上一篇里，因为它和分支还是有很大的关系的。如果你看过了上一篇，结果又没有收到上一篇的更新的话，我建议你可以回去看看（）&lt;/p&gt;
+&lt;p&gt;另外，这个系列真的离不开一些工具，比如 &lt;code&gt;tldr&lt;/code&gt;（包名是 &lt;code&gt;tealdeer&lt;/code&gt;，不过其他版本的也很不错），以及 ChatGPT，DeepSeek 等 AI 工具的协助。当然 Git 自带的文档也很不错，在 Linux 上可以直接 &lt;code&gt;man git&lt;/code&gt; 查看总的介绍，使用 &lt;code&gt;man git-add&lt;/code&gt; 这样的格式来查看 Git 各个子命令（这里是 &lt;code&gt;add&lt;/code&gt;）的使用方式。而在 Windows 上，由于没有 &lt;code&gt;man&lt;/code&gt;，你可以使用 &lt;code&gt;git help git-add&lt;/code&gt; 或者更简单的 &lt;code&gt;git add --help&lt;/code&gt; 来查看在安装 Git 时就已经附赠的 Git 的文档。而且 Git 也有自己的 “官方教材”: &lt;a class="link" href="https://git-scm.com/book/id/v2" target="_blank" rel="noopener"
+&gt;&lt;em&gt;ProGit&lt;/em&gt;&lt;/a&gt;，它有多种语言的版本，作为教程而言自然是比 Git 的文档写的好懂的多。不过 Git 的文档写的也很不错就是了。&lt;/p&gt;
+&lt;p&gt;最后，非常感谢您能看到这里。如果你看完了这三篇的话，我更是感激不尽。如果这些文字能帮到你那就太好了，如果没有起太大帮助的话，希望能逗你一笑。哎呀至少笑一下吧，显得这个系列的文章也不是一无是处嘛。&lt;del&gt;（之前写的那个 &lt;a class="link" href="https://a-moment096.github.io/content/posts/Math_Note/Snake_Lemma/index.md" &gt;关于蛇引理的文章&lt;/a&gt; 里也说如果能博读者一笑就好了，结果发现，根本没几个人看呀可恶…… 更别说逗大家笑了，唉，实在是太失败了。）&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;那么，一如既往地，祝您身心愉快，工作顺利，少出 Bug ~！&lt;/p&gt;</description></item><item><title>（也许是）一个 Git 教程？其二</title><link>https://a-moment096.github.io/p/%E4%B9%9F%E8%AE%B8%E6%98%AF%E4%B8%80%E4%B8%AA-git-%E6%95%99%E7%A8%8B%E5%85%B6%E4%BA%8C/</link><pubDate>Thu, 14 Aug 2025 16:49:16 +0800</pubDate><guid>https://a-moment096.github.io/p/%E4%B9%9F%E8%AE%B8%E6%98%AF%E4%B8%80%E4%B8%AA-git-%E6%95%99%E7%A8%8B%E5%85%B6%E4%BA%8C/</guid><description>&lt;img src="https://a-moment096.github.io/posts/Shell_Note/Git_How/Tatara%20Kogasa.jpg" alt="Featured image of post （也许是）一个 Git 教程？其二" /&gt;&lt;p&gt;&lt;em&gt;上一节已经介绍了平时会怎么用 Git 进行单分支仓库的管理，这一节就来讲讲 Git 要怎么进行多分支协作吧！&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;头图信息请参考上一节内容，谢谢~&lt;/em&gt;&lt;/p&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
+&lt;style type="text/css"&gt;.dark-theme .aplayer{background:#212121}.dark-theme .aplayer.aplayer-withlist .aplayer-info{border-bottom-color:#5c5c5c}.dark-theme .aplayer.aplayer-fixed .aplayer-list{border-color:#5c5c5c}.dark-theme .aplayer .aplayer-body{background-color:#212121}.dark-theme .aplayer .aplayer-info{border-top-color:#212121}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-title{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-author{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time{color:#eee}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path{fill:#eee}.dark-theme .aplayer .aplayer-list{background-color:#212121}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb{background-color:#999}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover{background-color:#bbb}.dark-theme .aplayer .aplayer-list li{color:#fff;border-top-color:#666}.dark-theme .aplayer .aplayer-list li:hover{background:#4e4e4e}.dark-theme .aplayer .aplayer-list li.aplayer-list-light{background:#6c6c6c}.dark-theme .aplayer .aplayer-list li .aplayer-list-index{color:#ddd}.dark-theme .aplayer .aplayer-list li .aplayer-list-author{color:#ddd}.dark-theme .aplayer .aplayer-lrc{text-shadow:-1px -1px 0 #666}.dark-theme .aplayer .aplayer-lrc:before{background:-moz-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:-webkit-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:linear-gradient(to bottom, #212121 0%, rgba(33,33,33,0) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#212121', endColorstr='#00212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc:after{background:-moz-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:-webkit-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:linear-gradient(to bottom, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#00212121', endColorstr='#cc212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc p{color:#fff}.dark-theme .aplayer .aplayer-miniswitcher{background:#484848}.dark-theme .aplayer .aplayer-miniswitcher .aplayer-icon path{fill:#eee}&lt;/style&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=785695" theme="#2980b9" loop="never"&gt;&lt;/meting-js&gt;
+&lt;h2 id="分支是那个分支吗"&gt;分支，是那个分支吗？
+&lt;/h2&gt;&lt;p&gt;我们上一节已经了解过 Git 在单分支下的日常工作流了。值得注意的是，我们说的是 “单分支”，那么自然，Git 是支持，同时鼓励使用多分支的。那么分支是什么呢？&lt;/p&gt;
+&lt;p&gt;也许有过 Galgame 经验，或者玩过有分支剧情游戏的你已经想到所谓的 “分支” 是什么东西了。没错，很像这么回事儿，不过功能更丰富一些，因为你不止是体验若干个分支的剧情，Git 甚至可以允许你在没有冲突的前提下合并两个分支！如果有一款游戏支持用 Git 来操控分支的话，也许就可以手动后宫了……&lt;/p&gt;
+&lt;p&gt;咳咳，不开玩笑了。我们来看看分支具体是什么样的。先来个分支图：&lt;/p&gt;
+&lt;h3 id="一个也许简单的-git-分支示意图"&gt;一个也许简单的 Git 分支示意图
+&lt;/h3&gt;&lt;figure class="mermaid-container"&gt;
+&lt;div class="mermaid"&gt;gitGraph
 commit id: "initial commit"
 commit
 branch feature1
@@ -119,540 +119,540 @@ commit id: "new feat2"
 checkout main
 commit
 merge feature2 id: "finish, merge feat2"
-&lt;/div>
-&lt;figcaption>Git 分支示意图&lt;/figcaption>
-&lt;/figure>&lt;p>（嘶，mermaid 竟然直接有 gitGraph 的功能，NB）&lt;/p>
-&lt;p>那么可以看到，我们这里有三条分支：一条 &lt;code>main&lt;/code>， 一条 &lt;code>feature1&lt;/code> 以及一条 &lt;code>feature2&lt;/code>。有时我们开启了一个分支，有时我们又将两个分支进行了合并。上面的图是怎么生成的呢（双关意）？下面是用到的代码：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="ln"> 1&lt;/span>&lt;span class="cl">gitGraph
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 2&lt;/span>&lt;span class="cl"> commit id: &amp;#34;initial commit&amp;#34;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 3&lt;/span>&lt;span class="cl"> commit
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 4&lt;/span>&lt;span class="cl"> branch feature1
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 5&lt;/span>&lt;span class="cl"> checkout feature1
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 6&lt;/span>&lt;span class="cl"> commit id: &amp;#34;new feat1, first commit&amp;#34;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 7&lt;/span>&lt;span class="cl"> commit
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 8&lt;/span>&lt;span class="cl"> checkout main
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 9&lt;/span>&lt;span class="cl"> merge feature1 id: &amp;#34;merge feature1&amp;#34;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">10&lt;/span>&lt;span class="cl"> branch feature2
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">11&lt;/span>&lt;span class="cl"> checkout feature2
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">12&lt;/span>&lt;span class="cl"> commit id: &amp;#34;new feat2&amp;#34;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">13&lt;/span>&lt;span class="cl"> checkout main
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">14&lt;/span>&lt;span class="cl"> commit
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">15&lt;/span>&lt;span class="cl"> merge feature2 id: &amp;#34;finish, merge feat2&amp;#34;
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Mermaid 的 gitGraph 很有趣的地方在于，上面的代码几乎就是为了实现这样的提交树/分支形状所需要的 Git 命令。我们可以不管 &lt;code>id&lt;/code> 后面的部分，因为这些在实际 &lt;code>commit&lt;/code> 的时候应该是用 &lt;code>-m&lt;/code> 来指定的提交信息才对。&lt;/p>
-&lt;p>那么，这些命令都干嘛了？要怎么用命令来操控分支？&lt;/p>
-&lt;h2 id="和分支相关的命令们">和分支相关的命令们
-&lt;/h2>&lt;p>下面来讲讲上面出现的（和没出现的一些）命令吧~&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;p>&lt;code>git checkout&lt;/code>&lt;/p>
-&lt;p>说实在的，这个命令真的是个很大的坑。&lt;code>git checkout&lt;/code> 从 Git 诞生之初就已经存在，它是集创建、管理、变更分支或提交等功能为一体的一个命令。造成这个情况的主要原因在于 &lt;code>git checkout&lt;/code> 实际上不是在我们现有的对 Git 存储模型的理解上进行操作，而是在 Git 更贴近实现层面的操作，即移动 “指针”。&lt;/p>
-&lt;p>然而，我们这里先不打算介绍这么深入/详细。我们还是从实用角度来聊聊这个命令。观察上面的 Mermaid 图，我们可以看到，好像 &lt;code>git checkout&lt;/code> 的功能没有直接体现在图上。然而仔细观察的话可以猜到，&lt;code>git checkout&lt;/code> 在这里的作用是更换分支。比如，&lt;code>git checkout main&lt;/code> 就是告诉 Git “现在我要切换分支到 main 分支上”。这是 &lt;code>git checkout&lt;/code> 的主要用途之一。另外我们还可以用 &lt;code>git checkout -&lt;/code> 来像 &lt;code>cd -&lt;/code> 一样切换到上一个分支。&lt;/p>
-&lt;p>我们还可以对这个命令多讲一些。如果给它带上 &lt;code>-b&lt;/code> 的参数则可以用来创建一个新分支。比如 &lt;code>git checkout -b new-branch&lt;/code> 就可以创建一个新的名为 &lt;code>new-branch&lt;/code> 的分支，同时你还会直接切换到该分支上。而如果你在后面带的参数是某个文件或者单纯的 &lt;code>.&lt;/code>，则是要让 Git 该文件/所有文件里没有暂存的更改。&lt;/p>
-&lt;p>上面说的都是比较老派的做法。相信你也一定从上面的 Mermaid 图中猜到了新式的创建新分支的方法，那就是：&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;code>git branch&lt;/code>&lt;/p>
-&lt;p>这个命令是用来管控和单个分支相关的操作的。我们简要介绍一下。&lt;/p>
-&lt;p>如果后面不带任何的参数，则是会打印出可用分支。如果要创建一个新的分支，就可以用 &lt;code>git branch &amp;lt;another-branch&amp;gt;&lt;/code>, 就是让 Git 尝试创建一个名为 &lt;code>&amp;lt;another-branch&amp;gt;&lt;/code> 的分支。当这个分支已经存在的时候，Git 就会报错，告诉你已经有了叫这个名字的分支了。&lt;/p>
-&lt;p>要注意的是，&lt;code>git branch &amp;lt;branch-name&amp;gt;&lt;/code> 只会创建分支，并不会把当前分支更改到这个新分支上。要想在创建分支后切换分支，除了传统方式 &lt;code>git checkout&lt;/code> 外，还可以使用更现代（？）的命令：&lt;code>git switch -c &amp;lt;branch-name&amp;gt;&lt;/code>。我们后面会介绍到。&lt;/p>
-&lt;p>除了创建分支以外，我们肯定还希望能实现查看/删除/重命名分支。我们干脆都列在下面吧。如果不想看可以跳过这一段。&lt;/p>
-&lt;ul>
-&lt;li>要查看分支，可以直接 &lt;code>git branch&lt;/code>。如果要看所有的分支（包括远程的），可以使用 &lt;code>git branch -a&lt;/code> 来查看。你还可以使用 &lt;code>-v&lt;/code> 来输出上次提交的信息。&lt;/li>
-&lt;li>要创建分支，就像上面说的，在后面补上你要的分支名称，即 &lt;code>git branch &amp;lt;branch-name&amp;gt;&lt;/code>。如果这个分支已经存在则会报错，另外这个命令只会创建，并不会切换过去。&lt;/li>
-&lt;li>如若要从某个提交上创建分支，还可以在 &lt;code>&amp;lt;branch-name&amp;gt;&lt;/code> 后面添加上 &lt;code>&amp;lt;commit-hash&amp;gt;&lt;/code>。至于 &lt;code>&amp;lt;commit-hash&amp;gt;&lt;/code> 是什么，我们在后面关于 Git 的一些概念里进行介绍。&lt;/li>
-&lt;li>想要删除分支，可以用 &lt;code>git branch -d &amp;lt;branch-name&amp;gt;&lt;/code> 来删掉它。要是你要删除当前分支，请先切换到别的分支哦。&lt;/li>
-&lt;li>要是打算重命名分支，可以考虑像操作文件一样 &lt;em>移动&lt;/em> 它：&lt;code>git branch -m &amp;lt;branch-name&amp;gt; &amp;lt;new-name&amp;gt;&lt;/code>。依旧，这个命令也只能更改别的分支。&lt;/li>
-&lt;/ul>
-&lt;p>So, that&amp;rsquo;s it! Git 针对单分支的操作都可以用 &lt;code>branch&lt;/code> 子命令来做到。那么，我们要怎么切换分支呢？除了 &lt;code>checkout&lt;/code> 以外，“比较现代”（存疑）的方法是使用：&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;code>git switch&lt;/code>&lt;/p>
-&lt;p>这个命令是相对较新的用来切换分支的命令。可以通过 &lt;code>git switch &amp;lt;branch-name&amp;gt;&lt;/code> 来简单地实现切换。有趣的是，我们还可以用 &lt;code>git switch -c &amp;lt;branch-name&amp;gt;&lt;/code> 来创建新分支的同时切换过去。也就是说，&lt;code>git switch -c&lt;/code> 命令和 &lt;code>git checkout -b&lt;/code> 几乎是等价的。另外我们可以使用 &lt;code>git switch -&lt;/code> 来直接跳回上一个分支。&lt;/p>
-&lt;p>另外还可以考虑使用 &lt;code>git switch -m &amp;lt;branch-name&amp;gt;&lt;/code> 来在切换分支的同时把当前分支合并到要切换的分支上。这一点还是相当不错的，因为我们经常会遇到这样的情形：在 &lt;code>dev&lt;/code> 分支上完成某个特性之后，经过测试希望能合并到 &lt;code>main&lt;/code> 分支上。如果没有这条命令的话，我们可能需要先 &lt;code>git checkout main&lt;/code> 之后再 &lt;code>git merge dev&lt;/code>，而有了这条命令我们就可以简单地 &lt;code>git switch -m main&lt;/code> 了。&lt;/p>
-&lt;p>总之，如果你需要切换分支，你就可以使用 &lt;code>switch&lt;/code> 这个命令。语义很明确，不是吗？&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;code>git merge&lt;/code>&lt;/p>
-&lt;p>这个命令，如它的名字一样，是用来合并分支的，或者，不那么明显地，&lt;em>合并到当前分支&lt;/em>。它的使用方式相对而言比较简单，就是单纯的 &lt;code>git merge &amp;lt;branch-name&amp;gt;&lt;/code>。&lt;/p>
-&lt;p>这个命令的主要问题是，合并过程中会出现恶魔般的 &lt;em>冲突&lt;/em>。解决冲突实在是一件令人头痛的事情（在我看来）。为了避免（逃避）合并冲突后的麻烦，你可以考虑 &lt;code>--abort&lt;/code> 参数来告诉 Git 如果合并失败就什么都别动。然而，要是你真想合并，到底还是要解决冲突的。&lt;/p>
-&lt;p>其实解决冲突就是一个 “选择应用谁的代码” 的过程。Git 会在发生冲突的地方用箭头标出来本分支和被合并分支的内容，你要做的就是把你不要的那个部分删掉然后保存。另外，合并会创建一个新的提交。如果你不喜欢默认提交信息，可以考虑使用 &lt;code>-e&lt;/code> 参数来告诉 Git 你打算自己编辑合并产生的提交的提交信息。&lt;/p>
-&lt;p>最后就是 Git 合并时有不同的策略。我们这里不多介绍，大部分情况可以使用 &lt;code>ff&lt;/code> 模式，即 &lt;em>Fast Forward&lt;/em> 模式。这个模式会让你的提交树看起来是一条直线，即如果历史提交相同的话就让两个分支有同样的提交了。&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;code>git log&lt;/code>&lt;/p>
-&lt;p>这个命令正如它名字所说的，会输出 Git 的分支记录。假如不跟任何的参数的话，它会简单地打印当前分支的提交记录们，信息包括提交的 SHA1 哈希结果，提交的作者/邮箱，提交日期，以及提交的信息。此时，Git 会进入自己的分页器方便你上下滚动浏览，支持 Vim 式的操作，比如 &lt;code>jk&lt;/code> 翻页，&lt;code>/？&lt;/code> 查询等等。自然，退出这个状态则需要按下 &lt;code>q&lt;/code>。&lt;/p>
-&lt;p>这个命令当然没有这么枯燥。事实上，你可以自定义的部分特别多。例如，你可以使用 &lt;code>--graph&lt;/code> 来在每个提交的最左边显示分支图（虽然不是很好辨认），你还可以使用 &lt;code>--all&lt;/code> 来显示所有分支的历史记录。如果想让历史记录不要搞个好多行，而是只想看看每个提交的大概信息的话，你可以使用 &lt;code>--oneline&lt;/code> 来让每个提交都变成短短的一行。上面说的这三个参数你可以组合在一起，来快速浏览提交历史是什么样的。而如果你希望显示全面的信息，比如哪些文件发生了什么更改，你可以使用 &lt;code>--stat&lt;/code> ，这样 Git 就会有个统计信息，告诉你哪些文件发生了什么变化。&lt;/p>
-&lt;p>你看到了提交的时间了吧？&lt;code>git log --before &amp;lt;date&amp;gt; --after &amp;lt;date&amp;gt;&lt;/code> 还可以让你选定只查看某个时间段内的提交！时间的格式则是 &lt;code>yyyy-mm-dd&lt;/code>，实在是非常方便的功能。&lt;/p>
-&lt;p>然而这个命令最神奇的地方在于，你实际上可以自定义输出格式。使用 &lt;code>--pretty&lt;/code> 格式，你就可以用一些字段来控制 Git 日志的输出格式。这里有一个&lt;a class="link" href="https://devhints.io/git-log-format" target="_blank" rel="noopener"
->参考表&lt;/a>，感兴趣的话可以看看，试用一下。&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;p>分支相关的基本命令我们就先介绍到这里吧。有了上面的介绍，相信你已经可以运用 Git 的分支功能了吧~&lt;/p>
-&lt;h2 id="git-的概念们">Git 的概念们
-&lt;/h2>&lt;p>然而，止步于介绍使用 Git 的方式，总是觉得不够透彻。知其然还要知其所以然，我们既然是在介绍 Git，那就尝试把 Git 更深一些（其实也没那么深）的概念多介绍一些吧。&lt;/p>
-&lt;h3 id="仓库-repository">仓库 (Repository)
-&lt;/h3>&lt;p>我们几乎所有的 Git 项目都是从建立或者克隆 Git 仓库开始的。仓库是一个比较大的概念，我们和 Git 相关的所有内容都是要从仓库出发的，所有的信息都会存储在仓库中。&lt;/p>
-&lt;p>那么 “所有信息” 都有什么呢？这个问题会比较深，我们从表观的理解来讲，首先肯定得有我们工作内容息息相关的内容，毕竟 Git 就是用来管理它们的。另外就是和 Git 相关的内容了，大部分都存储在 &lt;code>.git&lt;/code> 文件夹中，还有一些零散的 &lt;code>.gitignore&lt;/code> 文件。其中 &lt;code>.git&lt;/code> 存储了这个仓库的所有和 Git 直接相关的内容，例如文件快照，提交记录，不同的分支记录等等，都会以特殊的结构记录下来。这也意味着，如果你删了 &lt;code>.git&lt;/code> 文件夹，那么这个仓库就没了，Git 的记录就全都消失啦。删除之前要好好想清楚咯~&lt;/p>
-&lt;p>然后 &lt;code>.gitignore&lt;/code> 也是能控制 Git 行为的文件。它能够让 Git 不记录某些文件。比如说你有一些测试文件，它们其实不应该被记录在仓库里，只希望在本地有一份方便测试而已，那么就可以把他们的名字或者所在文件夹写进 &lt;code>.gitignore&lt;/code> 里。&lt;/p>
-&lt;p>总之，Git 仓库就是这么个总的玩意儿了。有时我们会简称仓库英文为 &lt;em>repo&lt;/em>，我还挺喜欢这个名字。&lt;/p>
-&lt;h3 id="工作目录-working-directory--working-tree">工作目录 (Working directory / Working tree)
-&lt;/h3>&lt;p>这实际上就是我们正在编辑的项目目录。比如说我们从网上克隆了一个仓库之后，我们会进入这个仓库的目录里。这个仓库的根目录就是所谓的工作目录了。至于为什么叫 “工作树”，我个人看法是因为 Git 分支的存在让整个仓库像树一样伸展开，或者是说目录下的文件层级结构像树一样吧。不过怎么想都觉得有点怪，毕竟如果是说仓库分支的话，我们应该是在树叶上而不是在树上吧……&lt;/p>
-&lt;p>然而，不深究的话，我们干活儿的地方就是工作目录。就是这样。&lt;/p>
-&lt;h3 id="暂存区-staging-area">暂存区 （Staging Area）
-&lt;/h3>&lt;p>其实我们应该已经介绍过暂存区了。就像它的名字一样，暂存区是用来暂时存下 “觉得改的差不多了” 的内容的地方。我们用 &lt;code>git add&lt;/code> 命令来把修改好的内容放在暂存区内等待提交。如果感觉暂存区的内容有不妥的地方，我们可以随时打回来重新修改。我们也可以把一些内容从暂存区撤下来。总之，暂存区给了我们再次考虑的机会。而假如我们认为 “暂存区的东西我很满意，可以提交了”，我们就可以用 &lt;code>git commit&lt;/code> 来提交 &lt;em>暂存区&lt;/em> 的内容到分支上（或者仓库，取决于你怎么看这个行为）。&lt;/p>
-&lt;p>总之，暂存区就是一个介于 “保存文件” 和 “保存整个工作目录状态” 之间的一个地方。这也决定了 Git 的工作流是 &lt;code>修改文件 -&amp;gt; 保存文件 -&amp;gt; 交给暂存区 -&amp;gt; 提交至分支/仓库&lt;/code>。&lt;/p>
-&lt;h3 id="分支-branch">分支 (Branch)
-&lt;/h3>&lt;p>相信你已经对分支有所了解了。我们在创建仓库的同时，会创建一个主分支，曾经主分支名称为 &lt;code>master&lt;/code>，后来因为一些政治原因，现在更多叫 &lt;code>main&lt;/code> 了。除了主分支外，我们还可以有很多别的分支。这些分支允许我们在仓库里存储不同的信息，不同分支间不会产生干扰，而在我们希望的时候我们又可以对分支们做出诸如合并、删除等的改动。&lt;/p>
-&lt;p>分支就像平行世界一样，我们可以让两个分支拥有同样的过去，在某个地方发生变化，最后独立演化下去。而分支胜过平行世界的地方在于，我们可以在没有直接分歧的情况下把两个分支合并在一起，而不会出现 “我才是蜘蛛侠” 的问题。&lt;/p>
-&lt;p>分支可以说是 Git 的灵魂和精髓了。推荐多运用分支进行项目管理，相当好用。遇事不决开个分支先测试一下，这不失为一个好办法。&lt;/p>
-&lt;h3 id="提交-commit">提交 (Commit)
-&lt;/h3>&lt;p>我们有了一个分支之后我们就需要向这个分支不断做出提交了。每一次的提交都会让这个分支的记录变多一些，分支实际上也是记录的每一次的提交。大白话讲，提交就是存档，只不过这些存档要依附在某个世界线（分支）上而已。&lt;/p>
-&lt;p>提交可以说是组成分支的部分。当我们查看分支具体有什么的时候，映入我们眼帘的就是每一次的提交记录。所谓的合并分支，也不过是比较两个分支之间的提交情况，如果没有冲突的提交就可以顺利合并了。&lt;/p>
-&lt;p>要注意的是，在 Git 里我们不提交文件本身，我们提交的是文件的变更。也正是由于 &lt;strong>变更&lt;/strong> 这一关键特征，让 Git 可以高效地进行版本控制，不过坏处也有，那就是面对二进制文件就显得有点笨笨的了：二进制文件可以认为是一变全变的，不像文本那样可以有明显的局部改动。这也说明我们应该尽量让 Git 记录纯文本的文件而非二进制文件。&lt;/p>
-&lt;p>另外，需要再提醒的是，提交只会提交暂存区内的内容。如果有改动发生但没有放在暂存区里的话，提交是不会搭理这些改动的。这一点还请注意。&lt;/p>
-&lt;h3 id="远程remote">远程（Remote）
-&lt;/h3>&lt;p>虽然我们还没有介绍太多和远程仓库/托管平台的内容，但远程仓库确实是在 Git 设计之初就已经有了的关键概念了。&lt;/p>
-&lt;p>我们介绍过，Git 一开始的设计目的是所谓 &lt;em>分布式&lt;/em> 版本管理系统。这个 &lt;em>分布式&lt;/em> 就在于每个人都可以拥有一份源代码，然后大家可以互相传递自己的修改，也可以自由选择是否进行合并别人的修改。这样去中心化的特点是相当超前的设计。而为了实现这样的设想，我们必须让 Git 拥有连接到别人仓库的能力。远程也正是这么个东西。&lt;/p>
-&lt;p>Git 可以把网络上的仓库作为自己的远程库来使用。我们通常不直接和远程库中的文件交互，而是把提交作为基础单元和远程库进行交互。当我们有了新的提交或者新的分支时，我们就可以把本地的这些改动 &lt;em>推送 (push)&lt;/em> 到远程仓库；当远程仓库有了新的变动时，我们可以把新的变动 &lt;em>拉取 (pull)&lt;/em> 到本地来。我们会在下一节对 Git 的远程功能进行更详细的介绍。&lt;/p>
-&lt;p>总之，Git 的远程仓库让一份代码可以被保存在多个位置，并且让我们和这些位置的仓库进行交互，这样就能让我们和别人进行协作了。然而，由于现实协作的众多需求，最终 Git 还是发展出了很多代码托管平台，来方便大家存储 Git 的远程库，并让大家在远程库上进行协作，避免直接塞给别人电脑上。&lt;/p>
-&lt;h2 id="后记">后记
-&lt;/h2>&lt;p>我必须立刻承认我这篇文章离不开 &lt;code>tldr&lt;/code>，准确来说是 &lt;code>tealdeer&lt;/code> 的帮助。很难想象没有 &lt;code>tldr&lt;/code> 我要怎么介绍可用命令。唉，我还是对 Git 不够熟悉。如果里面有任何的错漏，又或是对这个系列有什么建议，请直接告诉我，谢谢，我会及时修改的（球球了，告诉我哪里写的不好吧，呜呜呜）。&lt;/p>
-&lt;p>另外我还想推荐一个很不错的网站，&lt;a class="link" href="https://learngitbranching.js.org/" target="_blank" rel="noopener"
->Learn Git Branching&lt;/a>，一个让你在实际操作中练习 Git 分支管理的网页，从进行提交，创建分支，合并分支，到变基 (Rebase)，远程库协作等复杂操作，全都有涉猎。我花了一下午通关，收获很大，因此墙裂建议。&lt;/p>
-&lt;p>下一节就是我们的最后一节内容，我打算聊聊 Git 的远程协作功能，以及协作时的注意事项等等。另外，由于深感 Git 命令之繁杂，我有计划做一个小工具来通过问答的方式给出合适的 Git 命令。我暂时将这个工具命名为 &lt;code>Giao&lt;/code>，希望不会难产吧，哈哈。有兴趣的话也可以关注我/给我提建议，谢谢啦。&lt;/p></description></item><item><title>（也许是）一个 Git 教程？其一</title><link>https://a-moment096.github.io/p/%E4%B9%9F%E8%AE%B8%E6%98%AF%E4%B8%80%E4%B8%AA-git-%E6%95%99%E7%A8%8B%E5%85%B6%E4%B8%80/</link><pubDate>Mon, 28 Jul 2025 22:49:16 +0800</pubDate><guid>https://a-moment096.github.io/p/%E4%B9%9F%E8%AE%B8%E6%98%AF%E4%B8%80%E4%B8%AA-git-%E6%95%99%E7%A8%8B%E5%85%B6%E4%B8%80/</guid><description>&lt;img src="https://a-moment096.github.io/posts/Shell_Note/Git_How/Tatara%20Kogasa.jpg" alt="Featured image of post （也许是）一个 Git 教程？其一" />&lt;p>&lt;em>Git 真的很好用，但是 Git 的命令真的好复杂。简单整理一下，就当写个教程好了~&lt;/em>&lt;/p>
-&lt;p>&lt;em>头图出自 &lt;a class="link" href="https://www.pixiv.net/en/users/75383094" target="_blank" rel="noopener"
->夏空&lt;/a> 太太所画的 &lt;a class="link" href="https://www.pixiv.net/en/artworks/116876998" target="_blank" rel="noopener"
->多多良 小伞&lt;/a>，可爱捏~ 那就来一曲小伞的个人曲吧&lt;/em>&lt;/p>
-&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
-&lt;style type="text/css">.dark-theme .aplayer{background:#212121}.dark-theme .aplayer.aplayer-withlist .aplayer-info{border-bottom-color:#5c5c5c}.dark-theme .aplayer.aplayer-fixed .aplayer-list{border-color:#5c5c5c}.dark-theme .aplayer .aplayer-body{background-color:#212121}.dark-theme .aplayer .aplayer-info{border-top-color:#212121}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-title{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-author{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time{color:#eee}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path{fill:#eee}.dark-theme .aplayer .aplayer-list{background-color:#212121}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb{background-color:#999}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover{background-color:#bbb}.dark-theme .aplayer .aplayer-list li{color:#fff;border-top-color:#666}.dark-theme .aplayer .aplayer-list li:hover{background:#4e4e4e}.dark-theme .aplayer .aplayer-list li.aplayer-list-light{background:#6c6c6c}.dark-theme .aplayer .aplayer-list li .aplayer-list-index{color:#ddd}.dark-theme .aplayer .aplayer-list li .aplayer-list-author{color:#ddd}.dark-theme .aplayer .aplayer-lrc{text-shadow:-1px -1px 0 #666}.dark-theme .aplayer .aplayer-lrc:before{background:-moz-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:-webkit-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:linear-gradient(to bottom, #212121 0%, rgba(33,33,33,0) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#212121', endColorstr='#00212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc:after{background:-moz-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:-webkit-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:linear-gradient(to bottom, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#00212121', endColorstr='#cc212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc p{color:#fff}.dark-theme .aplayer .aplayer-miniswitcher{background:#484848}.dark-theme .aplayer .aplayer-miniswitcher .aplayer-icon path{fill:#eee}&lt;/style>
-&lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js">&lt;/script>
-&lt;script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js">&lt;/script>&lt;meting-js auto="https://music.163.com/#/song?id=22636608" theme="#2980b9" loop="never">&lt;/meting-js>
-&lt;h2 id="git熟悉又陌生的名字-">Git，熟悉又陌生的名字 ……
-&lt;/h2>&lt;p>也许是所处环境的原因，我身边有很多人不知道 Git 是什么。他们都听过 &lt;em>GitHub&lt;/em>，但很多却只知道上面有好多程序和程序员。虽然也没错，但是并不准确；而当我说我在用 &lt;em>Git&lt;/em> 的时候，会有人把 &lt;em>Git&lt;/em> 和 &lt;em>GitHub&lt;/em> 混为一谈；很多人觉得 Git 很复杂，顺带觉得 GitHub 也很复杂…… 为此，我想分享一下我对 Git 和 GitHub 的理解，聊聊 Git 和 GitHub 都是什么。&lt;/p>
-&lt;p>所以，如果你不了解 Git 是什么，那我很荣幸能在这里向你简单介绍它。&lt;/p>
-&lt;h3 id="所以到底什么是-git版本控制啊">所以到底什么是 Git？版本控制？啊？
-&lt;/h3>&lt;p>所谓的 Git，它就是：&lt;/p>
-&lt;p>&lt;strong>&lt;center>一款为程序开发的存档系统。&lt;/center>&lt;/strong>&lt;/p>
-&lt;p>是的，事实就是这样。游戏存档。卡关的时候/做支线的时候/后悔的时候可以进度回溯的游戏存档。如果你在翻阅 &lt;em>ProGit&lt;/em> 或者某些教程时不太明白什么是 &lt;em>版本控制系统&lt;/em>，没关系，就是游戏存档（程序用）的比较花哨的名字。&lt;/p>
-&lt;p>不过，为了能高效地，更好地服务程序员，Git 自然有了一大票复杂的功能，且每个子功能还会做特别多的细分，另外对每个存档都可以有非常复杂 &lt;del>（麻烦）&lt;/del> 的，细致 &lt;del>（啰嗦）&lt;/del> 的控制。然而，这依旧不能让它摆脱它就是个存档系统的事实。&lt;/p>
-&lt;p>一旦你接受了这个设定，那么 Git 就其实没有多少秘密了。&lt;/p>
-&lt;h3 id="ok但是听你说好像很麻烦">OK，但是听你说好像很麻烦……
-&lt;/h3>&lt;p>不得不承认的是，正如上面所说的那样，Git 的命令实际上可以非常地复杂。如果你愿意翻阅它的 man-page，你会发现内容出奇地长；而当你尝试用 &lt;code>git --help&lt;/code> 来获取一些简单有效的信息的时候，很抱歉，&lt;code>git --help&lt;/code> 只会告诉你你能怎么做，并伴随着看不太懂的 usage，却不太会告诉你怎么做能做什么。&lt;/p>
-&lt;p>然而，转折来了。首先，如果你受环境所限，只能从命令行操作 Git，待会儿介绍的四五个命令几乎就能覆盖 80% 的使用场景了。而如果你的环境支持你使用图形化的界面，那么如果不是命令行的忠实用户，完全可以挑个 GUI 程序，比如和 GitHub 集成度高的 &lt;em>GitHub Desktop&lt;/em>，界面美观现代，功能也已经足够丰富，没必要和自己过不去。&lt;/p>
-&lt;p>所以，结论是：Git 很复杂，但是我们可以用的很简单呀。它很强大，很好，但这不影响我只需要那几个最基础的功能。最重要的是，当你需要更复杂的功能的时候，互联网永远是你的好朋友。你完全可以现场上网搜索，大概率会有来自 StackOverflow 的朋友向你答疑解惑（贴答案）（好几年前且点赞特别高的）。&lt;/p>
-&lt;p>So, don&amp;rsquo;t be afraid! Just try it!&lt;/p>
-&lt;h3 id="行但是-git-和-github-到底是什么关系">行，但是 Git 和 GitHub 到底是什么关系？
-&lt;/h3>&lt;p>这算是很常见的问题了。解释起来也很简单：GitHub 能提供云存档功能。就像 Steam 有游戏云存档一样，Git 也可以有个云存档。只不过，Steam 有个专门的服务器来帮你自动地存好你的游戏内容，而 Git 则可以允许你选择你喜欢的地方存你的代码存档。&lt;/p>
-&lt;p>而 GitHub，正是那个大部分程序员都喜欢的选择。不仅如此，GitHub 上传的存档还兼具展示功能，大家可以在 GitHub 上给自己喜欢的代码存档投票，也可以把别人的存档下载到自己电脑上，甚至可以尝试和别人一起组排。所以，说是交友网站，也未尝不可（也许）&lt;/p>
-&lt;p>那么我可以选择别的地方存放存档吗？当然可以！除了 GitHub，还有很多很多的 Git 服务提供商。你还可以 &lt;em>自建 Git 服务&lt;/em>！甚至，GitHub 显得有些 “&lt;em>违背&lt;/em>” Git 的初衷：分布式的存档存储。什么意思呢？Git 一开始是打算，让所有的代码开发者（玩家）都留一份存档，然后大家就可以一起攻略组排了。大家都保留一份源码，这不就相当于大家都做存储功能了吗？只不过随着合作要求的提高和开源社区的扩大，GitHub 这样一个公开自己代码的地方就这么自发地出现了。&lt;/p>
-&lt;p>总而言之，Git 是存档工具，GitHub 是大家上传/分享/讨论/合作云存档的地方。&lt;/p>
-&lt;h3 id="好耶我逐渐理解一切">好耶，我逐渐理解一切！
-&lt;/h3>&lt;p>是这样的，Git 就是做这么个事儿。也许你会看到一些介绍一开始会提 Git 使用的技术多么先进，多么高效，多么体现开源精神，然后不明所以。然而 Git 就是做这么个代码存档的东西，为了使用它以期了解它的话，大框架就是这样的。&lt;/p>
-&lt;p>然而这里还是要提个醒：上面也许的确抓住了 Git 的核心目的，但是依旧是很粗糙的，非常概括性的。上面的文字只能帮助 &lt;em>了解 Git 是什么&lt;/em>，并不能告诉你 &lt;em>Git 怎么做的&lt;/em>。另外，使用 Git 的命令完成最基础的工作是很简单，但是在切实明白一条命令到底在做什么前，&lt;strong>请最好不要盲目运行这条命令&lt;/strong>。实际上，要想运用好 Git 管理你的代码/项目，还是需要了解一些关于 Git 究竟在背后怎么做的知识的。&lt;/p>
-&lt;p>所以，如果你还对 Git 感兴趣，或者想把 Git 用起来的话，我们就来讲一些技术细节吧~&lt;/p>
-&lt;h2 id="要怎么用-git-存档">要怎么用 Git 存档？
-&lt;/h2>&lt;p>想解答这个问题，我们不可避免地要接触一些没啥意思的概念。与其直接介绍它们，我们先来看看，日常开发会怎么使用 Git 吧。&lt;/p>
-&lt;h3 id="tig-的一天">Tig 的一天
-&lt;/h3>&lt;p>Tig 是热爱 Minecraft 的忠实玩家。他很享受创造神的感觉，毕竟他就是被游戏名吸引而来的。今天他计划开展一个新的工作：制作一个百万刷铁机！&lt;/p>
-&lt;p>Oh no! Tig 的 Minecraft 除了点奇怪的问题！他被告知，Minecraft 的图形界面已经坏了，取而代之的，他可以用代码来操控角色并任意创造游戏中的物品，且他只能用 &lt;code>git&lt;/code> 来做存档（究竟是谁干的，真坏呀）。Tig 感到心里五味杂陈：这还是 Minecraft 吗？然而他心中有一个信念：我一定要做好这个刷铁机，即便我能直接虚空点出来铁块！等游戏恢复的时候，就可以在这台刷铁机的基础上继续快乐玩耍啦！&lt;/p>
-&lt;p>于是，Tig 用 &lt;code>git init&lt;/code> 创建了一个空世界的存档。然后就开始在存档里用代码一行行写他在这个世界里要做些什么……&lt;/p>
-&lt;p>过了一会儿，Tig 妈妈喊他要他吃午饭了。虽然不愿意，Tig 还是要先放下手上的工作。他打算先暂时保存一下，于是使用 &lt;code>git add .&lt;/code> 来保存好自己手上的所有写好的代码。毕竟，他也不知道是不是有的地方有点问题，带会儿还要调一下，他现在也是被拉过去吃饭的。&lt;/p>
-&lt;p>吃完饭后还睡了个午觉，Tig 回来又写了一会儿。他对自己的成果很满意，因为他已经想办法把村里的刁民挪到了高空中了。这实在是不太容易，他不希望待会儿犯蠢丢掉这几个村民。于是他决定要存档。他先用 &lt;code>git add .&lt;/code> 来保存所有文件的所有改动，然后用 &lt;code>git status&lt;/code> 查看了改动的文件们。感觉没什么问题，他使用 &lt;code>git commit&lt;/code> 来正式保存了这个存档。存档系统问他要他给自己的改动写个简述，他写了 &lt;code>村民挪好了，准备搭框架&lt;/code>。&lt;/p>
-&lt;p>过了一个下午和一个晚上，Tig 终于在睡觉前把刷铁机搞好了！实在是一个无比伟大的创举，Tig 忍不住把它分享出去，也方便自己在其他电脑上继续工作。他创建了 GitHub 账号和一个仓库，并且用 &lt;code>git push&lt;/code> 把这个存档放在了它的仓库里。然而睡前他还是想先在另一台电脑上先把存档下下来，于是使用 &lt;code>git clone &amp;lt;git-link&amp;gt;&lt;/code> 来把仓库克隆到本地。&lt;/p>
-&lt;p>晚上躺在床上，他一想到以后就可以把存档用 &lt;code>git push&lt;/code> 方便地推送到 GitHub 上，并且用 &lt;code>git pull&lt;/code> 在另一台电脑上来获取最新的改动了，他就不自觉地笑出声，心里盘算着怎么在明天做一些改善，给刷铁机套个好看的壳子之类的……&lt;/p>
-&lt;p>可喜可贺，可喜可贺！~&lt;/p>
-&lt;h3 id="所以他都干了些啥">所以，他都干了些啥？
-&lt;/h3>&lt;p>Tig 的故事貌似有点无聊，毕竟，给 Git 硬套个背景，貌似有点牵强；更重要的是，谁家好人这么玩 Minecraft 呀！然而他用到的命令，几乎就是我平时常用的所有命令了。我们来总结一下吧。我们就不再多提游戏的事，毕竟好像都戳穿了是在写代码……&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>git init&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>我们可以用 &lt;code>git init&lt;/code> 来在本地创建/初始化一个 Git 仓库。这代表着，你打算用 Git 来管理这个文件夹了。很简单的命令，其实频率也很低，因为你很少反复初始化一个仓库。&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>git add .&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>一个频率还挺高的命令。你在仓库内的修改，Git 都不会立马记录下来。他怕他立马记下来之后，随后用户又马上反悔。另外，这样立马就记录下来，反而和单纯的文件保存功能有所重叠了。&lt;/p>
-&lt;p>所以，当你觉得目前的进展还不错，你就可以用这个命令来 &lt;em>暂存&lt;/em> 当前的所有修改。这里的 “暂存” 有两个意思：一是 Git 确实是把你的修改保存到了 &lt;em>暂存区&lt;/em> 里，另一个则是你要是现在发现有个修改不太对，可以很方便的从暂存区里撤下来。&lt;/p>
-&lt;p>&lt;code>git add .&lt;/code> 里的这个 &lt;code>.&lt;/code> 就是当前目录的意思，也就是说这个目录下的所有文件我都要暂存起来。Git 会很聪明地只保存修改，这也是设计之初就确定的。如果你只想保存一部分，那就写他们的名字吧，或者写对应的目录，都可以，能定位到就好。&lt;/p>
-&lt;p>不过，总之，这个命令就是让你暂存当前所有修改的。&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>git status&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>一个我很爱用的命令。可以向你报告当前暂存区的情况以及工作目录的情况。比如什么文件被修改了，哪些文件是新加的，谁被删除了，而这些改动里谁被暂存下来，又有哪些你没暂存下来。&lt;/p>
-&lt;p>如果你的 Git 是默认配置，他还会提醒你可以怎么撤回某些修改。跟着做就好了。&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>git commit&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>当你对你的进度感到满意时，你就可以用 &lt;code>git commit&lt;/code> 来提交你暂存区的东西了。所谓的提交，就是形成一个存档，你后续可以回来的一个存档。这个存档里你的仓库的模样会被冻结下来，当你回到这个提交时，一切都会回到当初的模样。非常的美好。&lt;/p>
-&lt;p>要注意的有两点，一是 &lt;code>git commit&lt;/code> 只提交 &lt;strong>暂存区&lt;/strong> 的内容。没被暂存的，还会在原地等待你先用 &lt;code>git add&lt;/code> 暂存起来，或者等你撤回那些修改。二是，&lt;code>git commit&lt;/code> 会要求你给这个提交留个注释。请不要省事瞎写个什么东西，因为未来的你可能会对瞎写注释的现在的你感到伤心。默认情况下，&lt;code>git commit&lt;/code> 会打开你的文本编辑器然后让你开写，而如果你觉得很麻烦不想开编辑器，可以用 &lt;code>git commit -m &amp;quot;messages&amp;quot;&lt;/code> 来把这行 &lt;code>messages&lt;/code> 作为提交注释。&lt;/p>
-&lt;p>可以再补充两点：如果你提交过后发现因为小失误忘记暂存某些内容或者有些小改动的话，你可以在把改动加入暂存区后补充到这次提交里，用法则是 &lt;code>git commit --amend&lt;/code>。另外，提交要慎重，因为提交过的内容就不是那么好修改了。你当然能改，但是相比 &lt;code>git add&lt;/code> 到暂存区的内容而言，实在是要麻烦一些。&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>git push&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>把你当前的内容推送到远程仓库里。如果你的仓库是用 &lt;code>git clone&lt;/code> 获得的且你拥有这个仓库的修改权限，那么 &lt;code>git push&lt;/code> 就可以简单直接地把 &lt;em>这条分支&lt;/em> 的修改推送到远程。&lt;/p>
-&lt;p>我们这里还是先不讲什么分支，也先不谈远程协作之类的东西。不过就常用命令介绍来说，&lt;code>git push&lt;/code> 算是比较常用且同样很简单的一个命令了。&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>git clone&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>把 git 仓库从远程下载到本地。后面跟上仓库的链接就好。如果你是从 GitHub 来克隆到本地的话，点绿色按钮的 Clone 就会看到你可以怎么做。你可以直接复制里面的命令然后执行。&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>git pull&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>把远程仓库的内容拉取到本地。和 &lt;code>push&lt;/code> 的方向是近乎相反的。如果远程有个修改，你希望同步到本地，那就 &lt;code>git pull&lt;/code> 一下吧。&lt;/p>
-&lt;p>这个命令要注意的点是，不要在本地有修改没存的情况下执行 &lt;code>git pull&lt;/code>。如果本地和远程起了冲突，会很麻烦。避免麻烦的最好方式是，先 &lt;code>git pull&lt;/code> 之后再做自己的修改。&lt;/p>
-&lt;h3 id="画个流程图">画个流程图
-&lt;/h3>&lt;figure class="mermaid-container">
-&lt;div class="mermaid">flowchart LR
-A[开始] --> B[git init\n创建新仓库]
-A --> C[git clone\n克隆已有仓库]
-B --> D[在仓库中做出变更]
-C --> D
-D -- 暂时存下 --> E[git add .\n暂存已有变更]
-E -- 满意已暂存内容 --> F[git commit\n提交所有暂存的变更]
-F --> G[git push\n上传至远程仓库]
-G --> H[其他设备: git pull\n从远程获取最新变更]
-H --> D
-F --> D
-&lt;/div>
-&lt;figcaption>Git 日常工作流&lt;/figcaption>
-&lt;/figure>&lt;h2 id="好累先聊到这里吧">好累，先聊到这里吧
-&lt;/h2>&lt;p>我们已经介绍了 Git 是什么以及日常会用到的功能。我可以说，除了剩下关于 Git 另一个非常强大的功能：分支的两三个命令，以及一两个我觉得好用的命令以外，剩下的命令都是我很不常用的命令了。剩下的命令几乎只有在我搞砸了什么东西的时候临时从网上搜来救火用的，而保持良好的使用习惯的话真的是很少用到这些麻烦/复杂/难以理解的功能的。&lt;/p>
-&lt;p>所以，如果你看到了这里，恭喜你已经掌握了 Git 单分支的工作流程了。就是改文件，暂存，提交，推送。而下一章我们会看看 Git 被吹的神乎其神的分支到底是个啥，再解释 Git 中的一些概念。&lt;/p>
-&lt;p>这里要特别声明的是，这篇文章的比喻借鉴了 &lt;a class="link" href="https://space.bilibili.com/337242418" target="_blank" rel="noopener"
->HDAlex_John&lt;/a> 的 Git 教程系列：&lt;a class="link" href="https://www.bilibili.com/video/BV1Hkr7YYEh8" target="_blank" rel="noopener"
->给傻子的 Git 教程&lt;/a>，讲的相当好。好在我不是傻子，看着也不累，哈哈哈哈。（还是自己写起来比较累）&lt;/p>
-&lt;p>那么最后，感谢你看到这里，祝你心情愉悦，生活顺遂！~&lt;/p></description></item><item><title>使用 rsync 进行同步</title><link>https://a-moment096.github.io/p/%E4%BD%BF%E7%94%A8-rsync-%E8%BF%9B%E8%A1%8C%E5%90%8C%E6%AD%A5/</link><pubDate>Mon, 28 Jul 2025 12:43:39 +0800</pubDate><guid>https://a-moment096.github.io/p/%E4%BD%BF%E7%94%A8-rsync-%E8%BF%9B%E8%A1%8C%E5%90%8C%E6%AD%A5/</guid><description>&lt;img src="https://a-moment096.github.io/p/%E4%BD%BF%E7%94%A8-rsync-%E8%BF%9B%E8%A1%8C%E5%90%8C%E6%AD%A5/%E8%B4%9D%E5%8A%A0%E5%B0%94%E6%B9%96%E7%95%94.jpg" alt="Featured image of post 使用 rsync 进行同步" />&lt;p>&lt;em>有点受不太了 &lt;code>scp&lt;/code> 和 &lt;code>sftp&lt;/code> 了，也许是食用姿势不对吧，总之我选择 &lt;code>rsync&lt;/code>！&lt;/em>&lt;/p>
-&lt;p>&lt;em>&lt;del>图源找不到诶……从朋友那里薅过来的图，很漂亮就放在这里了&lt;/del> 小爷我找到啦！是出自 &lt;a class="link" href="https://www.pixiv.net/en/users/8605991" target="_blank" rel="noopener"
->fasnakegod&lt;/a> 大大的 &lt;a class="link" href="https://www.pixiv.net/en/artworks/125739568" target="_blank" rel="noopener"
->贝加尔湖畔&lt;/a>。既然如此就分享一首钢琴曲吧。一首 &lt;strong>騎士王の誇り&lt;/strong> (骑士王的荣耀) 送给大家。（好像毫无关联诶 kora!）&lt;/em>&lt;/p>
-&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
-&lt;style type="text/css">.dark-theme .aplayer{background:#212121}.dark-theme .aplayer.aplayer-withlist .aplayer-info{border-bottom-color:#5c5c5c}.dark-theme .aplayer.aplayer-fixed .aplayer-list{border-color:#5c5c5c}.dark-theme .aplayer .aplayer-body{background-color:#212121}.dark-theme .aplayer .aplayer-info{border-top-color:#212121}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-title{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-author{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time{color:#eee}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path{fill:#eee}.dark-theme .aplayer .aplayer-list{background-color:#212121}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb{background-color:#999}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover{background-color:#bbb}.dark-theme .aplayer .aplayer-list li{color:#fff;border-top-color:#666}.dark-theme .aplayer .aplayer-list li:hover{background:#4e4e4e}.dark-theme .aplayer .aplayer-list li.aplayer-list-light{background:#6c6c6c}.dark-theme .aplayer .aplayer-list li .aplayer-list-index{color:#ddd}.dark-theme .aplayer .aplayer-list li .aplayer-list-author{color:#ddd}.dark-theme .aplayer .aplayer-lrc{text-shadow:-1px -1px 0 #666}.dark-theme .aplayer .aplayer-lrc:before{background:-moz-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:-webkit-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:linear-gradient(to bottom, #212121 0%, rgba(33,33,33,0) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#212121', endColorstr='#00212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc:after{background:-moz-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:-webkit-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:linear-gradient(to bottom, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#00212121', endColorstr='#cc212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc p{color:#fff}.dark-theme .aplayer .aplayer-miniswitcher{background:#484848}.dark-theme .aplayer .aplayer-miniswitcher .aplayer-icon path{fill:#eee}&lt;/style>
-&lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js">&lt;/script>
-&lt;script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js">&lt;/script>&lt;meting-js auto="https://music.163.com/#/song?id=448119" theme="#2980b9" loop="never">&lt;/meting-js>
-&lt;h2 id="为什么要选择-rsync-呢">为什么要选择 &lt;code>rsync&lt;/code> 呢？
-&lt;/h2>&lt;p>有时候我们有多个远程电脑，或者是服务器，上面的文件内容我们希望下载到本地。我们通常有这么几个选择：使用一些功能成熟的，专用于 SSH 连接的终端模拟器，比如 MobaXTerm 这样的软件；或者我们可以使用 &lt;code>scp&lt;/code>，&lt;code>sftp&lt;/code> 这样的工具，但是界面有点简陋，特别是 &lt;code>sftp&lt;/code>，需要反复确认文件名是否输入错误。而且有时我们只需要下载不同的部分，不希望重复下载已经有了的部分。这时候，&lt;code>rsync&lt;/code> 作为 &lt;em>remote sync&lt;/em> 的工具，就到了发挥其作用的地方了。&lt;/p>
-&lt;h2 id="使用方法">使用方法
-&lt;/h2>&lt;h3 id="命令结构">命令结构
-&lt;/h3>&lt;p>&lt;code>rsync&lt;/code> 命令使用方法是：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-console" data-lang="console">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="go">rsync --option1 --option2 /pass/files/from/this/ /path/files/to/here
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>所以大概就是遵循：&lt;code>命令，选项，从哪里来，到哪里去&lt;/code> 这样的规则。另外，既然 &lt;code>rsync&lt;/code> 是 &lt;em>remote sync&lt;/em> 的简称，自然这个命令也是可以被用于远程服务器之间的文件传输的。方法也很简单，就是给对应的文件路径添加上使用 &lt;code>ssh&lt;/code> 的用户名、服务器地址等信息。具体用法我们下面介绍。&lt;/p>
-&lt;h3 id="注意路径分隔符-">注意路径分隔符 &lt;code>/&lt;/code>
-&lt;/h3>&lt;p>首先，这里需要强调的是，请注意 &lt;code>从哪里来&lt;/code>，也就是发送端的这一部分，这里明显是一个文件夹，因为路径的最后有一个 &lt;code>/&lt;/code> 符号。也许有人会问：我知道它是文件夹，我能不要那个 &lt;code>/&lt;/code> 吗？比如使用&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-console" data-lang="console">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="go">rsync --opt1 --opt2 /pass/files/from/this /path/files/to/here
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这样的命令，来把文件夹传过去，可以吗？&lt;/p>
-&lt;p>答案很有趣：是的，你可以传过去，但是也许不会以你预期的方式传过去。由于 &lt;code>rsync&lt;/code> 会默认传过去的位置是个文件夹，如果你不带上这个斜杠的话，&lt;code>rsync&lt;/code> 会认为你打算把 &lt;code>/pass/files/from/this&lt;/code> 这个文件夹 &lt;strong>放在目标位置的里面&lt;/strong>。如果你的确打算这么做，那没什么问题。比如你在本地有一个文件夹 &lt;code>$HOME/mydocuments&lt;/code>，你在远程的服务器的接收端上也有这么个文件夹，位置一模一样，那么就可以尝试&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">rsync -r $HOME/mydocuments me@remote:/home/me
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这会直接把 &lt;code>$HOME/mydocuments&lt;/code> 传到远程的 &lt;code>/home/me&lt;/code> 文件夹下，形成 &lt;code>/home/me/mydocuments&lt;/code> 这样的结构。&lt;/p>
-&lt;p>那么假如你是想说，我要把 &lt;code>$HOME/mydocuments&lt;/code> &lt;strong>里面的内容&lt;/strong> 传到 &lt;code>/home/me/another/position&lt;/code> 的话，那你就需要带上这个斜杠了，因为 &lt;code>rsync&lt;/code> 就会聪明地帮你把文件夹里面的所有内容传到目标位置的那个文件夹里。也许也算是符合 “一切皆文件” 的思想了吧，如果你不带分隔符，就会以文件形式把这个 &lt;em>文件&lt;/em> 传到文件夹里；而如果带上路径分隔符，则说明你要传的是文件夹的内容。&lt;/p>
-&lt;h3 id="远程链接">远程链接
-&lt;/h3>&lt;p>作为一款远程同步软件，自然需要有办法告诉 &lt;code>rsync&lt;/code> 要把文件从哪里发到哪里。好消息是，&lt;code>rsync&lt;/code> 支持我们通过 SSH 传输文件，而方法也特别简单。只需要在文件路径前面添加上你的用户名和主机名就可以了。如果你设置了 SSH 的主机名，甚至可以更方便。&lt;/p>
-&lt;p>这里举个很简单的例子，从本机传到本机，但是通过 SSH 进行。我们可以通过 &lt;code>ssh &amp;lt;user&amp;gt;@localhost&lt;/code> 来登录到本机的本地账户上，我的用户名是 &lt;code>amoment&lt;/code>，所以就会用 &lt;code>ssh amoment@localhost&lt;/code> 来登录到本机。那么我们就可以这样告诉 &lt;code>rsync&lt;/code>：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-console" data-lang="console">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="go">rsync -r /home/amoment/myfiles/ amoment@localhost:/home/amoment/somefolder
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>来把我家目录下的 &lt;code>myfiles&lt;/code> 文件夹里的内容复制/同步到同在家目录下的 &lt;code>somefolder&lt;/code> 文件夹下。有了这个例子，你应该也明白怎么跨设备使用 &lt;code>rsync&lt;/code> 通过 SSH 进行连接与文件传输了吧。&lt;/p>
-&lt;p>除了使用 SSH 协议以外，&lt;code>rsync&lt;/code> 还支持一些其他的协议，比如所谓的 RSH，或者 &lt;code>rsync&lt;/code> 自带的 &lt;code>rsync://&lt;/code> 协议。但是由于 SSH 的支持还是更加广泛，我们这里还是只介绍该方案。如果感兴趣的话，可以查阅 &lt;code>rsync&lt;/code> 的手册或者文档等资料。&lt;/p>
-&lt;h3 id="一些重要的参数">一些重要的参数
-&lt;/h3>&lt;p>下面列举一些重要的，可能会经常使用到的参数。我们按一个大致的类别做区分，方便查找。&lt;/p>
-&lt;h4 id="文件操作">文件操作
-&lt;/h4>&lt;ul>
-&lt;li>&lt;code>-r --recursive&lt;/code>: 递归模式&lt;/li>
-&lt;/ul>
-&lt;p>它的意思是 &lt;em>recursive&lt;/em>，也就是递归地把所有内容都传过去。如果不加这个东西，会发生什么呢？好消息是你照样能完成传输，但是坏消息是，你 &lt;strong>只传过去了文件夹&lt;/strong>。也就是说，如果你不是只想在目标位置创建一个可能是新的文件夹的话，而是想把文件都传过去，请记得带上 &lt;code>-r&lt;/code>。&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>-a -- archive&lt;/code>: 存档模式&lt;/li>
-&lt;/ul>
-&lt;p>你也可以选择不使用 &lt;code>-r&lt;/code> 而是使用 &lt;code>-a&lt;/code>，使用 &lt;code>-a&lt;/code> 会以存档方式传输文件，也就是说，文件夹内的所有东西都会 &lt;em>保持原样&lt;/em> 地传过去：不论是文件，文件夹，还是链接，设备描述符等，全都会原样传过去。&lt;code>-a&lt;/code> 实际上是一系列参数的总和。根据帮助文档所述，是 &lt;code>-rlptgoD&lt;/code>。还挺多的……&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>--delete&lt;/code>: 允许删除不同步的内容&lt;/li>
-&lt;/ul>
-&lt;p>因为 &lt;code>rsync&lt;/code> 如其名所示，是 &lt;em>同步软件&lt;/em>，因此我们也许希望不是 “上传” 文件，而是 &lt;em>把本地文件结构同步到远程&lt;/em>。此时，我们需要用到 &lt;code>--delete&lt;/code> 这个参数，它给了 &lt;code>rsync&lt;/code> 删除目标文件夹内多余文件的权利，从而保证你确实是在 &lt;em>同步&lt;/em> 内容。&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>--exclude&lt;/code> &lt;code>--include&lt;/code>: 按模式进行排除/包含&lt;/li>
-&lt;/ul>
-&lt;p>这两个参数我们放在一起讲。如其名称所述，是用来告诉 &lt;code>rsync&lt;/code> 排除哪些文件或者包含哪些文件用的。如果你有些文件不想传/特意要传，请设置这两个参数。&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>--ignore-existing&lt;/code>: 跳过传输同名文件&lt;/li>
-&lt;/ul>
-&lt;p>加上这个参数会让 &lt;code>rsync&lt;/code> 检查接收端已有文件的名字，如果本地和接收端都有这么个文件（名称相同），则会跳过这个文件不进行传输。&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>-u --update&lt;/code>: 只传输更新的内容&lt;/li>
-&lt;/ul>
-&lt;p>这个参数意味着你是打算 &lt;em>更新&lt;/em> 文件们。那么，如果接收端的文件比发送端更新（还要新）呢？答案就是不会碰这些文件。&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>-z --compress&lt;/code>: 先压缩一下&lt;/li>
-&lt;/ul>
-&lt;p>这个参数会告诉 &lt;code>rsync&lt;/code> 传输前先帮你把要传的东西压缩一下。&lt;code>rsync&lt;/code> 会自己选择一个压缩方法，所以一般不用担心。&lt;/p>
-&lt;h4 id="信息提供">信息提供
-&lt;/h4>&lt;ul>
-&lt;li>&lt;code>-n --dry-run&lt;/code>: 试运行&lt;/li>
-&lt;/ul>
-&lt;p>你要是担心传过去的内容不是你实际打算传的东西，你可以先让 &lt;code>rsync&lt;/code> 告诉你目前的命令会传些什么，且不真的开始工作，只需要加上 &lt;code>-n&lt;/code> 就可以。你可以把它理解为 &lt;em>no&lt;/em>，即便实际上它对应的长参数是 &lt;code>--dry-run&lt;/code>。拿不准会传些什么过去的时候，这个命令会很有用。&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>-v --verbose&lt;/code>: 更啰嗦一些&lt;/li>
-&lt;/ul>
-&lt;p>几乎所有（较复杂）的命令行程序都会内置这样一个命令，来把工作信息 “更啰嗦” 地显示出来。如果你需要额外的信息，请使用这个参数。&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>-P&lt;/code>: 进度条&lt;/li>
-&lt;/ul>
-&lt;p>就是让 &lt;code>rsync&lt;/code> 报告当前的传输进度。我很喜欢用。&lt;/p>
-&lt;h4 id="涉及-rsync-本身--远程协作">涉及 &lt;code>rsync&lt;/code> 本身 / 远程协作
-&lt;/h4>&lt;ul>
-&lt;li>&lt;code>-e --rsh&lt;/code>: 指定传输协议&lt;/li>
-&lt;/ul>
-&lt;p>可能我们要传输的设备开放的 SSH 端口不在默认的 &lt;code>22&lt;/code> 而是一个自定义的端口。此时我们就需要 &lt;code>-e&lt;/code> 然后在后面带上一个字符串来表示使用的 shell 是哪个。比如我的远程接收端接口是 &lt;code>1145&lt;/code>，则我会使用&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-console" data-lang="console">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="go">rsync -r -e &amp;#34;ssh -p 1145&amp;#34; /myfiles/ me@remote:/myfiles
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>来让 &lt;code>rsync&lt;/code> 尝试使用 &lt;code>1145&lt;/code> 端口进行 SSH 通信与文件传输。&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>--rsync-path&lt;/code>: &lt;code>rsync&lt;/code> 在哪？&lt;/li>
-&lt;/ul>
-&lt;p>有可能我们需要帮助本地的 &lt;code>rsync&lt;/code> 来寻找到另一个 &lt;code>rsync&lt;/code> 究竟在哪。此时我们就需要这个参数来发挥作用，在后面带上找到 &lt;code>rsync&lt;/code> 的方法：不论是 &lt;code>rsync&lt;/code> 的路径，还是别的方式，都可以。比如希望传输的设备有 &lt;code>rsync&lt;/code>，但是在 WSL 上。此时我们就可以&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-console" data-lang="console">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="go">rsync -r --rsync-path &amp;#39;wsl rsync&amp;#39; me@remote:/myfiles/ /myfiles
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>来让远程使用 WSL 上的 &lt;code>rsync&lt;/code> 为我进行工作。&lt;/p>
-&lt;h2 id="后记">后记
-&lt;/h2>&lt;p>我一开始使用 &lt;code>rsync&lt;/code> 的主要理由其实是为了在不同的设备之间同步我的歌曲库。由于我有一些歌曲通过移动硬盘已经移动了一部分，而还有一部分没有同步，在另一台电脑上我甚至新添加了一张专辑，所以感觉单纯地自己手动搜索要迁移的文件有点太累了。而此时，&lt;code>rsync&lt;/code> 用它 &lt;strong>增量同步&lt;/strong> 的特性吸引了我，我便使用这么个方式来把远程的歌曲同步到本地电脑上来。&lt;/p>
-&lt;p>&lt;code>rsync&lt;/code> 还是挺好用的，它的语法可能没有那么智能，但是已经足以应付我遇到的问题了。印象中还有一些别的同步软件，比如朋友推荐的 &lt;code>Syncthing&lt;/code>，也许后面会尝试使用一下。&lt;/p>
-&lt;p>另外不得不提的是我在准备该文章时查阅过的信息源。非常感谢！&lt;/p>
-&lt;ul>
-&lt;li>首先，ChatGPT 和 Deepseek，完全不了解的时候和这些 AI 问一下还是挺好用的；&lt;/li>
-&lt;li>&lt;a class="link" href="https://www.digitalocean.com/community/tutorials/how-to-use-rsync-to-sync-local-and-remote-directories" target="_blank" rel="noopener"
->rsync tutorial&lt;/a>: 一个简单的 rsync walkthrough，帮了我很多；&lt;/li>
-&lt;li>&lt;a class="link" href="https://www.geeksforgeeks.org/linux-unix/rsync-command-in-linux-with-examples/" target="_blank" rel="noopener"
->rsync command in Linux with Examples&lt;/a>: GeeksForGeeks 下的一个博客，内容很丰富。&lt;/li>
-&lt;/ul>
-&lt;p>最后，感谢您能看到这里，祝您身体健康，心情愉悦~&lt;/p></description></item><item><title>上一个命令是什么？</title><link>https://a-moment096.github.io/p/%E4%B8%8A%E4%B8%80%E4%B8%AA%E5%91%BD%E4%BB%A4%E6%98%AF%E4%BB%80%E4%B9%88/</link><pubDate>Sat, 26 Jul 2025 20:09:18 +0800</pubDate><guid>https://a-moment096.github.io/p/%E4%B8%8A%E4%B8%80%E4%B8%AA%E5%91%BD%E4%BB%A4%E6%98%AF%E4%BB%80%E4%B9%88/</guid><description>&lt;img src="https://a-moment096.github.io/p/%E4%B8%8A%E4%B8%80%E4%B8%AA%E5%91%BD%E4%BB%A4%E6%98%AF%E4%BB%80%E4%B9%88/SEASIDE_SOLILOQUIES.png" alt="Featured image of post 上一个命令是什么？" />&lt;p>&lt;em>曾经总会好奇：怎么获取上一个命令呢？应该很简单才对吧？简单的搜索后，下面是我得到的结果，就记录一下吧&lt;/em>&lt;/p>
-&lt;p>&lt;em>头图出自 Orangestar 的专辑 &lt;strong>SEASIDE SOLILOQUIES&lt;/strong>, 好看又好听。所以这里贴曲就贴这个专辑的主打歌好了：一首 &lt;strong>Alice in 冷凍庫&lt;/strong>，希望你喜欢。&lt;/em>&lt;/p>
-&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
-&lt;style type="text/css">.dark-theme .aplayer{background:#212121}.dark-theme .aplayer.aplayer-withlist .aplayer-info{border-bottom-color:#5c5c5c}.dark-theme .aplayer.aplayer-fixed .aplayer-list{border-color:#5c5c5c}.dark-theme .aplayer .aplayer-body{background-color:#212121}.dark-theme .aplayer .aplayer-info{border-top-color:#212121}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-title{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-author{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time{color:#eee}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path{fill:#eee}.dark-theme .aplayer .aplayer-list{background-color:#212121}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb{background-color:#999}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover{background-color:#bbb}.dark-theme .aplayer .aplayer-list li{color:#fff;border-top-color:#666}.dark-theme .aplayer .aplayer-list li:hover{background:#4e4e4e}.dark-theme .aplayer .aplayer-list li.aplayer-list-light{background:#6c6c6c}.dark-theme .aplayer .aplayer-list li .aplayer-list-index{color:#ddd}.dark-theme .aplayer .aplayer-list li .aplayer-list-author{color:#ddd}.dark-theme .aplayer .aplayer-lrc{text-shadow:-1px -1px 0 #666}.dark-theme .aplayer .aplayer-lrc:before{background:-moz-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:-webkit-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:linear-gradient(to bottom, #212121 0%, rgba(33,33,33,0) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#212121', endColorstr='#00212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc:after{background:-moz-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:-webkit-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:linear-gradient(to bottom, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#00212121', endColorstr='#cc212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc p{color:#fff}.dark-theme .aplayer .aplayer-miniswitcher{background:#484848}.dark-theme .aplayer .aplayer-miniswitcher .aplayer-icon path{fill:#eee}&lt;/style>
-&lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js">&lt;/script>
-&lt;script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js">&lt;/script>&lt;meting-js auto="https://music.163.com/#/song?id=458231453" theme="#2980b9" loop="none">&lt;/meting-js>
-&lt;h2 id="什么时候要用这个">什么时候要用这个？
-&lt;/h2>&lt;p>有时候我们写了一长串命令，比如有很麻烦的路径之类的，这时候我们可能会希望用某个符号来自动地填上命令里的某些参数。一个最常见的例子，当我要安装某些软件包的时候，偶尔会忘记加上 &lt;code>sudo&lt;/code> 来以管理员权限运行。这时候把上面的命令复制一遍再补上 &lt;code>sudo&lt;/code> 实在是太慢了，而按下上箭头后在把光标挪到第一行，最后补上 &lt;code>sudo&lt;/code> 总是感觉很累，手的移动距离感觉好远。除此之外，有时输入的一长串命令/参数并运行之后，我需要接着上面的参数继续运行别的命令，此时要是用命令行历史的话，就又得用光标定位之后，再删掉没有用的东西，最后再填上要替换的内容。这实在是太慢了。&lt;/p>
-&lt;p>好在这时候，我们还可以使用 &lt;code>zsh&lt;/code> 交互模式下的一个内置宏：使用 &lt;code>!&lt;/code>，感叹号，以及其对应的一些变体，来获取上个命令中的参数/整个命令等。下面就来介绍怎么使用吧。&lt;/p>
-&lt;h2 id="我需要取整个命令">我需要取整个命令
-&lt;/h2>&lt;h3 id="上个命令是什么">上个命令是什么？
-&lt;/h3>&lt;p>我们可以用 &lt;code>!!&lt;/code>，或者 &lt;code>!-1&lt;/code>， 来获取 “上一个执行了的命令”。比如如下操作：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">$ &lt;span class="nb">echo&lt;/span> hello bash world!
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">hello bash world!
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl">$ &lt;span class="nb">echo&lt;/span> !! &lt;span class="c1"># !! 替换了上面整个执行了的命令，也就是替换了 &amp;#34;echo hello bash world&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">&lt;span class="nb">echo&lt;/span> hello bash world!
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl">$ &lt;span class="nb">echo&lt;/span> !-1 &lt;span class="c1"># 同上,也是替换上面执行的命令，所以替换了 &amp;#34;echo echo hello bash world&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">6&lt;/span>&lt;span class="cl">&lt;span class="nb">echo&lt;/span> &lt;span class="nb">echo&lt;/span> hello bash world!
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="我要调用历史命令">我要调用历史命令
-&lt;/h3>&lt;p>我们还可以用 &lt;code>!&amp;lt;num&amp;gt;&lt;/code> 来选择某个历史命令。我们可以先用 &lt;code>head&lt;/code> 来查看一下我们的命令历史里最早有一些什么：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">$ head ~/.zsh_history &lt;span class="c1"># 这里我的 zsh 命令历史存在这个文件里，可以用 head 查看前几个命令&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">: 12345:0&lt;span class="p">;&lt;/span>clear
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl">: 12346:0&lt;span class="p">;&lt;/span>&lt;span class="nb">echo&lt;/span> hello
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">: 12347:0&lt;span class="p">;&lt;/span>ls
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl">&lt;span class="c1">## ... ... &lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>随后我们可以使用 &lt;code>!1&lt;/code> 来选择历史命令中的第一个命令，这里的第一个命令就是 &lt;code>clear&lt;/code>：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">$ !1 &lt;span class="c1"># 执行第一个历史命令，也就是 clear，会直接清空屏幕；&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">$ !2 &lt;span class="c1"># 执行第二个历史命令，会打印 hello；&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl">hello
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">$ !3 &lt;span class="c1"># 执行第三个历史命令，会打印当前文件夹下的内容&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl">file1 file2 file3
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="小结">小结
-&lt;/h3>&lt;p>我们可以看到，后面跟着的数字实际上表示了“第几个命令”，而举一反三，&lt;code>!-1&lt;/code> 则代表的是“最后一个命令”，即上一个命令，那么 &lt;code>!-2&lt;/code> 就是倒数第二个命令。&lt;/p>
-&lt;blockquote>
-&lt;p>有了这两个命令，我们可以很方便地在忘记使用 &lt;code>sudo&lt;/code> 权限时，使用 &lt;code>sudo !!&lt;/code> 或者选择某个历史命令，来快速使用 &lt;code>sudo&lt;/code> 权限执行命令。&lt;/p>&lt;/blockquote>
-&lt;h2 id="我需要取几个参数">我需要取几个参数
-&lt;/h2>&lt;h3 id="我需要某个参数">我需要某个参数
-&lt;/h3>&lt;p>我们可以使用 &lt;code>:&amp;lt;num&amp;gt;&lt;/code> 来选择第几个参数。它需要配合 &lt;code>!&lt;/code> 进行使用。参数从 1 开始，而 0 有特殊含义，代表命令。比如：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">$ &lt;span class="nb">echo&lt;/span> one two three
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">one two three
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl">$ &lt;span class="nb">echo&lt;/span> !-1:2 &lt;span class="c1"># 相当于 echo two&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">two
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl">$ &lt;span class="nb">echo&lt;/span> !:0 &lt;span class="c1"># 上个命令使用了 echo，所以 0 代表 echo，这个命令相当于 echo echo&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">6&lt;/span>&lt;span class="cl">&lt;span class="nb">echo&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>当使用 &lt;code>:&lt;/code> 来进行参数选择时，如果是从上一个命令中选择则可以简写为 &lt;code>!:&amp;lt;num1&amp;gt;-&amp;lt;num2&amp;gt;&lt;/code>。&lt;/p>
-&lt;h3 id="我需要这几个参数">我需要这几个参数
-&lt;/h3>&lt;p>我们还能用 &lt;code>:&amp;lt;num1&amp;gt;-&amp;lt;num2&amp;gt;&lt;/code> 来范围式地选择命令的参数。比如，使用 &lt;code>!!:1-2&lt;/code> 就说明要取第一个和第二个参数。（注意这里是参数，不是空格分隔的字符串，也不包含第一个词（也就是命令））。比如：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="ln"> 1&lt;/span>&lt;span class="cl">$ &lt;span class="nb">echo&lt;/span> one two three four
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 2&lt;/span>&lt;span class="cl">one two three four
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 3&lt;/span>&lt;span class="cl">$ &lt;span class="nb">echo&lt;/span> !!:1-2 &lt;span class="c1"># 相当于 echo one two &lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 4&lt;/span>&lt;span class="cl">one two
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 5&lt;/span>&lt;span class="cl">$ &lt;span class="nb">echo&lt;/span> one two three four &lt;span class="c1"># 这行用来重置最后一个命令&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 6&lt;/span>&lt;span class="cl">one two three four
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 7&lt;/span>&lt;span class="cl">$ &lt;span class="nb">echo&lt;/span> !!:-3 &lt;span class="c1"># 没有 &amp;lt;num1&amp;gt; 则会自动替换为0，相当于 echo echo one two three&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 8&lt;/span>&lt;span class="cl">&lt;span class="nb">echo&lt;/span> one two three
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 9&lt;/span>&lt;span class="cl">$ &lt;span class="nb">echo&lt;/span> !-2:1-2 &lt;span class="c1"># 配合 !&amp;lt;num&amp;gt; 使用，相当于 echo one two &lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">10&lt;/span>&lt;span class="cl">one two
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">11&lt;/span>&lt;span class="cl">$ &lt;span class="nb">echo&lt;/span> !-3:1- &lt;span class="c1"># 没有 &amp;lt;num2&amp;gt; 则会匹配到除了最后一个参数外的参数，相当于 echo one two three&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">12&lt;/span>&lt;span class="cl">one two three
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">13&lt;/span>&lt;span class="cl">$ &lt;span class="nb">echo&lt;/span> !-4:$ &lt;span class="c1"># 使用 $ 来获取最后一个参数，相当于 echo four&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">14&lt;/span>&lt;span class="cl">four
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">15&lt;/span>&lt;span class="cl">$ &lt;span class="nb">echo&lt;/span> !-5:3-$ &lt;span class="c1"># 同样 $ 也支持范围选择，相当于 echo three four&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">16&lt;/span>&lt;span class="cl">three four
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">17&lt;/span>&lt;span class="cl">$ &lt;span class="nb">echo&lt;/span> !-6:* &lt;span class="c1"># 使用 * 来表示所有的参数，相当于 echo !-6:1-$，也就是 echo one two three four&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">18&lt;/span>&lt;span class="cl">one two three four
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">19&lt;/span>&lt;span class="cl">$ &lt;span class="nb">echo&lt;/span> !:* &lt;span class="c1"># !: 是在使用冒号时 !!: 或者 !-1: 的简写，相当于 echo one two three four&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">20&lt;/span>&lt;span class="cl">one two three four
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>如果没有 &lt;code>&amp;lt;num1&amp;gt;&lt;/code>，则默认从 &lt;code>0&lt;/code> 开始，也就是会包含所有内容；如果没有 &lt;code>&amp;lt;num2&amp;gt;&lt;/code>，则默认停在最后一个参数前。可以使用 &lt;code>*&lt;/code> 来选择所有的参数，使用 &lt;code>$&lt;/code> 选择最后一个参数。&lt;/p>
-&lt;h2 id="我要对字符串做处理">我要对字符串做处理
-&lt;/h2>&lt;p>在冒号后使用一些字母来做相应的处理。假设有命令 &lt;code>ls /path/to/a/file.txt&lt;/code> 并且我们使用 &lt;code>echo !:1&lt;/code> 尝试调用这个 &lt;code>ls&lt;/code> 的命令，则下面的参数选择器可以做到：&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>:p&lt;/code> (print) 只打印，不运行，或者说提供一个预览。ZSH 用户也许不需要担心这一点。&lt;/li>
-&lt;li>&lt;code>:q&lt;/code> (quote) 对选中字段加上引号，结果为 &lt;code>'/path/to/a/file'&lt;/code>&lt;/li>
-&lt;li>&lt;code>:r&lt;/code>（root）取文件的完整文件名，结果为 &lt;code>/path/to/a/file&lt;/code>&lt;/li>
-&lt;li>&lt;code>:e&lt;/code>（extension）取文件的后缀名，结果为 &lt;code>txt&lt;/code>&lt;/li>
-&lt;li>&lt;code>:h&lt;/code>（head）取文件路径的地址，结果为 &lt;code>/path/to/a/&lt;/code>&lt;/li>
-&lt;li>&lt;code>:t&lt;/code>（tail）取文件的名称，结果为 &lt;code>file.txt&lt;/code>&lt;/li>
-&lt;li>&lt;code>:s/to/has&lt;/code>（search）可以在参数中寻找&lt;em>第一个&lt;/em> &lt;code>to&lt;/code> 并替换为 &lt;code>has&lt;/code>，结果为 &lt;code>/path/has/a/file.txt&lt;/code>&lt;/li>
-&lt;li>&lt;code>:gs/to/has&lt;/code>（global search）同上，但是全局查找替换。&lt;/li>
-&lt;/ul>
-&lt;h2 id="tldr">TL;DR
-&lt;/h2>&lt;p>下面是一个表格简单描述这些用法&lt;/p>
-&lt;h3 id="命令选择使用-">命令选择（使用 &lt;code>!&lt;/code>）
-&lt;/h3>&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>语法&lt;/th>
-&lt;th>含义&lt;/th>
-&lt;th>示例&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>!!&lt;/code>&lt;/td>
-&lt;td>上一条命令&lt;/td>
-&lt;td>&lt;code>sudo !!&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>!-n&lt;/code>&lt;/td>
-&lt;td>倒数第 n 条命令&lt;/td>
-&lt;td>&lt;code>!-2&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>!n&lt;/code>&lt;/td>
-&lt;td>第 n 条历史命令&lt;/td>
-&lt;td>&lt;code>!42&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>!字符串&lt;/code>&lt;/td>
-&lt;td>最近以该字符串开头的命令&lt;/td>
-&lt;td>&lt;code>!ls&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>!?字符串?&lt;/code>&lt;/td>
-&lt;td>最近包含该字符串的命令&lt;/td>
-&lt;td>&lt;code>!?foo?&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>^旧^新&lt;/code>&lt;/td>
-&lt;td>将上一条命令中第一个“旧”替换为“新”&lt;/td>
-&lt;td>&lt;code>^cat^bat&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h3 id="参数选择-使用-">参数选择 （使用 &lt;code>:&lt;/code>）
-&lt;/h3>&lt;p>下面的示例命令使用 &lt;code>echo file.txt&lt;/code> 来做演示。&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>语法&lt;/th>
-&lt;th>含义&lt;/th>
-&lt;th>示例&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>!!:0&lt;/code>&lt;/td>
-&lt;td>上一条命令的命令名&lt;/td>
-&lt;td>&lt;code>!!:0&lt;/code> → &lt;code>echo&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>!!:1&lt;/code>&lt;/td>
-&lt;td>第一个参数&lt;/td>
-&lt;td>&lt;code>!!:1&lt;/code> → &lt;code>file.txt&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>!!:2&lt;/code>&lt;/td>
-&lt;td>第二个参数&lt;/td>
-&lt;td>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>!!:$&lt;/code>&lt;/td>
-&lt;td>最后一个参数&lt;/td>
-&lt;td>&lt;code>!!:$&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>!!:*&lt;/code>&lt;/td>
-&lt;td>所有参数（等同于 &lt;code>!!:1-$&lt;/code>）&lt;/td>
-&lt;td>&lt;code>!!:*&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>!!:1-3&lt;/code>&lt;/td>
-&lt;td>第 1 到第 3 个参数&lt;/td>
-&lt;td>&lt;code>!!:1-3&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>!!:2-$&lt;/code>&lt;/td>
-&lt;td>从第 2 个到最后一个参数&lt;/td>
-&lt;td>&lt;code>!!:2-$&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>!$&lt;/code>&lt;/td>
-&lt;td>上一条命令的最后一个参数 (可以省略冒号)&lt;/td>
-&lt;td>&lt;code>cat !$&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>!*&lt;/code>&lt;/td>
-&lt;td>上一条命令的所有参数（可以省略冒号）&lt;/td>
-&lt;td>&lt;code>rm !*&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h3 id="参数修饰">参数修饰
-&lt;/h3>&lt;p>下面的示例命令使用 &lt;code>echo /path/to/file.txt&lt;/code> 来做演示。&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>修饰符&lt;/th>
-&lt;th>含义&lt;/th>
-&lt;th>示例&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>:p&lt;/code>&lt;/td>
-&lt;td>只打印命令，不执行&lt;/td>
-&lt;td>&lt;code>sudo !!:p&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>:q&lt;/code>&lt;/td>
-&lt;td>给参数加引号，避免空格或特殊字符问题&lt;/td>
-&lt;td>&lt;code>echo !!:1:q&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>:h&lt;/code>&lt;/td>
-&lt;td>获取路径头部（类似 &lt;code>dirname&lt;/code>）&lt;/td>
-&lt;td>&lt;code>echo !!:1:h&lt;/code> → &lt;code>/path/to&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>:t&lt;/code>&lt;/td>
-&lt;td>获取路径尾部（类似 &lt;code>basename&lt;/code>）&lt;/td>
-&lt;td>&lt;code>echo !!:1:t&lt;/code> → &lt;code>file.txt&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>:r&lt;/code>&lt;/td>
-&lt;td>去掉文件扩展名（保留主名）&lt;/td>
-&lt;td>&lt;code>echo !!:1:r&lt;/code> → &lt;code>file&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>:e&lt;/code>&lt;/td>
-&lt;td>获取文件扩展名&lt;/td>
-&lt;td>&lt;code>echo !!:1:e&lt;/code> → &lt;code>txt&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>:s/旧/新/&lt;/code>&lt;/td>
-&lt;td>替换第一个出现的子串&lt;/td>
-&lt;td>&lt;code>!!:1:s/foo/bar/&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>:gs/旧/新/&lt;/code>&lt;/td>
-&lt;td>替换所有出现的子串&lt;/td>
-&lt;td>&lt;code>!!:1:gs/foo/bar/&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2 id="总结">总结
-&lt;/h2>&lt;p>这里其实应该没有写完，不过就这些已经列出来的方法而言，我个人感觉是已经挺够用的了。毕竟，平时最常用的也就是 &lt;code>sudo !!&lt;/code> 来给 &lt;code>pamcan -Syu&lt;/code> 补上管理员权限而已，或者是在 &lt;code>ls -l /path/to/file&lt;/code> 确定文件/文件夹存在后用 &lt;code>vim&lt;/code> 或者 &lt;code>cd&lt;/code> 打开它罢了。&lt;/p>
-&lt;p>还有一点要注意的是，&lt;code>bash&lt;/code> 默认是不会像 &lt;code>zsh&lt;/code> 一样先提供一个预览，让你看看会发生什么的，而是直接就运行命令了。所以也许在 &lt;code>bash&lt;/code> 中使用这个功能时需要额外注意，特别是涉及一些比较危险的动作，比如 &lt;code>rm&lt;/code> 这类命令。此时你可以尝试先用 &lt;code>:p&lt;/code> 来打印出来要运行的命令，没啥问题就可以运行了。印象中应该还有一个办法，来让 &lt;code>bash&lt;/code> 也先提供一个预览而非直接运行。不过，因为我用的是 &lt;code>zsh&lt;/code>，就不纠结这个问题了。也许以后我还会更新这篇文章呢？哈哈。&lt;/p>
-&lt;p>那么，感谢你看到这里，祝您身心愉悦，身体健康~&lt;/p></description></item></channel></rss>
+&lt;/div&gt;
+&lt;figcaption&gt;Git 分支示意图&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;p&gt;（嘶，mermaid 竟然直接有 gitGraph 的功能，NB）&lt;/p&gt;
+&lt;p&gt;那么可以看到，我们这里有三条分支：一条 &lt;code&gt;main&lt;/code&gt;， 一条 &lt;code&gt;feature1&lt;/code&gt; 以及一条 &lt;code&gt;feature2&lt;/code&gt;。有时我们开启了一个分支，有时我们又将两个分支进行了合并。上面的图是怎么生成的呢（双关意）？下面是用到的代码：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 1&lt;/span&gt;&lt;span class="cl"&gt;gitGraph
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 2&lt;/span&gt;&lt;span class="cl"&gt; commit id: &amp;#34;initial commit&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 3&lt;/span&gt;&lt;span class="cl"&gt; commit
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 4&lt;/span&gt;&lt;span class="cl"&gt; branch feature1
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 5&lt;/span&gt;&lt;span class="cl"&gt; checkout feature1
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 6&lt;/span&gt;&lt;span class="cl"&gt; commit id: &amp;#34;new feat1, first commit&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt; commit
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt; checkout main
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt; merge feature1 id: &amp;#34;merge feature1&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt; branch feature2
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt; checkout feature2
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;12&lt;/span&gt;&lt;span class="cl"&gt; commit id: &amp;#34;new feat2&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;13&lt;/span&gt;&lt;span class="cl"&gt; checkout main
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;14&lt;/span&gt;&lt;span class="cl"&gt; commit
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;15&lt;/span&gt;&lt;span class="cl"&gt; merge feature2 id: &amp;#34;finish, merge feat2&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Mermaid 的 gitGraph 很有趣的地方在于，上面的代码几乎就是为了实现这样的提交树/分支形状所需要的 Git 命令。我们可以不管 &lt;code&gt;id&lt;/code&gt; 后面的部分，因为这些在实际 &lt;code&gt;commit&lt;/code&gt; 的时候应该是用 &lt;code&gt;-m&lt;/code&gt; 来指定的提交信息才对。&lt;/p&gt;
+&lt;p&gt;那么，这些命令都干嘛了？要怎么用命令来操控分支？&lt;/p&gt;
+&lt;h2 id="和分支相关的命令们"&gt;和分支相关的命令们
+&lt;/h2&gt;&lt;p&gt;下面来讲讲上面出现的（和没出现的一些）命令吧~&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;git checkout&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;说实在的，这个命令真的是个很大的坑。&lt;code&gt;git checkout&lt;/code&gt; 从 Git 诞生之初就已经存在，它是集创建、管理、变更分支或提交等功能为一体的一个命令。造成这个情况的主要原因在于 &lt;code&gt;git checkout&lt;/code&gt; 实际上不是在我们现有的对 Git 存储模型的理解上进行操作，而是在 Git 更贴近实现层面的操作，即移动 “指针”。&lt;/p&gt;
+&lt;p&gt;然而，我们这里先不打算介绍这么深入/详细。我们还是从实用角度来聊聊这个命令。观察上面的 Mermaid 图，我们可以看到，好像 &lt;code&gt;git checkout&lt;/code&gt; 的功能没有直接体现在图上。然而仔细观察的话可以猜到，&lt;code&gt;git checkout&lt;/code&gt; 在这里的作用是更换分支。比如，&lt;code&gt;git checkout main&lt;/code&gt; 就是告诉 Git “现在我要切换分支到 main 分支上”。这是 &lt;code&gt;git checkout&lt;/code&gt; 的主要用途之一。另外我们还可以用 &lt;code&gt;git checkout -&lt;/code&gt; 来像 &lt;code&gt;cd -&lt;/code&gt; 一样切换到上一个分支。&lt;/p&gt;
+&lt;p&gt;我们还可以对这个命令多讲一些。如果给它带上 &lt;code&gt;-b&lt;/code&gt; 的参数则可以用来创建一个新分支。比如 &lt;code&gt;git checkout -b new-branch&lt;/code&gt; 就可以创建一个新的名为 &lt;code&gt;new-branch&lt;/code&gt; 的分支，同时你还会直接切换到该分支上。而如果你在后面带的参数是某个文件或者单纯的 &lt;code&gt;.&lt;/code&gt;，则是要让 Git 该文件/所有文件里没有暂存的更改。&lt;/p&gt;
+&lt;p&gt;上面说的都是比较老派的做法。相信你也一定从上面的 Mermaid 图中猜到了新式的创建新分支的方法，那就是：&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;git branch&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;这个命令是用来管控和单个分支相关的操作的。我们简要介绍一下。&lt;/p&gt;
+&lt;p&gt;如果后面不带任何的参数，则是会打印出可用分支。如果要创建一个新的分支，就可以用 &lt;code&gt;git branch &amp;lt;another-branch&amp;gt;&lt;/code&gt;, 就是让 Git 尝试创建一个名为 &lt;code&gt;&amp;lt;another-branch&amp;gt;&lt;/code&gt; 的分支。当这个分支已经存在的时候，Git 就会报错，告诉你已经有了叫这个名字的分支了。&lt;/p&gt;
+&lt;p&gt;要注意的是，&lt;code&gt;git branch &amp;lt;branch-name&amp;gt;&lt;/code&gt; 只会创建分支，并不会把当前分支更改到这个新分支上。要想在创建分支后切换分支，除了传统方式 &lt;code&gt;git checkout&lt;/code&gt; 外，还可以使用更现代（？）的命令：&lt;code&gt;git switch -c &amp;lt;branch-name&amp;gt;&lt;/code&gt;。我们后面会介绍到。&lt;/p&gt;
+&lt;p&gt;除了创建分支以外，我们肯定还希望能实现查看/删除/重命名分支。我们干脆都列在下面吧。如果不想看可以跳过这一段。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;要查看分支，可以直接 &lt;code&gt;git branch&lt;/code&gt;。如果要看所有的分支（包括远程的），可以使用 &lt;code&gt;git branch -a&lt;/code&gt; 来查看。你还可以使用 &lt;code&gt;-v&lt;/code&gt; 来输出上次提交的信息。&lt;/li&gt;
+&lt;li&gt;要创建分支，就像上面说的，在后面补上你要的分支名称，即 &lt;code&gt;git branch &amp;lt;branch-name&amp;gt;&lt;/code&gt;。如果这个分支已经存在则会报错，另外这个命令只会创建，并不会切换过去。&lt;/li&gt;
+&lt;li&gt;如若要从某个提交上创建分支，还可以在 &lt;code&gt;&amp;lt;branch-name&amp;gt;&lt;/code&gt; 后面添加上 &lt;code&gt;&amp;lt;commit-hash&amp;gt;&lt;/code&gt;。至于 &lt;code&gt;&amp;lt;commit-hash&amp;gt;&lt;/code&gt; 是什么，我们在后面关于 Git 的一些概念里进行介绍。&lt;/li&gt;
+&lt;li&gt;想要删除分支，可以用 &lt;code&gt;git branch -d &amp;lt;branch-name&amp;gt;&lt;/code&gt; 来删掉它。要是你要删除当前分支，请先切换到别的分支哦。&lt;/li&gt;
+&lt;li&gt;要是打算重命名分支，可以考虑像操作文件一样 &lt;em&gt;移动&lt;/em&gt; 它：&lt;code&gt;git branch -m &amp;lt;branch-name&amp;gt; &amp;lt;new-name&amp;gt;&lt;/code&gt;。依旧，这个命令也只能更改别的分支。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So, that&amp;rsquo;s it! Git 针对单分支的操作都可以用 &lt;code&gt;branch&lt;/code&gt; 子命令来做到。那么，我们要怎么切换分支呢？除了 &lt;code&gt;checkout&lt;/code&gt; 以外，“比较现代”（存疑）的方法是使用：&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;git switch&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;这个命令是相对较新的用来切换分支的命令。可以通过 &lt;code&gt;git switch &amp;lt;branch-name&amp;gt;&lt;/code&gt; 来简单地实现切换。有趣的是，我们还可以用 &lt;code&gt;git switch -c &amp;lt;branch-name&amp;gt;&lt;/code&gt; 来创建新分支的同时切换过去。也就是说，&lt;code&gt;git switch -c&lt;/code&gt; 命令和 &lt;code&gt;git checkout -b&lt;/code&gt; 几乎是等价的。另外我们可以使用 &lt;code&gt;git switch -&lt;/code&gt; 来直接跳回上一个分支。&lt;/p&gt;
+&lt;p&gt;另外还可以考虑使用 &lt;code&gt;git switch -m &amp;lt;branch-name&amp;gt;&lt;/code&gt; 来在切换分支的同时把当前分支合并到要切换的分支上。这一点还是相当不错的，因为我们经常会遇到这样的情形：在 &lt;code&gt;dev&lt;/code&gt; 分支上完成某个特性之后，经过测试希望能合并到 &lt;code&gt;main&lt;/code&gt; 分支上。如果没有这条命令的话，我们可能需要先 &lt;code&gt;git checkout main&lt;/code&gt; 之后再 &lt;code&gt;git merge dev&lt;/code&gt;，而有了这条命令我们就可以简单地 &lt;code&gt;git switch -m main&lt;/code&gt; 了。&lt;/p&gt;
+&lt;p&gt;总之，如果你需要切换分支，你就可以使用 &lt;code&gt;switch&lt;/code&gt; 这个命令。语义很明确，不是吗？&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;git merge&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;这个命令，如它的名字一样，是用来合并分支的，或者，不那么明显地，&lt;em&gt;合并到当前分支&lt;/em&gt;。它的使用方式相对而言比较简单，就是单纯的 &lt;code&gt;git merge &amp;lt;branch-name&amp;gt;&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;这个命令的主要问题是，合并过程中会出现恶魔般的 &lt;em&gt;冲突&lt;/em&gt;。解决冲突实在是一件令人头痛的事情（在我看来）。为了避免（逃避）合并冲突后的麻烦，你可以考虑 &lt;code&gt;--abort&lt;/code&gt; 参数来告诉 Git 如果合并失败就什么都别动。然而，要是你真想合并，到底还是要解决冲突的。&lt;/p&gt;
+&lt;p&gt;其实解决冲突就是一个 “选择应用谁的代码” 的过程。Git 会在发生冲突的地方用箭头标出来本分支和被合并分支的内容，你要做的就是把你不要的那个部分删掉然后保存。另外，合并会创建一个新的提交。如果你不喜欢默认提交信息，可以考虑使用 &lt;code&gt;-e&lt;/code&gt; 参数来告诉 Git 你打算自己编辑合并产生的提交的提交信息。&lt;/p&gt;
+&lt;p&gt;最后就是 Git 合并时有不同的策略。我们这里不多介绍，大部分情况可以使用 &lt;code&gt;ff&lt;/code&gt; 模式，即 &lt;em&gt;Fast Forward&lt;/em&gt; 模式。这个模式会让你的提交树看起来是一条直线，即如果历史提交相同的话就让两个分支有同样的提交了。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;git log&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;这个命令正如它名字所说的，会输出 Git 的分支记录。假如不跟任何的参数的话，它会简单地打印当前分支的提交记录们，信息包括提交的 SHA1 哈希结果，提交的作者/邮箱，提交日期，以及提交的信息。此时，Git 会进入自己的分页器方便你上下滚动浏览，支持 Vim 式的操作，比如 &lt;code&gt;jk&lt;/code&gt; 翻页，&lt;code&gt;/？&lt;/code&gt; 查询等等。自然，退出这个状态则需要按下 &lt;code&gt;q&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;这个命令当然没有这么枯燥。事实上，你可以自定义的部分特别多。例如，你可以使用 &lt;code&gt;--graph&lt;/code&gt; 来在每个提交的最左边显示分支图（虽然不是很好辨认），你还可以使用 &lt;code&gt;--all&lt;/code&gt; 来显示所有分支的历史记录。如果想让历史记录不要搞个好多行，而是只想看看每个提交的大概信息的话，你可以使用 &lt;code&gt;--oneline&lt;/code&gt; 来让每个提交都变成短短的一行。上面说的这三个参数你可以组合在一起，来快速浏览提交历史是什么样的。而如果你希望显示全面的信息，比如哪些文件发生了什么更改，你可以使用 &lt;code&gt;--stat&lt;/code&gt; ，这样 Git 就会有个统计信息，告诉你哪些文件发生了什么变化。&lt;/p&gt;
+&lt;p&gt;你看到了提交的时间了吧？&lt;code&gt;git log --before &amp;lt;date&amp;gt; --after &amp;lt;date&amp;gt;&lt;/code&gt; 还可以让你选定只查看某个时间段内的提交！时间的格式则是 &lt;code&gt;yyyy-mm-dd&lt;/code&gt;，实在是非常方便的功能。&lt;/p&gt;
+&lt;p&gt;然而这个命令最神奇的地方在于，你实际上可以自定义输出格式。使用 &lt;code&gt;--pretty&lt;/code&gt; 格式，你就可以用一些字段来控制 Git 日志的输出格式。这里有一个&lt;a class="link" href="https://devhints.io/git-log-format" target="_blank" rel="noopener"
+&gt;参考表&lt;/a&gt;，感兴趣的话可以看看，试用一下。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;分支相关的基本命令我们就先介绍到这里吧。有了上面的介绍，相信你已经可以运用 Git 的分支功能了吧~&lt;/p&gt;
+&lt;h2 id="git-的概念们"&gt;Git 的概念们
+&lt;/h2&gt;&lt;p&gt;然而，止步于介绍使用 Git 的方式，总是觉得不够透彻。知其然还要知其所以然，我们既然是在介绍 Git，那就尝试把 Git 更深一些（其实也没那么深）的概念多介绍一些吧。&lt;/p&gt;
+&lt;h3 id="仓库-repository"&gt;仓库 (Repository)
+&lt;/h3&gt;&lt;p&gt;我们几乎所有的 Git 项目都是从建立或者克隆 Git 仓库开始的。仓库是一个比较大的概念，我们和 Git 相关的所有内容都是要从仓库出发的，所有的信息都会存储在仓库中。&lt;/p&gt;
+&lt;p&gt;那么 “所有信息” 都有什么呢？这个问题会比较深，我们从表观的理解来讲，首先肯定得有我们工作内容息息相关的内容，毕竟 Git 就是用来管理它们的。另外就是和 Git 相关的内容了，大部分都存储在 &lt;code&gt;.git&lt;/code&gt; 文件夹中，还有一些零散的 &lt;code&gt;.gitignore&lt;/code&gt; 文件。其中 &lt;code&gt;.git&lt;/code&gt; 存储了这个仓库的所有和 Git 直接相关的内容，例如文件快照，提交记录，不同的分支记录等等，都会以特殊的结构记录下来。这也意味着，如果你删了 &lt;code&gt;.git&lt;/code&gt; 文件夹，那么这个仓库就没了，Git 的记录就全都消失啦。删除之前要好好想清楚咯~&lt;/p&gt;
+&lt;p&gt;然后 &lt;code&gt;.gitignore&lt;/code&gt; 也是能控制 Git 行为的文件。它能够让 Git 不记录某些文件。比如说你有一些测试文件，它们其实不应该被记录在仓库里，只希望在本地有一份方便测试而已，那么就可以把他们的名字或者所在文件夹写进 &lt;code&gt;.gitignore&lt;/code&gt; 里。&lt;/p&gt;
+&lt;p&gt;总之，Git 仓库就是这么个总的玩意儿了。有时我们会简称仓库英文为 &lt;em&gt;repo&lt;/em&gt;，我还挺喜欢这个名字。&lt;/p&gt;
+&lt;h3 id="工作目录-working-directory--working-tree"&gt;工作目录 (Working directory / Working tree)
+&lt;/h3&gt;&lt;p&gt;这实际上就是我们正在编辑的项目目录。比如说我们从网上克隆了一个仓库之后，我们会进入这个仓库的目录里。这个仓库的根目录就是所谓的工作目录了。至于为什么叫 “工作树”，我个人看法是因为 Git 分支的存在让整个仓库像树一样伸展开，或者是说目录下的文件层级结构像树一样吧。不过怎么想都觉得有点怪，毕竟如果是说仓库分支的话，我们应该是在树叶上而不是在树上吧……&lt;/p&gt;
+&lt;p&gt;然而，不深究的话，我们干活儿的地方就是工作目录。就是这样。&lt;/p&gt;
+&lt;h3 id="暂存区-staging-area"&gt;暂存区 （Staging Area）
+&lt;/h3&gt;&lt;p&gt;其实我们应该已经介绍过暂存区了。就像它的名字一样，暂存区是用来暂时存下 “觉得改的差不多了” 的内容的地方。我们用 &lt;code&gt;git add&lt;/code&gt; 命令来把修改好的内容放在暂存区内等待提交。如果感觉暂存区的内容有不妥的地方，我们可以随时打回来重新修改。我们也可以把一些内容从暂存区撤下来。总之，暂存区给了我们再次考虑的机会。而假如我们认为 “暂存区的东西我很满意，可以提交了”，我们就可以用 &lt;code&gt;git commit&lt;/code&gt; 来提交 &lt;em&gt;暂存区&lt;/em&gt; 的内容到分支上（或者仓库，取决于你怎么看这个行为）。&lt;/p&gt;
+&lt;p&gt;总之，暂存区就是一个介于 “保存文件” 和 “保存整个工作目录状态” 之间的一个地方。这也决定了 Git 的工作流是 &lt;code&gt;修改文件 -&amp;gt; 保存文件 -&amp;gt; 交给暂存区 -&amp;gt; 提交至分支/仓库&lt;/code&gt;。&lt;/p&gt;
+&lt;h3 id="分支-branch"&gt;分支 (Branch)
+&lt;/h3&gt;&lt;p&gt;相信你已经对分支有所了解了。我们在创建仓库的同时，会创建一个主分支，曾经主分支名称为 &lt;code&gt;master&lt;/code&gt;，后来因为一些政治原因，现在更多叫 &lt;code&gt;main&lt;/code&gt; 了。除了主分支外，我们还可以有很多别的分支。这些分支允许我们在仓库里存储不同的信息，不同分支间不会产生干扰，而在我们希望的时候我们又可以对分支们做出诸如合并、删除等的改动。&lt;/p&gt;
+&lt;p&gt;分支就像平行世界一样，我们可以让两个分支拥有同样的过去，在某个地方发生变化，最后独立演化下去。而分支胜过平行世界的地方在于，我们可以在没有直接分歧的情况下把两个分支合并在一起，而不会出现 “我才是蜘蛛侠” 的问题。&lt;/p&gt;
+&lt;p&gt;分支可以说是 Git 的灵魂和精髓了。推荐多运用分支进行项目管理，相当好用。遇事不决开个分支先测试一下，这不失为一个好办法。&lt;/p&gt;
+&lt;h3 id="提交-commit"&gt;提交 (Commit)
+&lt;/h3&gt;&lt;p&gt;我们有了一个分支之后我们就需要向这个分支不断做出提交了。每一次的提交都会让这个分支的记录变多一些，分支实际上也是记录的每一次的提交。大白话讲，提交就是存档，只不过这些存档要依附在某个世界线（分支）上而已。&lt;/p&gt;
+&lt;p&gt;提交可以说是组成分支的部分。当我们查看分支具体有什么的时候，映入我们眼帘的就是每一次的提交记录。所谓的合并分支，也不过是比较两个分支之间的提交情况，如果没有冲突的提交就可以顺利合并了。&lt;/p&gt;
+&lt;p&gt;要注意的是，在 Git 里我们不提交文件本身，我们提交的是文件的变更。也正是由于 &lt;strong&gt;变更&lt;/strong&gt; 这一关键特征，让 Git 可以高效地进行版本控制，不过坏处也有，那就是面对二进制文件就显得有点笨笨的了：二进制文件可以认为是一变全变的，不像文本那样可以有明显的局部改动。这也说明我们应该尽量让 Git 记录纯文本的文件而非二进制文件。&lt;/p&gt;
+&lt;p&gt;另外，需要再提醒的是，提交只会提交暂存区内的内容。如果有改动发生但没有放在暂存区里的话，提交是不会搭理这些改动的。这一点还请注意。&lt;/p&gt;
+&lt;h3 id="远程remote"&gt;远程（Remote）
+&lt;/h3&gt;&lt;p&gt;虽然我们还没有介绍太多和远程仓库/托管平台的内容，但远程仓库确实是在 Git 设计之初就已经有了的关键概念了。&lt;/p&gt;
+&lt;p&gt;我们介绍过，Git 一开始的设计目的是所谓 &lt;em&gt;分布式&lt;/em&gt; 版本管理系统。这个 &lt;em&gt;分布式&lt;/em&gt; 就在于每个人都可以拥有一份源代码，然后大家可以互相传递自己的修改，也可以自由选择是否进行合并别人的修改。这样去中心化的特点是相当超前的设计。而为了实现这样的设想，我们必须让 Git 拥有连接到别人仓库的能力。远程也正是这么个东西。&lt;/p&gt;
+&lt;p&gt;Git 可以把网络上的仓库作为自己的远程库来使用。我们通常不直接和远程库中的文件交互，而是把提交作为基础单元和远程库进行交互。当我们有了新的提交或者新的分支时，我们就可以把本地的这些改动 &lt;em&gt;推送 (push)&lt;/em&gt; 到远程仓库；当远程仓库有了新的变动时，我们可以把新的变动 &lt;em&gt;拉取 (pull)&lt;/em&gt; 到本地来。我们会在下一节对 Git 的远程功能进行更详细的介绍。&lt;/p&gt;
+&lt;p&gt;总之，Git 的远程仓库让一份代码可以被保存在多个位置，并且让我们和这些位置的仓库进行交互，这样就能让我们和别人进行协作了。然而，由于现实协作的众多需求，最终 Git 还是发展出了很多代码托管平台，来方便大家存储 Git 的远程库，并让大家在远程库上进行协作，避免直接塞给别人电脑上。&lt;/p&gt;
+&lt;h2 id="后记"&gt;后记
+&lt;/h2&gt;&lt;p&gt;我必须立刻承认我这篇文章离不开 &lt;code&gt;tldr&lt;/code&gt;，准确来说是 &lt;code&gt;tealdeer&lt;/code&gt; 的帮助。很难想象没有 &lt;code&gt;tldr&lt;/code&gt; 我要怎么介绍可用命令。唉，我还是对 Git 不够熟悉。如果里面有任何的错漏，又或是对这个系列有什么建议，请直接告诉我，谢谢，我会及时修改的（球球了，告诉我哪里写的不好吧，呜呜呜）。&lt;/p&gt;
+&lt;p&gt;另外我还想推荐一个很不错的网站，&lt;a class="link" href="https://learngitbranching.js.org/" target="_blank" rel="noopener"
+&gt;Learn Git Branching&lt;/a&gt;，一个让你在实际操作中练习 Git 分支管理的网页，从进行提交，创建分支，合并分支，到变基 (Rebase)，远程库协作等复杂操作，全都有涉猎。我花了一下午通关，收获很大，因此墙裂建议。&lt;/p&gt;
+&lt;p&gt;下一节就是我们的最后一节内容，我打算聊聊 Git 的远程协作功能，以及协作时的注意事项等等。另外，由于深感 Git 命令之繁杂，我有计划做一个小工具来通过问答的方式给出合适的 Git 命令。我暂时将这个工具命名为 &lt;code&gt;Giao&lt;/code&gt;，希望不会难产吧，哈哈。有兴趣的话也可以关注我/给我提建议，谢谢啦。&lt;/p&gt;</description></item><item><title>（也许是）一个 Git 教程？其一</title><link>https://a-moment096.github.io/p/%E4%B9%9F%E8%AE%B8%E6%98%AF%E4%B8%80%E4%B8%AA-git-%E6%95%99%E7%A8%8B%E5%85%B6%E4%B8%80/</link><pubDate>Mon, 28 Jul 2025 22:49:16 +0800</pubDate><guid>https://a-moment096.github.io/p/%E4%B9%9F%E8%AE%B8%E6%98%AF%E4%B8%80%E4%B8%AA-git-%E6%95%99%E7%A8%8B%E5%85%B6%E4%B8%80/</guid><description>&lt;img src="https://a-moment096.github.io/posts/Shell_Note/Git_How/Tatara%20Kogasa.jpg" alt="Featured image of post （也许是）一个 Git 教程？其一" /&gt;&lt;p&gt;&lt;em&gt;Git 真的很好用，但是 Git 的命令真的好复杂。简单整理一下，就当写个教程好了~&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;头图出自 &lt;a class="link" href="https://www.pixiv.net/en/users/75383094" target="_blank" rel="noopener"
+&gt;夏空&lt;/a&gt; 太太所画的 &lt;a class="link" href="https://www.pixiv.net/en/artworks/116876998" target="_blank" rel="noopener"
+&gt;多多良 小伞&lt;/a&gt;，可爱捏~ 那就来一曲小伞的个人曲吧&lt;/em&gt;&lt;/p&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
+&lt;style type="text/css"&gt;.dark-theme .aplayer{background:#212121}.dark-theme .aplayer.aplayer-withlist .aplayer-info{border-bottom-color:#5c5c5c}.dark-theme .aplayer.aplayer-fixed .aplayer-list{border-color:#5c5c5c}.dark-theme .aplayer .aplayer-body{background-color:#212121}.dark-theme .aplayer .aplayer-info{border-top-color:#212121}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-title{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-author{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time{color:#eee}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path{fill:#eee}.dark-theme .aplayer .aplayer-list{background-color:#212121}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb{background-color:#999}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover{background-color:#bbb}.dark-theme .aplayer .aplayer-list li{color:#fff;border-top-color:#666}.dark-theme .aplayer .aplayer-list li:hover{background:#4e4e4e}.dark-theme .aplayer .aplayer-list li.aplayer-list-light{background:#6c6c6c}.dark-theme .aplayer .aplayer-list li .aplayer-list-index{color:#ddd}.dark-theme .aplayer .aplayer-list li .aplayer-list-author{color:#ddd}.dark-theme .aplayer .aplayer-lrc{text-shadow:-1px -1px 0 #666}.dark-theme .aplayer .aplayer-lrc:before{background:-moz-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:-webkit-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:linear-gradient(to bottom, #212121 0%, rgba(33,33,33,0) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#212121', endColorstr='#00212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc:after{background:-moz-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:-webkit-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:linear-gradient(to bottom, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#00212121', endColorstr='#cc212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc p{color:#fff}.dark-theme .aplayer .aplayer-miniswitcher{background:#484848}.dark-theme .aplayer .aplayer-miniswitcher .aplayer-icon path{fill:#eee}&lt;/style&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=22636608" theme="#2980b9" loop="never"&gt;&lt;/meting-js&gt;
+&lt;h2 id="git熟悉又陌生的名字-"&gt;Git，熟悉又陌生的名字 ……
+&lt;/h2&gt;&lt;p&gt;也许是所处环境的原因，我身边有很多人不知道 Git 是什么。他们都听过 &lt;em&gt;GitHub&lt;/em&gt;，但很多却只知道上面有好多程序和程序员。虽然也没错，但是并不准确；而当我说我在用 &lt;em&gt;Git&lt;/em&gt; 的时候，会有人把 &lt;em&gt;Git&lt;/em&gt; 和 &lt;em&gt;GitHub&lt;/em&gt; 混为一谈；很多人觉得 Git 很复杂，顺带觉得 GitHub 也很复杂…… 为此，我想分享一下我对 Git 和 GitHub 的理解，聊聊 Git 和 GitHub 都是什么。&lt;/p&gt;
+&lt;p&gt;所以，如果你不了解 Git 是什么，那我很荣幸能在这里向你简单介绍它。&lt;/p&gt;
+&lt;h3 id="所以到底什么是-git版本控制啊"&gt;所以到底什么是 Git？版本控制？啊？
+&lt;/h3&gt;&lt;p&gt;所谓的 Git，它就是：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;center&gt;一款为程序开发的存档系统。&lt;/center&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;是的，事实就是这样。游戏存档。卡关的时候/做支线的时候/后悔的时候可以进度回溯的游戏存档。如果你在翻阅 &lt;em&gt;ProGit&lt;/em&gt; 或者某些教程时不太明白什么是 &lt;em&gt;版本控制系统&lt;/em&gt;，没关系，就是游戏存档（程序用）的比较花哨的名字。&lt;/p&gt;
+&lt;p&gt;不过，为了能高效地，更好地服务程序员，Git 自然有了一大票复杂的功能，且每个子功能还会做特别多的细分，另外对每个存档都可以有非常复杂 &lt;del&gt;（麻烦）&lt;/del&gt; 的，细致 &lt;del&gt;（啰嗦）&lt;/del&gt; 的控制。然而，这依旧不能让它摆脱它就是个存档系统的事实。&lt;/p&gt;
+&lt;p&gt;一旦你接受了这个设定，那么 Git 就其实没有多少秘密了。&lt;/p&gt;
+&lt;h3 id="ok但是听你说好像很麻烦"&gt;OK，但是听你说好像很麻烦……
+&lt;/h3&gt;&lt;p&gt;不得不承认的是，正如上面所说的那样，Git 的命令实际上可以非常地复杂。如果你愿意翻阅它的 man-page，你会发现内容出奇地长；而当你尝试用 &lt;code&gt;git --help&lt;/code&gt; 来获取一些简单有效的信息的时候，很抱歉，&lt;code&gt;git --help&lt;/code&gt; 只会告诉你你能怎么做，并伴随着看不太懂的 usage，却不太会告诉你怎么做能做什么。&lt;/p&gt;
+&lt;p&gt;然而，转折来了。首先，如果你受环境所限，只能从命令行操作 Git，待会儿介绍的四五个命令几乎就能覆盖 80% 的使用场景了。而如果你的环境支持你使用图形化的界面，那么如果不是命令行的忠实用户，完全可以挑个 GUI 程序，比如和 GitHub 集成度高的 &lt;em&gt;GitHub Desktop&lt;/em&gt;，界面美观现代，功能也已经足够丰富，没必要和自己过不去。&lt;/p&gt;
+&lt;p&gt;所以，结论是：Git 很复杂，但是我们可以用的很简单呀。它很强大，很好，但这不影响我只需要那几个最基础的功能。最重要的是，当你需要更复杂的功能的时候，互联网永远是你的好朋友。你完全可以现场上网搜索，大概率会有来自 StackOverflow 的朋友向你答疑解惑（贴答案）（好几年前且点赞特别高的）。&lt;/p&gt;
+&lt;p&gt;So, don&amp;rsquo;t be afraid! Just try it!&lt;/p&gt;
+&lt;h3 id="行但是-git-和-github-到底是什么关系"&gt;行，但是 Git 和 GitHub 到底是什么关系？
+&lt;/h3&gt;&lt;p&gt;这算是很常见的问题了。解释起来也很简单：GitHub 能提供云存档功能。就像 Steam 有游戏云存档一样，Git 也可以有个云存档。只不过，Steam 有个专门的服务器来帮你自动地存好你的游戏内容，而 Git 则可以允许你选择你喜欢的地方存你的代码存档。&lt;/p&gt;
+&lt;p&gt;而 GitHub，正是那个大部分程序员都喜欢的选择。不仅如此，GitHub 上传的存档还兼具展示功能，大家可以在 GitHub 上给自己喜欢的代码存档投票，也可以把别人的存档下载到自己电脑上，甚至可以尝试和别人一起组排。所以，说是交友网站，也未尝不可（也许）&lt;/p&gt;
+&lt;p&gt;那么我可以选择别的地方存放存档吗？当然可以！除了 GitHub，还有很多很多的 Git 服务提供商。你还可以 &lt;em&gt;自建 Git 服务&lt;/em&gt;！甚至，GitHub 显得有些 “&lt;em&gt;违背&lt;/em&gt;” Git 的初衷：分布式的存档存储。什么意思呢？Git 一开始是打算，让所有的代码开发者（玩家）都留一份存档，然后大家就可以一起攻略组排了。大家都保留一份源码，这不就相当于大家都做存储功能了吗？只不过随着合作要求的提高和开源社区的扩大，GitHub 这样一个公开自己代码的地方就这么自发地出现了。&lt;/p&gt;
+&lt;p&gt;总而言之，Git 是存档工具，GitHub 是大家上传/分享/讨论/合作云存档的地方。&lt;/p&gt;
+&lt;h3 id="好耶我逐渐理解一切"&gt;好耶，我逐渐理解一切！
+&lt;/h3&gt;&lt;p&gt;是这样的，Git 就是做这么个事儿。也许你会看到一些介绍一开始会提 Git 使用的技术多么先进，多么高效，多么体现开源精神，然后不明所以。然而 Git 就是做这么个代码存档的东西，为了使用它以期了解它的话，大框架就是这样的。&lt;/p&gt;
+&lt;p&gt;然而这里还是要提个醒：上面也许的确抓住了 Git 的核心目的，但是依旧是很粗糙的，非常概括性的。上面的文字只能帮助 &lt;em&gt;了解 Git 是什么&lt;/em&gt;，并不能告诉你 &lt;em&gt;Git 怎么做的&lt;/em&gt;。另外，使用 Git 的命令完成最基础的工作是很简单，但是在切实明白一条命令到底在做什么前，&lt;strong&gt;请最好不要盲目运行这条命令&lt;/strong&gt;。实际上，要想运用好 Git 管理你的代码/项目，还是需要了解一些关于 Git 究竟在背后怎么做的知识的。&lt;/p&gt;
+&lt;p&gt;所以，如果你还对 Git 感兴趣，或者想把 Git 用起来的话，我们就来讲一些技术细节吧~&lt;/p&gt;
+&lt;h2 id="要怎么用-git-存档"&gt;要怎么用 Git 存档？
+&lt;/h2&gt;&lt;p&gt;想解答这个问题，我们不可避免地要接触一些没啥意思的概念。与其直接介绍它们，我们先来看看，日常开发会怎么使用 Git 吧。&lt;/p&gt;
+&lt;h3 id="tig-的一天"&gt;Tig 的一天
+&lt;/h3&gt;&lt;p&gt;Tig 是热爱 Minecraft 的忠实玩家。他很享受创造神的感觉，毕竟他就是被游戏名吸引而来的。今天他计划开展一个新的工作：制作一个百万刷铁机！&lt;/p&gt;
+&lt;p&gt;Oh no! Tig 的 Minecraft 除了点奇怪的问题！他被告知，Minecraft 的图形界面已经坏了，取而代之的，他可以用代码来操控角色并任意创造游戏中的物品，且他只能用 &lt;code&gt;git&lt;/code&gt; 来做存档（究竟是谁干的，真坏呀）。Tig 感到心里五味杂陈：这还是 Minecraft 吗？然而他心中有一个信念：我一定要做好这个刷铁机，即便我能直接虚空点出来铁块！等游戏恢复的时候，就可以在这台刷铁机的基础上继续快乐玩耍啦！&lt;/p&gt;
+&lt;p&gt;于是，Tig 用 &lt;code&gt;git init&lt;/code&gt; 创建了一个空世界的存档。然后就开始在存档里用代码一行行写他在这个世界里要做些什么……&lt;/p&gt;
+&lt;p&gt;过了一会儿，Tig 妈妈喊他要他吃午饭了。虽然不愿意，Tig 还是要先放下手上的工作。他打算先暂时保存一下，于是使用 &lt;code&gt;git add .&lt;/code&gt; 来保存好自己手上的所有写好的代码。毕竟，他也不知道是不是有的地方有点问题，带会儿还要调一下，他现在也是被拉过去吃饭的。&lt;/p&gt;
+&lt;p&gt;吃完饭后还睡了个午觉，Tig 回来又写了一会儿。他对自己的成果很满意，因为他已经想办法把村里的刁民挪到了高空中了。这实在是不太容易，他不希望待会儿犯蠢丢掉这几个村民。于是他决定要存档。他先用 &lt;code&gt;git add .&lt;/code&gt; 来保存所有文件的所有改动，然后用 &lt;code&gt;git status&lt;/code&gt; 查看了改动的文件们。感觉没什么问题，他使用 &lt;code&gt;git commit&lt;/code&gt; 来正式保存了这个存档。存档系统问他要他给自己的改动写个简述，他写了 &lt;code&gt;村民挪好了，准备搭框架&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;过了一个下午和一个晚上，Tig 终于在睡觉前把刷铁机搞好了！实在是一个无比伟大的创举，Tig 忍不住把它分享出去，也方便自己在其他电脑上继续工作。他创建了 GitHub 账号和一个仓库，并且用 &lt;code&gt;git push&lt;/code&gt; 把这个存档放在了它的仓库里。然而睡前他还是想先在另一台电脑上先把存档下下来，于是使用 &lt;code&gt;git clone &amp;lt;git-link&amp;gt;&lt;/code&gt; 来把仓库克隆到本地。&lt;/p&gt;
+&lt;p&gt;晚上躺在床上，他一想到以后就可以把存档用 &lt;code&gt;git push&lt;/code&gt; 方便地推送到 GitHub 上，并且用 &lt;code&gt;git pull&lt;/code&gt; 在另一台电脑上来获取最新的改动了，他就不自觉地笑出声，心里盘算着怎么在明天做一些改善，给刷铁机套个好看的壳子之类的……&lt;/p&gt;
+&lt;p&gt;可喜可贺，可喜可贺！~&lt;/p&gt;
+&lt;h3 id="所以他都干了些啥"&gt;所以，他都干了些啥？
+&lt;/h3&gt;&lt;p&gt;Tig 的故事貌似有点无聊，毕竟，给 Git 硬套个背景，貌似有点牵强；更重要的是，谁家好人这么玩 Minecraft 呀！然而他用到的命令，几乎就是我平时常用的所有命令了。我们来总结一下吧。我们就不再多提游戏的事，毕竟好像都戳穿了是在写代码……&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;git init&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我们可以用 &lt;code&gt;git init&lt;/code&gt; 来在本地创建/初始化一个 Git 仓库。这代表着，你打算用 Git 来管理这个文件夹了。很简单的命令，其实频率也很低，因为你很少反复初始化一个仓库。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;git add .&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;一个频率还挺高的命令。你在仓库内的修改，Git 都不会立马记录下来。他怕他立马记下来之后，随后用户又马上反悔。另外，这样立马就记录下来，反而和单纯的文件保存功能有所重叠了。&lt;/p&gt;
+&lt;p&gt;所以，当你觉得目前的进展还不错，你就可以用这个命令来 &lt;em&gt;暂存&lt;/em&gt; 当前的所有修改。这里的 “暂存” 有两个意思：一是 Git 确实是把你的修改保存到了 &lt;em&gt;暂存区&lt;/em&gt; 里，另一个则是你要是现在发现有个修改不太对，可以很方便的从暂存区里撤下来。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git add .&lt;/code&gt; 里的这个 &lt;code&gt;.&lt;/code&gt; 就是当前目录的意思，也就是说这个目录下的所有文件我都要暂存起来。Git 会很聪明地只保存修改，这也是设计之初就确定的。如果你只想保存一部分，那就写他们的名字吧，或者写对应的目录，都可以，能定位到就好。&lt;/p&gt;
+&lt;p&gt;不过，总之，这个命令就是让你暂存当前所有修改的。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;git status&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;一个我很爱用的命令。可以向你报告当前暂存区的情况以及工作目录的情况。比如什么文件被修改了，哪些文件是新加的，谁被删除了，而这些改动里谁被暂存下来，又有哪些你没暂存下来。&lt;/p&gt;
+&lt;p&gt;如果你的 Git 是默认配置，他还会提醒你可以怎么撤回某些修改。跟着做就好了。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;git commit&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;当你对你的进度感到满意时，你就可以用 &lt;code&gt;git commit&lt;/code&gt; 来提交你暂存区的东西了。所谓的提交，就是形成一个存档，你后续可以回来的一个存档。这个存档里你的仓库的模样会被冻结下来，当你回到这个提交时，一切都会回到当初的模样。非常的美好。&lt;/p&gt;
+&lt;p&gt;要注意的有两点，一是 &lt;code&gt;git commit&lt;/code&gt; 只提交 &lt;strong&gt;暂存区&lt;/strong&gt; 的内容。没被暂存的，还会在原地等待你先用 &lt;code&gt;git add&lt;/code&gt; 暂存起来，或者等你撤回那些修改。二是，&lt;code&gt;git commit&lt;/code&gt; 会要求你给这个提交留个注释。请不要省事瞎写个什么东西，因为未来的你可能会对瞎写注释的现在的你感到伤心。默认情况下，&lt;code&gt;git commit&lt;/code&gt; 会打开你的文本编辑器然后让你开写，而如果你觉得很麻烦不想开编辑器，可以用 &lt;code&gt;git commit -m &amp;quot;messages&amp;quot;&lt;/code&gt; 来把这行 &lt;code&gt;messages&lt;/code&gt; 作为提交注释。&lt;/p&gt;
+&lt;p&gt;可以再补充两点：如果你提交过后发现因为小失误忘记暂存某些内容或者有些小改动的话，你可以在把改动加入暂存区后补充到这次提交里，用法则是 &lt;code&gt;git commit --amend&lt;/code&gt;。另外，提交要慎重，因为提交过的内容就不是那么好修改了。你当然能改，但是相比 &lt;code&gt;git add&lt;/code&gt; 到暂存区的内容而言，实在是要麻烦一些。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;git push&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;把你当前的内容推送到远程仓库里。如果你的仓库是用 &lt;code&gt;git clone&lt;/code&gt; 获得的且你拥有这个仓库的修改权限，那么 &lt;code&gt;git push&lt;/code&gt; 就可以简单直接地把 &lt;em&gt;这条分支&lt;/em&gt; 的修改推送到远程。&lt;/p&gt;
+&lt;p&gt;我们这里还是先不讲什么分支，也先不谈远程协作之类的东西。不过就常用命令介绍来说，&lt;code&gt;git push&lt;/code&gt; 算是比较常用且同样很简单的一个命令了。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;git clone&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;把 git 仓库从远程下载到本地。后面跟上仓库的链接就好。如果你是从 GitHub 来克隆到本地的话，点绿色按钮的 Clone 就会看到你可以怎么做。你可以直接复制里面的命令然后执行。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;git pull&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;把远程仓库的内容拉取到本地。和 &lt;code&gt;push&lt;/code&gt; 的方向是近乎相反的。如果远程有个修改，你希望同步到本地，那就 &lt;code&gt;git pull&lt;/code&gt; 一下吧。&lt;/p&gt;
+&lt;p&gt;这个命令要注意的点是，不要在本地有修改没存的情况下执行 &lt;code&gt;git pull&lt;/code&gt;。如果本地和远程起了冲突，会很麻烦。避免麻烦的最好方式是，先 &lt;code&gt;git pull&lt;/code&gt; 之后再做自己的修改。&lt;/p&gt;
+&lt;h3 id="画个流程图"&gt;画个流程图
+&lt;/h3&gt;&lt;figure class="mermaid-container"&gt;
+&lt;div class="mermaid"&gt;flowchart LR
+A[开始] --&gt; B[git init\n创建新仓库]
+A --&gt; C[git clone\n克隆已有仓库]
+B --&gt; D[在仓库中做出变更]
+C --&gt; D
+D -- 暂时存下 --&gt; E[git add .\n暂存已有变更]
+E -- 满意已暂存内容 --&gt; F[git commit\n提交所有暂存的变更]
+F --&gt; G[git push\n上传至远程仓库]
+G --&gt; H[其他设备: git pull\n从远程获取最新变更]
+H --&gt; D
+F --&gt; D
+&lt;/div&gt;
+&lt;figcaption&gt;Git 日常工作流&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;h2 id="好累先聊到这里吧"&gt;好累，先聊到这里吧
+&lt;/h2&gt;&lt;p&gt;我们已经介绍了 Git 是什么以及日常会用到的功能。我可以说，除了剩下关于 Git 另一个非常强大的功能：分支的两三个命令，以及一两个我觉得好用的命令以外，剩下的命令都是我很不常用的命令了。剩下的命令几乎只有在我搞砸了什么东西的时候临时从网上搜来救火用的，而保持良好的使用习惯的话真的是很少用到这些麻烦/复杂/难以理解的功能的。&lt;/p&gt;
+&lt;p&gt;所以，如果你看到了这里，恭喜你已经掌握了 Git 单分支的工作流程了。就是改文件，暂存，提交，推送。而下一章我们会看看 Git 被吹的神乎其神的分支到底是个啥，再解释 Git 中的一些概念。&lt;/p&gt;
+&lt;p&gt;这里要特别声明的是，这篇文章的比喻借鉴了 &lt;a class="link" href="https://space.bilibili.com/337242418" target="_blank" rel="noopener"
+&gt;HDAlex_John&lt;/a&gt; 的 Git 教程系列：&lt;a class="link" href="https://www.bilibili.com/video/BV1Hkr7YYEh8" target="_blank" rel="noopener"
+&gt;给傻子的 Git 教程&lt;/a&gt;，讲的相当好。好在我不是傻子，看着也不累，哈哈哈哈。（还是自己写起来比较累）&lt;/p&gt;
+&lt;p&gt;那么最后，感谢你看到这里，祝你心情愉悦，生活顺遂！~&lt;/p&gt;</description></item><item><title>使用 rsync 进行同步</title><link>https://a-moment096.github.io/p/%E4%BD%BF%E7%94%A8-rsync-%E8%BF%9B%E8%A1%8C%E5%90%8C%E6%AD%A5/</link><pubDate>Mon, 28 Jul 2025 12:43:39 +0800</pubDate><guid>https://a-moment096.github.io/p/%E4%BD%BF%E7%94%A8-rsync-%E8%BF%9B%E8%A1%8C%E5%90%8C%E6%AD%A5/</guid><description>&lt;img src="https://a-moment096.github.io/p/%E4%BD%BF%E7%94%A8-rsync-%E8%BF%9B%E8%A1%8C%E5%90%8C%E6%AD%A5/%E8%B4%9D%E5%8A%A0%E5%B0%94%E6%B9%96%E7%95%94.jpg" alt="Featured image of post 使用 rsync 进行同步" /&gt;&lt;p&gt;&lt;em&gt;有点受不太了 &lt;code&gt;scp&lt;/code&gt; 和 &lt;code&gt;sftp&lt;/code&gt; 了，也许是食用姿势不对吧，总之我选择 &lt;code&gt;rsync&lt;/code&gt;！&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;del&gt;图源找不到诶……从朋友那里薅过来的图，很漂亮就放在这里了&lt;/del&gt; 小爷我找到啦！是出自 &lt;a class="link" href="https://www.pixiv.net/en/users/8605991" target="_blank" rel="noopener"
+&gt;fasnakegod&lt;/a&gt; 大大的 &lt;a class="link" href="https://www.pixiv.net/en/artworks/125739568" target="_blank" rel="noopener"
+&gt;贝加尔湖畔&lt;/a&gt;。既然如此就分享一首钢琴曲吧。一首 &lt;strong&gt;騎士王の誇り&lt;/strong&gt; (骑士王的荣耀) 送给大家。（好像毫无关联诶 kora!）&lt;/em&gt;&lt;/p&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
+&lt;style type="text/css"&gt;.dark-theme .aplayer{background:#212121}.dark-theme .aplayer.aplayer-withlist .aplayer-info{border-bottom-color:#5c5c5c}.dark-theme .aplayer.aplayer-fixed .aplayer-list{border-color:#5c5c5c}.dark-theme .aplayer .aplayer-body{background-color:#212121}.dark-theme .aplayer .aplayer-info{border-top-color:#212121}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-title{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-author{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time{color:#eee}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path{fill:#eee}.dark-theme .aplayer .aplayer-list{background-color:#212121}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb{background-color:#999}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover{background-color:#bbb}.dark-theme .aplayer .aplayer-list li{color:#fff;border-top-color:#666}.dark-theme .aplayer .aplayer-list li:hover{background:#4e4e4e}.dark-theme .aplayer .aplayer-list li.aplayer-list-light{background:#6c6c6c}.dark-theme .aplayer .aplayer-list li .aplayer-list-index{color:#ddd}.dark-theme .aplayer .aplayer-list li .aplayer-list-author{color:#ddd}.dark-theme .aplayer .aplayer-lrc{text-shadow:-1px -1px 0 #666}.dark-theme .aplayer .aplayer-lrc:before{background:-moz-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:-webkit-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:linear-gradient(to bottom, #212121 0%, rgba(33,33,33,0) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#212121', endColorstr='#00212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc:after{background:-moz-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:-webkit-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:linear-gradient(to bottom, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#00212121', endColorstr='#cc212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc p{color:#fff}.dark-theme .aplayer .aplayer-miniswitcher{background:#484848}.dark-theme .aplayer .aplayer-miniswitcher .aplayer-icon path{fill:#eee}&lt;/style&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=448119" theme="#2980b9" loop="never"&gt;&lt;/meting-js&gt;
+&lt;h2 id="为什么要选择-rsync-呢"&gt;为什么要选择 &lt;code&gt;rsync&lt;/code&gt; 呢？
+&lt;/h2&gt;&lt;p&gt;有时候我们有多个远程电脑，或者是服务器，上面的文件内容我们希望下载到本地。我们通常有这么几个选择：使用一些功能成熟的，专用于 SSH 连接的终端模拟器，比如 MobaXTerm 这样的软件；或者我们可以使用 &lt;code&gt;scp&lt;/code&gt;，&lt;code&gt;sftp&lt;/code&gt; 这样的工具，但是界面有点简陋，特别是 &lt;code&gt;sftp&lt;/code&gt;，需要反复确认文件名是否输入错误。而且有时我们只需要下载不同的部分，不希望重复下载已经有了的部分。这时候，&lt;code&gt;rsync&lt;/code&gt; 作为 &lt;em&gt;remote sync&lt;/em&gt; 的工具，就到了发挥其作用的地方了。&lt;/p&gt;
+&lt;h2 id="使用方法"&gt;使用方法
+&lt;/h2&gt;&lt;h3 id="命令结构"&gt;命令结构
+&lt;/h3&gt;&lt;p&gt;&lt;code&gt;rsync&lt;/code&gt; 命令使用方法是：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-console" data-lang="console"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="go"&gt;rsync --option1 --option2 /pass/files/from/this/ /path/files/to/here
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;所以大概就是遵循：&lt;code&gt;命令，选项，从哪里来，到哪里去&lt;/code&gt; 这样的规则。另外，既然 &lt;code&gt;rsync&lt;/code&gt; 是 &lt;em&gt;remote sync&lt;/em&gt; 的简称，自然这个命令也是可以被用于远程服务器之间的文件传输的。方法也很简单，就是给对应的文件路径添加上使用 &lt;code&gt;ssh&lt;/code&gt; 的用户名、服务器地址等信息。具体用法我们下面介绍。&lt;/p&gt;
+&lt;h3 id="注意路径分隔符-"&gt;注意路径分隔符 &lt;code&gt;/&lt;/code&gt;
+&lt;/h3&gt;&lt;p&gt;首先，这里需要强调的是，请注意 &lt;code&gt;从哪里来&lt;/code&gt;，也就是发送端的这一部分，这里明显是一个文件夹，因为路径的最后有一个 &lt;code&gt;/&lt;/code&gt; 符号。也许有人会问：我知道它是文件夹，我能不要那个 &lt;code&gt;/&lt;/code&gt; 吗？比如使用&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-console" data-lang="console"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="go"&gt;rsync --opt1 --opt2 /pass/files/from/this /path/files/to/here
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这样的命令，来把文件夹传过去，可以吗？&lt;/p&gt;
+&lt;p&gt;答案很有趣：是的，你可以传过去，但是也许不会以你预期的方式传过去。由于 &lt;code&gt;rsync&lt;/code&gt; 会默认传过去的位置是个文件夹，如果你不带上这个斜杠的话，&lt;code&gt;rsync&lt;/code&gt; 会认为你打算把 &lt;code&gt;/pass/files/from/this&lt;/code&gt; 这个文件夹 &lt;strong&gt;放在目标位置的里面&lt;/strong&gt;。如果你的确打算这么做，那没什么问题。比如你在本地有一个文件夹 &lt;code&gt;$HOME/mydocuments&lt;/code&gt;，你在远程的服务器的接收端上也有这么个文件夹，位置一模一样，那么就可以尝试&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;rsync -r $HOME/mydocuments me@remote:/home/me
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这会直接把 &lt;code&gt;$HOME/mydocuments&lt;/code&gt; 传到远程的 &lt;code&gt;/home/me&lt;/code&gt; 文件夹下，形成 &lt;code&gt;/home/me/mydocuments&lt;/code&gt; 这样的结构。&lt;/p&gt;
+&lt;p&gt;那么假如你是想说，我要把 &lt;code&gt;$HOME/mydocuments&lt;/code&gt; &lt;strong&gt;里面的内容&lt;/strong&gt; 传到 &lt;code&gt;/home/me/another/position&lt;/code&gt; 的话，那你就需要带上这个斜杠了，因为 &lt;code&gt;rsync&lt;/code&gt; 就会聪明地帮你把文件夹里面的所有内容传到目标位置的那个文件夹里。也许也算是符合 “一切皆文件” 的思想了吧，如果你不带分隔符，就会以文件形式把这个 &lt;em&gt;文件&lt;/em&gt; 传到文件夹里；而如果带上路径分隔符，则说明你要传的是文件夹的内容。&lt;/p&gt;
+&lt;h3 id="远程链接"&gt;远程链接
+&lt;/h3&gt;&lt;p&gt;作为一款远程同步软件，自然需要有办法告诉 &lt;code&gt;rsync&lt;/code&gt; 要把文件从哪里发到哪里。好消息是，&lt;code&gt;rsync&lt;/code&gt; 支持我们通过 SSH 传输文件，而方法也特别简单。只需要在文件路径前面添加上你的用户名和主机名就可以了。如果你设置了 SSH 的主机名，甚至可以更方便。&lt;/p&gt;
+&lt;p&gt;这里举个很简单的例子，从本机传到本机，但是通过 SSH 进行。我们可以通过 &lt;code&gt;ssh &amp;lt;user&amp;gt;@localhost&lt;/code&gt; 来登录到本机的本地账户上，我的用户名是 &lt;code&gt;amoment&lt;/code&gt;，所以就会用 &lt;code&gt;ssh amoment@localhost&lt;/code&gt; 来登录到本机。那么我们就可以这样告诉 &lt;code&gt;rsync&lt;/code&gt;：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-console" data-lang="console"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="go"&gt;rsync -r /home/amoment/myfiles/ amoment@localhost:/home/amoment/somefolder
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;来把我家目录下的 &lt;code&gt;myfiles&lt;/code&gt; 文件夹里的内容复制/同步到同在家目录下的 &lt;code&gt;somefolder&lt;/code&gt; 文件夹下。有了这个例子，你应该也明白怎么跨设备使用 &lt;code&gt;rsync&lt;/code&gt; 通过 SSH 进行连接与文件传输了吧。&lt;/p&gt;
+&lt;p&gt;除了使用 SSH 协议以外，&lt;code&gt;rsync&lt;/code&gt; 还支持一些其他的协议，比如所谓的 RSH，或者 &lt;code&gt;rsync&lt;/code&gt; 自带的 &lt;code&gt;rsync://&lt;/code&gt; 协议。但是由于 SSH 的支持还是更加广泛，我们这里还是只介绍该方案。如果感兴趣的话，可以查阅 &lt;code&gt;rsync&lt;/code&gt; 的手册或者文档等资料。&lt;/p&gt;
+&lt;h3 id="一些重要的参数"&gt;一些重要的参数
+&lt;/h3&gt;&lt;p&gt;下面列举一些重要的，可能会经常使用到的参数。我们按一个大致的类别做区分，方便查找。&lt;/p&gt;
+&lt;h4 id="文件操作"&gt;文件操作
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-r --recursive&lt;/code&gt;: 递归模式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;它的意思是 &lt;em&gt;recursive&lt;/em&gt;，也就是递归地把所有内容都传过去。如果不加这个东西，会发生什么呢？好消息是你照样能完成传输，但是坏消息是，你 &lt;strong&gt;只传过去了文件夹&lt;/strong&gt;。也就是说，如果你不是只想在目标位置创建一个可能是新的文件夹的话，而是想把文件都传过去，请记得带上 &lt;code&gt;-r&lt;/code&gt;。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-a -- archive&lt;/code&gt;: 存档模式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;你也可以选择不使用 &lt;code&gt;-r&lt;/code&gt; 而是使用 &lt;code&gt;-a&lt;/code&gt;，使用 &lt;code&gt;-a&lt;/code&gt; 会以存档方式传输文件，也就是说，文件夹内的所有东西都会 &lt;em&gt;保持原样&lt;/em&gt; 地传过去：不论是文件，文件夹，还是链接，设备描述符等，全都会原样传过去。&lt;code&gt;-a&lt;/code&gt; 实际上是一系列参数的总和。根据帮助文档所述，是 &lt;code&gt;-rlptgoD&lt;/code&gt;。还挺多的……&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;--delete&lt;/code&gt;: 允许删除不同步的内容&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;因为 &lt;code&gt;rsync&lt;/code&gt; 如其名所示，是 &lt;em&gt;同步软件&lt;/em&gt;，因此我们也许希望不是 “上传” 文件，而是 &lt;em&gt;把本地文件结构同步到远程&lt;/em&gt;。此时，我们需要用到 &lt;code&gt;--delete&lt;/code&gt; 这个参数，它给了 &lt;code&gt;rsync&lt;/code&gt; 删除目标文件夹内多余文件的权利，从而保证你确实是在 &lt;em&gt;同步&lt;/em&gt; 内容。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;--exclude&lt;/code&gt; &lt;code&gt;--include&lt;/code&gt;: 按模式进行排除/包含&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这两个参数我们放在一起讲。如其名称所述，是用来告诉 &lt;code&gt;rsync&lt;/code&gt; 排除哪些文件或者包含哪些文件用的。如果你有些文件不想传/特意要传，请设置这两个参数。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;--ignore-existing&lt;/code&gt;: 跳过传输同名文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;加上这个参数会让 &lt;code&gt;rsync&lt;/code&gt; 检查接收端已有文件的名字，如果本地和接收端都有这么个文件（名称相同），则会跳过这个文件不进行传输。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-u --update&lt;/code&gt;: 只传输更新的内容&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这个参数意味着你是打算 &lt;em&gt;更新&lt;/em&gt; 文件们。那么，如果接收端的文件比发送端更新（还要新）呢？答案就是不会碰这些文件。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-z --compress&lt;/code&gt;: 先压缩一下&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这个参数会告诉 &lt;code&gt;rsync&lt;/code&gt; 传输前先帮你把要传的东西压缩一下。&lt;code&gt;rsync&lt;/code&gt; 会自己选择一个压缩方法，所以一般不用担心。&lt;/p&gt;
+&lt;h4 id="信息提供"&gt;信息提供
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-n --dry-run&lt;/code&gt;: 试运行&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;你要是担心传过去的内容不是你实际打算传的东西，你可以先让 &lt;code&gt;rsync&lt;/code&gt; 告诉你目前的命令会传些什么，且不真的开始工作，只需要加上 &lt;code&gt;-n&lt;/code&gt; 就可以。你可以把它理解为 &lt;em&gt;no&lt;/em&gt;，即便实际上它对应的长参数是 &lt;code&gt;--dry-run&lt;/code&gt;。拿不准会传些什么过去的时候，这个命令会很有用。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-v --verbose&lt;/code&gt;: 更啰嗦一些&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;几乎所有（较复杂）的命令行程序都会内置这样一个命令，来把工作信息 “更啰嗦” 地显示出来。如果你需要额外的信息，请使用这个参数。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-P&lt;/code&gt;: 进度条&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;就是让 &lt;code&gt;rsync&lt;/code&gt; 报告当前的传输进度。我很喜欢用。&lt;/p&gt;
+&lt;h4 id="涉及-rsync-本身--远程协作"&gt;涉及 &lt;code&gt;rsync&lt;/code&gt; 本身 / 远程协作
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-e --rsh&lt;/code&gt;: 指定传输协议&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;可能我们要传输的设备开放的 SSH 端口不在默认的 &lt;code&gt;22&lt;/code&gt; 而是一个自定义的端口。此时我们就需要 &lt;code&gt;-e&lt;/code&gt; 然后在后面带上一个字符串来表示使用的 shell 是哪个。比如我的远程接收端接口是 &lt;code&gt;1145&lt;/code&gt;，则我会使用&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-console" data-lang="console"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="go"&gt;rsync -r -e &amp;#34;ssh -p 1145&amp;#34; /myfiles/ me@remote:/myfiles
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;来让 &lt;code&gt;rsync&lt;/code&gt; 尝试使用 &lt;code&gt;1145&lt;/code&gt; 端口进行 SSH 通信与文件传输。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;--rsync-path&lt;/code&gt;: &lt;code&gt;rsync&lt;/code&gt; 在哪？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;有可能我们需要帮助本地的 &lt;code&gt;rsync&lt;/code&gt; 来寻找到另一个 &lt;code&gt;rsync&lt;/code&gt; 究竟在哪。此时我们就需要这个参数来发挥作用，在后面带上找到 &lt;code&gt;rsync&lt;/code&gt; 的方法：不论是 &lt;code&gt;rsync&lt;/code&gt; 的路径，还是别的方式，都可以。比如希望传输的设备有 &lt;code&gt;rsync&lt;/code&gt;，但是在 WSL 上。此时我们就可以&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-console" data-lang="console"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="go"&gt;rsync -r --rsync-path &amp;#39;wsl rsync&amp;#39; me@remote:/myfiles/ /myfiles
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;来让远程使用 WSL 上的 &lt;code&gt;rsync&lt;/code&gt; 为我进行工作。&lt;/p&gt;
+&lt;h2 id="后记"&gt;后记
+&lt;/h2&gt;&lt;p&gt;我一开始使用 &lt;code&gt;rsync&lt;/code&gt; 的主要理由其实是为了在不同的设备之间同步我的歌曲库。由于我有一些歌曲通过移动硬盘已经移动了一部分，而还有一部分没有同步，在另一台电脑上我甚至新添加了一张专辑，所以感觉单纯地自己手动搜索要迁移的文件有点太累了。而此时，&lt;code&gt;rsync&lt;/code&gt; 用它 &lt;strong&gt;增量同步&lt;/strong&gt; 的特性吸引了我，我便使用这么个方式来把远程的歌曲同步到本地电脑上来。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;rsync&lt;/code&gt; 还是挺好用的，它的语法可能没有那么智能，但是已经足以应付我遇到的问题了。印象中还有一些别的同步软件，比如朋友推荐的 &lt;code&gt;Syncthing&lt;/code&gt;，也许后面会尝试使用一下。&lt;/p&gt;
+&lt;p&gt;另外不得不提的是我在准备该文章时查阅过的信息源。非常感谢！&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;首先，ChatGPT 和 Deepseek，完全不了解的时候和这些 AI 问一下还是挺好用的；&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://www.digitalocean.com/community/tutorials/how-to-use-rsync-to-sync-local-and-remote-directories" target="_blank" rel="noopener"
+&gt;rsync tutorial&lt;/a&gt;: 一个简单的 rsync walkthrough，帮了我很多；&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://www.geeksforgeeks.org/linux-unix/rsync-command-in-linux-with-examples/" target="_blank" rel="noopener"
+&gt;rsync command in Linux with Examples&lt;/a&gt;: GeeksForGeeks 下的一个博客，内容很丰富。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;最后，感谢您能看到这里，祝您身体健康，心情愉悦~&lt;/p&gt;</description></item><item><title>上一个命令是什么？</title><link>https://a-moment096.github.io/p/%E4%B8%8A%E4%B8%80%E4%B8%AA%E5%91%BD%E4%BB%A4%E6%98%AF%E4%BB%80%E4%B9%88/</link><pubDate>Sat, 26 Jul 2025 20:09:18 +0800</pubDate><guid>https://a-moment096.github.io/p/%E4%B8%8A%E4%B8%80%E4%B8%AA%E5%91%BD%E4%BB%A4%E6%98%AF%E4%BB%80%E4%B9%88/</guid><description>&lt;img src="https://a-moment096.github.io/p/%E4%B8%8A%E4%B8%80%E4%B8%AA%E5%91%BD%E4%BB%A4%E6%98%AF%E4%BB%80%E4%B9%88/SEASIDE_SOLILOQUIES.png" alt="Featured image of post 上一个命令是什么？" /&gt;&lt;p&gt;&lt;em&gt;曾经总会好奇：怎么获取上一个命令呢？应该很简单才对吧？简单的搜索后，下面是我得到的结果，就记录一下吧&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;头图出自 Orangestar 的专辑 &lt;strong&gt;SEASIDE SOLILOQUIES&lt;/strong&gt;, 好看又好听。所以这里贴曲就贴这个专辑的主打歌好了：一首 &lt;strong&gt;Alice in 冷凍庫&lt;/strong&gt;，希望你喜欢。&lt;/em&gt;&lt;/p&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
+&lt;style type="text/css"&gt;.dark-theme .aplayer{background:#212121}.dark-theme .aplayer.aplayer-withlist .aplayer-info{border-bottom-color:#5c5c5c}.dark-theme .aplayer.aplayer-fixed .aplayer-list{border-color:#5c5c5c}.dark-theme .aplayer .aplayer-body{background-color:#212121}.dark-theme .aplayer .aplayer-info{border-top-color:#212121}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-title{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-author{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time{color:#eee}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path{fill:#eee}.dark-theme .aplayer .aplayer-list{background-color:#212121}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb{background-color:#999}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover{background-color:#bbb}.dark-theme .aplayer .aplayer-list li{color:#fff;border-top-color:#666}.dark-theme .aplayer .aplayer-list li:hover{background:#4e4e4e}.dark-theme .aplayer .aplayer-list li.aplayer-list-light{background:#6c6c6c}.dark-theme .aplayer .aplayer-list li .aplayer-list-index{color:#ddd}.dark-theme .aplayer .aplayer-list li .aplayer-list-author{color:#ddd}.dark-theme .aplayer .aplayer-lrc{text-shadow:-1px -1px 0 #666}.dark-theme .aplayer .aplayer-lrc:before{background:-moz-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:-webkit-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:linear-gradient(to bottom, #212121 0%, rgba(33,33,33,0) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#212121', endColorstr='#00212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc:after{background:-moz-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:-webkit-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:linear-gradient(to bottom, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#00212121', endColorstr='#cc212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc p{color:#fff}.dark-theme .aplayer .aplayer-miniswitcher{background:#484848}.dark-theme .aplayer .aplayer-miniswitcher .aplayer-icon path{fill:#eee}&lt;/style&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=458231453" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
+&lt;h2 id="什么时候要用这个"&gt;什么时候要用这个？
+&lt;/h2&gt;&lt;p&gt;有时候我们写了一长串命令，比如有很麻烦的路径之类的，这时候我们可能会希望用某个符号来自动地填上命令里的某些参数。一个最常见的例子，当我要安装某些软件包的时候，偶尔会忘记加上 &lt;code&gt;sudo&lt;/code&gt; 来以管理员权限运行。这时候把上面的命令复制一遍再补上 &lt;code&gt;sudo&lt;/code&gt; 实在是太慢了，而按下上箭头后在把光标挪到第一行，最后补上 &lt;code&gt;sudo&lt;/code&gt; 总是感觉很累，手的移动距离感觉好远。除此之外，有时输入的一长串命令/参数并运行之后，我需要接着上面的参数继续运行别的命令，此时要是用命令行历史的话，就又得用光标定位之后，再删掉没有用的东西，最后再填上要替换的内容。这实在是太慢了。&lt;/p&gt;
+&lt;p&gt;好在这时候，我们还可以使用 &lt;code&gt;zsh&lt;/code&gt; 交互模式下的一个内置宏：使用 &lt;code&gt;!&lt;/code&gt;，感叹号，以及其对应的一些变体，来获取上个命令中的参数/整个命令等。下面就来介绍怎么使用吧。&lt;/p&gt;
+&lt;h2 id="我需要取整个命令"&gt;我需要取整个命令
+&lt;/h2&gt;&lt;h3 id="上个命令是什么"&gt;上个命令是什么？
+&lt;/h3&gt;&lt;p&gt;我们可以用 &lt;code&gt;!!&lt;/code&gt;，或者 &lt;code&gt;!-1&lt;/code&gt;， 来获取 “上一个执行了的命令”。比如如下操作：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ &lt;span class="nb"&gt;echo&lt;/span&gt; hello bash world!
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;hello bash world!
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;$ &lt;span class="nb"&gt;echo&lt;/span&gt; !! &lt;span class="c1"&gt;# !! 替换了上面整个执行了的命令，也就是替换了 &amp;#34;echo hello bash world&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; hello bash world!
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt;$ &lt;span class="nb"&gt;echo&lt;/span&gt; !-1 &lt;span class="c1"&gt;# 同上,也是替换上面执行的命令，所以替换了 &amp;#34;echo echo hello bash world&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;6&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; hello bash world!
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="我要调用历史命令"&gt;我要调用历史命令
+&lt;/h3&gt;&lt;p&gt;我们还可以用 &lt;code&gt;!&amp;lt;num&amp;gt;&lt;/code&gt; 来选择某个历史命令。我们可以先用 &lt;code&gt;head&lt;/code&gt; 来查看一下我们的命令历史里最早有一些什么：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ head ~/.zsh_history &lt;span class="c1"&gt;# 这里我的 zsh 命令历史存在这个文件里，可以用 head 查看前几个命令&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;: 12345:0&lt;span class="p"&gt;;&lt;/span&gt;clear
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;: 12346:0&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; hello
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;: 12347:0&lt;span class="p"&gt;;&lt;/span&gt;ls
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;## ... ... &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;随后我们可以使用 &lt;code&gt;!1&lt;/code&gt; 来选择历史命令中的第一个命令，这里的第一个命令就是 &lt;code&gt;clear&lt;/code&gt;：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ !1 &lt;span class="c1"&gt;# 执行第一个历史命令，也就是 clear，会直接清空屏幕；&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;$ !2 &lt;span class="c1"&gt;# 执行第二个历史命令，会打印 hello；&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;hello
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;$ !3 &lt;span class="c1"&gt;# 执行第三个历史命令，会打印当前文件夹下的内容&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt;file1 file2 file3
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="小结"&gt;小结
+&lt;/h3&gt;&lt;p&gt;我们可以看到，后面跟着的数字实际上表示了“第几个命令”，而举一反三，&lt;code&gt;!-1&lt;/code&gt; 则代表的是“最后一个命令”，即上一个命令，那么 &lt;code&gt;!-2&lt;/code&gt; 就是倒数第二个命令。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;有了这两个命令，我们可以很方便地在忘记使用 &lt;code&gt;sudo&lt;/code&gt; 权限时，使用 &lt;code&gt;sudo !!&lt;/code&gt; 或者选择某个历史命令，来快速使用 &lt;code&gt;sudo&lt;/code&gt; 权限执行命令。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id="我需要取几个参数"&gt;我需要取几个参数
+&lt;/h2&gt;&lt;h3 id="我需要某个参数"&gt;我需要某个参数
+&lt;/h3&gt;&lt;p&gt;我们可以使用 &lt;code&gt;:&amp;lt;num&amp;gt;&lt;/code&gt; 来选择第几个参数。它需要配合 &lt;code&gt;!&lt;/code&gt; 进行使用。参数从 1 开始，而 0 有特殊含义，代表命令。比如：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ &lt;span class="nb"&gt;echo&lt;/span&gt; one two three
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;one two three
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;$ &lt;span class="nb"&gt;echo&lt;/span&gt; !-1:2 &lt;span class="c1"&gt;# 相当于 echo two&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;two
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt;$ &lt;span class="nb"&gt;echo&lt;/span&gt; !:0 &lt;span class="c1"&gt;# 上个命令使用了 echo，所以 0 代表 echo，这个命令相当于 echo echo&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;6&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;echo&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;当使用 &lt;code&gt;:&lt;/code&gt; 来进行参数选择时，如果是从上一个命令中选择则可以简写为 &lt;code&gt;!:&amp;lt;num1&amp;gt;-&amp;lt;num2&amp;gt;&lt;/code&gt;。&lt;/p&gt;
+&lt;h3 id="我需要这几个参数"&gt;我需要这几个参数
+&lt;/h3&gt;&lt;p&gt;我们还能用 &lt;code&gt;:&amp;lt;num1&amp;gt;-&amp;lt;num2&amp;gt;&lt;/code&gt; 来范围式地选择命令的参数。比如，使用 &lt;code&gt;!!:1-2&lt;/code&gt; 就说明要取第一个和第二个参数。（注意这里是参数，不是空格分隔的字符串，也不包含第一个词（也就是命令））。比如：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 1&lt;/span&gt;&lt;span class="cl"&gt;$ &lt;span class="nb"&gt;echo&lt;/span&gt; one two three four
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 2&lt;/span&gt;&lt;span class="cl"&gt;one two three four
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 3&lt;/span&gt;&lt;span class="cl"&gt;$ &lt;span class="nb"&gt;echo&lt;/span&gt; !!:1-2 &lt;span class="c1"&gt;# 相当于 echo one two &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 4&lt;/span&gt;&lt;span class="cl"&gt;one two
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 5&lt;/span&gt;&lt;span class="cl"&gt;$ &lt;span class="nb"&gt;echo&lt;/span&gt; one two three four &lt;span class="c1"&gt;# 这行用来重置最后一个命令&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 6&lt;/span&gt;&lt;span class="cl"&gt;one two three four
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt;$ &lt;span class="nb"&gt;echo&lt;/span&gt; !!:-3 &lt;span class="c1"&gt;# 没有 &amp;lt;num1&amp;gt; 则会自动替换为0，相当于 echo echo one two three&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; one two three
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt;$ &lt;span class="nb"&gt;echo&lt;/span&gt; !-2:1-2 &lt;span class="c1"&gt;# 配合 !&amp;lt;num&amp;gt; 使用，相当于 echo one two &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt;one two
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt;$ &lt;span class="nb"&gt;echo&lt;/span&gt; !-3:1- &lt;span class="c1"&gt;# 没有 &amp;lt;num2&amp;gt; 则会匹配到除了最后一个参数外的参数，相当于 echo one two three&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;12&lt;/span&gt;&lt;span class="cl"&gt;one two three
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;13&lt;/span&gt;&lt;span class="cl"&gt;$ &lt;span class="nb"&gt;echo&lt;/span&gt; !-4:$ &lt;span class="c1"&gt;# 使用 $ 来获取最后一个参数，相当于 echo four&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;14&lt;/span&gt;&lt;span class="cl"&gt;four
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;15&lt;/span&gt;&lt;span class="cl"&gt;$ &lt;span class="nb"&gt;echo&lt;/span&gt; !-5:3-$ &lt;span class="c1"&gt;# 同样 $ 也支持范围选择，相当于 echo three four&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;16&lt;/span&gt;&lt;span class="cl"&gt;three four
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;17&lt;/span&gt;&lt;span class="cl"&gt;$ &lt;span class="nb"&gt;echo&lt;/span&gt; !-6:* &lt;span class="c1"&gt;# 使用 * 来表示所有的参数，相当于 echo !-6:1-$，也就是 echo one two three four&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;18&lt;/span&gt;&lt;span class="cl"&gt;one two three four
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;19&lt;/span&gt;&lt;span class="cl"&gt;$ &lt;span class="nb"&gt;echo&lt;/span&gt; !:* &lt;span class="c1"&gt;# !: 是在使用冒号时 !!: 或者 !-1: 的简写，相当于 echo one two three four&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;20&lt;/span&gt;&lt;span class="cl"&gt;one two three four
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果没有 &lt;code&gt;&amp;lt;num1&amp;gt;&lt;/code&gt;，则默认从 &lt;code&gt;0&lt;/code&gt; 开始，也就是会包含所有内容；如果没有 &lt;code&gt;&amp;lt;num2&amp;gt;&lt;/code&gt;，则默认停在最后一个参数前。可以使用 &lt;code&gt;*&lt;/code&gt; 来选择所有的参数，使用 &lt;code&gt;$&lt;/code&gt; 选择最后一个参数。&lt;/p&gt;
+&lt;h2 id="我要对字符串做处理"&gt;我要对字符串做处理
+&lt;/h2&gt;&lt;p&gt;在冒号后使用一些字母来做相应的处理。假设有命令 &lt;code&gt;ls /path/to/a/file.txt&lt;/code&gt; 并且我们使用 &lt;code&gt;echo !:1&lt;/code&gt; 尝试调用这个 &lt;code&gt;ls&lt;/code&gt; 的命令，则下面的参数选择器可以做到：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;:p&lt;/code&gt; (print) 只打印，不运行，或者说提供一个预览。ZSH 用户也许不需要担心这一点。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:q&lt;/code&gt; (quote) 对选中字段加上引号，结果为 &lt;code&gt;'/path/to/a/file'&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:r&lt;/code&gt;（root）取文件的完整文件名，结果为 &lt;code&gt;/path/to/a/file&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:e&lt;/code&gt;（extension）取文件的后缀名，结果为 &lt;code&gt;txt&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:h&lt;/code&gt;（head）取文件路径的地址，结果为 &lt;code&gt;/path/to/a/&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:t&lt;/code&gt;（tail）取文件的名称，结果为 &lt;code&gt;file.txt&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:s/to/has&lt;/code&gt;（search）可以在参数中寻找&lt;em&gt;第一个&lt;/em&gt; &lt;code&gt;to&lt;/code&gt; 并替换为 &lt;code&gt;has&lt;/code&gt;，结果为 &lt;code&gt;/path/has/a/file.txt&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:gs/to/has&lt;/code&gt;（global search）同上，但是全局查找替换。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="tldr"&gt;TL;DR
+&lt;/h2&gt;&lt;p&gt;下面是一个表格简单描述这些用法&lt;/p&gt;
+&lt;h3 id="命令选择使用-"&gt;命令选择（使用 &lt;code&gt;!&lt;/code&gt;）
+&lt;/h3&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;语法&lt;/th&gt;
+&lt;th&gt;含义&lt;/th&gt;
+&lt;th&gt;示例&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;!!&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;上一条命令&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;sudo !!&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;!-n&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;倒数第 n 条命令&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;!-2&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;!n&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;第 n 条历史命令&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;!42&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;!字符串&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;最近以该字符串开头的命令&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;!ls&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;!?字符串?&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;最近包含该字符串的命令&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;!?foo?&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;^旧^新&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;将上一条命令中第一个“旧”替换为“新”&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;^cat^bat&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id="参数选择-使用-"&gt;参数选择 （使用 &lt;code&gt;:&lt;/code&gt;）
+&lt;/h3&gt;&lt;p&gt;下面的示例命令使用 &lt;code&gt;echo file.txt&lt;/code&gt; 来做演示。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;语法&lt;/th&gt;
+&lt;th&gt;含义&lt;/th&gt;
+&lt;th&gt;示例&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;!!:0&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;上一条命令的命令名&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;!!:0&lt;/code&gt; → &lt;code&gt;echo&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;!!:1&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;第一个参数&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;!!:1&lt;/code&gt; → &lt;code&gt;file.txt&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;!!:2&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;第二个参数&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;!!:$&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;最后一个参数&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;!!:$&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;!!:*&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;所有参数（等同于 &lt;code&gt;!!:1-$&lt;/code&gt;）&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;!!:*&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;!!:1-3&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;第 1 到第 3 个参数&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;!!:1-3&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;!!:2-$&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;从第 2 个到最后一个参数&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;!!:2-$&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;!$&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;上一条命令的最后一个参数 (可以省略冒号)&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;cat !$&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;!*&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;上一条命令的所有参数（可以省略冒号）&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;rm !*&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id="参数修饰"&gt;参数修饰
+&lt;/h3&gt;&lt;p&gt;下面的示例命令使用 &lt;code&gt;echo /path/to/file.txt&lt;/code&gt; 来做演示。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;修饰符&lt;/th&gt;
+&lt;th&gt;含义&lt;/th&gt;
+&lt;th&gt;示例&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;:p&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;只打印命令，不执行&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;sudo !!:p&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;:q&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;给参数加引号，避免空格或特殊字符问题&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;echo !!:1:q&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;:h&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;获取路径头部（类似 &lt;code&gt;dirname&lt;/code&gt;）&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;echo !!:1:h&lt;/code&gt; → &lt;code&gt;/path/to&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;:t&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;获取路径尾部（类似 &lt;code&gt;basename&lt;/code&gt;）&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;echo !!:1:t&lt;/code&gt; → &lt;code&gt;file.txt&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;:r&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;去掉文件扩展名（保留主名）&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;echo !!:1:r&lt;/code&gt; → &lt;code&gt;file&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;:e&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;获取文件扩展名&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;echo !!:1:e&lt;/code&gt; → &lt;code&gt;txt&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;:s/旧/新/&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;替换第一个出现的子串&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;!!:1:s/foo/bar/&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;:gs/旧/新/&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;替换所有出现的子串&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;!!:1:gs/foo/bar/&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id="总结"&gt;总结
+&lt;/h2&gt;&lt;p&gt;这里其实应该没有写完，不过就这些已经列出来的方法而言，我个人感觉是已经挺够用的了。毕竟，平时最常用的也就是 &lt;code&gt;sudo !!&lt;/code&gt; 来给 &lt;code&gt;pamcan -Syu&lt;/code&gt; 补上管理员权限而已，或者是在 &lt;code&gt;ls -l /path/to/file&lt;/code&gt; 确定文件/文件夹存在后用 &lt;code&gt;vim&lt;/code&gt; 或者 &lt;code&gt;cd&lt;/code&gt; 打开它罢了。&lt;/p&gt;
+&lt;p&gt;还有一点要注意的是，&lt;code&gt;bash&lt;/code&gt; 默认是不会像 &lt;code&gt;zsh&lt;/code&gt; 一样先提供一个预览，让你看看会发生什么的，而是直接就运行命令了。所以也许在 &lt;code&gt;bash&lt;/code&gt; 中使用这个功能时需要额外注意，特别是涉及一些比较危险的动作，比如 &lt;code&gt;rm&lt;/code&gt; 这类命令。此时你可以尝试先用 &lt;code&gt;:p&lt;/code&gt; 来打印出来要运行的命令，没啥问题就可以运行了。印象中应该还有一个办法，来让 &lt;code&gt;bash&lt;/code&gt; 也先提供一个预览而非直接运行。不过，因为我用的是 &lt;code&gt;zsh&lt;/code&gt;，就不纠结这个问题了。也许以后我还会更新这篇文章呢？哈哈。&lt;/p&gt;
+&lt;p&gt;那么，感谢你看到这里，祝您身心愉悦，身体健康~&lt;/p&gt;</description></item></channel></rss>
