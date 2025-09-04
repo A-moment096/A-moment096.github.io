@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>C++ on A Moment's Rest</title><link>https://a-moment096.github.io/tags/c++/</link><description>Recent content in C++ on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 29 Aug 2025 10:00:29 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/c++/index.xml" rel="self" type="application/rss+xml"/><item><title>C++ Vector 的内存布局</title><link>https://a-moment096.github.io/p/c-vector-%E7%9A%84%E5%86%85%E5%AD%98%E5%B8%83%E5%B1%80/</link><pubDate>Tue, 27 May 2025 09:53:29 +0800</pubDate><guid>https://a-moment096.github.io/p/c-vector-%E7%9A%84%E5%86%85%E5%AD%98%E5%B8%83%E5%B1%80/</guid><description>&lt;img src="https://a-moment096.github.io/p/c-vector-%E7%9A%84%E5%86%85%E5%AD%98%E5%B8%83%E5%B1%80/Bamboo_Reimu.jpg" alt="Featured image of post C++ Vector 的内存布局" /&gt;&lt;p&gt;&lt;em&gt;探索一下 C++ 的容器 &lt;code&gt;vector&lt;/code&gt; 的内存布局，也算是解答我自己的一些疑虑咯&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>C++ on A Moment's Rest</title><link>https://a-moment096.github.io/tags/c++/</link><description>Recent content in C++ on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 04 Sep 2025 15:54:49 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/c++/index.xml" rel="self" type="application/rss+xml"/><item><title>C++ Vector 的内存布局</title><link>https://a-moment096.github.io/posts/2025/05/vector_memory_layout/</link><pubDate>Tue, 27 May 2025 09:53:29 +0800</pubDate><guid>https://a-moment096.github.io/posts/2025/05/vector_memory_layout/</guid><description>&lt;img src="https://a-moment096.github.io/posts/2025/05/vector_memory_layout/Bamboo_Reimu.jpg" alt="Featured image of post C++ Vector 的内存布局" /&gt;&lt;p&gt;&lt;em&gt;探索一下 C++ 的容器 &lt;code&gt;vector&lt;/code&gt; 的内存布局，也算是解答我自己的一些疑虑咯&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图是从网上搜的，尝试寻找出处，未果。很可惜。选曲尝试选择了一首听着比较清淡的曲子 &lt;strong&gt;泪苔&lt;/strong&gt;，感觉比较符合头图清新淡雅的神社氛围。希望你喜欢。&lt;/em&gt;&lt;/p&gt;
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
 &lt;style type="text/css"&gt;.dark-theme .aplayer{background:#212121}.dark-theme .aplayer.aplayer-withlist .aplayer-info{border-bottom-color:#5c5c5c}.dark-theme .aplayer.aplayer-fixed .aplayer-list{border-color:#5c5c5c}.dark-theme .aplayer .aplayer-body{background-color:#212121}.dark-theme .aplayer .aplayer-info{border-top-color:#212121}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-title{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-author{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time{color:#eee}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path{fill:#eee}.dark-theme .aplayer .aplayer-list{background-color:#212121}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb{background-color:#999}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover{background-color:#bbb}.dark-theme .aplayer .aplayer-list li{color:#fff;border-top-color:#666}.dark-theme .aplayer .aplayer-list li:hover{background:#4e4e4e}.dark-theme .aplayer .aplayer-list li.aplayer-list-light{background:#6c6c6c}.dark-theme .aplayer .aplayer-list li .aplayer-list-index{color:#ddd}.dark-theme .aplayer .aplayer-list li .aplayer-list-author{color:#ddd}.dark-theme .aplayer .aplayer-lrc{text-shadow:-1px -1px 0 #666}.dark-theme .aplayer .aplayer-lrc:before{background:-moz-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:-webkit-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:linear-gradient(to bottom, #212121 0%, rgba(33,33,33,0) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#212121', endColorstr='#00212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc:after{background:-moz-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:-webkit-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:linear-gradient(to bottom, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#00212121', endColorstr='#cc212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc p{color:#fff}.dark-theme .aplayer .aplayer-miniswitcher{background:#484848}.dark-theme .aplayer .aplayer-miniswitcher .aplayer-icon path{fill:#eee}&lt;/style&gt;
@@ -141,7 +141,7 @@
 &gt;CppReference的介绍&lt;/a&gt;，里面介绍了这一原则的具体情况。&lt;/p&gt;
 &lt;p&gt;当然，每次使用新的特性，总是会引入一点点的开销。或许你会考虑，辛苦一下自己，让程序能再跑快点。这本身没什么问题，但是要指出的是，警惕提前优化。如果 &lt;code&gt;vector&lt;/code&gt; 并不是制约程序运行效率的关键部分（也就是所谓的&lt;em&gt;性能瓶颈&lt;/em&gt;），那么就先不要管它。当程序遇到了这个瓶颈，且只能通过优化数据结构才能提高性能时，再考虑把 &lt;code&gt;vector&lt;/code&gt; 修改为别的容器或者数据类型，这样做也许会更实际一些。&lt;/p&gt;
 &lt;p&gt;当然，如果这个小短文有什么问题，请直接指出来。本人也不是科班出身，写这篇笔记纯粹是记录一下学习过程。欢迎交流讨论。欢迎大佬拷打，动作轻一些就更好了。&lt;/p&gt;
-&lt;p&gt;那么最后，一如既往，祝您身心健康。&lt;/p&gt;</description></item><item><title>Phase Field: 相场模拟学习笔记 V</title><link>https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-v/</link><pubDate>Wed, 25 Dec 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-v/</guid><description>&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/Skadi.png" alt="Featured image of post Phase Field: 相场模拟学习笔记 V" /&gt;&lt;p&gt;&lt;em&gt;其实这节就是换成 Allen-Cahn 方程，然后多个变量而已，主要是俺不想实现 Voronoi 结构（逃&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;那么最后，一如既往，祝您身心健康。&lt;/p&gt;</description></item><item><title>Phase Field: 相场模拟学习笔记 V</title><link>https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/</link><pubDate>Wed, 25 Dec 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/</guid><description>&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/Skadi.png" alt="Featured image of post Phase Field: 相场模拟学习笔记 V" /&gt;&lt;p&gt;&lt;em&gt;其实这节就是换成 Allen-Cahn 方程，然后多个变量而已，主要是俺不想实现 Voronoi 结构（逃&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id="简介"&gt;简介
 &lt;/h2&gt;&lt;p&gt;上一部分我们以调幅分解为基础讨论了浓度场在 Cahn-Hilliard 方程下的演化过程。对相场方法而言，另一个无法绕开的演化方程则是针对非保守场变量的 Allen-Cahn 方程。这一部分我们将对晶粒长大过程进行分析，了解 Allen-Cahn 方程并使用它进行晶粒长大过程的模拟。&lt;/p&gt;
 &lt;h2 id="晶粒长大"&gt;晶粒长大
@@ -156,7 +156,7 @@
 $$
 \frac{\partial \eta_i}{\partial t} = -L_{ij}\frac{\delta F}{\delta \eta_j}
 $$&lt;p&gt;
-简单地令人发指（也许）。简单来说，就是某个变量的变化速率受到所有的势的加权求和影响。但是要如何理解这个公式呢？它是怎么来的呢？其实如果有看过&lt;a class="link" href="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iv/#演化方程" &gt;上一篇&lt;/a&gt;内容的话，应该已经猜到了。如果物质不守恒，那么物质流的散度项就可以替换成某种别的形式。这个所谓“别的形式”需要满足这些条件：&lt;/p&gt;
+简单地令人发指（也许）。简单来说，就是某个变量的变化速率受到所有的势的加权求和影响。但是要如何理解这个公式呢？它是怎么来的呢？其实如果有看过&lt;a class="link" href="https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/#演化方程" &gt;上一篇&lt;/a&gt;内容的话，应该已经猜到了。如果物质不守恒，那么物质流的散度项就可以替换成某种别的形式。这个所谓“别的形式”需要满足这些条件：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;需要和能量/势相关以满足热力学要求&lt;/li&gt;
 &lt;li&gt;最终是令体系演化达到平衡的&lt;/li&gt;
@@ -190,10 +190,10 @@ f_{bulk}&amp;= \sum_{i}^{N}\left( -\frac{A}{2}\eta_i^2 + \frac{B}{4}\eta_i^4 \ri
 \end{align}
 $$&lt;p&gt;
 上面第二个等号是由于对 $j (j\neq i)$ 的求和的部分与 $i$ 无关，我们可以把 $\eta_i^2$ 从二重求和中提出来， 然后第三个等号中把对 $i$ 的求和的部分提取合并，最后第四个等号里提出 $\eta_i^2$，把 $\sum_{j\neq{}i}^{N} \eta_j^2$ 作为系数和 $-\dfrac{A}{2}$ 合并。现在我们把目光放在求和里面的这个，关于 $\eta_i$ 的多项式。为简单起见，我们设 $A = B = 1$。下面是这个函数在 $\sum_{j\neq{}i}^{N} \eta_j^2 = 0$ 时候， 即 方程(1) 的第一项的图像（当然，这个假设不够合理，但是我们可以先看看）。&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-v/double_well.png"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/double_well.png"
 width="1158"
 height="792"
-srcset="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-v/double_well_hu_d1b0704925dee7de.png 480w, https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-v/double_well_hu_6028a34aff034561.png 1024w"
+srcset="https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/double_well_hu_d1b0704925dee7de.png 480w, https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/double_well_hu_6028a34aff034561.png 1024w"
 loading="lazy"
 alt="双势阱？"
 class="gallery-image"
@@ -201,10 +201,10 @@ data-flex-grow="146"
 data-flex-basis="350px"
 &gt;&lt;/p&gt;
 &lt;p&gt;是我们很熟系的双势阱，但是这里有一些问题：序参量实际上不能小于0，也不应该大于1。如果我们只关注 0 到 1 之间的值，不难发现现在这个能量的最低点处在 $\eta = 1$ 的地方。这很合理：在其余的所有序参量（我们简称所有的 j ，对应的本个序参量则为 i）都为 0 的情况下，或者说在没有任何 j 的点，i 占据该点是理所应当的。考虑到每个序参量都是平权的，这说明了这个方程是符合体相内部的热力学要求的。接下来我们考察当这个求和项不为 0 的情况。j 求和的值的变化范围我们先设为 0 到 2。&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-v/a03.png"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/a03.png"
 width="1461"
 height="543"
-srcset="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-v/a03_hu_97f7afd50570c336.png 480w, https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-v/a03_hu_b8debade44013d6.png 1024w"
+srcset="https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/a03_hu_97f7afd50570c336.png 480w, https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/a03_hu_b8debade44013d6.png 1024w"
 loading="lazy"
 alt="j 的和为0.3时的图像"
 class="gallery-image"
@@ -366,20 +366,20 @@ $$&lt;p&gt;这个形式，熟悉吗？如果去掉第二项，那么这个方程
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-v/modified_5.png"
+&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/modified_5.png"
 width="647"
 height="647"
-srcset="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-v/modified_5_hu_b5fd896182b8b4a5.png 480w, https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-v/modified_5_hu_f8716b6e8d544b08.png 1024w"
+srcset="https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/modified_5_hu_b5fd896182b8b4a5.png 480w, https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/modified_5_hu_f8716b6e8d544b08.png 1024w"
 loading="lazy"
 alt="第5步"
 class="gallery-image"
 data-flex-grow="100"
 data-flex-basis="240px"
 &gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-v/modified_25.png"
+&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/modified_25.png"
 width="647"
 height="647"
-srcset="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-v/modified_25_hu_a244c2527aa373e3.png 480w, https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-v/modified_25_hu_488b15414f3c5d41.png 1024w"
+srcset="https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/modified_25_hu_a244c2527aa373e3.png 480w, https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/modified_25_hu_488b15414f3c5d41.png 1024w"
 loading="lazy"
 alt="第25步"
 class="gallery-image"
@@ -392,20 +392,20 @@ data-flex-basis="240px"
 &lt;td style="text-align: center"&gt;第25步&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-v/modified_75.png"
+&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/modified_75.png"
 width="647"
 height="647"
-srcset="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-v/modified_75_hu_1ea75bf6e2757f2b.png 480w, https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-v/modified_75_hu_8794650a68486477.png 1024w"
+srcset="https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/modified_75_hu_1ea75bf6e2757f2b.png 480w, https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/modified_75_hu_8794650a68486477.png 1024w"
 loading="lazy"
 alt="第75步"
 class="gallery-image"
 data-flex-grow="100"
 data-flex-basis="240px"
 &gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-v/modified_100.png"
+&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/modified_100.png"
 width="647"
 height="647"
-srcset="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-v/modified_100_hu_5d363fedc4fc5471.png 480w, https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-v/modified_100_hu_9a695a29e3ebfffb.png 1024w"
+srcset="https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/modified_100_hu_5d363fedc4fc5471.png 480w, https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/modified_100_hu_9a695a29e3ebfffb.png 1024w"
 loading="lazy"
 alt="第100步"
 class="gallery-image"
@@ -425,16 +425,16 @@ data-flex-basis="240px"
 &lt;p&gt;和上一个部分一样，对模型和模拟过程更深层的理解是离不开调整参数进行测试的。这两个案例都是比较简单的案例，可调的参数并不多，而且在模拟一开始的时候就已经有了参考的参数了，也不是面对的实际存在的体系，填入的数字的物理意义并没有很大，或者说是比较唯结果论的一些数据。在面对实际物理体系的时候，填参数这块儿是模拟过程最折磨的部分了。如何精确地控制这些参数，让他们配合起来形成一个符合物理特性，而且也能跑出合理结果，这也许是相场方法最麻烦的点。参数的可解释性经常会和参数的数值特性相悖，而能平衡二者的结果几乎都是经过精心设计的。总而言之，多调参数总没错。&lt;/p&gt;
 &lt;p&gt;那么这就是这个教程（自称）系列的最后一部分了。相场方法作为一种材料模拟方法，能做的东西非常多，但是其本身也有一定的限制。它最大的限制就是所谓的扩散界面，这样的界面解决了微分方程不好解的问题，但是也让这个方法很容易滑向物理意义不明确的道路，也经常会因为界面的存在而导致一些模拟发生数值失稳（即便引入界面常常就是希望能解决数值失稳的）。这些特点注定让相场成为一门比较复杂的交叉学科：需要对材料科学有深入的理解，对材料的物理特性有清晰的物理图像，对数值方法有清晰的认知，明白各种方法之间的优缺点选择合适的方法，最后还需要有一定的程序能力来支撑实现模拟。这也许也是相场复杂的地方吧。&lt;/p&gt;
 &lt;p&gt;相场方法并不是一个很新的模拟方法，但是它还有很大的发展空间。不论是比较传统的调幅分解的深入研究模拟，还是使用相场法研究固体力学、电磁学、流体力学这些更复杂的外场，又或者是开发新的程序软件来帮助进行相场模拟，甚至是使用机器学习来辅佐相场计算，这些都是相场正在发展的方向。这个系列的教程希望能够提供相场方法最基础的部分，比如相场的数学基础，程序基础等等。这些内容应该能够成为学习相场过程中比较重要的工具，以便于学习和发展更深层的更复杂的理论/实践。希望阅读本教程的您可以从中有所收获。&lt;/p&gt;
-&lt;p&gt;那么就是这样，最后祝您生活愉快，科研顺利~&lt;/p&gt;</description></item><item><title>Phase Field: 相场模拟学习笔记 IV</title><link>https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iv/</link><pubDate>Tue, 24 Dec 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iv/</guid><description>&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/Skadi.png" alt="Featured image of post Phase Field: 相场模拟学习笔记 IV" /&gt;&lt;p&gt;&lt;em&gt;终于，真的要做相场模拟了。先从最软的柿子，调幅分解开始吧&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;那么就是这样，最后祝您生活愉快，科研顺利~&lt;/p&gt;</description></item><item><title>Phase Field: 相场模拟学习笔记 IV</title><link>https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/</link><pubDate>Tue, 24 Dec 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/</guid><description>&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/Skadi.png" alt="Featured image of post Phase Field: 相场模拟学习笔记 IV" /&gt;&lt;p&gt;&lt;em&gt;终于，真的要做相场模拟了。先从最软的柿子，调幅分解开始吧&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id="简介"&gt;简介
 &lt;/h2&gt;&lt;p&gt;所以，经过前面三个部分的学习，利用 C++ 进行相场模拟的所有前置几乎全部获得了：公式推导，编程基础，基础算法等，几乎全都拿到手了。这部分开始，我们就正式开始用 C++ 实现相场模拟。我们先从一个很经典且简单的例子开始：A-B 合金的调幅分解。&lt;/p&gt;
 &lt;h2 id="调幅分解"&gt;调幅分解
 &lt;/h2&gt;&lt;p&gt;所以什么是调幅分解？它有什么特殊的地方？为什么相场法的第一个例子是算这么个有点陌生的东西？我们一个一个来解答这些问题。&lt;/p&gt;
 &lt;p&gt;首先值得明确的是，调幅分解是一类相变过程，且这类过程非常适合使用相场法来计算其演化过程。作为相变，我们自然关心其相图和自由能曲线的情况。下面是一副调幅分解的示意图：&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iv/energy_pd.jpg"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/energy_pd.jpg"
 width="410"
 height="320"
-srcset="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iv/energy_pd_hu_ab49983950f51127.jpg 480w, https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iv/energy_pd_hu_84d99d70eda55f77.jpg 1024w"
+srcset="https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/energy_pd_hu_ab49983950f51127.jpg 480w, https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/energy_pd_hu_84d99d70eda55f77.jpg 1024w"
 loading="lazy"
 alt="调幅分解的相图与自由能曲线"
 class="gallery-image"
@@ -454,10 +454,10 @@ f_{int}\left(\nabla c \right) &amp;= \kappa \left|\nabla c \right| ^2. \\
 \end{align*}
 $$&lt;p&gt;
 其中，$F$ 即为体系的总能量，由两部分的能量密度积分构成，第一部分为体自由能 $f_{bulk}$，其图像为一个双势阱：&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iv/AB_free_energy.png"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/AB_free_energy.png"
 width="640"
 height="480"
-srcset="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iv/AB_free_energy_hu_7f58b47345c970f5.png 480w, https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iv/AB_free_energy_hu_4425a7a0a178e408.png 1024w"
+srcset="https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/AB_free_energy_hu_7f58b47345c970f5.png 480w, https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/AB_free_energy_hu_4425a7a0a178e408.png 1024w"
 loading="lazy"
 alt="体自由能密度函数图像，其中模型参数选择 A = 1"
 class="gallery-image"
@@ -669,20 +669,20 @@ $$&lt;p&gt;根据这个公式，我们需要先计算浓度的 Laplacian，然�
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iv/Spinodal_5.png"
+&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/Spinodal_5.png"
 width="742"
 height="741"
-srcset="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iv/Spinodal_5_hu_862da98437ed3e4b.png 480w, https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iv/Spinodal_5_hu_85c36d16809c7576.png 1024w"
+srcset="https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/Spinodal_5_hu_862da98437ed3e4b.png 480w, https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/Spinodal_5_hu_85c36d16809c7576.png 1024w"
 loading="lazy"
 alt="alt text"
 class="gallery-image"
 data-flex-grow="100"
 data-flex-basis="240px"
 &gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iv/Spinodal_25.png"
+&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/Spinodal_25.png"
 width="742"
 height="741"
-srcset="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iv/Spinodal_25_hu_e4e7611d1e811ccf.png 480w, https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iv/Spinodal_25_hu_7e6ee2ae728ba08d.png 1024w"
+srcset="https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/Spinodal_25_hu_e4e7611d1e811ccf.png 480w, https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/Spinodal_25_hu_7e6ee2ae728ba08d.png 1024w"
 loading="lazy"
 alt="alt text"
 class="gallery-image"
@@ -695,20 +695,20 @@ data-flex-basis="240px"
 &lt;td style="text-align: center"&gt;第25步&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iv/Spinodal_75.png"
+&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/Spinodal_75.png"
 width="742"
 height="741"
-srcset="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iv/Spinodal_75_hu_ae746b36215901d2.png 480w, https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iv/Spinodal_75_hu_9a6d521da1f918a5.png 1024w"
+srcset="https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/Spinodal_75_hu_ae746b36215901d2.png 480w, https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/Spinodal_75_hu_9a6d521da1f918a5.png 1024w"
 loading="lazy"
 alt="alt text"
 class="gallery-image"
 data-flex-grow="100"
 data-flex-basis="240px"
 &gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iv/Spinodal_150.png"
+&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/Spinodal_150.png"
 width="742"
 height="741"
-srcset="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iv/Spinodal_150_hu_f8b929b1e73b9c4d.png 480w, https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iv/Spinodal_150_hu_ea69d8a9bea2356d.png 1024w"
+srcset="https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/Spinodal_150_hu_f8b929b1e73b9c4d.png 480w, https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/Spinodal_150_hu_ea69d8a9bea2356d.png 1024w"
 loading="lazy"
 alt="alt text"
 class="gallery-image"
@@ -732,7 +732,7 @@ data-flex-basis="240px"
 &lt;li&gt;调整界面能参数。越大的界面能参数会导致越宽的相界面。而该参数太小时可能会发生数值不稳定的现象&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;可以参考这些描述调参，观察参数的影响。调参几乎是相场模拟中必不可少的一环。&lt;/p&gt;
-&lt;p&gt;那么，我们就下一节见吧。&lt;/p&gt;</description></item><item><title>Phase Field: 相场模拟学习笔记 III</title><link>https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iii/</link><pubDate>Mon, 23 Dec 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iii/</guid><description>&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/Skadi.png" alt="Featured image of post Phase Field: 相场模拟学习笔记 III" /&gt;&lt;p&gt;&lt;em&gt;接上一节内容, 这节会简单介绍 C++ 的一些语法知识, 然后用 C++ 实现一维传热方程的模拟。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;那么，我们就下一节见吧。&lt;/p&gt;</description></item><item><title>Phase Field: 相场模拟学习笔记 III</title><link>https://a-moment096.github.io/posts/2024/12/pf_tutorial_3/</link><pubDate>Mon, 23 Dec 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/2024/12/pf_tutorial_3/</guid><description>&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/Skadi.png" alt="Featured image of post Phase Field: 相场模拟学习笔记 III" /&gt;&lt;p&gt;&lt;em&gt;接上一节内容, 这节会简单介绍 C++ 的一些语法知识, 然后用 C++ 实现一维传热方程的模拟。&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id="c一门高效的适宜科学计算的程序语言"&gt;C++：一门高效的，适宜科学计算的程序语言
 &lt;/h2&gt;&lt;p&gt;C++ 是一门经典的编程语言，于 1979 年由 Bjarne Stroustrup 设计，最初目的是为了成为更好的 C 语言，而后随着自身发展，成为了一门和 C 语言有许多相似之处，而又截然不同的一门语言。 C++ 支持多种编程范式，包括但不限于面向过程，面向对象，函数式，模板元编程等等。 其丰富的生态，高效的算法库以及&lt;em&gt;零成本抽象&lt;/em&gt;的理念让 C++ 极为适合进行各类科学运算。此外，C++ 的语法较为亲民，其多种编程范式也便于不同背景的开发者上手，故我们在这里引入 C++ 作为后续计算使用的程序语言。&lt;/p&gt;
 &lt;h3 id="c-简介"&gt;C++ 简介
@@ -1024,10 +1024,10 @@ $$ \dfrac{\partial T}{\partial t} = \mu \dfrac{\partial^2 T}{\partial x ^2},$$&l
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;73&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;74&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这里用到了一些技巧，在边界判断处使用下标运算是否越界来判断是否处于边界处，以及使用了 &lt;code&gt;&amp;lt;chrono&amp;gt;&lt;/code&gt; 库来监测程序运行时间。在成功运行并且用输出的 &lt;code&gt;csv&lt;/code&gt; 文件绘制曲线图后结果大致如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iii/heat_transfer_result.png"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2024/12/pf_tutorial_3/heat_transfer_result.png"
 width="500"
 height="380"
-srcset="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iii/heat_transfer_result_hu_51db1d3192a486f.png 480w, https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iii/heat_transfer_result_hu_b3d78924e08641b6.png 1024w"
+srcset="https://a-moment096.github.io/posts/2024/12/pf_tutorial_3/heat_transfer_result_hu_51db1d3192a486f.png 480w, https://a-moment096.github.io/posts/2024/12/pf_tutorial_3/heat_transfer_result_hu_b3d78924e08641b6.png 1024w"
 loading="lazy"
 alt="传热方程求解结果"
 class="gallery-image"

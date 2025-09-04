@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on A Moment's Rest</title><link>https://a-moment096.github.io/posts/</link><description>Recent content in Posts on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 29 Aug 2025 10:00:29 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>（也许是）一个 Git 教程？其三</title><link>https://a-moment096.github.io/p/%E4%B9%9F%E8%AE%B8%E6%98%AF%E4%B8%80%E4%B8%AA-git-%E6%95%99%E7%A8%8B%E5%85%B6%E4%B8%89/</link><pubDate>Tue, 26 Aug 2025 18:28:16 +0800</pubDate><guid>https://a-moment096.github.io/p/%E4%B9%9F%E8%AE%B8%E6%98%AF%E4%B8%80%E4%B8%AA-git-%E6%95%99%E7%A8%8B%E5%85%B6%E4%B8%89/</guid><description>&lt;img src="https://a-moment096.github.io/posts/Shell_Note/Git_How/Tatara%20Kogasa.jpg" alt="Featured image of post （也许是）一个 Git 教程？其三" /&gt;&lt;p&gt;&lt;em&gt;最后一节，聊聊如何在 GitHub 上进行多人协作吧~&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on A Moment's Rest</title><link>https://a-moment096.github.io/posts/</link><description>Recent content in Posts on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 04 Sep 2025 15:54:49 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>（也许是）一个 Git 教程？其三</title><link>https://a-moment096.github.io/posts/2025/08/git_3/</link><pubDate>Tue, 26 Aug 2025 18:28:16 +0800</pubDate><guid>https://a-moment096.github.io/posts/2025/08/git_3/</guid><description>&lt;img src="https://a-moment096.github.io/posts/Shell_Note/Git_How/Tatara%20Kogasa.jpg" alt="Featured image of post （也许是）一个 Git 教程？其三" /&gt;&lt;p&gt;&lt;em&gt;最后一节，聊聊如何在 GitHub 上进行多人协作吧~&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图信息请参考第一节内容，谢谢~&lt;/em&gt;&lt;/p&gt;
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
 &lt;style type="text/css"&gt;.dark-theme .aplayer{background:#212121}.dark-theme .aplayer.aplayer-withlist .aplayer-info{border-bottom-color:#5c5c5c}.dark-theme .aplayer.aplayer-fixed .aplayer-list{border-color:#5c5c5c}.dark-theme .aplayer .aplayer-body{background-color:#212121}.dark-theme .aplayer .aplayer-info{border-top-color:#212121}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-title{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-author{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time{color:#eee}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path{fill:#eee}.dark-theme .aplayer .aplayer-list{background-color:#212121}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb{background-color:#999}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover{background-color:#bbb}.dark-theme .aplayer .aplayer-list li{color:#fff;border-top-color:#666}.dark-theme .aplayer .aplayer-list li:hover{background:#4e4e4e}.dark-theme .aplayer .aplayer-list li.aplayer-list-light{background:#6c6c6c}.dark-theme .aplayer .aplayer-list li .aplayer-list-index{color:#ddd}.dark-theme .aplayer .aplayer-list li .aplayer-list-author{color:#ddd}.dark-theme .aplayer .aplayer-lrc{text-shadow:-1px -1px 0 #666}.dark-theme .aplayer .aplayer-lrc:before{background:-moz-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:-webkit-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:linear-gradient(to bottom, #212121 0%, rgba(33,33,33,0) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#212121', endColorstr='#00212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc:after{background:-moz-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:-webkit-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:linear-gradient(to bottom, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#00212121', endColorstr='#cc212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc p{color:#fff}.dark-theme .aplayer .aplayer-miniswitcher{background:#484848}.dark-theme .aplayer .aplayer-miniswitcher .aplayer-icon path{fill:#eee}&lt;/style&gt;
@@ -92,7 +92,7 @@
 &lt;p&gt;另外，这个系列真的离不开一些工具，比如 &lt;code&gt;tldr&lt;/code&gt;（包名是 &lt;code&gt;tealdeer&lt;/code&gt;，不过其他版本的也很不错），以及 ChatGPT，DeepSeek 等 AI 工具的协助。当然 Git 自带的文档也很不错，在 Linux 上可以直接 &lt;code&gt;man git&lt;/code&gt; 查看总的介绍，使用 &lt;code&gt;man git-add&lt;/code&gt; 这样的格式来查看 Git 各个子命令（这里是 &lt;code&gt;add&lt;/code&gt;）的使用方式。而在 Windows 上，由于没有 &lt;code&gt;man&lt;/code&gt;，你可以使用 &lt;code&gt;git help git-add&lt;/code&gt; 或者更简单的 &lt;code&gt;git add --help&lt;/code&gt; 来查看在安装 Git 时就已经附赠的 Git 的文档。而且 Git 也有自己的 “官方教材”: &lt;a class="link" href="https://git-scm.com/book/id/v2" target="_blank" rel="noopener"
 &gt;&lt;em&gt;ProGit&lt;/em&gt;&lt;/a&gt;，它有多种语言的版本，作为教程而言自然是比 Git 的文档写的好懂的多。不过 Git 的文档写的也很不错就是了。&lt;/p&gt;
 &lt;p&gt;最后，非常感谢您能看到这里。如果你看完了这三篇的话，我更是感激不尽。如果这些文字能帮到你那就太好了，如果没有起太大帮助的话，希望能逗你一笑。哎呀至少笑一下吧，显得这个系列的文章也不是一无是处嘛。&lt;del&gt;（之前写的那个 &lt;a class="link" href="https://a-moment096.github.io/content/posts/Math_Note/Snake_Lemma/index.md" &gt;关于蛇引理的文章&lt;/a&gt; 里也说如果能博读者一笑就好了，结果发现，根本没几个人看呀可恶…… 更别说逗大家笑了，唉，实在是太失败了。）&lt;/del&gt;&lt;/p&gt;
-&lt;p&gt;那么，一如既往地，祝您身心愉快，工作顺利，少出 Bug ~！&lt;/p&gt;</description></item><item><title>2025! 非零的最后一位数字是多少？</title><link>https://a-moment096.github.io/p/2025-%E9%9D%9E%E9%9B%B6%E7%9A%84%E6%9C%80%E5%90%8E%E4%B8%80%E4%BD%8D%E6%95%B0%E5%AD%97%E6%98%AF%E5%A4%9A%E5%B0%91/</link><pubDate>Mon, 25 Aug 2025 18:01:23 +0800</pubDate><guid>https://a-moment096.github.io/p/2025-%E9%9D%9E%E9%9B%B6%E7%9A%84%E6%9C%80%E5%90%8E%E4%B8%80%E4%BD%8D%E6%95%B0%E5%AD%97%E6%98%AF%E5%A4%9A%E5%B0%91/</guid><description>&lt;img src="https://a-moment096.github.io/p/2025-%E9%9D%9E%E9%9B%B6%E7%9A%84%E6%9C%80%E5%90%8E%E4%B8%80%E4%BD%8D%E6%95%B0%E5%AD%97%E6%98%AF%E5%A4%9A%E5%B0%91/%E6%B8%85%E6%B0%B4%E5%90%9F.jpg" alt="Featured image of post 2025! 非零的最后一位数字是多少？" /&gt;&lt;p&gt;&lt;em&gt;在知乎上看到了&lt;a class="link" href="https://www.zhihu.com/question/666502327" target="_blank" rel="noopener"
+&lt;p&gt;那么，一如既往地，祝您身心愉快，工作顺利，少出 Bug ~！&lt;/p&gt;</description></item><item><title>2025! 非零的最后一位数字是多少？</title><link>https://a-moment096.github.io/posts/2025/08/factorial_last_digits/</link><pubDate>Mon, 25 Aug 2025 18:01:23 +0800</pubDate><guid>https://a-moment096.github.io/posts/2025/08/factorial_last_digits/</guid><description>&lt;img src="https://a-moment096.github.io/posts/2025/08/factorial_last_digits/%E6%B8%85%E6%B0%B4%E5%90%9F.jpg" alt="Featured image of post 2025! 非零的最后一位数字是多少？" /&gt;&lt;p&gt;&lt;em&gt;在知乎上看到了&lt;a class="link" href="https://www.zhihu.com/question/666502327" target="_blank" rel="noopener"
 &gt;这样一个有趣的问题&lt;/a&gt;，以及&lt;a class="link" href="https://www.zhihu.com/question/666502327/answer/18810753693" target="_blank" rel="noopener"
 &gt;很厉害的回答&lt;/a&gt;，实在是很有意思。这里就写一写我的解决这个问题的方法以及当时的心路历程吧。&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图出自 &lt;a class="link" href="https://www.pixiv.net/en/users/8605991" target="_blank" rel="noopener"
@@ -333,7 +333,7 @@ $$198260831540444006411614670836189813754477369022726862810627959961272975360000
 &lt;p&gt;事实上，我在计算时一直在用最后给出的这个 &lt;code&gt;quick_method&lt;/code&gt; 做结果对照。令人欣喜的是，结果是没问题的，我的算法设计顶住了 &lt;em&gt;没有答案&lt;/em&gt; 的压力。毕竟，从最后的这个答案上，能得到的有效信息几乎只有 “记得使用 5 进制”。很难反推出来的啦，这套算法。当然，关于这个问题，我的终极目标当然是吃透这个算法究竟是怎么生效的。不过这也已经是后话了。&lt;/p&gt;
 &lt;p&gt;很明显这个问题是和数论强相关的，尤其和取模运算有很大的关系。然而，这里并没有深究，主要原因一个在于进行进制转换已经很麻烦了，没必要介绍太多数论的内容， 另一个也是我自己的问题：我不会数论，我讲个毛呀。因此，本着有啥写啥，用啥写啥的精神，最后只写出来这么个半吊子。希望看到这篇文章的你感觉还算有点意思吧。&lt;/p&gt;
 &lt;p&gt;还有就是要感谢 [柴(oneis2much)] 佬的细心审稿。谢谢你！&lt;/p&gt;
-&lt;p&gt;那么最后，一如既往地，祝您身心健康，工作顺利，生活愉快。&lt;/p&gt;</description></item><item><title>（也许是）一个 Git 教程？其二</title><link>https://a-moment096.github.io/p/%E4%B9%9F%E8%AE%B8%E6%98%AF%E4%B8%80%E4%B8%AA-git-%E6%95%99%E7%A8%8B%E5%85%B6%E4%BA%8C/</link><pubDate>Thu, 14 Aug 2025 16:49:16 +0800</pubDate><guid>https://a-moment096.github.io/p/%E4%B9%9F%E8%AE%B8%E6%98%AF%E4%B8%80%E4%B8%AA-git-%E6%95%99%E7%A8%8B%E5%85%B6%E4%BA%8C/</guid><description>&lt;img src="https://a-moment096.github.io/posts/Shell_Note/Git_How/Tatara%20Kogasa.jpg" alt="Featured image of post （也许是）一个 Git 教程？其二" /&gt;&lt;p&gt;&lt;em&gt;上一节已经介绍了平时会怎么用 Git 进行单分支仓库的管理，这一节就来讲讲 Git 要怎么进行多分支协作吧！&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;那么最后，一如既往地，祝您身心健康，工作顺利，生活愉快。&lt;/p&gt;</description></item><item><title>（也许是）一个 Git 教程？其二</title><link>https://a-moment096.github.io/posts/2025/08/git_2/</link><pubDate>Thu, 14 Aug 2025 16:49:16 +0800</pubDate><guid>https://a-moment096.github.io/posts/2025/08/git_2/</guid><description>&lt;img src="https://a-moment096.github.io/posts/Shell_Note/Git_How/Tatara%20Kogasa.jpg" alt="Featured image of post （也许是）一个 Git 教程？其二" /&gt;&lt;p&gt;&lt;em&gt;上一节已经介绍了平时会怎么用 Git 进行单分支仓库的管理，这一节就来讲讲 Git 要怎么进行多分支协作吧！&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图信息请参考上一节内容，谢谢~&lt;/em&gt;&lt;/p&gt;
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
 &lt;style type="text/css"&gt;.dark-theme .aplayer{background:#212121}.dark-theme .aplayer.aplayer-withlist .aplayer-info{border-bottom-color:#5c5c5c}.dark-theme .aplayer.aplayer-fixed .aplayer-list{border-color:#5c5c5c}.dark-theme .aplayer .aplayer-body{background-color:#212121}.dark-theme .aplayer .aplayer-info{border-top-color:#212121}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-title{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-author{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time{color:#eee}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path{fill:#eee}.dark-theme .aplayer .aplayer-list{background-color:#212121}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb{background-color:#999}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover{background-color:#bbb}.dark-theme .aplayer .aplayer-list li{color:#fff;border-top-color:#666}.dark-theme .aplayer .aplayer-list li:hover{background:#4e4e4e}.dark-theme .aplayer .aplayer-list li.aplayer-list-light{background:#6c6c6c}.dark-theme .aplayer .aplayer-list li .aplayer-list-index{color:#ddd}.dark-theme .aplayer .aplayer-list li .aplayer-list-author{color:#ddd}.dark-theme .aplayer .aplayer-lrc{text-shadow:-1px -1px 0 #666}.dark-theme .aplayer .aplayer-lrc:before{background:-moz-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:-webkit-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:linear-gradient(to bottom, #212121 0%, rgba(33,33,33,0) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#212121', endColorstr='#00212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc:after{background:-moz-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:-webkit-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:linear-gradient(to bottom, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#00212121', endColorstr='#cc212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc p{color:#fff}.dark-theme .aplayer .aplayer-miniswitcher{background:#484848}.dark-theme .aplayer .aplayer-miniswitcher .aplayer-icon path{fill:#eee}&lt;/style&gt;
@@ -460,7 +460,7 @@ merge feature2 id: "finish, merge feat2"
 &lt;/h2&gt;&lt;p&gt;我必须立刻承认我这篇文章离不开 &lt;code&gt;tldr&lt;/code&gt;，准确来说是 &lt;code&gt;tealdeer&lt;/code&gt; 的帮助。很难想象没有 &lt;code&gt;tldr&lt;/code&gt; 我要怎么介绍可用命令。唉，我还是对 Git 不够熟悉。如果里面有任何的错漏，又或是对这个系列有什么建议，请直接告诉我，谢谢，我会及时修改的（球球了，告诉我哪里写的不好吧，呜呜呜）。&lt;/p&gt;
 &lt;p&gt;另外我还想推荐一个很不错的网站，&lt;a class="link" href="https://learngitbranching.js.org/" target="_blank" rel="noopener"
 &gt;Learn Git Branching&lt;/a&gt;，一个让你在实际操作中练习 Git 分支管理的网页，从进行提交，创建分支，合并分支，到变基 (Rebase)，远程库协作等复杂操作，全都有涉猎。我花了一下午通关，收获很大，因此墙裂建议。&lt;/p&gt;
-&lt;p&gt;下一节就是我们的最后一节内容，我打算聊聊 Git 的远程协作功能，以及协作时的注意事项等等。另外，由于深感 Git 命令之繁杂，我有计划做一个小工具来通过问答的方式给出合适的 Git 命令。我暂时将这个工具命名为 &lt;code&gt;Giao&lt;/code&gt;，希望不会难产吧，哈哈。有兴趣的话也可以关注我/给我提建议，谢谢啦。&lt;/p&gt;</description></item><item><title>（也许是）一个 Git 教程？其一</title><link>https://a-moment096.github.io/p/%E4%B9%9F%E8%AE%B8%E6%98%AF%E4%B8%80%E4%B8%AA-git-%E6%95%99%E7%A8%8B%E5%85%B6%E4%B8%80/</link><pubDate>Mon, 28 Jul 2025 22:49:16 +0800</pubDate><guid>https://a-moment096.github.io/p/%E4%B9%9F%E8%AE%B8%E6%98%AF%E4%B8%80%E4%B8%AA-git-%E6%95%99%E7%A8%8B%E5%85%B6%E4%B8%80/</guid><description>&lt;img src="https://a-moment096.github.io/posts/Shell_Note/Git_How/Tatara%20Kogasa.jpg" alt="Featured image of post （也许是）一个 Git 教程？其一" /&gt;&lt;p&gt;&lt;em&gt;Git 真的很好用，但是 Git 的命令真的好复杂。简单整理一下，就当写个教程好了~&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;下一节就是我们的最后一节内容，我打算聊聊 Git 的远程协作功能，以及协作时的注意事项等等。另外，由于深感 Git 命令之繁杂，我有计划做一个小工具来通过问答的方式给出合适的 Git 命令。我暂时将这个工具命名为 &lt;code&gt;Giao&lt;/code&gt;，希望不会难产吧，哈哈。有兴趣的话也可以关注我/给我提建议，谢谢啦。&lt;/p&gt;</description></item><item><title>（也许是）一个 Git 教程？其一</title><link>https://a-moment096.github.io/posts/2025/07/git_1/</link><pubDate>Mon, 28 Jul 2025 22:49:16 +0800</pubDate><guid>https://a-moment096.github.io/posts/2025/07/git_1/</guid><description>&lt;img src="https://a-moment096.github.io/posts/Shell_Note/Git_How/Tatara%20Kogasa.jpg" alt="Featured image of post （也许是）一个 Git 教程？其一" /&gt;&lt;p&gt;&lt;em&gt;Git 真的很好用，但是 Git 的命令真的好复杂。简单整理一下，就当写个教程好了~&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图出自 &lt;a class="link" href="https://www.pixiv.net/en/users/75383094" target="_blank" rel="noopener"
 &gt;夏空&lt;/a&gt; 太太所画的 &lt;a class="link" href="https://www.pixiv.net/en/artworks/116876998" target="_blank" rel="noopener"
 &gt;多多良 小伞&lt;/a&gt;，可爱捏~ 那就来一曲小伞的个人曲吧&lt;/em&gt;&lt;/p&gt;
@@ -561,7 +561,7 @@ F --&gt; D
 &lt;p&gt;这里要特别声明的是，这篇文章的比喻借鉴了 &lt;a class="link" href="https://space.bilibili.com/337242418" target="_blank" rel="noopener"
 &gt;HDAlex_John&lt;/a&gt; 的 Git 教程系列：&lt;a class="link" href="https://www.bilibili.com/video/BV1Hkr7YYEh8" target="_blank" rel="noopener"
 &gt;给傻子的 Git 教程&lt;/a&gt;，讲的相当好。好在我不是傻子，看着也不累，哈哈哈哈。（还是自己写起来比较累）&lt;/p&gt;
-&lt;p&gt;那么最后，感谢你看到这里，祝你心情愉悦，生活顺遂！~&lt;/p&gt;</description></item><item><title>使用 rsync 进行同步</title><link>https://a-moment096.github.io/p/%E4%BD%BF%E7%94%A8-rsync-%E8%BF%9B%E8%A1%8C%E5%90%8C%E6%AD%A5/</link><pubDate>Mon, 28 Jul 2025 12:43:39 +0800</pubDate><guid>https://a-moment096.github.io/p/%E4%BD%BF%E7%94%A8-rsync-%E8%BF%9B%E8%A1%8C%E5%90%8C%E6%AD%A5/</guid><description>&lt;img src="https://a-moment096.github.io/p/%E4%BD%BF%E7%94%A8-rsync-%E8%BF%9B%E8%A1%8C%E5%90%8C%E6%AD%A5/%E8%B4%9D%E5%8A%A0%E5%B0%94%E6%B9%96%E7%95%94.jpg" alt="Featured image of post 使用 rsync 进行同步" /&gt;&lt;p&gt;&lt;em&gt;有点受不太了 &lt;code&gt;scp&lt;/code&gt; 和 &lt;code&gt;sftp&lt;/code&gt; 了，也许是食用姿势不对吧，总之我选择 &lt;code&gt;rsync&lt;/code&gt;！&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;那么最后，感谢你看到这里，祝你心情愉悦，生活顺遂！~&lt;/p&gt;</description></item><item><title>使用 rsync 进行同步</title><link>https://a-moment096.github.io/posts/2025/07/use_rsync/</link><pubDate>Mon, 28 Jul 2025 12:43:39 +0800</pubDate><guid>https://a-moment096.github.io/posts/2025/07/use_rsync/</guid><description>&lt;img src="https://a-moment096.github.io/posts/2025/07/use_rsync/%E8%B4%9D%E5%8A%A0%E5%B0%94%E6%B9%96%E7%95%94.jpg" alt="Featured image of post 使用 rsync 进行同步" /&gt;&lt;p&gt;&lt;em&gt;有点受不太了 &lt;code&gt;scp&lt;/code&gt; 和 &lt;code&gt;sftp&lt;/code&gt; 了，也许是食用姿势不对吧，总之我选择 &lt;code&gt;rsync&lt;/code&gt;！&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;&lt;del&gt;图源找不到诶……从朋友那里薅过来的图，很漂亮就放在这里了&lt;/del&gt; 小爷我找到啦！是出自 &lt;a class="link" href="https://www.pixiv.net/en/users/8605991" target="_blank" rel="noopener"
 &gt;fasnakegod&lt;/a&gt; 大大的 &lt;a class="link" href="https://www.pixiv.net/en/artworks/125739568" target="_blank" rel="noopener"
 &gt;贝加尔湖畔&lt;/a&gt;。既然如此就分享一首钢琴曲吧。一首 &lt;strong&gt;騎士王の誇り&lt;/strong&gt; (骑士王的荣耀) 送给大家。（好像毫无关联诶 kora!）&lt;/em&gt;&lt;/p&gt;
@@ -658,7 +658,7 @@ F --&gt; D
 &lt;li&gt;&lt;a class="link" href="https://www.geeksforgeeks.org/linux-unix/rsync-command-in-linux-with-examples/" target="_blank" rel="noopener"
 &gt;rsync command in Linux with Examples&lt;/a&gt;: GeeksForGeeks 下的一个博客，内容很丰富。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;最后，感谢您能看到这里，祝您身体健康，心情愉悦~&lt;/p&gt;</description></item><item><title>上一个命令是什么？</title><link>https://a-moment096.github.io/p/%E4%B8%8A%E4%B8%80%E4%B8%AA%E5%91%BD%E4%BB%A4%E6%98%AF%E4%BB%80%E4%B9%88/</link><pubDate>Sat, 26 Jul 2025 20:09:18 +0800</pubDate><guid>https://a-moment096.github.io/p/%E4%B8%8A%E4%B8%80%E4%B8%AA%E5%91%BD%E4%BB%A4%E6%98%AF%E4%BB%80%E4%B9%88/</guid><description>&lt;img src="https://a-moment096.github.io/p/%E4%B8%8A%E4%B8%80%E4%B8%AA%E5%91%BD%E4%BB%A4%E6%98%AF%E4%BB%80%E4%B9%88/SEASIDE_SOLILOQUIES.png" alt="Featured image of post 上一个命令是什么？" /&gt;&lt;p&gt;&lt;em&gt;曾经总会好奇：怎么获取上一个命令呢？应该很简单才对吧？简单的搜索后，下面是我得到的结果，就记录一下吧&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;最后，感谢您能看到这里，祝您身体健康，心情愉悦~&lt;/p&gt;</description></item><item><title>上一个命令是什么？</title><link>https://a-moment096.github.io/posts/2025/07/last_command/</link><pubDate>Sat, 26 Jul 2025 20:09:18 +0800</pubDate><guid>https://a-moment096.github.io/posts/2025/07/last_command/</guid><description>&lt;img src="https://a-moment096.github.io/posts/2025/07/last_command/SEASIDE_SOLILOQUIES.png" alt="Featured image of post 上一个命令是什么？" /&gt;&lt;p&gt;&lt;em&gt;曾经总会好奇：怎么获取上一个命令呢？应该很简单才对吧？简单的搜索后，下面是我得到的结果，就记录一下吧&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图出自 Orangestar 的专辑 &lt;strong&gt;SEASIDE SOLILOQUIES&lt;/strong&gt;, 好看又好听。所以这里贴曲就贴这个专辑的主打歌好了：一首 &lt;strong&gt;Alice in 冷凍庫&lt;/strong&gt;，希望你喜欢。&lt;/em&gt;&lt;/p&gt;
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
 &lt;style type="text/css"&gt;.dark-theme .aplayer{background:#212121}.dark-theme .aplayer.aplayer-withlist .aplayer-info{border-bottom-color:#5c5c5c}.dark-theme .aplayer.aplayer-fixed .aplayer-list{border-color:#5c5c5c}.dark-theme .aplayer .aplayer-body{background-color:#212121}.dark-theme .aplayer .aplayer-info{border-top-color:#212121}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-title{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-author{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time{color:#eee}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path{fill:#eee}.dark-theme .aplayer .aplayer-list{background-color:#212121}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb{background-color:#999}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover{background-color:#bbb}.dark-theme .aplayer .aplayer-list li{color:#fff;border-top-color:#666}.dark-theme .aplayer .aplayer-list li:hover{background:#4e4e4e}.dark-theme .aplayer .aplayer-list li.aplayer-list-light{background:#6c6c6c}.dark-theme .aplayer .aplayer-list li .aplayer-list-index{color:#ddd}.dark-theme .aplayer .aplayer-list li .aplayer-list-author{color:#ddd}.dark-theme .aplayer .aplayer-lrc{text-shadow:-1px -1px 0 #666}.dark-theme .aplayer .aplayer-lrc:before{background:-moz-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:-webkit-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:linear-gradient(to bottom, #212121 0%, rgba(33,33,33,0) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#212121', endColorstr='#00212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc:after{background:-moz-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:-webkit-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:linear-gradient(to bottom, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#00212121', endColorstr='#cc212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc p{color:#fff}.dark-theme .aplayer .aplayer-miniswitcher{background:#484848}.dark-theme .aplayer .aplayer-miniswitcher .aplayer-icon path{fill:#eee}&lt;/style&gt;
@@ -896,7 +896,7 @@ F --&gt; D
 &lt;h2 id="总结"&gt;总结
 &lt;/h2&gt;&lt;p&gt;这里其实应该没有写完，不过就这些已经列出来的方法而言，我个人感觉是已经挺够用的了。毕竟，平时最常用的也就是 &lt;code&gt;sudo !!&lt;/code&gt; 来给 &lt;code&gt;pamcan -Syu&lt;/code&gt; 补上管理员权限而已，或者是在 &lt;code&gt;ls -l /path/to/file&lt;/code&gt; 确定文件/文件夹存在后用 &lt;code&gt;vim&lt;/code&gt; 或者 &lt;code&gt;cd&lt;/code&gt; 打开它罢了。&lt;/p&gt;
 &lt;p&gt;还有一点要注意的是，&lt;code&gt;bash&lt;/code&gt; 默认是不会像 &lt;code&gt;zsh&lt;/code&gt; 一样先提供一个预览，让你看看会发生什么的，而是直接就运行命令了。所以也许在 &lt;code&gt;bash&lt;/code&gt; 中使用这个功能时需要额外注意，特别是涉及一些比较危险的动作，比如 &lt;code&gt;rm&lt;/code&gt; 这类命令。此时你可以尝试先用 &lt;code&gt;:p&lt;/code&gt; 来打印出来要运行的命令，没啥问题就可以运行了。印象中应该还有一个办法，来让 &lt;code&gt;bash&lt;/code&gt; 也先提供一个预览而非直接运行。不过，因为我用的是 &lt;code&gt;zsh&lt;/code&gt;，就不纠结这个问题了。也许以后我还会更新这篇文章呢？哈哈。&lt;/p&gt;
-&lt;p&gt;那么，感谢你看到这里，祝您身心愉悦，身体健康~&lt;/p&gt;</description></item><item><title>微积分的符号</title><link>https://a-moment096.github.io/p/%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E7%AC%A6%E5%8F%B7/</link><pubDate>Thu, 24 Jul 2025 15:16:10 +0800</pubDate><guid>https://a-moment096.github.io/p/%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E7%AC%A6%E5%8F%B7/</guid><description>&lt;img src="https://a-moment096.github.io/p/%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E7%AC%A6%E5%8F%B7/Postscript.png" alt="Featured image of post 微积分的符号" /&gt;&lt;p&gt;&lt;em&gt;数学的一大特征大概就是多种多样的符号了吧。提到数学，大家总是能想起各种各样的公式，即便在我心目中，物理也许更能用各式各样的公式凸显自己的高深莫测，然而作为一种逻辑严密的学科，依旧少不了用各种符号来代指各种数学对象。本文就 &lt;strong&gt;微积分&lt;/strong&gt; 这一个子方向，浅谈这些风格迥异的记号，也方便接触不同领域的文献。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;那么，感谢你看到这里，祝您身心愉悦，身体健康~&lt;/p&gt;</description></item><item><title>微积分的符号</title><link>https://a-moment096.github.io/posts/2025/07/calculus_notation/</link><pubDate>Thu, 24 Jul 2025 15:16:10 +0800</pubDate><guid>https://a-moment096.github.io/posts/2025/07/calculus_notation/</guid><description>&lt;img src="https://a-moment096.github.io/posts/2025/07/calculus_notation/Postscript.png" alt="Featured image of post 微积分的符号" /&gt;&lt;p&gt;&lt;em&gt;数学的一大特征大概就是多种多样的符号了吧。提到数学，大家总是能想起各种各样的公式，即便在我心目中，物理也许更能用各式各样的公式凸显自己的高深莫测，然而作为一种逻辑严密的学科，依旧少不了用各种符号来代指各种数学对象。本文就 &lt;strong&gt;微积分&lt;/strong&gt; 这一个子方向，浅谈这些风格迥异的记号，也方便接触不同领域的文献。&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;最近很喜欢橘星（Orangestar）的这首 《Postscript》，夏背画的 MV 也很好看。所以就都放上来吧~ 可惜这首歌是要 VIP 的，想畅听的话可以试试&lt;a class="link" href="https://www.bilibili.com/video/BV1Qf421q7RA" target="_blank" rel="noopener"
 &gt;B站链接&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
@@ -992,7 +992,7 @@ $$&lt;p&gt;也就是我们对一个函数 $f(x)$ &lt;em&gt;多次作用上&lt;/e
 &lt;h3 id="牛顿物理的传承"&gt;牛顿：物理的传承
 &lt;/h3&gt;&lt;p&gt;作为与莱布尼茨共同开创微积分的数学家，牛顿的记号就显得有点小众了。他使用点来代表求导，如 $\dot{f}(x)$ 代表一阶导，$\ddot{f}(x)$ 代表二阶导。但是这种记号没有一个很好的表示 $n$ 阶导的方法，高阶导也显得异常臃肿：单纯地堆砌点号。一些老的文献中通常能看到函数上堆满了点，想确定是几阶导数还需要一个个数一下。相比之下，拉格朗日的做法就聪明的多了，直接用一个数字代表，非常简单明了。&lt;/p&gt;
 &lt;p&gt;不过，由于牛顿在近现代物理领域中近乎奠基人的地位，这个记号在物理学或与之相关的领域中也依旧被广泛应用。现在人们延续了牛顿引入这个记号时所设想的含义：对时间求导（也就是牛顿创立微积分时所说的 &lt;em&gt;流数&lt;/em&gt;）。一个点就是对时间求一阶导，两个点就是二阶导。由于物理领域不太常遇到对时间求高阶导，这样的记号也显得还不错。&lt;/p&gt;
-&lt;p&gt;举个例子来讲，物理中常用到的变分法需要欧拉-拉格朗日方程中，就有略显奇葩的做法，即对变量的导数再求导。具体还可以参考之前写的关于&lt;a class="link" href="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-i/#euler-lagrange-方程" &gt;欧拉-拉格朗日方程的简介&lt;/a&gt;的内容，或者这篇&lt;a class="link" href="https://a-moment096.github.io/p/%E5%85%B3%E4%BA%8E%E6%B3%9B%E5%87%BD%E5%AF%BC%E6%95%B0%E5%92%8C%E5%8F%98%E5%88%86%E6%B3%95-%E6%9D%A5%E8%87%AA%E7%9B%B8%E5%9C%BA%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC%E7%9A%84%E9%97%AE%E9%A2%98/" &gt;关于变分法的内容&lt;/a&gt;。比如说有这样一个力学体系，它的状态可以由体系内粒子的位置以及其速度来决定。此时我们可以写出其拉格朗日量：&lt;/p&gt;
+&lt;p&gt;举个例子来讲，物理中常用到的变分法需要欧拉-拉格朗日方程中，就有略显奇葩的做法，即对变量的导数再求导。具体还可以参考之前写的关于&lt;a class="link" href="https://a-moment096.github.io/posts/2024/11/pf_tutorial_1/#euler-lagrange-方程" &gt;欧拉-拉格朗日方程的简介&lt;/a&gt;的内容，或者这篇&lt;a class="link" href="https://a-moment096.github.io/posts/2025/01/functional_derivative/" &gt;关于变分法的内容&lt;/a&gt;。比如说有这样一个力学体系，它的状态可以由体系内粒子的位置以及其速度来决定。此时我们可以写出其拉格朗日量：&lt;/p&gt;
 $$
 L = L(q,v,t),
 $$&lt;p&gt;而使用了牛顿的记号的话，就可以写作如下的形式：&lt;/p&gt;
@@ -1022,7 +1022,7 @@ $$&lt;p&gt;这提取出来的算符形式，和所谓的特征方程是否有几
 &lt;li&gt;为了表达向量值函数的导数，引入了雅克比矩阵与雅克比行列式，来指代一阶导数。多元函数的雅克比矩阵的记号为 $\mathbf{J}_\mathbf{f(x)} = \dfrac{\p(f_1,\dots,f_m)}{\p(x_1,\dots,x_n)}$；&lt;/li&gt;
 &lt;li&gt;为了表达多元函数的二阶全导数，引入了黑塞矩阵，记号为 $\mathbf{H}_f$，其矩阵元素为 $(\mathbf{H}_f)_{i,j} = \pfrac{^2f(x)}{x_i\p y_j}$。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;这些符号极大地丰富了对多元函数的表达，可以说没有这些记号，多元函数的研究光写文字都得好久。而且最重要的是，&lt;strong&gt;矩阵&lt;/strong&gt; 的形式很好的说明了求导这个操作的线性性。当我第一次知道，二元函数的全导数是一个矩阵，且表达的是一点的切面的时候，是有点被震撼到的。具体内容可以参考大名鼎鼎的 &lt;em&gt;Baby Rudin&lt;/em&gt;，也就是 Walter Rudin 所著的 &lt;em&gt;Principles of Mathematical Analysis&lt;/em&gt;。&lt;a class="link" href="https://a-moment096.github.io/p/baby-rudin-%E8%AF%BB%E5%90%8E%E6%84%9F/" &gt;我就是从这本书知道这点的&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;这些符号极大地丰富了对多元函数的表达，可以说没有这些记号，多元函数的研究光写文字都得好久。而且最重要的是，&lt;strong&gt;矩阵&lt;/strong&gt; 的形式很好的说明了求导这个操作的线性性。当我第一次知道，二元函数的全导数是一个矩阵，且表达的是一点的切面的时候，是有点被震撼到的。具体内容可以参考大名鼎鼎的 &lt;em&gt;Baby Rudin&lt;/em&gt;，也就是 Walter Rudin 所著的 &lt;em&gt;Principles of Mathematical Analysis&lt;/em&gt;。&lt;a class="link" href="https://a-moment096.github.io/posts/2024/11/reading_rudin/" &gt;我就是从这本书知道这点的&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;另外，就像上面所说的，莱布尼茨的记号有对应的算符版本，雅克比的这些记号也是有自己的算符版本的，就是写作 $\pfrac{}{x}$ 的形式。这样的形式的优点类似与莱布尼茨记号的方式，我们这里不再多提。不过值得一提的是，由于微分流形/微分几何中对高维几何体与微积分之间联系的研究，这一保留了算符性质的表达偏导数的符号被这两个学科大量地应用，甚至已经不仅仅用以表达单纯的偏导数了。比如从偏导/方向导数中抽象而来的 &lt;em&gt;切向量&lt;/em&gt;，就直接使用了这样的偏导数记号来表示了。&lt;/p&gt;
 &lt;h3 id="也许是国内教材干的但是很无奈"&gt;也许是国内教材干的？但是很无奈……
 &lt;/h3&gt;&lt;p&gt;多元函数在微积分中的研究，不仅仅是多了几个依赖的变量这么简单。考虑多元的复合函数的情况，我们在对多元函数进行求（偏）导时必须考虑所有的变量，这就给多元函数的求导引入了极大的复杂性，也正因如此，不注意求导过程中的记号将会引起很大的歧义。&lt;/p&gt;
@@ -1084,7 +1084,7 @@ $$&lt;p&gt;这个楔积是何许人也？我们不过多介绍，但是可以说
 &lt;p&gt;积分的逆运算是什么呢？这需要看是什么积分：如果是不定积分，那应该就是求导运算了；而如果是指定积分的话，则应该是微分运算了。我们这里不多纠结这个问题，也许以后会填上这个坑？&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</description></item><item><title>搭建 FRP 服务</title><link>https://a-moment096.github.io/p/%E6%90%AD%E5%BB%BA-frp-%E6%9C%8D%E5%8A%A1/</link><pubDate>Wed, 23 Jul 2025 13:26:16 +0800</pubDate><guid>https://a-moment096.github.io/p/%E6%90%AD%E5%BB%BA-frp-%E6%9C%8D%E5%8A%A1/</guid><description>&lt;img src="https://a-moment096.github.io/p/%E6%90%AD%E5%BB%BA-frp-%E6%9C%8D%E5%8A%A1/BagPipe.jpg" alt="Featured image of post 搭建 FRP 服务" /&gt;&lt;p&gt;&lt;em&gt;怎么连接个服务器还得先用 ToDesk 连上个 Windows 电脑，再从这个电脑上 ssh 进服务器呀！？受不鸟，自己搭个 FRP 服务吧&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;</description></item><item><title>搭建 FRP 服务</title><link>https://a-moment096.github.io/posts/2025/07/frp_deploy/</link><pubDate>Wed, 23 Jul 2025 13:26:16 +0800</pubDate><guid>https://a-moment096.github.io/posts/2025/07/frp_deploy/</guid><description>&lt;img src="https://a-moment096.github.io/posts/2025/07/frp_deploy/BagPipe.jpg" alt="Featured image of post 搭建 FRP 服务" /&gt;&lt;p&gt;&lt;em&gt;怎么连接个服务器还得先用 ToDesk 连上个 Windows 电脑，再从这个电脑上 ssh 进服务器呀！？受不鸟，自己搭个 FRP 服务吧&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;图为可爱的风笛小姐，据不可靠消息，应该是来自于画师 &lt;a class="link" href="https://weibo.com/u/5979033109" target="_blank" rel="noopener"
 &gt;Liyu黎&lt;/a&gt; 老师画的 2022 音律联觉的贺图。既然如此，就配一首风笛小姐的个人 EP：《故乡的风》吧。&lt;/em&gt;&lt;/p&gt;
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
@@ -1320,7 +1320,7 @@ class FProxy,RProxy proxy
 &lt;p&gt;实际上，FRP 的使用方式远不局限于我上面写的这些。甚至如果你愿意点进上面贴出的那个教程连接，就会发现他写的会更加详细，配置项会更加复杂。不过，因为我的需求足够简单，所以我的配置也相对简单很多。&lt;/p&gt;
 &lt;p&gt;要提醒的是，防火墙其实也许不用设置得像我这里写的，这么严格。然而一定要留个心眼，毕竟网上坏人真的很多。比如我搭建好 FRP 服务的当天晚上就遭到了大洋彼岸朋友的亲切扫描，扫出端口之后就是一通尝试，用了什么 root，admin，user 等的账户名以及一先干就知道的一大堆弱密码来尝试连接进服务器。好消息是没有试出来，被我用防火墙给 ban 了。但还是给我惊出了一身冷汗。害人之心不可有，防人之心不可无呀。&lt;/p&gt;
 &lt;p&gt;还有要说的是，有一些场景是不可以使用 FRP 服务或者类似的远程访问的服务的。没错，向日葵，ToDesk 这类也不行。网上是有使用类似服务结果酿成大祸的情况的。在使用这类服务前，还是要先三思呀。&lt;/p&gt;
-&lt;p&gt;最后，一如既往地，辛苦你看到这里。感谢您的支持，也同时祝您生活愉快~&lt;/p&gt;</description></item><item><title>C++ Vector 的内存布局</title><link>https://a-moment096.github.io/p/c-vector-%E7%9A%84%E5%86%85%E5%AD%98%E5%B8%83%E5%B1%80/</link><pubDate>Tue, 27 May 2025 09:53:29 +0800</pubDate><guid>https://a-moment096.github.io/p/c-vector-%E7%9A%84%E5%86%85%E5%AD%98%E5%B8%83%E5%B1%80/</guid><description>&lt;img src="https://a-moment096.github.io/p/c-vector-%E7%9A%84%E5%86%85%E5%AD%98%E5%B8%83%E5%B1%80/Bamboo_Reimu.jpg" alt="Featured image of post C++ Vector 的内存布局" /&gt;&lt;p&gt;&lt;em&gt;探索一下 C++ 的容器 &lt;code&gt;vector&lt;/code&gt; 的内存布局，也算是解答我自己的一些疑虑咯&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;最后，一如既往地，辛苦你看到这里。感谢您的支持，也同时祝您生活愉快~&lt;/p&gt;</description></item><item><title>C++ Vector 的内存布局</title><link>https://a-moment096.github.io/posts/2025/05/vector_memory_layout/</link><pubDate>Tue, 27 May 2025 09:53:29 +0800</pubDate><guid>https://a-moment096.github.io/posts/2025/05/vector_memory_layout/</guid><description>&lt;img src="https://a-moment096.github.io/posts/2025/05/vector_memory_layout/Bamboo_Reimu.jpg" alt="Featured image of post C++ Vector 的内存布局" /&gt;&lt;p&gt;&lt;em&gt;探索一下 C++ 的容器 &lt;code&gt;vector&lt;/code&gt; 的内存布局，也算是解答我自己的一些疑虑咯&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图是从网上搜的，尝试寻找出处，未果。很可惜。选曲尝试选择了一首听着比较清淡的曲子 &lt;strong&gt;泪苔&lt;/strong&gt;，感觉比较符合头图清新淡雅的神社氛围。希望你喜欢。&lt;/em&gt;&lt;/p&gt;
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
 &lt;style type="text/css"&gt;.dark-theme .aplayer{background:#212121}.dark-theme .aplayer.aplayer-withlist .aplayer-info{border-bottom-color:#5c5c5c}.dark-theme .aplayer.aplayer-fixed .aplayer-list{border-color:#5c5c5c}.dark-theme .aplayer .aplayer-body{background-color:#212121}.dark-theme .aplayer .aplayer-info{border-top-color:#212121}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-title{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-author{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time{color:#eee}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path{fill:#eee}.dark-theme .aplayer .aplayer-list{background-color:#212121}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb{background-color:#999}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover{background-color:#bbb}.dark-theme .aplayer .aplayer-list li{color:#fff;border-top-color:#666}.dark-theme .aplayer .aplayer-list li:hover{background:#4e4e4e}.dark-theme .aplayer .aplayer-list li.aplayer-list-light{background:#6c6c6c}.dark-theme .aplayer .aplayer-list li .aplayer-list-index{color:#ddd}.dark-theme .aplayer .aplayer-list li .aplayer-list-author{color:#ddd}.dark-theme .aplayer .aplayer-lrc{text-shadow:-1px -1px 0 #666}.dark-theme .aplayer .aplayer-lrc:before{background:-moz-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:-webkit-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:linear-gradient(to bottom, #212121 0%, rgba(33,33,33,0) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#212121', endColorstr='#00212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc:after{background:-moz-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:-webkit-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:linear-gradient(to bottom, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#00212121', endColorstr='#cc212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc p{color:#fff}.dark-theme .aplayer .aplayer-miniswitcher{background:#484848}.dark-theme .aplayer .aplayer-miniswitcher .aplayer-icon path{fill:#eee}&lt;/style&gt;
@@ -1463,7 +1463,7 @@ class FProxy,RProxy proxy
 &gt;CppReference的介绍&lt;/a&gt;，里面介绍了这一原则的具体情况。&lt;/p&gt;
 &lt;p&gt;当然，每次使用新的特性，总是会引入一点点的开销。或许你会考虑，辛苦一下自己，让程序能再跑快点。这本身没什么问题，但是要指出的是，警惕提前优化。如果 &lt;code&gt;vector&lt;/code&gt; 并不是制约程序运行效率的关键部分（也就是所谓的&lt;em&gt;性能瓶颈&lt;/em&gt;），那么就先不要管它。当程序遇到了这个瓶颈，且只能通过优化数据结构才能提高性能时，再考虑把 &lt;code&gt;vector&lt;/code&gt; 修改为别的容器或者数据类型，这样做也许会更实际一些。&lt;/p&gt;
 &lt;p&gt;当然，如果这个小短文有什么问题，请直接指出来。本人也不是科班出身，写这篇笔记纯粹是记录一下学习过程。欢迎交流讨论。欢迎大佬拷打，动作轻一些就更好了。&lt;/p&gt;
-&lt;p&gt;那么最后，一如既往，祝您身心健康。&lt;/p&gt;</description></item><item><title>安装 Arch Linux，但是笔记本物理机</title><link>https://a-moment096.github.io/p/%E5%AE%89%E8%A3%85-arch-linux%E4%BD%86%E6%98%AF%E7%AC%94%E8%AE%B0%E6%9C%AC%E7%89%A9%E7%90%86%E6%9C%BA/</link><pubDate>Fri, 02 May 2025 16:12:04 +0800</pubDate><guid>https://a-moment096.github.io/p/%E5%AE%89%E8%A3%85-arch-linux%E4%BD%86%E6%98%AF%E7%AC%94%E8%AE%B0%E6%9C%AC%E7%89%A9%E7%90%86%E6%9C%BA/</guid><description>&lt;img src="https://a-moment096.github.io/p/%E5%AE%89%E8%A3%85-arch-linux%E4%BD%86%E6%98%AF%E7%AC%94%E8%AE%B0%E6%9C%AC%E7%89%A9%E7%90%86%E6%9C%BA/imgs/Alice.png" alt="Featured image of post 安装 Arch Linux，但是笔记本物理机" /&gt;&lt;p&gt;&lt;em&gt;之前在虚拟机上面装的 Arch Linux 根本不过瘾（搞笑，你根本就没更完(❌)），这次就把自己的小轻薄改成 Arch 好了。顺带，也记录一下实体机上安装可能会遇到的坑？&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;那么最后，一如既往，祝您身心健康。&lt;/p&gt;</description></item><item><title>安装 Arch Linux，但是笔记本物理机</title><link>https://a-moment096.github.io/posts/2025/05/arch_on_laptop/</link><pubDate>Fri, 02 May 2025 16:12:04 +0800</pubDate><guid>https://a-moment096.github.io/posts/2025/05/arch_on_laptop/</guid><description>&lt;img src="https://a-moment096.github.io/posts/2025/05/arch_on_laptop/imgs/Alice.png" alt="Featured image of post 安装 Arch Linux，但是笔记本物理机" /&gt;&lt;p&gt;&lt;em&gt;之前在虚拟机上面装的 Arch Linux 根本不过瘾（搞笑，你根本就没更完(❌)），这次就把自己的小轻薄改成 Arch 好了。顺带，也记录一下实体机上安装可能会遇到的坑？&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图出自 R Sound Design 的新曲 《アリス？》，一首很轻快的 V曲~&lt;/em&gt;&lt;/p&gt;
 &lt;!--
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
@@ -1484,10 +1484,10 @@ class FProxy,RProxy proxy
 &lt;h2 id="准备资料备份以及准备启动盘"&gt;准备：资料备份以及准备启动盘
 &lt;/h2&gt;&lt;p&gt;首先肯定是先把电脑上已有的资料都备份好。其实说实话没太多文件，主要是两个没打完的 Gal 吧（心虚），因为大部分的文件都其实已经搞到台式机上面了。一开始是想着把这些文件放在一块精心规划的小硬盘上，安装的时候不格式化就行了，但是感觉还是有点点点点危险，所以干脆还是挪到另一台机器上，把这台小本的硬盘全部格式化了得了。不过也许我应该考虑更加智能的备份方案？算了，以后再考虑（挖坑）。&lt;/p&gt;
 &lt;p&gt;其次就是准备启动盘。本来这次想要换一种安装媒介来着，比如光盘？（没错我有光盘刻录机，为了听 CD 买的 ()），结果还是嫌麻烦，放弃了。给虚拟机安装的时候不是已经有了镜像了吗？为什么不直接用呢？至于为什么没有下载最新的（最新的就是昨天刚出的，5月1日版本），是因为我刚准备下载的时候看到最上面一行小字：&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/p/%E5%AE%89%E8%A3%85-arch-linux%E4%BD%86%E6%98%AF%E7%AC%94%E8%AE%B0%E6%9C%AC%E7%89%A9%E7%90%86%E6%9C%BA/imgs/no_need_for_download.png"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2025/05/arch_on_laptop/imgs/no_need_for_download.png"
 width="1277"
 height="133"
-srcset="https://a-moment096.github.io/p/%E5%AE%89%E8%A3%85-arch-linux%E4%BD%86%E6%98%AF%E7%AC%94%E8%AE%B0%E6%9C%AC%E7%89%A9%E7%90%86%E6%9C%BA/imgs/no_need_for_download_hu_7fda391d774b472e.png 480w, https://a-moment096.github.io/p/%E5%AE%89%E8%A3%85-arch-linux%E4%BD%86%E6%98%AF%E7%AC%94%E8%AE%B0%E6%9C%AC%E7%89%A9%E7%90%86%E6%9C%BA/imgs/no_need_for_download_hu_d075c299b95d14fd.png 1024w"
+srcset="https://a-moment096.github.io/posts/2025/05/arch_on_laptop/imgs/no_need_for_download_hu_7fda391d774b472e.png 480w, https://a-moment096.github.io/posts/2025/05/arch_on_laptop/imgs/no_need_for_download_hu_d075c299b95d14fd.png 1024w"
 loading="lazy"
 alt="安装好再更新不挺好？（滚挂警告）"
 class="gallery-image"
@@ -1602,7 +1602,7 @@ data-flex-basis="2304px"
 &lt;p style="text-indent: 50px"&gt; 但是，你懂的，你可是 Linux，对吧？你已经是一个成熟的操作系统了，应该学会自己面对这些问题了，对吧？
 &lt;p align="right"&gt;Yours, &lt;/p&gt;
 &lt;p align="right"&gt;A Moment&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;谢谢你能看到这里。看完这一大堆废话，说实话也挺累的。如果这些整活儿的内容让你能开心一下，那就太好了。最后，一如既往，就祝您身心健康吧。&lt;/p&gt;</description></item><item><title>蛇年，Snake Lemma！</title><link>https://a-moment096.github.io/p/%E8%9B%87%E5%B9%B4snake-lemma/</link><pubDate>Thu, 27 Feb 2025 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/p/%E8%9B%87%E5%B9%B4snake-lemma/</guid><description>&lt;img src="https://a-moment096.github.io/p/%E8%9B%87%E5%B9%B4snake-lemma/Post%20Shelter-Inaba%20Kumori.png" alt="Featured image of post 蛇年，Snake Lemma！" /&gt;&lt;p&gt;&lt;em&gt;看了好多证明蛇引理的视频，我也来试试~ 蛇年到了，重在参与嘛&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;谢谢你能看到这里。看完这一大堆废话，说实话也挺累的。如果这些整活儿的内容让你能开心一下，那就太好了。最后，一如既往，就祝您身心健康吧。&lt;/p&gt;</description></item><item><title>蛇年，Snake Lemma！</title><link>https://a-moment096.github.io/posts/2025/02/snake_lemma/</link><pubDate>Thu, 27 Feb 2025 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/2025/02/snake_lemma/</guid><description>&lt;img src="https://a-moment096.github.io/posts/2025/02/snake_lemma/Post%20Shelter-Inaba%20Kumori.png" alt="Featured image of post 蛇年，Snake Lemma！" /&gt;&lt;p&gt;&lt;em&gt;看了好多证明蛇引理的视频，我也来试试~ 蛇年到了，重在参与嘛&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图出自 &lt;a class="link" href="https://twitter.com/NKNK_NGRMS" target="_blank" rel="noopener"
 &gt;ぬくぬくにぎりめし&lt;/a&gt; 太太， 为 &lt;a class="link" href="https://space.bilibili.com/26040194" target="_blank" rel="noopener"
 &gt;稲葉曇&lt;/a&gt; 所作的 &lt;a class="link" href="https://www.bilibili.com/video/BV1jS4y1y7Yf/" target="_blank" rel="noopener"
@@ -2143,7 +2143,7 @@ $$0 = g'(f'(a')) = g'(\beta(b)) = \gamma(g(b)),$$&lt;p&gt;其中第一个等号�
 &lt;p&gt;有数学家表示应区别含幺环范畴 $\mathsf{Ring}$ 与不含幺的环范畴 $\mathsf{Rng}$，我觉得环应该含有乘法幺元，且应该省略元音字母 $\mathsf{i}$，所以写成这样。请根据上下文确定环范畴具体是什么样的含义。&amp;#160;&lt;a href="#fnref:3" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</description></item><item><title>多相场模型与巨势方程</title><link>https://a-moment096.github.io/p/%E5%A4%9A%E7%9B%B8%E5%9C%BA%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%B7%A8%E5%8A%BF%E6%96%B9%E7%A8%8B/</link><pubDate>Sun, 05 Jan 2025 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/p/%E5%A4%9A%E7%9B%B8%E5%9C%BA%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%B7%A8%E5%8A%BF%E6%96%B9%E7%A8%8B/</guid><description>&lt;img src="https://a-moment096.github.io/p/%E5%A4%9A%E7%9B%B8%E5%9C%BA%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%B7%A8%E5%8A%BF%E6%96%B9%E7%A8%8B/ShoujouRei_MikitoP.png" alt="Featured image of post 多相场模型与巨势方程" /&gt;&lt;p&gt;&lt;em&gt;记录一下目前使用到的两个相场模型，包括它们的推导，假设和缺陷&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;</description></item><item><title>多相场模型与巨势方程</title><link>https://a-moment096.github.io/posts/2025/01/mpf_gp/</link><pubDate>Sun, 05 Jan 2025 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/2025/01/mpf_gp/</guid><description>&lt;img src="https://a-moment096.github.io/posts/2025/01/mpf_gp/ShoujouRei_MikitoP.png" alt="Featured image of post 多相场模型与巨势方程" /&gt;&lt;p&gt;&lt;em&gt;记录一下目前使用到的两个相场模型，包括它们的推导，假设和缺陷&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图出自 &lt;a class="link" href="https://twitter.com/katorei_" target="_blank" rel="noopener"
 &gt;かとうれい&lt;/a&gt; 太太， 为 &lt;a class="link" href="https://space.bilibili.com/108833238" target="_blank" rel="noopener"
 &gt;Mikito P&lt;/a&gt; 所作的 &lt;a class="link" href="https://www.bilibili.com/list/ml1197098078?spm_id_from=333.1007.0.0&amp;amp;oid=27304533&amp;amp;bvid=BV1Rs411N7Aq" target="_blank" rel="noopener"
@@ -2288,7 +2288,7 @@ $$&lt;p&gt;这里，相浓度前的 $\phi_\alpha$，相分数，就会引发问�
 &lt;/h2&gt;&lt;p&gt;其实很不好意思地说，这篇内容实际上只是对这两个公式做了一些简单的推导，而后面的解释部分我自认为写的并不好。好像所有的解释最后都要归结到一个结论上：好用。这个点实际上在考虑纯理论时是没有什么用处的：我需要精准的理论来描述物理现象，结果你却告诉我 XXX 然后 YYY 最后得到这些东西，它的理论背景可能不够强，但是它好用就够了。我相信这样的解释是很难真正地打动某个人的心的。&lt;/p&gt;
 &lt;p&gt;然而，好用其实就已经够了，因为这些理论到头来本就是为了能够帮助我们在某个假设的基础上能够更好地做模拟。在这里，这个基础假设可以说是 relaxation ansatz 以及等势假设。首先第一个假设能够让我们的体系从一个非平衡态&lt;em&gt;演化&lt;/em&gt;到平衡态，而不是只能直接地给出一个平衡态下的数量场，而第二个假设则能够解决相场法中界面上物质分配的问题，让演化能够得以在多相的情况下正常进行下去。这些假设，不论从过程还是结果来看，都是很有必要的。而除了这些假设外，（在不考虑我自己推导过程不够严谨的情况下，）推导过程都是尽可能严谨的。得到的结果，也正如上面所说，好用。&lt;/p&gt;
 &lt;p&gt;上面这一大段，我希望能传达到的意思就是，这些公式已经在较少的叫宽松的假设的基础上用尽可能严谨的逻辑推导出了可用，好用的结果，那么作为使用这些公式的人来讲，它好用就够了，坚持实用主义也许是更实际的做法。当然了，阅读本段的您也可以认为是我对自己的推导过程没有什么自信的开脱就是了，嘿嘿嘿~&lt;/p&gt;
-&lt;p&gt;那么最后，祝您生活愉快~&lt;/p&gt;</description></item><item><title>关于泛函导数和变分法-来自相场公式推导的问题</title><link>https://a-moment096.github.io/p/%E5%85%B3%E4%BA%8E%E6%B3%9B%E5%87%BD%E5%AF%BC%E6%95%B0%E5%92%8C%E5%8F%98%E5%88%86%E6%B3%95-%E6%9D%A5%E8%87%AA%E7%9B%B8%E5%9C%BA%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC%E7%9A%84%E9%97%AE%E9%A2%98/</link><pubDate>Sat, 04 Jan 2025 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/p/%E5%85%B3%E4%BA%8E%E6%B3%9B%E5%87%BD%E5%AF%BC%E6%95%B0%E5%92%8C%E5%8F%98%E5%88%86%E6%B3%95-%E6%9D%A5%E8%87%AA%E7%9B%B8%E5%9C%BA%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC%E7%9A%84%E9%97%AE%E9%A2%98/</guid><description>&lt;img src="https://a-moment096.github.io/p/%E5%85%B3%E4%BA%8E%E6%B3%9B%E5%87%BD%E5%AF%BC%E6%95%B0%E5%92%8C%E5%8F%98%E5%88%86%E6%B3%95-%E6%9D%A5%E8%87%AA%E7%9B%B8%E5%9C%BA%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC%E7%9A%84%E9%97%AE%E9%A2%98/HelloWorld-r-906.jpg" alt="Featured image of post 关于泛函导数和变分法-来自相场公式推导的问题" /&gt;&lt;p&gt;&lt;em&gt;本文系拾人牙慧之作，仅为解决公式推导过程中的一些边角料的数学问题，内容如有错漏还请谅解。另外，感谢老大中先生的《变分法基础》第三版。本文的主要内容几乎全部参考本书。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;那么最后，祝您生活愉快~&lt;/p&gt;</description></item><item><title>关于泛函导数和变分法-来自相场公式推导的问题</title><link>https://a-moment096.github.io/posts/2025/01/functional_derivative/</link><pubDate>Sat, 04 Jan 2025 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/2025/01/functional_derivative/</guid><description>&lt;img src="https://a-moment096.github.io/posts/2025/01/functional_derivative/HelloWorld-r-906.jpg" alt="Featured image of post 关于泛函导数和变分法-来自相场公式推导的问题" /&gt;&lt;p&gt;&lt;em&gt;本文系拾人牙慧之作，仅为解决公式推导过程中的一些边角料的数学问题，内容如有错漏还请谅解。另外，感谢老大中先生的《变分法基础》第三版。本文的主要内容几乎全部参考本书。&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图出自 &lt;a class="link" href="https://x.com/amn_amn_/status/1580863274081349632" target="_blank" rel="noopener"
 &gt;雨野&lt;/a&gt; 太太，为 &lt;a class="link" href="https://twitter.com/arukuremu" target="_blank" rel="noopener"
 &gt;r-906&lt;/a&gt; 所作的 &lt;a class="link" href="https://www.bilibili.com/video/BV1Ee4y1E7J6/" target="_blank" rel="noopener"
@@ -2552,7 +2552,7 @@ $$&lt;p&gt;这就是我们一开始的目标，式（4）。&lt;/p&gt;
 &lt;p&gt;请容许我这里混淆最小值和极小值，以及最值和极值，因为我们默认需要这个泛函取到的是极小的部分，且这个极小值一定是全局的，即最小值。&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</description></item><item><title>Phase Field: 相场模拟学习笔记 V</title><link>https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-v/</link><pubDate>Wed, 25 Dec 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-v/</guid><description>&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/Skadi.png" alt="Featured image of post Phase Field: 相场模拟学习笔记 V" /&gt;&lt;p&gt;&lt;em&gt;其实这节就是换成 Allen-Cahn 方程，然后多个变量而已，主要是俺不想实现 Voronoi 结构（逃&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;</description></item><item><title>Phase Field: 相场模拟学习笔记 V</title><link>https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/</link><pubDate>Wed, 25 Dec 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/</guid><description>&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/Skadi.png" alt="Featured image of post Phase Field: 相场模拟学习笔记 V" /&gt;&lt;p&gt;&lt;em&gt;其实这节就是换成 Allen-Cahn 方程，然后多个变量而已，主要是俺不想实现 Voronoi 结构（逃&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id="简介"&gt;简介
 &lt;/h2&gt;&lt;p&gt;上一部分我们以调幅分解为基础讨论了浓度场在 Cahn-Hilliard 方程下的演化过程。对相场方法而言，另一个无法绕开的演化方程则是针对非保守场变量的 Allen-Cahn 方程。这一部分我们将对晶粒长大过程进行分析，了解 Allen-Cahn 方程并使用它进行晶粒长大过程的模拟。&lt;/p&gt;
 &lt;h2 id="晶粒长大"&gt;晶粒长大
@@ -2567,7 +2567,7 @@ $$&lt;p&gt;这就是我们一开始的目标，式（4）。&lt;/p&gt;
 $$
 \frac{\partial \eta_i}{\partial t} = -L_{ij}\frac{\delta F}{\delta \eta_j}
 $$&lt;p&gt;
-简单地令人发指（也许）。简单来说，就是某个变量的变化速率受到所有的势的加权求和影响。但是要如何理解这个公式呢？它是怎么来的呢？其实如果有看过&lt;a class="link" href="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iv/#演化方程" &gt;上一篇&lt;/a&gt;内容的话，应该已经猜到了。如果物质不守恒，那么物质流的散度项就可以替换成某种别的形式。这个所谓“别的形式”需要满足这些条件：&lt;/p&gt;
+简单地令人发指（也许）。简单来说，就是某个变量的变化速率受到所有的势的加权求和影响。但是要如何理解这个公式呢？它是怎么来的呢？其实如果有看过&lt;a class="link" href="https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/#演化方程" &gt;上一篇&lt;/a&gt;内容的话，应该已经猜到了。如果物质不守恒，那么物质流的散度项就可以替换成某种别的形式。这个所谓“别的形式”需要满足这些条件：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;需要和能量/势相关以满足热力学要求&lt;/li&gt;
 &lt;li&gt;最终是令体系演化达到平衡的&lt;/li&gt;
@@ -2601,10 +2601,10 @@ f_{bulk}&amp;= \sum_{i}^{N}\left( -\frac{A}{2}\eta_i^2 + \frac{B}{4}\eta_i^4 \ri
 \end{align}
 $$&lt;p&gt;
 上面第二个等号是由于对 $j (j\neq i)$ 的求和的部分与 $i$ 无关，我们可以把 $\eta_i^2$ 从二重求和中提出来， 然后第三个等号中把对 $i$ 的求和的部分提取合并，最后第四个等号里提出 $\eta_i^2$，把 $\sum_{j\neq{}i}^{N} \eta_j^2$ 作为系数和 $-\dfrac{A}{2}$ 合并。现在我们把目光放在求和里面的这个，关于 $\eta_i$ 的多项式。为简单起见，我们设 $A = B = 1$。下面是这个函数在 $\sum_{j\neq{}i}^{N} \eta_j^2 = 0$ 时候， 即 方程(1) 的第一项的图像（当然，这个假设不够合理，但是我们可以先看看）。&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-v/double_well.png"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/double_well.png"
 width="1158"
 height="792"
-srcset="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-v/double_well_hu_d1b0704925dee7de.png 480w, https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-v/double_well_hu_6028a34aff034561.png 1024w"
+srcset="https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/double_well_hu_d1b0704925dee7de.png 480w, https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/double_well_hu_6028a34aff034561.png 1024w"
 loading="lazy"
 alt="双势阱？"
 class="gallery-image"
@@ -2612,10 +2612,10 @@ data-flex-grow="146"
 data-flex-basis="350px"
 &gt;&lt;/p&gt;
 &lt;p&gt;是我们很熟系的双势阱，但是这里有一些问题：序参量实际上不能小于0，也不应该大于1。如果我们只关注 0 到 1 之间的值，不难发现现在这个能量的最低点处在 $\eta = 1$ 的地方。这很合理：在其余的所有序参量（我们简称所有的 j ，对应的本个序参量则为 i）都为 0 的情况下，或者说在没有任何 j 的点，i 占据该点是理所应当的。考虑到每个序参量都是平权的，这说明了这个方程是符合体相内部的热力学要求的。接下来我们考察当这个求和项不为 0 的情况。j 求和的值的变化范围我们先设为 0 到 2。&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-v/a03.png"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/a03.png"
 width="1461"
 height="543"
-srcset="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-v/a03_hu_97f7afd50570c336.png 480w, https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-v/a03_hu_b8debade44013d6.png 1024w"
+srcset="https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/a03_hu_97f7afd50570c336.png 480w, https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/a03_hu_b8debade44013d6.png 1024w"
 loading="lazy"
 alt="j 的和为0.3时的图像"
 class="gallery-image"
@@ -2777,20 +2777,20 @@ $$&lt;p&gt;这个形式，熟悉吗？如果去掉第二项，那么这个方程
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-v/modified_5.png"
+&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/modified_5.png"
 width="647"
 height="647"
-srcset="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-v/modified_5_hu_b5fd896182b8b4a5.png 480w, https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-v/modified_5_hu_f8716b6e8d544b08.png 1024w"
+srcset="https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/modified_5_hu_b5fd896182b8b4a5.png 480w, https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/modified_5_hu_f8716b6e8d544b08.png 1024w"
 loading="lazy"
 alt="第5步"
 class="gallery-image"
 data-flex-grow="100"
 data-flex-basis="240px"
 &gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-v/modified_25.png"
+&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/modified_25.png"
 width="647"
 height="647"
-srcset="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-v/modified_25_hu_a244c2527aa373e3.png 480w, https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-v/modified_25_hu_488b15414f3c5d41.png 1024w"
+srcset="https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/modified_25_hu_a244c2527aa373e3.png 480w, https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/modified_25_hu_488b15414f3c5d41.png 1024w"
 loading="lazy"
 alt="第25步"
 class="gallery-image"
@@ -2803,20 +2803,20 @@ data-flex-basis="240px"
 &lt;td style="text-align: center"&gt;第25步&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-v/modified_75.png"
+&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/modified_75.png"
 width="647"
 height="647"
-srcset="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-v/modified_75_hu_1ea75bf6e2757f2b.png 480w, https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-v/modified_75_hu_8794650a68486477.png 1024w"
+srcset="https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/modified_75_hu_1ea75bf6e2757f2b.png 480w, https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/modified_75_hu_8794650a68486477.png 1024w"
 loading="lazy"
 alt="第75步"
 class="gallery-image"
 data-flex-grow="100"
 data-flex-basis="240px"
 &gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-v/modified_100.png"
+&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/modified_100.png"
 width="647"
 height="647"
-srcset="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-v/modified_100_hu_5d363fedc4fc5471.png 480w, https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-v/modified_100_hu_9a695a29e3ebfffb.png 1024w"
+srcset="https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/modified_100_hu_5d363fedc4fc5471.png 480w, https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/modified_100_hu_9a695a29e3ebfffb.png 1024w"
 loading="lazy"
 alt="第100步"
 class="gallery-image"
@@ -2836,16 +2836,16 @@ data-flex-basis="240px"
 &lt;p&gt;和上一个部分一样，对模型和模拟过程更深层的理解是离不开调整参数进行测试的。这两个案例都是比较简单的案例，可调的参数并不多，而且在模拟一开始的时候就已经有了参考的参数了，也不是面对的实际存在的体系，填入的数字的物理意义并没有很大，或者说是比较唯结果论的一些数据。在面对实际物理体系的时候，填参数这块儿是模拟过程最折磨的部分了。如何精确地控制这些参数，让他们配合起来形成一个符合物理特性，而且也能跑出合理结果，这也许是相场方法最麻烦的点。参数的可解释性经常会和参数的数值特性相悖，而能平衡二者的结果几乎都是经过精心设计的。总而言之，多调参数总没错。&lt;/p&gt;
 &lt;p&gt;那么这就是这个教程（自称）系列的最后一部分了。相场方法作为一种材料模拟方法，能做的东西非常多，但是其本身也有一定的限制。它最大的限制就是所谓的扩散界面，这样的界面解决了微分方程不好解的问题，但是也让这个方法很容易滑向物理意义不明确的道路，也经常会因为界面的存在而导致一些模拟发生数值失稳（即便引入界面常常就是希望能解决数值失稳的）。这些特点注定让相场成为一门比较复杂的交叉学科：需要对材料科学有深入的理解，对材料的物理特性有清晰的物理图像，对数值方法有清晰的认知，明白各种方法之间的优缺点选择合适的方法，最后还需要有一定的程序能力来支撑实现模拟。这也许也是相场复杂的地方吧。&lt;/p&gt;
 &lt;p&gt;相场方法并不是一个很新的模拟方法，但是它还有很大的发展空间。不论是比较传统的调幅分解的深入研究模拟，还是使用相场法研究固体力学、电磁学、流体力学这些更复杂的外场，又或者是开发新的程序软件来帮助进行相场模拟，甚至是使用机器学习来辅佐相场计算，这些都是相场正在发展的方向。这个系列的教程希望能够提供相场方法最基础的部分，比如相场的数学基础，程序基础等等。这些内容应该能够成为学习相场过程中比较重要的工具，以便于学习和发展更深层的更复杂的理论/实践。希望阅读本教程的您可以从中有所收获。&lt;/p&gt;
-&lt;p&gt;那么就是这样，最后祝您生活愉快，科研顺利~&lt;/p&gt;</description></item><item><title>Phase Field: 相场模拟学习笔记 IV</title><link>https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iv/</link><pubDate>Tue, 24 Dec 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iv/</guid><description>&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/Skadi.png" alt="Featured image of post Phase Field: 相场模拟学习笔记 IV" /&gt;&lt;p&gt;&lt;em&gt;终于，真的要做相场模拟了。先从最软的柿子，调幅分解开始吧&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;那么就是这样，最后祝您生活愉快，科研顺利~&lt;/p&gt;</description></item><item><title>Phase Field: 相场模拟学习笔记 IV</title><link>https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/</link><pubDate>Tue, 24 Dec 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/</guid><description>&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/Skadi.png" alt="Featured image of post Phase Field: 相场模拟学习笔记 IV" /&gt;&lt;p&gt;&lt;em&gt;终于，真的要做相场模拟了。先从最软的柿子，调幅分解开始吧&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id="简介"&gt;简介
 &lt;/h2&gt;&lt;p&gt;所以，经过前面三个部分的学习，利用 C++ 进行相场模拟的所有前置几乎全部获得了：公式推导，编程基础，基础算法等，几乎全都拿到手了。这部分开始，我们就正式开始用 C++ 实现相场模拟。我们先从一个很经典且简单的例子开始：A-B 合金的调幅分解。&lt;/p&gt;
 &lt;h2 id="调幅分解"&gt;调幅分解
 &lt;/h2&gt;&lt;p&gt;所以什么是调幅分解？它有什么特殊的地方？为什么相场法的第一个例子是算这么个有点陌生的东西？我们一个一个来解答这些问题。&lt;/p&gt;
 &lt;p&gt;首先值得明确的是，调幅分解是一类相变过程，且这类过程非常适合使用相场法来计算其演化过程。作为相变，我们自然关心其相图和自由能曲线的情况。下面是一副调幅分解的示意图：&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iv/energy_pd.jpg"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/energy_pd.jpg"
 width="410"
 height="320"
-srcset="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iv/energy_pd_hu_ab49983950f51127.jpg 480w, https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iv/energy_pd_hu_84d99d70eda55f77.jpg 1024w"
+srcset="https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/energy_pd_hu_ab49983950f51127.jpg 480w, https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/energy_pd_hu_84d99d70eda55f77.jpg 1024w"
 loading="lazy"
 alt="调幅分解的相图与自由能曲线"
 class="gallery-image"
@@ -2865,10 +2865,10 @@ f_{int}\left(\nabla c \right) &amp;= \kappa \left|\nabla c \right| ^2. \\
 \end{align*}
 $$&lt;p&gt;
 其中，$F$ 即为体系的总能量，由两部分的能量密度积分构成，第一部分为体自由能 $f_{bulk}$，其图像为一个双势阱：&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iv/AB_free_energy.png"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/AB_free_energy.png"
 width="640"
 height="480"
-srcset="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iv/AB_free_energy_hu_7f58b47345c970f5.png 480w, https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iv/AB_free_energy_hu_4425a7a0a178e408.png 1024w"
+srcset="https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/AB_free_energy_hu_7f58b47345c970f5.png 480w, https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/AB_free_energy_hu_4425a7a0a178e408.png 1024w"
 loading="lazy"
 alt="体自由能密度函数图像，其中模型参数选择 A = 1"
 class="gallery-image"
@@ -3080,20 +3080,20 @@ $$&lt;p&gt;根据这个公式，我们需要先计算浓度的 Laplacian，然�
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iv/Spinodal_5.png"
+&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/Spinodal_5.png"
 width="742"
 height="741"
-srcset="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iv/Spinodal_5_hu_862da98437ed3e4b.png 480w, https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iv/Spinodal_5_hu_85c36d16809c7576.png 1024w"
+srcset="https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/Spinodal_5_hu_862da98437ed3e4b.png 480w, https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/Spinodal_5_hu_85c36d16809c7576.png 1024w"
 loading="lazy"
 alt="alt text"
 class="gallery-image"
 data-flex-grow="100"
 data-flex-basis="240px"
 &gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iv/Spinodal_25.png"
+&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/Spinodal_25.png"
 width="742"
 height="741"
-srcset="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iv/Spinodal_25_hu_e4e7611d1e811ccf.png 480w, https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iv/Spinodal_25_hu_7e6ee2ae728ba08d.png 1024w"
+srcset="https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/Spinodal_25_hu_e4e7611d1e811ccf.png 480w, https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/Spinodal_25_hu_7e6ee2ae728ba08d.png 1024w"
 loading="lazy"
 alt="alt text"
 class="gallery-image"
@@ -3106,20 +3106,20 @@ data-flex-basis="240px"
 &lt;td style="text-align: center"&gt;第25步&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iv/Spinodal_75.png"
+&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/Spinodal_75.png"
 width="742"
 height="741"
-srcset="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iv/Spinodal_75_hu_ae746b36215901d2.png 480w, https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iv/Spinodal_75_hu_9a6d521da1f918a5.png 1024w"
+srcset="https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/Spinodal_75_hu_ae746b36215901d2.png 480w, https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/Spinodal_75_hu_9a6d521da1f918a5.png 1024w"
 loading="lazy"
 alt="alt text"
 class="gallery-image"
 data-flex-grow="100"
 data-flex-basis="240px"
 &gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iv/Spinodal_150.png"
+&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/Spinodal_150.png"
 width="742"
 height="741"
-srcset="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iv/Spinodal_150_hu_f8b929b1e73b9c4d.png 480w, https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iv/Spinodal_150_hu_ea69d8a9bea2356d.png 1024w"
+srcset="https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/Spinodal_150_hu_f8b929b1e73b9c4d.png 480w, https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/Spinodal_150_hu_ea69d8a9bea2356d.png 1024w"
 loading="lazy"
 alt="alt text"
 class="gallery-image"
@@ -3143,7 +3143,7 @@ data-flex-basis="240px"
 &lt;li&gt;调整界面能参数。越大的界面能参数会导致越宽的相界面。而该参数太小时可能会发生数值不稳定的现象&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;可以参考这些描述调参，观察参数的影响。调参几乎是相场模拟中必不可少的一环。&lt;/p&gt;
-&lt;p&gt;那么，我们就下一节见吧。&lt;/p&gt;</description></item><item><title>Phase Field: 相场模拟学习笔记 III</title><link>https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iii/</link><pubDate>Mon, 23 Dec 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iii/</guid><description>&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/Skadi.png" alt="Featured image of post Phase Field: 相场模拟学习笔记 III" /&gt;&lt;p&gt;&lt;em&gt;接上一节内容, 这节会简单介绍 C++ 的一些语法知识, 然后用 C++ 实现一维传热方程的模拟。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;那么，我们就下一节见吧。&lt;/p&gt;</description></item><item><title>Phase Field: 相场模拟学习笔记 III</title><link>https://a-moment096.github.io/posts/2024/12/pf_tutorial_3/</link><pubDate>Mon, 23 Dec 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/2024/12/pf_tutorial_3/</guid><description>&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/Skadi.png" alt="Featured image of post Phase Field: 相场模拟学习笔记 III" /&gt;&lt;p&gt;&lt;em&gt;接上一节内容, 这节会简单介绍 C++ 的一些语法知识, 然后用 C++ 实现一维传热方程的模拟。&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id="c一门高效的适宜科学计算的程序语言"&gt;C++：一门高效的，适宜科学计算的程序语言
 &lt;/h2&gt;&lt;p&gt;C++ 是一门经典的编程语言，于 1979 年由 Bjarne Stroustrup 设计，最初目的是为了成为更好的 C 语言，而后随着自身发展，成为了一门和 C 语言有许多相似之处，而又截然不同的一门语言。 C++ 支持多种编程范式，包括但不限于面向过程，面向对象，函数式，模板元编程等等。 其丰富的生态，高效的算法库以及&lt;em&gt;零成本抽象&lt;/em&gt;的理念让 C++ 极为适合进行各类科学运算。此外，C++ 的语法较为亲民，其多种编程范式也便于不同背景的开发者上手，故我们在这里引入 C++ 作为后续计算使用的程序语言。&lt;/p&gt;
 &lt;h3 id="c-简介"&gt;C++ 简介
@@ -3435,10 +3435,10 @@ $$ \dfrac{\partial T}{\partial t} = \mu \dfrac{\partial^2 T}{\partial x ^2},$$&l
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;73&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;74&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这里用到了一些技巧，在边界判断处使用下标运算是否越界来判断是否处于边界处，以及使用了 &lt;code&gt;&amp;lt;chrono&amp;gt;&lt;/code&gt; 库来监测程序运行时间。在成功运行并且用输出的 &lt;code&gt;csv&lt;/code&gt; 文件绘制曲线图后结果大致如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iii/heat_transfer_result.png"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2024/12/pf_tutorial_3/heat_transfer_result.png"
 width="500"
 height="380"
-srcset="https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iii/heat_transfer_result_hu_51db1d3192a486f.png 480w, https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-iii/heat_transfer_result_hu_b3d78924e08641b6.png 1024w"
+srcset="https://a-moment096.github.io/posts/2024/12/pf_tutorial_3/heat_transfer_result_hu_51db1d3192a486f.png 480w, https://a-moment096.github.io/posts/2024/12/pf_tutorial_3/heat_transfer_result_hu_b3d78924e08641b6.png 1024w"
 loading="lazy"
 alt="传热方程求解结果"
 class="gallery-image"
@@ -3448,7 +3448,7 @@ data-flex-basis="315px"
 &lt;p&gt;可以看到这个结果还是比较符合预期的。&lt;/p&gt;
 &lt;h2 id="结语"&gt;结语
 &lt;/h2&gt;&lt;p&gt;太久不更新，写起来有些不是很得心应手。写完这些回头一看，我竟然写了这么多东西？C++ 的基础知识点比我想象的要多很多呀。如果您看到了这里，感谢您的支持。C++ 平心而论，好上手是真的，在了解一定的编程相关知识后很快就能写出一份能跑的代码。但是，C++ 的语法特性繁杂，内容过于丰富导致的则是 C++ 极高的进阶难度。几乎没有人敢说自己精通 C++，因为总有一些奇怪的点会出现在这门历史丰富且悠久的语言上，而恰好提问者知道但回答者不知道。不过好在，如果仅仅是为了使用 C++ 进行简单的高效计算，那么它的入门内容应该只需要上面这些又臭又长的介绍就差不多够了。在实际编程过程中，大多数的函数和类的 API 都是需要现查的，甚至有时候确实还需要面对 CV 编程（复制粘贴）。此外，不论任何编程语言，语言本身只能提供一些好用的特性，或者一些包装好了的算法轮子。实际在编程时最重要的问题是怎么分析问题，并且就这个问题设计出一套算法来解决问题。希望语言不会称为您的绊脚石。&lt;/p&gt;
-&lt;p&gt;下一节我会正式采用 C++ 来实现在 Cahn-Hilliard 方程引导下调幅分解的相场（其实是浓度场）模拟。再下一节则会进行 Allen-Cahn 方程下的晶粒长大模拟，并作为这个入门系列的最后一部分。敬请期待。&lt;/p&gt;</description></item><item><title>Phase Field: 相场模拟学习笔记 II</title><link>https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-ii/</link><pubDate>Fri, 22 Nov 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-ii/</guid><description>&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/Skadi.png" alt="Featured image of post Phase Field: 相场模拟学习笔记 II" /&gt;&lt;p&gt;&lt;em&gt;接上一节内容, 这节会简单介绍 Python 的一些语法知识, 以及尝试使用 Python 实现上节所列出来的部分算法.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;下一节我会正式采用 C++ 来实现在 Cahn-Hilliard 方程引导下调幅分解的相场（其实是浓度场）模拟。再下一节则会进行 Allen-Cahn 方程下的晶粒长大模拟，并作为这个入门系列的最后一部分。敬请期待。&lt;/p&gt;</description></item><item><title>Phase Field: 相场模拟学习笔记 II</title><link>https://a-moment096.github.io/posts/2024/11/pf_tutorial_2/</link><pubDate>Fri, 22 Nov 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/2024/11/pf_tutorial_2/</guid><description>&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/Skadi.png" alt="Featured image of post Phase Field: 相场模拟学习笔记 II" /&gt;&lt;p&gt;&lt;em&gt;接上一节内容, 这节会简单介绍 Python 的一些语法知识, 以及尝试使用 Python 实现上节所列出来的部分算法.&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id="python-初探索"&gt;Python 初探索
 &lt;/h2&gt;&lt;h3 id="简介"&gt;简介
 &lt;/h3&gt;&lt;p&gt;Python 是一种蟒蛇, 而在编程语境下, Python 则是一门十分受欢迎的编程语言. Python 具有语法友好 (接近英语), 功能强大 (感谢开源与社区), 社区活跃等优秀的特点, 让 Python 成为入门编程的一个好选择.&lt;/p&gt;
@@ -3463,7 +3463,7 @@ data-flex-basis="315px"
 &lt;h4 id="编辑器-与-visual-studio-code"&gt;编辑器 与 Visual Studio Code
 &lt;/h4&gt;&lt;p&gt;在安装好 Python 解释器之后其实就已经可以开始 Python 编程了 (没错, 就是传说中的记事本编程). 然而这当然不是最好的方法, 这种方法光是考虑到没有代码高亮就让人很难以接受了. 这里我个人推荐 Visual Studio Code (以下简称 VSC).&lt;/p&gt;
 &lt;p&gt;VSC 功能强大, &lt;a class="link" href="https://code.visualstudio.com/" target="_blank" rel="noopener"
-&gt;安装&lt;/a&gt;方便, 插件生态极其丰富, 通过合理的配置近乎可以达到 IDE (Integrated Development Environment, 集成开发环境) 的水平. 我个人在写简单的 Python 脚本时几乎都是使用 VSC 写的. 一路默认安装后, 根据需要安装中文插件, 然后再在插件页面搜索 Python 即可安装 Python 插件全家桶, 然后就可以开始使用 VSC 写 Python 代码 (脚本)了. VSC 的安装与环境配置也可以参考我之前写的&lt;a class="link" href="https://a-moment096.github.io/p/python--vscode-%E5%BF%AB%E9%80%9F%E9%85%8D%E7%BD%AE/" &gt;博客文章&lt;/a&gt;.&lt;/p&gt;
+&gt;安装&lt;/a&gt;方便, 插件生态极其丰富, 通过合理的配置近乎可以达到 IDE (Integrated Development Environment, 集成开发环境) 的水平. 我个人在写简单的 Python 脚本时几乎都是使用 VSC 写的. 一路默认安装后, 根据需要安装中文插件, 然后再在插件页面搜索 Python 即可安装 Python 插件全家桶, 然后就可以开始使用 VSC 写 Python 代码 (脚本)了. VSC 的安装与环境配置也可以参考我之前写的&lt;a class="link" href="https://a-moment096.github.io/posts/2024/11/py_vsc/" &gt;博客文章&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;这里没有推荐 IDE, 因为 IDE 对这里仅仅使用 Python 做一些简单应用而言太过 &amp;ldquo;全能&amp;rdquo;, 或者说, 负担太重. 当然, 如果感兴趣, 可以考虑使用大名鼎鼎的 PyCharm. 这里不再赘述.&lt;/p&gt;
 &lt;h4 id="虚拟环境-venv-和-pip"&gt;虚拟环境, venv 和 pip
 &lt;/h4&gt;&lt;p&gt;这里简单介绍一下虚拟环境. 因为 Python 的生态丰富, 可能会碰到某些依赖相互冲突的情况, 尤其是在多人共同开发的情况下, 每个人的开发环境配置不同, 很容易导致依赖冲突. 为解决这种情况, 可以考虑使用 Python 的虚拟环境 &lt;code&gt;virtualenv&lt;/code&gt;. 创建的虚拟环境下有该虚拟环境所自有的一些包, 并且和该虚拟环境以外的部分是相互独立的. 使用 VSC 创建 &lt;code&gt;virtualenv&lt;/code&gt; 虚拟环境非常简单, 只需要 &lt;code&gt;Ctrl+Shift+P&lt;/code&gt; 打开 VSC 的命令, 然后搜索 &lt;code&gt;Python: Create Environment&lt;/code&gt; 即可根据向导一步步搭建虚拟环境.&lt;/p&gt;
@@ -3772,7 +3772,7 @@ $$&lt;p&gt;因此, 为了实现这一算法, 该算法实现的函数有如下�
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;46&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;laps&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;至此, 我们使用 Python 实现了我们将在相场模拟中使用的大部分算法. 具体的模拟过程中, 我们可能不需要用函数的方式将这些算法打包起来, 只需要直接实现即可.&lt;/p&gt;
 &lt;h3 id="总结"&gt;总结
-&lt;/h3&gt;&lt;p&gt;这部分内容希望能对上一章节中的算法内容有更进一步的补充, 并且希望能对算法如何实现为代码的过程起到促进理解的作用. 同时, 希望这里介绍的 Python 能成为您日常学习生活中的另一件有利工具, 并且能对编程这门技术有一定的入门理解, 为后续的程序编写提供基本的认识. 下一章节将会介绍如何使用 C++ 来实现这些算法, 并使用 C++ 完成一个小型的模拟, 尝试从这个小型模拟中了解模拟过程中会面临的问题, 以及数据最后的可视化方法.&lt;/p&gt;</description></item><item><title>从零开始的 Arch Linux 安装</title><link>https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/</link><pubDate>Sun, 10 Nov 2024 22:34:55 +0800</pubDate><guid>https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/</guid><description>&lt;img src="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/Reimu_Water.jpg" alt="Featured image of post 从零开始的 Arch Linux 安装" /&gt;&lt;p&gt;&lt;em&gt;久闻 Arch Linux 大名, 以前尝试过在自己的电脑上安装 Arch Linux, 但是无情地失败了. 最近又有了尝试安装的想法, 故顺带做此记录, 以便将来回头嘲讽自己的离谱操作.&lt;/em&gt;&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;这部分内容希望能对上一章节中的算法内容有更进一步的补充, 并且希望能对算法如何实现为代码的过程起到促进理解的作用. 同时, 希望这里介绍的 Python 能成为您日常学习生活中的另一件有利工具, 并且能对编程这门技术有一定的入门理解, 为后续的程序编写提供基本的认识. 下一章节将会介绍如何使用 C++ 来实现这些算法, 并使用 C++ 完成一个小型的模拟, 尝试从这个小型模拟中了解模拟过程中会面临的问题, 以及数据最后的可视化方法.&lt;/p&gt;</description></item><item><title>从零开始的 Arch Linux 安装</title><link>https://a-moment096.github.io/posts/2024/11/arch_install/</link><pubDate>Sun, 10 Nov 2024 22:34:55 +0800</pubDate><guid>https://a-moment096.github.io/posts/2024/11/arch_install/</guid><description>&lt;img src="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/Reimu_Water.jpg" alt="Featured image of post 从零开始的 Arch Linux 安装" /&gt;&lt;p&gt;&lt;em&gt;久闻 Arch Linux 大名, 以前尝试过在自己的电脑上安装 Arch Linux, 但是无情地失败了. 最近又有了尝试安装的想法, 故顺带做此记录, 以便将来回头嘲讽自己的离谱操作.&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id="引子-我与-linux"&gt;引子: 我与 Linux
 &lt;/h2&gt;&lt;p&gt;我认识 Linux 是从疫情在家无所适从的时候, 在自己的戴尔笔记本上安装 Ubuntu 开始的. 在那之前, 我只知道在 Windows 的江山之外, 还有一片名为 Linux 的世外桃源 (是的, 当时还不知道有 Mac OS,笑死). 而随着对编程兴趣的逐渐浓厚, 我愈发好奇那个 &amp;ldquo;只有高手才能玩得转&amp;rdquo; 的操作系统究竟是长什么样子. 于是, 在父亲的帮助下, 我在我的戴尔笔记本上划出来一小块硬盘留给 Linux (是的, 那时想安装双系统), 并且安装了 Ubuntu. 这个过程花费了我整整一天, 中间甚至和父亲闹了点矛盾, 把为数不多的精力全都耗光了. 自然, 安装好之后除了打开看了一眼, 安装了个 QQ 然后给同学炫耀之后, 便没了下文, 在随后的哪次格式化硬盘的时候跟着不见了.&lt;/p&gt;
 &lt;p&gt;第二次尝试 Linux 是在英国百无聊赖的时候开始的. 那时又是对电脑感兴趣, 又是好奇 Linux 操作系统是什么样子, 于是便又一次自己尝试安装 Linux. 这次是跟着鸟叔开始的, 故而安装了他的教程里的 CentOS. emmm 这个系统好像是比较老旧了还是怎么样, 目前也不是很火的样子. 鸟叔的教程还是相当细心认真的, 我这种纯小白 (也许) 也懵懵懂懂地在虚拟机上安装好了, 尝试了几个命令, 也感受到了命令行的神奇之处. 然而, 可能是好奇心太旺盛, 抑或是其他的原因, 我的兴趣点很快跑掉了, 因此这次对 Linux 的探索之旅止步于学会用命令行关机 (当然, 现在也已经忘了hhh)&lt;/p&gt;
@@ -3783,10 +3783,10 @@ $$&lt;p&gt;因此, 为了实现这一算法, 该算法实现的函数有如下�
 &lt;p&gt;VirtualBox 里给 Arch 预留了 4096MB (4GB)内存和 8GB 的硬盘容量, 希望这么多够 Arch 用. 校验过 SHA256 之后, 因为之前设置虚拟机的时候没有指定 Arch 的镜像文件 (因为还没有下载好), 所以在启动虚拟机之后会显示 &amp;ldquo;failed to boot&amp;rdquo; 并且要求指定 DVD 的路径. 这里选好 Arch 的镜像之后直接 &lt;code&gt;mount and reboot&lt;/code&gt;, 便会进入 Arch 的安装界面了. 从这里开始也算是正式进入 Arch Linux 的安装环节了.&lt;/p&gt;
 &lt;h2 id="开始-准备-安装"&gt;开始 (准备) 安装
 &lt;/h2&gt;&lt;h3 id="帅气的开屏-然后进入-shell"&gt;帅气的开屏, 然后进入 Shell
-&lt;/h3&gt;&lt;p&gt;&lt;img src="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/Welcome.png"
+&lt;/h3&gt;&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/Welcome.png"
 width="642"
 height="555"
-srcset="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/Welcome_hu_e95bc948cd3cad74.png 480w, https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/Welcome_hu_dcf31ce89937d835.png 1024w"
+srcset="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/Welcome_hu_e95bc948cd3cad74.png 480w, https://a-moment096.github.io/posts/2024/11/arch_install/imgs/Welcome_hu_dcf31ce89937d835.png 1024w"
 loading="lazy"
 alt="开始安装!"
 class="gallery-image"
@@ -3794,10 +3794,10 @@ data-flex-grow="115"
 data-flex-basis="277px"
 &gt;&lt;/p&gt;
 &lt;p&gt;这里我们打开 &lt;a class="link" href="imgs/https://wiki.archlinux.org/title/Installation_guide" &gt;Arch Linux Installation Guide&lt;/a&gt;以便根据官方教程进行安装. 我不打算用 Arch Install, 感觉那个没什么意思 (&lt;del&gt;上次也是这么说的&lt;/del&gt;). 按照小节 1.4.2, 我们使用了光盘介质 (ISO也算是光盘镜像), 所以直接第一个选项就可以了.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/Hacking.png"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/Hacking.png"
 width="1282"
 height="875"
-srcset="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/Hacking_hu_2f0e84073b957cc9.png 480w, https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/Hacking_hu_3c71f43612d684e9.png 1024w"
+srcset="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/Hacking_hu_2f0e84073b957cc9.png 480w, https://a-moment096.github.io/posts/2024/11/arch_install/imgs/Hacking_hu_3c71f43612d684e9.png 1024w"
 loading="lazy"
 alt="很帅"
 class="gallery-image"
@@ -3805,10 +3805,10 @@ data-flex-grow="146"
 data-flex-basis="351px"
 &gt;&lt;/p&gt;
 &lt;p&gt;旋即屏幕闪过很有黑客感觉的画面 (个人猜测是系统自检, 感觉像是 systemd, 因为左边有很多绿色 OK 字样), 然后便进入了如下画面:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/Install_1.png"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/Install_1.png"
 width="1282"
 height="875"
-srcset="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/Install_1_hu_38cbc1f281d7e433.png 480w, https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/Install_1_hu_f3d4b85ad9ae83cd.png 1024w"
+srcset="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/Install_1_hu_38cbc1f281d7e433.png 480w, https://a-moment096.github.io/posts/2024/11/arch_install/imgs/Install_1_hu_f3d4b85ad9ae83cd.png 1024w"
 loading="lazy"
 alt="安装画面1"
 class="gallery-image"
@@ -3831,10 +3831,10 @@ data-flex-basis="351px"
 &lt;p&gt;我们使用 &lt;code&gt;fdisk&lt;/code&gt; 来创建硬盘分区: &lt;code&gt;fdisk /dev/sda&lt;/code&gt; (我这里用来分区的磁盘是这个 &lt;code&gt;/dev/sda&lt;/code&gt;, 所以命令后面跟着的是这个). 这个命令行工具我从来没用过 (上次安装好像用的不是这个, 有个 TUI. 也有可能 fdisk 也有 TUI, 这次没搞出来吧), 查阅 fdisk 的说明, 直接从第四节开始, 首先是说明创建分区会抹掉这个磁盘上的所有数据. 很吓人, 还好我们在虚拟机上. 应该不会影响到我可爱的C盘的吧.&lt;/p&gt;
 &lt;p&gt;首先创建分区表. 这里使用 MBR 分区表, 因为默认如此. 根据网上的搜索结果, MBR 也适合我这种磁盘容量比较小的情况. 然后按 &lt;code&gt;n&lt;/code&gt; 进入创建分区引导界面. 这里会询问你的分区类型 (是初始还是拓展), 分区的编号, 以及起始和结束扇区. 第一个分区分给 &lt;code&gt;/boot&lt;/code&gt; 作为启动分区, 结束扇区前的部分一律默认 (初始分区, 1号, 从 2048 扇区开始), 然后通过命令 &lt;code&gt;+1G&lt;/code&gt; 来给第一个分区 1G 的容量. 然后创建第二个分区, 也是前面全部默认, 最后用 &lt;code&gt;+4G&lt;/code&gt; 指定容量为 4G. 这里我把这 4G 作为 Swap (好像就是虚拟内存)分区, 先使用命令 &lt;code&gt;l&lt;/code&gt; 查看每种分区类型的代码 (Swap的代码是 82), 然后 &lt;code&gt;t&lt;/code&gt; 开始改变分区类型, 选择 2 号, 类型写82. 最后把所有的空间分给第三个区, 然后给分区1打上 bootable 的标签 (用命令 &lt;code&gt;a&lt;/code&gt; 然后选 1 号).&lt;/p&gt;
 &lt;p&gt;这个时候可以用 &lt;code&gt;p&lt;/code&gt; 来查看分区结果, 会有一个表格写着所有的内容. 确认无误就可以 &lt;code&gt;w&lt;/code&gt; 来写入分区结果了. 接下来要格式化文件系统, 不然操作系统不知道文件是怎么存放的. 首先用命令 &lt;code&gt;lsblk -f&lt;/code&gt; 来查看现在的磁盘信息 (或者就是刚刚的分区情况). 这里我显示的结果如下:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/DiskPartition.png"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/DiskPartition.png"
 width="953"
 height="144"
-srcset="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/DiskPartition_hu_801ed1748e0604f8.png 480w, https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/DiskPartition_hu_3b48734c8b85f864.png 1024w"
+srcset="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/DiskPartition_hu_801ed1748e0604f8.png 480w, https://a-moment096.github.io/posts/2024/11/arch_install/imgs/DiskPartition_hu_3b48734c8b85f864.png 1024w"
 loading="lazy"
 alt="lsblk -f 结果"
 class="gallery-image"
@@ -3844,10 +3844,10 @@ data-flex-basis="1588px"
 &lt;p&gt;说明之前的 &lt;code&gt;sda&lt;/code&gt; 磁盘已经被分成了三个区域, 且都没有挂载. 现在我发现了一个问题: 我用的是 MBR 分区表, 为什么使用了 GPT分区表推荐的 &lt;code&gt;/boot&lt;/code&gt;呢? 而且之前还说没有开启 EFI, 现在又要搞 EFI 适用的 &lt;code&gt;/boot&lt;/code&gt;, 离谱. 很好, 那就重新分区吧.&lt;/p&gt;
 &lt;p&gt;Waiting&amp;hellip;&lt;/p&gt;
 &lt;p&gt;很好, 在熟练的操作下~~ (指现学)~~, 先用 &lt;code&gt;d&lt;/code&gt; 删除所有分区, 然后创建 4G 的 Swap 分区, 以及 bootable 的主目录分区. 现在的分区结果是这样的:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/DiskPartition1.png"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/DiskPartition1.png"
 width="950"
 height="130"
-srcset="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/DiskPartition1_hu_a9fbdaea39c39ce7.png 480w, https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/DiskPartition1_hu_bdf85989c95534d3.png 1024w"
+srcset="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/DiskPartition1_hu_a9fbdaea39c39ce7.png 480w, https://a-moment096.github.io/posts/2024/11/arch_install/imgs/DiskPartition1_hu_bdf85989c95534d3.png 1024w"
 loading="lazy"
 alt="新的分区结果"
 class="gallery-image"
@@ -3855,10 +3855,10 @@ data-flex-grow="730"
 data-flex-basis="1753px"
 &gt;&lt;/p&gt;
 &lt;p&gt;我们采用最经典的 &lt;code&gt;ext4&lt;/code&gt; 文件格式 (其实就是教程里这么推荐的) 来格式化 &lt;code&gt;/dev/sda2&lt;/code&gt;, 命令为: &lt;code&gt;mkfs.ext4 /dev/sda2&lt;/code&gt;; 然后用命令 &lt;code&gt;mkswap /dev/sda1&lt;/code&gt; 将 &lt;code&gt;/dev/sda1&lt;/code&gt;格式化为 &lt;code&gt;swap&lt;/code&gt;. 整体结果如下:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/DiskFormat.png"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/DiskFormat.png"
 width="952"
 height="382"
-srcset="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/DiskFormat_hu_9cd10e885e3f8544.png 480w, https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/DiskFormat_hu_250051301533719d.png 1024w"
+srcset="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/DiskFormat_hu_9cd10e885e3f8544.png 480w, https://a-moment096.github.io/posts/2024/11/arch_install/imgs/DiskFormat_hu_250051301533719d.png 1024w"
 loading="lazy"
 alt="分区格式化"
 class="gallery-image"
@@ -3870,10 +3870,10 @@ data-flex-basis="598px"
 &lt;/h2&gt;&lt;p&gt;刚刚才发现, 上一节内容是 &amp;ldquo;Pre-installation&amp;rdquo;. 晕了, 原来刚才的真的全都是准备工作吗? 好像看起来确实如此, 因为没有涉及到什么具体的软件安装之类的, 更像是创造一个能让 Arch Linux 得以安装的环境. 但是看安装说明, 安装这一节只有两个小节, 看来也不是很复杂的样子.&lt;/p&gt;
 &lt;p&gt;首先是要选择镜像. 这次选择的镜像感觉上是给系统使用的 pacman 的镜像源. Arch 已经有一份使用 Reflector 生成 的镜像服务器列表: &lt;code&gt;/etc/pacman.d/mirrorlist&lt;/code&gt;, 可以查看或编辑这个文件以使地理位置最靠近的服务器地址可以被优先使用. 这里我使用 &lt;code&gt;reflector --latest 10 --sort rate&lt;/code&gt; 来按照响应速度排序最近更新的10个服务器. 结果好多都 timeout 了. 尝试命令 &lt;code&gt;refletor --country China --age 12 --sort rate&lt;/code&gt;, 试了两次, 结果又是时好时坏. 不管了, 起码这个时好时坏也算是有源可用. 使用命令 &lt;code&gt;reflector --country China --age 12 --sort rate --save /etc/pacman.d/mirrorlist&lt;/code&gt; 即可把输出的结果保存到 &lt;code&gt;/etc/pacman.d/mirrorlist&lt;/code&gt; 里面.&lt;/p&gt;
 &lt;p&gt;接下来要安装必要的包. 根据教程, 这里安装的包有 &lt;code&gt;base&lt;/code&gt; 包, Linux 内核以及一些常见的固件. 使用命令: &lt;code&gt;pacstrap -K /mnt base linux linux-firmware&lt;/code&gt;. 之后便进入了安装界面.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/Installation.png"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/Installation.png"
 width="1282"
 height="875"
-srcset="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/Installation_hu_923ed015f5e8ee1c.png 480w, https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/Installation_hu_2ada90a77a96a96.png 1024w"
+srcset="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/Installation_hu_923ed015f5e8ee1c.png 480w, https://a-moment096.github.io/posts/2024/11/arch_install/imgs/Installation_hu_2ada90a77a96a96.png 1024w"
 loading="lazy"
 alt="安装界面"
 class="gallery-image"
@@ -3883,10 +3883,10 @@ data-flex-basis="351px"
 &lt;p&gt;看来要安装 127 个包, 不是个小数目. 而且我这里的网速看起来也比较一般. 慢慢等吧. 这个安装进度让我莫名想起安装 $\LaTeX$ 时候的样子.&lt;/p&gt;
 &lt;p&gt;Waiting&amp;hellip;&lt;/p&gt;
 &lt;p&gt;? 后续过程这么快的吗? 127个包看来都不是很大的样子. 安装好之后的样子是这样的:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/AfterInstall.png"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/AfterInstall.png"
 width="1282"
 height="875"
-srcset="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/AfterInstall_hu_e317c7d974aee116.png 480w, https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/AfterInstall_hu_bb8c85132c748127.png 1024w"
+srcset="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/AfterInstall_hu_e317c7d974aee116.png 480w, https://a-moment096.github.io/posts/2024/11/arch_install/imgs/AfterInstall_hu_bb8c85132c748127.png 1024w"
 loading="lazy"
 alt="安装完成"
 class="gallery-image"
@@ -3900,10 +3900,10 @@ data-flex-basis="351px"
 &lt;/h2&gt;&lt;h3 id="分区文件-chroot-以及本地化"&gt;分区文件, chroot, 以及本地化
 &lt;/h3&gt;&lt;p&gt;首先先生成一份分区表文件, 使用命令: &lt;code&gt;genfstab -U /mnt &amp;gt;&amp;gt; /mnt/etc/fstab&lt;/code&gt;. 之后用 &lt;code&gt;cat&lt;/code&gt; 看看结果是否正确, 不对的话需要改一下. &lt;code&gt;fstab&lt;/code&gt; 的 Arch Wiki 页面有一些例子, 这里就不再赘述 (因为我搞的好像没什么问题).&lt;/p&gt;
 &lt;p&gt;接下来 change root 到新系统下: &lt;code&gt;arch-chroot /mnt&lt;/code&gt;. 根据中文 Arch Wiki 的解释, chroot 是 &amp;ldquo;修改当前进程及其子进程的可见根目录的操作&amp;rdquo;. 似乎修改之后进程就会以 &lt;code&gt;/mnt&lt;/code&gt; 为根目录 &lt;code&gt;/&lt;/code&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/Chroot.png"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/Chroot.png"
 width="297"
 height="73"
-srcset="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/Chroot_hu_1e2ac4412cf332e5.png 480w, https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/Chroot_hu_f871e9a622e51ab2.png 1024w"
+srcset="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/Chroot_hu_1e2ac4412cf332e5.png 480w, https://a-moment096.github.io/posts/2024/11/arch_install/imgs/Chroot_hu_f871e9a622e51ab2.png 1024w"
 loading="lazy"
 alt="chroot 之后"
 class="gallery-image"
@@ -3957,10 +3957,10 @@ data-flex-basis="976px"
 &lt;/h3&gt;&lt;p&gt;很好, 先在这个系统距离可以让我谜之自信地喊出 &amp;ldquo;By the way, I use Arch&amp;rdquo; 感觉只剩下最后的一步: 安装桌面环境. 经过不细致的选择, 我决定使用 KDE Plasma 作为桌面环境 (Gnome 的拟物图标感觉不是很喜欢呀, 虽然左侧栏的设计很喜欢, 不过好像 Plasma 也可以搞?).&lt;/p&gt;
 &lt;p&gt;通过 &lt;code&gt;pacman -S plasma-meta&lt;/code&gt; 安装 plasma. 中间有几处需要选择一些诸如字体, 解码器之类的供应源, 网上没有多少讨论这个的, 所以就基本全部默认了. 然后顺手安装上 &lt;code&gt;zsh&lt;/code&gt;, &lt;code&gt;noto-fonts-cjk/emoji/extra&lt;/code&gt;, &lt;code&gt;bluez-utils&lt;/code&gt; &lt;code&gt;kitty&lt;/code&gt;, &lt;code&gt;konsole&lt;/code&gt; 和 &lt;code&gt;alacritty&lt;/code&gt;. 这里 &lt;code&gt;kitty&lt;/code&gt;, &lt;code&gt;konsole&lt;/code&gt;, &lt;code&gt;alacritty&lt;/code&gt; 三个重复了, 因为我想都试试.&lt;/p&gt;
 &lt;p&gt;首先打开蓝牙: &lt;code&gt;sudo systemctl enable --now bluetooth&lt;/code&gt;, 然后通过 &lt;code&gt;sudo systemctl enable --now sddm&lt;/code&gt; 即可进入 KDE Plasma 桌面. 剩下的就是点点点了, 点点点, 爽! 我必须立刻把任务栏 (这里叫 panel) 移至左边!&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/KDE.png"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/KDE.png"
 width="2055"
 height="1228"
-srcset="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/KDE_hu_26b0b26ff0c6bd3.png 480w, https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/KDE_hu_27cfeb358a561524.png 1024w"
+srcset="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/KDE_hu_26b0b26ff0c6bd3.png 480w, https://a-moment096.github.io/posts/2024/11/arch_install/imgs/KDE_hu_27cfeb358a561524.png 1024w"
 loading="lazy"
 alt="KDE Plasma 桌面环境"
 class="gallery-image"
@@ -3986,10 +3986,10 @@ data-flex-basis="401px"
 &lt;p&gt;实际尝试过后, 发现这个工具好像和我目前在用的有点八字不合? 在 Windows 上也尝试同款工具之后, 发现确实是不太好用, 唉. 那就算了吧. 不科学上网, 那又能怎么样呢?&lt;/p&gt;
 &lt;h4 id="终端字体怎么怪怪的-alacritty"&gt;终端字体怎么怪怪的? Alacritty?
 &lt;/h4&gt;&lt;p&gt;听闻 Alacritty 使用 Rust, 性能十分优异, 然而在我满心欢喜地调整系统字体为中文之后, Alacritty 的字体变得惨不忍睹了 &amp;hellip;&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/alacritty_font.png"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/alacritty_font.png"
 width="304"
 height="99"
-srcset="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/alacritty_font_hu_889e7bde4bf4dbc5.png 480w, https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/alacritty_font_hu_6802c400800e5e2b.png 1024w"
+srcset="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/alacritty_font_hu_889e7bde4bf4dbc5.png 480w, https://a-moment096.github.io/posts/2024/11/arch_install/imgs/alacritty_font_hu_6802c400800e5e2b.png 1024w"
 loading="lazy"
 alt="奇怪的字体"
 class="gallery-image"
@@ -3997,10 +3997,10 @@ data-flex-grow="307"
 data-flex-basis="736px"
 &gt;&lt;/p&gt;
 &lt;p&gt;这究竟是怎么回事? 在热心群友的帮助下, 我查阅了 Alacritty 的 Arch Wiki, 得到了令人震惊的事实: 我竟然没有配置字体文件. 直接下载安装 &lt;code&gt;ttf-cascadia-mono-nerd&lt;/code&gt; (其实不下载也可以), 然后在家文件夹下创建新文件夹和文件: &lt;code&gt;.config/alacritty/alacritty.toml&lt;/code&gt; 并使用 &lt;code&gt;vim&lt;/code&gt; 修改内容. 格式如下:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/alacritty_fc.png"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/alacritty_fc.png"
 width="429"
 height="441"
-srcset="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/alacritty_fc_hu_d477b62ca02ff625.png 480w, https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/alacritty_fc_hu_3c77fd6b7ff550e8.png 1024w"
+srcset="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/alacritty_fc_hu_d477b62ca02ff625.png 480w, https://a-moment096.github.io/posts/2024/11/arch_install/imgs/alacritty_fc_hu_3c77fd6b7ff550e8.png 1024w"
 loading="lazy"
 alt="alt text"
 class="gallery-image"
@@ -4009,7 +4009,7 @@ data-flex-basis="233px"
 &gt;&lt;/p&gt;
 &lt;p&gt;保存的时候便会直接应用. 其中 &lt;code&gt;family&lt;/code&gt; 是可以从设置的字体管理部分看到字体族的名字, 输入即可. 这里字体族主要是需要等宽字体族才能正常显示, 选择这款字体是因为我 Windows 上的终端字体也是用的这套 &lt;code&gt;Cascadia&lt;/code&gt;, 很喜欢所以就干脆保持一致了.&lt;/p&gt;
 &lt;h4 id="试试-zsh"&gt;试试 Zsh!
-&lt;/h4&gt;</description></item><item><title>Baby Rudin 读后感</title><link>https://a-moment096.github.io/p/baby-rudin-%E8%AF%BB%E5%90%8E%E6%84%9F/</link><pubDate>Fri, 01 Nov 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/p/baby-rudin-%E8%AF%BB%E5%90%8E%E6%84%9F/</guid><description>&lt;img src="https://a-moment096.github.io/p/baby-rudin-%E8%AF%BB%E5%90%8E%E6%84%9F/yoyoko.jpeg" alt="Featured image of post Baby Rudin 读后感" /&gt;&lt;p&gt;&lt;em&gt;本文写于9月22日，因为这是我读完的第一本数学专业的书，故而感觉很有必要记下来点什么，于是就有了这么一篇流水账。作为 Mathematics 部分的
+&lt;/h4&gt;</description></item><item><title>Baby Rudin 读后感</title><link>https://a-moment096.github.io/posts/2024/11/reading_rudin/</link><pubDate>Fri, 01 Nov 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/2024/11/reading_rudin/</guid><description>&lt;img src="https://a-moment096.github.io/posts/2024/11/reading_rudin/yoyoko.jpeg" alt="Featured image of post Baby Rudin 读后感" /&gt;&lt;p&gt;&lt;em&gt;本文写于9月22日，因为这是我读完的第一本数学专业的书，故而感觉很有必要记下来点什么，于是就有了这么一篇流水账。作为 Mathematics 部分的
 第一篇博文正是再好不过&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Principles of Mathematical Analysis&lt;/em&gt;, Walter Rudin (May 2, 1921 – May 20, 2010)
 所写的一本“ &lt;a class="link" href="https://www.zhihu.com/question/559683007/answer/3502165974" target="_blank" rel="noopener"
@@ -4099,7 +4099,7 @@ Aluffi 著) , &lt;em&gt;An Introduction to Manifolds&lt;/em&gt; (Loring W. Tu �
 是最有可能的应该是暂时放下数学.&lt;/p&gt;
 &lt;p&gt;最后, 我想对沃兹基德讨论组的小顾同学表达感谢, 没有他组织的倒霉
 蛋抽奖环节, 我不可能有机会一览这本经典分析学教材的风采. 希望后来的
-倒霉蛋抽奖能帮助到更多人, 也祝愿沃兹基德讨论组越来越好.&lt;/p&gt;</description></item><item><title>First Blog: 搭建这个博客</title><link>https://a-moment096.github.io/p/first-blog-%E6%90%AD%E5%BB%BA%E8%BF%99%E4%B8%AA%E5%8D%9A%E5%AE%A2/</link><pubDate>Fri, 01 Nov 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/p/first-blog-%E6%90%AD%E5%BB%BA%E8%BF%99%E4%B8%AA%E5%8D%9A%E5%AE%A2/</guid><description>&lt;img src="https://a-moment096.github.io/p/first-blog-%E6%90%AD%E5%BB%BA%E8%BF%99%E4%B8%AA%E5%8D%9A%E5%AE%A2/Reimu.png" alt="Featured image of post First Blog: 搭建这个博客" /&gt;&lt;p&gt;简单记录一下自己搭建博客的经历。&lt;/p&gt;
+倒霉蛋抽奖能帮助到更多人, 也祝愿沃兹基德讨论组越来越好.&lt;/p&gt;</description></item><item><title>First Blog: 搭建这个博客</title><link>https://a-moment096.github.io/posts/2024/11/build_blog/</link><pubDate>Fri, 01 Nov 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/2024/11/build_blog/</guid><description>&lt;img src="https://a-moment096.github.io/posts/2024/11/build_blog/Reimu.png" alt="Featured image of post First Blog: 搭建这个博客" /&gt;&lt;p&gt;简单记录一下自己搭建博客的经历。&lt;/p&gt;
 &lt;h2 id="begin-好想搭博客"&gt;Begin: 好想搭博客
 &lt;/h2&gt;&lt;p&gt;网上高强度冲浪的过程中，发现很多人都有自己的博客，特别是在读过几篇博文之后，对会搭建博客的大佬的艳羡之情愈发激烈，同时也很想在网上
 搭一个自己的小窝，记录一下自己的学习和生活（以便于跻身大佬的行列（在心理上））。 于是，在若干的纠结与选择之后，决定尝试用 Hexo + GitHub pages 的方式
@@ -4128,7 +4128,7 @@ Discard Stash 的时候是把改动文件全都删除到回收站，这才找回
 &lt;p&gt;也许会有人问我为什么花了大把时间在纠结主题上，说博客最重要的是内容。我也很同意内容为王的观点，但是用着不满意的主题，总感觉写起来不得劲儿。
 我比较相信 “工欲善其事，必先利其器”，反正是第一次搭博客，对主题的试错成本几乎是无限低 (不需要考虑迁移问题)，那么为何不多尝试不同的主题，
 一次配好一劳永逸呢？&lt;/p&gt;
-&lt;p&gt;So, that&amp;rsquo;s it. Thanks for reading~!&lt;/p&gt;</description></item><item><title>Phase Field: 相场模拟学习笔记 I</title><link>https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-i/</link><pubDate>Fri, 01 Nov 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/p/phase-field-%E7%9B%B8%E5%9C%BA%E6%A8%A1%E6%8B%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-i/</guid><description>&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/Skadi.png" alt="Featured image of post Phase Field: 相场模拟学习笔记 I" /&gt;&lt;p&gt;&lt;em&gt;这学期开了相场模拟培训, 故尝试将相场培训笔记性质的内容记录下来, 期望观感应该是目录式的笔记, 外带可有可无的说明文字.那么就开始吧&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;So, that&amp;rsquo;s it. Thanks for reading~!&lt;/p&gt;</description></item><item><title>Phase Field: 相场模拟学习笔记 I</title><link>https://a-moment096.github.io/posts/2024/11/pf_tutorial_1/</link><pubDate>Fri, 01 Nov 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/2024/11/pf_tutorial_1/</guid><description>&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/Skadi.png" alt="Featured image of post Phase Field: 相场模拟学习笔记 I" /&gt;&lt;p&gt;&lt;em&gt;这学期开了相场模拟培训, 故尝试将相场培训笔记性质的内容记录下来, 期望观感应该是目录式的笔记, 外带可有可无的说明文字.那么就开始吧&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id="phase-field-method-是什么"&gt;Phase Field Method 是什么？
 &lt;/h2&gt;&lt;p&gt;Phase Field Method, 直译为相场法, 是一种材料模拟方法, 其通过宽界面(平滑界面)的特点, 克服了另一个模拟方法: Stefan 法的窄界面无法计算的缺点, 实现了对材料中的相的演化的模拟.&lt;/p&gt;
 &lt;h3 id="基本概念解析"&gt;基本概念解析
@@ -4289,7 +4289,7 @@ $$&lt;p&gt;
 &lt;/ul&gt;
 &lt;p&gt;以上是比较常用的 $\nabla$ 算符性质. 实际上三种算符的组合恒等式非常多, 而实际上常用的等式则为以上所列.&lt;/p&gt;
 &lt;h2 id="总结"&gt;总结
-&lt;/h2&gt;&lt;p&gt;相场法作为一种材料模拟方法, 其内容涉及范围广, 包括材料学(热力学, 动力学), 数值方法, 计算机编程等等相关内容. 解决上述列出的若干问题是开始相场模拟所必须的数学方法基础. 下一部分计划通过 Python 代码实现本文中的若干算法, 包括数值解ODE, 向量微积分的实现, 以及数值积分方法.&lt;/p&gt;</description></item><item><title>Python + VSCode 快速配置</title><link>https://a-moment096.github.io/p/python--vscode-%E5%BF%AB%E9%80%9F%E9%85%8D%E7%BD%AE/</link><pubDate>Fri, 01 Nov 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/p/python--vscode-%E5%BF%AB%E9%80%9F%E9%85%8D%E7%BD%AE/</guid><description>&lt;img src="https://a-moment096.github.io/p/python--vscode-%E5%BF%AB%E9%80%9F%E9%85%8D%E7%BD%AE/%E5%A6%B9%E7%BA%A2.jpeg" alt="Featured image of post Python + VSCode 快速配置" /&gt;&lt;p&gt;&lt;em&gt;这是一篇写给初学 Python 的同学的教程，帮助使用 VS Code 快速配置好 Python 的开发环境，写于今年9月14日，
+&lt;/h2&gt;&lt;p&gt;相场法作为一种材料模拟方法, 其内容涉及范围广, 包括材料学(热力学, 动力学), 数值方法, 计算机编程等等相关内容. 解决上述列出的若干问题是开始相场模拟所必须的数学方法基础. 下一部分计划通过 Python 代码实现本文中的若干算法, 包括数值解ODE, 向量微积分的实现, 以及数值积分方法.&lt;/p&gt;</description></item><item><title>Python + VSCode 快速配置</title><link>https://a-moment096.github.io/posts/2024/11/py_vsc/</link><pubDate>Fri, 01 Nov 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/2024/11/py_vsc/</guid><description>&lt;img src="https://a-moment096.github.io/posts/2024/11/py_vsc/%E5%A6%B9%E7%BA%A2.jpeg" alt="Featured image of post Python + VSCode 快速配置" /&gt;&lt;p&gt;&lt;em&gt;这是一篇写给初学 Python 的同学的教程，帮助使用 VS Code 快速配置好 Python 的开发环境，写于今年9月14日，
 先搬运至此并改为 Markdown，作为 Programming部分的第一篇博文&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id="简介"&gt;简介
 &lt;/h2&gt;&lt;p&gt;Python, 一门伟大的语言. 简易的, 贴合人类语言的语法, 丰富的生态, 强

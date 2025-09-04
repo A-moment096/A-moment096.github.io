@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Arch on A Moment's Rest</title><link>https://a-moment096.github.io/tags/arch/</link><description>Recent content in Arch on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 29 Aug 2025 10:00:29 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/arch/index.xml" rel="self" type="application/rss+xml"/><item><title>安装 Arch Linux，但是笔记本物理机</title><link>https://a-moment096.github.io/p/%E5%AE%89%E8%A3%85-arch-linux%E4%BD%86%E6%98%AF%E7%AC%94%E8%AE%B0%E6%9C%AC%E7%89%A9%E7%90%86%E6%9C%BA/</link><pubDate>Fri, 02 May 2025 16:12:04 +0800</pubDate><guid>https://a-moment096.github.io/p/%E5%AE%89%E8%A3%85-arch-linux%E4%BD%86%E6%98%AF%E7%AC%94%E8%AE%B0%E6%9C%AC%E7%89%A9%E7%90%86%E6%9C%BA/</guid><description>&lt;img src="https://a-moment096.github.io/p/%E5%AE%89%E8%A3%85-arch-linux%E4%BD%86%E6%98%AF%E7%AC%94%E8%AE%B0%E6%9C%AC%E7%89%A9%E7%90%86%E6%9C%BA/imgs/Alice.png" alt="Featured image of post 安装 Arch Linux，但是笔记本物理机" /&gt;&lt;p&gt;&lt;em&gt;之前在虚拟机上面装的 Arch Linux 根本不过瘾（搞笑，你根本就没更完(❌)），这次就把自己的小轻薄改成 Arch 好了。顺带，也记录一下实体机上安装可能会遇到的坑？&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Arch on A Moment's Rest</title><link>https://a-moment096.github.io/tags/arch/</link><description>Recent content in Arch on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 04 Sep 2025 15:54:49 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/arch/index.xml" rel="self" type="application/rss+xml"/><item><title>安装 Arch Linux，但是笔记本物理机</title><link>https://a-moment096.github.io/posts/2025/05/arch_on_laptop/</link><pubDate>Fri, 02 May 2025 16:12:04 +0800</pubDate><guid>https://a-moment096.github.io/posts/2025/05/arch_on_laptop/</guid><description>&lt;img src="https://a-moment096.github.io/posts/2025/05/arch_on_laptop/imgs/Alice.png" alt="Featured image of post 安装 Arch Linux，但是笔记本物理机" /&gt;&lt;p&gt;&lt;em&gt;之前在虚拟机上面装的 Arch Linux 根本不过瘾（搞笑，你根本就没更完(❌)），这次就把自己的小轻薄改成 Arch 好了。顺带，也记录一下实体机上安装可能会遇到的坑？&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图出自 R Sound Design 的新曲 《アリス？》，一首很轻快的 V曲~&lt;/em&gt;&lt;/p&gt;
 &lt;!--
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
@@ -19,10 +19,10 @@
 &lt;h2 id="准备资料备份以及准备启动盘"&gt;准备：资料备份以及准备启动盘
 &lt;/h2&gt;&lt;p&gt;首先肯定是先把电脑上已有的资料都备份好。其实说实话没太多文件，主要是两个没打完的 Gal 吧（心虚），因为大部分的文件都其实已经搞到台式机上面了。一开始是想着把这些文件放在一块精心规划的小硬盘上，安装的时候不格式化就行了，但是感觉还是有点点点点危险，所以干脆还是挪到另一台机器上，把这台小本的硬盘全部格式化了得了。不过也许我应该考虑更加智能的备份方案？算了，以后再考虑（挖坑）。&lt;/p&gt;
 &lt;p&gt;其次就是准备启动盘。本来这次想要换一种安装媒介来着，比如光盘？（没错我有光盘刻录机，为了听 CD 买的 ()），结果还是嫌麻烦，放弃了。给虚拟机安装的时候不是已经有了镜像了吗？为什么不直接用呢？至于为什么没有下载最新的（最新的就是昨天刚出的，5月1日版本），是因为我刚准备下载的时候看到最上面一行小字：&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/p/%E5%AE%89%E8%A3%85-arch-linux%E4%BD%86%E6%98%AF%E7%AC%94%E8%AE%B0%E6%9C%AC%E7%89%A9%E7%90%86%E6%9C%BA/imgs/no_need_for_download.png"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2025/05/arch_on_laptop/imgs/no_need_for_download.png"
 width="1277"
 height="133"
-srcset="https://a-moment096.github.io/p/%E5%AE%89%E8%A3%85-arch-linux%E4%BD%86%E6%98%AF%E7%AC%94%E8%AE%B0%E6%9C%AC%E7%89%A9%E7%90%86%E6%9C%BA/imgs/no_need_for_download_hu_7fda391d774b472e.png 480w, https://a-moment096.github.io/p/%E5%AE%89%E8%A3%85-arch-linux%E4%BD%86%E6%98%AF%E7%AC%94%E8%AE%B0%E6%9C%AC%E7%89%A9%E7%90%86%E6%9C%BA/imgs/no_need_for_download_hu_d075c299b95d14fd.png 1024w"
+srcset="https://a-moment096.github.io/posts/2025/05/arch_on_laptop/imgs/no_need_for_download_hu_7fda391d774b472e.png 480w, https://a-moment096.github.io/posts/2025/05/arch_on_laptop/imgs/no_need_for_download_hu_d075c299b95d14fd.png 1024w"
 loading="lazy"
 alt="安装好再更新不挺好？（滚挂警告）"
 class="gallery-image"
@@ -137,7 +137,7 @@ data-flex-basis="2304px"
 &lt;p style="text-indent: 50px"&gt; 但是，你懂的，你可是 Linux，对吧？你已经是一个成熟的操作系统了，应该学会自己面对这些问题了，对吧？
 &lt;p align="right"&gt;Yours, &lt;/p&gt;
 &lt;p align="right"&gt;A Moment&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;谢谢你能看到这里。看完这一大堆废话，说实话也挺累的。如果这些整活儿的内容让你能开心一下，那就太好了。最后，一如既往，就祝您身心健康吧。&lt;/p&gt;</description></item><item><title>从零开始的 Arch Linux 安装</title><link>https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/</link><pubDate>Sun, 10 Nov 2024 22:34:55 +0800</pubDate><guid>https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/</guid><description>&lt;img src="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/Reimu_Water.jpg" alt="Featured image of post 从零开始的 Arch Linux 安装" /&gt;&lt;p&gt;&lt;em&gt;久闻 Arch Linux 大名, 以前尝试过在自己的电脑上安装 Arch Linux, 但是无情地失败了. 最近又有了尝试安装的想法, 故顺带做此记录, 以便将来回头嘲讽自己的离谱操作.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;谢谢你能看到这里。看完这一大堆废话，说实话也挺累的。如果这些整活儿的内容让你能开心一下，那就太好了。最后，一如既往，就祝您身心健康吧。&lt;/p&gt;</description></item><item><title>从零开始的 Arch Linux 安装</title><link>https://a-moment096.github.io/posts/2024/11/arch_install/</link><pubDate>Sun, 10 Nov 2024 22:34:55 +0800</pubDate><guid>https://a-moment096.github.io/posts/2024/11/arch_install/</guid><description>&lt;img src="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/Reimu_Water.jpg" alt="Featured image of post 从零开始的 Arch Linux 安装" /&gt;&lt;p&gt;&lt;em&gt;久闻 Arch Linux 大名, 以前尝试过在自己的电脑上安装 Arch Linux, 但是无情地失败了. 最近又有了尝试安装的想法, 故顺带做此记录, 以便将来回头嘲讽自己的离谱操作.&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id="引子-我与-linux"&gt;引子: 我与 Linux
 &lt;/h2&gt;&lt;p&gt;我认识 Linux 是从疫情在家无所适从的时候, 在自己的戴尔笔记本上安装 Ubuntu 开始的. 在那之前, 我只知道在 Windows 的江山之外, 还有一片名为 Linux 的世外桃源 (是的, 当时还不知道有 Mac OS,笑死). 而随着对编程兴趣的逐渐浓厚, 我愈发好奇那个 &amp;ldquo;只有高手才能玩得转&amp;rdquo; 的操作系统究竟是长什么样子. 于是, 在父亲的帮助下, 我在我的戴尔笔记本上划出来一小块硬盘留给 Linux (是的, 那时想安装双系统), 并且安装了 Ubuntu. 这个过程花费了我整整一天, 中间甚至和父亲闹了点矛盾, 把为数不多的精力全都耗光了. 自然, 安装好之后除了打开看了一眼, 安装了个 QQ 然后给同学炫耀之后, 便没了下文, 在随后的哪次格式化硬盘的时候跟着不见了.&lt;/p&gt;
 &lt;p&gt;第二次尝试 Linux 是在英国百无聊赖的时候开始的. 那时又是对电脑感兴趣, 又是好奇 Linux 操作系统是什么样子, 于是便又一次自己尝试安装 Linux. 这次是跟着鸟叔开始的, 故而安装了他的教程里的 CentOS. emmm 这个系统好像是比较老旧了还是怎么样, 目前也不是很火的样子. 鸟叔的教程还是相当细心认真的, 我这种纯小白 (也许) 也懵懵懂懂地在虚拟机上安装好了, 尝试了几个命令, 也感受到了命令行的神奇之处. 然而, 可能是好奇心太旺盛, 抑或是其他的原因, 我的兴趣点很快跑掉了, 因此这次对 Linux 的探索之旅止步于学会用命令行关机 (当然, 现在也已经忘了hhh)&lt;/p&gt;
@@ -148,10 +148,10 @@ data-flex-basis="2304px"
 &lt;p&gt;VirtualBox 里给 Arch 预留了 4096MB (4GB)内存和 8GB 的硬盘容量, 希望这么多够 Arch 用. 校验过 SHA256 之后, 因为之前设置虚拟机的时候没有指定 Arch 的镜像文件 (因为还没有下载好), 所以在启动虚拟机之后会显示 &amp;ldquo;failed to boot&amp;rdquo; 并且要求指定 DVD 的路径. 这里选好 Arch 的镜像之后直接 &lt;code&gt;mount and reboot&lt;/code&gt;, 便会进入 Arch 的安装界面了. 从这里开始也算是正式进入 Arch Linux 的安装环节了.&lt;/p&gt;
 &lt;h2 id="开始-准备-安装"&gt;开始 (准备) 安装
 &lt;/h2&gt;&lt;h3 id="帅气的开屏-然后进入-shell"&gt;帅气的开屏, 然后进入 Shell
-&lt;/h3&gt;&lt;p&gt;&lt;img src="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/Welcome.png"
+&lt;/h3&gt;&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/Welcome.png"
 width="642"
 height="555"
-srcset="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/Welcome_hu_e95bc948cd3cad74.png 480w, https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/Welcome_hu_dcf31ce89937d835.png 1024w"
+srcset="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/Welcome_hu_e95bc948cd3cad74.png 480w, https://a-moment096.github.io/posts/2024/11/arch_install/imgs/Welcome_hu_dcf31ce89937d835.png 1024w"
 loading="lazy"
 alt="开始安装!"
 class="gallery-image"
@@ -159,10 +159,10 @@ data-flex-grow="115"
 data-flex-basis="277px"
 &gt;&lt;/p&gt;
 &lt;p&gt;这里我们打开 &lt;a class="link" href="imgs/https://wiki.archlinux.org/title/Installation_guide" &gt;Arch Linux Installation Guide&lt;/a&gt;以便根据官方教程进行安装. 我不打算用 Arch Install, 感觉那个没什么意思 (&lt;del&gt;上次也是这么说的&lt;/del&gt;). 按照小节 1.4.2, 我们使用了光盘介质 (ISO也算是光盘镜像), 所以直接第一个选项就可以了.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/Hacking.png"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/Hacking.png"
 width="1282"
 height="875"
-srcset="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/Hacking_hu_2f0e84073b957cc9.png 480w, https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/Hacking_hu_3c71f43612d684e9.png 1024w"
+srcset="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/Hacking_hu_2f0e84073b957cc9.png 480w, https://a-moment096.github.io/posts/2024/11/arch_install/imgs/Hacking_hu_3c71f43612d684e9.png 1024w"
 loading="lazy"
 alt="很帅"
 class="gallery-image"
@@ -170,10 +170,10 @@ data-flex-grow="146"
 data-flex-basis="351px"
 &gt;&lt;/p&gt;
 &lt;p&gt;旋即屏幕闪过很有黑客感觉的画面 (个人猜测是系统自检, 感觉像是 systemd, 因为左边有很多绿色 OK 字样), 然后便进入了如下画面:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/Install_1.png"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/Install_1.png"
 width="1282"
 height="875"
-srcset="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/Install_1_hu_38cbc1f281d7e433.png 480w, https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/Install_1_hu_f3d4b85ad9ae83cd.png 1024w"
+srcset="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/Install_1_hu_38cbc1f281d7e433.png 480w, https://a-moment096.github.io/posts/2024/11/arch_install/imgs/Install_1_hu_f3d4b85ad9ae83cd.png 1024w"
 loading="lazy"
 alt="安装画面1"
 class="gallery-image"
@@ -196,10 +196,10 @@ data-flex-basis="351px"
 &lt;p&gt;我们使用 &lt;code&gt;fdisk&lt;/code&gt; 来创建硬盘分区: &lt;code&gt;fdisk /dev/sda&lt;/code&gt; (我这里用来分区的磁盘是这个 &lt;code&gt;/dev/sda&lt;/code&gt;, 所以命令后面跟着的是这个). 这个命令行工具我从来没用过 (上次安装好像用的不是这个, 有个 TUI. 也有可能 fdisk 也有 TUI, 这次没搞出来吧), 查阅 fdisk 的说明, 直接从第四节开始, 首先是说明创建分区会抹掉这个磁盘上的所有数据. 很吓人, 还好我们在虚拟机上. 应该不会影响到我可爱的C盘的吧.&lt;/p&gt;
 &lt;p&gt;首先创建分区表. 这里使用 MBR 分区表, 因为默认如此. 根据网上的搜索结果, MBR 也适合我这种磁盘容量比较小的情况. 然后按 &lt;code&gt;n&lt;/code&gt; 进入创建分区引导界面. 这里会询问你的分区类型 (是初始还是拓展), 分区的编号, 以及起始和结束扇区. 第一个分区分给 &lt;code&gt;/boot&lt;/code&gt; 作为启动分区, 结束扇区前的部分一律默认 (初始分区, 1号, 从 2048 扇区开始), 然后通过命令 &lt;code&gt;+1G&lt;/code&gt; 来给第一个分区 1G 的容量. 然后创建第二个分区, 也是前面全部默认, 最后用 &lt;code&gt;+4G&lt;/code&gt; 指定容量为 4G. 这里我把这 4G 作为 Swap (好像就是虚拟内存)分区, 先使用命令 &lt;code&gt;l&lt;/code&gt; 查看每种分区类型的代码 (Swap的代码是 82), 然后 &lt;code&gt;t&lt;/code&gt; 开始改变分区类型, 选择 2 号, 类型写82. 最后把所有的空间分给第三个区, 然后给分区1打上 bootable 的标签 (用命令 &lt;code&gt;a&lt;/code&gt; 然后选 1 号).&lt;/p&gt;
 &lt;p&gt;这个时候可以用 &lt;code&gt;p&lt;/code&gt; 来查看分区结果, 会有一个表格写着所有的内容. 确认无误就可以 &lt;code&gt;w&lt;/code&gt; 来写入分区结果了. 接下来要格式化文件系统, 不然操作系统不知道文件是怎么存放的. 首先用命令 &lt;code&gt;lsblk -f&lt;/code&gt; 来查看现在的磁盘信息 (或者就是刚刚的分区情况). 这里我显示的结果如下:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/DiskPartition.png"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/DiskPartition.png"
 width="953"
 height="144"
-srcset="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/DiskPartition_hu_801ed1748e0604f8.png 480w, https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/DiskPartition_hu_3b48734c8b85f864.png 1024w"
+srcset="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/DiskPartition_hu_801ed1748e0604f8.png 480w, https://a-moment096.github.io/posts/2024/11/arch_install/imgs/DiskPartition_hu_3b48734c8b85f864.png 1024w"
 loading="lazy"
 alt="lsblk -f 结果"
 class="gallery-image"
@@ -209,10 +209,10 @@ data-flex-basis="1588px"
 &lt;p&gt;说明之前的 &lt;code&gt;sda&lt;/code&gt; 磁盘已经被分成了三个区域, 且都没有挂载. 现在我发现了一个问题: 我用的是 MBR 分区表, 为什么使用了 GPT分区表推荐的 &lt;code&gt;/boot&lt;/code&gt;呢? 而且之前还说没有开启 EFI, 现在又要搞 EFI 适用的 &lt;code&gt;/boot&lt;/code&gt;, 离谱. 很好, 那就重新分区吧.&lt;/p&gt;
 &lt;p&gt;Waiting&amp;hellip;&lt;/p&gt;
 &lt;p&gt;很好, 在熟练的操作下~~ (指现学)~~, 先用 &lt;code&gt;d&lt;/code&gt; 删除所有分区, 然后创建 4G 的 Swap 分区, 以及 bootable 的主目录分区. 现在的分区结果是这样的:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/DiskPartition1.png"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/DiskPartition1.png"
 width="950"
 height="130"
-srcset="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/DiskPartition1_hu_a9fbdaea39c39ce7.png 480w, https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/DiskPartition1_hu_bdf85989c95534d3.png 1024w"
+srcset="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/DiskPartition1_hu_a9fbdaea39c39ce7.png 480w, https://a-moment096.github.io/posts/2024/11/arch_install/imgs/DiskPartition1_hu_bdf85989c95534d3.png 1024w"
 loading="lazy"
 alt="新的分区结果"
 class="gallery-image"
@@ -220,10 +220,10 @@ data-flex-grow="730"
 data-flex-basis="1753px"
 &gt;&lt;/p&gt;
 &lt;p&gt;我们采用最经典的 &lt;code&gt;ext4&lt;/code&gt; 文件格式 (其实就是教程里这么推荐的) 来格式化 &lt;code&gt;/dev/sda2&lt;/code&gt;, 命令为: &lt;code&gt;mkfs.ext4 /dev/sda2&lt;/code&gt;; 然后用命令 &lt;code&gt;mkswap /dev/sda1&lt;/code&gt; 将 &lt;code&gt;/dev/sda1&lt;/code&gt;格式化为 &lt;code&gt;swap&lt;/code&gt;. 整体结果如下:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/DiskFormat.png"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/DiskFormat.png"
 width="952"
 height="382"
-srcset="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/DiskFormat_hu_9cd10e885e3f8544.png 480w, https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/DiskFormat_hu_250051301533719d.png 1024w"
+srcset="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/DiskFormat_hu_9cd10e885e3f8544.png 480w, https://a-moment096.github.io/posts/2024/11/arch_install/imgs/DiskFormat_hu_250051301533719d.png 1024w"
 loading="lazy"
 alt="分区格式化"
 class="gallery-image"
@@ -235,10 +235,10 @@ data-flex-basis="598px"
 &lt;/h2&gt;&lt;p&gt;刚刚才发现, 上一节内容是 &amp;ldquo;Pre-installation&amp;rdquo;. 晕了, 原来刚才的真的全都是准备工作吗? 好像看起来确实如此, 因为没有涉及到什么具体的软件安装之类的, 更像是创造一个能让 Arch Linux 得以安装的环境. 但是看安装说明, 安装这一节只有两个小节, 看来也不是很复杂的样子.&lt;/p&gt;
 &lt;p&gt;首先是要选择镜像. 这次选择的镜像感觉上是给系统使用的 pacman 的镜像源. Arch 已经有一份使用 Reflector 生成 的镜像服务器列表: &lt;code&gt;/etc/pacman.d/mirrorlist&lt;/code&gt;, 可以查看或编辑这个文件以使地理位置最靠近的服务器地址可以被优先使用. 这里我使用 &lt;code&gt;reflector --latest 10 --sort rate&lt;/code&gt; 来按照响应速度排序最近更新的10个服务器. 结果好多都 timeout 了. 尝试命令 &lt;code&gt;refletor --country China --age 12 --sort rate&lt;/code&gt;, 试了两次, 结果又是时好时坏. 不管了, 起码这个时好时坏也算是有源可用. 使用命令 &lt;code&gt;reflector --country China --age 12 --sort rate --save /etc/pacman.d/mirrorlist&lt;/code&gt; 即可把输出的结果保存到 &lt;code&gt;/etc/pacman.d/mirrorlist&lt;/code&gt; 里面.&lt;/p&gt;
 &lt;p&gt;接下来要安装必要的包. 根据教程, 这里安装的包有 &lt;code&gt;base&lt;/code&gt; 包, Linux 内核以及一些常见的固件. 使用命令: &lt;code&gt;pacstrap -K /mnt base linux linux-firmware&lt;/code&gt;. 之后便进入了安装界面.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/Installation.png"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/Installation.png"
 width="1282"
 height="875"
-srcset="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/Installation_hu_923ed015f5e8ee1c.png 480w, https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/Installation_hu_2ada90a77a96a96.png 1024w"
+srcset="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/Installation_hu_923ed015f5e8ee1c.png 480w, https://a-moment096.github.io/posts/2024/11/arch_install/imgs/Installation_hu_2ada90a77a96a96.png 1024w"
 loading="lazy"
 alt="安装界面"
 class="gallery-image"
@@ -248,10 +248,10 @@ data-flex-basis="351px"
 &lt;p&gt;看来要安装 127 个包, 不是个小数目. 而且我这里的网速看起来也比较一般. 慢慢等吧. 这个安装进度让我莫名想起安装 $\LaTeX$ 时候的样子.&lt;/p&gt;
 &lt;p&gt;Waiting&amp;hellip;&lt;/p&gt;
 &lt;p&gt;? 后续过程这么快的吗? 127个包看来都不是很大的样子. 安装好之后的样子是这样的:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/AfterInstall.png"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/AfterInstall.png"
 width="1282"
 height="875"
-srcset="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/AfterInstall_hu_e317c7d974aee116.png 480w, https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/AfterInstall_hu_bb8c85132c748127.png 1024w"
+srcset="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/AfterInstall_hu_e317c7d974aee116.png 480w, https://a-moment096.github.io/posts/2024/11/arch_install/imgs/AfterInstall_hu_bb8c85132c748127.png 1024w"
 loading="lazy"
 alt="安装完成"
 class="gallery-image"
@@ -265,10 +265,10 @@ data-flex-basis="351px"
 &lt;/h2&gt;&lt;h3 id="分区文件-chroot-以及本地化"&gt;分区文件, chroot, 以及本地化
 &lt;/h3&gt;&lt;p&gt;首先先生成一份分区表文件, 使用命令: &lt;code&gt;genfstab -U /mnt &amp;gt;&amp;gt; /mnt/etc/fstab&lt;/code&gt;. 之后用 &lt;code&gt;cat&lt;/code&gt; 看看结果是否正确, 不对的话需要改一下. &lt;code&gt;fstab&lt;/code&gt; 的 Arch Wiki 页面有一些例子, 这里就不再赘述 (因为我搞的好像没什么问题).&lt;/p&gt;
 &lt;p&gt;接下来 change root 到新系统下: &lt;code&gt;arch-chroot /mnt&lt;/code&gt;. 根据中文 Arch Wiki 的解释, chroot 是 &amp;ldquo;修改当前进程及其子进程的可见根目录的操作&amp;rdquo;. 似乎修改之后进程就会以 &lt;code&gt;/mnt&lt;/code&gt; 为根目录 &lt;code&gt;/&lt;/code&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/Chroot.png"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/Chroot.png"
 width="297"
 height="73"
-srcset="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/Chroot_hu_1e2ac4412cf332e5.png 480w, https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/Chroot_hu_f871e9a622e51ab2.png 1024w"
+srcset="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/Chroot_hu_1e2ac4412cf332e5.png 480w, https://a-moment096.github.io/posts/2024/11/arch_install/imgs/Chroot_hu_f871e9a622e51ab2.png 1024w"
 loading="lazy"
 alt="chroot 之后"
 class="gallery-image"
@@ -322,10 +322,10 @@ data-flex-basis="976px"
 &lt;/h3&gt;&lt;p&gt;很好, 先在这个系统距离可以让我谜之自信地喊出 &amp;ldquo;By the way, I use Arch&amp;rdquo; 感觉只剩下最后的一步: 安装桌面环境. 经过不细致的选择, 我决定使用 KDE Plasma 作为桌面环境 (Gnome 的拟物图标感觉不是很喜欢呀, 虽然左侧栏的设计很喜欢, 不过好像 Plasma 也可以搞?).&lt;/p&gt;
 &lt;p&gt;通过 &lt;code&gt;pacman -S plasma-meta&lt;/code&gt; 安装 plasma. 中间有几处需要选择一些诸如字体, 解码器之类的供应源, 网上没有多少讨论这个的, 所以就基本全部默认了. 然后顺手安装上 &lt;code&gt;zsh&lt;/code&gt;, &lt;code&gt;noto-fonts-cjk/emoji/extra&lt;/code&gt;, &lt;code&gt;bluez-utils&lt;/code&gt; &lt;code&gt;kitty&lt;/code&gt;, &lt;code&gt;konsole&lt;/code&gt; 和 &lt;code&gt;alacritty&lt;/code&gt;. 这里 &lt;code&gt;kitty&lt;/code&gt;, &lt;code&gt;konsole&lt;/code&gt;, &lt;code&gt;alacritty&lt;/code&gt; 三个重复了, 因为我想都试试.&lt;/p&gt;
 &lt;p&gt;首先打开蓝牙: &lt;code&gt;sudo systemctl enable --now bluetooth&lt;/code&gt;, 然后通过 &lt;code&gt;sudo systemctl enable --now sddm&lt;/code&gt; 即可进入 KDE Plasma 桌面. 剩下的就是点点点了, 点点点, 爽! 我必须立刻把任务栏 (这里叫 panel) 移至左边!&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/KDE.png"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/KDE.png"
 width="2055"
 height="1228"
-srcset="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/KDE_hu_26b0b26ff0c6bd3.png 480w, https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/KDE_hu_27cfeb358a561524.png 1024w"
+srcset="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/KDE_hu_26b0b26ff0c6bd3.png 480w, https://a-moment096.github.io/posts/2024/11/arch_install/imgs/KDE_hu_27cfeb358a561524.png 1024w"
 loading="lazy"
 alt="KDE Plasma 桌面环境"
 class="gallery-image"
@@ -351,10 +351,10 @@ data-flex-basis="401px"
 &lt;p&gt;实际尝试过后, 发现这个工具好像和我目前在用的有点八字不合? 在 Windows 上也尝试同款工具之后, 发现确实是不太好用, 唉. 那就算了吧. 不科学上网, 那又能怎么样呢?&lt;/p&gt;
 &lt;h4 id="终端字体怎么怪怪的-alacritty"&gt;终端字体怎么怪怪的? Alacritty?
 &lt;/h4&gt;&lt;p&gt;听闻 Alacritty 使用 Rust, 性能十分优异, 然而在我满心欢喜地调整系统字体为中文之后, Alacritty 的字体变得惨不忍睹了 &amp;hellip;&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/alacritty_font.png"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/alacritty_font.png"
 width="304"
 height="99"
-srcset="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/alacritty_font_hu_889e7bde4bf4dbc5.png 480w, https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/alacritty_font_hu_6802c400800e5e2b.png 1024w"
+srcset="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/alacritty_font_hu_889e7bde4bf4dbc5.png 480w, https://a-moment096.github.io/posts/2024/11/arch_install/imgs/alacritty_font_hu_6802c400800e5e2b.png 1024w"
 loading="lazy"
 alt="奇怪的字体"
 class="gallery-image"
@@ -362,10 +362,10 @@ data-flex-grow="307"
 data-flex-basis="736px"
 &gt;&lt;/p&gt;
 &lt;p&gt;这究竟是怎么回事? 在热心群友的帮助下, 我查阅了 Alacritty 的 Arch Wiki, 得到了令人震惊的事实: 我竟然没有配置字体文件. 直接下载安装 &lt;code&gt;ttf-cascadia-mono-nerd&lt;/code&gt; (其实不下载也可以), 然后在家文件夹下创建新文件夹和文件: &lt;code&gt;.config/alacritty/alacritty.toml&lt;/code&gt; 并使用 &lt;code&gt;vim&lt;/code&gt; 修改内容. 格式如下:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/alacritty_fc.png"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/alacritty_fc.png"
 width="429"
 height="441"
-srcset="https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/alacritty_fc_hu_d477b62ca02ff625.png 480w, https://a-moment096.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84-arch-linux-%E5%AE%89%E8%A3%85/imgs/alacritty_fc_hu_3c77fd6b7ff550e8.png 1024w"
+srcset="https://a-moment096.github.io/posts/2024/11/arch_install/imgs/alacritty_fc_hu_d477b62ca02ff625.png 480w, https://a-moment096.github.io/posts/2024/11/arch_install/imgs/alacritty_fc_hu_3c77fd6b7ff550e8.png 1024w"
 loading="lazy"
 alt="alt text"
 class="gallery-image"

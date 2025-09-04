@@ -1,0 +1,175 @@
+<!doctype html><html lang=zh-cn dir=ltr><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><meta name=description content="一篇水文，读完其实约等于没读"><title>Baby Rudin 读后感</title><link rel=canonical href=https://a-moment096.github.io/posts/2024/11/reading_rudin/><link rel=stylesheet href=/scss/style.min.a36455dce3e3473c44ffd853d5809bc35f2494786890ce891ccee545c0b9b50f.css><meta property='og:title' content="Baby Rudin 读后感"><meta property='og:description' content="一篇水文，读完其实约等于没读"><meta property='og:url' content='https://a-moment096.github.io/posts/2024/11/reading_rudin/'><meta property='og:site_name' content="A Moment's Rest"><meta property='og:type' content='article'><meta property='article:section' content='Posts'><meta property='article:tag' content='Mathematical Analysis'><meta property='article:tag' content='Reading'><meta property='article:published_time' content='2024-11-01T00:00:00+08:00'><meta property='article:modified_time' content='2025-09-04T15:54:49+00:00'><meta property='og:image' content='https://a-moment096.github.io/posts/2024/11/reading_rudin/yoyoko.jpeg'><meta name=twitter:title content="Baby Rudin 读后感"><meta name=twitter:description content="一篇水文，读完其实约等于没读"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content='https://a-moment096.github.io/posts/2024/11/reading_rudin/yoyoko.jpeg'><link rel="shortcut icon" href=/coffee.png><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css integrity=sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV crossorigin=anonymous><script src=https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js integrity=sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8 crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/mhchem.min.js integrity=sha384-F2ptQFZqNJuqfGGl28mIXyQ5kXH48spn7rcoS0Y9psqIKAcZPLd1NzwFlm/bl1mH crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js integrity=sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05 crossorigin=anonymous defer></script><script>window.addEventListener("DOMContentLoaded",()=>{const e=[".main-article",".widget--toc"];e.forEach(e=>{const t=document.querySelector(e);t&&renderMathInElement(t,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}],ignoredClasses:["gist"]})})})</script><style>:root{--article-font-family:"Noto Serif SC", "Roboto", var(--base-font-family)}</style><script>(function(){const e=document.createElement("link");e.href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap",e.type="text/css",e.rel="stylesheet",document.head.appendChild(e)})()</script></head><body class=article-page><script>(function(){const e="StackColorScheme";localStorage.getItem(e)||localStorage.setItem(e,"auto")})()</script><script>(function(){const t="StackColorScheme",e=localStorage.getItem(t),n=window.matchMedia("(prefers-color-scheme: dark)").matches===!0;e=="dark"||e==="auto"&&n?document.documentElement.dataset.scheme="dark":document.documentElement.dataset.scheme="light"})()</script><div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky"><button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label=切换菜单>
+<span class=hamburger-box><span class=hamburger-inner></span></span></button><header><figure class=site-avatar><a href=/><img src=/img/avatar_hu_f9fb3a9e39cbb917.jpg width=300 height=300 class=site-logo loading=lazy alt=Avatar>
+</a><span class=emoji>💦</span></figure><div class=site-meta><h1 class=site-name><a href=/>A Moment's Rest</a></h1><h2 class=site-description>AMoment 的 Blog</h2></div></header><ol class=menu-social><li><a href=https://github.com/A-moment096 target=_blank title=GitHub rel=me><svg class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6.0 00-1.3-3.2 4.2 4.2.0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3.0 00-6.2.0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2.0 00-.1 3.2A4.6 4.6.0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a></li><li><a href=https://space.bilibili.com/44789578 target=_blank title=Bilibili rel=me><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-device-tv"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7m0 2a2 2 0 012-2h14a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M16 3l-4 4-4-4"/></svg></a></li><li><a href=mailto:amoment096@gmail.com target=_blank title="Contact Me" rel=me><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-mail"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"/><path d="M3 7l9 6 9-6"/></svg></a></li><li><a href=/index.xml target=_blank title=RSS rel=me><svg class="icon icon-tabler icon-tabler-rss" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="5" cy="19" r="1"/><path d="M4 4a16 16 0 0116 16"/><path d="M4 11a9 9 0 019 9"/></svg></a></li></ol><ol class=menu id=main-menu><li><a href=/><svg class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg>
+<span>Home</span></a></li><li><a href=/page/about/><svg class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+<span>About</span></a></li><li><a href=/page/archives/><svg class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+<span>Archives</span></a></li><li><a href=/page/friends/><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-hearts"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14.017 18 12 20l-7.5-7.428A5 5 0 1112 6.006a5 5 0 018.153 5.784"/><path d="M15.99 20l4.197-4.223a2.81 2.81.0 000-3.948 2.747 2.747.0 00-3.91-.007l-.28.282-.279-.283a2.747 2.747.0 00-3.91-.007 2.81 2.81.0 00-.007 3.948L15.983 20z"/></svg>
+<span>Friends</span></a></li><li><a href=/page/links/><svg class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M10 14a3.5 3.5.0 005 0l4-4a3.5 3.5.0 00-5-5l-.5.5"/><path d="M14 10a3.5 3.5.0 00-5 0l-4 4a3.5 3.5.0 005 5l.5-.5"/></svg>
+<span>Links</span></a></li><li><a href=/page/thoughts/><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-sticker-2"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 4h12a2 2 0 012 2v7h-5a2 2 0 00-2 2v5H6a2 2 0 01-2-2V6a2 2 0 012-2z"/><path d="M20 13v.172a2 2 0 01-.586 1.414l-4.828 4.828A2 2 0 0113.172 20H13"/></svg>
+<span>Thoughts</span></a></li><li><a href=/page/search/><svg class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
+<span>Search</span></a></li><li class=menu-bottom-section><ol class=menu><li id=dark-mode-toggle><svg class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="8" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+<svg class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="16" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+<span>暗色模式</span></li></ol></li></ol></aside><aside class="sidebar right-sidebar sticky"><form action=/page/search/ class="search-form widget"><p><label>搜索</label>
+<input name=keyword required placeholder=输入关键词...>
+<button title=搜索>
+<svg class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg></button></p></form><section class="widget archives"><div class=widget-header><div class=widget-icon><svg class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M9.828 9.172a4 4 0 100 5.656A10 10 0 0012 12a10 10 0 012.172-2.828 4 4 0 110 5.656A10 10 0 0112 12 10 10 0 009.828 9.172"/></svg></div><h2 class="widget-title section-title">归档</h2></div><div class=widget-body><div class=widget-archive--list><div class=archives-year><a href=/page/archives/#2025><span class=year>2025</span>
+<span class=count>13</span></a></div><div class=archives-year><a href=/page/archives/#2024><span class=year>2024</span>
+<span class=count>9</span></a></div></div></div></section><section class="widget tagCloud categories"><div class=widget-header><div class=widget-icon><svg class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg></div><h2 class="widget-title section-title">分类</h2></div><div class=widget-body><div class="tagCloud-tags scrollable-tags"><a href=/categories/programming/ class="tag-item category-frequency-5" title="Programming (14 篇文章)">Programming
+<span class=tag-count>14</span>
+</a><a href=/categories/mathematics/ class="tag-item category-frequency-3" title="Mathematics (9 篇文章)">Mathematics
+<span class=tag-count>9</span>
+</a><a href=/categories/phase-field/ class="tag-item category-frequency-2" title="Phase Field (6 篇文章)">Phase Field
+<span class=tag-count>6</span>
+</a><a href=/categories/others/ class="tag-item category-frequency-1" title="Others (3 篇文章)">Others
+<span class=tag-count>3</span></a></div></div></section><section class="widget tagCloud"><div class=widget-header><div class=widget-icon><svg class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11 3l9 9a1.5 1.5.0 010 2l-6 6a1.5 1.5.0 01-2 0L3 11V7a4 4 0 014-4h4"/><circle cx="9" cy="9" r="2"/></svg></div><h2 class="widget-title section-title">标签云</h2></div><div class=widget-body><div class="tagCloud-tags scrollable-tags"><a href=/tags/note/ class="tag-item tag-frequency-5" title="Note (9 篇文章)">Note
+<span class=tag-count>9</span>
+</a><a href=/tags/phase-field/ class="tag-item tag-frequency-4" title="Phase Field (6 篇文章)">Phase Field
+<span class=tag-count>6</span>
+</a><a href=/tags/tutorial/ class="tag-item tag-frequency-4" title="Tutorial (6 篇文章)">Tutorial
+<span class=tag-count>6</span>
+</a><a href=/tags/linux/ class="tag-item tag-frequency-3" title="Linux (5 篇文章)">Linux
+<span class=tag-count>5</span>
+</a><a href=/tags/shell/ class="tag-item tag-frequency-3" title="Shell (5 篇文章)">Shell
+<span class=tag-count>5</span>
+</a><a href=/tags/tools/ class="tag-item tag-frequency-3" title="Tools (5 篇文章)">Tools
+<span class=tag-count>5</span>
+</a><a href=/tags/c++/ class="tag-item tag-frequency-2" title="C++ (4 篇文章)">C++
+<span class=tag-count>4</span>
+</a><a href=/tags/numerical-analysis/ class="tag-item tag-frequency-2" title="Numerical Analysis (3 篇文章)">Numerical Analysis
+<span class=tag-count>3</span>
+</a><a href=/tags/python/ class="tag-item tag-frequency-2" title="Python (3 篇文章)">Python
+<span class=tag-count>3</span>
+</a><a href=/tags/software/ class="tag-item tag-frequency-2" title="Software (3 篇文章)">Software
+<span class=tag-count>3</span>
+</a><a href=/tags/vcs/ class="tag-item tag-frequency-2" title="VCS (3 篇文章)">VCS
+<span class=tag-count>3</span>
+</a><a href=/tags/arch/ class="tag-item tag-frequency-1" title="Arch (2 篇文章)">Arch
+<span class=tag-count>2</span>
+</a><a href=/tags/algebra/ class="tag-item tag-frequency-1" title="Algebra (1 篇文章)">Algebra
+<span class=tag-count>1</span>
+</a><a href=/tags/algorithm/ class="tag-item tag-frequency-1" title="Algorithm (1 篇文章)">Algorithm
+<span class=tag-count>1</span>
+</a><a href=/tags/benchmark/ class="tag-item tag-frequency-1" title="Benchmark (1 篇文章)">Benchmark
+<span class=tag-count>1</span>
+</a><a href=/tags/build-blog/ class="tag-item tag-frequency-1" title="Build Blog (1 篇文章)">Build Blog
+<span class=tag-count>1</span>
+</a><a href=/tags/calculus/ class="tag-item tag-frequency-1" title="Calculus (1 篇文章)">Calculus
+<span class=tag-count>1</span>
+</a><a href=/tags/calculus-of-variations/ class="tag-item tag-frequency-1" title="Calculus of Variations (1 篇文章)">Calculus of Variations
+<span class=tag-count>1</span>
+</a><a href=/tags/category-theory/ class="tag-item tag-frequency-1" title="Category Theory (1 篇文章)">Category Theory
+<span class=tag-count>1</span>
+</a><a href=/tags/data-structure/ class="tag-item tag-frequency-1" title="Data Structure (1 篇文章)">Data Structure
+<span class=tag-count>1</span>
+</a><a href=/tags/document/ class="tag-item tag-frequency-1" title="Document (1 篇文章)">Document
+<span class=tag-count>1</span>
+</a><a href=/tags/experience/ class="tag-item tag-frequency-1" title="Experience (1 篇文章)">Experience
+<span class=tag-count>1</span>
+</a><a href=/tags/math-problems/ class="tag-item tag-frequency-1" title="Math Problems (1 篇文章)">Math Problems
+<span class=tag-count>1</span>
+</a><a href=/tags/mathematical-analysis/ class="tag-item tag-frequency-1" title="Mathematical Analysis (1 篇文章)">Mathematical Analysis
+<span class=tag-count>1</span>
+</a><a href=/tags/notations/ class="tag-item tag-frequency-1" title="Notations (1 篇文章)">Notations
+<span class=tag-count>1</span>
+</a><a href=/tags/number-theory/ class="tag-item tag-frequency-1" title="Number Theory (1 篇文章)">Number Theory
+<span class=tag-count>1</span>
+</a><a href=/tags/pf-model/ class="tag-item tag-frequency-1" title="PF Model (1 篇文章)">PF Model
+<span class=tag-count>1</span>
+</a><a href=/tags/reading/ class="tag-item tag-frequency-1" title="Reading (1 篇文章)">Reading
+<span class=tag-count>1</span>
+</a><a href=/tags/server/ class="tag-item tag-frequency-1" title="Server (1 篇文章)">Server
+<span class=tag-count>1</span>
+</a><a href=/tags/talk/ class="tag-item tag-frequency-1" title="Talk (1 篇文章)">Talk
+<span class=tag-count>1</span>
+</a><a href=/tags/vs-code/ class="tag-item tag-frequency-1" title="VS Code (1 篇文章)">VS Code
+<span class=tag-count>1</span></a></div></div></section></aside><main class="main full-width"><article class="has-image main-article"><header class=article-header><div class=article-image><a href=/posts/2024/11/reading_rudin/><img src=/posts/2024/11/reading_rudin/yoyoko_hu_2fb4b48fcd322364.jpeg srcset="/posts/2024/11/reading_rudin/yoyoko_hu_2fb4b48fcd322364.jpeg 800w, /posts/2024/11/reading_rudin/yoyoko_hu_64a1aec9029f7103.jpeg 1600w" width=800 height=316 loading=lazy alt="Featured image of post Baby Rudin 读后感"></a></div><div class=article-details><header class=article-category><a href=/categories/mathematics/ style=background-color:#588edf;color:#fff>Mathematics</a></header><div class=article-title-wrapper><h2 class=article-title><a href=/posts/2024/11/reading_rudin/>Baby Rudin 读后感</a></h2><h3 class=article-subtitle>一篇水文，读完其实约等于没读</h3></div><footer class=article-time><div><svg class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
+<time class=article-time--published>Nov 01, 2024</time></div><div><svg class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+<time class=article-time--reading>阅读时长: 6 分钟</time></div></footer></div></header><section class=article-content><p><em>本文写于9月22日，因为这是我读完的第一本数学专业的书，故而感觉很有必要记下来点什么，于是就有了这么一篇流水账。作为 Mathematics 部分的
+第一篇博文正是再好不过</em></p><p><em>Principles of Mathematical Analysis</em>, Walter Rudin (May 2, 1921 – May 20, 2010)
+所写的一本“ <a class=link href=https://www.zhihu.com/question/559683007/answer/3502165974 target=_blank rel=noopener>适合于高年级本科生或数学系一年级学生</a> ”
+的数学分析
+教材, 因其作为 Rudin 所著的三本分析学教材 (另外两本为 <em>Real and ComplexAnalysis</em> 与
+<em>Functional Analysis</em>) 中最“小”的一本，故而得名 Baby Rudin (另外
+两本也被分别称为 <em>Papa/Big Rudin</em> 与 <em>Grandpa Rudin</em>), 作为我在课外自己读完
+(但几乎什么题都没写) 的第一本数学专业书, 在断断续续读了一年多以后终
+于读完了. 说来惭愧, 本来是适合本科生的数学书, 却是拖到了研二才读完, 还
+好我不是数学专业的. 本人作为一个门外汉, 抱着喜悦的心情, 简单分享下自
+己读后的感想.</p><p>即便从大三以后随着兴趣瞎读了很多数学书, 在我看来我“认真读过”的
+数学书也许也只有<em>微积分学教程</em> (菲赫金哥尔茨著), <em>Algebra: Chapter 0</em> (Paolo
+Aluffi 著) , <em>An Introduction to Manifolds</em> (Loring W. Tu 著) 以及这本<em>Baby Rudin</em>.
+除此之外的书几乎都是简单翻阅过, 并没有细看. Thomas W. Hungerford 所写
+的大名鼎鼎的 <em>GTM 73</em> 我虽然想过仔细阅读, 但是还是没有坚持下来. 到头来
+唯有这本 <em>Baby Rudin</em> 是从头到尾几乎处处的看完了 (这里指除了至多可数个
+的习题). 不过这些翻阅过的书也算是给了我一些勇气和底气, 让我去对一本
+数学专业教材评头论足.</p><p>这本书处处体现着“惜墨如金”四个字, 而且不似其他很多作者那般喜欢
+使用比较形式化的语言 (比如, 用一些记号, 如$\left( X, A, \mu \right)$三元组来表示度量空
+间), 反而对符号的使用相当克制. 最令我惊讶的是, 直到最后一章的第三小
+节, Rudin 才引入了用代表元来表示集合的记号 $\\{ x \vert P \\}$ . 虽然分析学也许并不
+会像代数学那样大量使用元素性质各异的各类集合, 但能把这么常用的符号
+放到这么后面才介绍, 也许的确称得上是“惜字如金”. 不过换个角度来讲, 也
+许也正是不过多借助符号, 反而更多采用文字描述的方式介绍数学概念, 这
+本 <em>Baby Rudin</em> 才会有其独特的魅力.</p><p>这本书的内容编排上, 在我看来也与众不同. 这本书在构造实数的过程
+中, 捎带手把复数一并处理了, 甚至还在第一章末尾专门单开了一个部分用
+来从头到尾地叙述实数的构造. 随后第二章也并没有急于引入数列或者极限,
+而是这时才引入函数这一概念, 再在集合和函数的基础上讲起点集拓扑, 而
+且 “limit” 一词也是作为点集拓扑中的 “极限点 (limit points)” 出现的, 而非传
+统的序列极限引入. 这里还要提一嘴, “Topology” 这个词全文中只在标题和
+两处提到拓扑学的三角剖分的句子中出现了, 而在主讲拓扑的第二章正文中
+更是一次也没有出现过. 第二章中没有拓扑一词, 但却通过引入距离 (度量)
+而切实地讨论了对分析学而言更有意义的拓扑空间, 实在是很新奇的阅读体
+验. 拓扑概念的引入对后续的内容有极大的影响. 提前引入拓扑语言的好处
+在于能更细致地刻画拓扑与分析学之间的关系. 如后面函数的连续性一章,
+就积极地引入了 “开集的原像是开集” 这个与传统连续性定义等价的描述.</p><p>在做完数域, 拓扑等概念的铺垫后, 迎接读者的不仅是数列这一常见的
+用以引入函数极限的概念, 还顺势加入了级数的介绍. 这与许多教材将级数
+等内容放置于教材内容偏后位置的做法不同, 不仅更早引入收敛, 而且更好
+地联系起了“序列极限”与 “无穷级数”两者, 并立刻用到上一章所介绍的拓扑
+概念, 给出了完备性与序列之间的关系.</p><p>在微积分的三大部分(微分, 积分, 函数序列/级数)中, 最具特色的地方
+当属函数积分在简单引入黎曼积分后, 更广泛地讨论黎曼-斯蒂尔切斯积分
+(Riemann-Stieltjes Integration), 以及由于拓扑, 完备等内容的引入而讨论的完
+备函数空间等. 常见教材经常会更多地讨论黎曼积分的性质, 并在靠后的内
+容中直接引入勒贝格积分. 而本书则在定义了黎曼积分后直接给出了更加广
+泛的黎曼-斯蒂尔切斯积分, 并更多地讨论它的性质. 而且归功于度量, 完备性
+等的引入, 函数序列/极限部分还讨论了函数空间的拓扑性质, 且这一部分最
+后的 Stone-Weierstrass 定理更是提出了从多项式逼近函数, 从一些代数的角
+度研究了多项式空间和函数空间, 这些特点无不令我大开眼界.</p><p>而在讨论完这些微积分的常见内容后, Rudin终于决定讲一些常见的, 比
+较特殊的函数 (不是<em>特殊函数论</em>的特殊函数). 最有趣的应该是三角函数的定
+义并没有采用常见的定义方式, 而是积极使用了本书中早早提到的复数/复变
+函数, 采用复指数函数的方式定义了三角函数, 用意想不到的方式给出了𝜋的
+定义, 然后告诉读者我们现在处在一个可以简单证明复数域代数完备性的位
+置上, 并用约一页的篇幅证明了这个著名的定理.</p><p>多变量函数部分最让我印象深刻的是解决了我一个长久以来的疑问: 多
+变量函数的<em>导数</em>(非偏导数)到底是什么? Rudin 在引入线性映射这一和微积
+分看似联系不大的概念后, 给出了多变量函数求导的结果: 一个 $\mathbb{R}^n$ 到 $\mathbb{R}^n$ 的
+线性映射! 这一结果让我对数学概念推广的认知更进了一步. 除了这点令我
+如醍醐灌顶的部分外, 其余部分就显得有点晦涩难懂了. 特别是在隐函数定
+理和秩定理两部分, Rudin的证法在我看来无疑是天书. 最后还是在互联网的
+帮助下似懂非懂, 逃离了这部分.</p><p>最后两章算是一般数学分析教材的 One More Thing 部分, 微分形式上的
+积分以及勒贝格积分. 微分形式上的积分在没有流形工具的辅助下显得有点
+苍白, 但作为对多变量函数和向量值函数积分的补充部分, Stokes’ 定理给出
+的结论还是一如既往的优美. 而勒贝格积分 (Lebesgue Integration) 的内容总
+算是让我知道了鼎鼎大名的勒贝格积分与黎曼积分之间的异同. 勒贝格积分
+部分的最后引入的 $\mathcal{L}^2$ 空间部分也解答了我的疑问: 为什么调和分析要从 $\mathcal{L}^2$
+空间讲起, 它究竟有何优越性. $\mathcal{L}^2$ 空间下的函数总是在给定一组基底(正交函
+数类)后有一个平方收敛级数与之一一对应, 或者说, $\mathcal{L}^2$ 是一个无穷维的, 元
+素为函数的线性空间, 并配备有 $L^2$ 范数.</p><p>总的来讲, <em>Baby Rudin</em> 是一本从各个方面都让我大开眼界的书. 毫无疑
+问, 它带我从一个新的角度去审视分析, 无论是拓扑的引入, 多元函数求导, 还
+是微分形式上的积分, 勒贝格积分, 这本书带给我的新概念和该年间的新联
+系都丰富了我的视野. 不过, 这本书即便是正文, 有一些内容依然是比较难以
+理解的, 特别是对符号使用的克制, 有时觉得有些古色古香, 有时又让我感到
+有些找不着北. 而且, 据说本文最精华的是每章最后的习题, 这些部分我都是
+扫了一眼, 大概看看几个可能会提出较新概念新定义的问题, 并没有深入去
+做. 也许我就是所谓的名词党吧, 不怎么做题, 应该是学不到什么真材实料的.
+不过作为一个爱好者, 感觉也没有什么太大的问题吧. 下一本书可能是读完
+回国前正在看的 <em>Intro to Manifolds</em>, 也可能是还在国外的时候看的 <em>Chap 0</em>, 但
+是最有可能的应该是暂时放下数学.</p><p>最后, 我想对沃兹基德讨论组的小顾同学表达感谢, 没有他组织的倒霉
+蛋抽奖环节, 我不可能有机会一览这本经典分析学教材的风采. 希望后来的
+倒霉蛋抽奖能帮助到更多人, 也祝愿沃兹基德讨论组越来越好.</p></section><footer class=article-footer><section class=article-tags><a href=/tags/mathematical-analysis/>Mathematical Analysis</a>
+<a href=/tags/reading/>Reading</a></section><section class=article-copyright><svg class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg>
+<span>Licensed under CC BY-NC-SA 4.0</span></section><section class=article-lastmod><svg class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+<span>最后更新于 Sep 04, 2025 15:54 UTC</span></section></footer><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css integrity=sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV crossorigin=anonymous><script src=https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js integrity=sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8 crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/mhchem.min.js integrity=sha384-F2ptQFZqNJuqfGGl28mIXyQ5kXH48spn7rcoS0Y9psqIKAcZPLd1NzwFlm/bl1mH crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js integrity=sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05 crossorigin=anonymous defer></script><script>window.addEventListener("DOMContentLoaded",()=>{const e=document.querySelector(".main-article");renderMathInElement(e,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}],ignoredClasses:["gist"]})})</script></article><aside class=related-content--wrapper><h2 class=section-title>相关文章</h2><div class=related-content><div class="flex article-list--tile"><article class=has-image><a href=/posts/2025/08/factorial_last_digits/><div class=article-image><img src=/posts/2025/08/factorial_last_digits/%E6%B8%85%E6%B0%B4%E5%90%9F.ad836fd29e9075c7cac16f858158d834_hu_3ba9a4b5d5d6c629.jpg width=250 height=150 loading=lazy alt="Featured image of post 2025! 非零的最后一位数字是多少？" data-hash="md5-rYNv0p6QdcfKwW+FgVjYNA=="></div><div class=article-details><h2 class=article-title>2025! 非零的最后一位数字是多少？</h2></div></a></article><article class=has-image><a href=/posts/2025/07/calculus_notation/><div class=article-image><img src=/posts/2025/07/calculus_notation/Postscript.6845e2543f3616eea3870935155cf419_hu_86dca9fdcb597807.png width=250 height=150 loading=lazy alt="Featured image of post 微积分的符号" data-hash="md5-aEXiVD82Fu6jhwk1FVz0GQ=="></div><div class=article-details><h2 class=article-title>微积分的符号</h2></div></a></article><article class=has-image><a href=/posts/2025/02/snake_lemma/><div class=article-image><img src=/posts/2025/02/snake_lemma/Post%20Shelter-Inaba%20Kumori.4fc5c11b776210e8c43860bdb1a607d5_hu_8d3524e178e097e3.png width=250 height=150 loading=lazy alt="Featured image of post 蛇年，Snake Lemma！" data-hash="md5-T8XBG3diEOjEOGC9saYH1Q=="></div><div class=article-details><h2 class=article-title>蛇年，Snake Lemma！</h2></div></a></article><article class=has-image><a href=/posts/2025/01/mpf_gp/><div class=article-image><img src=/posts/2025/01/mpf_gp/ShoujouRei_MikitoP.b3a3a5931fb5f75a995dcb8971f3ce0b_hu_5cd5f80923404d2a.png width=250 height=150 loading=lazy alt="Featured image of post 多相场模型与巨势方程" data-hash="md5-s6Olkx+191qZXcuJcfPOCw=="></div><div class=article-details><h2 class=article-title>多相场模型与巨势方程</h2></div></a></article><article class=has-image><a href=/posts/2025/01/functional_derivative/><div class=article-image><img src=/posts/2025/01/functional_derivative/HelloWorld-r-906.07670bb9c7f8d3909c976ff569a86dfe_hu_6e85579f8e66708.jpg width=250 height=150 loading=lazy alt="Featured image of post 关于泛函导数和变分法-来自相场公式推导的问题" data-hash="md5-B2cLucf405Ccl2/1aaht/g=="></div><div class=article-details><h2 class=article-title>关于泛函导数和变分法-来自相场公式推导的问题</h2></div></a></article></div></div></aside><script src=https://utteranc.es/client.js repo=A-moment096/A-moment096.github.io issue-term=title label=Comment crossorigin=anonymous async></script><style>.utterances{max-width:unset}</style><script>let utterancesLoaded=!1;function setUtterancesTheme(e){let t=document.querySelector(".utterances iframe");t&&t.contentWindow.postMessage({type:"set-theme",theme:`github-${e}`},"https://utteranc.es")}addEventListener("message",e=>{if(e.origin!=="https://utteranc.es")return;utterancesLoaded=!0,setUtterancesTheme(document.documentElement.dataset.scheme)}),window.addEventListener("onColorSchemeChange",e=>{if(!utterancesLoaded)return;setUtterancesTheme(e.detail)})</script><footer class=site-footer><section class=copyright>&copy;
+2024 -
+2025 A Moment's Rest</section><section class=powerby><a href="https://icp.gov.moe/?keyword=20257072" target=_blank>萌ICP备20257072号</a><br>使用 <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> 构建<br>主题 <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.30.0>Stack</a></b> 由 <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a> 设计</section></footer><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css crossorigin=anonymous></main></div><script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z+KMkF24hUW8WePSA9HM=" crossorigin=anonymous></script><script type=text/javascript src=/ts/main.c972cfe159e73c803336af3a250bf1c9d03438ceae07cfc8ca8cd3795d775873.js defer></script><script>(function(){const e=document.createElement("link");e.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",e.type="text/css",e.rel="stylesheet",document.head.appendChild(e)})()</script><script src=https://cdn.jsdelivr.net/gh/zhixuan2333/gh-blog@v0.1.0/js/nprogress.min.js integrity=sha384-bHDlAEUFxsRI7JfULv3DTpL2IXbbgn4JHQJibgo5iiXSK6Iu8muwqHANhun74Cqg crossorigin=anonymous></script><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/zhixuan2333/gh-blog@v0.1.0/css/nprogress.css integrity=sha384-KJyhr2syt5+4M9Pz5dipCvTrtvOmLk/olWVdfhAp858UCa64Ia5GFpTN7+G4BWpE crossorigin=anonymous><script>NProgress.start(),document.addEventListener("readystatechange",()=>{document.readyState==="interactive"&&NProgress.inc(.8),document.readyState==="complete"&&NProgress.done()})</script><div id=back-top><a href=#top title="To Top"><img src=/back_top.svg alt="Back to Top"></a></div><style>#back-top{position:absolute;background:var(--card-background);border:1px solid var(--card-separator-color);border-radius:7px;padding:10px;z-index:1000;opacity:0;box-shadow:0 2px 4px transparent;transition:opacity .3s ease,box-shadow .3s ease,background-color .3s ease}#back-top.show{opacity:1;box-shadow:0 4px 12px rgba(0,0,0,.15)}#back-top a{text-decoration:none;color:var(--card-text-color-main)}#back-top:hover{background:var(--accent-color);box-shadow:0 6px 20px rgba(0,0,0,.25)}#back-top:hover a{color:#fff}</style><script type=text/javascript>document.addEventListener("DOMContentLoaded",function(){var e=document.getElementById("back-top"),t=document.querySelector(".right-sidebar");function n(){if(t&&window.innerWidth>=1024){var n=t.getBoundingClientRect(),s=t.offsetTop+t.offsetHeight;e.style.position="absolute",e.style.top=s+10+"px",e.style.left=n.right-e.offsetWidth-window.scrollX+"px",e.style.right="auto"}else e.style.position="fixed",e.style.bottom="30px",e.style.right="30px",e.style.top="auto",e.style.left="auto"}function s(){document.body.scrollTop>100||document.documentElement.scrollTop>100?(e.classList.add("show"),n()):e.classList.remove("show")}window.addEventListener("resize",n),window.addEventListener("scroll",s),n(),e.onclick=function(e){e.preventDefault(),window.scrollTo({top:0,behavior:"smooth"})}})</script><script>document.addEventListener("DOMContentLoaded",function(){const n=document.body.classList.contains("article-page"),s=document.querySelectorAll(".widget");s.forEach(s=>{const a=s.querySelector(".widget-body"),i=s.querySelector(".widget-header");if(a&&i){const r=s.classList.contains("archives")&&s.querySelector(".widget--toc");n?r?e(i,a):t(i,a):e(i,a),i.addEventListener("click",function(){o(i,a)})}});function o(n,s){const o=s.classList.contains("show");o?t(n,s):e(n,s)}function e(e,t){t.classList.add("show"),e.classList.add("expanded"),t.style.display="block"}function t(e,t){t.classList.remove("show"),e.classList.remove("expanded"),t.style.display="none"}})</script></body></html>
