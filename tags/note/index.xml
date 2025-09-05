@@ -1,7 +1,92 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Note on A Moment's Rest</title><link>https://a-moment096.github.io/tags/note/</link><description>Recent content in Note on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 05 Sep 2025 03:30:12 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/note/index.xml" rel="self" type="application/rss+xml"/><item><title>（也许是）一个 Git 教程？其三</title><link>https://a-moment096.github.io/posts/2025/08/git_3/</link><pubDate>Tue, 26 Aug 2025 18:28:16 +0800</pubDate><guid>https://a-moment096.github.io/posts/2025/08/git_3/</guid><description>&lt;img src="https://a-moment096.github.io/posts/Shell_Note/Git_How/Tatara%20Kogasa.jpg" alt="Featured image of post （也许是）一个 Git 教程？其三" /&gt;&lt;p&gt;&lt;em&gt;最后一节，聊聊如何在 GitHub 上进行多人协作吧~&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Note on A Moment's Rest</title><link>https://a-moment096.github.io/tags/note/</link><description>Recent content in Note on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 05 Sep 2025 06:45:48 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/note/index.xml" rel="self" type="application/rss+xml"/><item><title>（也许是）一个 Git 教程？其三</title><link>https://a-moment096.github.io/posts/2025/08/git_3/</link><pubDate>Tue, 26 Aug 2025 18:28:16 +0800</pubDate><guid>https://a-moment096.github.io/posts/2025/08/git_3/</guid><description>&lt;img src="https://a-moment096.github.io/posts/Shell_Note/Git_How/Tatara%20Kogasa.jpg" alt="Featured image of post （也许是）一个 Git 教程？其三" /&gt;&lt;p&gt;&lt;em&gt;最后一节，聊聊如何在 GitHub 上进行多人协作吧~&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图信息请参考第一节内容，谢谢~&lt;/em&gt;&lt;/p&gt;
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
-&lt;style type="text/css"&gt;.dark-theme .aplayer{background:#212121}.dark-theme .aplayer.aplayer-withlist .aplayer-info{border-bottom-color:#5c5c5c}.dark-theme .aplayer.aplayer-fixed .aplayer-list{border-color:#5c5c5c}.dark-theme .aplayer .aplayer-body{background-color:#212121}.dark-theme .aplayer .aplayer-info{border-top-color:#212121}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-title{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-author{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time{color:#eee}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path{fill:#eee}.dark-theme .aplayer .aplayer-list{background-color:#212121}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb{background-color:#999}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover{background-color:#bbb}.dark-theme .aplayer .aplayer-list li{color:#fff;border-top-color:#666}.dark-theme .aplayer .aplayer-list li:hover{background:#4e4e4e}.dark-theme .aplayer .aplayer-list li.aplayer-list-light{background:#6c6c6c}.dark-theme .aplayer .aplayer-list li .aplayer-list-index{color:#ddd}.dark-theme .aplayer .aplayer-list li .aplayer-list-author{color:#ddd}.dark-theme .aplayer .aplayer-lrc{text-shadow:-1px -1px 0 #666}.dark-theme .aplayer .aplayer-lrc:before{background:-moz-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:-webkit-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:linear-gradient(to bottom, #212121 0%, rgba(33,33,33,0) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#212121', endColorstr='#00212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc:after{background:-moz-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:-webkit-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:linear-gradient(to bottom, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#00212121', endColorstr='#cc212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc p{color:#fff}.dark-theme .aplayer .aplayer-miniswitcher{background:#484848}.dark-theme .aplayer .aplayer-miniswitcher .aplayer-icon path{fill:#eee}&lt;/style&gt;
+&lt;style type="text/css"&gt;
+[data-scheme="dark"] .aplayer {
+background: var(--card-background);
+border: 1px solid var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
+border-bottom-color: var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
+border-color: var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer .aplayer-body {
+background-color: var(--card-background);
+}
+[data-scheme="dark"] .aplayer .aplayer-info {
+border-top-color: var(--card-background);
+}
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
+color: var(--card-text-color-main);
+}
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
+color: var(--card-text-color-secondary);
+}
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
+color: var(--card-text-color-tertiary);
+}
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
+fill: var(--card-text-color-tertiary);
+}
+[data-scheme="dark"] .aplayer .aplayer-list {
+background-color: var(--card-background);
+}
+[data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
+background-color: var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
+background-color: var(--accent-color);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li {
+color: var(--card-text-color-main);
+border-top-color: var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li:hover {
+background: var(--card-background-selected);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
+background: var(--card-background-selected);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
+color: var(--card-text-color-secondary);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
+color: var(--card-text-color-secondary);
+}
+[data-scheme="dark"] .aplayer .aplayer-lrc {
+text-shadow: -1px -1px 0 var(--body-background);
+}
+[data-scheme="dark"] .aplayer .aplayer-lrc:before {
+background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+}
+[data-scheme="dark"] .aplayer .aplayer-lrc:after {
+background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+}
+[data-scheme="dark"] .aplayer .aplayer-lrc p {
+color: var(--card-text-color-main);
+}
+[data-scheme="dark"] .aplayer .aplayer-miniswitcher {
+background: var(--card-background-selected);
+}
+[data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
+fill: var(--card-text-color-tertiary);
+}
+[data-scheme="light"] .aplayer {
+background: var(--card-background);
+border: 1px solid var(--card-separator-color);
+}
+[data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
+color: var(--card-text-color-main);
+}
+[data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
+color: var(--card-text-color-secondary);
+}
+[data-scheme="light"] .aplayer .aplayer-list li:hover {
+background: var(--card-background-selected);
+}
+&lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
 &lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=455026" theme="#2980b9" loop="never"&gt;&lt;/meting-js&gt;
 &lt;h2 id="所以git-的远程到底是什么东西"&gt;所以，Git 的远程到底是什么东西？
@@ -95,7 +180,92 @@
 &lt;p&gt;那么，一如既往地，祝您身心愉快，工作顺利，少出 Bug ~！&lt;/p&gt;</description></item><item><title>（也许是）一个 Git 教程？其二</title><link>https://a-moment096.github.io/posts/2025/08/git_2/</link><pubDate>Thu, 14 Aug 2025 16:49:16 +0800</pubDate><guid>https://a-moment096.github.io/posts/2025/08/git_2/</guid><description>&lt;img src="https://a-moment096.github.io/posts/Shell_Note/Git_How/Tatara%20Kogasa.jpg" alt="Featured image of post （也许是）一个 Git 教程？其二" /&gt;&lt;p&gt;&lt;em&gt;上一节已经介绍了平时会怎么用 Git 进行单分支仓库的管理，这一节就来讲讲 Git 要怎么进行多分支协作吧！&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图信息请参考上一节内容，谢谢~&lt;/em&gt;&lt;/p&gt;
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
-&lt;style type="text/css"&gt;.dark-theme .aplayer{background:#212121}.dark-theme .aplayer.aplayer-withlist .aplayer-info{border-bottom-color:#5c5c5c}.dark-theme .aplayer.aplayer-fixed .aplayer-list{border-color:#5c5c5c}.dark-theme .aplayer .aplayer-body{background-color:#212121}.dark-theme .aplayer .aplayer-info{border-top-color:#212121}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-title{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-author{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time{color:#eee}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path{fill:#eee}.dark-theme .aplayer .aplayer-list{background-color:#212121}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb{background-color:#999}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover{background-color:#bbb}.dark-theme .aplayer .aplayer-list li{color:#fff;border-top-color:#666}.dark-theme .aplayer .aplayer-list li:hover{background:#4e4e4e}.dark-theme .aplayer .aplayer-list li.aplayer-list-light{background:#6c6c6c}.dark-theme .aplayer .aplayer-list li .aplayer-list-index{color:#ddd}.dark-theme .aplayer .aplayer-list li .aplayer-list-author{color:#ddd}.dark-theme .aplayer .aplayer-lrc{text-shadow:-1px -1px 0 #666}.dark-theme .aplayer .aplayer-lrc:before{background:-moz-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:-webkit-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:linear-gradient(to bottom, #212121 0%, rgba(33,33,33,0) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#212121', endColorstr='#00212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc:after{background:-moz-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:-webkit-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:linear-gradient(to bottom, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#00212121', endColorstr='#cc212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc p{color:#fff}.dark-theme .aplayer .aplayer-miniswitcher{background:#484848}.dark-theme .aplayer .aplayer-miniswitcher .aplayer-icon path{fill:#eee}&lt;/style&gt;
+&lt;style type="text/css"&gt;
+[data-scheme="dark"] .aplayer {
+background: var(--card-background);
+border: 1px solid var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
+border-bottom-color: var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
+border-color: var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer .aplayer-body {
+background-color: var(--card-background);
+}
+[data-scheme="dark"] .aplayer .aplayer-info {
+border-top-color: var(--card-background);
+}
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
+color: var(--card-text-color-main);
+}
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
+color: var(--card-text-color-secondary);
+}
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
+color: var(--card-text-color-tertiary);
+}
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
+fill: var(--card-text-color-tertiary);
+}
+[data-scheme="dark"] .aplayer .aplayer-list {
+background-color: var(--card-background);
+}
+[data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
+background-color: var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
+background-color: var(--accent-color);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li {
+color: var(--card-text-color-main);
+border-top-color: var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li:hover {
+background: var(--card-background-selected);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
+background: var(--card-background-selected);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
+color: var(--card-text-color-secondary);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
+color: var(--card-text-color-secondary);
+}
+[data-scheme="dark"] .aplayer .aplayer-lrc {
+text-shadow: -1px -1px 0 var(--body-background);
+}
+[data-scheme="dark"] .aplayer .aplayer-lrc:before {
+background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+}
+[data-scheme="dark"] .aplayer .aplayer-lrc:after {
+background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+}
+[data-scheme="dark"] .aplayer .aplayer-lrc p {
+color: var(--card-text-color-main);
+}
+[data-scheme="dark"] .aplayer .aplayer-miniswitcher {
+background: var(--card-background-selected);
+}
+[data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
+fill: var(--card-text-color-tertiary);
+}
+[data-scheme="light"] .aplayer {
+background: var(--card-background);
+border: 1px solid var(--card-separator-color);
+}
+[data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
+color: var(--card-text-color-main);
+}
+[data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
+color: var(--card-text-color-secondary);
+}
+[data-scheme="light"] .aplayer .aplayer-list li:hover {
+background: var(--card-background-selected);
+}
+&lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
 &lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=785695" theme="#2980b9" loop="never"&gt;&lt;/meting-js&gt;
 &lt;h2 id="分支是那个分支吗"&gt;分支，是那个分支吗？
@@ -224,7 +394,92 @@ merge feature2 id: "finish, merge feat2"
 &gt;夏空&lt;/a&gt; 太太所画的 &lt;a class="link" href="https://www.pixiv.net/en/artworks/116876998" target="_blank" rel="noopener"
 &gt;多多良 小伞&lt;/a&gt;，可爱捏~ 那就来一曲小伞的个人曲吧&lt;/em&gt;&lt;/p&gt;
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
-&lt;style type="text/css"&gt;.dark-theme .aplayer{background:#212121}.dark-theme .aplayer.aplayer-withlist .aplayer-info{border-bottom-color:#5c5c5c}.dark-theme .aplayer.aplayer-fixed .aplayer-list{border-color:#5c5c5c}.dark-theme .aplayer .aplayer-body{background-color:#212121}.dark-theme .aplayer .aplayer-info{border-top-color:#212121}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-title{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-author{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time{color:#eee}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path{fill:#eee}.dark-theme .aplayer .aplayer-list{background-color:#212121}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb{background-color:#999}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover{background-color:#bbb}.dark-theme .aplayer .aplayer-list li{color:#fff;border-top-color:#666}.dark-theme .aplayer .aplayer-list li:hover{background:#4e4e4e}.dark-theme .aplayer .aplayer-list li.aplayer-list-light{background:#6c6c6c}.dark-theme .aplayer .aplayer-list li .aplayer-list-index{color:#ddd}.dark-theme .aplayer .aplayer-list li .aplayer-list-author{color:#ddd}.dark-theme .aplayer .aplayer-lrc{text-shadow:-1px -1px 0 #666}.dark-theme .aplayer .aplayer-lrc:before{background:-moz-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:-webkit-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:linear-gradient(to bottom, #212121 0%, rgba(33,33,33,0) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#212121', endColorstr='#00212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc:after{background:-moz-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:-webkit-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:linear-gradient(to bottom, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#00212121', endColorstr='#cc212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc p{color:#fff}.dark-theme .aplayer .aplayer-miniswitcher{background:#484848}.dark-theme .aplayer .aplayer-miniswitcher .aplayer-icon path{fill:#eee}&lt;/style&gt;
+&lt;style type="text/css"&gt;
+[data-scheme="dark"] .aplayer {
+background: var(--card-background);
+border: 1px solid var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
+border-bottom-color: var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
+border-color: var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer .aplayer-body {
+background-color: var(--card-background);
+}
+[data-scheme="dark"] .aplayer .aplayer-info {
+border-top-color: var(--card-background);
+}
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
+color: var(--card-text-color-main);
+}
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
+color: var(--card-text-color-secondary);
+}
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
+color: var(--card-text-color-tertiary);
+}
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
+fill: var(--card-text-color-tertiary);
+}
+[data-scheme="dark"] .aplayer .aplayer-list {
+background-color: var(--card-background);
+}
+[data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
+background-color: var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
+background-color: var(--accent-color);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li {
+color: var(--card-text-color-main);
+border-top-color: var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li:hover {
+background: var(--card-background-selected);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
+background: var(--card-background-selected);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
+color: var(--card-text-color-secondary);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
+color: var(--card-text-color-secondary);
+}
+[data-scheme="dark"] .aplayer .aplayer-lrc {
+text-shadow: -1px -1px 0 var(--body-background);
+}
+[data-scheme="dark"] .aplayer .aplayer-lrc:before {
+background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+}
+[data-scheme="dark"] .aplayer .aplayer-lrc:after {
+background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+}
+[data-scheme="dark"] .aplayer .aplayer-lrc p {
+color: var(--card-text-color-main);
+}
+[data-scheme="dark"] .aplayer .aplayer-miniswitcher {
+background: var(--card-background-selected);
+}
+[data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
+fill: var(--card-text-color-tertiary);
+}
+[data-scheme="light"] .aplayer {
+background: var(--card-background);
+border: 1px solid var(--card-separator-color);
+}
+[data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
+color: var(--card-text-color-main);
+}
+[data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
+color: var(--card-text-color-secondary);
+}
+[data-scheme="light"] .aplayer .aplayer-list li:hover {
+background: var(--card-background-selected);
+}
+&lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
 &lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=22636608" theme="#2980b9" loop="never"&gt;&lt;/meting-js&gt;
 &lt;h2 id="git熟悉又陌生的名字-"&gt;Git，熟悉又陌生的名字 ……
@@ -325,7 +580,92 @@ F --&gt; D
 &gt;fasnakegod&lt;/a&gt; 大大的 &lt;a class="link" href="https://www.pixiv.net/en/artworks/125739568" target="_blank" rel="noopener"
 &gt;贝加尔湖畔&lt;/a&gt;。既然如此就分享一首钢琴曲吧。一首 &lt;strong&gt;騎士王の誇り&lt;/strong&gt; (骑士王的荣耀) 送给大家。（好像毫无关联诶 kora!）&lt;/em&gt;&lt;/p&gt;
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
-&lt;style type="text/css"&gt;.dark-theme .aplayer{background:#212121}.dark-theme .aplayer.aplayer-withlist .aplayer-info{border-bottom-color:#5c5c5c}.dark-theme .aplayer.aplayer-fixed .aplayer-list{border-color:#5c5c5c}.dark-theme .aplayer .aplayer-body{background-color:#212121}.dark-theme .aplayer .aplayer-info{border-top-color:#212121}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-title{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-author{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time{color:#eee}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path{fill:#eee}.dark-theme .aplayer .aplayer-list{background-color:#212121}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb{background-color:#999}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover{background-color:#bbb}.dark-theme .aplayer .aplayer-list li{color:#fff;border-top-color:#666}.dark-theme .aplayer .aplayer-list li:hover{background:#4e4e4e}.dark-theme .aplayer .aplayer-list li.aplayer-list-light{background:#6c6c6c}.dark-theme .aplayer .aplayer-list li .aplayer-list-index{color:#ddd}.dark-theme .aplayer .aplayer-list li .aplayer-list-author{color:#ddd}.dark-theme .aplayer .aplayer-lrc{text-shadow:-1px -1px 0 #666}.dark-theme .aplayer .aplayer-lrc:before{background:-moz-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:-webkit-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:linear-gradient(to bottom, #212121 0%, rgba(33,33,33,0) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#212121', endColorstr='#00212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc:after{background:-moz-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:-webkit-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:linear-gradient(to bottom, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#00212121', endColorstr='#cc212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc p{color:#fff}.dark-theme .aplayer .aplayer-miniswitcher{background:#484848}.dark-theme .aplayer .aplayer-miniswitcher .aplayer-icon path{fill:#eee}&lt;/style&gt;
+&lt;style type="text/css"&gt;
+[data-scheme="dark"] .aplayer {
+background: var(--card-background);
+border: 1px solid var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
+border-bottom-color: var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
+border-color: var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer .aplayer-body {
+background-color: var(--card-background);
+}
+[data-scheme="dark"] .aplayer .aplayer-info {
+border-top-color: var(--card-background);
+}
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
+color: var(--card-text-color-main);
+}
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
+color: var(--card-text-color-secondary);
+}
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
+color: var(--card-text-color-tertiary);
+}
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
+fill: var(--card-text-color-tertiary);
+}
+[data-scheme="dark"] .aplayer .aplayer-list {
+background-color: var(--card-background);
+}
+[data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
+background-color: var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
+background-color: var(--accent-color);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li {
+color: var(--card-text-color-main);
+border-top-color: var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li:hover {
+background: var(--card-background-selected);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
+background: var(--card-background-selected);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
+color: var(--card-text-color-secondary);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
+color: var(--card-text-color-secondary);
+}
+[data-scheme="dark"] .aplayer .aplayer-lrc {
+text-shadow: -1px -1px 0 var(--body-background);
+}
+[data-scheme="dark"] .aplayer .aplayer-lrc:before {
+background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+}
+[data-scheme="dark"] .aplayer .aplayer-lrc:after {
+background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+}
+[data-scheme="dark"] .aplayer .aplayer-lrc p {
+color: var(--card-text-color-main);
+}
+[data-scheme="dark"] .aplayer .aplayer-miniswitcher {
+background: var(--card-background-selected);
+}
+[data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
+fill: var(--card-text-color-tertiary);
+}
+[data-scheme="light"] .aplayer {
+background: var(--card-background);
+border: 1px solid var(--card-separator-color);
+}
+[data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
+color: var(--card-text-color-main);
+}
+[data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
+color: var(--card-text-color-secondary);
+}
+[data-scheme="light"] .aplayer .aplayer-list li:hover {
+background: var(--card-background-selected);
+}
+&lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
 &lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=448119" theme="#2980b9" loop="never"&gt;&lt;/meting-js&gt;
 &lt;h2 id="为什么要选择-rsync-呢"&gt;为什么要选择 &lt;code&gt;rsync&lt;/code&gt; 呢？
@@ -420,7 +760,92 @@ F --&gt; D
 &lt;p&gt;最后，感谢您能看到这里，祝您身体健康，心情愉悦~&lt;/p&gt;</description></item><item><title>上一个命令是什么？</title><link>https://a-moment096.github.io/posts/2025/07/last_command/</link><pubDate>Sat, 26 Jul 2025 20:09:18 +0800</pubDate><guid>https://a-moment096.github.io/posts/2025/07/last_command/</guid><description>&lt;img src="https://a-moment096.github.io/posts/2025/07/last_command/SEASIDE_SOLILOQUIES.png" alt="Featured image of post 上一个命令是什么？" /&gt;&lt;p&gt;&lt;em&gt;曾经总会好奇：怎么获取上一个命令呢？应该很简单才对吧？简单的搜索后，下面是我得到的结果，就记录一下吧&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图出自 Orangestar 的专辑 &lt;strong&gt;SEASIDE SOLILOQUIES&lt;/strong&gt;, 好看又好听。所以这里贴曲就贴这个专辑的主打歌好了：一首 &lt;strong&gt;Alice in 冷凍庫&lt;/strong&gt;，希望你喜欢。&lt;/em&gt;&lt;/p&gt;
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
-&lt;style type="text/css"&gt;.dark-theme .aplayer{background:#212121}.dark-theme .aplayer.aplayer-withlist .aplayer-info{border-bottom-color:#5c5c5c}.dark-theme .aplayer.aplayer-fixed .aplayer-list{border-color:#5c5c5c}.dark-theme .aplayer .aplayer-body{background-color:#212121}.dark-theme .aplayer .aplayer-info{border-top-color:#212121}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-title{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-author{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time{color:#eee}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path{fill:#eee}.dark-theme .aplayer .aplayer-list{background-color:#212121}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb{background-color:#999}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover{background-color:#bbb}.dark-theme .aplayer .aplayer-list li{color:#fff;border-top-color:#666}.dark-theme .aplayer .aplayer-list li:hover{background:#4e4e4e}.dark-theme .aplayer .aplayer-list li.aplayer-list-light{background:#6c6c6c}.dark-theme .aplayer .aplayer-list li .aplayer-list-index{color:#ddd}.dark-theme .aplayer .aplayer-list li .aplayer-list-author{color:#ddd}.dark-theme .aplayer .aplayer-lrc{text-shadow:-1px -1px 0 #666}.dark-theme .aplayer .aplayer-lrc:before{background:-moz-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:-webkit-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:linear-gradient(to bottom, #212121 0%, rgba(33,33,33,0) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#212121', endColorstr='#00212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc:after{background:-moz-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:-webkit-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:linear-gradient(to bottom, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#00212121', endColorstr='#cc212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc p{color:#fff}.dark-theme .aplayer .aplayer-miniswitcher{background:#484848}.dark-theme .aplayer .aplayer-miniswitcher .aplayer-icon path{fill:#eee}&lt;/style&gt;
+&lt;style type="text/css"&gt;
+[data-scheme="dark"] .aplayer {
+background: var(--card-background);
+border: 1px solid var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
+border-bottom-color: var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
+border-color: var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer .aplayer-body {
+background-color: var(--card-background);
+}
+[data-scheme="dark"] .aplayer .aplayer-info {
+border-top-color: var(--card-background);
+}
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
+color: var(--card-text-color-main);
+}
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
+color: var(--card-text-color-secondary);
+}
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
+color: var(--card-text-color-tertiary);
+}
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
+fill: var(--card-text-color-tertiary);
+}
+[data-scheme="dark"] .aplayer .aplayer-list {
+background-color: var(--card-background);
+}
+[data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
+background-color: var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
+background-color: var(--accent-color);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li {
+color: var(--card-text-color-main);
+border-top-color: var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li:hover {
+background: var(--card-background-selected);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
+background: var(--card-background-selected);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
+color: var(--card-text-color-secondary);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
+color: var(--card-text-color-secondary);
+}
+[data-scheme="dark"] .aplayer .aplayer-lrc {
+text-shadow: -1px -1px 0 var(--body-background);
+}
+[data-scheme="dark"] .aplayer .aplayer-lrc:before {
+background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+}
+[data-scheme="dark"] .aplayer .aplayer-lrc:after {
+background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+}
+[data-scheme="dark"] .aplayer .aplayer-lrc p {
+color: var(--card-text-color-main);
+}
+[data-scheme="dark"] .aplayer .aplayer-miniswitcher {
+background: var(--card-background-selected);
+}
+[data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
+fill: var(--card-text-color-tertiary);
+}
+[data-scheme="light"] .aplayer {
+background: var(--card-background);
+border: 1px solid var(--card-separator-color);
+}
+[data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
+color: var(--card-text-color-main);
+}
+[data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
+color: var(--card-text-color-secondary);
+}
+[data-scheme="light"] .aplayer .aplayer-list li:hover {
+background: var(--card-background-selected);
+}
+&lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
 &lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=458231453" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
 &lt;h2 id="什么时候要用这个"&gt;什么时候要用这个？
@@ -658,7 +1083,92 @@ F --&gt; D
 &lt;p&gt;那么，感谢你看到这里，祝您身心愉悦，身体健康~&lt;/p&gt;</description></item><item><title>C++ Vector 的内存布局</title><link>https://a-moment096.github.io/posts/2025/05/vector_memory_layout/</link><pubDate>Tue, 27 May 2025 09:53:29 +0800</pubDate><guid>https://a-moment096.github.io/posts/2025/05/vector_memory_layout/</guid><description>&lt;img src="https://a-moment096.github.io/posts/2025/05/vector_memory_layout/Bamboo_Reimu.jpg" alt="Featured image of post C++ Vector 的内存布局" /&gt;&lt;p&gt;&lt;em&gt;探索一下 C++ 的容器 &lt;code&gt;vector&lt;/code&gt; 的内存布局，也算是解答我自己的一些疑虑咯&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图是从网上搜的，尝试寻找出处，未果。很可惜。选曲尝试选择了一首听着比较清淡的曲子 &lt;strong&gt;泪苔&lt;/strong&gt;，感觉比较符合头图清新淡雅的神社氛围。希望你喜欢。&lt;/em&gt;&lt;/p&gt;
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
-&lt;style type="text/css"&gt;.dark-theme .aplayer{background:#212121}.dark-theme .aplayer.aplayer-withlist .aplayer-info{border-bottom-color:#5c5c5c}.dark-theme .aplayer.aplayer-fixed .aplayer-list{border-color:#5c5c5c}.dark-theme .aplayer .aplayer-body{background-color:#212121}.dark-theme .aplayer .aplayer-info{border-top-color:#212121}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-title{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-author{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time{color:#eee}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path{fill:#eee}.dark-theme .aplayer .aplayer-list{background-color:#212121}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb{background-color:#999}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover{background-color:#bbb}.dark-theme .aplayer .aplayer-list li{color:#fff;border-top-color:#666}.dark-theme .aplayer .aplayer-list li:hover{background:#4e4e4e}.dark-theme .aplayer .aplayer-list li.aplayer-list-light{background:#6c6c6c}.dark-theme .aplayer .aplayer-list li .aplayer-list-index{color:#ddd}.dark-theme .aplayer .aplayer-list li .aplayer-list-author{color:#ddd}.dark-theme .aplayer .aplayer-lrc{text-shadow:-1px -1px 0 #666}.dark-theme .aplayer .aplayer-lrc:before{background:-moz-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:-webkit-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:linear-gradient(to bottom, #212121 0%, rgba(33,33,33,0) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#212121', endColorstr='#00212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc:after{background:-moz-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:-webkit-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:linear-gradient(to bottom, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#00212121', endColorstr='#cc212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc p{color:#fff}.dark-theme .aplayer .aplayer-miniswitcher{background:#484848}.dark-theme .aplayer .aplayer-miniswitcher .aplayer-icon path{fill:#eee}&lt;/style&gt;
+&lt;style type="text/css"&gt;
+[data-scheme="dark"] .aplayer {
+background: var(--card-background);
+border: 1px solid var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
+border-bottom-color: var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
+border-color: var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer .aplayer-body {
+background-color: var(--card-background);
+}
+[data-scheme="dark"] .aplayer .aplayer-info {
+border-top-color: var(--card-background);
+}
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
+color: var(--card-text-color-main);
+}
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
+color: var(--card-text-color-secondary);
+}
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
+color: var(--card-text-color-tertiary);
+}
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
+fill: var(--card-text-color-tertiary);
+}
+[data-scheme="dark"] .aplayer .aplayer-list {
+background-color: var(--card-background);
+}
+[data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
+background-color: var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
+background-color: var(--accent-color);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li {
+color: var(--card-text-color-main);
+border-top-color: var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li:hover {
+background: var(--card-background-selected);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
+background: var(--card-background-selected);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
+color: var(--card-text-color-secondary);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
+color: var(--card-text-color-secondary);
+}
+[data-scheme="dark"] .aplayer .aplayer-lrc {
+text-shadow: -1px -1px 0 var(--body-background);
+}
+[data-scheme="dark"] .aplayer .aplayer-lrc:before {
+background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+}
+[data-scheme="dark"] .aplayer .aplayer-lrc:after {
+background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+}
+[data-scheme="dark"] .aplayer .aplayer-lrc p {
+color: var(--card-text-color-main);
+}
+[data-scheme="dark"] .aplayer .aplayer-miniswitcher {
+background: var(--card-background-selected);
+}
+[data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
+fill: var(--card-text-color-tertiary);
+}
+[data-scheme="light"] .aplayer {
+background: var(--card-background);
+border: 1px solid var(--card-separator-color);
+}
+[data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
+color: var(--card-text-color-main);
+}
+[data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
+color: var(--card-text-color-secondary);
+}
+[data-scheme="light"] .aplayer .aplayer-list li:hover {
+background: var(--card-background-selected);
+}
+&lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
 &lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=26537200" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
 &lt;h2 id="先介绍一下-vector-的基本情况咯"&gt;先介绍一下 &lt;code&gt;vector&lt;/code&gt; 的基本情况咯
@@ -804,7 +1314,92 @@ F --&gt; D
 &gt;稲葉曇&lt;/a&gt; 所作的 &lt;a class="link" href="https://www.bilibili.com/video/BV1jS4y1y7Yf/" target="_blank" rel="noopener"
 &gt;ポストシェルター&lt;/a&gt; (Post Shelter)的曲绘。支持正版，就只有30秒试听了（）&lt;/em&gt;&lt;/p&gt;
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
-&lt;style type="text/css"&gt;.dark-theme .aplayer{background:#212121}.dark-theme .aplayer.aplayer-withlist .aplayer-info{border-bottom-color:#5c5c5c}.dark-theme .aplayer.aplayer-fixed .aplayer-list{border-color:#5c5c5c}.dark-theme .aplayer .aplayer-body{background-color:#212121}.dark-theme .aplayer .aplayer-info{border-top-color:#212121}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-title{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-author{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time{color:#eee}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path{fill:#eee}.dark-theme .aplayer .aplayer-list{background-color:#212121}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb{background-color:#999}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover{background-color:#bbb}.dark-theme .aplayer .aplayer-list li{color:#fff;border-top-color:#666}.dark-theme .aplayer .aplayer-list li:hover{background:#4e4e4e}.dark-theme .aplayer .aplayer-list li.aplayer-list-light{background:#6c6c6c}.dark-theme .aplayer .aplayer-list li .aplayer-list-index{color:#ddd}.dark-theme .aplayer .aplayer-list li .aplayer-list-author{color:#ddd}.dark-theme .aplayer .aplayer-lrc{text-shadow:-1px -1px 0 #666}.dark-theme .aplayer .aplayer-lrc:before{background:-moz-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:-webkit-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:linear-gradient(to bottom, #212121 0%, rgba(33,33,33,0) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#212121', endColorstr='#00212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc:after{background:-moz-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:-webkit-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:linear-gradient(to bottom, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#00212121', endColorstr='#cc212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc p{color:#fff}.dark-theme .aplayer .aplayer-miniswitcher{background:#484848}.dark-theme .aplayer .aplayer-miniswitcher .aplayer-icon path{fill:#eee}&lt;/style&gt;
+&lt;style type="text/css"&gt;
+[data-scheme="dark"] .aplayer {
+background: var(--card-background);
+border: 1px solid var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
+border-bottom-color: var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
+border-color: var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer .aplayer-body {
+background-color: var(--card-background);
+}
+[data-scheme="dark"] .aplayer .aplayer-info {
+border-top-color: var(--card-background);
+}
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
+color: var(--card-text-color-main);
+}
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
+color: var(--card-text-color-secondary);
+}
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
+color: var(--card-text-color-tertiary);
+}
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
+fill: var(--card-text-color-tertiary);
+}
+[data-scheme="dark"] .aplayer .aplayer-list {
+background-color: var(--card-background);
+}
+[data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
+background-color: var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
+background-color: var(--accent-color);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li {
+color: var(--card-text-color-main);
+border-top-color: var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li:hover {
+background: var(--card-background-selected);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
+background: var(--card-background-selected);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
+color: var(--card-text-color-secondary);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
+color: var(--card-text-color-secondary);
+}
+[data-scheme="dark"] .aplayer .aplayer-lrc {
+text-shadow: -1px -1px 0 var(--body-background);
+}
+[data-scheme="dark"] .aplayer .aplayer-lrc:before {
+background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+}
+[data-scheme="dark"] .aplayer .aplayer-lrc:after {
+background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+}
+[data-scheme="dark"] .aplayer .aplayer-lrc p {
+color: var(--card-text-color-main);
+}
+[data-scheme="dark"] .aplayer .aplayer-miniswitcher {
+background: var(--card-background-selected);
+}
+[data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
+fill: var(--card-text-color-tertiary);
+}
+[data-scheme="light"] .aplayer {
+background: var(--card-background);
+border: 1px solid var(--card-separator-color);
+}
+[data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
+color: var(--card-text-color-main);
+}
+[data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
+color: var(--card-text-color-secondary);
+}
+[data-scheme="light"] .aplayer .aplayer-list li:hover {
+background: var(--card-background-selected);
+}
+&lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
 &lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=1921984877" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
 &lt;h2 id="写在最前"&gt;写在最前
@@ -1345,7 +1940,92 @@ $$0 = g'(f'(a')) = g'(\beta(b)) = \gamma(g(b)),$$&lt;p&gt;其中第一个等号�
 &gt;Mikito P&lt;/a&gt; 所作的 &lt;a class="link" href="https://www.bilibili.com/list/ml1197098078?spm_id_from=333.1007.0.0&amp;amp;oid=27304533&amp;amp;bvid=BV1Rs411N7Aq" target="_blank" rel="noopener"
 &gt;少女レイ&lt;/a&gt; 的曲绘&lt;/em&gt;&lt;/p&gt;
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
-&lt;style type="text/css"&gt;.dark-theme .aplayer{background:#212121}.dark-theme .aplayer.aplayer-withlist .aplayer-info{border-bottom-color:#5c5c5c}.dark-theme .aplayer.aplayer-fixed .aplayer-list{border-color:#5c5c5c}.dark-theme .aplayer .aplayer-body{background-color:#212121}.dark-theme .aplayer .aplayer-info{border-top-color:#212121}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-title{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-author{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time{color:#eee}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path{fill:#eee}.dark-theme .aplayer .aplayer-list{background-color:#212121}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb{background-color:#999}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover{background-color:#bbb}.dark-theme .aplayer .aplayer-list li{color:#fff;border-top-color:#666}.dark-theme .aplayer .aplayer-list li:hover{background:#4e4e4e}.dark-theme .aplayer .aplayer-list li.aplayer-list-light{background:#6c6c6c}.dark-theme .aplayer .aplayer-list li .aplayer-list-index{color:#ddd}.dark-theme .aplayer .aplayer-list li .aplayer-list-author{color:#ddd}.dark-theme .aplayer .aplayer-lrc{text-shadow:-1px -1px 0 #666}.dark-theme .aplayer .aplayer-lrc:before{background:-moz-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:-webkit-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:linear-gradient(to bottom, #212121 0%, rgba(33,33,33,0) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#212121', endColorstr='#00212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc:after{background:-moz-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:-webkit-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:linear-gradient(to bottom, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#00212121', endColorstr='#cc212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc p{color:#fff}.dark-theme .aplayer .aplayer-miniswitcher{background:#484848}.dark-theme .aplayer .aplayer-miniswitcher .aplayer-icon path{fill:#eee}&lt;/style&gt;
+&lt;style type="text/css"&gt;
+[data-scheme="dark"] .aplayer {
+background: var(--card-background);
+border: 1px solid var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
+border-bottom-color: var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
+border-color: var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer .aplayer-body {
+background-color: var(--card-background);
+}
+[data-scheme="dark"] .aplayer .aplayer-info {
+border-top-color: var(--card-background);
+}
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
+color: var(--card-text-color-main);
+}
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
+color: var(--card-text-color-secondary);
+}
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
+color: var(--card-text-color-tertiary);
+}
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
+fill: var(--card-text-color-tertiary);
+}
+[data-scheme="dark"] .aplayer .aplayer-list {
+background-color: var(--card-background);
+}
+[data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
+background-color: var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
+background-color: var(--accent-color);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li {
+color: var(--card-text-color-main);
+border-top-color: var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li:hover {
+background: var(--card-background-selected);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
+background: var(--card-background-selected);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
+color: var(--card-text-color-secondary);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
+color: var(--card-text-color-secondary);
+}
+[data-scheme="dark"] .aplayer .aplayer-lrc {
+text-shadow: -1px -1px 0 var(--body-background);
+}
+[data-scheme="dark"] .aplayer .aplayer-lrc:before {
+background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+}
+[data-scheme="dark"] .aplayer .aplayer-lrc:after {
+background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+}
+[data-scheme="dark"] .aplayer .aplayer-lrc p {
+color: var(--card-text-color-main);
+}
+[data-scheme="dark"] .aplayer .aplayer-miniswitcher {
+background: var(--card-background-selected);
+}
+[data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
+fill: var(--card-text-color-tertiary);
+}
+[data-scheme="light"] .aplayer {
+background: var(--card-background);
+border: 1px solid var(--card-separator-color);
+}
+[data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
+color: var(--card-text-color-main);
+}
+[data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
+color: var(--card-text-color-secondary);
+}
+[data-scheme="light"] .aplayer .aplayer-list li:hover {
+background: var(--card-background-selected);
+}
+&lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
 &lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=1334077117" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
 &lt;h2 id="简介"&gt;简介
@@ -1490,7 +2170,92 @@ $$&lt;p&gt;这里，相浓度前的 $\phi_\alpha$，相分数，就会引发问�
 &gt;r-906&lt;/a&gt; 所作的 &lt;a class="link" href="https://www.bilibili.com/video/BV1Ee4y1E7J6/" target="_blank" rel="noopener"
 &gt;Hello World!&lt;/a&gt; 的曲绘&lt;/em&gt;&lt;/p&gt;
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
-&lt;style type="text/css"&gt;.dark-theme .aplayer{background:#212121}.dark-theme .aplayer.aplayer-withlist .aplayer-info{border-bottom-color:#5c5c5c}.dark-theme .aplayer.aplayer-fixed .aplayer-list{border-color:#5c5c5c}.dark-theme .aplayer .aplayer-body{background-color:#212121}.dark-theme .aplayer .aplayer-info{border-top-color:#212121}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-title{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-author{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time{color:#eee}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path{fill:#eee}.dark-theme .aplayer .aplayer-list{background-color:#212121}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb{background-color:#999}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover{background-color:#bbb}.dark-theme .aplayer .aplayer-list li{color:#fff;border-top-color:#666}.dark-theme .aplayer .aplayer-list li:hover{background:#4e4e4e}.dark-theme .aplayer .aplayer-list li.aplayer-list-light{background:#6c6c6c}.dark-theme .aplayer .aplayer-list li .aplayer-list-index{color:#ddd}.dark-theme .aplayer .aplayer-list li .aplayer-list-author{color:#ddd}.dark-theme .aplayer .aplayer-lrc{text-shadow:-1px -1px 0 #666}.dark-theme .aplayer .aplayer-lrc:before{background:-moz-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:-webkit-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:linear-gradient(to bottom, #212121 0%, rgba(33,33,33,0) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#212121', endColorstr='#00212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc:after{background:-moz-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:-webkit-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:linear-gradient(to bottom, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#00212121', endColorstr='#cc212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc p{color:#fff}.dark-theme .aplayer .aplayer-miniswitcher{background:#484848}.dark-theme .aplayer .aplayer-miniswitcher .aplayer-icon path{fill:#eee}&lt;/style&gt;
+&lt;style type="text/css"&gt;
+[data-scheme="dark"] .aplayer {
+background: var(--card-background);
+border: 1px solid var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
+border-bottom-color: var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
+border-color: var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer .aplayer-body {
+background-color: var(--card-background);
+}
+[data-scheme="dark"] .aplayer .aplayer-info {
+border-top-color: var(--card-background);
+}
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
+color: var(--card-text-color-main);
+}
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
+color: var(--card-text-color-secondary);
+}
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
+color: var(--card-text-color-tertiary);
+}
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
+fill: var(--card-text-color-tertiary);
+}
+[data-scheme="dark"] .aplayer .aplayer-list {
+background-color: var(--card-background);
+}
+[data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
+background-color: var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
+background-color: var(--accent-color);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li {
+color: var(--card-text-color-main);
+border-top-color: var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li:hover {
+background: var(--card-background-selected);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
+background: var(--card-background-selected);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
+color: var(--card-text-color-secondary);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
+color: var(--card-text-color-secondary);
+}
+[data-scheme="dark"] .aplayer .aplayer-lrc {
+text-shadow: -1px -1px 0 var(--body-background);
+}
+[data-scheme="dark"] .aplayer .aplayer-lrc:before {
+background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+}
+[data-scheme="dark"] .aplayer .aplayer-lrc:after {
+background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+}
+[data-scheme="dark"] .aplayer .aplayer-lrc p {
+color: var(--card-text-color-main);
+}
+[data-scheme="dark"] .aplayer .aplayer-miniswitcher {
+background: var(--card-background-selected);
+}
+[data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
+fill: var(--card-text-color-tertiary);
+}
+[data-scheme="light"] .aplayer {
+background: var(--card-background);
+border: 1px solid var(--card-separator-color);
+}
+[data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
+color: var(--card-text-color-main);
+}
+[data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
+color: var(--card-text-color-secondary);
+}
+[data-scheme="light"] .aplayer .aplayer-list li:hover {
+background: var(--card-background-selected);
+}
+&lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
 &lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=2076684514" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
 &lt;p&gt;2025.06.06 更新：感谢&lt;a class="link" href="https://github.com/which-is-my-way" target="_blank" rel="noopener"

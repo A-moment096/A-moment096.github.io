@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python on A Moment's Rest</title><link>https://a-moment096.github.io/tags/python/</link><description>Recent content in Python on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 05 Sep 2025 03:30:12 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/python/index.xml" rel="self" type="application/rss+xml"/><item><title>2025! 非零的最后一位数字是多少？</title><link>https://a-moment096.github.io/posts/2025/08/factorial_last_digits/</link><pubDate>Mon, 25 Aug 2025 18:01:23 +0800</pubDate><guid>https://a-moment096.github.io/posts/2025/08/factorial_last_digits/</guid><description>&lt;img src="https://a-moment096.github.io/posts/2025/08/factorial_last_digits/%E6%B8%85%E6%B0%B4%E5%90%9F.jpg" alt="Featured image of post 2025! 非零的最后一位数字是多少？" /&gt;&lt;p&gt;&lt;em&gt;在知乎上看到了&lt;a class="link" href="https://www.zhihu.com/question/666502327" target="_blank" rel="noopener"
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python on A Moment's Rest</title><link>https://a-moment096.github.io/tags/python/</link><description>Recent content in Python on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 05 Sep 2025 06:45:48 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/python/index.xml" rel="self" type="application/rss+xml"/><item><title>2025! 非零的最后一位数字是多少？</title><link>https://a-moment096.github.io/posts/2025/08/factorial_last_digits/</link><pubDate>Mon, 25 Aug 2025 18:01:23 +0800</pubDate><guid>https://a-moment096.github.io/posts/2025/08/factorial_last_digits/</guid><description>&lt;img src="https://a-moment096.github.io/posts/2025/08/factorial_last_digits/%E6%B8%85%E6%B0%B4%E5%90%9F.jpg" alt="Featured image of post 2025! 非零的最后一位数字是多少？" /&gt;&lt;p&gt;&lt;em&gt;在知乎上看到了&lt;a class="link" href="https://www.zhihu.com/question/666502327" target="_blank" rel="noopener"
 &gt;这样一个有趣的问题&lt;/a&gt;，以及&lt;a class="link" href="https://www.zhihu.com/question/666502327/answer/18810753693" target="_blank" rel="noopener"
 &gt;很厉害的回答&lt;/a&gt;，实在是很有意思。这里就写一写我的解决这个问题的方法以及当时的心路历程吧。&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图出自 &lt;a class="link" href="https://www.pixiv.net/en/users/8605991" target="_blank" rel="noopener"
@@ -6,7 +6,92 @@
 &gt;清水吟&lt;/a&gt;，搭配的曲子是 &lt;a class="link" href="https://ddby.jp/" target="_blank" rel="noopener"
 &gt;&lt;strong&gt;DDBY&lt;/strong&gt;&lt;/a&gt; 的 &lt;em&gt;Cramped space&lt;/em&gt;，笛声真的很棒，搭配轻快的鼓组和旋律，给人一种很悠闲放松的感觉呢。希望你也喜欢~&lt;/em&gt;&lt;/p&gt;
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
-&lt;style type="text/css"&gt;.dark-theme .aplayer{background:#212121}.dark-theme .aplayer.aplayer-withlist .aplayer-info{border-bottom-color:#5c5c5c}.dark-theme .aplayer.aplayer-fixed .aplayer-list{border-color:#5c5c5c}.dark-theme .aplayer .aplayer-body{background-color:#212121}.dark-theme .aplayer .aplayer-info{border-top-color:#212121}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-title{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-music .aplayer-author{color:#fff}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time{color:#eee}.dark-theme .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path{fill:#eee}.dark-theme .aplayer .aplayer-list{background-color:#212121}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb{background-color:#999}.dark-theme .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover{background-color:#bbb}.dark-theme .aplayer .aplayer-list li{color:#fff;border-top-color:#666}.dark-theme .aplayer .aplayer-list li:hover{background:#4e4e4e}.dark-theme .aplayer .aplayer-list li.aplayer-list-light{background:#6c6c6c}.dark-theme .aplayer .aplayer-list li .aplayer-list-index{color:#ddd}.dark-theme .aplayer .aplayer-list li .aplayer-list-author{color:#ddd}.dark-theme .aplayer .aplayer-lrc{text-shadow:-1px -1px 0 #666}.dark-theme .aplayer .aplayer-lrc:before{background:-moz-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:-webkit-linear-gradient(top, #212121 0%, rgba(33,33,33,0) 100%);background:linear-gradient(to bottom, #212121 0%, rgba(33,33,33,0) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#212121', endColorstr='#00212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc:after{background:-moz-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:-webkit-linear-gradient(top, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);background:linear-gradient(to bottom, rgba(33,33,33,0) 0%, rgba(33,33,33,0.8) 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#00212121', endColorstr='#cc212121',GradientType=0 )}.dark-theme .aplayer .aplayer-lrc p{color:#fff}.dark-theme .aplayer .aplayer-miniswitcher{background:#484848}.dark-theme .aplayer .aplayer-miniswitcher .aplayer-icon path{fill:#eee}&lt;/style&gt;
+&lt;style type="text/css"&gt;
+[data-scheme="dark"] .aplayer {
+background: var(--card-background);
+border: 1px solid var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
+border-bottom-color: var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
+border-color: var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer .aplayer-body {
+background-color: var(--card-background);
+}
+[data-scheme="dark"] .aplayer .aplayer-info {
+border-top-color: var(--card-background);
+}
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
+color: var(--card-text-color-main);
+}
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
+color: var(--card-text-color-secondary);
+}
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
+color: var(--card-text-color-tertiary);
+}
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
+fill: var(--card-text-color-tertiary);
+}
+[data-scheme="dark"] .aplayer .aplayer-list {
+background-color: var(--card-background);
+}
+[data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
+background-color: var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
+background-color: var(--accent-color);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li {
+color: var(--card-text-color-main);
+border-top-color: var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li:hover {
+background: var(--card-background-selected);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
+background: var(--card-background-selected);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
+color: var(--card-text-color-secondary);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
+color: var(--card-text-color-secondary);
+}
+[data-scheme="dark"] .aplayer .aplayer-lrc {
+text-shadow: -1px -1px 0 var(--body-background);
+}
+[data-scheme="dark"] .aplayer .aplayer-lrc:before {
+background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+}
+[data-scheme="dark"] .aplayer .aplayer-lrc:after {
+background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+}
+[data-scheme="dark"] .aplayer .aplayer-lrc p {
+color: var(--card-text-color-main);
+}
+[data-scheme="dark"] .aplayer .aplayer-miniswitcher {
+background: var(--card-background-selected);
+}
+[data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
+fill: var(--card-text-color-tertiary);
+}
+[data-scheme="light"] .aplayer {
+background: var(--card-background);
+border: 1px solid var(--card-separator-color);
+}
+[data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
+color: var(--card-text-color-main);
+}
+[data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
+color: var(--card-text-color-secondary);
+}
+[data-scheme="light"] .aplayer .aplayer-list li:hover {
+background: var(--card-background-selected);
+}
+&lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
 &lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=715690" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
 &lt;h2 id="问题介绍"&gt;问题介绍
