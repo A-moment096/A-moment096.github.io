@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pages on A Moment's Rest</title><link>https://a-moment096.github.io/page/</link><description>Recent content in Pages on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 05 Sep 2025 06:45:48 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/page/index.xml" rel="self" type="application/rss+xml"/><item><title>Thoughts</title><link>https://a-moment096.github.io/page/thoughts/</link><pubDate>Sat, 02 Nov 2024 14:34:18 +0800</pubDate><guid>https://a-moment096.github.io/page/thoughts/</guid><description>&lt;!-- 由 LeanCloud + Artitalk 驱动 --&gt;</description></item><item><title>About</title><link>https://a-moment096.github.io/page/about/</link><pubDate>Wed, 09 Oct 2024 14:34:18 +0800</pubDate><guid>https://a-moment096.github.io/page/about/</guid><description>&lt;img src="https://a-moment096.github.io/page/about/Reimu.png" alt="Featured image of post About" /&gt;&lt;h1 id="a-moment-rest-amoments-blog"&gt;A Moment Rest: AMoment&amp;rsquo;s Blog
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pages on A Moment's Rest</title><link>https://a-moment096.github.io/page/</link><description>Recent content in Pages on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 17 Sep 2025 08:54:41 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/page/index.xml" rel="self" type="application/rss+xml"/><item><title>Thoughts</title><link>https://a-moment096.github.io/page/thoughts/</link><pubDate>Sat, 02 Nov 2024 14:34:18 +0800</pubDate><guid>https://a-moment096.github.io/page/thoughts/</guid><description>&lt;!-- 由 LeanCloud + Artitalk 驱动 --&gt;</description></item><item><title>About</title><link>https://a-moment096.github.io/page/about/</link><pubDate>Wed, 09 Oct 2024 14:34:18 +0800</pubDate><guid>https://a-moment096.github.io/page/about/</guid><description>&lt;img src="https://a-moment096.github.io/page/about/Reimu.png" alt="Featured image of post About" /&gt;&lt;h1 id="a-moment-rest-amoments-blog"&gt;A Moment Rest: AMoment&amp;rsquo;s Blog
 &lt;/h1&gt;&lt;p&gt;Welcome! Come and have a rest here~&lt;/p&gt;
 &lt;h2 id="who-are-you--你谁"&gt;Who are you? | 你谁？
 &lt;/h2&gt;&lt;p&gt;I&amp;rsquo;m a 24 year-old graduate student in &lt;del&gt;Counter Strike University&lt;/del&gt; Central South University, major in Material Sci &amp;amp; Eng.&lt;/p&gt;
@@ -21,9 +21,9 @@
 &lt;li&gt;&lt;a class="link" href="https://github.com/A-moment096/MInDes_Documents" target="_blank" rel="noopener"
 &gt;MInDes_Documents&lt;/a&gt; : The documentation set of MInDes. Also, forked from main repo. 相场模拟软件的文档，我也fork了一份。&lt;/li&gt;
 &lt;li&gt;&lt;a class="link" href="https://github.com/A-moment096/MInDes-LSP" target="_blank" rel="noopener"
-&gt;MInDes_LSP&lt;/a&gt; : A little VSCode extension to provide syntax highlighting for MInDes input script file. 一款VSCode插件，可以提供代码高亮等功能给MInDes的输入文件。&lt;/li&gt;
-&lt;li&gt;&lt;a class="link" href="https://github.com/A-moment096/Python-with-VSCode" target="_blank" rel="noopener"
-&gt;Python-with-VSCode&lt;/a&gt; : A simple LaTeX project providing simple introduction and instruction about how to setup Python environment with VSCode. 一个简单的 LaTeX 文档，提供了VSCode+Python初学入门环境配置的简单教程。&lt;/li&gt;
+&gt;MInDes_LSP&lt;/a&gt; : A little VS Code extension to provide syntax highlighting for MInDes input script file. 一款VS Code插件，可以提供代码高亮等功能给MInDes的输入文件。&lt;/li&gt;
+&lt;li&gt;[Python-with-VS Code](&lt;a class="link" href="https://github.com/A-moment096/Python-with-VS" target="_blank" rel="noopener"
+&gt;https://github.com/A-moment096/Python-with-VS&lt;/a&gt; Code) : A simple LaTeX project providing simple introduction and instruction about how to setup Python environment with VS Code. 一个简单的 LaTeX 文档，提供了VS Code+Python初学入门环境配置的简单教程。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;You can also check them in my &lt;a class="link" href="https://github.com/A-moment096" target="_blank" rel="noopener"
 &gt;GitHub&lt;/a&gt; page.&lt;/p&gt;
@@ -215,6 +215,19 @@ a.k.a. 寒武纪的三叶虫?
 &lt;/div&gt;
 &lt;div class="article-image"&gt;
 &lt;img src="https://avatars.githubusercontent.com/u/146634708?v=4" loading="lazy"&gt;
+&lt;/div&gt;
+&lt;/a&gt;
+&lt;/article&gt;
+&lt;article&gt;
+&lt;a href="https://har-w.github.io/salon-sparkle/" target="_blank" rel="noopener"&gt;
+&lt;div class="article-details"&gt;
+&lt;h2 class="article-title"&gt;琉光烁影&lt;/h2&gt;
+&lt;footer class="article-time"&gt;
+过去的瞬间如火花闪耀
+&lt;/footer&gt;
+&lt;/div&gt;
+&lt;div class="article-image"&gt;
+&lt;img src="https://har-w.github.io/salon-sparkle/" loading="lazy"&gt;
 &lt;/div&gt;
 &lt;/a&gt;
 &lt;/article&gt;

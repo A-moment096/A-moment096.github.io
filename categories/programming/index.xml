@@ -2239,7 +2239,7 @@ data-flex-basis="240px"
 以上三款编译器近乎最受欢迎的 C++ 编译器，当然也有一些其他的 C++ 编译器，但由于不同编译器对语言的实现可能有所不同，依旧是建议没有特殊需求的开发者采用三大主流编译器编译 C++ 代码。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;编译器负责将源码编译为二进制文件，而&lt;strong&gt;链接器&lt;/strong&gt;（linker）则负责将不同的二进制文件按照要求链接起来，形成一个单独的二进制文件。&lt;strong&gt;调试器&lt;/strong&gt;（debugger）则负责读取符号表后对二进制文件进行逐行运行与调试。至于编译器的&lt;em&gt;前端&lt;/em&gt;，&lt;em&gt;后端&lt;/em&gt;以及其具体运行超出了单纯运用的范围，这里不深入介绍（其实笔者也不太懂）。&lt;/p&gt;
-&lt;p&gt;这里同时也稍微提一下 &lt;em&gt;编译器&lt;/em&gt;，&lt;em&gt;编辑器&lt;/em&gt;，&lt;em&gt;解释器&lt;/em&gt; 和 &lt;em&gt;IDE&lt;/em&gt; 的区别。其中，解释器我们已经在 Python 中遇到过，它负责将 Python 代码逐行解释给机器并令机器执行。其属于广义上的编译器，即将源代码（文本）转化为机器能识别的指令等的程序。而狭义的编译器则指将文件整体处理并编译为二进制文件的程序。由于 C++ 的执行必须先编译为二进制文件，故其编译器是必不可少的。编译器则与前两者完全区分开，是编辑文字的工具。常见的编辑器如 Windows 上的记事本，Linux 上常用的 Eamcs，Vim，较为现代的 VSCode 等。 经常与编辑器搞混的概念则为IDE。IDE是指集成开发环境（Integrated Developing Enviroment），其兼具编辑器与编译器的功能，可以在其中编辑代码并编译为二进制文件后运行，且通常具有别的功能，如断点调试等等。 这些概念是有一定区分的必要的，否则容易造成误解。&lt;/p&gt;
+&lt;p&gt;这里同时也稍微提一下 &lt;em&gt;编译器&lt;/em&gt;，&lt;em&gt;编辑器&lt;/em&gt;，&lt;em&gt;解释器&lt;/em&gt; 和 &lt;em&gt;IDE&lt;/em&gt; 的区别。其中，解释器我们已经在 Python 中遇到过，它负责将 Python 代码逐行解释给机器并令机器执行。其属于广义上的编译器，即将源代码（文本）转化为机器能识别的指令等的程序。而狭义的编译器则指将文件整体处理并编译为二进制文件的程序。由于 C++ 的执行必须先编译为二进制文件，故其编译器是必不可少的。编译器则与前两者完全区分开，是编辑文字的工具。常见的编辑器如 Windows 上的记事本，Linux 上常用的 Eamcs，Vim，较为现代的 VS Code 等。 经常与编辑器搞混的概念则为IDE。IDE是指集成开发环境（Integrated Developing Enviroment），其兼具编辑器与编译器的功能，可以在其中编辑代码并编译为二进制文件后运行，且通常具有别的功能，如断点调试等等。 这些概念是有一定区分的必要的，否则容易造成误解。&lt;/p&gt;
 &lt;h3 id="c-编译链接"&gt;C++ 编译链接
 &lt;/h3&gt;&lt;p&gt;理解 C++ 的编译过程与链接过程对正确运用编译器编译 C++ 代码是必要的。这里不会过分深入，旨在介绍大致过程，以免出现一些常见问题（如找不到符号定义等）。&lt;/p&gt;
 &lt;p&gt;在编译过程中，编译器会首先将所有的源文件（通常后缀为 &lt;code&gt;.cpp&lt;/code&gt;, &lt;code&gt;.cxx&lt;/code&gt; 等）按照要求编译为相对应的对象文件（Linux 上为 &lt;code&gt;.o&lt;/code&gt; 文件，Windows上为 &lt;code&gt;.obj&lt;/code&gt; 文件），并留下没有实现但是已经声明过的函数、类等，等待链接器链接至对应位置的静态或动态库。随后链接器将执行链接，即将对象文件，外部静态库（ Static Library, Linux上的 &lt;code&gt;.o&lt;/code&gt; 或 Windows 上的 &lt;code&gt;.lib&lt;/code&gt; 文件）和外部的动态库（Shared Object 或 Dynamic Library，Linux上的 &lt;code&gt;.so&lt;/code&gt; 或 Windows 上的 &lt;code&gt;.dll&lt;/code&gt; 文件）链接至一起形成一个二进制文件。其中，静态库将和程序生成的对象文件合并到一起形成一个文件，动态链接库则不被合并到文件中。因此，使用动态链接库可以减少重复代码，降低程序的大小。随后在运行该程序时，当程序需要外部链接库中定义的内容时，操作系统将按照一定的顺序寻找动态链接库，并找到其中的定义然后执行。当没能找到动态链接库时，程序便会报出“未定义的符号 XXX”的错误。一般程序会到环境变量中的位置寻找动态链接库，随后在程序所在文件夹下寻找动态库。如果用到了动态链接库，请注意让程序能找到动态库，否则无法成功运行。&lt;/p&gt;
@@ -2250,7 +2250,7 @@ data-flex-basis="240px"
 &lt;h3 id="c-环境搭建"&gt;C++ 环境搭建
 &lt;/h3&gt;&lt;p&gt;如果您使用 Windows 平台，最简单的方法即为考虑微软旗下的 Visual Studio。作为一款成熟的 IDE，Visual Studio 可以在简单的了解其操作之后便将注意力集中在编程解决问题本身而非工具的使用。只需要在官网下载 Visual Studio 的下载器，在下载器界面内选择 C++ 桌面开发的组件，便可以在安装后创建一个解决方案+一个项目，并在左边资源管理器中新建一个 C++ 源文件后开始编写程序了。所有的编译器选项等等都可以通过项目属性来管理配置。如果需要在 Windows 平台上编写大型程序的话，Visual Studio 近乎是 Windows 平台的不二之选。&lt;/p&gt;
 &lt;p&gt;不过如果只需要编译运行单个 C++ 文件，又或者 Visual Studio 太过笨重，不适合您的电脑环境的话，可以考虑使用 MinGW-w64 或者 MSYS2 中的编译器与 C++ 运行时。在写好 C++ 源文件之后， 像在 Linux 环境下一样调用 &lt;code&gt;g++&lt;/code&gt; 命令编译源文件，即可得到可执行的程序。除了在 Windows 上模拟 Linux 环境外，还可以考虑使用 WSL 来创建本地的轻量化 Linux 子系统，登录到子系统后就相当于打开了 Linux 虚拟机，此时便可在 Linux 环境下安装编译所需要的工具链并进行编译了。&lt;/p&gt;
-&lt;p&gt;由于所谓源代码仅为有一定格式的文本文件，故而您可以使用任何喜欢的文本编辑工具来编写源代码。然而好的编辑器可以辅助编写，特别是代码高亮，自动补全，调用编译器等功能可以极大地方便代码编写。这里推荐使用 VSCode，其丰富的插件生态可以在安装好编译器与对应插件的情况下提供良好的代码高亮，定义跳转，自动补全的功能，且可以编译 C++ 源文件并调试/执行。具体内容由于 VSCode 提供了详尽的文档，这里不再赘述。&lt;/p&gt;
+&lt;p&gt;由于所谓源代码仅为有一定格式的文本文件，故而您可以使用任何喜欢的文本编辑工具来编写源代码。然而好的编辑器可以辅助编写，特别是代码高亮，自动补全，调用编译器等功能可以极大地方便代码编写。这里推荐使用 VS Code，其丰富的插件生态可以在安装好编译器与对应插件的情况下提供良好的代码高亮，定义跳转，自动补全的功能，且可以编译 C++ 源文件并调试/执行。具体内容由于 VS Code 提供了详尽的文档，这里不再赘述。&lt;/p&gt;
 &lt;h3 id="c-标准"&gt;C++ 标准
 &lt;/h3&gt;&lt;p&gt;作为一门发展良久的语言，C++ 经历了数次版本迭代，也因此拥有多个语言版本。根据 ISO 的标准，C++ 委员会将对语言特性，语法规则等进行调整，对语言库做出提案，并由各大编译器厂商进行实现。不同的编译器厂商可能会采用不同的实现方式，且不同的编译器可能会添加不同的扩展，故而非标准的 C++ 代码可能需要根据平台和编译器进行编译。而当源码采用的标准与编译器标准不同时，也常常会出现编译错误。所以在编写/编译源文件时应明确采用的 C++ 标准。目前业界常用的且拥有广泛编译器支持的 C++ 标准为 C++14，但该标准较为老旧，缺少很多便利的库函数等。可以考虑使用 C++17 或者 C++20 标准以方便使用。本教程使用 C++17 标准。请注意 Visual Studio 默认的 C++ 标准为 C++14，如有必要请在项目属性中修改 C++ 标准。&lt;/p&gt;
 &lt;h2 id="c-语法基础"&gt;C++ 语法基础
@@ -2545,7 +2545,7 @@ data-flex-basis="315px"
 &lt;h4 id="编辑器-与-visual-studio-code"&gt;编辑器 与 Visual Studio Code
 &lt;/h4&gt;&lt;p&gt;在安装好 Python 解释器之后其实就已经可以开始 Python 编程了 (没错, 就是传说中的记事本编程). 然而这当然不是最好的方法, 这种方法光是考虑到没有代码高亮就让人很难以接受了. 这里我个人推荐 Visual Studio Code (以下简称 VSC).&lt;/p&gt;
 &lt;p&gt;VSC 功能强大, &lt;a class="link" href="https://code.visualstudio.com/" target="_blank" rel="noopener"
-&gt;安装&lt;/a&gt;方便, 插件生态极其丰富, 通过合理的配置近乎可以达到 IDE (Integrated Development Environment, 集成开发环境) 的水平. 我个人在写简单的 Python 脚本时几乎都是使用 VSC 写的. 一路默认安装后, 根据需要安装中文插件, 然后再在插件页面搜索 Python 即可安装 Python 插件全家桶, 然后就可以开始使用 VSC 写 Python 代码 (脚本)了. VSC 的安装与环境配置也可以参考我之前写的&lt;a class="link" href="https://a-moment096.github.io/posts/2024/11/py_vsc/" &gt;博客文章&lt;/a&gt;.&lt;/p&gt;
+&gt;安装&lt;/a&gt;方便, 插件生态极其丰富, 通过合理的配置近乎可以达到 IDE (Integrated Development Environment, 集成开发环境) 的水平. 我个人在写简单的 Python 脚本时几乎都是使用 VSC 写的. 一路默认安装后, 根据需要安装中文插件, 然后再在插件页面搜索 Python 即可安装 Python 插件全家桶, 然后就可以开始使用 VSC 写 Python 代码 (脚本)了. VSC 的安装与环境配置也可以参考我之前写的&lt;a class="link" href="https://a-moment096.github.io/posts/2024/11/vsc_py/" &gt;博客文章&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;这里没有推荐 IDE, 因为 IDE 对这里仅仅使用 Python 做一些简单应用而言太过 &amp;ldquo;全能&amp;rdquo;, 或者说, 负担太重. 当然, 如果感兴趣, 可以考虑使用大名鼎鼎的 PyCharm. 这里不再赘述.&lt;/p&gt;
 &lt;h4 id="虚拟环境-venv-和-pip"&gt;虚拟环境, venv 和 pip
 &lt;/h4&gt;&lt;p&gt;这里简单介绍一下虚拟环境. 因为 Python 的生态丰富, 可能会碰到某些依赖相互冲突的情况, 尤其是在多人共同开发的情况下, 每个人的开发环境配置不同, 很容易导致依赖冲突. 为解决这种情况, 可以考虑使用 Python 的虚拟环境 &lt;code&gt;virtualenv&lt;/code&gt;. 创建的虚拟环境下有该虚拟环境所自有的一些包, 并且和该虚拟环境以外的部分是相互独立的. 使用 VSC 创建 &lt;code&gt;virtualenv&lt;/code&gt; 虚拟环境非常简单, 只需要 &lt;code&gt;Ctrl+Shift+P&lt;/code&gt; 打开 VSC 的命令, 然后搜索 &lt;code&gt;Python: Create Environment&lt;/code&gt; 即可根据向导一步步搭建虚拟环境.&lt;/p&gt;
@@ -3252,14 +3252,14 @@ $$&lt;p&gt;
 &lt;/ul&gt;
 &lt;p&gt;以上是比较常用的 $\nabla$ 算符性质. 实际上三种算符的组合恒等式非常多, 而实际上常用的等式则为以上所列.&lt;/p&gt;
 &lt;h2 id="总结"&gt;总结
-&lt;/h2&gt;&lt;p&gt;相场法作为一种材料模拟方法, 其内容涉及范围广, 包括材料学(热力学, 动力学), 数值方法, 计算机编程等等相关内容. 解决上述列出的若干问题是开始相场模拟所必须的数学方法基础. 下一部分计划通过 Python 代码实现本文中的若干算法, 包括数值解ODE, 向量微积分的实现, 以及数值积分方法.&lt;/p&gt;</description></item><item><title>Python + VSCode 快速配置</title><link>https://a-moment096.github.io/posts/2024/11/py_vsc/</link><pubDate>Fri, 01 Nov 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/2024/11/py_vsc/</guid><description>&lt;img src="https://a-moment096.github.io/posts/2024/11/py_vsc/%E5%A6%B9%E7%BA%A2.jpeg" alt="Featured image of post Python + VSCode 快速配置" /&gt;&lt;p&gt;&lt;em&gt;这是一篇写给初学 Python 的同学的教程，帮助使用 VS Code 快速配置好 Python 的开发环境，写于今年9月14日，
+&lt;/h2&gt;&lt;p&gt;相场法作为一种材料模拟方法, 其内容涉及范围广, 包括材料学(热力学, 动力学), 数值方法, 计算机编程等等相关内容. 解决上述列出的若干问题是开始相场模拟所必须的数学方法基础. 下一部分计划通过 Python 代码实现本文中的若干算法, 包括数值解ODE, 向量微积分的实现, 以及数值积分方法.&lt;/p&gt;</description></item><item><title>Python + VS Code 快速配置</title><link>https://a-moment096.github.io/posts/2024/11/vsc_py/</link><pubDate>Fri, 01 Nov 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/2024/11/vsc_py/</guid><description>&lt;img src="https://a-moment096.github.io/posts/2024/11/vsc_py/%E5%A6%B9%E7%BA%A2.jpeg" alt="Featured image of post Python + VS Code 快速配置" /&gt;&lt;p&gt;&lt;em&gt;这是一篇写给初学 Python 的同学的教程，帮助使用 VS Code 快速配置好 Python 的开发环境，写于今年9月14日，
 先搬运至此并改为 Markdown，作为 Programming部分的第一篇博文&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id="简介"&gt;简介
 &lt;/h2&gt;&lt;p&gt;Python, 一门伟大的语言. 简易的, 贴合人类语言的语法, 丰富的生态, 强
 大的功能让Python近几年来几乎稳坐最受欢迎编程语言的宝座. 然而, 对于
 刚开始接触编程语言的初学者而言, 最麻烦的可能并非学习语法或者处理报
 错, 而是搭建一个简单易用的开发环境. 本文将尽笔者所能, 介绍如何配置出
-一套使用 VSCode+Python 的新手或轻度使用者适用的编程环境, 以供新手平
+一套使用 VS Code+Python 的新手或轻度使用者适用的编程环境, 以供新手平
 稳度过前期繁琐的边角料过程, 尽快开始主菜.&lt;/p&gt;
 &lt;p&gt;然而需要提醒各位读者的是, 笔者本人并非Python主力用户, Python于笔
 者而言仅为日常处理数据之用. 因此如有不正之处, 请与笔者联系修改, 如有
@@ -3296,30 +3296,30 @@ TO PATH)以避免后续复杂的手动添加环境变量的过程!&lt;/strong&gt
 错, 那么有可能您的安装失败或者安装过程中没有将Python添加到环境变量
 中.&lt;/p&gt;
 &lt;p&gt;以上便是安装Python解释器的过程.&lt;/p&gt;
-&lt;h2 id="vscode-的安装与配置"&gt;VSCode 的安装与配置
+&lt;h2 id="vs-code-的安装与配置"&gt;VS Code 的安装与配置
 &lt;/h2&gt;&lt;p&gt;这一步与上一步是平行的, 没有先后顺序一说, 您可以自由选择先进
 行哪个部分.
 但建议您先进行上一部分, 在本部分结束后您将可以直接
-在VSCode中开始Python编程.&lt;/p&gt;
-&lt;p&gt;VSCode是一个强大的文本编辑器.
+在VS Code中开始Python编程.&lt;/p&gt;
+&lt;p&gt;VS Code是一个强大的文本编辑器.
 其最大的特点是其优秀的插件生
-态以及众多的语言支持(也是通过插件实现的). 通过VSCode与插件之间的
+态以及众多的语言支持(也是通过插件实现的). 通过VS Code与插件之间的
 配合, 可以实现媲美IDE的开发环境搭建.
-笔者推荐由VSCode官方出品的
-在VSCode中使用Python的引导文档: &lt;a class="link" href="https://code.visualstudio.com/docs/languages/python" target="_blank" rel="noopener"
+笔者推荐由VS Code官方出品的
+在VS Code中使用Python的引导文档: &lt;a class="link" href="https://code.visualstudio.com/docs/languages/python" target="_blank" rel="noopener"
 &gt;Python in Visual Studio Code&lt;/a&gt; , 该文档详
-细介绍了如何从0开始在VSCode上使用Python, 除了是英文内容外几乎没有
-缺点(当然, 您可以选择网页翻译). 下面笔者将自行介绍如何安装VSCode与
+细介绍了如何从0开始在VS Code上使用Python, 除了是英文内容外几乎没有
+缺点(当然, 您可以选择网页翻译). 下面笔者将自行介绍如何安装VS Code与
 相关插件.&lt;/p&gt;
 &lt;p&gt;点击 &lt;a class="link" href="https://code.visualstudio.com/" target="_blank" rel="noopener"
-&gt;此处&lt;/a&gt; 即可打开 VSCode 官网. VSCode的安装可以全部选择默认安
-装, 如此便可使用VSCode的基础功能. 安装插件可以在侧边栏选择或者使用
+&gt;此处&lt;/a&gt; 即可打开 VS Code 官网. VS Code的安装可以全部选择默认安
+装, 如此便可使用VS Code的基础功能. 安装插件可以在侧边栏选择或者使用
 快捷键 Ctrl+Shift+X 打开插件市场, 在页面上方框中输入相应关键词即可
 检索相关插件. 如要进行Python开发, 请安装如下插件.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Chinese (Simplified)(简体中文) Language Pack for Visual Studio Code: 可
-以使VSCode的语言显示变为中文显示.&lt;/li&gt;
-&lt;li&gt;Python Extension Pack: VSCode上的Python插件全家桶. 安装这个比较
+以使VS Code的语言显示变为中文显示.&lt;/li&gt;
+&lt;li&gt;Python Extension Pack: VS Code上的Python插件全家桶. 安装这个比较
 省事.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="python-脚本试运行"&gt;Python 脚本试运行
@@ -3330,9 +3330,9 @@ TO PATH)以避免后续复杂的手动添加环境变量的过程!&lt;/strong&gt
 &lt;p&gt;新建一个文件, 将之按照自己喜欢的名字命名, 并修改其后缀为 &lt;code&gt;.py&lt;/code&gt; .&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;右键该文件, 选择用VSCode打开. 打开VSCode界面后, 此时VSCode可
+&lt;p&gt;右键该文件, 选择用VS Code打开. 打开VS Code界面后, 此时VS Code可
 能会询问您是否信任该文件夹. 请选择”信任”以使您安装的插件正常
-运行, 否则插件可能会被VSCode所屏蔽.&lt;/p&gt;
+运行, 否则插件可能会被VS Code所屏蔽.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;现在您可以编辑该文件了. 输入一些Python代码, 下面是一个简单的测试代码:&lt;/p&gt;
@@ -3344,7 +3344,7 @@ TO PATH)以避免后续复杂的手动添加环境变量的过程!&lt;/strong&gt
 &lt;li&gt;
 &lt;p&gt;现在请尝试运行该脚本. 如果您成功安装Python插件, 该文件界面的
 右上角应该会出现一个小的向右的箭头. 点击该箭头即可开始运行.
-由于您很有可能是第一次在VSCode中运行Python脚本, 因此右下角会
+由于您很有可能是第一次在VS Code中运行Python脚本, 因此右下角会
 弹出一个通知框, 通知您还未选择Python解释器. 此时界面上方会出
 现一个对话框, 让您选择您需要的Python解释器. 您可能会看到多个
 解释器(如您下载了多个解释器版本)或者 创建虚拟环境(Create Virtual
@@ -3352,13 +3352,13 @@ Environment). 您可以先暂时不考虑设置虚拟环境, 先使用已有的�
 生效的Python解释器.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;选择好后, 请再次重复上一步, 按下小箭头. 这是, VSCode界面下方会出
+&lt;p&gt;选择好后, 请再次重复上一步, 按下小箭头. 这是, VS Code界面下方会出
 现一个新的窗口界面, 显示的便是您程序运行的结果. 此时您便已经成
 功运行了该Python脚本, 也说明您的Python运行环境已经搭建成功了.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id="python-debug-pip-jupyter-notebook"&gt;Python Debug, Pip, Jupyter Notebook
-&lt;/h2&gt;&lt;p&gt;本节将简要介绍有关Python与VSCode的其他方面.&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;本节将简要介绍有关Python与VS Code的其他方面.&lt;/p&gt;
 &lt;h3 id="调试-debug"&gt;调试 (Debug)
 &lt;/h3&gt;&lt;p&gt;调试是用以排查程序运行错漏的操作. 代码一次写成, 运行良好固然很
 好, 但这种情况在实际开发中很难遇到. 实际开发中常会遇到各种各样的问
@@ -3373,11 +3373,11 @@ Environment). 您可以先暂时不考虑设置虚拟环境, 先使用已有的�
 然Python本身已经是解释型语言, 逐行运行已有的程序, 但是通过调试器的诸
 多功能, 仍可以为寻找程序漏洞问题提供帮助.&lt;/p&gt;
 &lt;p&gt;首先介绍断点, 程序在运行至断点后将会停在该处之前, 等待用户的下
-一步命令. 断点的插入在代码编辑器中一般处于左侧的行号附近 (VSCode在
+一步命令. 断点的插入在代码编辑器中一般处于左侧的行号附近 (VS Code在
 行号的左侧), 插入成功后会出现一个小红点. 当程序停在断点处时, 您可以查
 看变量的值, 函数调用栈等多种信息, 随后您可以逐步向下运行程序, 中断调
-试或者向步入函数内部(VSCode通过右上角小框控制).&lt;/p&gt;
-&lt;p&gt;要进入VSCode的Debug模式, 请在运行Python脚本时, 在右上角的代表运
+试或者向步入函数内部(VS Code通过右上角小框控制).&lt;/p&gt;
+&lt;p&gt;要进入VS Code的Debug模式, 请在运行Python脚本时, 在右上角的代表运
 行的箭头旁找到一个向下的箭头, 点击展开菜单后选择 Python调试器: 调
 试Python文件(Python Debugger: Debug Python File), 随后便可进入调试模式.
 请注意此选项不仅会启动调试, 也会改变右上角的默认启动模式为调试. 调
@@ -3427,7 +3427,7 @@ Notebook提供了这样的方法.&lt;/p&gt;
 &lt;p&gt;Jupyter Notebook集成了Python环境和Markdown, 可以使您在代码框中
 使用并运行Python脚本, 并在Markdown框中使用Markdown语法编辑文字. 两
 种框的位置十分灵活, 且Notebook可以打开在浏览器中直接使用, 省去专门
-的编辑器的麻烦, 也可以选择在VSCode中使用. 下面将介绍如何安装和使
+的编辑器的麻烦, 也可以选择在VS Code中使用. 下面将介绍如何安装和使
 用Jupyter Notebook.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -3457,12 +3457,12 @@ book 并打开在您的浏览器的新页面中.&lt;/p&gt;
 &lt;/ol&gt;
 &lt;p&gt;以上, 您便成功安装并试运行了Jupyter Notebook.&lt;/p&gt;
 &lt;p&gt;除了在浏览器中使用原生的JupyterNotebook以外, 您还可以在安装好Jupyter后
-在VSCode中启动. 请安装好Jupyter的插件后, 在VSCode中使用快捷键 &lt;code&gt;Ctrl + Shift + P&lt;/code&gt; ,
-或点击VSCode最上侧的搜索框后输入 &lt;code&gt;&amp;gt;&lt;/code&gt; 以进入命令模式, 然后输入 &lt;code&gt;jupyter&lt;/code&gt; ,
+在VS Code中启动. 请安装好Jupyter的插件后, 在VS Code中使用快捷键 &lt;code&gt;Ctrl + Shift + P&lt;/code&gt; ,
+或点击VS Code最上侧的搜索框后输入 &lt;code&gt;&amp;gt;&lt;/code&gt; 以进入命令模式, 然后输入 &lt;code&gt;jupyter&lt;/code&gt; ,
 此时对话框会提示您所有的可用命令, 点击创建: 新Jupyter Notebook(Create:
 New Jupyter Notebook)即可创建新的Jupyter Notebook. 后续操作类似于网页
-端操作. 该方法不需要自行打开一个Jupyter服务器, VSCode中安装的Jupyter插
-件将在VSCode的后台自行启动一个Jupyter 服务器.&lt;/p&gt;
+端操作. 该方法不需要自行打开一个Jupyter服务器, VS Code中安装的Jupyter插
+件将在VS Code的后台自行启动一个Jupyter 服务器.&lt;/p&gt;
 &lt;h2 id="后记"&gt;后记
 &lt;/h2&gt;&lt;p&gt;笔者希望通过该文章将笔者自认为好的且简单方便的Python使用开发环
 境介绍给本文的读者. 然而作为一个非Python主力的用户, 本文的内容纰漏&lt;/p&gt;
