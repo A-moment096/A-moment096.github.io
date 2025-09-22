@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tutorial on A Moment's Rest</title><link>https://a-moment096.github.io/tags/tutorial/</link><description>Recent content in Tutorial on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 18 Sep 2025 09:09:55 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/tutorial/index.xml" rel="self" type="application/rss+xml"/><item><title>Phase Field: 相场模拟学习笔记 V</title><link>https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/</link><pubDate>Wed, 25 Dec 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/</guid><description>&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/Skadi.png" alt="Featured image of post Phase Field: 相场模拟学习笔记 V" /&gt;&lt;p&gt;&lt;em&gt;其实这节就是换成 Allen-Cahn 方程，然后多个变量而已，主要是俺不想实现 Voronoi 结构（逃&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tutorial on A Moment's Rest</title><link>https://a-moment096.github.io/tags/tutorial/</link><description>Recent content in Tutorial on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 22 Sep 2025 12:49:36 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/tutorial/index.xml" rel="self" type="application/rss+xml"/><item><title>Phase Field: 相场模拟学习笔记 V</title><link>https://a-moment096.github.io/posts/pf_tutorial_5/</link><pubDate>Wed, 25 Dec 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/pf_tutorial_5/</guid><description>&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/Skadi.png" alt="Featured image of post Phase Field: 相场模拟学习笔记 V" /&gt;&lt;p&gt;&lt;em&gt;其实这节就是换成 Allen-Cahn 方程，然后多个变量而已，主要是俺不想实现 Voronoi 结构（逃&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id="简介"&gt;简介
 &lt;/h2&gt;&lt;p&gt;上一部分我们以调幅分解为基础讨论了浓度场在 Cahn-Hilliard 方程下的演化过程。对相场方法而言，另一个无法绕开的演化方程则是针对非保守场变量的 Allen-Cahn 方程。这一部分我们将对晶粒长大过程进行分析，了解 Allen-Cahn 方程并使用它进行晶粒长大过程的模拟。&lt;/p&gt;
 &lt;h2 id="晶粒长大"&gt;晶粒长大
@@ -13,7 +13,7 @@
 $$
 \frac{\partial \eta_i}{\partial t} = -L_{ij}\frac{\delta F}{\delta \eta_j}
 $$&lt;p&gt;
-简单地令人发指（也许）。简单来说，就是某个变量的变化速率受到所有的势的加权求和影响。但是要如何理解这个公式呢？它是怎么来的呢？其实如果有看过&lt;a class="link" href="https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/#演化方程" &gt;上一篇&lt;/a&gt;内容的话，应该已经猜到了。如果物质不守恒，那么物质流的散度项就可以替换成某种别的形式。这个所谓“别的形式”需要满足这些条件：&lt;/p&gt;
+简单地令人发指（也许）。简单来说，就是某个变量的变化速率受到所有的势的加权求和影响。但是要如何理解这个公式呢？它是怎么来的呢？其实如果有看过&lt;a class="link" href="https://a-moment096.github.io/posts/pf_tutorial_4/#演化方程" &gt;上一篇&lt;/a&gt;内容的话，应该已经猜到了。如果物质不守恒，那么物质流的散度项就可以替换成某种别的形式。这个所谓“别的形式”需要满足这些条件：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;需要和能量/势相关以满足热力学要求&lt;/li&gt;
 &lt;li&gt;最终是令体系演化达到平衡的&lt;/li&gt;
@@ -47,10 +47,10 @@ f_{bulk}&amp;= \sum_{i}^{N}\left( -\frac{A}{2}\eta_i^2 + \frac{B}{4}\eta_i^4 \ri
 \end{align}
 $$&lt;p&gt;
 上面第二个等号是由于对 $j (j\neq i)$ 的求和的部分与 $i$ 无关，我们可以把 $\eta_i^2$ 从二重求和中提出来， 然后第三个等号中把对 $i$ 的求和的部分提取合并，最后第四个等号里提出 $\eta_i^2$，把 $\sum_{j\neq{}i}^{N} \eta_j^2$ 作为系数和 $-\dfrac{A}{2}$ 合并。现在我们把目光放在求和里面的这个，关于 $\eta_i$ 的多项式。为简单起见，我们设 $A = B = 1$。下面是这个函数在 $\sum_{j\neq{}i}^{N} \eta_j^2 = 0$ 时候， 即 方程(1) 的第一项的图像（当然，这个假设不够合理，但是我们可以先看看）。&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/double_well.png"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/pf_tutorial_5/double_well.png"
 width="1158"
 height="792"
-srcset="https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/double_well_hu_d1b0704925dee7de.png 480w, https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/double_well_hu_6028a34aff034561.png 1024w"
+srcset="https://a-moment096.github.io/posts/pf_tutorial_5/double_well_hu_d1b0704925dee7de.png 480w, https://a-moment096.github.io/posts/pf_tutorial_5/double_well_hu_6028a34aff034561.png 1024w"
 loading="lazy"
 alt="双势阱？"
 class="gallery-image"
@@ -58,10 +58,10 @@ data-flex-grow="146"
 data-flex-basis="350px"
 &gt;&lt;/p&gt;
 &lt;p&gt;是我们很熟系的双势阱，但是这里有一些问题：序参量实际上不能小于0，也不应该大于1。如果我们只关注 0 到 1 之间的值，不难发现现在这个能量的最低点处在 $\eta = 1$ 的地方。这很合理：在其余的所有序参量（我们简称所有的 j ，对应的本个序参量则为 i）都为 0 的情况下，或者说在没有任何 j 的点，i 占据该点是理所应当的。考虑到每个序参量都是平权的，这说明了这个方程是符合体相内部的热力学要求的。接下来我们考察当这个求和项不为 0 的情况。j 求和的值的变化范围我们先设为 0 到 2。&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/a03.png"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/pf_tutorial_5/a03.png"
 width="1461"
 height="543"
-srcset="https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/a03_hu_97f7afd50570c336.png 480w, https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/a03_hu_b8debade44013d6.png 1024w"
+srcset="https://a-moment096.github.io/posts/pf_tutorial_5/a03_hu_97f7afd50570c336.png 480w, https://a-moment096.github.io/posts/pf_tutorial_5/a03_hu_b8debade44013d6.png 1024w"
 loading="lazy"
 alt="j 的和为0.3时的图像"
 class="gallery-image"
@@ -223,20 +223,20 @@ $$&lt;p&gt;这个形式，熟悉吗？如果去掉第二项，那么这个方程
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/modified_5.png"
+&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/pf_tutorial_5/modified_5.png"
 width="647"
 height="647"
-srcset="https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/modified_5_hu_b5fd896182b8b4a5.png 480w, https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/modified_5_hu_f8716b6e8d544b08.png 1024w"
+srcset="https://a-moment096.github.io/posts/pf_tutorial_5/modified_5_hu_b5fd896182b8b4a5.png 480w, https://a-moment096.github.io/posts/pf_tutorial_5/modified_5_hu_f8716b6e8d544b08.png 1024w"
 loading="lazy"
 alt="第5步"
 class="gallery-image"
 data-flex-grow="100"
 data-flex-basis="240px"
 &gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/modified_25.png"
+&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/pf_tutorial_5/modified_25.png"
 width="647"
 height="647"
-srcset="https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/modified_25_hu_a244c2527aa373e3.png 480w, https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/modified_25_hu_488b15414f3c5d41.png 1024w"
+srcset="https://a-moment096.github.io/posts/pf_tutorial_5/modified_25_hu_a244c2527aa373e3.png 480w, https://a-moment096.github.io/posts/pf_tutorial_5/modified_25_hu_488b15414f3c5d41.png 1024w"
 loading="lazy"
 alt="第25步"
 class="gallery-image"
@@ -249,20 +249,20 @@ data-flex-basis="240px"
 &lt;td style="text-align: center"&gt;第25步&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/modified_75.png"
+&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/pf_tutorial_5/modified_75.png"
 width="647"
 height="647"
-srcset="https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/modified_75_hu_1ea75bf6e2757f2b.png 480w, https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/modified_75_hu_8794650a68486477.png 1024w"
+srcset="https://a-moment096.github.io/posts/pf_tutorial_5/modified_75_hu_1ea75bf6e2757f2b.png 480w, https://a-moment096.github.io/posts/pf_tutorial_5/modified_75_hu_8794650a68486477.png 1024w"
 loading="lazy"
 alt="第75步"
 class="gallery-image"
 data-flex-grow="100"
 data-flex-basis="240px"
 &gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/modified_100.png"
+&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/pf_tutorial_5/modified_100.png"
 width="647"
 height="647"
-srcset="https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/modified_100_hu_5d363fedc4fc5471.png 480w, https://a-moment096.github.io/posts/2024/12/pf_tutorial_5/modified_100_hu_9a695a29e3ebfffb.png 1024w"
+srcset="https://a-moment096.github.io/posts/pf_tutorial_5/modified_100_hu_5d363fedc4fc5471.png 480w, https://a-moment096.github.io/posts/pf_tutorial_5/modified_100_hu_9a695a29e3ebfffb.png 1024w"
 loading="lazy"
 alt="第100步"
 class="gallery-image"
@@ -282,16 +282,16 @@ data-flex-basis="240px"
 &lt;p&gt;和上一个部分一样，对模型和模拟过程更深层的理解是离不开调整参数进行测试的。这两个案例都是比较简单的案例，可调的参数并不多，而且在模拟一开始的时候就已经有了参考的参数了，也不是面对的实际存在的体系，填入的数字的物理意义并没有很大，或者说是比较唯结果论的一些数据。在面对实际物理体系的时候，填参数这块儿是模拟过程最折磨的部分了。如何精确地控制这些参数，让他们配合起来形成一个符合物理特性，而且也能跑出合理结果，这也许是相场方法最麻烦的点。参数的可解释性经常会和参数的数值特性相悖，而能平衡二者的结果几乎都是经过精心设计的。总而言之，多调参数总没错。&lt;/p&gt;
 &lt;p&gt;那么这就是这个教程（自称）系列的最后一部分了。相场方法作为一种材料模拟方法，能做的东西非常多，但是其本身也有一定的限制。它最大的限制就是所谓的扩散界面，这样的界面解决了微分方程不好解的问题，但是也让这个方法很容易滑向物理意义不明确的道路，也经常会因为界面的存在而导致一些模拟发生数值失稳（即便引入界面常常就是希望能解决数值失稳的）。这些特点注定让相场成为一门比较复杂的交叉学科：需要对材料科学有深入的理解，对材料的物理特性有清晰的物理图像，对数值方法有清晰的认知，明白各种方法之间的优缺点选择合适的方法，最后还需要有一定的程序能力来支撑实现模拟。这也许也是相场复杂的地方吧。&lt;/p&gt;
 &lt;p&gt;相场方法并不是一个很新的模拟方法，但是它还有很大的发展空间。不论是比较传统的调幅分解的深入研究模拟，还是使用相场法研究固体力学、电磁学、流体力学这些更复杂的外场，又或者是开发新的程序软件来帮助进行相场模拟，甚至是使用机器学习来辅佐相场计算，这些都是相场正在发展的方向。这个系列的教程希望能够提供相场方法最基础的部分，比如相场的数学基础，程序基础等等。这些内容应该能够成为学习相场过程中比较重要的工具，以便于学习和发展更深层的更复杂的理论/实践。希望阅读本教程的您可以从中有所收获。&lt;/p&gt;
-&lt;p&gt;那么就是这样，最后祝您生活愉快，科研顺利~&lt;/p&gt;</description></item><item><title>Phase Field: 相场模拟学习笔记 IV</title><link>https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/</link><pubDate>Tue, 24 Dec 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/</guid><description>&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/Skadi.png" alt="Featured image of post Phase Field: 相场模拟学习笔记 IV" /&gt;&lt;p&gt;&lt;em&gt;终于，真的要做相场模拟了。先从最软的柿子，调幅分解开始吧&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;那么就是这样，最后祝您生活愉快，科研顺利~&lt;/p&gt;</description></item><item><title>Phase Field: 相场模拟学习笔记 IV</title><link>https://a-moment096.github.io/posts/pf_tutorial_4/</link><pubDate>Tue, 24 Dec 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/pf_tutorial_4/</guid><description>&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/Skadi.png" alt="Featured image of post Phase Field: 相场模拟学习笔记 IV" /&gt;&lt;p&gt;&lt;em&gt;终于，真的要做相场模拟了。先从最软的柿子，调幅分解开始吧&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id="简介"&gt;简介
 &lt;/h2&gt;&lt;p&gt;所以，经过前面三个部分的学习，利用 C++ 进行相场模拟的所有前置几乎全部获得了：公式推导，编程基础，基础算法等，几乎全都拿到手了。这部分开始，我们就正式开始用 C++ 实现相场模拟。我们先从一个很经典且简单的例子开始：A-B 合金的调幅分解。&lt;/p&gt;
 &lt;h2 id="调幅分解"&gt;调幅分解
 &lt;/h2&gt;&lt;p&gt;所以什么是调幅分解？它有什么特殊的地方？为什么相场法的第一个例子是算这么个有点陌生的东西？我们一个一个来解答这些问题。&lt;/p&gt;
 &lt;p&gt;首先值得明确的是，调幅分解是一类相变过程，且这类过程非常适合使用相场法来计算其演化过程。作为相变，我们自然关心其相图和自由能曲线的情况。下面是一副调幅分解的示意图：&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/energy_pd.jpg"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/pf_tutorial_4/energy_pd.jpg"
 width="410"
 height="320"
-srcset="https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/energy_pd_hu_ab49983950f51127.jpg 480w, https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/energy_pd_hu_84d99d70eda55f77.jpg 1024w"
+srcset="https://a-moment096.github.io/posts/pf_tutorial_4/energy_pd_hu_ab49983950f51127.jpg 480w, https://a-moment096.github.io/posts/pf_tutorial_4/energy_pd_hu_84d99d70eda55f77.jpg 1024w"
 loading="lazy"
 alt="调幅分解的相图与自由能曲线"
 class="gallery-image"
@@ -311,10 +311,10 @@ f_{int}\left(\nabla c \right) &amp;= \kappa \left|\nabla c \right| ^2. \\
 \end{align*}
 $$&lt;p&gt;
 其中，$F$ 即为体系的总能量，由两部分的能量密度积分构成，第一部分为体自由能 $f_{bulk}$，其图像为一个双势阱：&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/AB_free_energy.png"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/pf_tutorial_4/AB_free_energy.png"
 width="640"
 height="480"
-srcset="https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/AB_free_energy_hu_7f58b47345c970f5.png 480w, https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/AB_free_energy_hu_4425a7a0a178e408.png 1024w"
+srcset="https://a-moment096.github.io/posts/pf_tutorial_4/AB_free_energy_hu_7f58b47345c970f5.png 480w, https://a-moment096.github.io/posts/pf_tutorial_4/AB_free_energy_hu_4425a7a0a178e408.png 1024w"
 loading="lazy"
 alt="体自由能密度函数图像，其中模型参数选择 A = 1"
 class="gallery-image"
@@ -526,20 +526,20 @@ $$&lt;p&gt;根据这个公式，我们需要先计算浓度的 Laplacian，然�
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/Spinodal_5.png"
+&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/pf_tutorial_4/Spinodal_5.png"
 width="742"
 height="741"
-srcset="https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/Spinodal_5_hu_862da98437ed3e4b.png 480w, https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/Spinodal_5_hu_85c36d16809c7576.png 1024w"
+srcset="https://a-moment096.github.io/posts/pf_tutorial_4/Spinodal_5_hu_862da98437ed3e4b.png 480w, https://a-moment096.github.io/posts/pf_tutorial_4/Spinodal_5_hu_85c36d16809c7576.png 1024w"
 loading="lazy"
 alt="alt text"
 class="gallery-image"
 data-flex-grow="100"
 data-flex-basis="240px"
 &gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/Spinodal_25.png"
+&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/pf_tutorial_4/Spinodal_25.png"
 width="742"
 height="741"
-srcset="https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/Spinodal_25_hu_e4e7611d1e811ccf.png 480w, https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/Spinodal_25_hu_7e6ee2ae728ba08d.png 1024w"
+srcset="https://a-moment096.github.io/posts/pf_tutorial_4/Spinodal_25_hu_e4e7611d1e811ccf.png 480w, https://a-moment096.github.io/posts/pf_tutorial_4/Spinodal_25_hu_7e6ee2ae728ba08d.png 1024w"
 loading="lazy"
 alt="alt text"
 class="gallery-image"
@@ -552,20 +552,20 @@ data-flex-basis="240px"
 &lt;td style="text-align: center"&gt;第25步&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/Spinodal_75.png"
+&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/pf_tutorial_4/Spinodal_75.png"
 width="742"
 height="741"
-srcset="https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/Spinodal_75_hu_ae746b36215901d2.png 480w, https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/Spinodal_75_hu_9a6d521da1f918a5.png 1024w"
+srcset="https://a-moment096.github.io/posts/pf_tutorial_4/Spinodal_75_hu_ae746b36215901d2.png 480w, https://a-moment096.github.io/posts/pf_tutorial_4/Spinodal_75_hu_9a6d521da1f918a5.png 1024w"
 loading="lazy"
 alt="alt text"
 class="gallery-image"
 data-flex-grow="100"
 data-flex-basis="240px"
 &gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/Spinodal_150.png"
+&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/pf_tutorial_4/Spinodal_150.png"
 width="742"
 height="741"
-srcset="https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/Spinodal_150_hu_f8b929b1e73b9c4d.png 480w, https://a-moment096.github.io/posts/2024/12/pf_tutorial_4/Spinodal_150_hu_ea69d8a9bea2356d.png 1024w"
+srcset="https://a-moment096.github.io/posts/pf_tutorial_4/Spinodal_150_hu_f8b929b1e73b9c4d.png 480w, https://a-moment096.github.io/posts/pf_tutorial_4/Spinodal_150_hu_ea69d8a9bea2356d.png 1024w"
 loading="lazy"
 alt="alt text"
 class="gallery-image"
@@ -589,7 +589,7 @@ data-flex-basis="240px"
 &lt;li&gt;调整界面能参数。越大的界面能参数会导致越宽的相界面。而该参数太小时可能会发生数值不稳定的现象&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;可以参考这些描述调参，观察参数的影响。调参几乎是相场模拟中必不可少的一环。&lt;/p&gt;
-&lt;p&gt;那么，我们就下一节见吧。&lt;/p&gt;</description></item><item><title>Phase Field: 相场模拟学习笔记 III</title><link>https://a-moment096.github.io/posts/2024/12/pf_tutorial_3/</link><pubDate>Mon, 23 Dec 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/2024/12/pf_tutorial_3/</guid><description>&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/Skadi.png" alt="Featured image of post Phase Field: 相场模拟学习笔记 III" /&gt;&lt;p&gt;&lt;em&gt;接上一节内容, 这节会简单介绍 C++ 的一些语法知识, 然后用 C++ 实现一维传热方程的模拟。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;那么，我们就下一节见吧。&lt;/p&gt;</description></item><item><title>Phase Field: 相场模拟学习笔记 III</title><link>https://a-moment096.github.io/posts/pf_tutorial_3/</link><pubDate>Mon, 23 Dec 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/pf_tutorial_3/</guid><description>&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/Skadi.png" alt="Featured image of post Phase Field: 相场模拟学习笔记 III" /&gt;&lt;p&gt;&lt;em&gt;接上一节内容, 这节会简单介绍 C++ 的一些语法知识, 然后用 C++ 实现一维传热方程的模拟。&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id="c一门高效的适宜科学计算的程序语言"&gt;C++：一门高效的，适宜科学计算的程序语言
 &lt;/h2&gt;&lt;p&gt;C++ 是一门经典的编程语言，于 1979 年由 Bjarne Stroustrup 设计，最初目的是为了成为更好的 C 语言，而后随着自身发展，成为了一门和 C 语言有许多相似之处，而又截然不同的一门语言。 C++ 支持多种编程范式，包括但不限于面向过程，面向对象，函数式，模板元编程等等。 其丰富的生态，高效的算法库以及&lt;em&gt;零成本抽象&lt;/em&gt;的理念让 C++ 极为适合进行各类科学运算。此外，C++ 的语法较为亲民，其多种编程范式也便于不同背景的开发者上手，故我们在这里引入 C++ 作为后续计算使用的程序语言。&lt;/p&gt;
 &lt;h3 id="c-简介"&gt;C++ 简介
@@ -881,10 +881,10 @@ $$ \dfrac{\partial T}{\partial t} = \mu \dfrac{\partial^2 T}{\partial x ^2},$$&l
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;73&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;74&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这里用到了一些技巧，在边界判断处使用下标运算是否越界来判断是否处于边界处，以及使用了 &lt;code&gt;&amp;lt;chrono&amp;gt;&lt;/code&gt; 库来监测程序运行时间。在成功运行并且用输出的 &lt;code&gt;csv&lt;/code&gt; 文件绘制曲线图后结果大致如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2024/12/pf_tutorial_3/heat_transfer_result.png"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/pf_tutorial_3/heat_transfer_result.png"
 width="500"
 height="380"
-srcset="https://a-moment096.github.io/posts/2024/12/pf_tutorial_3/heat_transfer_result_hu_51db1d3192a486f.png 480w, https://a-moment096.github.io/posts/2024/12/pf_tutorial_3/heat_transfer_result_hu_b3d78924e08641b6.png 1024w"
+srcset="https://a-moment096.github.io/posts/pf_tutorial_3/heat_transfer_result_hu_51db1d3192a486f.png 480w, https://a-moment096.github.io/posts/pf_tutorial_3/heat_transfer_result_hu_b3d78924e08641b6.png 1024w"
 loading="lazy"
 alt="传热方程求解结果"
 class="gallery-image"
@@ -894,7 +894,7 @@ data-flex-basis="315px"
 &lt;p&gt;可以看到这个结果还是比较符合预期的。&lt;/p&gt;
 &lt;h2 id="结语"&gt;结语
 &lt;/h2&gt;&lt;p&gt;太久不更新，写起来有些不是很得心应手。写完这些回头一看，我竟然写了这么多东西？C++ 的基础知识点比我想象的要多很多呀。如果您看到了这里，感谢您的支持。C++ 平心而论，好上手是真的，在了解一定的编程相关知识后很快就能写出一份能跑的代码。但是，C++ 的语法特性繁杂，内容过于丰富导致的则是 C++ 极高的进阶难度。几乎没有人敢说自己精通 C++，因为总有一些奇怪的点会出现在这门历史丰富且悠久的语言上，而恰好提问者知道但回答者不知道。不过好在，如果仅仅是为了使用 C++ 进行简单的高效计算，那么它的入门内容应该只需要上面这些又臭又长的介绍就差不多够了。在实际编程过程中，大多数的函数和类的 API 都是需要现查的，甚至有时候确实还需要面对 CV 编程（复制粘贴）。此外，不论任何编程语言，语言本身只能提供一些好用的特性，或者一些包装好了的算法轮子。实际在编程时最重要的问题是怎么分析问题，并且就这个问题设计出一套算法来解决问题。希望语言不会称为您的绊脚石。&lt;/p&gt;
-&lt;p&gt;下一节我会正式采用 C++ 来实现在 Cahn-Hilliard 方程引导下调幅分解的相场（其实是浓度场）模拟。再下一节则会进行 Allen-Cahn 方程下的晶粒长大模拟，并作为这个入门系列的最后一部分。敬请期待。&lt;/p&gt;</description></item><item><title>Phase Field: 相场模拟学习笔记 II</title><link>https://a-moment096.github.io/posts/2024/11/pf_tutorial_2/</link><pubDate>Fri, 22 Nov 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/2024/11/pf_tutorial_2/</guid><description>&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/Skadi.png" alt="Featured image of post Phase Field: 相场模拟学习笔记 II" /&gt;&lt;p&gt;&lt;em&gt;接上一节内容, 这节会简单介绍 Python 的一些语法知识, 以及尝试使用 Python 实现上节所列出来的部分算法.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;下一节我会正式采用 C++ 来实现在 Cahn-Hilliard 方程引导下调幅分解的相场（其实是浓度场）模拟。再下一节则会进行 Allen-Cahn 方程下的晶粒长大模拟，并作为这个入门系列的最后一部分。敬请期待。&lt;/p&gt;</description></item><item><title>Phase Field: 相场模拟学习笔记 II</title><link>https://a-moment096.github.io/posts/pf_tutorial_2/</link><pubDate>Fri, 22 Nov 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/pf_tutorial_2/</guid><description>&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/Skadi.png" alt="Featured image of post Phase Field: 相场模拟学习笔记 II" /&gt;&lt;p&gt;&lt;em&gt;接上一节内容, 这节会简单介绍 Python 的一些语法知识, 以及尝试使用 Python 实现上节所列出来的部分算法.&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id="python-初探索"&gt;Python 初探索
 &lt;/h2&gt;&lt;h3 id="简介"&gt;简介
 &lt;/h3&gt;&lt;p&gt;Python 是一种蟒蛇, 而在编程语境下, Python 则是一门十分受欢迎的编程语言. Python 具有语法友好 (接近英语), 功能强大 (感谢开源与社区), 社区活跃等优秀的特点, 让 Python 成为入门编程的一个好选择.&lt;/p&gt;
@@ -909,7 +909,7 @@ data-flex-basis="315px"
 &lt;h4 id="编辑器-与-visual-studio-code"&gt;编辑器 与 Visual Studio Code
 &lt;/h4&gt;&lt;p&gt;在安装好 Python 解释器之后其实就已经可以开始 Python 编程了 (没错, 就是传说中的记事本编程). 然而这当然不是最好的方法, 这种方法光是考虑到没有代码高亮就让人很难以接受了. 这里我个人推荐 Visual Studio Code (以下简称 VSC).&lt;/p&gt;
 &lt;p&gt;VSC 功能强大, &lt;a class="link" href="https://code.visualstudio.com/" target="_blank" rel="noopener"
-&gt;安装&lt;/a&gt;方便, 插件生态极其丰富, 通过合理的配置近乎可以达到 IDE (Integrated Development Environment, 集成开发环境) 的水平. 我个人在写简单的 Python 脚本时几乎都是使用 VSC 写的. 一路默认安装后, 根据需要安装中文插件, 然后再在插件页面搜索 Python 即可安装 Python 插件全家桶, 然后就可以开始使用 VSC 写 Python 代码 (脚本)了. VSC 的安装与环境配置也可以参考我之前写的&lt;a class="link" href="https://a-moment096.github.io/posts/2024/11/vsc_py/" &gt;博客文章&lt;/a&gt;.&lt;/p&gt;
+&gt;安装&lt;/a&gt;方便, 插件生态极其丰富, 通过合理的配置近乎可以达到 IDE (Integrated Development Environment, 集成开发环境) 的水平. 我个人在写简单的 Python 脚本时几乎都是使用 VSC 写的. 一路默认安装后, 根据需要安装中文插件, 然后再在插件页面搜索 Python 即可安装 Python 插件全家桶, 然后就可以开始使用 VSC 写 Python 代码 (脚本)了. VSC 的安装与环境配置也可以参考我之前写的&lt;a class="link" href="https://a-moment096.github.io/posts/vsc_py/" &gt;博客文章&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;这里没有推荐 IDE, 因为 IDE 对这里仅仅使用 Python 做一些简单应用而言太过 &amp;ldquo;全能&amp;rdquo;, 或者说, 负担太重. 当然, 如果感兴趣, 可以考虑使用大名鼎鼎的 PyCharm. 这里不再赘述.&lt;/p&gt;
 &lt;h4 id="虚拟环境-venv-和-pip"&gt;虚拟环境, venv 和 pip
 &lt;/h4&gt;&lt;p&gt;这里简单介绍一下虚拟环境. 因为 Python 的生态丰富, 可能会碰到某些依赖相互冲突的情况, 尤其是在多人共同开发的情况下, 每个人的开发环境配置不同, 很容易导致依赖冲突. 为解决这种情况, 可以考虑使用 Python 的虚拟环境 &lt;code&gt;virtualenv&lt;/code&gt;. 创建的虚拟环境下有该虚拟环境所自有的一些包, 并且和该虚拟环境以外的部分是相互独立的. 使用 VSC 创建 &lt;code&gt;virtualenv&lt;/code&gt; 虚拟环境非常简单, 只需要 &lt;code&gt;Ctrl+Shift+P&lt;/code&gt; 打开 VSC 的命令, 然后搜索 &lt;code&gt;Python: Create Environment&lt;/code&gt; 即可根据向导一步步搭建虚拟环境.&lt;/p&gt;
@@ -1218,7 +1218,7 @@ $$&lt;p&gt;因此, 为了实现这一算法, 该算法实现的函数有如下�
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;46&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;laps&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;至此, 我们使用 Python 实现了我们将在相场模拟中使用的大部分算法. 具体的模拟过程中, 我们可能不需要用函数的方式将这些算法打包起来, 只需要直接实现即可.&lt;/p&gt;
 &lt;h3 id="总结"&gt;总结
-&lt;/h3&gt;&lt;p&gt;这部分内容希望能对上一章节中的算法内容有更进一步的补充, 并且希望能对算法如何实现为代码的过程起到促进理解的作用. 同时, 希望这里介绍的 Python 能成为您日常学习生活中的另一件有利工具, 并且能对编程这门技术有一定的入门理解, 为后续的程序编写提供基本的认识. 下一章节将会介绍如何使用 C++ 来实现这些算法, 并使用 C++ 完成一个小型的模拟, 尝试从这个小型模拟中了解模拟过程中会面临的问题, 以及数据最后的可视化方法.&lt;/p&gt;</description></item><item><title>Phase Field: 相场模拟学习笔记 I</title><link>https://a-moment096.github.io/posts/2024/11/pf_tutorial_1/</link><pubDate>Fri, 01 Nov 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/2024/11/pf_tutorial_1/</guid><description>&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/Skadi.png" alt="Featured image of post Phase Field: 相场模拟学习笔记 I" /&gt;&lt;p&gt;&lt;em&gt;这学期开了相场模拟培训, 故尝试将相场培训笔记性质的内容记录下来, 期望观感应该是目录式的笔记, 外带可有可无的说明文字.那么就开始吧&lt;/em&gt;&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;这部分内容希望能对上一章节中的算法内容有更进一步的补充, 并且希望能对算法如何实现为代码的过程起到促进理解的作用. 同时, 希望这里介绍的 Python 能成为您日常学习生活中的另一件有利工具, 并且能对编程这门技术有一定的入门理解, 为后续的程序编写提供基本的认识. 下一章节将会介绍如何使用 C++ 来实现这些算法, 并使用 C++ 完成一个小型的模拟, 尝试从这个小型模拟中了解模拟过程中会面临的问题, 以及数据最后的可视化方法.&lt;/p&gt;</description></item><item><title>Phase Field: 相场模拟学习笔记 I</title><link>https://a-moment096.github.io/posts/pf_tutorial_1/</link><pubDate>Fri, 01 Nov 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/pf_tutorial_1/</guid><description>&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/Skadi.png" alt="Featured image of post Phase Field: 相场模拟学习笔记 I" /&gt;&lt;p&gt;&lt;em&gt;这学期开了相场模拟培训, 故尝试将相场培训笔记性质的内容记录下来, 期望观感应该是目录式的笔记, 外带可有可无的说明文字.那么就开始吧&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id="phase-field-method-是什么"&gt;Phase Field Method 是什么？
 &lt;/h2&gt;&lt;p&gt;Phase Field Method, 直译为相场法, 是一种材料模拟方法, 其通过宽界面(平滑界面)的特点, 克服了另一个模拟方法: Stefan 法的窄界面无法计算的缺点, 实现了对材料中的相的演化的模拟.&lt;/p&gt;
 &lt;h3 id="基本概念解析"&gt;基本概念解析
@@ -1379,7 +1379,7 @@ $$&lt;p&gt;
 &lt;/ul&gt;
 &lt;p&gt;以上是比较常用的 $\nabla$ 算符性质. 实际上三种算符的组合恒等式非常多, 而实际上常用的等式则为以上所列.&lt;/p&gt;
 &lt;h2 id="总结"&gt;总结
-&lt;/h2&gt;&lt;p&gt;相场法作为一种材料模拟方法, 其内容涉及范围广, 包括材料学(热力学, 动力学), 数值方法, 计算机编程等等相关内容. 解决上述列出的若干问题是开始相场模拟所必须的数学方法基础. 下一部分计划通过 Python 代码实现本文中的若干算法, 包括数值解ODE, 向量微积分的实现, 以及数值积分方法.&lt;/p&gt;</description></item><item><title>Python + VS Code 快速配置</title><link>https://a-moment096.github.io/posts/2024/11/vsc_py/</link><pubDate>Fri, 01 Nov 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/2024/11/vsc_py/</guid><description>&lt;img src="https://a-moment096.github.io/posts/2024/11/vsc_py/%E5%A6%B9%E7%BA%A2.jpeg" alt="Featured image of post Python + VS Code 快速配置" /&gt;&lt;p&gt;&lt;em&gt;这是一篇写给初学 Python 的同学的教程，帮助使用 VS Code 快速配置好 Python 的开发环境，写于今年9月14日，
+&lt;/h2&gt;&lt;p&gt;相场法作为一种材料模拟方法, 其内容涉及范围广, 包括材料学(热力学, 动力学), 数值方法, 计算机编程等等相关内容. 解决上述列出的若干问题是开始相场模拟所必须的数学方法基础. 下一部分计划通过 Python 代码实现本文中的若干算法, 包括数值解ODE, 向量微积分的实现, 以及数值积分方法.&lt;/p&gt;</description></item><item><title>Python + VS Code 快速配置</title><link>https://a-moment096.github.io/posts/vsc_py/</link><pubDate>Fri, 01 Nov 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/vsc_py/</guid><description>&lt;img src="https://a-moment096.github.io/posts/vsc_py/%E5%A6%B9%E7%BA%A2.jpeg" alt="Featured image of post Python + VS Code 快速配置" /&gt;&lt;p&gt;&lt;em&gt;这是一篇写给初学 Python 的同学的教程，帮助使用 VS Code 快速配置好 Python 的开发环境，写于今年9月14日，
 先搬运至此并改为 Markdown，作为 Programming部分的第一篇博文&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id="简介"&gt;简介
 &lt;/h2&gt;&lt;p&gt;Python, 一门伟大的语言. 简易的, 贴合人类语言的语法, 丰富的生态, 强

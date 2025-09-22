@@ -1,4 +1,105 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Others on A Moment's Rest</title><link>https://a-moment096.github.io/categories/others/</link><description>Recent content in Others on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><atom:link href="https://a-moment096.github.io/categories/others/index.xml" rel="self" type="application/rss+xml"/><item><title>搭建 FRP 服务</title><link>https://a-moment096.github.io/posts/2025/07/frp_depoly/</link><pubDate>Wed, 23 Jul 2025 13:26:16 +0800</pubDate><guid>https://a-moment096.github.io/posts/2025/07/frp_depoly/</guid><description>&lt;img src="https://a-moment096.github.io/posts/2025/07/frp_depoly/BagPipe.jpg" alt="Featured image of post 搭建 FRP 服务" /&gt;&lt;p&gt;&lt;em&gt;怎么连接个服务器还得先用 ToDesk 连上个 Windows 电脑，再从这个电脑上 ssh 进服务器呀！？受不鸟，自己搭个 FRP 服务吧&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Others on A Moment's Rest</title><link>https://a-moment096.github.io/categories/others/</link><description>Recent content in Others on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><atom:link href="https://a-moment096.github.io/categories/others/index.xml" rel="self" type="application/rss+xml"/><item><title>博客一周年啦！</title><link>https://a-moment096.github.io/posts/blog_1st_anniversary/</link><pubDate>Mon, 22 Sep 2025 15:51:11 +0800</pubDate><guid>https://a-moment096.github.io/posts/blog_1st_anniversary/</guid><description>&lt;img src="https://a-moment096.github.io/posts/blog_1st_anniversary/bouquet.png" alt="Featured image of post 博客一周年啦！" /&gt;&lt;p&gt;&lt;em&gt;头图取自 &lt;a class="link" href="https://www.pixiv.net/users/2642047" target="_blank" rel="noopener"
+&gt;アシマ&lt;/a&gt; 所绘的 &lt;a class="link" href="https://www.pixiv.net/artworks/68232005" target="_blank" rel="noopener"
+&gt;bouquet&lt;/a&gt;，选曲为某游戏插曲 &lt;strong&gt;玉響時間&lt;/strong&gt;， 总之就是非常好听，能让整个人身体都松下来的一首，非常好，希望你也喜欢。&lt;/em&gt;&lt;/p&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
+&lt;style type="text/css"&gt;
+[data-scheme="dark"] .aplayer {
+background: var(--card-background);
+border: 1px solid var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
+border-bottom-color: var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
+border-color: var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer .aplayer-body {
+background-color: var(--card-background);
+}
+[data-scheme="dark"] .aplayer .aplayer-info {
+border-top-color: var(--card-background);
+}
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
+color: var(--card-text-color-main);
+}
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
+color: var(--card-text-color-secondary);
+}
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
+color: var(--card-text-color-tertiary);
+}
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
+fill: var(--card-text-color-tertiary);
+}
+[data-scheme="dark"] .aplayer .aplayer-list {
+background-color: var(--card-background);
+}
+[data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
+background-color: var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
+background-color: var(--accent-color);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li {
+color: var(--card-text-color-main);
+border-top-color: var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li:hover {
+background: var(--card-background-selected);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
+background: var(--card-background-selected);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
+color: var(--card-text-color-secondary);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
+color: var(--card-text-color-secondary);
+}
+[data-scheme="dark"] .aplayer .aplayer-lrc {
+text-shadow: -1px -1px 0 var(--body-background);
+}
+[data-scheme="dark"] .aplayer .aplayer-lrc:before {
+background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+}
+[data-scheme="dark"] .aplayer .aplayer-lrc:after {
+background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+}
+[data-scheme="dark"] .aplayer .aplayer-lrc p {
+color: var(--card-text-color-main);
+}
+[data-scheme="dark"] .aplayer .aplayer-miniswitcher {
+background: var(--card-background-selected);
+}
+[data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
+fill: var(--card-text-color-tertiary);
+}
+[data-scheme="light"] .aplayer {
+background: var(--card-background);
+border: 1px solid var(--card-separator-color);
+}
+[data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
+color: var(--card-text-color-main);
+}
+[data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
+color: var(--card-text-color-secondary);
+}
+[data-scheme="light"] .aplayer .aplayer-list li:hover {
+background: var(--card-background-selected);
+}
+&lt;/style&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=1499310887" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
+&lt;p&gt;我决定将 9 月 22 日作为我博客的生日。&lt;/p&gt;
+&lt;p&gt;Y? 这个博客的所有文章标注的日期里，最早的不是 24 年的 11 月 1 日吗？为什么要选择 9 月 22 日？其实吧，这得追溯到我这个博客的原型。如果您看过这篇关于 &lt;a class="link" href="https://a-moment096.github.io/posts/Build_Blog" &gt;搭建这个博客&lt;/a&gt; 的经历的话，会发现我一开始是打算用 Hexo 作为构建工具的。可惜，我的 Hexo 之旅并不顺利，最后还是选择了 Hugo，而初次尝试 Hexo 的时候我虽然没有写，但是其实是在十一假期的时候。&lt;/p&gt;
+&lt;p&gt;那么为什么不是十一假期，而是选择在了 9 月 22 日这个时间点呢？其实道理也很简单。这篇博客的第一篇文章，虽然没有在 9 月 22 日发在这个博客里，但是是在 9 月 22 日写成的，就是这篇 &lt;a class="link" href="https://a-moment096.github.io/posts/baby_rudin/" &gt;Baby Rudin 读后感&lt;/a&gt;。说到底，这个博客里的一切，都是源于我读完 Baby Rudin 之后的或者是成就感，或者是虚荣心，又或者是出于分享的冲动，而诞生的，而这篇文章则是这一切的开始，也算是给我这个小站定了一个基调：这会是一个貌似偏技术或者理论的博客。&lt;/p&gt;
+&lt;p&gt;为什么是 &lt;em&gt;貌似&lt;/em&gt;？我也很难讲我这个小站的内容里，技术含量有多么多么高，理论内容有多么多么深。我只是分享我喜欢的东西，也许是某天看到了某个 &lt;a class="link" href="https://a-moment096.github.io/posts/functional_derivative/" &gt;有趣的问题&lt;/a&gt;，也许是写程序遇到了什么我此前不了解的 &lt;a class="link" href="https://a-moment096.github.io/posts/vector_memory_layout/" &gt;有趣的语法特性&lt;/a&gt;，或者我感觉我应该记录一些 &lt;a class="link" href="https://a-moment096.github.io/posts/last_command/" &gt;好用的命令行技巧&lt;/a&gt;，又或者就是跟一下风，在蛇年 &lt;a class="link" href="https://a-moment096.github.io/posts/snake_lemma/" &gt;证明一下蛇引理&lt;/a&gt;。我的博客里的文章的平均水平应该还到不了一种能让我自豪地说自己是 &lt;em&gt;技术博客&lt;/em&gt; 的程度，只是自娱自乐而已。&lt;/p&gt;
+&lt;p&gt;尽管如此，我依旧还是觉得这一年以来我的博客里有一些很令我自豪的内容。我最想提起的便是刚刚讲的，我跟风证明的 &lt;a class="link" href="https://a-moment096.github.io/posts/snake_lemma/" &gt;蛇引理&lt;/a&gt;。其实现在来看，这篇文章有很多的问题，其中最大的问题就是太**长了，很难有让人看下去的欲望。博客预估的阅读时间是 75 分钟，一个小时！而这样的数学内容，我相信如果真要一点点往下看，大概率是不止要一个多小时的。而即便我亲爱的读者拥有极强的包容心，愿意读这长长的一篇文章，他/她依旧很有可能会发现这篇文章的第二个问题：这个文章的内容太琐碎，也太繁杂了。它不适合一次读完，我明明应该把这篇的内容分为起码三部分，却依旧为了写的够爽，而一路写了下去，写到了要阅读 75 分钟的程度。那么再假设，这个读者有足够的时间与足够的精力去读这篇文章，他/她又可能会发现，这篇文章的具体内容组织上还是有问题：口水话显得很多；有一些概念反复提及，又没能一阵见血地说清楚；写法符号上也有一些不太标准，大多数地方用的不是 $\operatorname{Ker}$，而是 $\operatorname{ker}$。最后还有一些不太重点，但是很影响观感的问题，比如一些内容格式。如果您之前看过这篇的话，会发现里面有一些收缩的内容很难发现可以展开；有一些内容缩进怪怪的；有一些公式甚至渲染有问题。这些都是我这篇文章的硬伤，我也而希望有机会能重启这个系列。若能重启这个系列，我一定会把它写成一个由基础代数出发的，尽可能通俗易懂的蛇引理的证明。不过，到时候会不会需要重新学习了解这个引理怎么证明，就不好说了，哈哈哈。然而还是有现在可以改的：博客新增了一些数学环境的支持，我会尽快把它们更新上去的，让诸如引理、定理、定义等东西有更美观的样式。&lt;/p&gt;
+&lt;p&gt;然而这篇文章不是我 “最火” 的文章，甚至也许是最冷清的一篇了。根据我的博客文章收到的评论来看，我的博客里最受欢迎的一篇是这篇 &lt;a class="link" href="https://a-moment096.github.io/posts/functional_derivative/" &gt;关于泛函导数与变分法&lt;/a&gt; 的文章。这篇文章本是放寒假前师兄问我的一个小问题，结果却引爆了我 &lt;em&gt;根本不够了解变分法&lt;/em&gt; 的炸弹。为了解决我师兄的问题，顺带解决我遇到的问题，我就查阅了一些资料，写出了这篇文章。说实在的，其实就是拾人牙慧之作，没有老大中先生的 &lt;em&gt;变分法基础&lt;/em&gt; 的话，我是万万没有办法能又快又好地写出这篇文章的。能得到这么多人的喜爱，能帮到大家，我还是很有成就感的。真的很感谢大家的捧场。&lt;/p&gt;
+&lt;p&gt;另外我想提起的则是关于 Arch Linux 的一些文章。虽然我只写了 &lt;a class="link" href="https://a-moment096.github.io/tags/arch/" &gt;两篇&lt;/a&gt; 与 Arch 直接相关的文章，且都是我安装 Arch Linux 的过程，然而搭建起博客的这一年以来，我最大的收获除了这个博客之外，就是我使用 Arch Linux 的这些经历，以及在这过程中我学到的 Linux 操作系统的知识。而这个博客里，几乎所有和命令相关的内容，都是由于我真的开始使用 Arch Linux 的原因而接触到，并且有了写一些操作说明一般的文章来方便自己查询的想法。朋友们，Arch Linux 是对的！GNU/Linux 是对的！开源也是对的！&lt;/p&gt;
+&lt;p&gt;最后我也想提一下我博客中的一个系列，也是这个博客一开始就也确立了的内容：Phase Field 相场模拟笔记系列。这个系列源于我给组内开设的相场法培训，不过说是培训其实也是一些方便自己备查的笔记。这些笔记里的内容基本是我从一开始的英文课件中转抄出来的，可能还是有一些错漏。如果这个学期有相场培训的计划的话，我也许会继续更新这个文章系列。&lt;/p&gt;
+&lt;p&gt;目前我手上有一篇关于函数的概念解析的文章在写。与其说是概念的解析，不如说是找了一些教科书，来考察它们都是怎么介绍函数这个数学学习中最最基础的概念的。我也许会在最后做一些个人的总结，也有可能不会，但是目前写到现在，真的发现这是一个非常有趣的话题。希望这两天内我能写出来吧，如果你看了这篇纪念博客诞生一周年的文章，也请期待下一篇更新的文章。&lt;/p&gt;
+&lt;p&gt;那么，一如既往地，祝读到这里的读者您，身体健康，生活愉快！&lt;/p&gt;</description></item><item><title>搭建 FRP 服务</title><link>https://a-moment096.github.io/posts/frp_depoly/</link><pubDate>Wed, 23 Jul 2025 13:26:16 +0800</pubDate><guid>https://a-moment096.github.io/posts/frp_depoly/</guid><description>&lt;img src="https://a-moment096.github.io/posts/frp_depoly/BagPipe.jpg" alt="Featured image of post 搭建 FRP 服务" /&gt;&lt;p&gt;&lt;em&gt;怎么连接个服务器还得先用 ToDesk 连上个 Windows 电脑，再从这个电脑上 ssh 进服务器呀！？受不鸟，自己搭个 FRP 服务吧&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;图为可爱的风笛小姐，据不可靠消息，应该是来自于画师 &lt;a class="link" href="https://weibo.com/u/5979033109" target="_blank" rel="noopener"
 &gt;Liyu黎&lt;/a&gt; 老师画的 2022 音律联觉的贺图。既然如此，就配一首风笛小姐的个人 EP：《故乡的风》吧。&lt;/em&gt;&lt;/p&gt;
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
@@ -319,7 +420,7 @@ class FProxy,RProxy proxy
 &lt;p&gt;实际上，FRP 的使用方式远不局限于我上面写的这些。甚至如果你愿意点进上面贴出的那个教程连接，就会发现他写的会更加详细，配置项会更加复杂。不过，因为我的需求足够简单，所以我的配置也相对简单很多。&lt;/p&gt;
 &lt;p&gt;要提醒的是，防火墙其实也许不用设置得像我这里写的，这么严格。然而一定要留个心眼，毕竟网上坏人真的很多。比如我搭建好 FRP 服务的当天晚上就遭到了大洋彼岸朋友的亲切扫描，扫出端口之后就是一通尝试，用了什么 root，admin，user 等的账户名以及一先干就知道的一大堆弱密码来尝试连接进服务器。好消息是没有试出来，被我用防火墙给 ban 了。但还是给我惊出了一身冷汗。害人之心不可有，防人之心不可无呀。&lt;/p&gt;
 &lt;p&gt;还有要说的是，有一些场景是不可以使用 FRP 服务或者类似的远程访问的服务的。没错，向日葵，ToDesk 这类也不行。网上是有使用类似服务结果酿成大祸的情况的。在使用这类服务前，还是要先三思呀。&lt;/p&gt;
-&lt;p&gt;最后，一如既往地，辛苦你看到这里。感谢您的支持，也同时祝您生活愉快~&lt;/p&gt;</description></item><item><title>安装 Arch Linux，但是笔记本物理机</title><link>https://a-moment096.github.io/posts/2025/05/arch_on_laptop/</link><pubDate>Fri, 02 May 2025 16:12:04 +0800</pubDate><guid>https://a-moment096.github.io/posts/2025/05/arch_on_laptop/</guid><description>&lt;img src="https://a-moment096.github.io/posts/2025/05/arch_on_laptop/imgs/Alice.png" alt="Featured image of post 安装 Arch Linux，但是笔记本物理机" /&gt;&lt;p&gt;&lt;em&gt;之前在虚拟机上面装的 Arch Linux 根本不过瘾（搞笑，你根本就没更完(❌)），这次就把自己的小轻薄改成 Arch 好了。顺带，也记录一下实体机上安装可能会遇到的坑？&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;最后，一如既往地，辛苦你看到这里。感谢您的支持，也同时祝您生活愉快~&lt;/p&gt;</description></item><item><title>安装 Arch Linux，但是笔记本物理机</title><link>https://a-moment096.github.io/posts/arch_on_laptop/</link><pubDate>Fri, 02 May 2025 16:12:04 +0800</pubDate><guid>https://a-moment096.github.io/posts/arch_on_laptop/</guid><description>&lt;img src="https://a-moment096.github.io/posts/arch_on_laptop/imgs/Alice.png" alt="Featured image of post 安装 Arch Linux，但是笔记本物理机" /&gt;&lt;p&gt;&lt;em&gt;之前在虚拟机上面装的 Arch Linux 根本不过瘾（搞笑，你根本就没更完(❌)），这次就把自己的小轻薄改成 Arch 好了。顺带，也记录一下实体机上安装可能会遇到的坑？&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图出自 R Sound Design 的新曲 《アリス？》，一首很轻快的 V曲~&lt;/em&gt;&lt;/p&gt;
 &lt;!--
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
@@ -425,10 +526,10 @@ background: var(--card-background-selected);
 &lt;h2 id="准备资料备份以及准备启动盘"&gt;准备：资料备份以及准备启动盘
 &lt;/h2&gt;&lt;p&gt;首先肯定是先把电脑上已有的资料都备份好。其实说实话没太多文件，主要是两个没打完的 Gal 吧（心虚），因为大部分的文件都其实已经搞到台式机上面了。一开始是想着把这些文件放在一块精心规划的小硬盘上，安装的时候不格式化就行了，但是感觉还是有点点点点危险，所以干脆还是挪到另一台机器上，把这台小本的硬盘全部格式化了得了。不过也许我应该考虑更加智能的备份方案？算了，以后再考虑（挖坑）。&lt;/p&gt;
 &lt;p&gt;其次就是准备启动盘。本来这次想要换一种安装媒介来着，比如光盘？（没错我有光盘刻录机，为了听 CD 买的 ()），结果还是嫌麻烦，放弃了。给虚拟机安装的时候不是已经有了镜像了吗？为什么不直接用呢？至于为什么没有下载最新的（最新的就是昨天刚出的，5月1日版本），是因为我刚准备下载的时候看到最上面一行小字：&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2025/05/arch_on_laptop/imgs/no_need_for_download.png"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/arch_on_laptop/imgs/no_need_for_download.png"
 width="1277"
 height="133"
-srcset="https://a-moment096.github.io/posts/2025/05/arch_on_laptop/imgs/no_need_for_download_hu_7fda391d774b472e.png 480w, https://a-moment096.github.io/posts/2025/05/arch_on_laptop/imgs/no_need_for_download_hu_d075c299b95d14fd.png 1024w"
+srcset="https://a-moment096.github.io/posts/arch_on_laptop/imgs/no_need_for_download_hu_7fda391d774b472e.png 480w, https://a-moment096.github.io/posts/arch_on_laptop/imgs/no_need_for_download_hu_d075c299b95d14fd.png 1024w"
 loading="lazy"
 alt="安装好再更新不挺好？（滚挂警告）"
 class="gallery-image"
@@ -543,7 +644,7 @@ data-flex-basis="2304px"
 &lt;p style="text-indent: 50px"&gt; 但是，你懂的，你可是 Linux，对吧？你已经是一个成熟的操作系统了，应该学会自己面对这些问题了，对吧？
 &lt;p align="right"&gt;Yours, &lt;/p&gt;
 &lt;p align="right"&gt;A Moment&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;谢谢你能看到这里。看完这一大堆废话，说实话也挺累的。如果这些整活儿的内容让你能开心一下，那就太好了。最后，一如既往，就祝您身心健康吧。&lt;/p&gt;</description></item><item><title>First Blog: 搭建这个博客</title><link>https://a-moment096.github.io/posts/2024/11/build_blog/</link><pubDate>Fri, 01 Nov 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/2024/11/build_blog/</guid><description>&lt;img src="https://a-moment096.github.io/posts/2024/11/build_blog/Reimu.png" alt="Featured image of post First Blog: 搭建这个博客" /&gt;&lt;p&gt;简单记录一下自己搭建博客的经历。&lt;/p&gt;
+&lt;p&gt;谢谢你能看到这里。看完这一大堆废话，说实话也挺累的。如果这些整活儿的内容让你能开心一下，那就太好了。最后，一如既往，就祝您身心健康吧。&lt;/p&gt;</description></item><item><title>First Blog: 搭建这个博客</title><link>https://a-moment096.github.io/posts/build_blog/</link><pubDate>Fri, 01 Nov 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/build_blog/</guid><description>&lt;img src="https://a-moment096.github.io/posts/build_blog/Reimu.png" alt="Featured image of post First Blog: 搭建这个博客" /&gt;&lt;p&gt;简单记录一下自己搭建博客的经历。&lt;/p&gt;
 &lt;h2 id="begin-好想搭博客"&gt;Begin: 好想搭博客
 &lt;/h2&gt;&lt;p&gt;网上高强度冲浪的过程中，发现很多人都有自己的博客，特别是在读过几篇博文之后，对会搭建博客的大佬的艳羡之情愈发激烈，同时也很想在网上
 搭一个自己的小窝，记录一下自己的学习和生活（以便于跻身大佬的行列（在心理上））。 于是，在若干的纠结与选择之后，决定尝试用 Hexo + GitHub pages 的方式

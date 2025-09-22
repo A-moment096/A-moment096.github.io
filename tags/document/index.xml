@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Document on A Moment's Rest</title><link>https://a-moment096.github.io/tags/document/</link><description>Recent content in Document on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 18 Sep 2025 09:09:55 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/document/index.xml" rel="self" type="application/rss+xml"/><item><title>VS Code 也许其实是 IDE</title><link>https://a-moment096.github.io/posts/2025/09/vsc_remote/</link><pubDate>Wed, 17 Sep 2025 14:35:38 +0800</pubDate><guid>https://a-moment096.github.io/posts/2025/09/vsc_remote/</guid><description>&lt;img src="https://a-moment096.github.io/posts/2025/09/vsc_remote/%E7%8C%9B%E7%8B%AC%E3%81%8C%E8%A5%B2%E3%81%86.png" alt="Featured image of post VS Code 也许其实是 IDE" /&gt;&lt;p&gt;&lt;em&gt;虽然 VS Code&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt; 严格来讲是编辑器（Editor），然而其实它更像是一个伪装起来的集成开发环境（IDE，Integrated Development Environment）。而且，它最强大的功能其实在于它强大的远程功能。这次我们就来聊聊怎么把 VS Code 配置成一个堪比 Visual Studio 的多用途 IDE 吧&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Document on A Moment's Rest</title><link>https://a-moment096.github.io/tags/document/</link><description>Recent content in Document on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 22 Sep 2025 12:49:36 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/document/index.xml" rel="self" type="application/rss+xml"/><item><title>VS Code 也许其实是 IDE</title><link>https://a-moment096.github.io/posts/vsc_remote/</link><pubDate>Wed, 17 Sep 2025 14:35:38 +0800</pubDate><guid>https://a-moment096.github.io/posts/vsc_remote/</guid><description>&lt;img src="https://a-moment096.github.io/posts/vsc_remote/%E7%8C%9B%E7%8B%AC%E3%81%8C%E8%A5%B2%E3%81%86.png" alt="Featured image of post VS Code 也许其实是 IDE" /&gt;&lt;p&gt;&lt;em&gt;虽然 VS Code&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt; 严格来讲是编辑器（Editor），然而其实它更像是一个伪装起来的集成开发环境（IDE，Integrated Development Environment）。而且，它最强大的功能其实在于它强大的远程功能。这次我们就来聊聊怎么把 VS Code 配置成一个堪比 Visual Studio 的多用途 IDE 吧&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;本次挑选的歌曲是光受好评，翻唱无数，且我自己很喜欢的一首术曲：由 P主 &lt;a class="link" href="https://twitter.com/hihumi_v" target="_blank" rel="noopener"
 &gt;一二三&lt;/a&gt; 做词曲的 &lt;strong&gt;猛独が襲う&lt;/strong&gt;。中午偶然听到了这首，感觉非常不错，就选择是她了。头图就顺手选择同样很好看的这首歌的 MV，由 &lt;a class="link" href="https://twitter.com/kyu_fu" target="_blank" rel="noopener"
 &gt;休符&lt;/a&gt; 所绘，实在是非常好看~ 另外还要特别指出，这首歌无敌的吉他是由 &lt;a class="link" href="https://twitter.com/junjun_mimi03" target="_blank" rel="noopener"
@@ -104,14 +104,14 @@ background: var(--card-background-selected);
 &lt;p&gt;了解这些概念，在讨论相关话题的时候表述会清晰很多。不过即便不清楚，问题也不太大就是了（）这也是由于现在很多编辑器正朝着 IDE 的方向发展了，比如本期的主角，VS Code。所以也有开发者认为，VS Code 就是一款 IDE，我表示理解。&lt;/p&gt;
 &lt;/details&gt;
 &lt;h2 id="首先当然是下载咯"&gt;首先当然是下载咯
-&lt;/h2&gt;&lt;p&gt;其实关于 VS Code 的下载问题，我在 &lt;a class="link" href="https://a-moment096.github.io/posts/2024/11/vsc_py/" &gt;这篇文章&lt;/a&gt; 中已经提过了。不过如果你不想翻那里的内容，那也可以跟着下面的内容来。&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;其实关于 VS Code 的下载问题，我在 &lt;a class="link" href="https://a-moment096.github.io/posts/vsc_py/" &gt;这篇文章&lt;/a&gt; 中已经提过了。不过如果你不想翻那里的内容，那也可以跟着下面的内容来。&lt;/p&gt;
 &lt;h3 id="我们先下载程序本体"&gt;我们先下载程序本体
 &lt;/h3&gt;&lt;p&gt;我们仅考虑 Windows 端的使用，请使用 GNU/Linux 的朋友自行选择自己家的包管理器以及想安装的版本（毕竟，使用以开源著称的 Linux 的你可能不希望使用 Microsoft 的专有软件：Visual Studio Code）。这里介绍两种下载方式，一种是从官网下载，点&lt;a class="link" href="https://code.visualstudio.com/download" target="_blank" rel="noopener"
 &gt;这个链接&lt;/a&gt; 就会直达下载页面。&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2025/09/vsc_remote/img/VSC_Download.png"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/vsc_remote/img/VSC_Download.png"
 width="1026"
 height="843"
-srcset="https://a-moment096.github.io/posts/2025/09/vsc_remote/img/VSC_Download_hu_7dfead5032aa72e6.png 480w, https://a-moment096.github.io/posts/2025/09/vsc_remote/img/VSC_Download_hu_f97837e1fa6b9628.png 1024w"
+srcset="https://a-moment096.github.io/posts/vsc_remote/img/VSC_Download_hu_7dfead5032aa72e6.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/VSC_Download_hu_f97837e1fa6b9628.png 1024w"
 loading="lazy"
 alt="下载页面"
 class="gallery-image"
@@ -120,10 +120,10 @@ data-flex-basis="292px"
 &gt;&lt;/p&gt;
 &lt;p&gt;我们可以注意到这里有一个大大的下载按钮，底下还有几个选项，什么用户安装，系统安装，x64 啊 ARM 啊的。如果你不知道该选哪个，点那个大按钮。它会下载用户版的。如果你清楚自己需要什么版本，请自便。这里简单提一下用户安装和系统安装的区别。如果你的电脑只有你一个账户使用，用户安装方便又快捷，不会出错；如果你的电脑有多个账户且你想让每个账户都可以用上 VS Code，请使用系统安装版本。但是这样会有 UAC (User Access Control)的烦恼，且很多时候你修改个什么文件都会让你用管理员权限搞 （即会弹出 UAC）。&lt;/p&gt;
 &lt;p&gt;下好安装包之后打开安装包，先同意它的用户协议，然后是路径（可以不改），要不要添加开始菜单（可以不管），随后会遇到这个页面：&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2025/09/vsc_remote/img/InstallVSC.png"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/vsc_remote/img/InstallVSC.png"
 width="597"
 height="465"
-srcset="https://a-moment096.github.io/posts/2025/09/vsc_remote/img/InstallVSC_hu_5f4ef887f468ca94.png 480w, https://a-moment096.github.io/posts/2025/09/vsc_remote/img/InstallVSC_hu_d4ed8c514999da04.png 1024w"
+srcset="https://a-moment096.github.io/posts/vsc_remote/img/InstallVSC_hu_5f4ef887f468ca94.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/InstallVSC_hu_d4ed8c514999da04.png 1024w"
 loading="lazy"
 alt="安装页面"
 class="gallery-image"
@@ -136,10 +136,10 @@ data-flex-basis="308px"
 &lt;p&gt;不过无论如何，你这时应该已经安装好了。激动的心，颤抖的手，点开软件准备大展身手的你也许会发现：界面全是英文的。也许你觉得英文界面全对，但是这样还是比较小众的（）那怎么汉化呢？这么牛逼的软件应该有不错的本地化才对呀？别急，解决方案在下面：&lt;/p&gt;
 &lt;h3 id="必须立刻开始安装插件"&gt;必须立刻开始安装插件
 &lt;/h3&gt;&lt;p&gt;考虑到我们是第一次装 VS Code，应该不需要考虑从账户同步安装的插件。所以，我们的第一件事就是，点击左边的插件市场图标，或者快捷键 &lt;code&gt;Ctrl+Shift+X&lt;/code&gt;，打开插件市场。&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2025/09/vsc_remote/img/Extensions.png"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/vsc_remote/img/Extensions.png"
 width="1026"
 height="843"
-srcset="https://a-moment096.github.io/posts/2025/09/vsc_remote/img/Extensions_hu_4357fa4ae296f13d.png 480w, https://a-moment096.github.io/posts/2025/09/vsc_remote/img/Extensions_hu_dbcae33cff11f0f5.png 1024w"
+srcset="https://a-moment096.github.io/posts/vsc_remote/img/Extensions_hu_4357fa4ae296f13d.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/Extensions_hu_dbcae33cff11f0f5.png 1024w"
 loading="lazy"
 alt="插件市场"
 class="gallery-image"
@@ -221,10 +221,10 @@ data-flex-basis="292px"
 &lt;/h2&gt;&lt;p&gt;虽说如此，其实真的就是点点点…… 我就大概敷衍一下吧（）&lt;/p&gt;
 &lt;h3 id="cmake-集成"&gt;CMake 集成
 &lt;/h3&gt;&lt;p&gt;下面是我维护项目的 CMake 集成工具栏的截图页面：&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2025/09/vsc_remote/img/CMakeWindow.png"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/vsc_remote/img/CMakeWindow.png"
 width="2560"
 height="1410"
-srcset="https://a-moment096.github.io/posts/2025/09/vsc_remote/img/CMakeWindow_hu_63235d4b7d511517.png 480w, https://a-moment096.github.io/posts/2025/09/vsc_remote/img/CMakeWindow_hu_cf51f1524e232be6.png 1024w"
+srcset="https://a-moment096.github.io/posts/vsc_remote/img/CMakeWindow_hu_63235d4b7d511517.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/CMakeWindow_hu_cf51f1524e232be6.png 1024w"
 loading="lazy"
 alt="CMake 集成"
 class="gallery-image"
@@ -234,10 +234,10 @@ data-flex-basis="435px"
 &lt;p&gt;先看最左边：侧边栏有个 CMake 的 Logo，它就是 CMake 集成工具的入口，从这里就可以开始点点点了。左边的 &lt;code&gt;PROJECT STATUS&lt;/code&gt;，它描述了现在 CMake 的一些配置。这个项目的文件夹是 TaskScheduler，选择的配置和构建选项我们都还没有选。&lt;/p&gt;
 &lt;p&gt;中间的大页面就是我们的 CMakeLists 了。这个项目中我要编译两个程序：一个 &lt;code&gt;main_cpp&lt;/code&gt;，一个 &lt;code&gt;sim_kernel&lt;/code&gt;，而且下面还有条件编译：如果是 UNIX 平台且不是 APPLE 平台的话，要给 &lt;code&gt;main_cpp&lt;/code&gt; 这个程序链接上 &lt;code&gt;pthread&lt;/code&gt; 这个库。另外我们给项目起名为 &lt;code&gt;SimLauncher&lt;/code&gt;，要求标准是 C++17，输出文件夹我们指定了是 &lt;code&gt;build/bin&lt;/code&gt; 这个文件夹。这些都是比较一目了然的。&lt;/p&gt;
 &lt;p&gt;为了编译这个项目，我们需要选择项目配置和编译配置。我们鼠标放在右边栏 &lt;code&gt;Configure&lt;/code&gt; 里的那个 &lt;code&gt;[No Kit Selected]&lt;/code&gt;，会有一个铅笔图标出现，点它，就会弹出一个顶部对话框，让你选择你要用什么编译套件：&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2025/09/vsc_remote/img/SelectKits.png"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/vsc_remote/img/SelectKits.png"
 width="1370"
 height="452"
-srcset="https://a-moment096.github.io/posts/2025/09/vsc_remote/img/SelectKits_hu_168a0ad392dcf52c.png 480w, https://a-moment096.github.io/posts/2025/09/vsc_remote/img/SelectKits_hu_981981d2c96e48fc.png 1024w"
+srcset="https://a-moment096.github.io/posts/vsc_remote/img/SelectKits_hu_168a0ad392dcf52c.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/SelectKits_hu_981981d2c96e48fc.png 1024w"
 loading="lazy"
 alt="选择编译套件"
 class="gallery-image"
@@ -247,10 +247,10 @@ data-flex-basis="727px"
 &lt;p&gt;由于我们是在 Windows 上且我安装了 VS，自然我有一套 MSVC 的编译套件。这里第一和第二个选项是让扫描一下看看还有没有别的套件；第三个是不手动指定，不知道的话选它也行，我不推荐选就是了；底下四个里，他们的区别主要在于编译的平台架构不一样：&lt;code&gt;amd64&lt;/code&gt;（有时你会看到所谓 &lt;code&gt;x64&lt;/code&gt;，可以当作一个意思）就是说你的 CPU 架构是 64 位的架构，一般我们就选它没问题。而 &lt;code&gt;x86&lt;/code&gt; 则是所谓的 Intel 8086 架构处理器，即 32 位处理器架构。我们不考虑这个，64 位挺好的；可以看到还有两个选项，里面两个都出现了，比如 &lt;code&gt;amd64_x86&lt;/code&gt;，意思是自己的机器是 64 位架构，而编译目标则是 32 位架构。我们用不上这么高级的功能啦。&lt;/p&gt;
 &lt;p&gt;选择好之后，CMake 就会开始进行配置了，结果默认会放在 &lt;code&gt;build&lt;/code&gt; 文件夹里，顺带会把构建、调试和运行目标都设置为了 &lt;code&gt;ALL_BUILD&lt;/code&gt;，即所有的目标都会进行，不止选择某一个。当然，鼠标放上去也会出现小铅笔，自己选就可以。&lt;code&gt;build&lt;/code&gt; 文件夹中的内容我们就不用多管了，感兴趣的话可以自己查一查。&lt;/p&gt;
 &lt;p&gt;配置结束后，我们就可以构建项目啦。鼠标放在 &lt;code&gt;PROJECT OUTLINE&lt;/code&gt; 上就会出现一个小图标：&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2025/09/vsc_remote/img/Build.png"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/vsc_remote/img/Build.png"
 width="738"
 height="988"
-srcset="https://a-moment096.github.io/posts/2025/09/vsc_remote/img/Build_hu_f045634d05a79908.png 480w, https://a-moment096.github.io/posts/2025/09/vsc_remote/img/Build_hu_7709ebc2516d1bb9.png 1024w"
+srcset="https://a-moment096.github.io/posts/vsc_remote/img/Build_hu_f045634d05a79908.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/Build_hu_7709ebc2516d1bb9.png 1024w"
 loading="lazy"
 alt="构建"
 class="gallery-image"
@@ -258,10 +258,10 @@ data-flex-grow="74"
 data-flex-basis="179px"
 &gt;&lt;/p&gt;
 &lt;p&gt;旁边的小虫子是启动调试的按钮，最左边则是配置所有的目标。我们点这个像是往箱子里装东西的图标，它就是我们要的项目构建按钮。点了之后右边 &lt;code&gt;OUTPUT&lt;/code&gt; 窗口就会出来一堆信息，告诉你你的构建过程执行得怎么样了：&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2025/09/vsc_remote/img/BuildOutput.png"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/vsc_remote/img/BuildOutput.png"
 width="1577"
 height="737"
-srcset="https://a-moment096.github.io/posts/2025/09/vsc_remote/img/BuildOutput_hu_3fdb2b4fe45842da.png 480w, https://a-moment096.github.io/posts/2025/09/vsc_remote/img/BuildOutput_hu_742cb4574269bf21.png 1024w"
+srcset="https://a-moment096.github.io/posts/vsc_remote/img/BuildOutput_hu_3fdb2b4fe45842da.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/BuildOutput_hu_742cb4574269bf21.png 1024w"
 loading="lazy"
 alt="构建输出"
 class="gallery-image"
@@ -271,10 +271,10 @@ data-flex-basis="513px"
 &lt;p&gt;当你看到最底下出现了 &lt;code&gt;[build] Build finished with exit code 0&lt;/code&gt; 的时候，就像许多程序以返回 0 表示执行无误那样，说明你的构建成功了。由于我们 &lt;code&gt;Configure&lt;/code&gt; 那里选择了 &lt;code&gt;Debug&lt;/code&gt;，以及我们的 &lt;code&gt;CMakeLists.txt&lt;/code&gt; 中我们的编译结果设置在了 &lt;code&gt;build/bin&lt;/code&gt; 文件夹中，我们可以在 &lt;code&gt;build/bin/Debug&lt;/code&gt; 里找到我们的编译结果。&lt;/p&gt;
 &lt;p&gt;当然，我们也可以不手动执行，毕竟手动执行的话得学会手动用调试器调试，我们还是借助 VS Code 集成的功能吧。点刚刚提到的那个小虫子，就可以进行调试了，调试前记得先打个断点，不然程序不会停下来等的。&lt;/p&gt;
 &lt;p&gt;最后可以提一下，你的页面左下角的几个按钮也有个 &lt;code&gt;Build&lt;/code&gt;，小虫子和一个播放键一样的东西，它们分别代表构建、调试和运行，是和 CMake 连着的。你也可以使用底边栏进行这些操作。&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2025/09/vsc_remote/img/Bottom.png"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/vsc_remote/img/Bottom.png"
 width="841"
 height="121"
-srcset="https://a-moment096.github.io/posts/2025/09/vsc_remote/img/Bottom_hu_6b8ca2a27722e2ce.png 480w, https://a-moment096.github.io/posts/2025/09/vsc_remote/img/Bottom_hu_7376e5f4e8595b2a.png 1024w"
+srcset="https://a-moment096.github.io/posts/vsc_remote/img/Bottom_hu_6b8ca2a27722e2ce.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/Bottom_hu_7376e5f4e8595b2a.png 1024w"
 loading="lazy"
 alt="底边栏"
 class="gallery-image"
@@ -284,10 +284,10 @@ data-flex-basis="1668px"
 &lt;p&gt;介绍完 CMake 集成，我们下来就尝试连接到远程服务器吧！&lt;/p&gt;
 &lt;h3 id="remote-功能"&gt;Remote 功能
 &lt;/h3&gt;&lt;p&gt;实际上 VS Code 的远程功能很像预载的一样。记得上面的那个底边栏吗？最左边的那个蓝色的按钮就是启动远程链接的按钮。我们点击它就会出现类似这样的窗口：&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2025/09/vsc_remote/img/RemoteConnection.png"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/vsc_remote/img/RemoteConnection.png"
 width="1320"
 height="514"
-srcset="https://a-moment096.github.io/posts/2025/09/vsc_remote/img/RemoteConnection_hu_bfb6fcd316c26a9.png 480w, https://a-moment096.github.io/posts/2025/09/vsc_remote/img/RemoteConnection_hu_cc71de79b800cec6.png 1024w"
+srcset="https://a-moment096.github.io/posts/vsc_remote/img/RemoteConnection_hu_bfb6fcd316c26a9.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/RemoteConnection_hu_cc71de79b800cec6.png 1024w"
 loading="lazy"
 alt="选择你要链接的模式"
 class="gallery-image"
@@ -295,10 +295,10 @@ data-flex-grow="256"
 data-flex-basis="616px"
 &gt;&lt;/p&gt;
 &lt;p&gt;由于我的机子上有 WSL（Windows Subsystem Linux）所以这个页面多出来了链接 WSL 的选项。我们选择 &lt;code&gt;Connect to Host...&lt;/code&gt;，会出现&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/2025/09/vsc_remote/img/SelectRemote.png"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/vsc_remote/img/SelectRemote.png"
 width="1329"
 height="502"
-srcset="https://a-moment096.github.io/posts/2025/09/vsc_remote/img/SelectRemote_hu_1168e6ba8b35d25d.png 480w, https://a-moment096.github.io/posts/2025/09/vsc_remote/img/SelectRemote_hu_f65f7ef048dc6c0d.png 1024w"
+srcset="https://a-moment096.github.io/posts/vsc_remote/img/SelectRemote_hu_1168e6ba8b35d25d.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/SelectRemote_hu_f65f7ef048dc6c0d.png 1024w"
 loading="lazy"
 alt="选择远程机器"
 class="gallery-image"
@@ -326,7 +326,7 @@ data-flex-basis="635px"
 &gt;The Untold Story of Visual Studio Code: A Revolution in Software Development &lt;/a&gt;，讲了 VS Code 的故事，挺有意思的。&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</description></item><item><title>Python + VS Code 快速配置</title><link>https://a-moment096.github.io/posts/2024/11/vsc_py/</link><pubDate>Fri, 01 Nov 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/2024/11/vsc_py/</guid><description>&lt;img src="https://a-moment096.github.io/posts/2024/11/vsc_py/%E5%A6%B9%E7%BA%A2.jpeg" alt="Featured image of post Python + VS Code 快速配置" /&gt;&lt;p&gt;&lt;em&gt;这是一篇写给初学 Python 的同学的教程，帮助使用 VS Code 快速配置好 Python 的开发环境，写于今年9月14日，
+&lt;/div&gt;</description></item><item><title>Python + VS Code 快速配置</title><link>https://a-moment096.github.io/posts/vsc_py/</link><pubDate>Fri, 01 Nov 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/vsc_py/</guid><description>&lt;img src="https://a-moment096.github.io/posts/vsc_py/%E5%A6%B9%E7%BA%A2.jpeg" alt="Featured image of post Python + VS Code 快速配置" /&gt;&lt;p&gt;&lt;em&gt;这是一篇写给初学 Python 的同学的教程，帮助使用 VS Code 快速配置好 Python 的开发环境，写于今年9月14日，
 先搬运至此并改为 Markdown，作为 Programming部分的第一篇博文&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id="简介"&gt;简介
 &lt;/h2&gt;&lt;p&gt;Python, 一门伟大的语言. 简易的, 贴合人类语言的语法, 丰富的生态, 强

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pages on A Moment's Rest</title><link>https://a-moment096.github.io/page/</link><description>Recent content in Pages on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 18 Sep 2025 09:09:55 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/page/index.xml" rel="self" type="application/rss+xml"/><item><title>Thoughts</title><link>https://a-moment096.github.io/page/thoughts/</link><pubDate>Sat, 02 Nov 2024 14:34:18 +0800</pubDate><guid>https://a-moment096.github.io/page/thoughts/</guid><description>&lt;!-- 由 LeanCloud + Artitalk 驱动 --&gt;</description></item><item><title>About</title><link>https://a-moment096.github.io/page/about/</link><pubDate>Wed, 09 Oct 2024 14:34:18 +0800</pubDate><guid>https://a-moment096.github.io/page/about/</guid><description>&lt;img src="https://a-moment096.github.io/page/about/Reimu.png" alt="Featured image of post About" /&gt;&lt;h1 id="a-moment-rest-amoments-blog"&gt;A Moment Rest: AMoment&amp;rsquo;s Blog
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pages on A Moment's Rest</title><link>https://a-moment096.github.io/page/</link><description>Recent content in Pages on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 22 Sep 2025 12:49:35 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/page/index.xml" rel="self" type="application/rss+xml"/><item><title>Thoughts</title><link>https://a-moment096.github.io/page/thoughts/</link><pubDate>Sat, 02 Nov 2024 14:34:18 +0800</pubDate><guid>https://a-moment096.github.io/page/thoughts/</guid><description>&lt;!-- 由 LeanCloud + Artitalk 驱动 --&gt;</description></item><item><title>About</title><link>https://a-moment096.github.io/page/about/</link><pubDate>Wed, 09 Oct 2024 14:34:18 +0800</pubDate><guid>https://a-moment096.github.io/page/about/</guid><description>&lt;img src="https://a-moment096.github.io/page/about/Reimu.png" alt="Featured image of post About" /&gt;&lt;h1 id="a-moment-rest-amoments-blog"&gt;A Moment Rest: AMoment&amp;rsquo;s Blog
 &lt;/h1&gt;&lt;p&gt;Welcome! Come and have a rest here~&lt;/p&gt;
 &lt;h2 id="who-are-you--你谁"&gt;Who are you? | 你谁？
 &lt;/h2&gt;&lt;p&gt;I&amp;rsquo;m a 24 year-old graduate student in &lt;del&gt;Counter Strike University&lt;/del&gt; Central South University, major in Material Sci &amp;amp; Eng.&lt;/p&gt;
@@ -400,7 +400,8 @@ background: var(--card-background-selected);
 &gt;FRP 配置教程&lt;/a&gt;: 非常详细的教程，参考了很多&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id="git"&gt;Git
-&lt;/h3&gt;&lt;ul&gt;
+&lt;/h3&gt;&lt;p&gt;即便不是 Linux，也算是高频命令了吧（）&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;&lt;a class="link" href="https://www.bilibili.com/video/BV1Hkr7YYEh8" target="_blank" rel="noopener"
 &gt;给傻子的 Git 教程&lt;/a&gt;: 非常好的教程，使我大脑旋转&lt;/li&gt;
 &lt;li&gt;&lt;a class="link" href="https://learngitbranching.js.org/" target="_blank" rel="noopener"
@@ -418,7 +419,7 @@ background: var(--card-background-selected);
 &lt;li&gt;&lt;a class="link" href="https://www.bilibili.com/video/BV1CdNDz1EcB/" target="_blank" rel="noopener"
 &gt;Bilibili: 微分的导数&lt;/a&gt;: 给微分再求形式上的微分，很有趣&lt;/li&gt;
 &lt;li&gt;&lt;a class="link" href="https://www.bilibili.com/video/BV1FZFNezE6D" target="_blank" rel="noopener"
-&gt;Bilibili: 蛇引理证明&lt;/a&gt;: 启发我写了 &lt;a class="link" href="https://a-moment096.github.io/posts/2025/02/snake_lemma/" &gt;蛇年，Snake Lemma!&lt;/a&gt;，讲的很详细。&lt;/li&gt;
+&gt;Bilibili: 蛇引理证明&lt;/a&gt;: 启发我写了 &lt;a class="link" href="https://a-moment096.github.io/posts/snake_lemma/" &gt;蛇年，Snake Lemma!&lt;/a&gt;，讲的很详细。&lt;/li&gt;
 &lt;li&gt;&lt;a class="link" href="https://www.zhihu.com/question/559683007/answer/3502165974" target="_blank" rel="noopener"
 &gt;知乎: 关于 Rudin 的错排与误会&lt;/a&gt;: 算是一些趣闻轶事了&lt;/li&gt;
 &lt;li&gt;&lt;a class="link" href="https://www.zhihu.com/question/666502327" target="_blank" rel="noopener"
@@ -430,6 +431,18 @@ background: var(--card-background-selected);
 &gt;CppReference Vector&lt;/a&gt;: &lt;code&gt;std::vector&lt;/code&gt; 的文档&lt;/li&gt;
 &lt;li&gt;&lt;a class="link" href="https://stackoverflow.com/questions/1164266/why-are-arrays-of-references-illegal" target="_blank" rel="noopener"
 &gt;StackOverFlow: Why Are Arrays of References Illegal&lt;/a&gt;: 所以指针真不是数组，数组也真的不是指针（）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="软件相关"&gt;软件相关
+&lt;/h2&gt;&lt;h3 id="vs-code"&gt;VS Code
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="link" href="https://dev.to/rajeshkumaryadavdotcom/the-untold-story-of-visual-studio-code-a-revolution-in-software-development-44pp" target="_blank" rel="noopener"
+&gt;The Untold Story of Visual Studio Code: A Revolution in Software Development&lt;/a&gt;: 有关 VS Code 的小故事，挺有意思的。&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://code.visualstudio.com/download" target="_blank" rel="noopener"
+&gt;Download Visual Studio Code&lt;/a&gt;: 点击下载全宇宙最好的疑似 IDE 吧！&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://github.com/microsoft/winget-cli/discussions/1798" target="_blank" rel="noopener"
+&gt;How to use winget to install VSCode with custom options?&lt;/a&gt;: WinGet 的神秘 Bug 以及神奇解答&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://code.visualstudio.com/docs/languages/cpp" target="_blank" rel="noopener"
+&gt;C/C++ for Visual Studio Code&lt;/a&gt;: VS Code 提供的编译环境配置教程。底下还有 C/C++ 的专栏。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="材料学"&gt;材料学
 &lt;/h2&gt;&lt;ul&gt;
