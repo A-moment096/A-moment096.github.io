@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>C++ on A Moment's Rest</title><link>https://a-moment096.github.io/tags/c++/</link><description>Recent content in C++ on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 15 Oct 2025 08:01:28 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/c++/index.xml" rel="self" type="application/rss+xml"/><item><title>C++ Vector 的内存布局</title><link>https://a-moment096.github.io/posts/vector_memory_layout/</link><pubDate>Tue, 27 May 2025 09:53:29 +0800</pubDate><guid>https://a-moment096.github.io/posts/vector_memory_layout/</guid><description>&lt;img src="https://a-moment096.github.io/posts/vector_memory_layout/Bamboo_Reimu.jpg" alt="Featured image of post C++ Vector 的内存布局" /&gt;&lt;p&gt;&lt;em&gt;探索一下 C++ 的容器 &lt;code&gt;vector&lt;/code&gt; 的内存布局，也算是解答我自己的一些疑虑咯&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>C++ on A Moment's Rest</title><link>https://a-moment096.github.io/tags/c++/</link><description>Recent content in C++ on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 20 Oct 2025 05:18:57 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/c++/index.xml" rel="self" type="application/rss+xml"/><item><title>C++ Vector 的内存布局</title><link>https://a-moment096.github.io/posts/vector_memory_layout/</link><pubDate>Tue, 27 May 2025 09:53:29 +0800</pubDate><guid>https://a-moment096.github.io/posts/vector_memory_layout/</guid><description>&lt;img src="https://a-moment096.github.io/posts/vector_memory_layout/Bamboo_Reimu.jpg" alt="Featured image of post C++ Vector 的内存布局" /&gt;&lt;p&gt;&lt;em&gt;探索一下 C++ 的容器 &lt;code&gt;vector&lt;/code&gt; 的内存布局，也算是解答我自己的一些疑虑咯&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图是从网上搜的，尝试寻找出处，未果。很可惜。选曲尝试选择了一首听着比较清淡的曲子 &lt;strong&gt;泪苔&lt;/strong&gt;，感觉比较符合头图清新淡雅的神社氛围。希望你喜欢。&lt;/em&gt;&lt;/p&gt;
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
 &lt;style type="text/css"&gt;
@@ -1028,7 +1028,8 @@ data-flex-basis="240px"
 &lt;p&gt;问题：设现在有一个热源，其中心处在 x = 64 的位置，宽度为40，温度为1，再设整个模拟域的宽度为 128，且边界上采用固定边界条件，除了热源外的位置温度为 1。先在已知传热方程如下：
 &lt;/p&gt;
 $$ \dfrac{\partial T}{\partial t} = \mu \dfrac{\partial^2 T}{\partial x ^2},$$&lt;p&gt;
-且在该问题中取 $\mu = 1$，求算该体系在上述方程下的演化过程。&lt;/p&gt;&lt;/blockquote&gt;
+且在该问题中取 $\mu = 1$，求算该体系在上述方程下的演化过程。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;其中的偏微分方程即为所谓的 Fourier 传热方程的简化版，将每一点的热导率看作一个定值并将所有其他参数合并后称为 $\mu$。&lt;/p&gt;
 &lt;h3 id="问题拆解"&gt;问题拆解
 &lt;/h3&gt;&lt;p&gt;分析该问题，我们拥有的信息十分完全，再根据已知的 Laplacian 算符和向前欧拉法，我们很快就能构建出该问题对应的 C++ 代码。我们采用 $\Delta x = 1$，$\Delta t = 0.2$ 的空间和时间步长以计算时空间导数，并使用向前欧拉法迭代演化出该体系的演化过程。代码层面，我们考虑使用最基础的面向过程方法，并且注意到边界判断时固定边界上的温度值为 0.0。&lt;/p&gt;

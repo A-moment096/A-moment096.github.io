@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python on A Moment's Rest</title><link>https://a-moment096.github.io/tags/python/</link><description>Recent content in Python on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 15 Oct 2025 08:01:28 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/python/index.xml" rel="self" type="application/rss+xml"/><item><title>2025! 非零的最后一位数字是多少？</title><link>https://a-moment096.github.io/posts/factorial_last_digits/</link><pubDate>Mon, 25 Aug 2025 18:01:23 +0800</pubDate><guid>https://a-moment096.github.io/posts/factorial_last_digits/</guid><description>&lt;img src="https://a-moment096.github.io/posts/factorial_last_digits/%E6%B8%85%E6%B0%B4%E5%90%9F.jpg" alt="Featured image of post 2025! 非零的最后一位数字是多少？" /&gt;&lt;p&gt;&lt;em&gt;在知乎上看到了&lt;a class="link" href="https://www.zhihu.com/question/666502327" target="_blank" rel="noopener"
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python on A Moment's Rest</title><link>https://a-moment096.github.io/tags/python/</link><description>Recent content in Python on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 20 Oct 2025 05:18:57 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/python/index.xml" rel="self" type="application/rss+xml"/><item><title>2025! 非零的最后一位数字是多少？</title><link>https://a-moment096.github.io/posts/factorial_last_digits/</link><pubDate>Mon, 25 Aug 2025 18:01:23 +0800</pubDate><guid>https://a-moment096.github.io/posts/factorial_last_digits/</guid><description>&lt;img src="https://a-moment096.github.io/posts/factorial_last_digits/%E6%B8%85%E6%B0%B4%E5%90%9F.jpg" alt="Featured image of post 2025! 非零的最后一位数字是多少？" /&gt;&lt;p&gt;&lt;em&gt;在知乎上看到了&lt;a class="link" href="https://www.zhihu.com/question/666502327" target="_blank" rel="noopener"
 &gt;这样一个有趣的问题&lt;/a&gt;，以及&lt;a class="link" href="https://www.zhihu.com/question/666502327/answer/18810753693" target="_blank" rel="noopener"
 &gt;很厉害的回答&lt;/a&gt;，实在是很有意思。这里就写一写我的解决这个问题的方法以及当时的心路历程吧。&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图出自 &lt;a class="link" href="https://www.pixiv.net/en/users/8605991" target="_blank" rel="noopener"
@@ -486,7 +486,8 @@ $$&lt;p&gt;因此, 为了实现这一算法, 该算法实现的函数有如下�
 &lt;p&gt;返回值:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;一个数组, 作为解得的 $y$ 的函数值&lt;/li&gt;
-&lt;/ul&gt;&lt;/blockquote&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;则有如下 Python 实现:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;typing&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Callable&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 2&lt;/span&gt;&lt;span class="cl"&gt;
@@ -516,7 +517,8 @@ $$&lt;p&gt;因此, 为了实现这一算法, 该算法实现的函数有如下�
 &lt;p&gt;返回值:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;一个数, 作为积分值&lt;/li&gt;
-&lt;/ul&gt;&lt;/blockquote&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;根据不同的积分算法, 可以有多种不同的实现. 下面实现四种算法: &amp;ldquo;黎曼&amp;quot;式积分法, 梯形公式, Simpson 公式, Newton-Cotes 公式.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;typing&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Callable&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 2&lt;/span&gt;&lt;span class="cl"&gt;
@@ -584,7 +586,8 @@ $$&lt;p&gt;因此, 为了实现这一算法, 该算法实现的函数有如下�
 &lt;p&gt;输出&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;两个二维列表, 分别为对 $x$ 方向的梯度和对 $y$ 方向的梯度&lt;/li&gt;
-&lt;/ul&gt;&lt;/blockquote&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;拉普拉斯&lt;/p&gt;
@@ -596,7 +599,8 @@ $$&lt;p&gt;因此, 为了实现这一算法, 该算法实现的函数有如下�
 &lt;p&gt;输出&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;一个二维列表, 存储每个网格点的拉普拉斯&lt;/li&gt;
-&lt;/ul&gt;&lt;/blockquote&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;以下是代码实现:&lt;/p&gt;
@@ -868,5 +872,6 @@ New Jupyter Notebook)即可创建新的Jupyter Notebook. 后续操作类似于�
 者. 最后, 希望本文能真的实现, 并帮助您实现Python的那句名言:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;人生苦短, 我用Python. &lt;p&gt;
-Life is short, I use Python.&lt;/p&gt;&lt;/blockquote&gt;
+Life is short, I use Python.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;祝您生活愉快.&lt;/p&gt;</description></item></channel></rss>

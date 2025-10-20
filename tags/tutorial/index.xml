@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tutorial on A Moment's Rest</title><link>https://a-moment096.github.io/tags/tutorial/</link><description>Recent content in Tutorial on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 15 Oct 2025 08:01:28 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/tutorial/index.xml" rel="self" type="application/rss+xml"/><item><title>Phase Field: 相场模拟学习笔记 V</title><link>https://a-moment096.github.io/posts/pf_tutorial_5/</link><pubDate>Wed, 25 Dec 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/pf_tutorial_5/</guid><description>&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/Skadi.png" alt="Featured image of post Phase Field: 相场模拟学习笔记 V" /&gt;&lt;p&gt;&lt;em&gt;其实这节就是换成 Allen-Cahn 方程，然后多个变量而已，主要是俺不想实现 Voronoi 结构（逃&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tutorial on A Moment's Rest</title><link>https://a-moment096.github.io/tags/tutorial/</link><description>Recent content in Tutorial on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 20 Oct 2025 05:18:57 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/tutorial/index.xml" rel="self" type="application/rss+xml"/><item><title>Phase Field: 相场模拟学习笔记 V</title><link>https://a-moment096.github.io/posts/pf_tutorial_5/</link><pubDate>Wed, 25 Dec 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/pf_tutorial_5/</guid><description>&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/Skadi.png" alt="Featured image of post Phase Field: 相场模拟学习笔记 V" /&gt;&lt;p&gt;&lt;em&gt;其实这节就是换成 Allen-Cahn 方程，然后多个变量而已，主要是俺不想实现 Voronoi 结构（逃&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id="简介"&gt;简介
 &lt;/h2&gt;&lt;p&gt;上一部分我们以调幅分解为基础讨论了浓度场在 Cahn-Hilliard 方程下的演化过程。对相场方法而言，另一个无法绕开的演化方程则是针对非保守场变量的 Allen-Cahn 方程。这一部分我们将对晶粒长大过程进行分析，了解 Allen-Cahn 方程并使用它进行晶粒长大过程的模拟。&lt;/p&gt;
 &lt;h2 id="晶粒长大"&gt;晶粒长大
@@ -800,7 +800,8 @@ data-flex-basis="240px"
 &lt;p&gt;问题：设现在有一个热源，其中心处在 x = 64 的位置，宽度为40，温度为1，再设整个模拟域的宽度为 128，且边界上采用固定边界条件，除了热源外的位置温度为 1。先在已知传热方程如下：
 &lt;/p&gt;
 $$ \dfrac{\partial T}{\partial t} = \mu \dfrac{\partial^2 T}{\partial x ^2},$$&lt;p&gt;
-且在该问题中取 $\mu = 1$，求算该体系在上述方程下的演化过程。&lt;/p&gt;&lt;/blockquote&gt;
+且在该问题中取 $\mu = 1$，求算该体系在上述方程下的演化过程。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;其中的偏微分方程即为所谓的 Fourier 传热方程的简化版，将每一点的热导率看作一个定值并将所有其他参数合并后称为 $\mu$。&lt;/p&gt;
 &lt;h3 id="问题拆解"&gt;问题拆解
 &lt;/h3&gt;&lt;p&gt;分析该问题，我们拥有的信息十分完全，再根据已知的 Laplacian 算符和向前欧拉法，我们很快就能构建出该问题对应的 C++ 代码。我们采用 $\Delta x = 1$，$\Delta t = 0.2$ 的空间和时间步长以计算时空间导数，并使用向前欧拉法迭代演化出该体系的演化过程。代码层面，我们考虑使用最基础的面向过程方法，并且注意到边界判断时固定边界上的温度值为 0.0。&lt;/p&gt;
@@ -1056,7 +1057,8 @@ $$&lt;p&gt;因此, 为了实现这一算法, 该算法实现的函数有如下�
 &lt;p&gt;返回值:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;一个数组, 作为解得的 $y$ 的函数值&lt;/li&gt;
-&lt;/ul&gt;&lt;/blockquote&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;则有如下 Python 实现:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;typing&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Callable&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 2&lt;/span&gt;&lt;span class="cl"&gt;
@@ -1086,7 +1088,8 @@ $$&lt;p&gt;因此, 为了实现这一算法, 该算法实现的函数有如下�
 &lt;p&gt;返回值:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;一个数, 作为积分值&lt;/li&gt;
-&lt;/ul&gt;&lt;/blockquote&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;根据不同的积分算法, 可以有多种不同的实现. 下面实现四种算法: &amp;ldquo;黎曼&amp;quot;式积分法, 梯形公式, Simpson 公式, Newton-Cotes 公式.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;typing&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Callable&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 2&lt;/span&gt;&lt;span class="cl"&gt;
@@ -1154,7 +1157,8 @@ $$&lt;p&gt;因此, 为了实现这一算法, 该算法实现的函数有如下�
 &lt;p&gt;输出&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;两个二维列表, 分别为对 $x$ 方向的梯度和对 $y$ 方向的梯度&lt;/li&gt;
-&lt;/ul&gt;&lt;/blockquote&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;拉普拉斯&lt;/p&gt;
@@ -1166,7 +1170,8 @@ $$&lt;p&gt;因此, 为了实现这一算法, 该算法实现的函数有如下�
 &lt;p&gt;输出&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;一个二维列表, 存储每个网格点的拉普拉斯&lt;/li&gt;
-&lt;/ul&gt;&lt;/blockquote&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;以下是代码实现:&lt;/p&gt;
@@ -1599,5 +1604,6 @@ New Jupyter Notebook)即可创建新的Jupyter Notebook. 后续操作类似于�
 者. 最后, 希望本文能真的实现, 并帮助您实现Python的那句名言:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;人生苦短, 我用Python. &lt;p&gt;
-Life is short, I use Python.&lt;/p&gt;&lt;/blockquote&gt;
+Life is short, I use Python.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;祝您生活愉快.&lt;/p&gt;</description></item></channel></rss>

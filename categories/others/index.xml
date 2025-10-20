@@ -366,10 +366,12 @@ class FProxy,RProxy proxy
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;curl -LO https://github.com/fatedier/frp/releases/download/v0.61.1/frp_0.61.1_linux_amd64.tar.gz
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;其中的 &lt;code&gt;wget&lt;/code&gt; 根据 &lt;code&gt;man wget&lt;/code&gt; 的回答，它是&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Wget - The non-interactive network downloader&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Wget - The non-interactive network downloader&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;，即非交互式的网络下载器。它的参数就相对简单了，后面跟上要下载的内容的网址就可以了。而 &lt;code&gt;curl&lt;/code&gt; 就更复杂一些。根据 &lt;code&gt;man curl&lt;/code&gt;，它是&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;curl - transfer a URL&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;curl - transfer a URL&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;，是传输 URL 连接的。默认情况下，它会把获取到的东西直接输出在屏幕上。而由于我们是要下载文件，所以需要指定 &lt;code&gt;-O&lt;/code&gt; 参数来表示 &lt;em&gt;把内容下载到本地的同名文件中&lt;/em&gt;。而这里的 &lt;code&gt;-L&lt;/code&gt; 参数则是告诉 &lt;code&gt;curl&lt;/code&gt; 跟随连接的重定向，因为可能这个连接实际上指向的资源不是这里，而是另一个地方。顺带一提，如果指定 &lt;code&gt;-o&lt;/code&gt; （小写的 o）的话则是 &lt;em&gt;把内容下载到下面这个文件里&lt;/em&gt; 的意思，也就是 &lt;code&gt;-o&lt;/code&gt; 后面应该跟上一个自己指定的文件名。&lt;/p&gt;
 &lt;p&gt;再下来就是解压缩。下载好的东西是一个由 &lt;code&gt;tar&lt;/code&gt; 打包好并经过 &lt;code&gt;gzip&lt;/code&gt; 压缩的文件。所以我们应该先解压缩为一个单纯的 &lt;code&gt;.tar&lt;/code&gt; 文件，再解包开变成真实的内容。然而，好消息是，&lt;code&gt;tar&lt;/code&gt; 这个命令已经内置了调用包括 &lt;code&gt;gzip&lt;/code&gt; 在内的压缩/解压缩软件，我们只需要使用 &lt;code&gt;tar -xzf frp_0.61.1_linux_amd64.tar.gz&lt;/code&gt; 就可以了。其中的 &lt;code&gt;-xzf&lt;/code&gt; 分别代表 &lt;em&gt;提取&lt;/em&gt;，&lt;em&gt;调用&lt;/em&gt;&lt;code&gt;gzip&lt;/code&gt;&lt;em&gt;工具&lt;/em&gt; 以及 &lt;em&gt;指定文件路径&lt;/em&gt;。&lt;/p&gt;
 &lt;p&gt;随后我们就可以进入解包得到的文件夹内，里面的 &lt;code&gt;frpc&lt;/code&gt; 就是我们要使用的软件，而 &lt;code&gt;frpc.toml&lt;/code&gt; 则是对应的配置文件。剩下的内容可以删掉，也可以想办法提取出来一会儿挪给反代服务器。在计算服务器上我们只需要用到 &lt;code&gt;frpc&lt;/code&gt; 和它的配置文件就可以了。&lt;/p&gt;
@@ -521,7 +523,8 @@ background: var(--card-background-selected);
 &lt;p style="text-indent: 50px"&gt;插电如面，自从我们相逢已有一年有余。上次见面，仿佛还是上次。传统派的我那时我刚刚给你刷上 Windows 10 系统，因为 Windows 11 的审美实在是在狠狠强碱我的眼睛。我们一路克服了艰难险阻，安装了各种乱七八糟的驱动，最后终于是让你成功跑了起来。虽然你的内存不大，硬盘不多，CPU 一般，显卡集成，但你要相信我，我心里面是有你的。&lt;/p&gt;
 &lt;p style="text-indent: 50px"&gt;然而，你身上的 Windows 10 虽然让我倍感熟悉，你的耗电量实在是高得吓人。我接受不了一旦不插电就几乎是和时间赛跑的工作流。我将这一切归咎于可恶的微软，可恶的 Windows 10。这不是你的错，但是我还是想告诉你：你马上就会搭载一个新的系统。她轻便灵巧的同时，又大胆火辣，相信你一定会和她打成一片的。&lt;/p&gt;
 &lt;p align="right"&gt;Love, &lt;/p&gt;
-&lt;p align="right"&gt;A Moment&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p align="right"&gt;A Moment&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;美丽的五一假期，不折腾点狠活儿实在是说不过去。看着越来越不顺眼的 Windows 10 笔记本，以及我的心逐渐被 Linux（特指 Arch Linux）所俘获，我决定：干掉 Windows 10, 彻底迎接 Arch Linux。想必有了之前安装 Arch Linux 的经验，这次的安装之旅肯定是一马平川了。开始吧。&lt;/p&gt;
 &lt;h2 id="准备资料备份以及准备启动盘"&gt;准备：资料备份以及准备启动盘
 &lt;/h2&gt;&lt;p&gt;首先肯定是先把电脑上已有的资料都备份好。其实说实话没太多文件，主要是两个没打完的 Gal 吧（心虚），因为大部分的文件都其实已经搞到台式机上面了。一开始是想着把这些文件放在一块精心规划的小硬盘上，安装的时候不格式化就行了，但是感觉还是有点点点点危险，所以干脆还是挪到另一台机器上，把这台小本的硬盘全部格式化了得了。不过也许我应该考虑更加智能的备份方案？算了，以后再考虑（挖坑）。&lt;/p&gt;
@@ -643,7 +646,8 @@ data-flex-basis="2304px"
 &lt;p align="middle"&gt; -- 此处省略牢骚 2000 字 -- &lt;/p&gt;
 &lt;p style="text-indent: 50px"&gt; 但是，你懂的，你可是 Linux，对吧？你已经是一个成熟的操作系统了，应该学会自己面对这些问题了，对吧？
 &lt;p align="right"&gt;Yours, &lt;/p&gt;
-&lt;p align="right"&gt;A Moment&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p align="right"&gt;A Moment&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;谢谢你能看到这里。看完这一大堆废话，说实话也挺累的。如果这些整活儿的内容让你能开心一下，那就太好了。最后，一如既往，就祝您身心健康吧。&lt;/p&gt;</description></item><item><title>First Blog: 搭建这个博客</title><link>https://a-moment096.github.io/posts/build_blog/</link><pubDate>Fri, 01 Nov 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/build_blog/</guid><description>&lt;img src="https://a-moment096.github.io/posts/build_blog/Reimu.png" alt="Featured image of post First Blog: 搭建这个博客" /&gt;&lt;p&gt;简单记录一下自己搭建博客的经历。&lt;/p&gt;
 &lt;h2 id="begin-好想搭博客"&gt;Begin: 好想搭博客
 &lt;/h2&gt;&lt;p&gt;网上高强度冲浪的过程中，发现很多人都有自己的博客，特别是在读过几篇博文之后，对会搭建博客的大佬的艳羡之情愈发激烈，同时也很想在网上

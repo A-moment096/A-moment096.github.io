@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tools on A Moment's Rest</title><link>https://a-moment096.github.io/tags/tools/</link><description>Recent content in Tools on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 15 Oct 2025 08:01:28 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/tools/index.xml" rel="self" type="application/rss+xml"/><item><title>（也许是）一个 Git 教程？其三</title><link>https://a-moment096.github.io/posts/git_3/</link><pubDate>Tue, 26 Aug 2025 18:28:16 +0800</pubDate><guid>https://a-moment096.github.io/posts/git_3/</guid><description>&lt;img src="https://a-moment096.github.io/posts/Shell_Note/Git_How/Tatara%20Kogasa.jpg" alt="Featured image of post （也许是）一个 Git 教程？其三" /&gt;&lt;p&gt;&lt;em&gt;最后一节，聊聊如何在 GitHub 上进行多人协作吧~&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;头图信息请参考第一节内容，谢谢~&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tools on A Moment's Rest</title><link>https://a-moment096.github.io/tags/tools/</link><description>Recent content in Tools on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 20 Oct 2025 05:18:57 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/tools/index.xml" rel="self" type="application/rss+xml"/><item><title>（也许是）一个 Git 教程？其三</title><link>https://a-moment096.github.io/posts/git_3/</link><pubDate>Tue, 26 Aug 2025 18:28:16 +0800</pubDate><guid>https://a-moment096.github.io/posts/git_3/</guid><description>&lt;img src="https://a-moment096.github.io/posts/Shell_Note/Git_How/Tatara%20Kogasa.jpg" alt="Featured image of post （也许是）一个 Git 教程？其三" /&gt;&lt;p&gt;&lt;em&gt;最后一节，聊聊如何在 GitHub 上进行多人协作吧~&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;头图信息请参考第一节内容，谢谢~ 选曲依然选到了小伞的个人曲，希望你喜欢！&lt;/em&gt;&lt;/p&gt;
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
 &lt;style type="text/css"&gt;
 [data-scheme="dark"] .aplayer {
@@ -88,7 +88,7 @@ background: var(--card-background-selected);
 }
 &lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
-&lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=455026" theme="#2980b9" loop="never"&gt;&lt;/meting-js&gt;
+&lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=455026" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
 &lt;h2 id="所以git-的远程到底是什么东西"&gt;所以，Git 的远程到底是什么东西？
 &lt;/h2&gt;&lt;p&gt;我们之前提过，Git 通过 &lt;em&gt;远程 (Remote)&lt;/em&gt; 来实现和他人合作。我们甚至已经介绍了一些和远程进行交互的命令了。然而，Git 究竟是怎么实现这一功能的？这个功能有什么特点呢？我们和他人进行协作开发时，有什么要注意的点呢？我们一点点来介绍。我们先系统地介绍一下 &lt;em&gt;远程&lt;/em&gt; 是什么东西吧。&lt;/p&gt;
 &lt;h3 id="远程不过是另一台装了-git-的机器"&gt;远程：不过是另一台装了 Git 的机器
@@ -178,7 +178,8 @@ background: var(--card-background-selected);
 &gt;&lt;em&gt;ProGit&lt;/em&gt;&lt;/a&gt;，它有多种语言的版本，作为教程而言自然是比 Git 的文档写的好懂的多。不过 Git 的文档写的也很不错就是了。&lt;/p&gt;
 &lt;p&gt;最后，非常感谢您能看到这里。如果你看完了这三篇的话，我更是感激不尽。如果这些文字能帮到你那就太好了，如果没有起太大帮助的话，希望能逗你一笑。哎呀至少笑一下吧，显得这个系列的文章也不是一无是处嘛。&lt;del&gt;（之前写的那个 &lt;a class="link" href="https://a-moment096.github.io/content/posts/Math_Note/Snake_Lemma/index.md" &gt;关于蛇引理的文章&lt;/a&gt; 里也说如果能博读者一笑就好了，结果发现，根本没几个人看呀可恶…… 更别说逗大家笑了，唉，实在是太失败了。）&lt;/del&gt;&lt;/p&gt;
 &lt;p&gt;那么，一如既往地，祝您身心愉快，工作顺利，少出 Bug ~！&lt;/p&gt;</description></item><item><title>（也许是）一个 Git 教程？其二</title><link>https://a-moment096.github.io/posts/git_2/</link><pubDate>Thu, 14 Aug 2025 16:49:16 +0800</pubDate><guid>https://a-moment096.github.io/posts/git_2/</guid><description>&lt;img src="https://a-moment096.github.io/posts/Shell_Note/Git_How/Tatara%20Kogasa.jpg" alt="Featured image of post （也许是）一个 Git 教程？其二" /&gt;&lt;p&gt;&lt;em&gt;上一节已经介绍了平时会怎么用 Git 进行单分支仓库的管理，这一节就来讲讲 Git 要怎么进行多分支协作吧！&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;头图信息请参考上一节内容，谢谢~&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;头图信息请参考上一节内容，谢谢~ 选曲选到了知名社团 &lt;a class="link" href="https://f-g-s.net/" target="_blank" rel="noopener"
+&gt;Foxtail-Grass-Studio&lt;/a&gt; 对小伞个人曲的翻调，请欣赏~&lt;/em&gt;&lt;/p&gt;
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
 &lt;style type="text/css"&gt;
 [data-scheme="dark"] .aplayer {
@@ -267,7 +268,7 @@ background: var(--card-background-selected);
 }
 &lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
-&lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=785695" theme="#2980b9" loop="never"&gt;&lt;/meting-js&gt;
+&lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=785695" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
 &lt;h2 id="分支是那个分支吗"&gt;分支，是那个分支吗？
 &lt;/h2&gt;&lt;p&gt;我们上一节已经了解过 Git 在单分支下的日常工作流了。值得注意的是，我们说的是 “单分支”，那么自然，Git 是支持，同时鼓励使用多分支的。那么分支是什么呢？&lt;/p&gt;
 &lt;p&gt;也许有过 Galgame 经验，或者玩过有分支剧情游戏的你已经想到所谓的 “分支” 是什么东西了。没错，很像这么回事儿，不过功能更丰富一些，因为你不止是体验若干个分支的剧情，Git 甚至可以允许你在没有冲突的前提下合并两个分支！如果有一款游戏支持用 Git 来操控分支的话，也许就可以手动后宫了……&lt;/p&gt;
@@ -481,7 +482,7 @@ background: var(--card-background-selected);
 }
 &lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
-&lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=22636608" theme="#2980b9" loop="never"&gt;&lt;/meting-js&gt;
+&lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=22636608" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
 &lt;h2 id="git熟悉又陌生的名字-"&gt;Git，熟悉又陌生的名字 ……
 &lt;/h2&gt;&lt;p&gt;也许是所处环境的原因，我身边有很多人不知道 Git 是什么。他们都听过 &lt;em&gt;GitHub&lt;/em&gt;，但很多却只知道上面有好多程序和程序员。虽然也没错，但是并不准确；而当我说我在用 &lt;em&gt;Git&lt;/em&gt; 的时候，会有人把 &lt;em&gt;Git&lt;/em&gt; 和 &lt;em&gt;GitHub&lt;/em&gt; 混为一谈；很多人觉得 Git 很复杂，顺带觉得 GitHub 也很复杂…… 为此，我想分享一下我对 Git 和 GitHub 的理解，聊聊 Git 和 GitHub 都是什么。&lt;/p&gt;
 &lt;p&gt;所以，如果你不了解 Git 是什么，那我很荣幸能在这里向你简单介绍它。&lt;/p&gt;
@@ -667,7 +668,7 @@ background: var(--card-background-selected);
 }
 &lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
-&lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=448119" theme="#2980b9" loop="never"&gt;&lt;/meting-js&gt;
+&lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=448119" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
 &lt;h2 id="为什么要选择-rsync-呢"&gt;为什么要选择 &lt;code&gt;rsync&lt;/code&gt; 呢？
 &lt;/h2&gt;&lt;p&gt;有时候我们有多个远程电脑，或者是服务器，上面的文件内容我们希望下载到本地。我们通常有这么几个选择：使用一些功能成熟的，专用于 SSH 连接的终端模拟器，比如 MobaXTerm 这样的软件；或者我们可以使用 &lt;code&gt;scp&lt;/code&gt;，&lt;code&gt;sftp&lt;/code&gt; 这样的工具，但是界面有点简陋，特别是 &lt;code&gt;sftp&lt;/code&gt;，需要反复确认文件名是否输入错误。而且有时我们只需要下载不同的部分，不希望重复下载已经有了的部分。这时候，&lt;code&gt;rsync&lt;/code&gt; 作为 &lt;em&gt;remote sync&lt;/em&gt; 的工具，就到了发挥其作用的地方了。&lt;/p&gt;
 &lt;h2 id="使用方法"&gt;使用方法
@@ -876,7 +877,8 @@ background: var(--card-background-selected);
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="小结"&gt;小结
 &lt;/h3&gt;&lt;p&gt;我们可以看到，后面跟着的数字实际上表示了“第几个命令”，而举一反三，&lt;code&gt;!-1&lt;/code&gt; 则代表的是“最后一个命令”，即上一个命令，那么 &lt;code&gt;!-2&lt;/code&gt; 就是倒数第二个命令。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;有了这两个命令，我们可以很方便地在忘记使用 &lt;code&gt;sudo&lt;/code&gt; 权限时，使用 &lt;code&gt;sudo !!&lt;/code&gt; 或者选择某个历史命令，来快速使用 &lt;code&gt;sudo&lt;/code&gt; 权限执行命令。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;有了这两个命令，我们可以很方便地在忘记使用 &lt;code&gt;sudo&lt;/code&gt; 权限时，使用 &lt;code&gt;sudo !!&lt;/code&gt; 或者选择某个历史命令，来快速使用 &lt;code&gt;sudo&lt;/code&gt; 权限执行命令。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h2 id="我需要取几个参数"&gt;我需要取几个参数
 &lt;/h2&gt;&lt;h3 id="我需要某个参数"&gt;我需要某个参数
 &lt;/h3&gt;&lt;p&gt;我们可以使用 &lt;code&gt;:&amp;lt;num&amp;gt;&lt;/code&gt; 来选择第几个参数。它需要配合 &lt;code&gt;!&lt;/code&gt; 进行使用。参数从 1 开始，而 0 有特殊含义，代表命令。比如：&lt;/p&gt;
