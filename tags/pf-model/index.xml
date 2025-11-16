@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PF Model on A Moment's Rest</title><link>https://a-moment096.github.io/tags/pf-model/</link><description>Recent content in PF Model on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sat, 15 Nov 2025 16:51:16 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/pf-model/index.xml" rel="self" type="application/rss+xml"/><item><title>文献阅读 - Wang-Jin-Khachaturyan2002</title><link>https://a-moment096.github.io/posts/wang-jin-khachaturyan2002/</link><pubDate>Sat, 15 Nov 2025 23:25:19 +0800</pubDate><guid>https://a-moment096.github.io/posts/wang-jin-khachaturyan2002/</guid><description>&lt;img src="https://a-moment096.github.io/posts/PF_Papers/Nev_Alice-2.jpg" alt="Featured image of post 文献阅读 - Wang-Jin-Khachaturyan2002" /&gt;&lt;p&gt;&lt;em&gt;这篇文章算是他们三个人的工作的总结，发在了 J. Appl. Phys. 上，我其实很早就看过这篇，但是当时看得匆忙，一知半解，这次仔细看看&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PF Model on A Moment's Rest</title><link>https://a-moment096.github.io/tags/pf-model/</link><description>Recent content in PF Model on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 16 Nov 2025 16:07:13 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/pf-model/index.xml" rel="self" type="application/rss+xml"/><item><title>文献阅读 - Wang-Jin-Khachaturyan2002</title><link>https://a-moment096.github.io/posts/wang-jin-khachaturyan2002/</link><pubDate>Sat, 15 Nov 2025 23:25:19 +0800</pubDate><guid>https://a-moment096.github.io/posts/wang-jin-khachaturyan2002/</guid><description>&lt;img src="https://a-moment096.github.io/posts/PF_Papers/Nev_Alice-2.jpg" alt="Featured image of post 文献阅读 - Wang-Jin-Khachaturyan2002" /&gt;&lt;p&gt;&lt;em&gt;这篇文章算是他们三个人的工作的总结，发在了 J. Appl. Phys. 上，我其实很早就看过这篇，但是当时看得匆忙，一知半解，这次仔细看看&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;图图还是 &lt;a class="link" href="https://x.com/Neve_AI" target="_blank" rel="noopener"
 &gt;&lt;strong&gt;Neve_AI&lt;/strong&gt;&lt;/a&gt; 绘制的 AI 图来的，歪头银发小妹妹真的好可爱呀~~&lt;/em&gt;&lt;/p&gt;
 $$
@@ -64,16 +64,13 @@ e_{ij}(\mathbf{r}) &amp;= \tfrac{1}{2}\left[\frac{\partial v_i(\mathbf{r})}{\par
 \end{align*}
 $$&lt;p&gt;由于体系在宏观上被限制，在表面区域有 $\mathbf{v}(\mathbf{r}^S) = 0$，这在介观尺寸下是合理的：介观尺寸的大小可以认为是远小于整个理论考虑的宏观尺寸的大小的。对于宏观均匀受控体系它边界上的总位移为 $\overline{\varepsilon}_{ij}r^S_j$。&lt;/p&gt;
 &lt;p&gt;将上面关于总应变的两个公式带入上面改写后的力学平衡表达式，可以得到：&lt;/p&gt;
-&lt;p&gt;$$
+$$
 \begin{align*}
-C^{0}&lt;em&gt;{ijkl},\frac{\partial^{2} v&lt;/em&gt;{k}(\mathbf r)}{\partial r_{j}\partial r_{l}}
-&amp;amp;= \frac{\partial}{\partial r_{j}}\big{C^{0}&lt;em&gt;{ijkl},\varepsilon^{*}&lt;/em&gt;{kl}(\mathbf r)\big}&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;\Delta C_{ijkl}(\mathbf r)\big[\varepsilon_{kl}(\mathbf r)-\varepsilon^{&lt;em&gt;}_{kl}(\mathbf r)\big].
-\end{align&lt;/em&gt;}
-$$&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;为简化模型，我们考虑体系表面处被包裹了一层无限小的材料，其模量为弹性模量 $C_{ijkl}^0$。这样的处理能够简化这个问题：原来边界上的材料模量、法向量等不需要单独描述，可以和材料体内部一同描述。另外我们进一步假设材料表面是没有结构不均匀存在，这样我们就有 $\varepsilon^{*}_{ij}\big(\mathbf{r}^s\big)=0$，即界面上没有本征应变。这样我们就能想办法求出位移场 $\mathbf{v}(\mathbf{r}^S)$ 来，具体地说，我们会把上面的公式做傅里叶变换，然后把边界上没有位移、没有本征应变、不改变弹性模量场的条件放进去，得到位移场的积分形式：&lt;/p&gt;
+C^{0}_{ijkl}\,\frac{\partial^{2} v_{k}(\mathbf r)}{\partial r_{j}\partial r_{l}}
+&amp;= \frac{\partial}{\partial r_{j}}\big\{C^{0}_{ijkl}\,\varepsilon^{*}_{kl}(\mathbf r)\big\}
++\Delta C_{ijkl}(\mathbf r)\big[\varepsilon_{kl}(\mathbf r)-\varepsilon^{*}_{kl}(\mathbf r)\big].
+\end{align*}
+$$&lt;p&gt;为简化模型，我们考虑体系表面处被包裹了一层无限小的材料，其模量为弹性模量 $C_{ijkl}^0$。这样的处理能够简化这个问题：原来边界上的材料模量、法向量等不需要单独描述，可以和材料体内部一同描述。另外我们进一步假设材料表面是没有结构不均匀存在，这样我们就有 $\varepsilon^{*}_{ij}\big(\mathbf{r}^s\big)=0$，即界面上没有本征应变。这样我们就能想办法求出位移场 $\mathbf{v}(\mathbf{r}^S)$ 来，具体地说，我们会把上面的公式做傅里叶变换，然后把边界上没有位移、没有本征应变、不改变弹性模量场的条件放进去，得到位移场的积分形式：&lt;/p&gt;
 $$
 \begin{align*}
 v_i(\mathbf{r}) = &amp;\tilde\int \frac{d^3k}{(2\pi)^3}\Bigg\{ -i\frac{1}{k}\,\Omega_{ij}(\mathbf{n})\Big[ C^0_{jklm}\,\varepsilon^*_{lm}(\mathbf{r}) \\
