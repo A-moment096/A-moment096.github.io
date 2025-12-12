@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python on A Moment's Rest</title><link>https://a-moment096.github.io/tags/python/</link><description>Recent content in Python on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 11 Dec 2025 02:32:56 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/python/index.xml" rel="self" type="application/rss+xml"/><item><title>机器学习用 Ubuntu WSL 配置记录</title><link>https://a-moment096.github.io/posts/wsl_ubuntu_config/</link><pubDate>Sat, 29 Nov 2025 14:28:17 +0800</pubDate><guid>https://a-moment096.github.io/posts/wsl_ubuntu_config/</guid><description>&lt;img src="https://a-moment096.github.io/posts/wsl_ubuntu_config/%E3%83%94%E3%83%B3%E3%82%AF%E3%81%AE%E5%A4%A2.png" alt="Featured image of post 机器学习用 Ubuntu WSL 配置记录" /&gt;&lt;p&gt;&lt;em&gt;某人需要配置环境时做机器学习，这是他配置环境后电脑发生的变化……&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python on A Moment's Rest</title><link>https://a-moment096.github.io/tags/python/</link><description>Recent content in Python on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 12 Dec 2025 07:21:55 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/python/index.xml" rel="self" type="application/rss+xml"/><item><title>机器学习用 Ubuntu WSL 配置记录</title><link>https://a-moment096.github.io/posts/wsl_ubuntu_config/</link><pubDate>Sat, 29 Nov 2025 14:28:17 +0800</pubDate><guid>https://a-moment096.github.io/posts/wsl_ubuntu_config/</guid><description>&lt;img src="https://a-moment096.github.io/posts/wsl_ubuntu_config/%E3%83%94%E3%83%B3%E3%82%AF%E3%81%AE%E5%A4%A2.png" alt="Featured image of post 机器学习用 Ubuntu WSL 配置记录" /&gt;&lt;p&gt;&lt;em&gt;某人需要配置环境时做机器学习，这是他配置环境后电脑发生的变化……&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图选择了可爱的小羊，来自 &lt;a class="link" href="https://www.pixiv.net/users/3402557" target="_blank" rel="noopener"
 &gt;Ruziかねつカーぺット&lt;/a&gt; 太太的 &lt;a class="link" href="https://www.pixiv.net/artworks/112910033#1" target="_blank" rel="noopener"
 &gt;ピンクの夢&lt;/a&gt;，粉粉的，可爱捏&lt;/em&gt;&lt;/p&gt;
@@ -342,9 +342,15 @@ data-flex-basis="605px"
 &lt;h2 id="cuda"&gt;CUDA
 &lt;/h2&gt;&lt;p&gt;我刚刚收到了一个坏消息：在我刚写好 CUDA 安装部分的瞬间，鬼使神差地，我看到了 CUDA 官网文档上关于 &amp;ldquo;conda&amp;rdquo; 的部分：&lt;a class="link" href="https://docs.nvidia.com/cuda/cuda-installation-guide-linux/#conda-installation" target="_blank" rel="noopener"
 &gt;Conda Installation&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://a-moment096.github.io/image.png"
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/wsl_ubuntu_config/conda-installation.png"
+width="1500"
+height="1167"
+srcset="https://a-moment096.github.io/posts/wsl_ubuntu_config/conda-installation_hu_5afc6e249542944d.png 480w, https://a-moment096.github.io/posts/wsl_ubuntu_config/conda-installation_hu_cb21d04f7d4470c2.png 1024w"
 loading="lazy"
 alt="Conda Installation"
+class="gallery-image"
+data-flex-grow="128"
+data-flex-basis="308px"
 &gt;&lt;/p&gt;
 &lt;p&gt;何意味…… 在 &lt;code&gt;conda activate pytorch-test&lt;/code&gt;（我的环境名叫 &lt;code&gt;pytorch-test&lt;/code&gt;）之后使用 &lt;code&gt;where nvcc&lt;/code&gt;，得到了这样的结果：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-zsh" data-lang="zsh"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;/home/amoment/.conda/envs/pytorch/bin/nvcc
