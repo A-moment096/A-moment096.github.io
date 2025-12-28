@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>A Moment's Rest</title><link>https://a-moment096.github.io/</link><description>Recent content on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 28 Dec 2025 15:22:08 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>记拯救用 git-reset 误删的某代码仓库</title><link>https://a-moment096.github.io/posts/rescue_my_repository/</link><pubDate>Sun, 28 Dec 2025 00:13:03 +0800</pubDate><guid>https://a-moment096.github.io/posts/rescue_my_repository/</guid><description>&lt;img src="https://a-moment096.github.io/posts/rescue_my_repository/%E8%BF%B7%E8%BF%AD%E9%A6%99.png" alt="Featured image of post 记拯救用 git-reset 误删的某代码仓库" /&gt;&lt;p&gt;&lt;em&gt;某个笨蛋错误地使用了 &lt;code&gt;git reset --hard&lt;/code&gt; 命令，这是他发生的变化。&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>A Moment's Rest</title><link>https://a-moment096.github.io/</link><description>Recent content on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 28 Dec 2025 15:39:02 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>记拯救用 git-reset 误删的某代码仓库</title><link>https://a-moment096.github.io/posts/rescue_my_repository/</link><pubDate>Sun, 28 Dec 2025 00:13:03 +0800</pubDate><guid>https://a-moment096.github.io/posts/rescue_my_repository/</guid><description>&lt;img src="https://a-moment096.github.io/posts/rescue_my_repository/%E8%BF%B7%E8%BF%AD%E9%A6%99.png" alt="Featured image of post 记拯救用 git-reset 误删的某代码仓库" /&gt;&lt;p&gt;&lt;em&gt;某个笨蛋错误地使用了 &lt;code&gt;git reset --hard&lt;/code&gt; 命令，这是他发生的变化。&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图是可爱的迷迭香！是由 Pixiv 的 &lt;a class="link" href="https://www.pixiv.net/users/38336697" target="_blank" rel="noopener"
 &gt;赌上厨师生涯的拼好饭&lt;/a&gt; 创作的，这里有&lt;a class="link" href="https://www.pixiv.net/artworks/138994056" target="_blank" rel="noopener"
 &gt;原图链接&lt;/a&gt;。选曲为最近听的很多的一首东方同人曲：来自 &lt;a class="link" href="http://www.rd-sounds.com/" target="_blank" rel="noopener"
@@ -8797,6 +8797,8 @@ background: var(--card-background-selected);
 &gt;友链实现方案&lt;/a&gt;: Friend is GOOOOOOOD&lt;/li&gt;
 &lt;li&gt;&lt;a class="link" href="https://tabler.io/icons" target="_blank" rel="noopener"
 &gt;TABLER ICONS&lt;/a&gt;: 博客中的图标来源&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://transfonter.org/" target="_blank" rel="noopener"
+&gt;Transfonter&lt;/a&gt;: 把字体转换为 &lt;code&gt;woff&lt;/code&gt; 字体方便使用&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="折腾-arch--linux"&gt;折腾 Arch / Linux
 &lt;/h2&gt;&lt;ul&gt;
@@ -8838,6 +8840,8 @@ background: var(--card-background-selected);
 &gt;Learn Git Branching&lt;/a&gt;: 很不错的 Git 分支操作游戏，在实际操作中了解如何管理 Git 分支。我玩了一下午通关了，很好玩。&lt;/li&gt;
 &lt;li&gt;&lt;a class="link" href="https://blog.brachiosoft.com/posts/git/" target="_blank" rel="noopener"
 &gt;Git 的故事：這一次沒這麼好玩&lt;/a&gt;: 一篇非常好的介绍 Git 历史的文章。好看，爱看。&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://stackoverflow.com/questions/5788037/recover-from-losing-uncommitted-changes-by-git-reset-hard" target="_blank" rel="noopener"
+&gt;Recover from losing uncommitted changes by &amp;ldquo;git reset &amp;ndash;hard&amp;rdquo;&lt;/a&gt;: 拯救 &lt;code&gt;git reset&lt;/code&gt; 删掉的文件，感动，没有这个帖子我要爆炸了……&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="数学笔记"&gt;数学笔记
 &lt;/h2&gt;&lt;ul&gt;

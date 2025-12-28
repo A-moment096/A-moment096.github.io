@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pages on A Moment's Rest</title><link>https://a-moment096.github.io/page/</link><description>Recent content in Pages on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 28 Dec 2025 15:22:08 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/page/index.xml" rel="self" type="application/rss+xml"/><item><title>Thoughts</title><link>https://a-moment096.github.io/page/thoughts/</link><pubDate>Sat, 02 Nov 2024 14:34:18 +0800</pubDate><guid>https://a-moment096.github.io/page/thoughts/</guid><description>&lt;!-- 由 LeanCloud + Artitalk 驱动 --&gt;</description></item><item><title>About</title><link>https://a-moment096.github.io/page/about/</link><pubDate>Wed, 09 Oct 2024 14:34:18 +0800</pubDate><guid>https://a-moment096.github.io/page/about/</guid><description>&lt;img src="https://a-moment096.github.io/page/about/Reimu.png" alt="Featured image of post About" /&gt;&lt;h1 id="a-moment-rest-amoments-blog"&gt;A Moment Rest: AMoment&amp;rsquo;s Blog
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pages on A Moment's Rest</title><link>https://a-moment096.github.io/page/</link><description>Recent content in Pages on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 28 Dec 2025 15:39:01 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/page/index.xml" rel="self" type="application/rss+xml"/><item><title>Thoughts</title><link>https://a-moment096.github.io/page/thoughts/</link><pubDate>Sat, 02 Nov 2024 14:34:18 +0800</pubDate><guid>https://a-moment096.github.io/page/thoughts/</guid><description>&lt;!-- 由 LeanCloud + Artitalk 驱动 --&gt;</description></item><item><title>About</title><link>https://a-moment096.github.io/page/about/</link><pubDate>Wed, 09 Oct 2024 14:34:18 +0800</pubDate><guid>https://a-moment096.github.io/page/about/</guid><description>&lt;img src="https://a-moment096.github.io/page/about/Reimu.png" alt="Featured image of post About" /&gt;&lt;h1 id="a-moment-rest-amoments-blog"&gt;A Moment Rest: AMoment&amp;rsquo;s Blog
 &lt;/h1&gt;&lt;p&gt;Welcome! Come and have a rest here~&lt;/p&gt;
 &lt;h2 id="who-are-you--你谁"&gt;Who are you? | 你谁？
 &lt;/h2&gt;&lt;p&gt;I&amp;rsquo;m a 24 year-old graduate student in &lt;del&gt;Counter Strike University&lt;/del&gt; Central South University, major in Material Sci &amp;amp; Eng.&lt;/p&gt;
@@ -457,6 +457,8 @@ background: var(--card-background-selected);
 &gt;友链实现方案&lt;/a&gt;: Friend is GOOOOOOOD&lt;/li&gt;
 &lt;li&gt;&lt;a class="link" href="https://tabler.io/icons" target="_blank" rel="noopener"
 &gt;TABLER ICONS&lt;/a&gt;: 博客中的图标来源&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://transfonter.org/" target="_blank" rel="noopener"
+&gt;Transfonter&lt;/a&gt;: 把字体转换为 &lt;code&gt;woff&lt;/code&gt; 字体方便使用&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="折腾-arch--linux"&gt;折腾 Arch / Linux
 &lt;/h2&gt;&lt;ul&gt;
@@ -498,6 +500,8 @@ background: var(--card-background-selected);
 &gt;Learn Git Branching&lt;/a&gt;: 很不错的 Git 分支操作游戏，在实际操作中了解如何管理 Git 分支。我玩了一下午通关了，很好玩。&lt;/li&gt;
 &lt;li&gt;&lt;a class="link" href="https://blog.brachiosoft.com/posts/git/" target="_blank" rel="noopener"
 &gt;Git 的故事：這一次沒這麼好玩&lt;/a&gt;: 一篇非常好的介绍 Git 历史的文章。好看，爱看。&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://stackoverflow.com/questions/5788037/recover-from-losing-uncommitted-changes-by-git-reset-hard" target="_blank" rel="noopener"
+&gt;Recover from losing uncommitted changes by &amp;ldquo;git reset &amp;ndash;hard&amp;rdquo;&lt;/a&gt;: 拯救 &lt;code&gt;git reset&lt;/code&gt; 删掉的文件，感动，没有这个帖子我要爆炸了……&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="数学笔记"&gt;数学笔记
 &lt;/h2&gt;&lt;ul&gt;
