@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Note on A Moment's Rest</title><link>https://a-moment096.github.io/tags/note/</link><description>Recent content in Note on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 18 Dec 2025 08:20:01 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/note/index.xml" rel="self" type="application/rss+xml"/><item><title>线性代数笔记 I</title><link>https://a-moment096.github.io/posts/la_1/</link><pubDate>Mon, 20 Oct 2025 09:00:01 +0800</pubDate><guid>https://a-moment096.github.io/posts/la_1/</guid><description>&lt;img src="https://a-moment096.github.io/posts/Math_Note/Linear_Algebra/Alice.jpg" alt="Featured image of post 线性代数笔记 I" /&gt;&lt;p&gt;&lt;em&gt;一直感觉没有学透线性代数，尤其是学过一些抽象代数之后，更觉得线性代数并不是简单的矩阵运算了。借着需要学连续介质力学的机会，就整理一下自己知道的东西，斗胆谈谈自己对这门学科的理解吧~&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Note on A Moment's Rest</title><link>https://a-moment096.github.io/tags/note/</link><description>Recent content in Note on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 28 Dec 2025 15:22:08 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/note/index.xml" rel="self" type="application/rss+xml"/><item><title>线性代数笔记 I</title><link>https://a-moment096.github.io/posts/la_1/</link><pubDate>Mon, 20 Oct 2025 09:00:01 +0800</pubDate><guid>https://a-moment096.github.io/posts/la_1/</guid><description>&lt;img src="https://a-moment096.github.io/posts/Math_Note/Linear_Algebra/Alice.jpg" alt="Featured image of post 线性代数笔记 I" /&gt;&lt;p&gt;&lt;em&gt;一直感觉没有学透线性代数，尤其是学过一些抽象代数之后，更觉得线性代数并不是简单的矩阵运算了。借着需要学连续介质力学的机会，就整理一下自己知道的东西，斗胆谈谈自己对这门学科的理解吧~&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;选曲是由 &lt;a class="link" href="https://space.bilibili.com/316381099" target="_blank" rel="noopener"
 &gt;&lt;strong&gt;鹿乃&lt;/strong&gt;&lt;/a&gt; 翻唱，收录在专辑 &lt;a class="link" href="https://music.163.com/#/album?id=37542486" target="_blank" rel="noopener"
 &gt;&lt;strong&gt;one&lt;/strong&gt;&lt;/a&gt; 的歌曲 &lt;strong&gt;Calc.&lt;/strong&gt;，原曲是我特别喜欢的一首上古 V 曲，由 &lt;a class="link" href="https://lit.link/en/jimmythumb" target="_blank" rel="noopener"
@@ -737,7 +737,7 @@ background: var(--card-background-selected);
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/vsc_remote/img/VSC_Download.png"
 width="1026"
 height="843"
-srcset="https://a-moment096.github.io/posts/vsc_remote/img/VSC_Download_hu_7dfead5032aa72e6.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/VSC_Download_hu_f97837e1fa6b9628.png 1024w"
+srcset="https://a-moment096.github.io/posts/vsc_remote/img/VSC_Download_hu_cc16468639f06cae.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/VSC_Download_hu_7c35e3cb1263d305.png 1024w"
 loading="lazy"
 alt="下载页面"
 class="gallery-image"
@@ -749,7 +749,7 @@ data-flex-basis="292px"
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/vsc_remote/img/InstallVSC.png"
 width="597"
 height="465"
-srcset="https://a-moment096.github.io/posts/vsc_remote/img/InstallVSC_hu_5f4ef887f468ca94.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/InstallVSC_hu_d4ed8c514999da04.png 1024w"
+srcset="https://a-moment096.github.io/posts/vsc_remote/img/InstallVSC_hu_27a361c0fb470b88.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/InstallVSC_hu_5ebd1f02e651ba91.png 1024w"
 loading="lazy"
 alt="安装页面"
 class="gallery-image"
@@ -765,7 +765,7 @@ data-flex-basis="308px"
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/vsc_remote/img/Extensions.png"
 width="1026"
 height="843"
-srcset="https://a-moment096.github.io/posts/vsc_remote/img/Extensions_hu_4357fa4ae296f13d.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/Extensions_hu_dbcae33cff11f0f5.png 1024w"
+srcset="https://a-moment096.github.io/posts/vsc_remote/img/Extensions_hu_65167833d5ee41ab.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/Extensions_hu_b7956f8bf666ff5b.png 1024w"
 loading="lazy"
 alt="插件市场"
 class="gallery-image"
@@ -802,14 +802,14 @@ data-flex-basis="292px"
 &lt;/h3&gt;&lt;p&gt;首先这个文件特别奇葩的一点是，名字一点儿不能差，不是 CMakeList，不是 CMakeList.txt，它就得是 &lt;strong&gt;CMakeLists.txt&lt;/strong&gt;，注意大小写哦。如果你按照上面说的，安装了 &lt;strong&gt;C/C++ Extension Pack&lt;/strong&gt; 的话，你的 CMakeLists.txt 应该是有语法高亮的。&lt;/p&gt;
 &lt;p&gt;对于简单的项目，我们主要是要告诉 CMake 项目名称，编译对象以及输出的结果。我们首先在项目根目录创建这个文件，底下是一个简单的示例：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmake" data-lang="cmake"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;cmake_minimum_required&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;VERSION&lt;/span&gt; &lt;span class="s"&gt;3.15&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="err"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="err"&gt;&lt;/span&gt;&lt;span class="nb"&gt;project&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;HelloCMake&lt;/span&gt; &lt;span class="s"&gt;VERSION&lt;/span&gt; &lt;span class="s"&gt;1.0&lt;/span&gt; &lt;span class="s"&gt;LANGUAGES&lt;/span&gt; &lt;span class="s"&gt;CXX&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="err"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;project&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;HelloCMake&lt;/span&gt; &lt;span class="s"&gt;VERSION&lt;/span&gt; &lt;span class="s"&gt;1.0&lt;/span&gt; &lt;span class="s"&gt;LANGUAGES&lt;/span&gt; &lt;span class="s"&gt;CXX&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="err"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="err"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="err"&gt;&lt;/span&gt;&lt;span class="c"&gt;# Set C++ standard
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;&lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;CMAKE_CXX_STANDARD&lt;/span&gt; &lt;span class="s"&gt;17&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="err"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;6&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="err"&gt;&lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;CMAKE_CXX_STANDARD_REQUIRED&lt;/span&gt; &lt;span class="s"&gt;ON&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="err"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;# Set C++ standard
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;CMAKE_CXX_STANDARD&lt;/span&gt; &lt;span class="s"&gt;17&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="err"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;6&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;CMAKE_CXX_STANDARD_REQUIRED&lt;/span&gt; &lt;span class="s"&gt;ON&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="err"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;7&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="err"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;8&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="err"&gt;&lt;/span&gt;&lt;span class="c"&gt;# Define the executable
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;9&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;&lt;/span&gt;&lt;span class="nb"&gt;add_executable&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;hello&lt;/span&gt; &lt;span class="s"&gt;src/main.cpp&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="err"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;8&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;# Define the executable
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;9&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;add_executable&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;hello&lt;/span&gt; &lt;span class="s"&gt;src/main.cpp&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="err"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;上面的内容，首先先告诉 CMake 这个 CMakeLists.txt 对 CMake 版本的最低要求。这是为了兼容性考虑的：有些平台可能并没有较新的 CMake 版本可用。这个东西自然是越低越好了，因为越低的话兼容性自然更强；但是你也可以使用很高的版本，强制要求使用高版本可以让你更放开手脚用新版本里更好用的配置。&lt;/p&gt;
 &lt;p&gt;接下来是定义我们的项目属性。它得有个名字，放在第一个位置；得有个版本，用 &lt;code&gt;VERSION&lt;/code&gt; 打头后面跟上具体版本号。这个版本号你自己决定，测试用的案例这个不是很重要；最后告诉 CMake 我这是个什么语言的项目，用 &lt;code&gt;LANGUAGE&lt;/code&gt; 打头后面接上 &lt;code&gt;CXX&lt;/code&gt; 作为语言类型，告诉它是 C++ 项目。为什么不是 CPP, C++ 而是 CXX 呢？这大概涉及到 C++ 诞生之初的一些设计名称的扯皮，不太重要。有趣的地方是，&lt;code&gt;CXX&lt;/code&gt; 也是推荐的 C++ 源文件拓展名之一。希望这能让你接受这里使用 &lt;code&gt;CXX&lt;/code&gt; 这一点。如果你的项目还要用上 &lt;code&gt;C&lt;/code&gt; 的话，在 &lt;code&gt;LANGUAGE&lt;/code&gt; 后面补上，用空格分开就好。&lt;/p&gt;
 &lt;p&gt;接下来就要设置和 C++ 相关的内容了。我们首先指明要用的 C++ 标准版本，这里使用了 C++17 标准；其次我们在下一行表示这个标准是必须的。注意到我们用的是 &lt;code&gt;set&lt;/code&gt; 这个很像函数的东西。实际上我们是在设置一些变量，这些变量会传递给 CMake 来控制 CMake 的配置和编译时的行为。&lt;/p&gt;
@@ -850,7 +850,7 @@ data-flex-basis="292px"
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/vsc_remote/img/CMakeWindow.png"
 width="2560"
 height="1410"
-srcset="https://a-moment096.github.io/posts/vsc_remote/img/CMakeWindow_hu_63235d4b7d511517.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/CMakeWindow_hu_cf51f1524e232be6.png 1024w"
+srcset="https://a-moment096.github.io/posts/vsc_remote/img/CMakeWindow_hu_cca4446fb67f1b41.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/CMakeWindow_hu_b7864f788004f925.png 1024w"
 loading="lazy"
 alt="CMake 集成"
 class="gallery-image"
@@ -863,7 +863,7 @@ data-flex-basis="435px"
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/vsc_remote/img/SelectKits.png"
 width="1370"
 height="452"
-srcset="https://a-moment096.github.io/posts/vsc_remote/img/SelectKits_hu_168a0ad392dcf52c.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/SelectKits_hu_981981d2c96e48fc.png 1024w"
+srcset="https://a-moment096.github.io/posts/vsc_remote/img/SelectKits_hu_29b309d1f3733a28.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/SelectKits_hu_bfcae845598074a0.png 1024w"
 loading="lazy"
 alt="选择编译套件"
 class="gallery-image"
@@ -876,7 +876,7 @@ data-flex-basis="727px"
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/vsc_remote/img/Build.png"
 width="738"
 height="988"
-srcset="https://a-moment096.github.io/posts/vsc_remote/img/Build_hu_f045634d05a79908.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/Build_hu_7709ebc2516d1bb9.png 1024w"
+srcset="https://a-moment096.github.io/posts/vsc_remote/img/Build_hu_ef97bec9ad714af1.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/Build_hu_cc7b7e7cca50dec8.png 1024w"
 loading="lazy"
 alt="构建"
 class="gallery-image"
@@ -887,7 +887,7 @@ data-flex-basis="179px"
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/vsc_remote/img/BuildOutput.png"
 width="1577"
 height="737"
-srcset="https://a-moment096.github.io/posts/vsc_remote/img/BuildOutput_hu_3fdb2b4fe45842da.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/BuildOutput_hu_742cb4574269bf21.png 1024w"
+srcset="https://a-moment096.github.io/posts/vsc_remote/img/BuildOutput_hu_aeff9ee366262d92.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/BuildOutput_hu_1ee3bb25a05d9143.png 1024w"
 loading="lazy"
 alt="构建输出"
 class="gallery-image"
@@ -900,7 +900,7 @@ data-flex-basis="513px"
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/vsc_remote/img/Bottom.png"
 width="841"
 height="121"
-srcset="https://a-moment096.github.io/posts/vsc_remote/img/Bottom_hu_6b8ca2a27722e2ce.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/Bottom_hu_7376e5f4e8595b2a.png 1024w"
+srcset="https://a-moment096.github.io/posts/vsc_remote/img/Bottom_hu_f23f50e8b5482ff7.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/Bottom_hu_76e6a17ac80b1b19.png 1024w"
 loading="lazy"
 alt="底边栏"
 class="gallery-image"
@@ -913,7 +913,7 @@ data-flex-basis="1668px"
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/vsc_remote/img/RemoteConnection.png"
 width="1320"
 height="514"
-srcset="https://a-moment096.github.io/posts/vsc_remote/img/RemoteConnection_hu_bfb6fcd316c26a9.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/RemoteConnection_hu_cc71de79b800cec6.png 1024w"
+srcset="https://a-moment096.github.io/posts/vsc_remote/img/RemoteConnection_hu_c97995dd99f0869c.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/RemoteConnection_hu_f6eecfe2396a4d6e.png 1024w"
 loading="lazy"
 alt="选择你要链接的模式"
 class="gallery-image"
@@ -924,7 +924,7 @@ data-flex-basis="616px"
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/vsc_remote/img/SelectRemote.png"
 width="1329"
 height="502"
-srcset="https://a-moment096.github.io/posts/vsc_remote/img/SelectRemote_hu_1168e6ba8b35d25d.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/SelectRemote_hu_f65f7ef048dc6c0d.png 1024w"
+srcset="https://a-moment096.github.io/posts/vsc_remote/img/SelectRemote_hu_15f40a0fb1ea5337.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/SelectRemote_hu_d496b10fbe129530.png 1024w"
 loading="lazy"
 alt="选择远程机器"
 class="gallery-image"
@@ -2166,13 +2166,13 @@ background: var(--card-background-selected);
 &lt;/h2&gt;&lt;p&gt;下面我们就来尝试用代码打印出 &lt;code&gt;vector&lt;/code&gt; 里元素的内存地址吧。我们向一个 &lt;code&gt;vector&lt;/code&gt; 中填充5个元素，每次填入时检查 &lt;code&gt;vector&lt;/code&gt; 的状态：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cpp" data-lang="cpp"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;vector&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 3&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 5&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;vector&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 6&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// We use &amp;#34;push_back&amp;#34; push an element to the back of a vector
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;&lt;/span&gt; &lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;push_back&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;push_back&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;cout&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="s"&gt;&amp;#34;Added: &amp;#34;&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="s"&gt;&amp;#34;, Size: &amp;#34;&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;12&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="s"&gt;&amp;#34;, Capacity: &amp;#34;&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;capacity&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
@@ -2180,7 +2180,7 @@ background: var(--card-background-selected);
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;14&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;15&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;16&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// Check contiguity
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;17&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;&lt;/span&gt; &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;cout&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="s"&gt;&amp;#34;Contiguous memory check:&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;17&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;cout&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="s"&gt;&amp;#34;Contiguous memory check:&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;18&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;size_t&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt; &lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;19&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;cout&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="s"&gt;&amp;#34;Address of v[&amp;#34;&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="s"&gt;&amp;#34;] = &amp;#34;&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="sc"&gt;&amp;#39;\n&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;20&lt;/span&gt;&lt;span class="cl"&gt;
@@ -2205,7 +2205,7 @@ background: var(--card-background-selected);
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cpp" data-lang="cpp"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;vector&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;ctime&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 4&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;SIZE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;10000000&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 6&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
@@ -2215,14 +2215,14 @@ background: var(--card-background-selected);
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;arr&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;12&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;13&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// Benchmark vector
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;14&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;&lt;/span&gt; &lt;span class="n"&gt;clock_t&lt;/span&gt; &lt;span class="n"&gt;start_vec&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;clock&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;14&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;clock_t&lt;/span&gt; &lt;span class="n"&gt;start_vec&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;clock&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;15&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="kt"&gt;long&lt;/span&gt; &lt;span class="kt"&gt;long&lt;/span&gt; &lt;span class="n"&gt;sum_vec&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;16&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;SIZE&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;17&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;sum_vec&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="n"&gt;vec&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;18&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;clock_t&lt;/span&gt; &lt;span class="n"&gt;end_vec&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;clock&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;19&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;20&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// Benchmark array
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;21&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;&lt;/span&gt; &lt;span class="n"&gt;clock_t&lt;/span&gt; &lt;span class="n"&gt;start_arr&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;clock&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;21&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;clock_t&lt;/span&gt; &lt;span class="n"&gt;start_arr&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;clock&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;22&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="kt"&gt;long&lt;/span&gt; &lt;span class="kt"&gt;long&lt;/span&gt; &lt;span class="n"&gt;sum_arr&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;23&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;SIZE&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;24&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;sum_arr&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="n"&gt;arr&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
@@ -2235,7 +2235,7 @@ background: var(--card-background-selected);
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;31&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="s"&gt;&amp;#34;, Time: &amp;#34;&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;end_arr&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;start_arr&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="s"&gt;&amp;#34; ticks&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;32&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;33&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// Don&amp;#39;t forget to delete[] the array!
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;34&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;&lt;/span&gt; &lt;span class="k"&gt;delete&lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt; &lt;span class="n"&gt;arr&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;34&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;delete&lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt; &lt;span class="n"&gt;arr&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;35&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;36&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;我们先不开启优化并尝试运行几次，看看结果：&lt;/p&gt;

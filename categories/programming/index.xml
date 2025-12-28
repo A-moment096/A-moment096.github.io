@@ -1,4 +1,231 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Programming on A Moment's Rest</title><link>https://a-moment096.github.io/categories/programming/</link><description>Recent content in Programming on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><atom:link href="https://a-moment096.github.io/categories/programming/index.xml" rel="self" type="application/rss+xml"/><item><title>机器学习用 Ubuntu WSL 配置记录</title><link>https://a-moment096.github.io/posts/wsl_ubuntu_config/</link><pubDate>Sat, 29 Nov 2025 14:28:17 +0800</pubDate><guid>https://a-moment096.github.io/posts/wsl_ubuntu_config/</guid><description>&lt;img src="https://a-moment096.github.io/posts/wsl_ubuntu_config/%E3%83%94%E3%83%B3%E3%82%AF%E3%81%AE%E5%A4%A2.png" alt="Featured image of post 机器学习用 Ubuntu WSL 配置记录" /&gt;&lt;p&gt;&lt;em&gt;某人需要配置环境时做机器学习，这是他配置环境后电脑发生的变化……&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Programming on A Moment's Rest</title><link>https://a-moment096.github.io/categories/programming/</link><description>Recent content in Programming on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><atom:link href="https://a-moment096.github.io/categories/programming/index.xml" rel="self" type="application/rss+xml"/><item><title>记拯救用 git-reset 误删的某代码仓库</title><link>https://a-moment096.github.io/posts/rescue_my_repository/</link><pubDate>Sun, 28 Dec 2025 00:13:03 +0800</pubDate><guid>https://a-moment096.github.io/posts/rescue_my_repository/</guid><description>&lt;img src="https://a-moment096.github.io/posts/rescue_my_repository/%E8%BF%B7%E8%BF%AD%E9%A6%99.png" alt="Featured image of post 记拯救用 git-reset 误删的某代码仓库" /&gt;&lt;p&gt;&lt;em&gt;某个笨蛋错误地使用了 &lt;code&gt;git reset --hard&lt;/code&gt; 命令，这是他发生的变化。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;头图是可爱的迷迭香！是由 Pixiv 的 &lt;a class="link" href="https://www.pixiv.net/users/38336697" target="_blank" rel="noopener"
+&gt;赌上厨师生涯的拼好饭&lt;/a&gt; 创作的，这里有&lt;a class="link" href="https://www.pixiv.net/artworks/138994056" target="_blank" rel="noopener"
+&gt;原图链接&lt;/a&gt;。选曲为最近听的很多的一首东方同人曲：来自 &lt;a class="link" href="http://www.rd-sounds.com/" target="_blank" rel="noopener"
+&gt;凋叶棕&lt;/a&gt; 的专辑 &lt;strong&gt;望&lt;/strong&gt; 的第一首歌，&lt;strong&gt;encourager&lt;/strong&gt;，曲调积极向上，阳光活泼，我说专辑封面金发的孩子真可爱，你能反驳吗！？&lt;/em&gt;&lt;/p&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
+&lt;style type="text/css"&gt;
+[data-scheme="dark"] .aplayer {
+background: var(--card-background);
+border: 1px solid var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
+border-bottom-color: var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
+border-color: var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer .aplayer-body {
+background-color: var(--card-background);
+}
+[data-scheme="dark"] .aplayer .aplayer-info {
+border-top-color: var(--card-background);
+}
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
+color: var(--card-text-color-main);
+}
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
+color: var(--card-text-color-secondary);
+}
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
+color: var(--card-text-color-tertiary);
+}
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
+fill: var(--card-text-color-tertiary);
+}
+[data-scheme="dark"] .aplayer .aplayer-list {
+background-color: var(--card-background);
+}
+[data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
+background-color: var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
+background-color: var(--accent-color);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li {
+color: var(--card-text-color-main);
+border-top-color: var(--card-separator-color);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li:hover {
+background: var(--card-background-selected);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
+background: var(--card-background-selected);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
+color: var(--card-text-color-secondary);
+}
+[data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
+color: var(--card-text-color-secondary);
+}
+[data-scheme="dark"] .aplayer .aplayer-lrc {
+text-shadow: -1px -1px 0 var(--body-background);
+}
+[data-scheme="dark"] .aplayer .aplayer-lrc:before {
+background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+}
+[data-scheme="dark"] .aplayer .aplayer-lrc:after {
+background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+}
+[data-scheme="dark"] .aplayer .aplayer-lrc p {
+color: var(--card-text-color-main);
+}
+[data-scheme="dark"] .aplayer .aplayer-miniswitcher {
+background: var(--card-background-selected);
+}
+[data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
+fill: var(--card-text-color-tertiary);
+}
+[data-scheme="light"] .aplayer {
+background: var(--card-background);
+border: 1px solid var(--card-separator-color);
+}
+[data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
+color: var(--card-text-color-main);
+}
+[data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
+color: var(--card-text-color-secondary);
+}
+[data-scheme="light"] .aplayer .aplayer-list li:hover {
+background: var(--card-background-selected);
+}
+&lt;/style&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=28732491" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
+&lt;h2 id="引子"&gt;引子
+&lt;/h2&gt;&lt;p&gt;美妙而快乐的周五，应师兄的提议，我决定将自己用 AI 写出来的深度学习代码放在 Github 上的仓库里。Everything works great! 我的代码跑出来的结果看着海星，放在 Github 上和师兄们分享一下也挺好（就是不太能入米娜桑的法眼了，嘿嘿）。二话不说，先创建个 Git 仓库先，一会儿 Push 到远程就好了，Easy ~&lt;/p&gt;
+&lt;p&gt;首先，自然是让 Git 接手这个仓库咯：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;git init .
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在我条件反射地写下：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;git add .&lt;span class="p"&gt;;&lt;/span&gt; git commit -m &lt;span class="s2"&gt;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;的时候，我突然意识到，这个项目之前是瞎搞的，搞成了就行，工作目录里乱七八糟的，还没有 README，这不得整理一下？于是我就把后面的 commit 部分删掉：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;git add .
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;先把文件放进暂存区吧。但是好像加进去了很多没用且特别大的数据文件！？一看 VS Code 侧边栏的 Git 小蓝点，哇，200 多个文件，肯定不对。写个 &lt;code&gt;.gitignore&lt;/code&gt; 文件，把 &lt;code&gt;data&lt;/code&gt; 文件夹的内容忽略掉好了。接下来应该写个 README.md 来介绍一下这个项目在干嘛，怎么准备项目依赖，顺带抽空了解了一下 &lt;code&gt;conda&lt;/code&gt; 怎么像 &lt;code&gt;pip&lt;/code&gt; 那样 &lt;code&gt;freeze&lt;/code&gt;：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;conda list --export &amp;gt; requirements.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;就行了。&lt;/p&gt;
+&lt;p&gt;写好这些东西之后，再看一眼 Git 的小蓝点：怎么没啥大变化…… 对了！我记得要让 &lt;code&gt;git&lt;/code&gt; 停止追踪某些文件，可以用 &lt;code&gt;git reset --hard&lt;/code&gt; 来着？那么：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;git reset --hard
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;……&lt;/p&gt;
+&lt;p&gt;噩梦开始了。&lt;/p&gt;
+&lt;h2 id="woc救一下呀git"&gt;woc，救一下呀，Git！
+&lt;/h2&gt;&lt;p&gt;看向我的目录，里面只剩下了几个在我 &lt;code&gt;git init .&lt;/code&gt; 之后创建的文件，而在初始化 &lt;code&gt;git&lt;/code&gt; 仓库之前的内容全都不见了。我突然意识到，&lt;code&gt;git reset --hard&lt;/code&gt; 貌似不是撤回，而是将仓库状态重置到上一个提交，而我这个仓库从来没有提交过，结果就是我的仓库之前的内容都不见了。此时我也没有什么心思去搞清楚 &lt;code&gt;git reset&lt;/code&gt; 究竟会干嘛了，我的目标此时只有一个：把我亲爱的文件找回来。那可是我让 AI 给我写了两周的心血呀！&lt;/p&gt;
+&lt;p&gt;我的第一反应是用我曾经了解过的极为强大的 &lt;code&gt;git reflog&lt;/code&gt;，印象中它会记录我在 Git 中做的所有操作。而使用 &lt;code&gt;git reflog&lt;/code&gt; 之后我得到的结果是：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;fatal: your current branch &lt;span class="s1"&gt;&amp;#39;main&amp;#39;&lt;/span&gt; does not have any commits yet
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;太坏了。必须得有提交记录才行，天哪……&lt;/p&gt;
+&lt;p&gt;此时我又想到，这是在 WSL 里，也许我可以在回收站找到…… 想了一下，结果我都把自己逗笑了，这是 WSL，是 Linux 呀，有自己的独立虚拟磁盘 &lt;code&gt;ext4.vhdx&lt;/code&gt;，而在这个环境下，Git 删除文件就是像自己用 &lt;code&gt;rm&lt;/code&gt; 删除文件那样，没有回收站可以回收的。&lt;/p&gt;
+&lt;p&gt;这下烂完了…… 我好像和 Git 一起干了波大的……&lt;/p&gt;
+&lt;h2 id="怎么办要恢复整块硬盘吗"&gt;怎么办，要恢复整块硬盘吗……
+&lt;/h2&gt;&lt;p&gt;2025 年了，遇到问题应该学会问 AI 了。我直接提问 AI，遇到这么个情况要怎么搞，他也是没含糊，好在我用的是 WSL，vhdx 硬盘文件可以直接备份一份，他让我找到硬盘文件并复制一份出来到别的位置。然而接下来的操作我傻眼了，需要用磁盘恢复程序什么的，而且我需要用别的环境挂载这个磁盘文件，然后安装一些软件包并尝试从磁盘里找出来还没被覆盖掉的那些数据。&lt;/p&gt;
+&lt;p&gt;为什么能用磁盘恢复工具尝试找回这些文件呢？不是说 Linux 里删除就等于彻底删掉文件吗？其实 “彻底删掉” 的说法是不准确的，实际上的删除行为一般并不会抹掉数据，而是把数据从文件系统中断开连接。或者说，当我们在文件系统中删除某个文件的时候，文件系统不会抹掉这些文件存储区域的数据，而是单纯地不再保护这块存储区域，以后谁需要这块存储空间的时候会直接分配给别人。莫名想到 &lt;em&gt;死亡不是人生的结束，遗忘才是&lt;/em&gt;，在文件系统里就是 &lt;em&gt;删除不是文件的结束，覆盖才是&lt;/em&gt;。&lt;/p&gt;
+&lt;p&gt;因此，只要我还没犯蠢再向文件系统中写入数据，这块位置就应该还没被覆盖掉，而我就还有机会把这些数据救回来：让文件系统重新链接并保护这块位置。然而这操作谈何容易，我对文件系统的了解也仅限于此（说不定理解还有问题，大佬轻喷呜呜呜），一想到美妙的周五下午就要被恢复数据占满毁掉，而恢复的东西里最重要的其实只有不到一成（毕竟丢失的大部分都是计算数据，是复制来 WSL 里的，重要的是代码），而且还都是 AI 写的……&lt;/p&gt;
+&lt;p&gt;一想到这里，我就放弃了直接恢复整块硬盘的想法。和 AI 又聊了一下，说是让我从编辑器下手看看能恢复出来些什么东西不，我试了下也没啥用…… 难到就这样摆烂，想办法再让 AI 写一份代码吗？&lt;/p&gt;
+&lt;p&gt;此时我想到，为什么不 Google 一下呢？（好吧其实是 DuckDuckGo，对不起 DuckDuckGo 真的很好用，再见 Google）我就搜 &lt;code&gt;git reset --recover recover&lt;/code&gt;，结果就遇到了一篇伟大的 Stack Overflow 帖子：&lt;/p&gt;
+&lt;h2 id="还得是-stack-overflow"&gt;还得是 Stack Overflow
+&lt;/h2&gt;&lt;p&gt;搜索结果第一个，&lt;a class="link" href="https://stackoverflow.com/questions/5788037/recover-from-losing-uncommitted-changes-by-git-reset-hard" target="_blank" rel="noopener"
+&gt;这篇 Stack Overflow 帖子&lt;/a&gt; 的提问很直接，高赞回答和我想得一样，有提交历史的情况下可以 &lt;code&gt;git reflog show&lt;/code&gt; 来救一下自己，有趣的是这个回答没有被选为题主认可的回答，反倒是第二个回答，赞数稍低一些些，却被题主选为了最佳回答。这个最初在 2011 年发布的回答讲到：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Previously staged changes (&lt;code&gt;git add&lt;/code&gt;) should be recoverable from index objects, so if you did, use &lt;code&gt;git fsck --lost-found&lt;/code&gt; to locate the objects related to it. (This writes the objects to the &lt;code&gt;.git/lost-found/&lt;/code&gt; directory; from there you can use &lt;code&gt;git show &amp;lt;filename&amp;gt;&lt;/code&gt; to see the contents of each file.)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;诶！我好像确实 &lt;code&gt;git add .&lt;/code&gt; 过！想到这里，我立刻采用了这个方法，结果的确如我想的那样，在 &lt;code&gt;.git/lost-found/others&lt;/code&gt; 这个文件夹里我找到了我丢掉的所有文件。只不过所有的文件名都是乱码，而且绝大部分都是 XML 格式的数据文件，想找到最关键的文件得话好长时间，而 &lt;code&gt;git show &amp;lt;filename&amp;gt;&lt;/code&gt; 结果也没有效果。不过不管怎么说，我都成功找回来这些内容了，着实是让我松了一口气，大不了把这些文件一个个地全都打开嘛。&lt;/p&gt;
+&lt;p&gt;不过，有了如此进展，为何不再向 AI 问问怎么解决这个问题？&lt;/p&gt;
+&lt;h2 id="ai-还是挺有用的其实"&gt;AI 还是挺有用的，其实
+&lt;/h2&gt;&lt;p&gt;AI 闻言，先是狠狠地恭喜一波，然后就给我指了条明路：&lt;code&gt;file&lt;/code&gt; 命令可以检查文件类型，告诉我这些文件内容是什么。甚好！就地让 AI 写个 Bash 脚本， ，很快就把文件分类放在了不同的文件夹里。有趣的是，我顺带还发现，其实 Jupyter Notebook 用的 &lt;code&gt;ipynb&lt;/code&gt; 文件是伪装的 Json 文件，而亲爱的 VS Code 在发现文件是 Json 文件，后缀是 &lt;code&gt;ipynb&lt;/code&gt; 之后就会直接帮你渲染出来（甚至在 VS Code 里创建一个 &lt;code&gt;ipynb&lt;/code&gt; 文件之后就会自动写上一些文件头并渲染好）。谢谢你，VS Code！&lt;/p&gt;
+&lt;p&gt;找到最重要的 &lt;code&gt;ipynb&lt;/code&gt; 文件和 Python 脚本之后，剩下的文件其实就可以删除掉了。我也算是成功地渡过了这次危机。感谢 Stack Overflow，感谢 AI，感谢 VS Code，感谢所有，我活过来了。&lt;/p&gt;
+&lt;h2 id="所以git-reset-究竟会干嘛"&gt;所以，&lt;code&gt;git-reset&lt;/code&gt; 究竟会干嘛？
+&lt;/h2&gt;&lt;p&gt;要想回答这个问题，最好的办法就是 &lt;strong&gt;RTFM&lt;/strong&gt;，即 &lt;em&gt;Read The Friendly Manual&lt;/em&gt;。如果是没有内置 &lt;code&gt;man&lt;/code&gt; 这样的文档阅读器的情况，或者在 Windows 下输入 &lt;code&gt;git reset --help&lt;/code&gt;，我们就会打开 &lt;code&gt;git-reset&lt;/code&gt; 的帮助文档 （没错 &lt;code&gt;man&lt;/code&gt; 其实是轻量的 HTML 阅读器）。&lt;/p&gt;
+&lt;p&gt;通过阅读（&lt;del&gt;不那么友好，有点晦涩的&lt;/del&gt; 其实挺友好的 ）文档，可以了解到 &lt;code&gt;git reset&lt;/code&gt; 就是设计好的，通过 &lt;em&gt;重置&lt;/em&gt; 来实现 &lt;em&gt;撤销&lt;/em&gt; 一些操作的一个命令。前面 &lt;code&gt;SYNOPSIS&lt;/code&gt; 和 &lt;code&gt;DESCRIPTION&lt;/code&gt; 部分说实在的有一点难懂，但是我们可以直接看 &lt;code&gt;EXAMPLES&lt;/code&gt; 部分，详细地写了一些情况下使用 &lt;code&gt;git reset&lt;/code&gt; 的实际案例。说实话，每个案例里的命令最后会有一些说明文字，像是读个小故事或者看主角内心历程，还挺有意思的。具体有些什么这里就不啰嗦了，内容其实相当多，感兴趣可以自己找来慢慢看。&lt;/p&gt;
+&lt;p&gt;那么，&lt;code&gt;git reset --hard&lt;/code&gt; 会做什么呢？答案是会彻底撤销到某个提交。当我们在后面填上提交的位置（用 &lt;code&gt;HEAD&lt;/code&gt; 相对位置或者用 &lt;code&gt;commit-hash&lt;/code&gt; 均可）时，我们会直接跳回这个提交并且 &lt;strong&gt;彻底删除&lt;/strong&gt; 这个提交之后的修改。而如果我们不填提交位置，那就是默认 &lt;code&gt;HEAD&lt;/code&gt;，会重置 Git 的头指针。被 Git 跟踪索引的文件的 &lt;em&gt;变更&lt;/em&gt; 会被抛弃，而未被索引的文件则会直接被删掉。&lt;/p&gt;
+&lt;p&gt;这样就能解释我的仓库里发生了什么。由于我在 &lt;code&gt;git init .&lt;/code&gt; 之后 &lt;em&gt;创建&lt;/em&gt; 了一些文件，它们会被直接索引，但又由于它们是新建的文件，不属于 &lt;em&gt;变更&lt;/em&gt;，所以不会被删除而是原样留下；而在 &lt;code&gt;git init .&lt;/code&gt; 之前的文件，由于还没来得及被 Git 跟踪索引，于是就被 &lt;code&gt;git reset --hard&lt;/code&gt; 无情地删除了。原话是：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Any untracked files or directories in the way of writing any tracked files are simply deleted.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;谢谢你，Git。以后再也不瞎用 &lt;code&gt;git reset&lt;/code&gt; 了。&lt;/p&gt;
+&lt;h2 id="git-add-又做了什么git-fsck-是什么"&gt;&lt;code&gt;git-add&lt;/code&gt; 又做了什么？&lt;code&gt;git-fsck&lt;/code&gt; 是什么？
+&lt;/h2&gt;&lt;p&gt;那么我为什么又能救回来我的文件们呢？原因在于 &lt;code&gt;git add&lt;/code&gt; 的工作方式。在我们 &lt;code&gt;git add&lt;/code&gt; 之后，被添加到暂存区的文件会被放在 &lt;code&gt;.git/objects&lt;/code&gt; 文件夹里。我们来做个小实验，使用下面的代码：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;mkdir test-folder
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; test-folder
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; hello &amp;gt; test.txt
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;git init .
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这样我们就创建了一个新文件夹，写了一个新文件，并且在有文件的情况下执行了 &lt;code&gt;git init .&lt;/code&gt; 初始化了这个仓库。我们用 &lt;code&gt;git status&lt;/code&gt; 看看：&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/rescue_my_repository/git-status.png"
+width="639"
+height="230"
+srcset="https://a-moment096.github.io/posts/rescue_my_repository/git-status_hu_f8b3581f67ed33c.png 480w, https://a-moment096.github.io/posts/rescue_my_repository/git-status_hu_bac6937448684bba.png 1024w"
+loading="lazy"
+alt="Git status 结果"
+class="gallery-image"
+data-flex-grow="277"
+data-flex-basis="666px"
+&gt;&lt;/p&gt;
+&lt;p&gt;我们再看看 &lt;code&gt;.git/object&lt;/code&gt; 文件夹：&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/rescue_my_repository/eza-git-object.png"
+width="584"
+height="153"
+srcset="https://a-moment096.github.io/posts/rescue_my_repository/eza-git-object_hu_5a80dfc3315edec3.png 480w, https://a-moment096.github.io/posts/rescue_my_repository/eza-git-object_hu_81bf9221fac2d83d.png 1024w"
+loading="lazy"
+alt=".git/object 文件夹"
+class="gallery-image"
+data-flex-grow="381"
+data-flex-basis="916px"
+&gt;&lt;/p&gt;
+&lt;p&gt;里面空空如也。我们执行下面的 Git 命令：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;git add .
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;eza --tree .git/objects
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# if you don&amp;#39;t have eza:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# tree .git/objects&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/rescue_my_repository/after-add.png"
+width="601"
+height="230"
+srcset="https://a-moment096.github.io/posts/rescue_my_repository/after-add_hu_ebdeb877d8b142eb.png 480w, https://a-moment096.github.io/posts/rescue_my_repository/after-add_hu_13e8107f087adf1f.png 1024w"
+loading="lazy"
+alt="添加文件后的 .git/objects"
+class="gallery-image"
+data-flex-grow="261"
+data-flex-basis="627px"
+&gt;&lt;/p&gt;
+&lt;p&gt;怎么确定他就是我们要的文件呢？Git 提供了它用来哈希的命令，我们执行 &lt;code&gt;git hash-object ./test.txt&lt;/code&gt;，得到的结果是：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;ce013625030ba8dba906f756967f9e9ca394464a
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;结果很有趣：Git 把哈希值的前两位取出来作为文件夹的名字，后面则作为文件的名称。&lt;/p&gt;
+&lt;p&gt;此时我们复刻我干过的好事，然后再看看 &lt;code&gt;.git/objects&lt;/code&gt; 这个文件夹：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;git reset --hard
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;ls -l
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;eza --tree .git/objects
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/rescue_my_repository/git-reset--hard.png"
+width="521"
+height="231"
+srcset="https://a-moment096.github.io/posts/rescue_my_repository/git-reset--hard_hu_d22a7704f1554c9f.png 480w, https://a-moment096.github.io/posts/rescue_my_repository/git-reset--hard_hu_bf534b23ba2cea95.png 1024w"
+loading="lazy"
+alt="git reset 后"
+class="gallery-image"
+data-flex-grow="225"
+data-flex-basis="541px"
+&gt;&lt;/p&gt;
+&lt;p&gt;结果很神奇！工作目录里的文件确实被删除掉了，而 &lt;code&gt;.git/objects&lt;/code&gt; 里的内容并没有被删掉。多亏了 &lt;code&gt;git add .&lt;/code&gt; 这个命令，把结果暂存了下来。此时我们尝试 &lt;code&gt;git fsck --lost-found&lt;/code&gt;：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;git fsck --lost-found
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;eza --tree .git/lost-found
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;cat .git/lost-found/other/ce013625030ba8dba906f756967f9e9ca394464a
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/rescue_my_repository/git-fsck--lost-found.png"
+width="602"
+height="284"
+srcset="https://a-moment096.github.io/posts/rescue_my_repository/git-fsck--lost-found_hu_c40c76a586e89ef.png 480w, https://a-moment096.github.io/posts/rescue_my_repository/git-fsck--lost-found_hu_199580ece64b915e.png 1024w"
+loading="lazy"
+alt="使用 git fsck --lost-found 之后"
+class="gallery-image"
+data-flex-grow="211"
+data-flex-basis="508px"
+&gt;&lt;/p&gt;
+&lt;p&gt;所以其实 &lt;code&gt;git fsck --lost-found&lt;/code&gt; 大概就是把 &lt;code&gt;git add&lt;/code&gt; 过的文件从 &lt;code&gt;.git/objects&lt;/code&gt; 里找回来。那么 &lt;code&gt;git fsck&lt;/code&gt; 是什么呢？查阅手册，我们看到：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;git-fsck - Verifies the connectivity and validity of the objects in the database&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;--lost-found&lt;/code&gt;&lt;/p&gt;
+&lt;p style="text-indent: 50px"&gt; Write dangling objects into `.git/lost-found/commit/` or `.git/lost-found/other/`, depending on type. If the object is a blob, the contents are written into the file, rather than its object name.
+&lt;/blockquote&gt;
+&lt;p&gt;That&amp;rsquo;s it! &lt;em&gt;fsck&lt;/em&gt; 应该是 &lt;em&gt;filesystem check&lt;/em&gt; 的缩写，而 &lt;code&gt;--lost-found&lt;/code&gt; 也如预料的一样，将 &lt;em&gt;悬垂&lt;/em&gt; 的对象恢复到这两个文件夹里。&lt;/p&gt;
+&lt;h2 id="总结"&gt;总结
+&lt;/h2&gt;&lt;p&gt;这次真的出了一身冷汗，还好习惯性地 &lt;code&gt;git add .&lt;/code&gt; 了一次，不然真的是神仙难救呀。我可不想把美妙的周五时光全都放在文件系统恢复上。当然，最大的教训还是：不要随意用自己了解不充分的命令，特别是这种会对自己文件系统形成半不可逆更改的操作。我自认为对 Git 有点熟悉了，现在看来，根本就是太过自大，属于是半瓶子水晃荡，最后搬石头砸自己的脚了。还得好好学一下呀！&lt;/p&gt;
+&lt;p&gt;不过，毫不谦虚地讲，这次经历我还是有做的好的地方的。起码没有彻底慌乱掉然后干出更加迷惑的操作，比如关机重启彻底删除这样失了智的行为。之前有一次好像也是东西丢了找不到，一时慌乱结果彻底找不回来了。还好那次的文件不算重要，丢了也就丢了。看来这次也算吸取了上次的一点教训，不要手忙脚乱，左右脑互搏。&lt;/p&gt;
+&lt;p&gt;另外就是，DuckDuckGo 真的很好，Stack Overflow 真的很好，没有搜索引擎和这个伟大的论坛，我半个月的心血说不定真的就泡汤了（即便是让 AI 给我干苦力（））&lt;/p&gt;
+&lt;p&gt;希望这次经历能帮到遇到了类似问题的你，或者给你也敲响一次警钟。那么，感谢你读到这里，祝你身心愉快，工作顺利，不出乌龙~&lt;/p&gt;</description></item><item><title>机器学习用 Ubuntu WSL 配置记录</title><link>https://a-moment096.github.io/posts/wsl_ubuntu_config/</link><pubDate>Sat, 29 Nov 2025 14:28:17 +0800</pubDate><guid>https://a-moment096.github.io/posts/wsl_ubuntu_config/</guid><description>&lt;img src="https://a-moment096.github.io/posts/wsl_ubuntu_config/%E3%83%94%E3%83%B3%E3%82%AF%E3%81%AE%E5%A4%A2.png" alt="Featured image of post 机器学习用 Ubuntu WSL 配置记录" /&gt;&lt;p&gt;&lt;em&gt;某人需要配置环境时做机器学习，这是他配置环境后电脑发生的变化……&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图选择了可爱的小羊，来自 &lt;a class="link" href="https://www.pixiv.net/users/3402557" target="_blank" rel="noopener"
 &gt;Ruziかねつカーぺット&lt;/a&gt; 太太的 &lt;a class="link" href="https://www.pixiv.net/artworks/112910033#1" target="_blank" rel="noopener"
 &gt;ピンクの夢&lt;/a&gt;，粉粉的，可爱捏&lt;/em&gt;&lt;/p&gt;
@@ -259,7 +486,7 @@ background: var(--card-background-selected);
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/wsl_ubuntu_config/wt-ubuntu-24.04.png"
 width="960"
 height="441"
-srcset="https://a-moment096.github.io/posts/wsl_ubuntu_config/wt-ubuntu-24.04_hu_6e8128ef71e0bfb1.png 480w, https://a-moment096.github.io/posts/wsl_ubuntu_config/wt-ubuntu-24.04_hu_118b4d9230eebd74.png 1024w"
+srcset="https://a-moment096.github.io/posts/wsl_ubuntu_config/wt-ubuntu-24.04_hu_1569aa756e368b09.png 480w, https://a-moment096.github.io/posts/wsl_ubuntu_config/wt-ubuntu-24.04_hu_6f9b4ea1452c8f9.png 1024w"
 loading="lazy"
 alt="安装好的 WSL"
 class="gallery-image"
@@ -298,7 +525,7 @@ data-flex-basis="522px"
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/wsl_ubuntu_config/yes.png"
 width="1112"
 height="340"
-srcset="https://a-moment096.github.io/posts/wsl_ubuntu_config/yes_hu_1a74720eeb6ff68f.png 480w, https://a-moment096.github.io/posts/wsl_ubuntu_config/yes_hu_92f5759f5ee3ae46.png 1024w"
+srcset="https://a-moment096.github.io/posts/wsl_ubuntu_config/yes_hu_61d5cd9533bff928.png 480w, https://a-moment096.github.io/posts/wsl_ubuntu_config/yes_hu_dcce69c234e0e460.png 1024w"
 loading="lazy"
 alt="Type yes here!"
 class="gallery-image"
@@ -330,7 +557,7 @@ data-flex-basis="784px"
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/wsl_ubuntu_config/base-env.png"
 width="545"
 height="216"
-srcset="https://a-moment096.github.io/posts/wsl_ubuntu_config/base-env_hu_98eb58e9d91751a6.png 480w, https://a-moment096.github.io/posts/wsl_ubuntu_config/base-env_hu_a3dcb8dac756fe7a.png 1024w"
+srcset="https://a-moment096.github.io/posts/wsl_ubuntu_config/base-env_hu_45eb526d95c0db7.png 480w, https://a-moment096.github.io/posts/wsl_ubuntu_config/base-env_hu_c632d45afb4945cb.png 1024w"
 loading="lazy"
 alt="Base Environment"
 class="gallery-image"
@@ -345,7 +572,7 @@ data-flex-basis="605px"
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/wsl_ubuntu_config/conda-installation.png"
 width="1500"
 height="1167"
-srcset="https://a-moment096.github.io/posts/wsl_ubuntu_config/conda-installation_hu_5afc6e249542944d.png 480w, https://a-moment096.github.io/posts/wsl_ubuntu_config/conda-installation_hu_cb21d04f7d4470c2.png 1024w"
+srcset="https://a-moment096.github.io/posts/wsl_ubuntu_config/conda-installation_hu_1fdfa4d31d89afd2.png 480w, https://a-moment096.github.io/posts/wsl_ubuntu_config/conda-installation_hu_e4178a5c05388e0d.png 1024w"
 loading="lazy"
 alt="Conda Installation"
 class="gallery-image"
@@ -358,7 +585,7 @@ data-flex-basis="308px"
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/wsl_ubuntu_config/%E9%9A%BE%E9%81%93%E8%AF%B4.jpg"
 width="214"
 height="236"
-srcset="https://a-moment096.github.io/posts/wsl_ubuntu_config/%E9%9A%BE%E9%81%93%E8%AF%B4_hu_5b34c4a6222eebe8.jpg 480w, https://a-moment096.github.io/posts/wsl_ubuntu_config/%E9%9A%BE%E9%81%93%E8%AF%B4_hu_d91d079f77a363f9.jpg 1024w"
+srcset="https://a-moment096.github.io/posts/wsl_ubuntu_config/%E9%9A%BE%E9%81%93%E8%AF%B4_hu_a7bfdb9ea32618bc.jpg 480w, https://a-moment096.github.io/posts/wsl_ubuntu_config/%E9%9A%BE%E9%81%93%E8%AF%B4_hu_24e650e3cd9dbbe7.jpg 1024w"
 loading="lazy"
 alt="难道说！？"
 class="gallery-image"
@@ -374,7 +601,7 @@ data-flex-basis="217px"
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/wsl_ubuntu_config/nvidia-smi.png"
 width="1582"
 height="867"
-srcset="https://a-moment096.github.io/posts/wsl_ubuntu_config/nvidia-smi_hu_ee20c3c7a94530d4.png 480w, https://a-moment096.github.io/posts/wsl_ubuntu_config/nvidia-smi_hu_44f0632f10f5a345.png 1024w"
+srcset="https://a-moment096.github.io/posts/wsl_ubuntu_config/nvidia-smi_hu_304bd1f076167b9d.png 480w, https://a-moment096.github.io/posts/wsl_ubuntu_config/nvidia-smi_hu_494f2919a12215b.png 1024w"
 loading="lazy"
 alt="nvidia-smi"
 class="gallery-image"
@@ -573,7 +800,7 @@ background: var(--card-background-selected);
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/vsc_remote/img/VSC_Download.png"
 width="1026"
 height="843"
-srcset="https://a-moment096.github.io/posts/vsc_remote/img/VSC_Download_hu_7dfead5032aa72e6.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/VSC_Download_hu_f97837e1fa6b9628.png 1024w"
+srcset="https://a-moment096.github.io/posts/vsc_remote/img/VSC_Download_hu_cc16468639f06cae.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/VSC_Download_hu_7c35e3cb1263d305.png 1024w"
 loading="lazy"
 alt="下载页面"
 class="gallery-image"
@@ -585,7 +812,7 @@ data-flex-basis="292px"
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/vsc_remote/img/InstallVSC.png"
 width="597"
 height="465"
-srcset="https://a-moment096.github.io/posts/vsc_remote/img/InstallVSC_hu_5f4ef887f468ca94.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/InstallVSC_hu_d4ed8c514999da04.png 1024w"
+srcset="https://a-moment096.github.io/posts/vsc_remote/img/InstallVSC_hu_27a361c0fb470b88.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/InstallVSC_hu_5ebd1f02e651ba91.png 1024w"
 loading="lazy"
 alt="安装页面"
 class="gallery-image"
@@ -601,7 +828,7 @@ data-flex-basis="308px"
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/vsc_remote/img/Extensions.png"
 width="1026"
 height="843"
-srcset="https://a-moment096.github.io/posts/vsc_remote/img/Extensions_hu_4357fa4ae296f13d.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/Extensions_hu_dbcae33cff11f0f5.png 1024w"
+srcset="https://a-moment096.github.io/posts/vsc_remote/img/Extensions_hu_65167833d5ee41ab.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/Extensions_hu_b7956f8bf666ff5b.png 1024w"
 loading="lazy"
 alt="插件市场"
 class="gallery-image"
@@ -638,14 +865,14 @@ data-flex-basis="292px"
 &lt;/h3&gt;&lt;p&gt;首先这个文件特别奇葩的一点是，名字一点儿不能差，不是 CMakeList，不是 CMakeList.txt，它就得是 &lt;strong&gt;CMakeLists.txt&lt;/strong&gt;，注意大小写哦。如果你按照上面说的，安装了 &lt;strong&gt;C/C++ Extension Pack&lt;/strong&gt; 的话，你的 CMakeLists.txt 应该是有语法高亮的。&lt;/p&gt;
 &lt;p&gt;对于简单的项目，我们主要是要告诉 CMake 项目名称，编译对象以及输出的结果。我们首先在项目根目录创建这个文件，底下是一个简单的示例：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmake" data-lang="cmake"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;cmake_minimum_required&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;VERSION&lt;/span&gt; &lt;span class="s"&gt;3.15&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="err"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="err"&gt;&lt;/span&gt;&lt;span class="nb"&gt;project&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;HelloCMake&lt;/span&gt; &lt;span class="s"&gt;VERSION&lt;/span&gt; &lt;span class="s"&gt;1.0&lt;/span&gt; &lt;span class="s"&gt;LANGUAGES&lt;/span&gt; &lt;span class="s"&gt;CXX&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="err"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;project&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;HelloCMake&lt;/span&gt; &lt;span class="s"&gt;VERSION&lt;/span&gt; &lt;span class="s"&gt;1.0&lt;/span&gt; &lt;span class="s"&gt;LANGUAGES&lt;/span&gt; &lt;span class="s"&gt;CXX&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="err"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="err"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="err"&gt;&lt;/span&gt;&lt;span class="c"&gt;# Set C++ standard
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;&lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;CMAKE_CXX_STANDARD&lt;/span&gt; &lt;span class="s"&gt;17&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="err"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;6&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="err"&gt;&lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;CMAKE_CXX_STANDARD_REQUIRED&lt;/span&gt; &lt;span class="s"&gt;ON&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="err"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;# Set C++ standard
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;CMAKE_CXX_STANDARD&lt;/span&gt; &lt;span class="s"&gt;17&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="err"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;6&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;CMAKE_CXX_STANDARD_REQUIRED&lt;/span&gt; &lt;span class="s"&gt;ON&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="err"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;7&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="err"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;8&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="err"&gt;&lt;/span&gt;&lt;span class="c"&gt;# Define the executable
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;9&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;&lt;/span&gt;&lt;span class="nb"&gt;add_executable&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;hello&lt;/span&gt; &lt;span class="s"&gt;src/main.cpp&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="err"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;8&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;# Define the executable
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;9&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;add_executable&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;hello&lt;/span&gt; &lt;span class="s"&gt;src/main.cpp&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="err"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;上面的内容，首先先告诉 CMake 这个 CMakeLists.txt 对 CMake 版本的最低要求。这是为了兼容性考虑的：有些平台可能并没有较新的 CMake 版本可用。这个东西自然是越低越好了，因为越低的话兼容性自然更强；但是你也可以使用很高的版本，强制要求使用高版本可以让你更放开手脚用新版本里更好用的配置。&lt;/p&gt;
 &lt;p&gt;接下来是定义我们的项目属性。它得有个名字，放在第一个位置；得有个版本，用 &lt;code&gt;VERSION&lt;/code&gt; 打头后面跟上具体版本号。这个版本号你自己决定，测试用的案例这个不是很重要；最后告诉 CMake 我这是个什么语言的项目，用 &lt;code&gt;LANGUAGE&lt;/code&gt; 打头后面接上 &lt;code&gt;CXX&lt;/code&gt; 作为语言类型，告诉它是 C++ 项目。为什么不是 CPP, C++ 而是 CXX 呢？这大概涉及到 C++ 诞生之初的一些设计名称的扯皮，不太重要。有趣的地方是，&lt;code&gt;CXX&lt;/code&gt; 也是推荐的 C++ 源文件拓展名之一。希望这能让你接受这里使用 &lt;code&gt;CXX&lt;/code&gt; 这一点。如果你的项目还要用上 &lt;code&gt;C&lt;/code&gt; 的话，在 &lt;code&gt;LANGUAGE&lt;/code&gt; 后面补上，用空格分开就好。&lt;/p&gt;
 &lt;p&gt;接下来就要设置和 C++ 相关的内容了。我们首先指明要用的 C++ 标准版本，这里使用了 C++17 标准；其次我们在下一行表示这个标准是必须的。注意到我们用的是 &lt;code&gt;set&lt;/code&gt; 这个很像函数的东西。实际上我们是在设置一些变量，这些变量会传递给 CMake 来控制 CMake 的配置和编译时的行为。&lt;/p&gt;
@@ -686,7 +913,7 @@ data-flex-basis="292px"
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/vsc_remote/img/CMakeWindow.png"
 width="2560"
 height="1410"
-srcset="https://a-moment096.github.io/posts/vsc_remote/img/CMakeWindow_hu_63235d4b7d511517.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/CMakeWindow_hu_cf51f1524e232be6.png 1024w"
+srcset="https://a-moment096.github.io/posts/vsc_remote/img/CMakeWindow_hu_cca4446fb67f1b41.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/CMakeWindow_hu_b7864f788004f925.png 1024w"
 loading="lazy"
 alt="CMake 集成"
 class="gallery-image"
@@ -699,7 +926,7 @@ data-flex-basis="435px"
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/vsc_remote/img/SelectKits.png"
 width="1370"
 height="452"
-srcset="https://a-moment096.github.io/posts/vsc_remote/img/SelectKits_hu_168a0ad392dcf52c.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/SelectKits_hu_981981d2c96e48fc.png 1024w"
+srcset="https://a-moment096.github.io/posts/vsc_remote/img/SelectKits_hu_29b309d1f3733a28.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/SelectKits_hu_bfcae845598074a0.png 1024w"
 loading="lazy"
 alt="选择编译套件"
 class="gallery-image"
@@ -712,7 +939,7 @@ data-flex-basis="727px"
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/vsc_remote/img/Build.png"
 width="738"
 height="988"
-srcset="https://a-moment096.github.io/posts/vsc_remote/img/Build_hu_f045634d05a79908.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/Build_hu_7709ebc2516d1bb9.png 1024w"
+srcset="https://a-moment096.github.io/posts/vsc_remote/img/Build_hu_ef97bec9ad714af1.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/Build_hu_cc7b7e7cca50dec8.png 1024w"
 loading="lazy"
 alt="构建"
 class="gallery-image"
@@ -723,7 +950,7 @@ data-flex-basis="179px"
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/vsc_remote/img/BuildOutput.png"
 width="1577"
 height="737"
-srcset="https://a-moment096.github.io/posts/vsc_remote/img/BuildOutput_hu_3fdb2b4fe45842da.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/BuildOutput_hu_742cb4574269bf21.png 1024w"
+srcset="https://a-moment096.github.io/posts/vsc_remote/img/BuildOutput_hu_aeff9ee366262d92.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/BuildOutput_hu_1ee3bb25a05d9143.png 1024w"
 loading="lazy"
 alt="构建输出"
 class="gallery-image"
@@ -736,7 +963,7 @@ data-flex-basis="513px"
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/vsc_remote/img/Bottom.png"
 width="841"
 height="121"
-srcset="https://a-moment096.github.io/posts/vsc_remote/img/Bottom_hu_6b8ca2a27722e2ce.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/Bottom_hu_7376e5f4e8595b2a.png 1024w"
+srcset="https://a-moment096.github.io/posts/vsc_remote/img/Bottom_hu_f23f50e8b5482ff7.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/Bottom_hu_76e6a17ac80b1b19.png 1024w"
 loading="lazy"
 alt="底边栏"
 class="gallery-image"
@@ -749,7 +976,7 @@ data-flex-basis="1668px"
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/vsc_remote/img/RemoteConnection.png"
 width="1320"
 height="514"
-srcset="https://a-moment096.github.io/posts/vsc_remote/img/RemoteConnection_hu_bfb6fcd316c26a9.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/RemoteConnection_hu_cc71de79b800cec6.png 1024w"
+srcset="https://a-moment096.github.io/posts/vsc_remote/img/RemoteConnection_hu_c97995dd99f0869c.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/RemoteConnection_hu_f6eecfe2396a4d6e.png 1024w"
 loading="lazy"
 alt="选择你要链接的模式"
 class="gallery-image"
@@ -760,7 +987,7 @@ data-flex-basis="616px"
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/vsc_remote/img/SelectRemote.png"
 width="1329"
 height="502"
-srcset="https://a-moment096.github.io/posts/vsc_remote/img/SelectRemote_hu_1168e6ba8b35d25d.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/SelectRemote_hu_f65f7ef048dc6c0d.png 1024w"
+srcset="https://a-moment096.github.io/posts/vsc_remote/img/SelectRemote_hu_15f40a0fb1ea5337.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/SelectRemote_hu_d496b10fbe129530.png 1024w"
 loading="lazy"
 alt="选择远程机器"
 class="gallery-image"
@@ -2328,13 +2555,13 @@ background: var(--card-background-selected);
 &lt;/h2&gt;&lt;p&gt;下面我们就来尝试用代码打印出 &lt;code&gt;vector&lt;/code&gt; 里元素的内存地址吧。我们向一个 &lt;code&gt;vector&lt;/code&gt; 中填充5个元素，每次填入时检查 &lt;code&gt;vector&lt;/code&gt; 的状态：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cpp" data-lang="cpp"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;vector&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 3&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 5&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;vector&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 6&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// We use &amp;#34;push_back&amp;#34; push an element to the back of a vector
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;&lt;/span&gt; &lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;push_back&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;push_back&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;cout&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="s"&gt;&amp;#34;Added: &amp;#34;&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="s"&gt;&amp;#34;, Size: &amp;#34;&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;12&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="s"&gt;&amp;#34;, Capacity: &amp;#34;&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;capacity&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
@@ -2342,7 +2569,7 @@ background: var(--card-background-selected);
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;14&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;15&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;16&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// Check contiguity
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;17&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;&lt;/span&gt; &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;cout&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="s"&gt;&amp;#34;Contiguous memory check:&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;17&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;cout&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="s"&gt;&amp;#34;Contiguous memory check:&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;18&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;size_t&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt; &lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;19&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;cout&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="s"&gt;&amp;#34;Address of v[&amp;#34;&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="s"&gt;&amp;#34;] = &amp;#34;&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="sc"&gt;&amp;#39;\n&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;20&lt;/span&gt;&lt;span class="cl"&gt;
@@ -2367,7 +2594,7 @@ background: var(--card-background-selected);
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cpp" data-lang="cpp"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;vector&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;ctime&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 4&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;SIZE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;10000000&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 6&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
@@ -2377,14 +2604,14 @@ background: var(--card-background-selected);
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;arr&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;12&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;13&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// Benchmark vector
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;14&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;&lt;/span&gt; &lt;span class="n"&gt;clock_t&lt;/span&gt; &lt;span class="n"&gt;start_vec&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;clock&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;14&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;clock_t&lt;/span&gt; &lt;span class="n"&gt;start_vec&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;clock&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;15&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="kt"&gt;long&lt;/span&gt; &lt;span class="kt"&gt;long&lt;/span&gt; &lt;span class="n"&gt;sum_vec&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;16&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;SIZE&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;17&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;sum_vec&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="n"&gt;vec&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;18&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;clock_t&lt;/span&gt; &lt;span class="n"&gt;end_vec&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;clock&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;19&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;20&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// Benchmark array
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;21&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;&lt;/span&gt; &lt;span class="n"&gt;clock_t&lt;/span&gt; &lt;span class="n"&gt;start_arr&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;clock&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;21&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;clock_t&lt;/span&gt; &lt;span class="n"&gt;start_arr&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;clock&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;22&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="kt"&gt;long&lt;/span&gt; &lt;span class="kt"&gt;long&lt;/span&gt; &lt;span class="n"&gt;sum_arr&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;23&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;SIZE&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;24&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;sum_arr&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="n"&gt;arr&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
@@ -2397,7 +2624,7 @@ background: var(--card-background-selected);
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;31&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="s"&gt;&amp;#34;, Time: &amp;#34;&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;end_arr&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;start_arr&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="s"&gt;&amp;#34; ticks&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;32&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;33&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// Don&amp;#39;t forget to delete[] the array!
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;34&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;&lt;/span&gt; &lt;span class="k"&gt;delete&lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt; &lt;span class="n"&gt;arr&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;34&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;delete&lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt; &lt;span class="n"&gt;arr&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;35&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;36&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;我们先不开启优化并尝试运行几次，看看结果：&lt;/p&gt;
@@ -2503,7 +2730,7 @@ $$&lt;p&gt;这个形式，熟悉吗？如果去掉第二项，那么这个方程
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;vector&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 6&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 6&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="kt"&gt;double&lt;/span&gt; &lt;span class="nf"&gt;laplacian&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;double&lt;/span&gt; &lt;span class="n"&gt;eta_l&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;double&lt;/span&gt; &lt;span class="n"&gt;eta_r&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;double&lt;/span&gt; &lt;span class="n"&gt;eta_d&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;double&lt;/span&gt; &lt;span class="n"&gt;eta_u&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;double&lt;/span&gt; &lt;span class="n"&gt;eta_c&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;double&lt;/span&gt; &lt;span class="n"&gt;dx&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;eta_l&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;eta_r&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;eta_d&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;eta_u&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mf"&gt;4.0&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;eta_c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;dx&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;dx&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
@@ -2736,7 +2963,7 @@ $$&lt;p&gt;根据这个公式，我们需要先计算浓度的 Laplacian，然�
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;vector&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 6&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 6&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;write_vtk&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;vector&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;vector&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="kt"&gt;double&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;mesh&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;string&lt;/span&gt; &lt;span class="n"&gt;file_path&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;time_step&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;double&lt;/span&gt; &lt;span class="n"&gt;dx&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;filesystem&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;create_directory&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;file_path&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;filesystem&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt; &lt;span class="n"&gt;f_name&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;step_&amp;#34;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;to_string&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;time_step&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;#34;.vtk&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
@@ -2983,7 +3210,7 @@ alt="alt text"
 &lt;h3 id="main-函数和小例子"&gt;&lt;code&gt;main&lt;/code&gt; 函数和小例子
 &lt;/h3&gt;&lt;p&gt;对 C++ 程序而言，一个可执行文件必须要包含一个 &lt;code&gt;main&lt;/code&gt; 函数作为程序的主入口。当程序执行时，会从 &lt;code&gt;main&lt;/code&gt; 函数开始执行，并且逐行向下。一个 C++ 程序只能拥有一个程序入口，意即 &lt;code&gt;main&lt;/code&gt; 函数。下面是一个简单的例子：&lt;em&gt;hello_world.cpp&lt;/em&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cpp" data-lang="cpp"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;(){&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;cout&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;Hello C++ world!&amp;#34;&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;endl&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
@@ -2999,7 +3226,7 @@ alt="alt text"
 &lt;/h3&gt;&lt;p&gt;C++ 和 Python 最大的区别中，其中一个便是所有的变量具有静态类型（别的区别还有不需要代码缩进表示代码块等等）。在 C++ 中，声明变量需要首先声明变量的类型，然后是变量名。可以（也推荐）在声明变量时给变量初始化，通常只需在变量名后用等号 &lt;code&gt;=&lt;/code&gt; 接上需要赋予的值即可。也可以通过初始化列表进行变量初始化，且对于类而言还可以使用合适的类构造函数进行变量初始化。下面是一个例子：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cpp" data-lang="cpp"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;vector&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;(){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;(){&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 4&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 5&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="kt"&gt;double&lt;/span&gt; &lt;span class="n"&gt;j&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 6&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;k&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
@@ -3026,12 +3253,12 @@ alt="alt text"
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 3&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 4&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;j&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 5&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;888&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="c1"&gt;// success
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 6&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 6&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// i will be 888 here
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// Below is an error:
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;&lt;/span&gt; &lt;span class="c1"&gt;// j = 666;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// j = 666;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="控制流循环和判断语句"&gt;控制流，循环和判断语句
 &lt;/h3&gt;&lt;p&gt;首先介绍循环语句。这里仅介绍 &lt;code&gt;for&lt;/code&gt; 循环与 &lt;code&gt;while&lt;/code&gt; 循环。下面是使用 &lt;code&gt;for&lt;/code&gt; 和 &lt;code&gt;while&lt;/code&gt; 循环的例子。&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cpp" data-lang="cpp"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
@@ -3079,10 +3306,10 @@ alt="alt text"
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;// Output i&amp;#39;s address
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;&lt;/span&gt;&lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;cout&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;endl&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;cout&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;endl&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;6&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;7&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;// Modify i&amp;#39;s value
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;8&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1234&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;8&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1234&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;9&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;cout&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;endl&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="c1"&gt;//1234
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;上面的例子中，我们先声明了（栈上）的一个变量 &lt;code&gt;i&lt;/code&gt;，随后用 &lt;code&gt;int *&lt;/code&gt; 作为数据类型名声明了一个指针 &lt;code&gt;p&lt;/code&gt;，并用 &lt;code&gt;&amp;amp;i&lt;/code&gt; 取得 &lt;code&gt;i&lt;/code&gt; 的地址，然后给这个变量 &lt;code&gt;p&lt;/code&gt; 赋予了 &lt;code&gt;i&lt;/code&gt; 的地址的值（称为&lt;em&gt;指针p指向i&lt;/em&gt;）。此时输出 &lt;code&gt;p&lt;/code&gt; 的值时会打印出一些十六进制数字。之后，通过 &lt;code&gt;*&lt;/code&gt; 运算符，取出了保存在 &lt;code&gt;p&lt;/code&gt; 中的地址下存储的值，并直接对该内存地址覆写数据 &lt;code&gt;1234&lt;/code&gt;。由于 &lt;code&gt;p&lt;/code&gt; 保存的地址正是 &lt;code&gt;i&lt;/code&gt; 的地址，所以对 &lt;code&gt;i&lt;/code&gt; 的地址写入新数据即为给 &lt;code&gt;i&lt;/code&gt; 重新赋值。这样一来，输出 &lt;code&gt;i&lt;/code&gt; 的值时，得到的结果即为 &lt;code&gt;1234&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;希望这个例子以及这里的简单介绍能帮助你理解指针是什么以及有什么作用。值得注意的是，这里指针指向的变量依旧是一个栈上的变量，而在很多需要使用指针的情况下，需要的常常是堆上的数据。为了在堆上创建变量，需要使用 &lt;code&gt;new&lt;/code&gt; 关键字。而当在堆上创建变量后，如果不再使用变量时，必须使用 &lt;code&gt;delete&lt;/code&gt; 关键字删除该变量。其主要原因是，当我们声明指针时，通常都是在栈上创建的数据；作为一个栈上的变量而言，当指针变量离开其作用域时便会被销毁。如果只有一个指针指向某个内存空间时，销毁该指针之后，内存中的数据便没有别的办法取到；而此时由于通过 &lt;code&gt;new&lt;/code&gt; 创建了这个内存，操作系统会一直保留这个内存直到 &lt;code&gt;delete&lt;/code&gt; 删除该内存，或者程序退出由操作系统销毁所有内存。这样一来，只 &lt;code&gt;new&lt;/code&gt; 不 &lt;code&gt;delete&lt;/code&gt;，当数据量较大时便会造成严重的内存泄漏；此外只 &lt;code&gt;new&lt;/code&gt; 不 &lt;code&gt;delete&lt;/code&gt; 还会把数据暴露在外，造成安全风险。然而要是使用了两个指针指向同一个内存时，如果在一个指针上销毁了内存，而另一个指针仍然认为内存没有销毁，那么该指针便会称为&lt;em&gt;野指针&lt;/em&gt;，或者&lt;em&gt;悬空指针&lt;/em&gt;。这时，当尝试使用该指针时，程序便会出错，轻则报错退出，重则产生难以排查的奇怪问题。&lt;/p&gt;
@@ -3169,14 +3396,14 @@ $$ \dfrac{\partial T}{\partial t} = \mu \dfrac{\partial^2 T}{\partial x ^2},$$&l
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 6&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;vector&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;Nx&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;128&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;double&lt;/span&gt; &lt;span class="n"&gt;dx&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;1.0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;double&lt;/span&gt; &lt;span class="n"&gt;dt&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0.2&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;double&lt;/span&gt; &lt;span class="n"&gt;mu&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;1.0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;12&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;nstep&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;20000&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="c1"&gt;// total iterate time
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;13&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;&lt;/span&gt;&lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;pstep&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;200&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="c1"&gt;// print result every 200 step
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;14&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;13&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;pstep&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;200&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="c1"&gt;// print result every 200 step
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;14&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;15&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;16&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;auto&lt;/span&gt; &lt;span class="n"&gt;begin_time&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;chrono&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;high_resolution_clock&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;now&lt;/span&gt;&lt;span class="p"&gt;()};&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;17&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;string&lt;/span&gt; &lt;span class="n"&gt;result_dir&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;./results/&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
@@ -3190,10 +3417,10 @@ $$ \dfrac{\partial T}{\partial t} = \mu \dfrac{\partial^2 T}{\partial x ^2},$$&l
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;25&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;26&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;27&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// tempory mesh for value storage
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;28&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;&lt;/span&gt; &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;vector&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="kt"&gt;double&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;temp_mesh&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mesh&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;28&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;vector&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="kt"&gt;double&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;temp_mesh&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mesh&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;29&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;30&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// ----- Begin Simulation ----- //
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;31&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;istep&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;istep&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;nstep&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;istep&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;31&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;istep&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;istep&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;nstep&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;istep&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;32&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;33&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;Nx&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;34&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;im&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
@@ -3201,7 +3428,7 @@ $$ \dfrac{\partial T}{\partial t} = \mu \dfrac{\partial^2 T}{\partial x ^2},$$&l
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;36&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="kt"&gt;double&lt;/span&gt; &lt;span class="n"&gt;val_m&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt; &lt;span class="n"&gt;val_p&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;37&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;38&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// Fixed boundary condition (to 0)
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;39&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;im&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;39&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;im&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;40&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;val_m&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;41&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;42&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;val_m&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;mesh&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;at&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;im&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
@@ -3215,24 +3442,24 @@ $$ \dfrac{\partial T}{\partial t} = \mu \dfrac{\partial^2 T}{\partial x ^2},$$&l
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;50&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;temp_mesh&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;at&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;mesh&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;at&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;mu&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;dt&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="n"&gt;val_m&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;val_p&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mf"&gt;2.0&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;mesh&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;at&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;dx&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;dx&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;51&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;52&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// update the origin mesh
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;53&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;&lt;/span&gt; &lt;span class="n"&gt;mesh&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;temp_mesh&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;53&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;mesh&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;temp_mesh&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;54&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;55&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;istep&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;pstep&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;56&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;string&lt;/span&gt; &lt;span class="n"&gt;of_name&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;result_dir&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;#34;fixed_step_&amp;#34;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;to_string&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;istep&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;#34;.csv&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;57&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;ofstream&lt;/span&gt; &lt;span class="n"&gt;ofs&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;of_name&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;58&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// if the file is indeed opened
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;59&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ofs&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;59&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ofs&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;60&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;ofs&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="s"&gt;&amp;#34;&lt;/span&gt;&lt;span class="se"&gt;\&amp;#34;&lt;/span&gt;&lt;span class="s"&gt;pos&lt;/span&gt;&lt;span class="se"&gt;\&amp;#34;&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="s"&gt;&amp;#34;,&amp;#34;&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="s"&gt;&amp;#34;&lt;/span&gt;&lt;span class="se"&gt;\&amp;#34;&lt;/span&gt;&lt;span class="s"&gt;val&lt;/span&gt;&lt;span class="se"&gt;\&amp;#34;&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;endl&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;61&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;Nx&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;62&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;ofs&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="s"&gt;&amp;#34;,&amp;#34;&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;mesh&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;at&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;endl&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;63&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;64&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;65&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// close the file after write
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;66&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;&lt;/span&gt; &lt;span class="n"&gt;ofs&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;close&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;66&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;ofs&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;close&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;67&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;68&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;69&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// ----- End Simulation ----- //
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;70&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;70&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;71&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;auto&lt;/span&gt; &lt;span class="n"&gt;end_time&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;chrono&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;high_resolution_clock&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;now&lt;/span&gt;&lt;span class="p"&gt;()};&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;72&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;cout&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="s"&gt;&amp;#34;The time cost in this simulation is &amp;#34;&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;chrono&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;duration&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="kt"&gt;double&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;end_time&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;begin_time&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="n"&gt;count&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="s"&gt;&amp;#34;s&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;73&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
@@ -3587,7 +3814,7 @@ $$&lt;p&gt;因此, 为了实现这一算法, 该算法实现的函数有如下�
 &lt;/h3&gt;&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/arch_install/imgs/Welcome.png"
 width="642"
 height="555"
-srcset="https://a-moment096.github.io/posts/arch_install/imgs/Welcome_hu_e95bc948cd3cad74.png 480w, https://a-moment096.github.io/posts/arch_install/imgs/Welcome_hu_dcf31ce89937d835.png 1024w"
+srcset="https://a-moment096.github.io/posts/arch_install/imgs/Welcome_hu_9c204cf385924706.png 480w, https://a-moment096.github.io/posts/arch_install/imgs/Welcome_hu_3b9c1c315d9db805.png 1024w"
 loading="lazy"
 alt="开始安装!"
 class="gallery-image"
@@ -3598,7 +3825,7 @@ data-flex-basis="277px"
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/arch_install/imgs/Hacking.png"
 width="1282"
 height="875"
-srcset="https://a-moment096.github.io/posts/arch_install/imgs/Hacking_hu_2f0e84073b957cc9.png 480w, https://a-moment096.github.io/posts/arch_install/imgs/Hacking_hu_3c71f43612d684e9.png 1024w"
+srcset="https://a-moment096.github.io/posts/arch_install/imgs/Hacking_hu_10177284956d1702.png 480w, https://a-moment096.github.io/posts/arch_install/imgs/Hacking_hu_bc0f2c1f48d52944.png 1024w"
 loading="lazy"
 alt="很帅"
 class="gallery-image"
@@ -3609,7 +3836,7 @@ data-flex-basis="351px"
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/arch_install/imgs/Install_1.png"
 width="1282"
 height="875"
-srcset="https://a-moment096.github.io/posts/arch_install/imgs/Install_1_hu_38cbc1f281d7e433.png 480w, https://a-moment096.github.io/posts/arch_install/imgs/Install_1_hu_f3d4b85ad9ae83cd.png 1024w"
+srcset="https://a-moment096.github.io/posts/arch_install/imgs/Install_1_hu_ee00e86872897b7d.png 480w, https://a-moment096.github.io/posts/arch_install/imgs/Install_1_hu_61c86b47e385ff4a.png 1024w"
 loading="lazy"
 alt="安装画面1"
 class="gallery-image"
@@ -3635,7 +3862,7 @@ data-flex-basis="351px"
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/arch_install/imgs/DiskPartition.png"
 width="953"
 height="144"
-srcset="https://a-moment096.github.io/posts/arch_install/imgs/DiskPartition_hu_801ed1748e0604f8.png 480w, https://a-moment096.github.io/posts/arch_install/imgs/DiskPartition_hu_3b48734c8b85f864.png 1024w"
+srcset="https://a-moment096.github.io/posts/arch_install/imgs/DiskPartition_hu_47af7ef9aa0c6709.png 480w, https://a-moment096.github.io/posts/arch_install/imgs/DiskPartition_hu_ead30a075aaab807.png 1024w"
 loading="lazy"
 alt="lsblk -f 结果"
 class="gallery-image"
@@ -3648,7 +3875,7 @@ data-flex-basis="1588px"
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/arch_install/imgs/DiskPartition1.png"
 width="950"
 height="130"
-srcset="https://a-moment096.github.io/posts/arch_install/imgs/DiskPartition1_hu_a9fbdaea39c39ce7.png 480w, https://a-moment096.github.io/posts/arch_install/imgs/DiskPartition1_hu_bdf85989c95534d3.png 1024w"
+srcset="https://a-moment096.github.io/posts/arch_install/imgs/DiskPartition1_hu_160c786cbefe897b.png 480w, https://a-moment096.github.io/posts/arch_install/imgs/DiskPartition1_hu_86f338df56606e0b.png 1024w"
 loading="lazy"
 alt="新的分区结果"
 class="gallery-image"
@@ -3659,7 +3886,7 @@ data-flex-basis="1753px"
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/arch_install/imgs/DiskFormat.png"
 width="952"
 height="382"
-srcset="https://a-moment096.github.io/posts/arch_install/imgs/DiskFormat_hu_9cd10e885e3f8544.png 480w, https://a-moment096.github.io/posts/arch_install/imgs/DiskFormat_hu_250051301533719d.png 1024w"
+srcset="https://a-moment096.github.io/posts/arch_install/imgs/DiskFormat_hu_e121748a320fba84.png 480w, https://a-moment096.github.io/posts/arch_install/imgs/DiskFormat_hu_4e8305f1e1271e6b.png 1024w"
 loading="lazy"
 alt="分区格式化"
 class="gallery-image"
@@ -3674,7 +3901,7 @@ data-flex-basis="598px"
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/arch_install/imgs/Installation.png"
 width="1282"
 height="875"
-srcset="https://a-moment096.github.io/posts/arch_install/imgs/Installation_hu_923ed015f5e8ee1c.png 480w, https://a-moment096.github.io/posts/arch_install/imgs/Installation_hu_2ada90a77a96a96.png 1024w"
+srcset="https://a-moment096.github.io/posts/arch_install/imgs/Installation_hu_b4ed61063e36ee7f.png 480w, https://a-moment096.github.io/posts/arch_install/imgs/Installation_hu_3d005f445af7eba6.png 1024w"
 loading="lazy"
 alt="安装界面"
 class="gallery-image"
@@ -3687,7 +3914,7 @@ data-flex-basis="351px"
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/arch_install/imgs/AfterInstall.png"
 width="1282"
 height="875"
-srcset="https://a-moment096.github.io/posts/arch_install/imgs/AfterInstall_hu_e317c7d974aee116.png 480w, https://a-moment096.github.io/posts/arch_install/imgs/AfterInstall_hu_bb8c85132c748127.png 1024w"
+srcset="https://a-moment096.github.io/posts/arch_install/imgs/AfterInstall_hu_a09856a788793695.png 480w, https://a-moment096.github.io/posts/arch_install/imgs/AfterInstall_hu_3c35d008680637fe.png 1024w"
 loading="lazy"
 alt="安装完成"
 class="gallery-image"
@@ -3704,7 +3931,7 @@ data-flex-basis="351px"
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/arch_install/imgs/Chroot.png"
 width="297"
 height="73"
-srcset="https://a-moment096.github.io/posts/arch_install/imgs/Chroot_hu_1e2ac4412cf332e5.png 480w, https://a-moment096.github.io/posts/arch_install/imgs/Chroot_hu_f871e9a622e51ab2.png 1024w"
+srcset="https://a-moment096.github.io/posts/arch_install/imgs/Chroot_hu_8fbf951ac932f1bb.png 480w, https://a-moment096.github.io/posts/arch_install/imgs/Chroot_hu_a9d4f17fc95c185e.png 1024w"
 loading="lazy"
 alt="chroot 之后"
 class="gallery-image"
@@ -3761,7 +3988,7 @@ data-flex-basis="976px"
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/arch_install/imgs/KDE.png"
 width="2055"
 height="1228"
-srcset="https://a-moment096.github.io/posts/arch_install/imgs/KDE_hu_26b0b26ff0c6bd3.png 480w, https://a-moment096.github.io/posts/arch_install/imgs/KDE_hu_27cfeb358a561524.png 1024w"
+srcset="https://a-moment096.github.io/posts/arch_install/imgs/KDE_hu_281af38eee2f8bc4.png 480w, https://a-moment096.github.io/posts/arch_install/imgs/KDE_hu_8c716bb11b939391.png 1024w"
 loading="lazy"
 alt="KDE Plasma 桌面环境"
 class="gallery-image"
@@ -3790,7 +4017,7 @@ data-flex-basis="401px"
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/arch_install/imgs/alacritty_font.png"
 width="304"
 height="99"
-srcset="https://a-moment096.github.io/posts/arch_install/imgs/alacritty_font_hu_889e7bde4bf4dbc5.png 480w, https://a-moment096.github.io/posts/arch_install/imgs/alacritty_font_hu_6802c400800e5e2b.png 1024w"
+srcset="https://a-moment096.github.io/posts/arch_install/imgs/alacritty_font_hu_a3b07131812e05bf.png 480w, https://a-moment096.github.io/posts/arch_install/imgs/alacritty_font_hu_e2a7dfd664a9f427.png 1024w"
 loading="lazy"
 alt="奇怪的字体"
 class="gallery-image"
@@ -3801,7 +4028,7 @@ data-flex-basis="736px"
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/arch_install/imgs/alacritty_fc.png"
 width="429"
 height="441"
-srcset="https://a-moment096.github.io/posts/arch_install/imgs/alacritty_fc_hu_d477b62ca02ff625.png 480w, https://a-moment096.github.io/posts/arch_install/imgs/alacritty_fc_hu_3c77fd6b7ff550e8.png 1024w"
+srcset="https://a-moment096.github.io/posts/arch_install/imgs/alacritty_fc_hu_73434397be4cb22d.png 480w, https://a-moment096.github.io/posts/arch_install/imgs/alacritty_fc_hu_90d0163909e5b392.png 1024w"
 loading="lazy"
 alt="alt text"
 class="gallery-image"
