@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Phase Field on A Moment's Rest</title><link>https://a-moment096.github.io/categories/phase-field/</link><description>Recent content in Phase Field on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><atom:link href="https://a-moment096.github.io/categories/phase-field/index.xml" rel="self" type="application/rss+xml"/><item><title>文献阅读 - Wang-Jin-Khachaturyan2002</title><link>https://a-moment096.github.io/posts/wang-jin-khachaturyan2002/</link><pubDate>Sat, 15 Nov 2025 23:25:19 +0800</pubDate><guid>https://a-moment096.github.io/posts/wang-jin-khachaturyan2002/</guid><description>&lt;img src="https://a-moment096.github.io/posts/PF_Papers/Nev_Alice-2.jpg" alt="Featured image of post 文献阅读 - Wang-Jin-Khachaturyan2002" /&gt;&lt;p&gt;&lt;em&gt;这篇文章算是他们三个人的工作的总结，发在了 J. Appl. Phys. 上，我其实很早就看过这篇，但是当时看得匆忙，一知半解，这次仔细看看&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Phase Field on A Moment's Rest</title><link>https://a-moment096.github.io/categories/phase-field/</link><description>Recent content in Phase Field on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh</language><atom:link href="https://a-moment096.github.io/categories/phase-field/index.xml" rel="self" type="application/rss+xml"/><item><title>文献阅读 - Wang-Jin-Khachaturyan2002</title><link>https://a-moment096.github.io/posts/wang-jin-khachaturyan2002/</link><pubDate>Sat, 15 Nov 2025 23:25:19 +0800</pubDate><guid>https://a-moment096.github.io/posts/wang-jin-khachaturyan2002/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post 文献阅读 - Wang-Jin-Khachaturyan2002" /&gt;&lt;p&gt;&lt;em&gt;这篇文章算是他们三个人的工作的总结，发在了 J. Appl. Phys. 上，我其实很早就看过这篇，但是当时看得匆忙，一知半解，这次仔细看看&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;图图还是 &lt;a class="link" href="https://x.com/Neve_AI" target="_blank" rel="noopener"
-&gt;&lt;strong&gt;Neve_AI&lt;/strong&gt;&lt;/a&gt; 绘制的 AI 图来的，歪头银发小妹妹真的好可爱呀~~&lt;/em&gt;&lt;/p&gt;
+ &gt;&lt;strong&gt;Neve_AI&lt;/strong&gt;&lt;/a&gt; 绘制的 AI 图来的，歪头银发小妹妹真的好可爱呀~~&lt;/em&gt;&lt;/p&gt;
 $$
 \gdef\misfit#1{\varepsilon_{#1}^0(\mathbf{r})}
 \gdef\eigen#1{\varepsilon_{#1}^*0*(\mathbf{r})}
@@ -18,7 +18,7 @@ $$
 $$&lt;p&gt;弹性能由 KS 理论可得：&lt;/p&gt;
 $$
 \begin{align*}
-E^{\mathrm{el}} = &amp;\frac{1}{2}\int_V C_{ijkl}^0 \misfit{ij}\misfit{kl}\dd^3 r \\ &amp;- \avee{ij}\int_V C_{ijkl}^0 \misfit{kl}\dd^3 r + \frac{V}{2}C_{ijkl}^0 \avee{ij}\avee{kl} \\ &amp;- \frac{1}{2}\tilde{\int}\frac{\dd^3 k}{(2\pi)^3}n_i \tilde{\sigma}_{ij}^0(\mathbf{k})\Omega_{jk}(\mathbf{n})\tilde{\sigma}_{kl}^0(\mathbf{k})^* n_l,
+ E^{\mathrm{el}} = &amp;\frac{1}{2}\int_V C_{ijkl}^0 \misfit{ij}\misfit{kl}\dd^3 r \\ &amp;- \avee{ij}\int_V C_{ijkl}^0 \misfit{kl}\dd^3 r + \frac{V}{2}C_{ijkl}^0 \avee{ij}\avee{kl} \\ &amp;- \frac{1}{2}\tilde{\int}\frac{\dd^3 k}{(2\pi)^3}n_i \tilde{\sigma}_{ij}^0(\mathbf{k})\Omega_{jk}(\mathbf{n})\tilde{\sigma}_{kl}^0(\mathbf{k})^* n_l,
 \end{align*}
 $$&lt;p&gt;依旧，这里的 $\tilde{\int}$ 代表在去掉 $\mathbf{k} = \mathbf{0}$ 处 $(2\pi)^3/V$ 的倒空间体积后，在倒空间中的积分，而 $\mathbf{n} = \mathbf{k}/k$ 还是倒空间中点的方向。而 $\Omega_{ij}(\mathbf{n})$ 是格林方程张量，是 $\Omega^{-1}_{ij}(C^0_{ijkl}n_kn_l)$ 的逆张量。这里的 $C_{ijkl}^0$ 是弹性模量，可以把倒空间中的弹性应力和应变通过它连接起来，即 $\tilde{\sigma}_{ij}^{o}(\mathbf{k}) = C_{ijkl}\,\tilde{\varepsilon}_{kl}^{o}(\mathbf{k})$。公式中倒空间应力的星号代表复共轭。这个形式的自由能适用于应变控制下的边界条件。&lt;/p&gt;
 &lt;p&gt;在 KS 理论下的等效应变则可以用本征应变表达为：&lt;/p&gt;
@@ -183,9 +183,9 @@ $$&lt;p&gt;要处理结构不均匀性，可以设置他们的不均匀部分的
 &lt;li&gt;自己写一写这个力学求解器，自己不写怎么知道它怎么起效果的呢？（虽然肉眼可见地难）&lt;/li&gt;
 &lt;li&gt;依旧，学习如何像大佬一样玩弄公式&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;论文阅读环节也许会暂时到此为止，因为下一篇大概是读书笔记（ Toshio Mura 所著的 &lt;em&gt;Micromechanics of Defects in Solids&lt;/em&gt;）。我大概也许能从中刨出所谓的 KS 理论的真身（又或许需要再搭配几篇文章）。然后可能我会考虑用亲爱的 Python 来实现这个算法。&lt;/p&gt;</description></item><item><title>文献阅读 - Jin-Wang-Khachaturyan2001</title><link>https://a-moment096.github.io/posts/jin-wang-khachaturyan2001/</link><pubDate>Thu, 23 Oct 2025 23:25:19 +0800</pubDate><guid>https://a-moment096.github.io/posts/jin-wang-khachaturyan2001/</guid><description>&lt;img src="https://a-moment096.github.io/posts/PF_Papers/Nev_Alice.jpg" alt="Featured image of post 文献阅读 - Jin-Wang-Khachaturyan2001" /&gt;&lt;p&gt;&lt;em&gt;Jin，Wang 和 Khachaturyan 等人在 01 年的时候于 Appl. Phys. Lett. 发表了这篇文章（快报），应该是自此开创了相场的微弹性力学理论。今天就读读它，（尝试）以此为起点学习这个理论吧。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;论文阅读环节也许会暂时到此为止，因为下一篇大概是读书笔记（ Toshio Mura 所著的 &lt;em&gt;Micromechanics of Defects in Solids&lt;/em&gt;）。我大概也许能从中刨出所谓的 KS 理论的真身（又或许需要再搭配几篇文章）。然后可能我会考虑用亲爱的 Python 来实现这个算法。&lt;/p&gt;</description></item><item><title>文献阅读 - Jin-Wang-Khachaturyan2001</title><link>https://a-moment096.github.io/posts/jin-wang-khachaturyan2001/</link><pubDate>Thu, 23 Oct 2025 23:25:19 +0800</pubDate><guid>https://a-moment096.github.io/posts/jin-wang-khachaturyan2001/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post 文献阅读 - Jin-Wang-Khachaturyan2001" /&gt;&lt;p&gt;&lt;em&gt;Jin，Wang 和 Khachaturyan 等人在 01 年的时候于 Appl. Phys. Lett. 发表了这篇文章（快报），应该是自此开创了相场的微弹性力学理论。今天就读读它，（尝试）以此为起点学习这个理论吧。&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;图图还是 &lt;a class="link" href="https://x.com/Neve_AI" target="_blank" rel="noopener"
-&gt;&lt;strong&gt;Neve_AI&lt;/strong&gt;&lt;/a&gt; 绘制的 AI 图来的，真的好可爱呀~~&lt;/em&gt;&lt;/p&gt;
+ &gt;&lt;strong&gt;Neve_AI&lt;/strong&gt;&lt;/a&gt; 绘制的 AI 图来的，真的好可爱呀~~&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id="研究背景"&gt;研究背景
 &lt;/h2&gt;&lt;p&gt;这个理论建立的原因是因为在载荷下对包含裂纹、孔隙的材料进行力学求解时几乎没法得到数学解析解，这主要是因为很多材料都是各向异性的多晶，而材料里的各种复杂缺陷也很难描述，只能用数值计算的方法对材料的真实力学状态进行求解。而相场法正好能解决一些材料的单/多晶问题，如果能用它再解一下材料内部的力学状态就好了。这就引出了本文的主要内容。&lt;/p&gt;
 &lt;h2 id="神秘-ks-理论"&gt;神秘 KS 理论
@@ -193,22 +193,30 @@ $$&lt;p&gt;要处理结构不均匀性，可以设置他们的不均匀部分的
 &lt;h3 id="均匀非均匀应变"&gt;均匀/非均匀应变
 &lt;/h3&gt;&lt;p&gt;这里解释一下什么是均匀和非均匀的应变，如图&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;：&lt;/p&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style="text-align: center"&gt;均匀 Homogeneous&lt;/th&gt;
-&lt;th style="text-align: center"&gt;非均匀 Heterogeneous&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/PF_Papers/Homogeneous-strain-JWK2001.png"
-loading="lazy"
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th style="text-align: center"&gt;均匀 Homogeneous&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;非均匀 Heterogeneous&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;&lt;img src="posts/PF_Papers/Homogeneous-strain-JWK2001.png"
+	
+	
+	loading="lazy"
+	
+	
 &gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/PF_Papers/Heterogeneous-strain-JWK2001.png"
-loading="lazy"
+ &lt;td style="text-align: center"&gt;&lt;img src="posts/PF_Papers/Heterogeneous-strain-JWK2001.png"
+	
+	
+	loading="lazy"
+	
+	
 &gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h3 id="吓人公式"&gt;吓人公式
 &lt;/h3&gt;&lt;p&gt;这个理论给出了应变能泛函和应力分布的准确解，其中应力为：&lt;/p&gt;
@@ -221,7 +229,7 @@ $$&lt;p&gt;这个公式相当吓人，符号很多…… 其中的积分号带�
 &lt;/p&gt;
 $$
 \begin{align*}
-\tilde{\epsilon}_{ij}^{0}(\mathbf{k}) &amp;= \int_{V} \epsilon_{ij}^{0}(\mathbf{r})\, e^{-i\mathbf{k}\cdot\mathbf{r}}\, d^{3}r\\
+\tilde{\epsilon}_{ij}^{0}(\mathbf{k}) &amp;= \int_{V} \epsilon_{ij}^{0}(\mathbf{r})\, e^{-i\mathbf{k}\cdot\mathbf{r}}\, d^{3}r\\ 
 \epsilon^{o}_{ij} &amp;= \frac{1}{V}\int_{V}\epsilon^{o}_{ij}(\mathbf{r})\,\mathrm{d}^3r
 \end{align*}
 $$&lt;p&gt;我们来看这个公式，首先应力分布是一个标量场，自然是用弹性模量 “乘以” 材料本来就有的应变产生的张量 （其实是缩并），再加上一个外加的应力。这里的 $C_{ijkl}$ 没啥问题，重点在于怎么计算后面的应变张量。可以看到这个应变由三个部分组成，一个复杂的倒空间积分结果，减掉上面讲的那个宏观一致而微观不一致的本征应变 $\epsilon_{kl}^{o}(\mathbf{r})$，再加上这个应变的平均值。&lt;/p&gt;
@@ -298,7 +306,7 @@ $$&lt;p&gt;假如把 Allen-Cahn 形式的方程里的能量和本征应变用新
 &lt;ol&gt;
 &lt;li id="fn:1"&gt;
 &lt;p&gt;图片来自：&lt;a class="link" href="https://earth.sdsu.edu/visualstructure/vss/htm_hlp/hom_het.htm" target="_blank" rel="noopener"
-&gt;Visualizing Strain&lt;/a&gt;&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+ &gt;Visualizing Strain&lt;/a&gt;&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:2"&gt;
 &lt;p&gt;A. G. Khachaturyan, Fiz. Tverd. Tela &lt;strong&gt;8&lt;/strong&gt;, 2710 (1966); Sov. Phys. Solid State &lt;strong&gt;8&lt;/strong&gt;, 2163 (1967); A. G. Khachaturyan and G. A. Shatalov, Sov. Phys. JETP &lt;strong&gt;29&lt;/strong&gt;, 557 (1969); A. G. Khachaturyan, &lt;em&gt;Theory of Structural Transformations in Solids&lt;/em&gt; (Wiley, New York, 1983).&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
@@ -313,9 +321,9 @@ $$&lt;p&gt;假如把 Allen-Cahn 形式的方程里的能量和本征应变用新
 &lt;p&gt;Y. M. Jin, A. Artemev, and A. G. Khachaturyan, Acta Mater. &lt;strong&gt;49&lt;/strong&gt;, 2309 (2001).&amp;#160;&lt;a href="#fnref:5" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</description></item><item><title>文献阅读 - Nestler1999</title><link>https://a-moment096.github.io/posts/nestler1999/</link><pubDate>Wed, 22 Oct 2025 18:25:19 +0800</pubDate><guid>https://a-moment096.github.io/posts/nestler1999/</guid><description>&lt;img src="https://a-moment096.github.io/posts/PF_Papers/Nev_Alice.jpg" alt="Featured image of post 文献阅读 - Nestler1999" /&gt;&lt;p&gt;&lt;em&gt;Nestler 在他 1999 年的这篇文章里进一步介绍了他在之前的文献里的模型情况，后面大家用的比较多的结果应该是界面能的部分，这里读（翻译）一下这篇文章，做个笔记。&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;</description></item><item><title>文献阅读 - Nestler1999</title><link>https://a-moment096.github.io/posts/nestler1999/</link><pubDate>Wed, 22 Oct 2025 18:25:19 +0800</pubDate><guid>https://a-moment096.github.io/posts/nestler1999/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post 文献阅读 - Nestler1999" /&gt;&lt;p&gt;&lt;em&gt;Nestler 在他 1999 年的这篇文章里进一步介绍了他在之前的文献里的模型情况，后面大家用的比较多的结果应该是界面能的部分，这里读（翻译）一下这篇文章，做个笔记。&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;图图是 &lt;a class="link" href="https://x.com/Neve_AI" target="_blank" rel="noopener"
-&gt;&lt;strong&gt;Neve_AI&lt;/strong&gt;&lt;/a&gt; 绘制的 AI 图来的，真可爱呀~~&lt;/em&gt;&lt;/p&gt;
+ &gt;&lt;strong&gt;Neve_AI&lt;/strong&gt;&lt;/a&gt; 绘制的 AI 图来的，真可爱呀~~&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id="研究背景"&gt;研究背景
 &lt;/h2&gt;&lt;p&gt;本文主要是在比较尖锐界面的渐进结果以及多相场模型的模拟结果。在前一篇文章 &lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt; 中已经建立了一个模型，通过使用广义 Cahn-Hoffman $\xi$-向量公式在窄界面条件下反推出了界面处的 Gibbs-Thomson-Herring 方程以及各向异性力在多相交接点的守恒。在另一篇文章 &lt;sup id="fnref:2"&gt;&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref"&gt;2&lt;/a&gt;&lt;/sup&gt; 里对多相 Allen-Cahn 方程做了渐进分析，确定了&lt;strong&gt;渐进奇异极限（大概就是网格多粗的时候公式就失效了）&lt;/strong&gt;；另外在另一篇文章 &lt;sup id="fnref:3"&gt;&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref"&gt;3&lt;/a&gt;&lt;/sup&gt; 里给出了这个模型的详细数值分析结果。&lt;/p&gt;
 &lt;p&gt;简单来说这篇文章是这个新模型的一个部分，用来验证渐进行为的。大佬就是牛逼，全部自引用，大概看了一下，这篇文章是篇幅最短的，还好我从这儿看的（逃）&lt;/p&gt;
@@ -397,106 +405,136 @@ $$&lt;p&gt;其中的 $\delta_{\alpha\beta\mu}$ 的选择是让沿 Gibbs 单纯�
 &lt;p&gt;H. Garcke, B. Nestler, B. Stoth, SIAM J. Appl. Math. 60 (1) (1999) 295&amp;#160;&lt;a href="#fnref:3" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&amp;#160;&lt;a href="#fnref1:3" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</description></item><item><title>多相场模型与巨势方程</title><link>https://a-moment096.github.io/posts/mpf_gp/</link><pubDate>Sun, 05 Jan 2025 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/mpf_gp/</guid><description>&lt;img src="https://a-moment096.github.io/posts/mpf_gp/ShoujouRei_MikitoP.png" alt="Featured image of post 多相场模型与巨势方程" /&gt;&lt;p&gt;&lt;em&gt;记录一下目前使用到的两个相场模型，包括它们的推导，假设和缺陷&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;</description></item><item><title>多相场模型与巨势方程</title><link>https://a-moment096.github.io/posts/mpf_gp/</link><pubDate>Sun, 05 Jan 2025 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/mpf_gp/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post 多相场模型与巨势方程" /&gt;&lt;p&gt;&lt;em&gt;记录一下目前使用到的两个相场模型，包括它们的推导，假设和缺陷&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图出自 &lt;a class="link" href="https://twitter.com/katorei_" target="_blank" rel="noopener"
-&gt;かとうれい&lt;/a&gt; 太太， 为 &lt;a class="link" href="https://space.bilibili.com/108833238" target="_blank" rel="noopener"
-&gt;Mikito P&lt;/a&gt; 所作的 &lt;a class="link" href="https://www.bilibili.com/list/ml1197098078?spm_id_from=333.1007.0.0&amp;amp;oid=27304533&amp;amp;bvid=BV1Rs411N7Aq" target="_blank" rel="noopener"
-&gt;少女レイ&lt;/a&gt; 的曲绘&lt;/em&gt;&lt;/p&gt;
+ &gt;かとうれい&lt;/a&gt; 太太， 为 &lt;a class="link" href="https://space.bilibili.com/108833238" target="_blank" rel="noopener"
+ &gt;Mikito P&lt;/a&gt; 所作的 &lt;a class="link" href="https://www.bilibili.com/list/ml1197098078?spm_id_from=333.1007.0.0&amp;amp;oid=27304533&amp;amp;bvid=BV1Rs411N7Aq" target="_blank" rel="noopener"
+ &gt;少女レイ&lt;/a&gt; 的曲绘&lt;/em&gt;&lt;/p&gt;
+
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
 &lt;style type="text/css"&gt;
 [data-scheme="dark"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
-border-bottom-color: var(--card-separator-color);
+ border-bottom-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
-border-color: var(--card-separator-color);
+ border-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-body {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info {
-border-top-color: var(--card-background);
+ border-top-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
-color: var(--card-text-color-tertiary);
+ color: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
-background-color: var(--card-separator-color);
+ background-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
-background-color: var(--accent-color);
+ background-color: var(--accent-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li {
-color: var(--card-text-color-main);
-border-top-color: var(--card-separator-color);
+ color: var(--card-text-color-main);
+ border-top-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc {
-text-shadow: -1px -1px 0 var(--body-background);
+ text-shadow: -1px -1px 0 var(--body-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:before {
-background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+ background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:after {
-background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc p {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
+ 
 [data-scheme="light"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="light"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
 &lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
+
+
 &lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=1334077117" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
 &lt;h2 id="简介"&gt;简介
 &lt;/h2&gt;&lt;p&gt;目前在做的 U-Nb 体系不连续析出的模拟，里面用到了这两个演化方程。之前一直没有仔细思考过这两个演化方程到底是什么来头，为什么这个体系适合使用这两个方程，导致现在想大概修改一下它们也无从下手。这里就作为笔记记录下这两个方程的推导方法，优缺点，以及我个人的一些看法吧。&lt;/p&gt;
 &lt;h2 id="多相场模型"&gt;多相场模型
 &lt;/h2&gt;&lt;h3 id="模型介绍"&gt;模型介绍
 &lt;/h3&gt;&lt;p&gt;多相场模型（或者说是界面场模型，差不多吧）是适用于非保守场的演化方程，来自于 &lt;a class="link" href="https://doi.org/10.1016/S0167-2789%2899%2900129-3" target="_blank" rel="noopener"
-&gt;I. Steinbach 和 F. Pezzolla 的文章&lt;/a&gt;。它的形式为：&lt;/p&gt;
+ &gt;I. Steinbach 和 F. Pezzolla 的文章&lt;/a&gt;。它的形式为：&lt;/p&gt;
 $$
 \frac{\partial \phi_\alpha}{\partial t} = -\frac{1}{\tilde{N}}\sum_{\beta \neq \alpha} \tilde{L}_{\alpha\beta}\left(\frac{\delta }{\delta \phi_\alpha} - \frac{\delta }{\delta \phi_\beta} \right)F,
 $$&lt;p&gt;这里的 $F$ 是自由能泛函，$\tilde{N}$ 是有效序参量的个数，$\tilde{L}_{\alpha\beta}$ 是有效序参量里两相之间的界面移动参数，而括号内的差则是表示一种算符，即&lt;/p&gt;
@@ -504,7 +542,7 @@ $$
 \left(\frac{\delta }{\delta \phi_\beta} - \frac{\delta }{\delta \phi_\alpha} \right)F = \frac{\delta F}{\delta \phi_\beta} - \frac{\delta F}{\delta \phi_\alpha}.
 $$&lt;p&gt;简单来说，这篇文章考虑了使用界面场来描述不同相之间的界面并且演化，而非使用相自身的序参量作为演化参量。虽然最后还是会落到使用相自身的序参量来演化，但是界面场的思想融入到来这个演化模型中。最主要的改进应该是在考虑界面场的同时，考虑每个点处的有效序参量，也就是不为 0 的相的序参量，这样一来还可以简化计算（虽然实际计算过程中也可以只用传统的所有相的计算就是了）。&lt;/p&gt;
 &lt;p&gt;平心而论，这篇文章写的逻辑结构并不是非常清晰，公式推导过程更是灾难，甚至符号都有一些问题，但是谁让这个模型好用呢？那就不多讲废话了，直接开始推导这个方程吧。要注意的是，这里的推导过程和作者的推导过程略有出入，同时也参考了 &lt;a class="link" href="https://doi.org/10.1016/j.commatsci.2023.112047" target="_blank" rel="noopener"
-&gt;Q. Huang et al 的这篇文章&lt;/a&gt;。&lt;/p&gt;
+ &gt;Q. Huang et al 的这篇文章&lt;/a&gt;。&lt;/p&gt;
 &lt;h3 id="模型推导"&gt;模型推导
 &lt;/h3&gt;&lt;p&gt;对多相问题而言，我们引入一个约束：每个点上的所有序参量之和为一常数 1。即：&lt;/p&gt;
 $$
@@ -518,33 +556,33 @@ F[\{\phi\},\{\nabla\phi\}] = \int_\Omega f\left(\{\phi\},\{\nabla\phi\}\right) \
 $$&lt;p&gt;即我们写出了其能量密度形式。我们现在希望能把上面引入的约束进一步引入这个能量泛函内，因此我们使用 Lagrange 乘数法，引入 Lagrange 乘数 $\lambda$ 到自由能密度中，则有：&lt;/p&gt;
 $$
 \begin{aligned}
-l \left(\left\{\phi \right\},\left\{\nabla\phi \right\}, \lambda\right) &amp; = f\left(\left\{\phi \right\},\left\{\nabla\phi \right\}\right) - \lambda\left( \sum_{\alpha = 1}^{N} \phi_\alpha - 1 \right); \\
-\mathcal{L}\left[\left\{\phi \right\},\left\{\nabla\phi \right\}, \lambda\right] &amp;= \int_\Omega l \,\mathrm{d}\omega.
+ l \left(\left\{\phi \right\},\left\{\nabla\phi \right\}, \lambda\right) &amp; = f\left(\left\{\phi \right\},\left\{\nabla\phi \right\}\right) - \lambda\left( \sum_{\alpha = 1}^{N} \phi_\alpha - 1 \right); \\
+ \mathcal{L}\left[\left\{\phi \right\},\left\{\nabla\phi \right\}, \lambda\right] &amp;= \int_\Omega l \,\mathrm{d}\omega.
 \end{aligned}
 $$&lt;p&gt;然后我们令 $\mathcal{L}$ 对 $\phi_\alpha$ 做变分，得到：&lt;/p&gt;
 $$
 \begin{aligned}
-\frac{\delta \mathcal{L}}{\delta \phi_\alpha} &amp; = \frac{\partial l}{\partial \phi_\alpha} - \nabla \cdot \frac{\partial l}{\partial \nabla \phi_\alpha} \\
-&amp; = \frac{\partial f}{\partial \phi_\alpha} - \nabla \cdot \frac{\partial f}{\partial \nabla \phi_\alpha} - \lambda \\
-&amp; = \frac{\delta F}{\delta \phi_\alpha} - \lambda .
-\end{aligned}
+ \frac{\delta \mathcal{L}}{\delta \phi_\alpha} &amp; = \frac{\partial l}{\partial \phi_\alpha} - \nabla \cdot \frac{\partial l}{\partial \nabla \phi_\alpha} \\
+ &amp; = \frac{\partial f}{\partial \phi_\alpha} - \nabla \cdot \frac{\partial f}{\partial \nabla \phi_\alpha} - \lambda \\
+ &amp; = \frac{\delta F}{\delta \phi_\alpha} - \lambda .
+ \end{aligned}
 $$&lt;p&gt;此时我们应用所谓的 “Relaxation Ansatz”，即这个变分导数值为 $\phi_\alpha$ 的演化速率，即：&lt;/p&gt;
 $$
 \begin{aligned}
-\frac{\partial \phi_\alpha}{\partial t} &amp;= -\frac{\delta \mathcal{L}}{\delta \phi_\alpha}\\
-&amp;= -\frac{\delta F}{\delta \phi_\alpha} + \lambda
-\end{aligned}
+ \frac{\partial \phi_\alpha}{\partial t} &amp;= -\frac{\delta \mathcal{L}}{\delta \phi_\alpha}\\
+ &amp;= -\frac{\delta F}{\delta \phi_\alpha} + \lambda
+ \end{aligned}
 $$&lt;p&gt;则根据上面的约束条件，我们能解出 $\lambda$ 为：&lt;/p&gt;
 $$
-\lambda = \frac{1}{N} \sum_{\alpha = 1}^{N} \frac{\delta F}{\delta \phi_\alpha}
+ \lambda = \frac{1}{N} \sum_{\alpha = 1}^{N} \frac{\delta F}{\delta \phi_\alpha}
 $$&lt;p&gt;此时将 $\lambda$ 带入应用 “Relaxation Ansatz” 后的变分结果中，得到：&lt;/p&gt;
 $$
 \begin{aligned}
-\frac{\partial \phi_\alpha}{\partial t} &amp;= -\frac{\delta F}{\delta \phi_\alpha} + \frac{1}{N} \sum_{\beta = 1}^{N} \frac{\delta F}{\delta \phi_\beta} \\
-&amp;= -\frac{N-1}{N} \frac{\delta F}{\delta \phi_\alpha} + \frac{1}{N} \sum_{\beta = 1}^{N} \frac{\delta F}{\delta \phi_\beta} - \frac{\delta F}{\delta \phi_\alpha} \\
-&amp;= -\frac{N-1}{N} \frac{\delta F}{\delta \phi_\alpha} + \frac{1}{N} \sum_{\beta \neq \alpha} \frac{\delta F}{\delta \phi_\beta} \\
-&amp;= - \frac{1}{N} \sum_{\beta \neq \alpha} \left( \frac{\delta }{\delta \phi_\alpha} -\frac{\delta }{\delta \phi_\beta} \right)F \\
-\end{aligned}
+ \frac{\partial \phi_\alpha}{\partial t} &amp;= -\frac{\delta F}{\delta \phi_\alpha} + \frac{1}{N} \sum_{\beta = 1}^{N} \frac{\delta F}{\delta \phi_\beta} \\
+ &amp;= -\frac{N-1}{N} \frac{\delta F}{\delta \phi_\alpha} + \frac{1}{N} \sum_{\beta = 1}^{N} \frac{\delta F}{\delta \phi_\beta} - \frac{\delta F}{\delta \phi_\alpha} \\
+ &amp;= -\frac{N-1}{N} \frac{\delta F}{\delta \phi_\alpha} + \frac{1}{N} \sum_{\beta \neq \alpha} \frac{\delta F}{\delta \phi_\beta} \\
+ &amp;= - \frac{1}{N} \sum_{\beta \neq \alpha} \left( \frac{\delta }{\delta \phi_\alpha} -\frac{\delta }{\delta \phi_\beta} \right)F \\
+ \end{aligned}
 $$&lt;p&gt;最后，我们考虑到由于我们只考虑有效序参量，即不为 0 的序参量，这里的 $N$ 可以修改为 $\tilde{N}$；括号内属于对两相间的界面场的驱动力描述，对于不同的两相驱动力，驱动力大小应该是不同的，所以我们给驱动力前面乘以和两相相关的界面移动参数，$\tilde{L}_{\alpha\beta}$。这样一来结果为：&lt;/p&gt;
 $$
 \frac{\partial \phi_\alpha}{\partial t} = -\frac{1}{\tilde{N}}\sum_{\beta \neq \alpha} \tilde{L}_{\alpha\beta}\left(\frac{\delta }{\delta \phi_\alpha} - \frac{\delta }{\delta \phi_\beta} \right)F,
@@ -558,7 +596,7 @@ $$
 \frac{\partial \phi_\alpha}{\partial t} = \frac{\sum_\beta{L_{\alpha\beta}}}{\sum_\xi\sum_\zeta L_{\xi\zeta}}{\sum_\xi\sum_{\zeta\neq\beta} L_{\xi\zeta}\left( \frac{\delta }{\delta \phi_\beta} -\frac{\delta }{\delta \phi_\zeta} \right)F}
 $$&lt;p&gt;虽然严谨，但是难以理解，而当考虑到这里的移动性参数可以直接集成在 $\tilde{L}_{\alpha\beta}$ 和 $\tilde{N}$ 后，整个式子都会变得更简洁，物理意义也更加明确。&lt;/p&gt;
 &lt;p&gt;另外，在 &lt;a class="link" href="https://doi.org/10.1016/S0167-2789%2899%2900129-3" target="_blank" rel="noopener"
-&gt;I. Steinbach 和 F. Pezzolla 的文章&lt;/a&gt; 里，$\left( \frac{\delta }{\delta \phi_\alpha} -\frac{\delta }{\delta \phi_\beta} \right)F$ 被解释为界面场 $\psi_{\alpha\beta}$，这也是为什么这个模型叫做界面场模型。而这篇文章中的推导过程里，如果考虑使用界面场进行推导的话，可以绕过求取 $\lambda$ 的显式表达，因为这个 $\lambda$ 对所有相都是相同的，而界面场这样差值的定义方式注定会消去 $\lambda$ 的影响。&lt;/p&gt;
+ &gt;I. Steinbach 和 F. Pezzolla 的文章&lt;/a&gt; 里，$\left( \frac{\delta }{\delta \phi_\alpha} -\frac{\delta }{\delta \phi_\beta} \right)F$ 被解释为界面场 $\psi_{\alpha\beta}$，这也是为什么这个模型叫做界面场模型。而这篇文章中的推导过程里，如果考虑使用界面场进行推导的话，可以绕过求取 $\lambda$ 的显式表达，因为这个 $\lambda$ 对所有相都是相同的，而界面场这样差值的定义方式注定会消去 $\lambda$ 的影响。&lt;/p&gt;
 &lt;p&gt;最后，我们指出，这个演化方程并没有对自由能 $F$ 做出任何的约束，因此该模型适用性非常广。事实上，多相场模型的应用极为广泛，经常可以在近年的相场模拟文章中见到。所以，尽管看起来这个模型的推导（在我看来，也许是我的问题）并不足够可靠，但是它很好用。是的，很好用。&lt;/p&gt;
 &lt;h2 id="巨势方程"&gt;巨势方程
 &lt;/h2&gt;&lt;h3 id="模型介绍-1"&gt;模型介绍
@@ -627,7 +665,7 @@ $$&lt;p&gt;这里，相浓度前的 $\phi_\alpha$，相分数，就会引发问�
 &lt;/h2&gt;&lt;p&gt;其实很不好意思地说，这篇内容实际上只是对这两个公式做了一些简单的推导，而后面的解释部分我自认为写的并不好。好像所有的解释最后都要归结到一个结论上：好用。这个点实际上在考虑纯理论时是没有什么用处的：我需要精准的理论来描述物理现象，结果你却告诉我 XXX 然后 YYY 最后得到这些东西，它的理论背景可能不够强，但是它好用就够了。我相信这样的解释是很难真正地打动某个人的心的。&lt;/p&gt;
 &lt;p&gt;然而，好用其实就已经够了，因为这些理论到头来本就是为了能够帮助我们在某个假设的基础上能够更好地做模拟。在这里，这个基础假设可以说是 relaxation ansatz 以及等势假设。首先第一个假设能够让我们的体系从一个非平衡态&lt;em&gt;演化&lt;/em&gt;到平衡态，而不是只能直接地给出一个平衡态下的数量场，而第二个假设则能够解决相场法中界面上物质分配的问题，让演化能够得以在多相的情况下正常进行下去。这些假设，不论从过程还是结果来看，都是很有必要的。而除了这些假设外，（在不考虑我自己推导过程不够严谨的情况下，）推导过程都是尽可能严谨的。得到的结果，也正如上面所说，好用。&lt;/p&gt;
 &lt;p&gt;上面这一大段，我希望能传达到的意思就是，这些公式已经在较少的叫宽松的假设的基础上用尽可能严谨的逻辑推导出了可用，好用的结果，那么作为使用这些公式的人来讲，它好用就够了，坚持实用主义也许是更实际的做法。当然了，阅读本段的您也可以认为是我对自己的推导过程没有什么自信的开脱就是了，嘿嘿嘿~&lt;/p&gt;
-&lt;p&gt;那么最后，祝您生活愉快~&lt;/p&gt;</description></item><item><title>Phase Field: 相场模拟学习笔记 V</title><link>https://a-moment096.github.io/posts/pf_tutorial_5/</link><pubDate>Wed, 25 Dec 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/pf_tutorial_5/</guid><description>&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/Skadi.png" alt="Featured image of post Phase Field: 相场模拟学习笔记 V" /&gt;&lt;p&gt;&lt;em&gt;其实这节就是换成 Allen-Cahn 方程，然后多个变量而已，主要是俺不想实现 Voronoi 结构（逃&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;那么最后，祝您生活愉快~&lt;/p&gt;</description></item><item><title>Phase Field: 相场模拟学习笔记 V</title><link>https://a-moment096.github.io/posts/pf_tutorial_5/</link><pubDate>Wed, 25 Dec 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/pf_tutorial_5/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post Phase Field: 相场模拟学习笔记 V" /&gt;&lt;p&gt;&lt;em&gt;其实这节就是换成 Allen-Cahn 方程，然后多个变量而已，主要是俺不想实现 Voronoi 结构（逃&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id="简介"&gt;简介
 &lt;/h2&gt;&lt;p&gt;上一部分我们以调幅分解为基础讨论了浓度场在 Cahn-Hilliard 方程下的演化过程。对相场方法而言，另一个无法绕开的演化方程则是针对非保守场变量的 Allen-Cahn 方程。这一部分我们将对晶粒长大过程进行分析，了解 Allen-Cahn 方程并使用它进行晶粒长大过程的模拟。&lt;/p&gt;
 &lt;h2 id="晶粒长大"&gt;晶粒长大
@@ -657,33 +695,43 @@ $$&lt;p&gt;这里需要运用我们已经了解到的泛函导数的相关内容
 &lt;details&gt;&lt;summary&gt;关于 A-C 方程的一些碎碎念&lt;/summary&gt;另外，这个形式的方程非常常见，或者说，水非常深。几乎可以在物理学的许多领域见到这个方程，而对这个方程的描述都各有千秋。有人称其为 Landau–Khalatnikov 方程（描述磁性），有人称之为 Model A（界面动力学，[Theory of dynamic critical phenomena](https://doi.org/10.1103/RevModPhys.49.435)），还有一些奇奇怪怪的名称，但是这些文章几乎都没有对这个方程做出详细的解释。也许这些方程是从某些物理直觉中得到的？又或者这些这些方程有其更深刻的数学/物理背景，但是这些我也无从得知。&lt;/details&gt;
 &lt;h3 id="能量构造"&gt;能量构造
 &lt;/h3&gt;&lt;p&gt;本模拟使用的能量模型来自&lt;a class="link" href="https://doi.org/10.1016/S1359-6454%2896%2900200-5" target="_blank" rel="noopener"
-&gt;D. Fan 与 LQ. Chen 的文章&lt;/a&gt;，其构造如下：
+ &gt;D. Fan 与 LQ. Chen 的文章&lt;/a&gt;，其构造如下：
 &lt;/p&gt;
 $$
-\begin{align*}
-F &amp;= \int_\omega f_{bulk} + f_{int} \,\mathrm{d}\Omega;\\
-f_{bulk}\left(\eta_0,\eta_1,\cdots,\eta_N\right) &amp;= \sum_{i}^{N}\left( -\frac{A}{2}\eta_i^2 + \frac{B}{4}\eta_i^4 \right) + \sum_{i}^{N}\sum_{j\neq{}i}^{N}\eta_i^2\eta_j^2;\\
-f_{int}\left(\nabla\eta_0,\nabla\eta_1,\cdots,\nabla\eta_N\right) &amp;= \sum_{i}^{N}\frac{\kappa_i}{2} \left| \nabla \eta_i \right|^2.
-\end{align*}
+ \begin{align*}
+ F &amp;= \int_\omega f_{bulk} + f_{int} \,\mathrm{d}\Omega;\\
+ f_{bulk}\left(\eta_0,\eta_1,\cdots,\eta_N\right) &amp;= \sum_{i}^{N}\left( -\frac{A}{2}\eta_i^2 + \frac{B}{4}\eta_i^4 \right) + \sum_{i}^{N}\sum_{j\neq{}i}^{N}\eta_i^2\eta_j^2;\\
+ f_{int}\left(\nabla\eta_0,\nabla\eta_1,\cdots,\nabla\eta_N\right) &amp;= \sum_{i}^{N}\frac{\kappa_i}{2} \left| \nabla \eta_i \right|^2.
+ \end{align*}
 $$&lt;p&gt;其中的界面能项我们不再赘述，因为它就是上一部分介绍过的能量而已，只不过这里要加上所有序参量的贡献而已。我们重点放在体能上。和上次相比，体能的部分变化很大，但是也有一些熟悉的部分。我们把这个体能重新整理一下：
 &lt;/p&gt;
 $$
-\begin{align}
-f_{bulk}&amp;= \sum_{i}^{N}\left( -\frac{A}{2}\eta_i^2 + \frac{B}{4}\eta_i^4 \right) + \sum_{i}^{N}\sum_{j\neq{}i}^{N}\eta_i^2\eta_j^2\\
-&amp;=\sum_{i}^{N}\left( -\frac{A}{2}\eta_i^2 + \frac{B}{4}\eta_i^4 \right) + \sum_{i}^{N}\eta_i^2 \sum_{j\neq{}i}^{N} \eta_j^2\\
-&amp;=\sum_{i}^{N}\left(\left( -\frac{A}{2}\eta_i^2 + \frac{B}{4}\eta_i^4 \right) + \eta_i^2 \sum_{j\neq{}i}^{N} \eta_j^2\right)\\
-&amp;=\sum_{i}^{N}\left( \left(-\frac{A}{2} + \sum_{j\neq{}i}^{N} \eta_j^2\right) \eta_i^2 + \frac{B}{4}\eta_i^4 \right)\\
-\end{align}
+ \begin{align}
+ f_{bulk}&amp;= \sum_{i}^{N}\left( -\frac{A}{2}\eta_i^2 + \frac{B}{4}\eta_i^4 \right) + \sum_{i}^{N}\sum_{j\neq{}i}^{N}\eta_i^2\eta_j^2\\
+ &amp;=\sum_{i}^{N}\left( -\frac{A}{2}\eta_i^2 + \frac{B}{4}\eta_i^4 \right) + \sum_{i}^{N}\eta_i^2 \sum_{j\neq{}i}^{N} \eta_j^2\\
+ &amp;=\sum_{i}^{N}\left(\left( -\frac{A}{2}\eta_i^2 + \frac{B}{4}\eta_i^4 \right) + \eta_i^2 \sum_{j\neq{}i}^{N} \eta_j^2\right)\\
+ &amp;=\sum_{i}^{N}\left( \left(-\frac{A}{2} + \sum_{j\neq{}i}^{N} \eta_j^2\right) \eta_i^2 + \frac{B}{4}\eta_i^4 \right)\\
+ \end{align}
 $$&lt;p&gt;
 上面第二个等号是由于对 $j (j\neq i)$ 的求和的部分与 $i$ 无关，我们可以把 $\eta_i^2$ 从二重求和中提出来， 然后第三个等号中把对 $i$ 的求和的部分提取合并，最后第四个等号里提出 $\eta_i^2$，把 $\sum_{j\neq{}i}^{N} \eta_j^2$ 作为系数和 $-\dfrac{A}{2}$ 合并。现在我们把目光放在求和里面的这个，关于 $\eta_i$ 的多项式。为简单起见，我们设 $A = B = 1$。下面是这个函数在 $\sum_{j\neq{}i}^{N} \eta_j^2 = 0$ 时候， 即 方程(1) 的第一项的图像（当然，这个假设不够合理，但是我们可以先看看）。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/img/double_well.png"
-loading="lazy"
-alt="双势阱？"
+	
+	
+	loading="lazy"
+	
+		alt="双势阱？"
+	
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;是我们很熟系的双势阱，但是这里有一些问题：序参量实际上不能小于0，也不应该大于1。如果我们只关注 0 到 1 之间的值，不难发现现在这个能量的最低点处在 $\eta = 1$ 的地方。这很合理：在其余的所有序参量（我们简称所有的 j ，对应的本个序参量则为 i）都为 0 的情况下，或者说在没有任何 j 的点，i 占据该点是理所应当的。考虑到每个序参量都是平权的，这说明了这个方程是符合体相内部的热力学要求的。接下来我们考察当这个求和项不为 0 的情况。j 求和的值的变化范围我们先设为 0 到 2。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/img/a03.png"
-loading="lazy"
-alt="j 的和为0.3时的图像"
+	
+	
+	loading="lazy"
+	
+		alt="j 的和为0.3时的图像"
+	
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;可以看到，当 j 不为 0 时，结果也是合理的，这里 i 的值也不在 1 处取到最小值，而是在 0 到 1 之间的区域取到最小值了。感兴趣的话您可以自行尝试绘制这里的图像，然后调整这些值，观察序参量-能量曲线的最低点位置。当然，我们也可以使用更数学一些的方式来研究这里的最低点取值情况，不过图像方法更加直观一些就是了。最后来简单描述一下表达式 (1) 的物理意义：将每个参量都赋予一个类势阱的能量，然后通过第二项的交叉作用将这些能量结合在一起。第二项的二重和即是其他参量对本参量的影响。&lt;/p&gt;
 &lt;h3 id="相场演化方程与扩散方程之间的关系"&gt;相场演化方程与扩散方程之间的关系
@@ -832,42 +880,62 @@ $$&lt;p&gt;这个形式，熟悉吗？如果去掉第二项，那么这个方程
 &lt;h2 id="结果"&gt;结果
 &lt;/h2&gt;&lt;p&gt;和上次一样，这里就贴一下几张截图。&lt;/p&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style="text-align: center"&gt;&lt;/th&gt;
-&lt;th style="text-align: center"&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/img/modified_5.png"
-loading="lazy"
-alt="第5步"
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th style="text-align: center"&gt;&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/img/modified_5.png"
+	
+	
+	loading="lazy"
+	
+		alt="第5步"
+	
+	
 &gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/img/modified_25.png"
-loading="lazy"
-alt="第25步"
+ &lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/img/modified_25.png"
+	
+	
+	loading="lazy"
+	
+		alt="第25步"
+	
+	
 &gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;第5步&lt;/td&gt;
-&lt;td style="text-align: center"&gt;第25步&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/img/modified_75.png"
-loading="lazy"
-alt="第75步"
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;第5步&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;第25步&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/img/modified_75.png"
+	
+	
+	loading="lazy"
+	
+		alt="第75步"
+	
+	
 &gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/img/modified_100.png"
-loading="lazy"
-alt="第100步"
+ &lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/img/modified_100.png"
+	
+	
+	loading="lazy"
+	
+		alt="第100步"
+	
+	
 &gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;第75步&lt;/td&gt;
-&lt;td style="text-align: center"&gt;第150步&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;第75步&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;第150步&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;可以看到，随着时间推进，小晶粒（中间红色部分）被大晶粒（蓝色部分）不断吞并。而且根据步数，可以看到一开始由于两个晶粒的体积近似，演化速率并不大；随着不断的演化，两个晶粒的体积差距越来越大，演化速率也变大了。这符合我们对晶粒长大过程的认知，小晶粒会非常快速地消失，而较大的晶粒则会演化地比较慢。&lt;/p&gt;
 &lt;h2 id="结语"&gt;结语
@@ -875,15 +943,20 @@ alt="第100步"
 &lt;p&gt;和上一个部分一样，对模型和模拟过程更深层的理解是离不开调整参数进行测试的。这两个案例都是比较简单的案例，可调的参数并不多，而且在模拟一开始的时候就已经有了参考的参数了，也不是面对的实际存在的体系，填入的数字的物理意义并没有很大，或者说是比较唯结果论的一些数据。在面对实际物理体系的时候，填参数这块儿是模拟过程最折磨的部分了。如何精确地控制这些参数，让他们配合起来形成一个符合物理特性，而且也能跑出合理结果，这也许是相场方法最麻烦的点。参数的可解释性经常会和参数的数值特性相悖，而能平衡二者的结果几乎都是经过精心设计的。总而言之，多调参数总没错。&lt;/p&gt;
 &lt;p&gt;那么这就是这个教程（自称）系列的最后一部分了。相场方法作为一种材料模拟方法，能做的东西非常多，但是其本身也有一定的限制。它最大的限制就是所谓的扩散界面，这样的界面解决了微分方程不好解的问题，但是也让这个方法很容易滑向物理意义不明确的道路，也经常会因为界面的存在而导致一些模拟发生数值失稳（即便引入界面常常就是希望能解决数值失稳的）。这些特点注定让相场成为一门比较复杂的交叉学科：需要对材料科学有深入的理解，对材料的物理特性有清晰的物理图像，对数值方法有清晰的认知，明白各种方法之间的优缺点选择合适的方法，最后还需要有一定的程序能力来支撑实现模拟。这也许也是相场复杂的地方吧。&lt;/p&gt;
 &lt;p&gt;相场方法并不是一个很新的模拟方法，但是它还有很大的发展空间。不论是比较传统的调幅分解的深入研究模拟，还是使用相场法研究固体力学、电磁学、流体力学这些更复杂的外场，又或者是开发新的程序软件来帮助进行相场模拟，甚至是使用机器学习来辅佐相场计算，这些都是相场正在发展的方向。这个系列的教程希望能够提供相场方法最基础的部分，比如相场的数学基础，程序基础等等。这些内容应该能够成为学习相场过程中比较重要的工具，以便于学习和发展更深层的更复杂的理论/实践。希望阅读本教程的您可以从中有所收获。&lt;/p&gt;
-&lt;p&gt;那么就是这样，最后祝您生活愉快，科研顺利~&lt;/p&gt;</description></item><item><title>Phase Field: 相场模拟学习笔记 IV</title><link>https://a-moment096.github.io/posts/pf_tutorial_4/</link><pubDate>Tue, 24 Dec 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/pf_tutorial_4/</guid><description>&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/Skadi.png" alt="Featured image of post Phase Field: 相场模拟学习笔记 IV" /&gt;&lt;p&gt;&lt;em&gt;终于，真的要做相场模拟了。先从最软的柿子，调幅分解开始吧&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;那么就是这样，最后祝您生活愉快，科研顺利~&lt;/p&gt;</description></item><item><title>Phase Field: 相场模拟学习笔记 IV</title><link>https://a-moment096.github.io/posts/pf_tutorial_4/</link><pubDate>Tue, 24 Dec 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/pf_tutorial_4/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post Phase Field: 相场模拟学习笔记 IV" /&gt;&lt;p&gt;&lt;em&gt;终于，真的要做相场模拟了。先从最软的柿子，调幅分解开始吧&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id="简介"&gt;简介
 &lt;/h2&gt;&lt;p&gt;所以，经过前面三个部分的学习，利用 C++ 进行相场模拟的所有前置几乎全部获得了：公式推导，编程基础，基础算法等，几乎全都拿到手了。这部分开始，我们就正式开始用 C++ 实现相场模拟。我们先从一个很经典且简单的例子开始：A-B 合金的调幅分解。&lt;/p&gt;
 &lt;h2 id="调幅分解"&gt;调幅分解
 &lt;/h2&gt;&lt;p&gt;所以什么是调幅分解？它有什么特殊的地方？为什么相场法的第一个例子是算这么个有点陌生的东西？我们一个一个来解答这些问题。&lt;/p&gt;
 &lt;p&gt;首先值得明确的是，调幅分解是一类相变过程，且这类过程非常适合使用相场法来计算其演化过程。作为相变，我们自然关心其相图和自由能曲线的情况。下面是一副调幅分解的示意图：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/img/energy_pd.jpg"
-loading="lazy"
-alt="调幅分解的相图与自由能曲线"
+	
+	
+	loading="lazy"
+	
+		alt="调幅分解的相图与自由能曲线"
+	
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;从图上可以看到，调幅分解下的自由能曲线十分特殊，呈现一种&lt;em&gt;双势阱&lt;/em&gt;的形貌。再观察这里的相图和自由能曲线，可以看到虚线部分对应于自由能曲线中比较平坦的区域。没错，这个点即为所谓的拐点（Spinodal Point），这也是调幅分解的英文 Spinodal Decomposition 中 “Spinodal” 的来由。由于调幅分解自由能曲线的特殊性，当自由能对成分的二阶偏导小于 0 时，如果成分正好出于混溶间隙里调幅线内，那么任何一点微小的成分扰动都会导致整个体系的稳定性被破坏，产生的自由能差（即所谓的相变驱动力）将增大并将体系演化至自由能曲线中“谷底”的位置，并形成所谓调幅分解的形貌。&lt;/p&gt;
 &lt;p&gt;调幅分解最特殊的地方在于，相场法这个方法几乎可以说是起源于调幅分解过程的。观察调幅分解的自由能曲线，它描述了一个中间态物质由于自身能量最小化的要求从而分散为两个不同组分的物质的过程。这个能量曲线将会是相场法这一计算方法的核心之一，意义在于在给出体系的体自由能描述的情况下，体自由能的最小化将会推动整个体系发生演化。Cahn 和 Hilliard 两人在 Ginzburg-Landau 自由能模型的基础上建立了用来描述调幅分解过程的自由能泛函，并推导出了对这个泛函的演化方程，这个演化方程即为所谓的 Cahn-Hilliard 方程。因此，从调幅分解入手开始了解相场法也许是最理想的选择了。&lt;/p&gt;
@@ -899,8 +972,13 @@ f_{int}\left(\nabla c \right) &amp;= \kappa \left|\nabla c \right| ^2. \\
 $$&lt;p&gt;
 其中，$F$ 即为体系的总能量，由两部分的能量密度积分构成，第一部分为体自由能 $f_{bulk}$，其图像为一个双势阱：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/img/AB_free_energy.png"
-loading="lazy"
-alt="体自由能密度函数图像，其中模型参数选择 A = 1"
+	
+	
+	loading="lazy"
+	
+		alt="体自由能密度函数图像，其中模型参数选择 A = 1"
+	
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;而第二部分则为界面能密度部分，这里采用界面能梯度内积的值。这个能量构造保证了体系有演化的趋势（由体自由能密度驱动），又保证了体系中存在稳定的相界面（由界面能提供，在存在界面区域（梯度不为 0 ）时提高能量从而迫使物质不倾向于汇集在界面处）。这样的总能 $F$ 构造是一类非常经典的构造方法，而能量密度的具体表达式则需要根据体系做更改。&lt;/p&gt;
 &lt;h3 id="演化方程"&gt;演化方程
@@ -920,8 +998,8 @@ $$
 J = - \nabla \frac{\delta F}{\delta c}.
 $$&lt;p&gt;
 但是考虑到体系内可能存在多种物质，这些物质对化学势均有贡献，反过来所有的化学势都会对某一单一成分组元的演化情况产生影响，因此应该考虑所有的化学势的影响。然后由于不同物质的化学势贡献存在不同，我们使用 $M_{ij}$ 来对这些贡献进行配平。由此，我们便拼凑出了上面的 Cahn-Hilliard 方程。上面的分析和推导过程参考了 &lt;a class="link" href="http://dx.doi.org/10.3934/era.2022143" target="_blank" rel="noopener"
-&gt;这篇 Review&lt;/a&gt; 和 &lt;a class="link" href="https://mogadalai.wordpress.com/2008/09/13/spinodal-decomposition-and-its-modelling-using-cahn-hilliard-equation/" target="_blank" rel="noopener"
-&gt;这篇博文&lt;/a&gt;。&lt;/p&gt;
+ &gt;这篇 Review&lt;/a&gt; 和 &lt;a class="link" href="https://mogadalai.wordpress.com/2008/09/13/spinodal-decomposition-and-its-modelling-using-cahn-hilliard-equation/" target="_blank" rel="noopener"
+ &gt;这篇博文&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;那么，顺着这个思路，要是不要求物质守恒，那么最简形式是什么样的呢？答案已经呼之欲出了，那就是下一节会提到的 Allen-Cahn 方程。也许有人发现，可以把这两个方程与扩散方程做比较。这些内容放在下一个部分吧，要不然没字数水了（）&lt;/p&gt;
 &lt;h2 id="问题分析"&gt;问题分析
 &lt;/h2&gt;&lt;p&gt;我们希望能模拟出调幅分解的过程，在二维条件下可以创建一个模拟域，规定其长宽后在其上每一个点赋予一个浓度 $c$，然后在每个点随机添加噪音来让初始浓度出现一个微小波动。随后我们便可以根据前面所列出的能量以及演化方程来演化该模拟域。考虑到该模拟需要保持物质守恒，我们采用周期性边界条件，即让最右端的点在取其右侧的点的时候反取到最左端的点，而最底端的点取其下方点时取到最上端的点，等。我们先从浓度 $c = 0.4$ 开始，考虑噪音大小为 $0.001$，处理边界条件时使用下标运算来保证获取的是在周期边界条件下的点。&lt;/p&gt;
@@ -1099,42 +1177,62 @@ $$&lt;p&gt;根据这个公式，我们需要先计算浓度的 Laplacian，然�
 &lt;h2 id="结果"&gt;结果
 &lt;/h2&gt;&lt;p&gt;输出的 &lt;code&gt;vtk&lt;/code&gt; 文件需要使用 &lt;em&gt;Paraview&lt;/em&gt; 进行可视化。如果程序无误，那么执行程序后输出的结果将会保存在程序所在文件夹下新创建的子文件夹 &lt;code&gt;result&lt;/code&gt; 中，里面应该是若干个 &lt;code&gt;vtk&lt;/code&gt; 文件。使用 Paraview 打开这些文件之后，则能看到整个体系的演化。这里贴出一些截图。&lt;/p&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style="text-align: center"&gt;&lt;/th&gt;
-&lt;th style="text-align: center"&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/img/Spinodal_5.png"
-loading="lazy"
-alt="alt text"
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th style="text-align: center"&gt;&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/img/Spinodal_5.png"
+	
+	
+	loading="lazy"
+	
+		alt="alt text"
+	
+	
 &gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/img/Spinodal_25.png"
-loading="lazy"
-alt="alt text"
+ &lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/img/Spinodal_25.png"
+	
+	
+	loading="lazy"
+	
+		alt="alt text"
+	
+	
 &gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;第5步&lt;/td&gt;
-&lt;td style="text-align: center"&gt;第25步&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/img/Spinodal_75.png"
-loading="lazy"
-alt="alt text"
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;第5步&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;第25步&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/img/Spinodal_75.png"
+	
+	
+	loading="lazy"
+	
+		alt="alt text"
+	
+	
 &gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/img/Spinodal_150.png"
-loading="lazy"
-alt="alt text"
+ &lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/img/Spinodal_150.png"
+	
+	
+	loading="lazy"
+	
+		alt="alt text"
+	
+	
 &gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;第75步&lt;/td&gt;
-&lt;td style="text-align: center"&gt;第150步&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;第75步&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;第150步&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id="总结"&gt;总结
 &lt;/h2&gt;&lt;p&gt;这部分内容相对而言应该是比较少的，因为只要分析好了所使用的能量模型，理解使用的演化方程之后，剩下的工作几乎全都是不断调试，根据调试的结果来观察不同的参数会对模拟结果造成什么样的影响。这里提供几个调参思路吧：&lt;/p&gt;
@@ -1146,7 +1244,7 @@ alt="alt text"
 &lt;li&gt;调整界面能参数。越大的界面能参数会导致越宽的相界面。而该参数太小时可能会发生数值不稳定的现象&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;可以参考这些描述调参，观察参数的影响。调参几乎是相场模拟中必不可少的一环。&lt;/p&gt;
-&lt;p&gt;那么，我们就下一节见吧。&lt;/p&gt;</description></item><item><title>Phase Field: 相场模拟学习笔记 III</title><link>https://a-moment096.github.io/posts/pf_tutorial_3/</link><pubDate>Mon, 23 Dec 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/pf_tutorial_3/</guid><description>&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/Skadi.png" alt="Featured image of post Phase Field: 相场模拟学习笔记 III" /&gt;&lt;p&gt;&lt;em&gt;接上一节内容, 这节会简单介绍 C++ 的一些语法知识, 然后用 C++ 实现一维传热方程的模拟。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;那么，我们就下一节见吧。&lt;/p&gt;</description></item><item><title>Phase Field: 相场模拟学习笔记 III</title><link>https://a-moment096.github.io/posts/pf_tutorial_3/</link><pubDate>Mon, 23 Dec 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/pf_tutorial_3/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post Phase Field: 相场模拟学习笔记 III" /&gt;&lt;p&gt;&lt;em&gt;接上一节内容, 这节会简单介绍 C++ 的一些语法知识, 然后用 C++ 实现一维传热方程的模拟。&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id="c一门高效的适宜科学计算的程序语言"&gt;C++：一门高效的，适宜科学计算的程序语言
 &lt;/h2&gt;&lt;p&gt;C++ 是一门经典的编程语言，于 1979 年由 Bjarne Stroustrup 设计，最初目的是为了成为更好的 C 语言，而后随着自身发展，成为了一门和 C 语言有许多相似之处，而又截然不同的一门语言。 C++ 支持多种编程范式，包括但不限于面向过程，面向对象，函数式，模板元编程等等。 其丰富的生态，高效的算法库以及&lt;em&gt;零成本抽象&lt;/em&gt;的理念让 C++ 极为适合进行各类科学运算。此外，C++ 的语法较为亲民，其多种编程范式也便于不同背景的开发者上手，故我们在这里引入 C++ 作为后续计算使用的程序语言。&lt;/p&gt;
 &lt;h3 id="c-简介"&gt;C++ 简介
@@ -1231,7 +1329,7 @@ alt="alt text"
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// i will be 888 here
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// Below is an error:
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// j = 666;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// j = 666; 
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="控制流循环和判断语句"&gt;控制流，循环和判断语句
 &lt;/h3&gt;&lt;p&gt;首先介绍循环语句。这里仅介绍 &lt;code&gt;for&lt;/code&gt; 循环与 &lt;code&gt;while&lt;/code&gt; 循环。下面是使用 &lt;code&gt;for&lt;/code&gt; 和 &lt;code&gt;while&lt;/code&gt; 循环的例子。&lt;/p&gt;
@@ -1301,7 +1399,7 @@ alt="alt text"
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这里我们首先声明了一个变量 &lt;code&gt;i&lt;/code&gt;，然后创建了一个引用 &lt;code&gt;ri&lt;/code&gt; 作为 &lt;code&gt;i&lt;/code&gt; 的别名。这样一来，我们对 &lt;code&gt;ri&lt;/code&gt; 所做出的&lt;em&gt;任何操作&lt;/em&gt;（应该）都是相当于对 &lt;code&gt;i&lt;/code&gt; 本身所做出的。当 &lt;code&gt;i&lt;/code&gt; 被销毁时，变量 &lt;code&gt;i&lt;/code&gt; 和它的引用 &lt;code&gt;ri&lt;/code&gt; 会一起消失。和指针相比，引用显然要安全的多。但是与此同时，引用也有一些限制：引用不能改变它引用谁。一旦引用被创建，引用本身和引用所指向的内容就绑定死了。此外，由于引用&lt;em&gt;别名&lt;/em&gt;的特性，引用不可能存在空引用，这也就要求了引用的“声明”必须立刻对其初始化，且一经初始化就不可改变。所以这里不应该使用“声明”，“赋值”等描述这一过程，最恰当的描述即为“初始化”。&lt;/p&gt;
 &lt;p&gt;值得注意的时，引用，和指针类似，也可以作为函数参数传入函数内部。当作为函数参数把引用传入函数内部时，引用的“别名”特点依旧保持，函数内对参数的改变依旧会反映在函数外部。一种理解方式是，函数参数列表的默认传参方式是把参数的值复制一份，生成一个临时变量，然后使用该变量；指针传参时把指针的地址复制了一份，然后使用该临时地址可以在不改变地址的情况下改变地址内部的数据；引用传参时，创建了一个临时的引用，由于引用的特性，函数对引用的影响就相当于对变量本身的影响。&lt;/p&gt;
 &lt;p&gt;总之，引用在 C++ 中是更加推荐的使用方式。当然，引用也有别的限制。引用由于终究是变量的“别名”，不会改变变量的内存布局，所以不存在“引用数组”这一数据结构。同时，也不会出现引用的引用，也不会有指针的引用。这主要是因为，引用并不是实际的对象，不会占据内存，因此也没有对应的地址（参考 &lt;a class="link" href="https://stackoverflow.com/questions/1164266/why-are-arrays-of-references-illegal" target="_blank" rel="noopener"
-&gt;Stack Overflow 上的回答&lt;/a&gt;）。&lt;/p&gt;
+ &gt;Stack Overflow 上的回答&lt;/a&gt;）。&lt;/p&gt;
 &lt;p&gt;最后，有人声称引用是必须初始化的常量指针。这一点见仁见智，个人认为可以这么去理解行为，但二者不能划等号，具体实现需要根据不同的编译器去考虑。&lt;/p&gt;
 &lt;h3 id="类模板stl"&gt;类，模板，STL
 &lt;/h3&gt;&lt;p&gt;前面的部分几乎涵盖了所有 C++ 的基础语法。这里再做出一些补充，比如 C++ 的面向对象（类），模板和标准模板库。&lt;/p&gt;
@@ -1371,10 +1469,10 @@ $$ \dfrac{\partial T}{\partial t} = \mu \dfrac{\partial^2 T}{\partial x ^2},$$&l
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 6&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;vector&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;Nx&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;128&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;Nx&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;128&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; 
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;double&lt;/span&gt; &lt;span class="n"&gt;dx&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;1.0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;double&lt;/span&gt; &lt;span class="n"&gt;dt&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0.2&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;double&lt;/span&gt; &lt;span class="n"&gt;mu&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;1.0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;double&lt;/span&gt; &lt;span class="n"&gt;mu&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;1.0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; 
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;12&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;nstep&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;20000&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="c1"&gt;// total iterate time
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;13&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;pstep&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;200&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="c1"&gt;// print result every 200 step
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;14&lt;/span&gt;&lt;span class="cl"&gt;
@@ -1440,13 +1538,18 @@ $$ \dfrac{\partial T}{\partial t} = \mu \dfrac{\partial^2 T}{\partial x ^2},$$&l
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;74&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这里用到了一些技巧，在边界判断处使用下标运算是否越界来判断是否处于边界处，以及使用了 &lt;code&gt;&amp;lt;chrono&amp;gt;&lt;/code&gt; 库来监测程序运行时间。在成功运行并且用输出的 &lt;code&gt;csv&lt;/code&gt; 文件绘制曲线图后结果大致如下：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/img/heat_transfer_result.png"
-loading="lazy"
-alt="传热方程求解结果"
+	
+	
+	loading="lazy"
+	
+		alt="传热方程求解结果"
+	
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;可以看到这个结果还是比较符合预期的。&lt;/p&gt;
 &lt;h2 id="结语"&gt;结语
 &lt;/h2&gt;&lt;p&gt;太久不更新，写起来有些不是很得心应手。写完这些回头一看，我竟然写了这么多东西？C++ 的基础知识点比我想象的要多很多呀。如果您看到了这里，感谢您的支持。C++ 平心而论，好上手是真的，在了解一定的编程相关知识后很快就能写出一份能跑的代码。但是，C++ 的语法特性繁杂，内容过于丰富导致的则是 C++ 极高的进阶难度。几乎没有人敢说自己精通 C++，因为总有一些奇怪的点会出现在这门历史丰富且悠久的语言上，而恰好提问者知道但回答者不知道。不过好在，如果仅仅是为了使用 C++ 进行简单的高效计算，那么它的入门内容应该只需要上面这些又臭又长的介绍就差不多够了。在实际编程过程中，大多数的函数和类的 API 都是需要现查的，甚至有时候确实还需要面对 CV 编程（复制粘贴）。此外，不论任何编程语言，语言本身只能提供一些好用的特性，或者一些包装好了的算法轮子。实际在编程时最重要的问题是怎么分析问题，并且就这个问题设计出一套算法来解决问题。希望语言不会称为您的绊脚石。&lt;/p&gt;
-&lt;p&gt;下一节我会正式采用 C++ 来实现在 Cahn-Hilliard 方程引导下调幅分解的相场（其实是浓度场）模拟。再下一节则会进行 Allen-Cahn 方程下的晶粒长大模拟，并作为这个入门系列的最后一部分。敬请期待。&lt;/p&gt;</description></item><item><title>Phase Field: 相场模拟学习笔记 II</title><link>https://a-moment096.github.io/posts/pf_tutorial_2/</link><pubDate>Fri, 22 Nov 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/pf_tutorial_2/</guid><description>&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/Skadi.png" alt="Featured image of post Phase Field: 相场模拟学习笔记 II" /&gt;&lt;p&gt;&lt;em&gt;接上一节内容, 这节会简单介绍 Python 的一些语法知识, 以及尝试使用 Python 实现上节所列出来的部分算法.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;下一节我会正式采用 C++ 来实现在 Cahn-Hilliard 方程引导下调幅分解的相场（其实是浓度场）模拟。再下一节则会进行 Allen-Cahn 方程下的晶粒长大模拟，并作为这个入门系列的最后一部分。敬请期待。&lt;/p&gt;</description></item><item><title>Phase Field: 相场模拟学习笔记 II</title><link>https://a-moment096.github.io/posts/pf_tutorial_2/</link><pubDate>Fri, 22 Nov 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/pf_tutorial_2/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post Phase Field: 相场模拟学习笔记 II" /&gt;&lt;p&gt;&lt;em&gt;接上一节内容, 这节会简单介绍 Python 的一些语法知识, 以及尝试使用 Python 实现上节所列出来的部分算法.&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id="python-初探索"&gt;Python 初探索
 &lt;/h2&gt;&lt;h3 id="简介"&gt;简介
 &lt;/h3&gt;&lt;p&gt;Python 是一种蟒蛇, 而在编程语境下, Python 则是一门十分受欢迎的编程语言. Python 具有语法友好 (接近英语), 功能强大 (感谢开源与社区), 社区活跃等优秀的特点, 让 Python 成为入门编程的一个好选择.&lt;/p&gt;
@@ -1455,13 +1558,13 @@ alt="传热方程求解结果"
 &lt;h3 id="解释器安装与环境配置"&gt;解释器安装与环境配置
 &lt;/h3&gt;&lt;h4 id="python-解释器"&gt;Python 解释器
 &lt;/h4&gt;&lt;p&gt;Python 的运行是需要其解释器的. 目前最新版的 Python 解释器可以直接在 &lt;a class="link" href="https://www.python.org/downloads/" target="_blank" rel="noopener"
-&gt;Python 官网&lt;/a&gt; 下载. Linux 平台用户可以考虑使用各自发行版的包管理器实现 Python 的安装. 安装时请切记选择 &lt;strong&gt;ADD TO PATH&lt;/strong&gt;, 否则可能需要手动调整环境变量以让 Shell 能找到 Python.&lt;/p&gt;
+ &gt;Python 官网&lt;/a&gt; 下载. Linux 平台用户可以考虑使用各自发行版的包管理器实现 Python 的安装. 安装时请切记选择 &lt;strong&gt;ADD TO PATH&lt;/strong&gt;, 否则可能需要手动调整环境变量以让 Shell 能找到 Python.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;解释器&lt;/strong&gt;是什么? 简单来说, 就是&lt;em&gt;逐行&lt;/em&gt;把写的脚本翻译为机器所能理解的代码指令, 然后执行. 所以 Python 是逐行运行的, 这点非常适合 Debug, 也许也是 Python 受人欢迎的原因之一. 与&lt;strong&gt;解释器&lt;/strong&gt;相对的一个概念是&lt;strong&gt;编译器&lt;/strong&gt;. 这里所指的编译器应该是狭义上的编译器, 广义上的编译器应该也包含 Python 这类的解释器. 编译器不会逐行解释代码, 而是将代码作为一个整体, 然后处理翻译, 最后形成机器能阅读并执行的内容后进行执行. 这种方式让编译器可以为代码做出很多的优化, 但是也一定程度上牺牲了 &amp;ldquo;逐行运行&amp;rdquo; 的便利. C/C++, Rust 等语言都是需要编译器进行编译的. 为了弥补无法原生逐行运行的缺陷, 这些语言使用了调试器 (Debugger) 以及调试符号 (Debug Symbol) 等技术来在编译完成后, 根据符号表一一对照并运行代码, 呈现出逐行运行的效果. 然而这种方法依旧会损失一定的运行性能.&lt;/p&gt;
 &lt;p&gt;Python 解释器拥有多个版本, 每个版本对语言的语法都有一定的调整. 有些调整影响巨大 (比如从 Python2 到 Python3 的转变), 另一些可能因为其语法特性不常用, 不会直接影响到用户体验. Python 解释器也不一定是最新版就最好, 需要考虑项目的适配以及对应包的版本需求. 不过在这里我们并不太依赖 Python 解释器的版本, 只要保证是比较新的 Python 解释器版本, 并且主流的科学计算库, 如 &lt;code&gt;numpy&lt;/code&gt;, &lt;code&gt;matplotlib&lt;/code&gt;, &lt;code&gt;scipy&lt;/code&gt; 等即可.&lt;/p&gt;
 &lt;h4 id="编辑器-与-visual-studio-code"&gt;编辑器 与 Visual Studio Code
 &lt;/h4&gt;&lt;p&gt;在安装好 Python 解释器之后其实就已经可以开始 Python 编程了 (没错, 就是传说中的记事本编程). 然而这当然不是最好的方法, 这种方法光是考虑到没有代码高亮就让人很难以接受了. 这里我个人推荐 Visual Studio Code (以下简称 VSC).&lt;/p&gt;
 &lt;p&gt;VSC 功能强大, &lt;a class="link" href="https://code.visualstudio.com/" target="_blank" rel="noopener"
-&gt;安装&lt;/a&gt;方便, 插件生态极其丰富, 通过合理的配置近乎可以达到 IDE (Integrated Development Environment, 集成开发环境) 的水平. 我个人在写简单的 Python 脚本时几乎都是使用 VSC 写的. 一路默认安装后, 根据需要安装中文插件, 然后再在插件页面搜索 Python 即可安装 Python 插件全家桶, 然后就可以开始使用 VSC 写 Python 代码 (脚本)了. VSC 的安装与环境配置也可以参考我之前写的&lt;a class="link" href="https://a-moment096.github.io/posts/vsc_py/" &gt;博客文章&lt;/a&gt;.&lt;/p&gt;
+ &gt;安装&lt;/a&gt;方便, 插件生态极其丰富, 通过合理的配置近乎可以达到 IDE (Integrated Development Environment, 集成开发环境) 的水平. 我个人在写简单的 Python 脚本时几乎都是使用 VSC 写的. 一路默认安装后, 根据需要安装中文插件, 然后再在插件页面搜索 Python 即可安装 Python 插件全家桶, 然后就可以开始使用 VSC 写 Python 代码 (脚本)了. VSC 的安装与环境配置也可以参考我之前写的&lt;a class="link" href="https://a-moment096.github.io/posts/vsc_py/" &gt;博客文章&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;这里没有推荐 IDE, 因为 IDE 对这里仅仅使用 Python 做一些简单应用而言太过 &amp;ldquo;全能&amp;rdquo;, 或者说, 负担太重. 当然, 如果感兴趣, 可以考虑使用大名鼎鼎的 PyCharm. 这里不再赘述.&lt;/p&gt;
 &lt;h4 id="虚拟环境-venv-和-pip"&gt;虚拟环境, venv 和 pip
 &lt;/h4&gt;&lt;p&gt;这里简单介绍一下虚拟环境. 因为 Python 的生态丰富, 可能会碰到某些依赖相互冲突的情况, 尤其是在多人共同开发的情况下, 每个人的开发环境配置不同, 很容易导致依赖冲突. 为解决这种情况, 可以考虑使用 Python 的虚拟环境 &lt;code&gt;virtualenv&lt;/code&gt;. 创建的虚拟环境下有该虚拟环境所自有的一些包, 并且和该虚拟环境以外的部分是相互独立的. 使用 VSC 创建 &lt;code&gt;virtualenv&lt;/code&gt; 虚拟环境非常简单, 只需要 &lt;code&gt;Ctrl+Shift+P&lt;/code&gt; 打开 VSC 的命令, 然后搜索 &lt;code&gt;Python: Create Environment&lt;/code&gt; 即可根据向导一步步搭建虚拟环境.&lt;/p&gt;
@@ -1535,13 +1638,13 @@ alt="传热方程求解结果"
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;# Do something, just like in a function&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;do_something&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;12&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;12&lt;/span&gt;&lt;span class="cl"&gt; 
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;13&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;do_something&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;14&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;# Do something&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;15&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;16&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# End of definition&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;17&lt;/span&gt;&lt;span class="cl"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;18&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;my_variable&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;some_class&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;val_1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;val_2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;18&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;my_variable&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;some_class&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;val_1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;val_2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; 
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;19&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;20&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Use Inheritance from some_class&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;21&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;derived_class&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;some_class&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
@@ -1774,7 +1877,7 @@ $$&lt;p&gt;因此, 为了实现这一算法, 该算法实现的函数有如下�
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;46&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;laps&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;至此, 我们使用 Python 实现了我们将在相场模拟中使用的大部分算法. 具体的模拟过程中, 我们可能不需要用函数的方式将这些算法打包起来, 只需要直接实现即可.&lt;/p&gt;
 &lt;h3 id="总结"&gt;总结
-&lt;/h3&gt;&lt;p&gt;这部分内容希望能对上一章节中的算法内容有更进一步的补充, 并且希望能对算法如何实现为代码的过程起到促进理解的作用. 同时, 希望这里介绍的 Python 能成为您日常学习生活中的另一件有利工具, 并且能对编程这门技术有一定的入门理解, 为后续的程序编写提供基本的认识. 下一章节将会介绍如何使用 C++ 来实现这些算法, 并使用 C++ 完成一个小型的模拟, 尝试从这个小型模拟中了解模拟过程中会面临的问题, 以及数据最后的可视化方法.&lt;/p&gt;</description></item><item><title>Phase Field: 相场模拟学习笔记 I</title><link>https://a-moment096.github.io/posts/pf_tutorial_1/</link><pubDate>Fri, 01 Nov 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/pf_tutorial_1/</guid><description>&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/Skadi.png" alt="Featured image of post Phase Field: 相场模拟学习笔记 I" /&gt;&lt;p&gt;&lt;em&gt;这学期开了相场模拟培训, 故尝试将相场培训笔记性质的内容记录下来, 期望观感应该是目录式的笔记, 外带可有可无的说明文字.那么就开始吧&lt;/em&gt;&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;这部分内容希望能对上一章节中的算法内容有更进一步的补充, 并且希望能对算法如何实现为代码的过程起到促进理解的作用. 同时, 希望这里介绍的 Python 能成为您日常学习生活中的另一件有利工具, 并且能对编程这门技术有一定的入门理解, 为后续的程序编写提供基本的认识. 下一章节将会介绍如何使用 C++ 来实现这些算法, 并使用 C++ 完成一个小型的模拟, 尝试从这个小型模拟中了解模拟过程中会面临的问题, 以及数据最后的可视化方法.&lt;/p&gt;</description></item><item><title>Phase Field: 相场模拟学习笔记 I</title><link>https://a-moment096.github.io/posts/pf_tutorial_1/</link><pubDate>Fri, 01 Nov 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/pf_tutorial_1/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post Phase Field: 相场模拟学习笔记 I" /&gt;&lt;p&gt;&lt;em&gt;这学期开了相场模拟培训, 故尝试将相场培训笔记性质的内容记录下来, 期望观感应该是目录式的笔记, 外带可有可无的说明文字.那么就开始吧&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id="phase-field-method-是什么"&gt;Phase Field Method 是什么？
 &lt;/h2&gt;&lt;p&gt;Phase Field Method, 直译为相场法, 是一种材料模拟方法, 其通过宽界面(平滑界面)的特点, 克服了另一个模拟方法: Stefan 法的窄界面无法计算的缺点, 实现了对材料中的相的演化的模拟.&lt;/p&gt;
 &lt;h3 id="基本概念解析"&gt;基本概念解析
@@ -1793,11 +1896,11 @@ $$&lt;p&gt;因此, 为了实现这一算法, 该算法实现的函数有如下�
 &lt;/h3&gt;&lt;p&gt;AC方程的形式如下:
 &lt;/p&gt;
 $$
-\frac{\partial \eta_p}{\partial t} = -L_{pq}\frac{\delta F}{\delta\eta_q\left( r,t \right)}
+ \frac{\partial \eta_p}{\partial t} = -L_{pq}\frac{\delta F}{\delta\eta_q\left( r,t \right)} 
 $$&lt;p&gt;CH方程形式如下:
 &lt;/p&gt;
 $$
-\frac{\partial c_i}{\partial t} = \nabla \cdot M_{ij} \nabla \frac{\delta F}{\delta c_j \left( r,t \right)}
+ \frac{\partial c_i}{\partial t} = \nabla \cdot M_{ij} \nabla \frac{\delta F}{\delta c_j \left( r,t \right)}
 $$&lt;p&gt;解两个方程需要的工具有: 解ODE/PDE(有限差分法, FDM), 求自由能的变分导数(欧拉-拉格朗日方程, E-L方程), 向量微积分($\nabla$与$\nabla^2$)&lt;/p&gt;
 &lt;hr&gt;
 &lt;center&gt;Nov 05 更新: &lt;/center&gt;
@@ -1869,7 +1972,7 @@ $$
 $$&lt;p&gt;
 该方程的作用与一般函数 $y = \phi(x)$的极值判断方程
 &lt;/p&gt;
-$$
+$$ 
 \phi'(\xi) = 0 \tag{2}
 $$&lt;p&gt;
 类似, 都是指明了极值点出现的条件: (1) 指出极限函数 $f$ 应满足 E-L 方程, 而 (2) 则指出极值点 $\xi$ 应满足导数在该点处取值为0. 由此也不难理解泛函导数 (或者叫变分导数) 的形式应为方程(1)的左半部分:
@@ -1906,10 +2009,10 @@ $$\nabla f = \mathbf{x}_1 \frac{\partial f}{\partial x_1} + \mathbf{x}_2\frac{\p
 $$\nabla \cdot \mathbf{f} = \frac{\partial f_1}{\partial x_1} + \frac{\partial f_2}{\partial x_2}+\frac{\partial f_3}{\partial x_3};$$&lt;p&gt;
 &lt;/p&gt;
 $$\nabla \times \mathbf{f} = \begin{vmatrix}
-\mathbf{x}_1 &amp; \mathbf{x}_2 &amp; \mathbf{x}_3 \\
-\frac{\partial }{\partial x_1} &amp; \frac{\partial }{\partial x_2} &amp; \frac{\partial }{\partial x_3} \\
-f_1 &amp; f_2 &amp; f_3
-\end{vmatrix},
+ \mathbf{x}_1 &amp; \mathbf{x}_2 &amp; \mathbf{x}_3 \\
+ \frac{\partial }{\partial x_1} &amp; \frac{\partial }{\partial x_2} &amp; \frac{\partial }{\partial x_3} \\
+ f_1 &amp; f_2 &amp; f_3
+ \end{vmatrix},
 $$&lt;p&gt;
 其中 $f_i$ 表示 $\mathbf{f}$ 的分量函数. 下来再考察 $\nabla$ 算符的运算性质. 设 $a,b\in\mathbb{R}$ 为标量, $f,g : \mathbb{R}^3 \to \mathbb{R}$ 为标量函数, $\phi,\psi : \mathbb{R}^3 \to \mathbb{R}^3$ 为向量值函数.&lt;/p&gt;
 &lt;p&gt;直接作用 (梯度):&lt;/p&gt;

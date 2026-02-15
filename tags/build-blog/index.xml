@@ -1,94 +1,124 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Build Blog on A Moment's Rest</title><link>https://a-moment096.github.io/tags/build-blog/</link><description>Recent content in Build Blog on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 19 Jan 2026 06:28:39 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/build-blog/index.xml" rel="self" type="application/rss+xml"/><item><title>博客一周年啦！</title><link>https://a-moment096.github.io/posts/blog_1st_anniversary/</link><pubDate>Mon, 22 Sep 2025 15:51:11 +0800</pubDate><guid>https://a-moment096.github.io/posts/blog_1st_anniversary/</guid><description>&lt;img src="https://a-moment096.github.io/posts/blog_1st_anniversary/bouquet.png" alt="Featured image of post 博客一周年啦！" /&gt;&lt;p&gt;&lt;em&gt;头图取自 &lt;a class="link" href="https://www.pixiv.net/users/2642047" target="_blank" rel="noopener"
-&gt;アシマ&lt;/a&gt; 所绘的 &lt;a class="link" href="https://www.pixiv.net/artworks/68232005" target="_blank" rel="noopener"
-&gt;bouquet&lt;/a&gt;，选曲为某游戏插曲 &lt;strong&gt;玉響時間&lt;/strong&gt;， 总之就是非常好听，能让整个人身体都松下来的一首，非常好，希望你也喜欢。&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Build Blog on A Moment's Rest</title><link>https://a-moment096.github.io/tags/build-blog/</link><description>Recent content in Build Blog on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Sun, 15 Feb 2026 11:05:58 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/build-blog/index.xml" rel="self" type="application/rss+xml"/><item><title>博客一周年啦！</title><link>https://a-moment096.github.io/posts/blog_1st_anniversary/</link><pubDate>Mon, 22 Sep 2025 15:51:11 +0800</pubDate><guid>https://a-moment096.github.io/posts/blog_1st_anniversary/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post 博客一周年啦！" /&gt;&lt;p&gt;&lt;em&gt;头图取自 &lt;a class="link" href="https://www.pixiv.net/users/2642047" target="_blank" rel="noopener"
+ &gt;アシマ&lt;/a&gt; 所绘的 &lt;a class="link" href="https://www.pixiv.net/artworks/68232005" target="_blank" rel="noopener"
+ &gt;bouquet&lt;/a&gt;，选曲为某游戏插曲 &lt;strong&gt;玉響時間&lt;/strong&gt;， 总之就是非常好听，能让整个人身体都松下来的一首，非常好，希望你也喜欢。&lt;/em&gt;&lt;/p&gt;
+
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
 &lt;style type="text/css"&gt;
 [data-scheme="dark"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
-border-bottom-color: var(--card-separator-color);
+ border-bottom-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
-border-color: var(--card-separator-color);
+ border-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-body {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info {
-border-top-color: var(--card-background);
+ border-top-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
-color: var(--card-text-color-tertiary);
+ color: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
-background-color: var(--card-separator-color);
+ background-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
-background-color: var(--accent-color);
+ background-color: var(--accent-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li {
-color: var(--card-text-color-main);
-border-top-color: var(--card-separator-color);
+ color: var(--card-text-color-main);
+ border-top-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc {
-text-shadow: -1px -1px 0 var(--body-background);
+ text-shadow: -1px -1px 0 var(--body-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:before {
-background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+ background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:after {
-background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc p {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
+ 
 [data-scheme="light"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="light"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
 &lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
+
+
 &lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=1499310887" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
 &lt;p&gt;我决定将 9 月 22 日作为我博客的生日。&lt;/p&gt;
 &lt;p&gt;Y? 这个博客的所有文章标注的日期里，最早的不是 24 年的 11 月 1 日吗？为什么要选择 9 月 22 日？其实吧，这得追溯到我这个博客的原型。如果您看过这篇关于 &lt;a class="link" href="https://a-moment096.github.io/posts/Build_Blog" &gt;搭建这个博客&lt;/a&gt; 的经历的话，会发现我一开始是打算用 Hexo 作为构建工具的。可惜，我的 Hexo 之旅并不顺利，最后还是选择了 Hugo，而初次尝试 Hexo 的时候我虽然没有写，但是其实是在十一假期的时候。&lt;/p&gt;
@@ -99,7 +129,7 @@ background: var(--card-background-selected);
 &lt;p&gt;另外我想提起的则是关于 Arch Linux 的一些文章。虽然我只写了 &lt;a class="link" href="https://a-moment096.github.io/tags/arch/" &gt;两篇&lt;/a&gt; 与 Arch 直接相关的文章，且都是我安装 Arch Linux 的过程，然而搭建起博客的这一年以来，我最大的收获除了这个博客之外，就是我使用 Arch Linux 的这些经历，以及在这过程中我学到的 Linux 操作系统的知识。而这个博客里，几乎所有和命令相关的内容，都是由于我真的开始使用 Arch Linux 的原因而接触到，并且有了写一些操作说明一般的文章来方便自己查询的想法。朋友们，Arch Linux 是对的！GNU/Linux 是对的！开源也是对的！&lt;/p&gt;
 &lt;p&gt;最后我也想提一下我博客中的一个系列，也是这个博客一开始就也确立了的内容：Phase Field 相场模拟笔记系列。这个系列源于我给组内开设的相场法培训，不过说是培训其实也是一些方便自己备查的笔记。这些笔记里的内容基本是我从一开始的英文课件中转抄出来的，可能还是有一些错漏。如果这个学期有相场培训的计划的话，我也许会继续更新这个文章系列。&lt;/p&gt;
 &lt;p&gt;目前我手上有一篇关于函数的概念解析的文章在写。与其说是概念的解析，不如说是找了一些教科书，来考察它们都是怎么介绍函数这个数学学习中最最基础的概念的。我也许会在最后做一些个人的总结，也有可能不会，但是目前写到现在，真的发现这是一个非常有趣的话题。希望这两天内我能写出来吧，如果你看了这篇纪念博客诞生一周年的文章，也请期待下一篇更新的文章。&lt;/p&gt;
-&lt;p&gt;那么，一如既往地，祝读到这里的读者您，身体健康，生活愉快！&lt;/p&gt;</description></item><item><title>First Blog: 搭建这个博客</title><link>https://a-moment096.github.io/posts/build_blog/</link><pubDate>Fri, 01 Nov 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/build_blog/</guid><description>&lt;img src="https://a-moment096.github.io/posts/build_blog/Reimu.png" alt="Featured image of post First Blog: 搭建这个博客" /&gt;&lt;p&gt;简单记录一下自己搭建博客的经历。&lt;/p&gt;
+&lt;p&gt;那么，一如既往地，祝读到这里的读者您，身体健康，生活愉快！&lt;/p&gt;</description></item><item><title>First Blog: 搭建这个博客</title><link>https://a-moment096.github.io/posts/build_blog/</link><pubDate>Fri, 01 Nov 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/build_blog/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post First Blog: 搭建这个博客" /&gt;&lt;p&gt;简单记录一下自己搭建博客的经历。&lt;/p&gt;
 &lt;h2 id="begin-好想搭博客"&gt;Begin: 好想搭博客
 &lt;/h2&gt;&lt;p&gt;网上高强度冲浪的过程中，发现很多人都有自己的博客，特别是在读过几篇博文之后，对会搭建博客的大佬的艳羡之情愈发激烈，同时也很想在网上
 搭一个自己的小窝，记录一下自己的学习和生活（以便于跻身大佬的行列（在心理上））。 于是，在若干的纠结与选择之后，决定尝试用 Hexo + GitHub pages 的方式
@@ -113,13 +143,13 @@ background: var(--card-background-selected);
 &lt;/h2&gt;&lt;p&gt;转眼到了10月底，准确来讲就是昨天，10月31日。心血来潮的我再次向Hexo博客发起冲击。然而拦住我的不只是又没有找到好看的主题（这次是按照Github
 的Star数选的，也许是我审美太小众？），还有烦人的网络问题。一会儿是用 &lt;code&gt;npm&lt;/code&gt; 拉取不到内容，一会儿又是 &lt;code&gt;git&lt;/code&gt; 连接不到仓库。虽然后面网上搜索到
 是我科学上网姿势不对，需要跑全局，并且 &lt;code&gt;npm&lt;/code&gt; 换成淘宝源(&lt;a class="link" href="https://npmmirror.com/" target="_blank" rel="noopener"
-&gt;https://npmmirror.com/&lt;/a&gt;)就可以轻松解决，然而接连的 Error 还是耗尽了我的耐心。&lt;/p&gt;
+ &gt;https://npmmirror.com/&lt;/a&gt;)就可以轻松解决，然而接连的 Error 还是耗尽了我的耐心。&lt;/p&gt;
 &lt;p&gt;对吗？真的要搭博客吗？师兄这晚告诉我，可以考虑搞个微信公众号，要吗？&lt;/p&gt;
 &lt;h2 id="-受不了hugo吧"&gt;?: 受不了，Hugo吧
 &lt;/h2&gt;&lt;p&gt;还是不想搞公众号，感觉太公众了。虽然也有博客的功能，但是我的主题这块儿谁来给我补呀（？）。是时，我又想起昨晚网上冲浪时发现的另一个构建框架：
 &lt;em&gt;Hugo&lt;/em&gt;。于是当机立断，立刻冲向 Github 看看有什么好的主题，最后便相中了这款 &lt;strong&gt;stack&lt;/strong&gt;。简约界面深得我意的同时，又满足了我对页面版式的需求（好怪哦）。
 最重要的时，这个主题的模板目录结构很清晰！我也是摸索着添加了几个icon后配置出了令我满意的结果。感谢你，&lt;a class="link" href="https://jimmycai.com/" target="_blank" rel="noopener"
-&gt;Jimmy Cai&lt;/a&gt;!&lt;/p&gt;
+ &gt;Jimmy Cai&lt;/a&gt;!&lt;/p&gt;
 &lt;h2 id="end-好耶"&gt;End: 好耶
 &lt;/h2&gt;&lt;p&gt;第一次搭建博客，踩的坑自己觉得不算少。不过大部分的坑都是因为不熟悉前端造成的。啊，要是我是一个搞计科软工前端XXX的学生那该多好啊，可惜，改不得。
 而且另一个角度来讲，踩坑也是一种学习过程嘛。日后也许会往博客上加点新的玩意儿，搞得更花哨一些~&lt;/p&gt;

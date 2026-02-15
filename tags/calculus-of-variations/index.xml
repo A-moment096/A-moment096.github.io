@@ -1,99 +1,129 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Calculus of Variations on A Moment's Rest</title><link>https://a-moment096.github.io/tags/calculus-of-variations/</link><description>Recent content in Calculus of Variations on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 19 Jan 2026 06:28:39 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/calculus-of-variations/index.xml" rel="self" type="application/rss+xml"/><item><title>关于泛函导数和变分法-来自相场公式推导的问题</title><link>https://a-moment096.github.io/posts/functional_derivative/</link><pubDate>Sat, 04 Jan 2025 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/functional_derivative/</guid><description>&lt;img src="https://a-moment096.github.io/posts/functional_derivative/HelloWorld-r-906.jpg" alt="Featured image of post 关于泛函导数和变分法-来自相场公式推导的问题" /&gt;&lt;p&gt;&lt;em&gt;本文系拾人牙慧之作，仅为解决公式推导过程中的一些边角料的数学问题，内容如有错漏还请谅解。另外，感谢老大中先生的《变分法基础》第三版。本文的主要内容几乎全部参考本书。&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Calculus of Variations on A Moment's Rest</title><link>https://a-moment096.github.io/tags/calculus-of-variations/</link><description>Recent content in Calculus of Variations on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Sun, 15 Feb 2026 11:05:58 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/calculus-of-variations/index.xml" rel="self" type="application/rss+xml"/><item><title>关于泛函导数和变分法-来自相场公式推导的问题</title><link>https://a-moment096.github.io/posts/functional_derivative/</link><pubDate>Sat, 04 Jan 2025 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/functional_derivative/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post 关于泛函导数和变分法-来自相场公式推导的问题" /&gt;&lt;p&gt;&lt;em&gt;本文系拾人牙慧之作，仅为解决公式推导过程中的一些边角料的数学问题，内容如有错漏还请谅解。另外，感谢老大中先生的《变分法基础》第三版。本文的主要内容几乎全部参考本书。&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图出自 &lt;a class="link" href="https://x.com/amn_amn_/status/1580863274081349632" target="_blank" rel="noopener"
-&gt;雨野&lt;/a&gt; 太太，为 &lt;a class="link" href="https://twitter.com/arukuremu" target="_blank" rel="noopener"
-&gt;r-906&lt;/a&gt; 所作的 &lt;a class="link" href="https://www.bilibili.com/video/BV1Ee4y1E7J6/" target="_blank" rel="noopener"
-&gt;Hello World!&lt;/a&gt; 的曲绘&lt;/em&gt;&lt;/p&gt;
+ &gt;雨野&lt;/a&gt; 太太，为 &lt;a class="link" href="https://twitter.com/arukuremu" target="_blank" rel="noopener"
+ &gt;r-906&lt;/a&gt; 所作的 &lt;a class="link" href="https://www.bilibili.com/video/BV1Ee4y1E7J6/" target="_blank" rel="noopener"
+ &gt;Hello World!&lt;/a&gt; 的曲绘&lt;/em&gt;&lt;/p&gt;
+
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
 &lt;style type="text/css"&gt;
 [data-scheme="dark"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
-border-bottom-color: var(--card-separator-color);
+ border-bottom-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
-border-color: var(--card-separator-color);
+ border-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-body {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info {
-border-top-color: var(--card-background);
+ border-top-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
-color: var(--card-text-color-tertiary);
+ color: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
-background-color: var(--card-separator-color);
+ background-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
-background-color: var(--accent-color);
+ background-color: var(--accent-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li {
-color: var(--card-text-color-main);
-border-top-color: var(--card-separator-color);
+ color: var(--card-text-color-main);
+ border-top-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc {
-text-shadow: -1px -1px 0 var(--body-background);
+ text-shadow: -1px -1px 0 var(--body-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:before {
-background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+ background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:after {
-background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc p {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
+ 
 [data-scheme="light"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="light"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
 &lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
+
+
 &lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=2076684514" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
 &lt;p&gt;2025.06.06 更新：感谢&lt;a class="link" href="https://github.com/which-is-my-way" target="_blank" rel="noopener"
-&gt;@which-is-my-way&lt;/a&gt;指正，公式 &lt;a class="link" href="#modify" &gt;16&lt;/a&gt; 补上点乘单位法向量&lt;/p&gt;
+ &gt;@which-is-my-way&lt;/a&gt;指正，公式 &lt;a class="link" href="#modify" &gt;16&lt;/a&gt; 补上点乘单位法向量&lt;/p&gt;
 &lt;h2 id="晶体相场公式带来的问题"&gt;晶体相场公式带来的问题
 &lt;/h2&gt;&lt;p&gt;在一个阳光明媚的晚上，师兄找到我问了一个问题：下面的这个相场公式是怎么组装起来的？具体来讲是：从下面的公式（2）和公式（3）是怎么得到公式（4）的：
 &lt;/p&gt;
@@ -105,15 +135,15 @@ F &amp;= \int_V f \mathrm{d}v\\ &amp;= \int_V \left(\frac{\psi}{2} \omega \left(
 \end{align}
 $$&lt;p&gt;
 这里我们做一些简单的背景介绍吧。这个公式来源于&lt;a class="link" href="https://doi.org/10.1103/PhysRevE.70.051605" target="_blank" rel="noopener"
-&gt;这篇文章&lt;/a&gt;，是提出晶体相场理论的文章，其重要性不言而喻，近乎所有的该领域的文章在使用这篇文章的结果时都需要引用这些个公式。我们这里不对晶体相场做太多介绍了（因为我也不了解，虽然也有相场两个字，但是几乎只有最最基础的假设相似而已了），简单介绍一下这些公式（名称）这些方便后面表述。其中公式（1）是指体系总能量可以表达为能量密度对体积的积分（这里先不给出能量和能量密度的参量），这里可以看到总能量实际上是一个泛函；（2）是指能量密度的具体构造，（3）是和传统相场形式相类似的一个演化方程，在传统相场里是 &lt;em&gt;Cahn-Hilliard&lt;/em&gt; 方程。而（4）就是将（3）中的变分展开得到的结果，或者说是具体计算过程中使用的公式的显式表达。&lt;/p&gt;
+ &gt;这篇文章&lt;/a&gt;，是提出晶体相场理论的文章，其重要性不言而喻，近乎所有的该领域的文章在使用这篇文章的结果时都需要引用这些个公式。我们这里不对晶体相场做太多介绍了（因为我也不了解，虽然也有相场两个字，但是几乎只有最最基础的假设相似而已了），简单介绍一下这些公式（名称）这些方便后面表述。其中公式（1）是指体系总能量可以表达为能量密度对体积的积分（这里先不给出能量和能量密度的参量），这里可以看到总能量实际上是一个泛函；（2）是指能量密度的具体构造，（3）是和传统相场形式相类似的一个演化方程，在传统相场里是 &lt;em&gt;Cahn-Hilliard&lt;/em&gt; 方程。而（4）就是将（3）中的变分展开得到的结果，或者说是具体计算过程中使用的公式的显式表达。&lt;/p&gt;
 &lt;p&gt;另外我必须提到的一点是，这里列出的公式并不完整，比如 $\omega$ 是什么我并没有做说明，这是为了复述一下我的心路历程（即便是笔记，也不希望太死板，毕竟是从实际问题来的）。当然，后面会把完整的问题复述，以及推导过程完整地列出来的。&lt;/p&gt;
 &lt;h2 id="传统相场公式对吗"&gt;传统相场公式，对吗？
 &lt;/h2&gt;&lt;p&gt;拿到这个公式的时候其实并不是直接从文献拿到的，而是几张图片（大概就是公式（2）（3）和（4））。而我看到公式的第一反应是：这符号不是很对吧？把 $\psi$ 放到括号外面？这不太对吧？然后我便开始按照以往推导传统相场能量变分的方式推导了。我们来看看传统相场公式吧。
 &lt;/p&gt;
 $$
 \begin{align}
-F(c, \nabla c ) &amp;= \int_{\Omega} f(c, \nabla c )\, \mathrm{d}\omega = \int_{\Omega} f_b(c, \eta) + \kappa_c \left| \nabla c \right|^2 \mathrm{d}\omega;\\
-\frac{\partial c_i}{\partial t} &amp;= \nabla \cdot M_{ij} \nabla \frac{\delta F}{\delta c_j \left( r,t \right)},
+ F(c, \nabla c ) &amp;= \int_{\Omega} f(c, \nabla c )\, \mathrm{d}\omega = \int_{\Omega} f_b(c, \eta) + \kappa_c \left| \nabla c \right|^2 \mathrm{d}\omega;\\
+ \frac{\partial c_i}{\partial t} &amp;= \nabla \cdot M_{ij} \nabla \frac{\delta F}{\delta c_j \left( r,t \right)},
 \end{align}
 $$&lt;p&gt;
 其中，公式（6）即为 Cahn-Hilliard 方程，而公式（5）则是传统相场中的总能构造的一种常见（最基础的）形式，其中 $f$ 是能量密度，$f_b$ 是体自由能密度。可以看到能量泛函是依赖于（?）浓度和浓度的梯度的。对这个公式的推导我们直接使用三维条件下的 Euler-Lagrange 方程：
@@ -200,12 +230,12 @@ $$
 $$&lt;p&gt;这个形式已经是我们很熟悉的形式了，但是还有一些区别。这里我们指出，函数对向量求偏导得到的也是一个向量，所以这里需要用向量内积，其中的技术细节我们不多赘述，我们更关注的是：怎么把 $\delta \nabla y$ 写成别的形式，来进一步向我们的结果前进。注意到 $\nabla$ 是对坐标求导，而 $\delta$ 则是在保持定义域不发生改变的情况下，改变了函数的值。因此二者应该是相互独立的，也意味着两个算符是可以相交换的。再使用点乘的乘积律：$\nabla \cdot (f{\bf{}v}) = f\nabla\cdot{\bf v}+{\bf v}\cdot\nabla f$，这样一通操作，就得到：&lt;/p&gt;
 $$
 \begin{align}
-\delta F = \int_\Omega \delta f\, \mathrm{d}\omega &amp;= \int_\Omega \left(\frac{\partial f}{\partial y}\delta y + \frac{\partial f}{\partial \nabla y}\cdot\nabla\delta y \right) \, \mathrm{d}\omega \\
+ \delta F = \int_\Omega \delta f\, \mathrm{d}\omega &amp;= \int_\Omega \left(\frac{\partial f}{\partial y}\delta y + \frac{\partial f}{\partial \nabla y}\cdot\nabla\delta y \right) \, \mathrm{d}\omega \\
 &amp;= \int_\Omega \left(\frac{\partial f}{\partial y}\delta y - \nabla \cdot \frac{\partial f}{\partial \nabla y}\delta y \right) \, \mathrm{d}\omega + \int_\Omega \nabla\cdot\left(\frac{\partial f}{\partial \nabla y}\delta y\right) \, \mathrm{d}\omega\\
 &amp;= \int_\Omega \left(\frac{\partial f}{\partial y} - \nabla \cdot \frac{\partial f}{\partial \nabla y} \right)\delta y \, \mathrm{d}\omega + \int_\Omega \nabla\cdot\left(\frac{\partial f}{\partial \nabla y}\delta y\right) \, \mathrm{d}\omega .
 \end{align}
 $$&lt;p&gt;而在式（13）中，最后的积分可以根据多元积分的 Green 公式，化成对区域 $\Omega$ 的边界 $\partial \Omega$ 积分。而此时，由于在边界上所有的函数的值都要相等，此时 $\delta y = 0$，这样最后一项积分就化为0了。我们写为下面的结果：&lt;/p&gt;
-&lt;span id="modify"&gt;
+&lt;span id="modify"&gt; 
 $$
 \begin{align}
 \delta F &amp;= \int_\Omega \left(\frac{\partial f}{\partial y} - \nabla \cdot \frac{\partial f}{\partial \nabla y} \right)\delta y \, \mathrm{d}\omega + \int_\Omega \nabla\cdot\left(\frac{\partial f}{\partial \nabla y}\delta y\right) \, \mathrm{d}\omega\\
@@ -243,18 +273,18 @@ $$&lt;details&gt;
 &lt;p&gt;我们先根据全变分，写出泛函的核函数变分后的结果：&lt;/p&gt;
 $$
 \begin{align*}
-\delta F &amp; = \delta \int_V f(p,\psi,\Delta\psi,\Delta\Delta\psi) \,\mathrm{d}v \\
-&amp; = \delta \int_V f(p,\psi,\Delta\psi,\Delta\Delta\psi) \,\mathrm{d}v \\
-&amp; = \int_V \delta f(p,\psi,\Delta\psi,\Delta\Delta\psi) \,\mathrm{d}v \\
-&amp; =\int_V \left(\frac{\partial f}{\partial \psi}\right)\delta \psi
-+ \left(\frac{\partial f}{\partial \Delta\psi}\right)\delta \Delta\psi
-+ \left(\frac{\partial f}{\partial \Delta\Delta\psi}\right)\delta \Delta\Delta\psi \,\mathrm{d}v. \\
+ \delta F &amp; = \delta \int_V f(p,\psi,\Delta\psi,\Delta\Delta\psi) \,\mathrm{d}v \\
+ &amp; = \delta \int_V f(p,\psi,\Delta\psi,\Delta\Delta\psi) \,\mathrm{d}v \\
+ &amp; = \int_V \delta f(p,\psi,\Delta\psi,\Delta\Delta\psi) \,\mathrm{d}v \\
+ &amp; =\int_V \left(\frac{\partial f}{\partial \psi}\right)\delta \psi
+ + \left(\frac{\partial f}{\partial \Delta\psi}\right)\delta \Delta\psi
+ + \left(\frac{\partial f}{\partial \Delta\Delta\psi}\right)\delta \Delta\Delta\psi \,\mathrm{d}v. \\
 \end{align*}
 $$&lt;p&gt;接下来我们分别考察被积分的每一项。其中第一项的对 $\psi$ 的变分 $\delta\psi$ 已经符合我们的要求了，第二项中的 $\delta \Delta \psi$ 和第三项中的 $\delta \Delta\Delta\psi$ 则需要我们处理为某个函数乘以 $\delta\psi$ 的形式，以便于最后的逻辑处理。&lt;/p&gt;
 &lt;p&gt;根据变分与求导和交换的关系，我们有：&lt;/p&gt;
 $$
-\left(\frac{\partial f}{\partial \Delta\psi}\right)\delta \Delta\psi = \left(\frac{\partial f}{\partial \Delta\psi}\right)\Delta \delta \psi = f_1 \Delta\delta\psi;\\
-\left(\frac{\partial f}{\partial \Delta\Delta\psi}\right)\delta \Delta\Delta\psi = \left(\frac{\partial f}{\partial \Delta\Delta\psi}\right) \Delta\Delta\delta\psi = f_2\Delta\Delta\delta\psi,
+ \left(\frac{\partial f}{\partial \Delta\psi}\right)\delta \Delta\psi = \left(\frac{\partial f}{\partial \Delta\psi}\right)\Delta \delta \psi = f_1 \Delta\delta\psi;\\
+ \left(\frac{\partial f}{\partial \Delta\Delta\psi}\right)\delta \Delta\Delta\psi = \left(\frac{\partial f}{\partial \Delta\Delta\psi}\right) \Delta\Delta\delta\psi = f_2\Delta\Delta\delta\psi,
 $$&lt;p&gt;其中每行公式的第二个等号都是为了护眼做的处理，即将括号中的偏微分用记号表示。我们先看上面第一个式子，这是两个标量函数的乘积，其第二个因式展开应为:&lt;/p&gt;
 $$
 \Delta \delta \psi = \nabla \cdot \nabla \delta\psi,
@@ -274,25 +304,25 @@ $$
 $$&lt;p&gt;上式第二个等号使用了散度定理，第三个等号则是考虑到在边界处 $\delta\psi = 0$，$\nabla\delta\psi = \mathbf{0}$。这样我们就得到了原变分中被积函数第二项的表达形式。我们现在考虑其中的第三项，即 $f_2\Delta\Delta\delta\psi$。我们先将其中的 $\Delta\delta\psi$ 看作函数标量函数 $\varphi$，则原式写为 $f_2\Delta\varphi$。此时，套用我们上面已经得到的结果，有：&lt;/p&gt;
 $$
 \begin{align*}
-\int_V f_2 \Delta\Delta\delta\psi \,\mathrm{d}v &amp;= \int_V f_2 \Delta\varphi \,\mathrm{d}v\\
-&amp;= \int_{\partial V} f_2\nabla\varphi\cdot\hat{n}\,\mathrm{d}s -\int_{\partial V} \varphi\nabla f_2\cdot\hat{n} \,\mathrm{d}s+\int_V \varphi \nabla\cdot\nabla f_2 \,\mathrm{d}v \\
-&amp;= \int_V \varphi \nabla\cdot\nabla f_2 \,\mathrm{d}v = \int_V \varphi \Delta f_2 \,\mathrm{d}v \\
-&amp;= \int_V \Delta\delta\psi \Delta f_2 \,\mathrm{d}v = \int_V \nabla\cdot\nabla\delta\psi\, \Delta f_2 \,\mathrm{d}v\\
-&amp;= \int_{\partial V} \Delta f_2\nabla\delta\psi \cdot\hat{n}\,\mathrm{d}s -\int_{\partial V} \delta\psi\,\nabla (\Delta f_2)\cdot\hat{n} \,\mathrm{d}s+\int_V \delta\psi \Delta \Delta f_2 \,\mathrm{d}v \\
-&amp;= \int_V \delta\psi \Delta \Delta f_2 \,\mathrm{d}v,
+ \int_V f_2 \Delta\Delta\delta\psi \,\mathrm{d}v &amp;= \int_V f_2 \Delta\varphi \,\mathrm{d}v\\ 
+ &amp;= \int_{\partial V} f_2\nabla\varphi\cdot\hat{n}\,\mathrm{d}s -\int_{\partial V} \varphi\nabla f_2\cdot\hat{n} \,\mathrm{d}s+\int_V \varphi \nabla\cdot\nabla f_2 \,\mathrm{d}v \\
+ &amp;= \int_V \varphi \nabla\cdot\nabla f_2 \,\mathrm{d}v = \int_V \varphi \Delta f_2 \,\mathrm{d}v \\
+ &amp;= \int_V \Delta\delta\psi \Delta f_2 \,\mathrm{d}v = \int_V \nabla\cdot\nabla\delta\psi\, \Delta f_2 \,\mathrm{d}v\\
+ &amp;= \int_{\partial V} \Delta f_2\nabla\delta\psi \cdot\hat{n}\,\mathrm{d}s -\int_{\partial V} \delta\psi\,\nabla (\Delta f_2)\cdot\hat{n} \,\mathrm{d}s+\int_V \delta\psi \Delta \Delta f_2 \,\mathrm{d}v \\
+ &amp;= \int_V \delta\psi \Delta \Delta f_2 \,\mathrm{d}v,
 \end{align*}
 $$&lt;p&gt;其中所有的操作与前面是一样的，不断用恒等式拆开，然后由于在边界上的包含 $\delta\psi$ 的项全部归零，所有对 $V$ 的边界 $\partial V$ 的积分都会变成 0，最后就得到了我们想要的结果。我们把这些积分再合起来，将为了方便所做的记号带回，就有：&lt;/p&gt;
 $$
 \begin{align*}
 \delta F &amp; = \int_V \left(\frac{\partial f}{\partial \psi}\right)\delta \psi
-+ \left(\frac{\partial f}{\partial \Delta\psi}\right)\delta \Delta\psi
-+ \left(\frac{\partial f}{\partial \Delta\Delta\psi}\right)\delta \Delta\Delta\psi \,\mathrm{d}v \\
-&amp;= \int_V \left(\frac{\partial f}{\partial \psi}\right)\delta \psi
-+ \Delta\left(\frac{\partial f}{\partial \Delta\psi}\right)\delta \psi
-+ \Delta\Delta\left(\frac{\partial f}{\partial \Delta\Delta\psi}\right)\delta \psi \,\mathrm{d}v \\
-&amp;= \int_V \left(\left(\frac{\partial f}{\partial \psi}\right)
-+ \Delta\left(\frac{\partial f}{\partial \Delta\psi}\right)
-+ \Delta\Delta\left(\frac{\partial f}{\partial \Delta\Delta\psi}\right)\right)\delta \psi \,\mathrm{d}v.
+ + \left(\frac{\partial f}{\partial \Delta\psi}\right)\delta \Delta\psi
+ + \left(\frac{\partial f}{\partial \Delta\Delta\psi}\right)\delta \Delta\Delta\psi \,\mathrm{d}v \\
+ &amp;= \int_V \left(\frac{\partial f}{\partial \psi}\right)\delta \psi
+ + \Delta\left(\frac{\partial f}{\partial \Delta\psi}\right)\delta \psi
+ + \Delta\Delta\left(\frac{\partial f}{\partial \Delta\Delta\psi}\right)\delta \psi \,\mathrm{d}v \\
+ &amp;= \int_V \left(\left(\frac{\partial f}{\partial \psi}\right)
+ + \Delta\left(\frac{\partial f}{\partial \Delta\psi}\right)
+ + \Delta\Delta\left(\frac{\partial f}{\partial \Delta\Delta\psi}\right)\right)\delta \psi \,\mathrm{d}v. 
 \end{align*}
 $$&lt;p&gt;那么，由泛函导数的定义，我们就得到了 Euler-Lagrange 方程：
 &lt;/p&gt;
@@ -302,7 +332,7 @@ $$&lt;/details&gt;
 &lt;p&gt;现在,我们来把式子带进去吧。为了方便，我们先把公式待带入的公式写在下面：&lt;/p&gt;
 $$
 \begin{align}
-F[\psi] &amp;= \int_V f(p,\psi,\Delta\psi,\Delta\Delta\psi) \mathrm{d}v\\
+F[\psi] &amp;= \int_V f(p,\psi,\Delta\psi,\Delta\Delta\psi) \mathrm{d}v\\ 
 &amp;= \int_V \left(\frac{\psi}{2} \omega \left(\nabla ^2\right)\psi + \frac{\psi^4}{4}\right) \mathrm{d}v;\\
 \omega (\nabla^2) &amp;= r + \left(1 + \nabla ^2\right)^2;\\
 \frac{\partial \psi}{\partial t} &amp;= \nabla^2 \frac{\delta F}{\delta \psi} + \xi.\\
@@ -315,9 +345,9 @@ f = r\frac{\psi^2}{2} + \frac{\psi^2}{2} + \psi \Delta\psi + \frac{1}{2}\psi\Del
 $$&lt;p&gt;我们先对公式（23）计算需要的这些偏导数，得到：&lt;/p&gt;
 $$
 \begin{align}
-\frac{\partial f}{\partial \psi} &amp;= r\psi + \psi + \Delta\psi + \frac{1}{2}\Delta\Delta\psi+\psi^3;\\
-\frac{\partial f}{\partial \Delta \psi} &amp;= \psi;\\
-\frac{\partial f}{\partial \Delta\Delta \psi} &amp;=\frac{1}{2}\psi.
+ \frac{\partial f}{\partial \psi} &amp;= r\psi + \psi + \Delta\psi + \frac{1}{2}\Delta\Delta\psi+\psi^3;\\
+ \frac{\partial f}{\partial \Delta \psi} &amp;= \psi;\\
+ \frac{\partial f}{\partial \Delta\Delta \psi} &amp;=\frac{1}{2}\psi.
 \end{align}
 $$&lt;p&gt;现在把这些得到的结果，即公式（24-26）带入到我们得到的 Euler-Lagrange 方程（18）中。注意在前面加上对应的 Laplace 算子或者双调和算子。得到的结果为：&lt;/p&gt;
 $$

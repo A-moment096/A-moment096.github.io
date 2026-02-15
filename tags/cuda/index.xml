@@ -1,101 +1,131 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CUDA on A Moment's Rest</title><link>https://a-moment096.github.io/tags/cuda/</link><description>Recent content in CUDA on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 19 Jan 2026 06:28:39 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/cuda/index.xml" rel="self" type="application/rss+xml"/><item><title>机器学习用 Ubuntu WSL 配置记录</title><link>https://a-moment096.github.io/posts/wsl_ubuntu_config/</link><pubDate>Sat, 29 Nov 2025 14:28:17 +0800</pubDate><guid>https://a-moment096.github.io/posts/wsl_ubuntu_config/</guid><description>&lt;img src="https://a-moment096.github.io/posts/wsl_ubuntu_config/%E3%83%94%E3%83%B3%E3%82%AF%E3%81%AE%E5%A4%A2.png" alt="Featured image of post 机器学习用 Ubuntu WSL 配置记录" /&gt;&lt;p&gt;&lt;em&gt;某人需要配置环境时做机器学习，这是他配置环境后电脑发生的变化……&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CUDA on A Moment's Rest</title><link>https://a-moment096.github.io/tags/cuda/</link><description>Recent content in CUDA on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Sun, 15 Feb 2026 11:05:58 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/cuda/index.xml" rel="self" type="application/rss+xml"/><item><title>机器学习用 Ubuntu WSL 配置记录</title><link>https://a-moment096.github.io/posts/wsl_ubuntu_config/</link><pubDate>Sat, 29 Nov 2025 14:28:17 +0800</pubDate><guid>https://a-moment096.github.io/posts/wsl_ubuntu_config/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post 机器学习用 Ubuntu WSL 配置记录" /&gt;&lt;p&gt;&lt;em&gt;某人需要配置环境时做机器学习，这是他配置环境后电脑发生的变化……&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图选择了可爱的小羊，来自 &lt;a class="link" href="https://www.pixiv.net/users/3402557" target="_blank" rel="noopener"
-&gt;Ruziかねつカーぺット&lt;/a&gt; 太太的 &lt;a class="link" href="https://www.pixiv.net/artworks/112910033#1" target="_blank" rel="noopener"
-&gt;ピンクの夢&lt;/a&gt;，粉粉的，可爱捏&lt;/em&gt;&lt;/p&gt;
+ &gt;Ruziかねつカーぺット&lt;/a&gt; 太太的 &lt;a class="link" href="https://www.pixiv.net/artworks/112910033#1" target="_blank" rel="noopener"
+ &gt;ピンクの夢&lt;/a&gt;，粉粉的，可爱捏&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;选曲为 &lt;a class="link" href="https://www.bilibili.com/video/BV1924y1T7mV/" title="B 站链接"
-target="_blank" rel="noopener"
-&gt;STUDY WITH MIKU -part2-&lt;/a&gt; 改编的 &lt;a class="link" href="https://www.bilibili.com/video/BV1j3411L76S/" title="原曲 B 站链接"
-target="_blank" rel="noopener"
-&gt;さよならプリンセス&lt;/a&gt; (再见公主)，原作是 P 主 &lt;a class="link" href="https://twitter.com/kaivcl" target="_blank" rel="noopener"
-&gt;Kai&lt;/a&gt;，由初音演唱。俏皮的音乐，好听……&lt;/em&gt;&lt;/p&gt;
+ target="_blank" rel="noopener"
+ &gt;STUDY WITH MIKU -part2-&lt;/a&gt; 改编的 &lt;a class="link" href="https://www.bilibili.com/video/BV1j3411L76S/" title="原曲 B 站链接"
+ target="_blank" rel="noopener"
+ &gt;さよならプリンセス&lt;/a&gt; (再见公主)，原作是 P 主 &lt;a class="link" href="https://twitter.com/kaivcl" target="_blank" rel="noopener"
+ &gt;Kai&lt;/a&gt;，由初音演唱。俏皮的音乐，好听……&lt;/em&gt;&lt;/p&gt;
+
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
 &lt;style type="text/css"&gt;
 [data-scheme="dark"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
-border-bottom-color: var(--card-separator-color);
+ border-bottom-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
-border-color: var(--card-separator-color);
+ border-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-body {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info {
-border-top-color: var(--card-background);
+ border-top-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
-color: var(--card-text-color-tertiary);
+ color: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
-background-color: var(--card-separator-color);
+ background-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
-background-color: var(--accent-color);
+ background-color: var(--accent-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li {
-color: var(--card-text-color-main);
-border-top-color: var(--card-separator-color);
+ color: var(--card-text-color-main);
+ border-top-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc {
-text-shadow: -1px -1px 0 var(--body-background);
+ text-shadow: -1px -1px 0 var(--body-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:before {
-background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+ background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:after {
-background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc p {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
+ 
 [data-scheme="light"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="light"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
 &lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
+
+
 &lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=2053344485" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
 &lt;h2 id="前情提要"&gt;前情提要
 &lt;/h2&gt;&lt;p&gt;参加完刚刚在西安举办的材料基因工程大会之后，某人深受触动：&lt;/p&gt;
@@ -108,42 +138,42 @@ background: var(--card-background-selected);
 &lt;h2 id="环境状态--目标"&gt;环境状态 &amp;amp; 目标
 &lt;/h2&gt;&lt;p&gt;下面的表格汇总了我目前的环境状态：&lt;/p&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style="text-align: center"&gt;项目&lt;/th&gt;
-&lt;th style="text-align: center"&gt;状态&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;OS&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Windows 11 Pro&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;GPU&lt;/td&gt;
-&lt;td style="text-align: center"&gt;RTX 5060 Laptop&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;Terminal&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Windows Terminal&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;Shell&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Powershell 7&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;WSL&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Arch Linux（不使用）&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;IDE&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Microsoft VS Code&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;硬盘&lt;/td&gt;
-&lt;td style="text-align: center"&gt;只有C盘&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th style="text-align: center"&gt;项目&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;状态&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;OS&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Windows 11 Pro&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;GPU&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;RTX 5060 Laptop&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;Terminal&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Windows Terminal&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;Shell&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Powershell 7&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;WSL&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Arch Linux（不使用）&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;IDE&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Microsoft VS Code&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;硬盘&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;只有C盘&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;即便微软罪大恶极，经过一些调教之后，Win11 还是变得能用了起来；Windows Terminal 真的很好用，推荐每个人玩了命地用（）；很难想象不用美丽优雅 &lt;strong&gt;兼容部分 GNU/Linux 命令&lt;/strong&gt; 的 Powershell 7（&lt;code&gt;pwsh&lt;/code&gt;）的样子；我们默认打开科学上网且开启虚拟网卡模式，免得 Shell 笨笨地不走代理。&lt;/p&gt;
 &lt;p&gt;我们的目标？自然是搞一个 Ubuntu 的 WSL，再在里面装上 Anaconda 以及 CUDA ，最后创建一个 conda 虚拟环境，在虚拟环境里装上测试用的 PyTorch。&lt;/p&gt;
@@ -198,7 +228,7 @@ background: var(--card-background-selected);
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# tealdeer for tldr&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 5&lt;/span&gt;&lt;span class="cl"&gt;sudo apt install zsh fd-find ripgrep eza bat neovim cmake build-essential git gdb tealdeer
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 6&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# download oh-my-zsh, install and use it&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt;sh -c &lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt;sh -c &lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt; 
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# several zsh plugins&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt;git clone https://github.com/zsh-users/zsh-autosuggestions &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;ZSH_CUSTOM&lt;/span&gt;&lt;span class="k"&gt;:-&lt;/span&gt;&lt;span class="p"&gt;~/.oh-my-zsh/custom&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;/plugins/zsh-autosuggestions
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt;git clone https://github.com/zsh-users/zsh-syntax-highlighting.git &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;ZSH_CUSTOM&lt;/span&gt;&lt;span class="k"&gt;:-&lt;/span&gt;&lt;span class="p"&gt;~/.oh-my-zsh/custom&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;/plugins/zsh-syntax-highlighting
@@ -219,15 +249,15 @@ background: var(--card-background-selected);
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt;autoload -U compinit &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; compinit
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Update when available&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt;zstyle &lt;span class="s1"&gt;&amp;#39;:omz:update&amp;#39;&lt;/span&gt; mode reminder
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt;zstyle &lt;span class="s1"&gt;&amp;#39;:omz:update&amp;#39;&lt;/span&gt; mode reminder 
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;12&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;13&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;plugins&lt;/span&gt;&lt;span class="o"&gt;=(&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;14&lt;/span&gt;&lt;span class="cl"&gt; git
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;15&lt;/span&gt;&lt;span class="cl"&gt; colored-man-pages
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;16&lt;/span&gt;&lt;span class="cl"&gt; zsh-vi-mode
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;17&lt;/span&gt;&lt;span class="cl"&gt; zsh-autosuggestions
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;18&lt;/span&gt;&lt;span class="cl"&gt; zsh-syntax-highlighting
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;19&lt;/span&gt;&lt;span class="cl"&gt; conda-zsh-completion
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;14&lt;/span&gt;&lt;span class="cl"&gt;	git
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;15&lt;/span&gt;&lt;span class="cl"&gt;	colored-man-pages
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;16&lt;/span&gt;&lt;span class="cl"&gt;	zsh-vi-mode
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;17&lt;/span&gt;&lt;span class="cl"&gt;	zsh-autosuggestions
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;18&lt;/span&gt;&lt;span class="cl"&gt;	zsh-syntax-highlighting
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;19&lt;/span&gt;&lt;span class="cl"&gt;	conda-zsh-completion
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;20&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;21&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;22&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;source&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="nv"&gt;$ZSH&lt;/span&gt;&lt;span class="s2"&gt;/oh-my-zsh.sh&amp;#34;&lt;/span&gt;
@@ -257,14 +287,17 @@ background: var(--card-background-selected);
 &lt;h3 id="windows-宿主机的简单配置"&gt;Windows 宿主机的简单配置
 &lt;/h3&gt;&lt;p&gt;由于我使用的是 Windows Terminal，在安装好 Ubuntu WSL 之后关掉 Windows Terminal 再打开，Profiles 里面就出现刚刚设置好的 Ubuntu WSL 了：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/wsl_ubuntu_config/wt-ubuntu-24.04.png"
-width="960"
-height="441"
-srcset="https://a-moment096.github.io/posts/wsl_ubuntu_config/wt-ubuntu-24.04_hu_1569aa756e368b09.png 480w, https://a-moment096.github.io/posts/wsl_ubuntu_config/wt-ubuntu-24.04_hu_6f9b4ea1452c8f9.png 1024w"
-loading="lazy"
-alt="安装好的 WSL"
-class="gallery-image"
-data-flex-grow="217"
-data-flex-basis="522px"
+	width="960"
+	height="441"
+	loading="lazy"
+	
+		alt="安装好的 WSL"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="217"
+		data-flex-basis="522px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;可能你的 Windows Terminal 里有很多别的选项，或者默认的 Shell 等不是 PowerShell，没关系，我们可以进入设置修改。比如让 PowerShell 成为默认 profile&lt;sup id="fnref:2"&gt;&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref"&gt;2&lt;/a&gt;&lt;/sup&gt;，把常用的 profile 顺序提前等等。&lt;/p&gt;
 &lt;p&gt;这里主要想聊一下下面这些设置，请注意要记得保存，用的 GUI 的话右下角有保存按钮，使用 JSON 文件的话要保存文件：&lt;/p&gt;
@@ -281,7 +314,7 @@ data-flex-basis="522px"
 &lt;h3 id="anaconda-的简单介绍"&gt;Anaconda 的简单介绍
 &lt;/h3&gt;&lt;p&gt;所以，Anaconda 是什么？它是 Python 吗？Python 是什么？我已经有 Python 之后还需要装 Anaconda 吗？如果你了解这些概念，请直接跳过吧（）&lt;/p&gt;
 &lt;p&gt;我们先来说说 Python 和包管理。Python 作为一门比较现代的语言，它使用解释器实现逐行的代码运行，且通过包管理器来管理代码中使用到的模块、库之类的东西。然而 Python 其本身只是一个语言，我们常说的 “下载 Python” 实际上是下载了包含 Python 的解释器、包管理器以及运行环境的一个发行版。我们从 &lt;a class="link" href="https://www.python.org" target="_blank" rel="noopener"
-&gt;官网&lt;/a&gt; 下载到的 Python 安装包实际上包括了使用 C 语言实现的 CPython 解释器，从 PyPI，即 Python Package Index 来下载安装对应的包的包管理器 &lt;code&gt;pip&lt;/code&gt;，以及它们的运行所需的环境（如果你勾选了 IDLE 的选项，你还会安装一个小小的 Python IDE）。我们称这样下载到的是 Python 官方发行版。&lt;/p&gt;
+ &gt;官网&lt;/a&gt; 下载到的 Python 安装包实际上包括了使用 C 语言实现的 CPython 解释器，从 PyPI，即 Python Package Index 来下载安装对应的包的包管理器 &lt;code&gt;pip&lt;/code&gt;，以及它们的运行所需的环境（如果你勾选了 IDLE 的选项，你还会安装一个小小的 Python IDE）。我们称这样下载到的是 Python 官方发行版。&lt;/p&gt;
 &lt;p&gt;除了 Python 官方的发行版外，由于 CPython 采用的开源协议，它允许任何人自由地打包并发行自己基于 CPython 的 Python 发行版，实际上也确实有很多不同的基于 CPython 的发行版。其中一个非常出名的发行版即为本次的主角，Anaconda。Anaconda 的 Python 发行版包含了由自己打包的 CPython 解释器，不同于 &lt;code&gt;pip&lt;/code&gt; 的另一款包管理器 &lt;code&gt;conda&lt;/code&gt;，以及由 Anaconda 提供的，预包含了许多科学计算、数据统计库的运行环境。&lt;/p&gt;
 &lt;p&gt;Anaconda 的特点在于 &lt;code&gt;conda&lt;/code&gt; 这款包管理器，它可以选择对应的频道（channel）来安装不同来源的库，且更重要的是，它的库不局限于 Python 使用：它不仅管理 Python 使用的库，还会管理这些库所需要的可能的其他语言的库，进行必要的依赖求解。另外它还集成了虚拟环境管理，不似 Python 官方提供的 venv 这个环境管理工具，这让 &lt;code&gt;conda&lt;/code&gt; 成为了一个 All In One 的管理工具。当然，它还直接地提供了一些做科学计算时常需要的库，如 Numpy, Matplotlib，Pandas 等。如果你只是想享受最纯粹的 &lt;code&gt;conda&lt;/code&gt;，可以考虑安装 Miniconda，不过因为我们就是要做机器学习，所以干脆安装 Anaconda 就挺好的。&lt;/p&gt;
 &lt;p&gt;所以，为什么我们需要 Anaconda？做机器学习没有说必须要用 Anaconda 呀？而且大部分 Python 包都会优先考虑使用 PyPI 分发，而不会先考虑 Anaconda 的包源。使用 Anaconda 的主要原因，除了我看的教程是用的 Anaconda 管理环境之外，还有很重要的一点就是 &lt;code&gt;conda&lt;/code&gt; 管理的不只是包，还有包自身的依赖，以及能直接管理环境。这解决了一个很棘手的问题：依赖地狱。假如你要的包 A 和包 B 都依赖同一个库 C，而 A 要求用老版本的 C 库，B 要求用更新版本的 C 库，而你的电脑已经安装了老 C 库，这时候要怎么办？把这个老 C 库卸载，重装一个新的吗？&lt;code&gt;conda&lt;/code&gt; 提供了一个优雅的方法：虚拟出一个环境，在这个环境中重新安装相容的 A, B 和 C。更重要的是，这个环境不会影响到其他的环境，不用担心装上什么软件之后会毁掉整个电脑上的库。事实上，在机器学习这个较新的，正在发展的领域，机器学习用到的库很有可能发生奇怪的依赖问题。而使用 &lt;code&gt;conda&lt;/code&gt; 就能更方便地解决这类问题。&lt;/p&gt;
@@ -296,14 +329,17 @@ data-flex-basis="522px"
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;./Anaconda3-2025.06-1-Linux-x86_64.sh
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这样就进入安装流程了，首先要先同意它们的协议，我们回车，它会讲我们得同意协议条款，此时我们得明确打出 &lt;code&gt;yes&lt;/code&gt; 并回车，否则：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/wsl_ubuntu_config/yes.png"
-width="1112"
-height="340"
-srcset="https://a-moment096.github.io/posts/wsl_ubuntu_config/yes_hu_61d5cd9533bff928.png 480w, https://a-moment096.github.io/posts/wsl_ubuntu_config/yes_hu_dcce69c234e0e460.png 1024w"
-loading="lazy"
-alt="Type yes here!"
-class="gallery-image"
-data-flex-grow="327"
-data-flex-basis="784px"
+	width="1112"
+	height="340"
+	loading="lazy"
+	
+		alt="Type yes here!"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="327"
+		data-flex-basis="784px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;接下来就是安装位置，默认是安装在家目录的 &lt;code&gt;anaconda3&lt;/code&gt; 这个位置，我们可以选择接受这个位置，或者手打换一个位置安装，这里就直接默认了。然后就是一阵强力的安装，就进入了最后的环节，是否要将 &lt;code&gt;conda&lt;/code&gt; 添加进 Shell 的配置中，每次进入 Shell 就自动启动 &lt;code&gt;conda&lt;/code&gt;。默认是 &lt;code&gt;no&lt;/code&gt;，我们接受默认，待会儿我们手动添加相关内容。&lt;/p&gt;
 &lt;p&gt;这样就完成安装了。不过因为没有在 Shell 中初始化 &lt;code&gt;conda&lt;/code&gt;，我们需要先执行初始化。我们安装好的 &lt;code&gt;conda&lt;/code&gt; 位于 &lt;code&gt;~/anaconda3/bin/conda&lt;/code&gt;，因此我们可以使用命令：&lt;/p&gt;
@@ -328,42 +364,51 @@ data-flex-basis="784px"
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;vim &lt;span class="nv"&gt;$ZSH_CUSTOM&lt;/span&gt;/env/conda_env.zsh
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;然后把刚刚的内容贴进去，然后重启 Shell，就好啦。你应该能看到 Shell 的显示中，左侧有一个 &lt;code&gt;(base)&lt;/code&gt; 的字样，这样就说明我们已经成功启动 &lt;code&gt;conda&lt;/code&gt; 的 &lt;code&gt;base&lt;/code&gt; 环境了。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/wsl_ubuntu_config/base-env.png"
-width="545"
-height="216"
-srcset="https://a-moment096.github.io/posts/wsl_ubuntu_config/base-env_hu_45eb526d95c0db7.png 480w, https://a-moment096.github.io/posts/wsl_ubuntu_config/base-env_hu_c632d45afb4945cb.png 1024w"
-loading="lazy"
-alt="Base Environment"
-class="gallery-image"
-data-flex-grow="252"
-data-flex-basis="605px"
+	width="545"
+	height="216"
+	loading="lazy"
+	
+		alt="Base Environment"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="252"
+		data-flex-basis="605px"
+	
 &gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;我们先不介绍 Anaconda 的具体操作，因为对我们而言，我们还没有完全完成环境配置。接下来要配置的则是所谓的 CUDA。&lt;/p&gt;
 &lt;h2 id="cuda"&gt;CUDA
 &lt;/h2&gt;&lt;p&gt;我刚刚收到了一个坏消息：在我刚写好 CUDA 安装部分的瞬间，鬼使神差地，我看到了 CUDA 官网文档上关于 &amp;ldquo;conda&amp;rdquo; 的部分：&lt;a class="link" href="https://docs.nvidia.com/cuda/cuda-installation-guide-linux/#conda-installation" target="_blank" rel="noopener"
-&gt;Conda Installation&lt;/a&gt;&lt;/p&gt;
+ &gt;Conda Installation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/wsl_ubuntu_config/conda-installation.png"
-width="1500"
-height="1167"
-srcset="https://a-moment096.github.io/posts/wsl_ubuntu_config/conda-installation_hu_1fdfa4d31d89afd2.png 480w, https://a-moment096.github.io/posts/wsl_ubuntu_config/conda-installation_hu_e4178a5c05388e0d.png 1024w"
-loading="lazy"
-alt="Conda Installation"
-class="gallery-image"
-data-flex-grow="128"
-data-flex-basis="308px"
+	width="1500"
+	height="1167"
+	loading="lazy"
+	
+		alt="Conda Installation"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="128"
+		data-flex-basis="308px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;何意味…… 在 &lt;code&gt;conda activate pytorch-test&lt;/code&gt;（我的环境名叫 &lt;code&gt;pytorch-test&lt;/code&gt;）之后使用 &lt;code&gt;where nvcc&lt;/code&gt;，得到了这样的结果：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-zsh" data-lang="zsh"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;/home/amoment/.conda/envs/pytorch/bin/nvcc
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;/usr/local/cuda-13.0/bin/nvcc
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/wsl_ubuntu_config/%E9%9A%BE%E9%81%93%E8%AF%B4.jpg"
-width="214"
-height="236"
-srcset="https://a-moment096.github.io/posts/wsl_ubuntu_config/%E9%9A%BE%E9%81%93%E8%AF%B4_hu_a7bfdb9ea32618bc.jpg 480w, https://a-moment096.github.io/posts/wsl_ubuntu_config/%E9%9A%BE%E9%81%93%E8%AF%B4_hu_24e650e3cd9dbbe7.jpg 1024w"
-loading="lazy"
-alt="难道说！？"
-class="gallery-image"
-data-flex-grow="90"
-data-flex-basis="217px"
+	width="214"
+	height="236"
+	loading="lazy"
+	
+		alt="难道说！？"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="90"
+		data-flex-basis="217px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;算了，写都写了，我们还是介绍一下怎么安装，以及&lt;em&gt;怎么卸载&lt;/em&gt;吧……&lt;/p&gt;
 &lt;h3 id="cuda-的简单介绍"&gt;CUDA 的简单介绍
@@ -372,19 +417,22 @@ data-flex-basis="217px"
 &lt;h3 id="安装-cuda"&gt;安装 CUDA
 &lt;/h3&gt;&lt;p&gt;在开始之前，我们最好先确认我们的设备可以使用 CUDA。首先我们使用 &lt;code&gt;nvidia-smi&lt;/code&gt; 命令，它会显示设备上的 Nvidia 显卡的信息：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/wsl_ubuntu_config/nvidia-smi.png"
-width="1582"
-height="867"
-srcset="https://a-moment096.github.io/posts/wsl_ubuntu_config/nvidia-smi_hu_304bd1f076167b9d.png 480w, https://a-moment096.github.io/posts/wsl_ubuntu_config/nvidia-smi_hu_494f2919a12215b.png 1024w"
-loading="lazy"
-alt="nvidia-smi"
-class="gallery-image"
-data-flex-grow="182"
-data-flex-basis="437px"
+	width="1582"
+	height="867"
+	loading="lazy"
+	
+		alt="nvidia-smi"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="182"
+		data-flex-basis="437px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;可以看到有一大堆的信息在这里，包括我这台设备的显卡，以及对应的 CUDA 版本。如果是比较老的显卡，需要去 &lt;a class="link" href="https://developer.nvidia.com/cuda-gpus" target="_blank" rel="noopener"
-&gt;CUDA GPU Compute Capability&lt;/a&gt; 这里查一下显卡的 Compute Capability，大于等于 3.0 的就是可以正常使用 CUDA 的了。一般来讲只要不是上古显卡都应该是没问题的吧（逃）&lt;/p&gt;
+ &gt;CUDA GPU Compute Capability&lt;/a&gt; 这里查一下显卡的 Compute Capability，大于等于 3.0 的就是可以正常使用 CUDA 的了。一般来讲只要不是上古显卡都应该是没问题的吧（逃）&lt;/p&gt;
 &lt;p&gt;接下来就是正式安装，根据 &lt;a class="link" href="https://docs.nvidia.com/cuda/wsl-user-guide/index.html#cuda-support-for-wsl-2" target="_blank" rel="noopener"
-&gt;官方文档&lt;/a&gt; 的描述，第一步应该删掉老旧的 GPG 密钥：&lt;/p&gt;
+ &gt;官方文档&lt;/a&gt; 的描述，第一步应该删掉老旧的 GPG 密钥：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-zsh" data-lang="zsh"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;sudo apt-key del 7fa2af80
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;接下来我们就可以直接下载 CUDA Toolkit 了。目前最新版本的 Toolkit 是 13.1 版本，下载页面实际上提供的是一串脚本：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-zsh" data-lang="zsh"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;wget https://developer.download.nvidia.com/compute/cuda/repos/wsl-ubuntu/x86_64/cuda-wsl-ubuntu.pin

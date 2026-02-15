@@ -1,98 +1,127 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Arch on A Moment's Rest</title><link>https://a-moment096.github.io/tags/arch/</link><description>Recent content in Arch on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 19 Jan 2026 06:28:39 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/arch/index.xml" rel="self" type="application/rss+xml"/><item><title>安装 Arch Linux，但是笔记本物理机</title><link>https://a-moment096.github.io/posts/arch_on_laptop/</link><pubDate>Fri, 02 May 2025 16:12:04 +0800</pubDate><guid>https://a-moment096.github.io/posts/arch_on_laptop/</guid><description>&lt;img src="https://a-moment096.github.io/posts/arch_on_laptop/imgs/Alice.png" alt="Featured image of post 安装 Arch Linux，但是笔记本物理机" /&gt;&lt;p&gt;&lt;em&gt;之前在虚拟机上面装的 Arch Linux 根本不过瘾（搞笑，你根本就没更完(❌)），这次就把自己的小轻薄改成 Arch 好了。顺带，也记录一下实体机上安装可能会遇到的坑？&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Arch on A Moment's Rest</title><link>https://a-moment096.github.io/tags/arch/</link><description>Recent content in Arch on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Sun, 15 Feb 2026 11:05:58 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/arch/index.xml" rel="self" type="application/rss+xml"/><item><title>安装 Arch Linux，但是笔记本物理机</title><link>https://a-moment096.github.io/posts/arch_on_laptop/</link><pubDate>Fri, 02 May 2025 16:12:04 +0800</pubDate><guid>https://a-moment096.github.io/posts/arch_on_laptop/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post 安装 Arch Linux，但是笔记本物理机" /&gt;&lt;p&gt;&lt;em&gt;之前在虚拟机上面装的 Arch Linux 根本不过瘾（搞笑，你根本就没更完(❌)），这次就把自己的小轻薄改成 Arch 好了。顺带，也记录一下实体机上安装可能会遇到的坑？&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图出自 R Sound Design 的新曲 《アリス？》，一首很轻快的 V曲~&lt;/em&gt;&lt;/p&gt;
-&lt;!--
+&lt;!-- 
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
 &lt;style type="text/css"&gt;
 [data-scheme="dark"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
-border-bottom-color: var(--card-separator-color);
+ border-bottom-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
-border-color: var(--card-separator-color);
+ border-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-body {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info {
-border-top-color: var(--card-background);
+ border-top-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
-color: var(--card-text-color-tertiary);
+ color: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
-background-color: var(--card-separator-color);
+ background-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
-background-color: var(--accent-color);
+ background-color: var(--accent-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li {
-color: var(--card-text-color-main);
-border-top-color: var(--card-separator-color);
+ color: var(--card-text-color-main);
+ border-top-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc {
-text-shadow: -1px -1px 0 var(--body-background);
+ text-shadow: -1px -1px 0 var(--body-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:before {
-background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+ background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:after {
-background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc p {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
+ 
 [data-scheme="light"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="light"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
 &lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
+
+
 &lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=750876" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt; --&gt;
 &lt;p&gt;&lt;em&gt;很可惜 网易云/QQ音乐 都暂时没有这首歌，所以只能劳驾移步B站欣赏了。一旦有更新就会贴在这里的&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;B站&lt;a class="link" href="https://www.bilibili.com/video/BV1UtV5zqEjC/" target="_blank" rel="noopener"
-&gt;投稿&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+ &gt;投稿&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id="引子我好急怎么耗电这么大"&gt;引子：我好急，怎么耗电这么大
 &lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;亲爱的笔记本：&lt;/p&gt;
@@ -106,14 +135,17 @@ background: var(--card-background-selected);
 &lt;/h2&gt;&lt;p&gt;首先肯定是先把电脑上已有的资料都备份好。其实说实话没太多文件，主要是两个没打完的 Gal 吧（心虚），因为大部分的文件都其实已经搞到台式机上面了。一开始是想着把这些文件放在一块精心规划的小硬盘上，安装的时候不格式化就行了，但是感觉还是有点点点点危险，所以干脆还是挪到另一台机器上，把这台小本的硬盘全部格式化了得了。不过也许我应该考虑更加智能的备份方案？算了，以后再考虑（挖坑）。&lt;/p&gt;
 &lt;p&gt;其次就是准备启动盘。本来这次想要换一种安装媒介来着，比如光盘？（没错我有光盘刻录机，为了听 CD 买的 ()），结果还是嫌麻烦，放弃了。给虚拟机安装的时候不是已经有了镜像了吗？为什么不直接用呢？至于为什么没有下载最新的（最新的就是昨天刚出的，5月1日版本），是因为我刚准备下载的时候看到最上面一行小字：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/arch_on_laptop/imgs/no_need_for_download.png"
-width="1277"
-height="133"
-srcset="https://a-moment096.github.io/posts/arch_on_laptop/imgs/no_need_for_download_hu_b7fc85415b980f50.png 480w, https://a-moment096.github.io/posts/arch_on_laptop/imgs/no_need_for_download_hu_d693396e5a356e3d.png 1024w"
-loading="lazy"
-alt="安装好再更新不挺好？（滚挂警告）"
-class="gallery-image"
-data-flex-grow="960"
-data-flex-basis="2304px"
+	width="1277"
+	height="133"
+	loading="lazy"
+	
+		alt="安装好再更新不挺好？（滚挂警告）"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="960"
+		data-flex-basis="2304px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;So, why not?&lt;/p&gt;
 &lt;p&gt;镜像依旧是用 &lt;code&gt;rufus&lt;/code&gt; 烧录到陪伴了我6+年的小U盘上，什么格式化之类的 &lt;code&gt;rufus&lt;/code&gt; 会自动帮我搞好的。中间有个小插曲好像是 &lt;code&gt;rufus&lt;/code&gt; 不太支持最新的 syslinux 版本，需要额外下载两个小库。无所谓（）我选择相信。&lt;/p&gt;
@@ -135,8 +167,8 @@ data-flex-basis="2304px"
 &lt;p&gt;烂了，没有数据返回。烂完了。&lt;/p&gt;
 &lt;p&gt;（找找办法x2……）&lt;/p&gt;
 &lt;p&gt;顺从。又不是没有别的 WIFI 能用。直接连上办公室 WIFI好了。当然，这里也贴一下我参考了的连接校园网的方法的博文：&lt;a class="link" href="https://www.cnblogs.com/holaworld/p/17839616.html" target="_blank" rel="noopener"
-&gt;链接1&lt;/a&gt; 以及 &lt;a class="link" href="https://www.bilibili.com/opus/852262124483772422" target="_blank" rel="noopener"
-&gt;链接2&lt;/a&gt;。&lt;/p&gt;
+ &gt;链接1&lt;/a&gt; 以及 &lt;a class="link" href="https://www.bilibili.com/opus/852262124483772422" target="_blank" rel="noopener"
+ &gt;链接2&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;最后网络这里还有要设置一下系统时间。用 &lt;code&gt;timedatectl&lt;/code&gt; 就可以。 感谢 &lt;code&gt;zsh&lt;/code&gt; 和这些工具带上的自动补全，&lt;code&gt;timedatectl --help&lt;/code&gt; 一下，跟着感觉走，最后就得到了 &lt;code&gt;timedatectl set-timezone Asia/Shanghai&lt;/code&gt; 了。相当简单。&lt;/p&gt;
 &lt;h3 id="再见我的旧文件们"&gt;再见，我的（旧）文件们
 &lt;/h3&gt;&lt;p&gt;又到了每次装系统最喜欢也最提心吊胆的磁盘分区了。总有一种破后而立的感觉，感觉在磁盘格式化之后，这台电脑就变成全新的了诶。还是一样，&lt;code&gt;fdisk -l&lt;/code&gt; 列一下可用分区。一下出来了一堆呀，删了删了，全部删了。&lt;/p&gt;
@@ -168,7 +200,7 @@ data-flex-basis="2304px"
 &lt;/h3&gt;&lt;p&gt;在孜孜不倦的努力以及不厌其烦的打扰 AI 下，我成功找到了在我的小破本上科学上网的方法。这里不多讲，但是核心只有一个：使用 TUN 模式。启用 TUN 之后，一切都对了，全对！感谢 AI，感谢 DeepSeek，感谢 ChatGPT！伟大，无需多言。&lt;/p&gt;
 &lt;h3 id="字体照着教程开抄"&gt;字体：照着教程开抄
 &lt;/h3&gt;&lt;p&gt;之前在虚拟机上进行安装的时候实际上没太注意字体的问题。这次因为是日常自用，还是留意了一下，毕竟每天看着奇形怪状的汉字真的很别扭。字体的设置基本就是参考 &lt;a class="link" href="https://catcat.cc/post/2021-03-07/" target="_blank" rel="noopener"
-&gt;这篇博文&lt;/a&gt;，谢谢你，大佬。不过也要注意，读的时候（或者，抄的时候）还是要仔细一些，有一些设置实际上不是最好的设置，可以用出现在底下的更好的配置替代。也算是挡住了一些些伸手党？也许？&lt;/p&gt;
+ &gt;这篇博文&lt;/a&gt;，谢谢你，大佬。不过也要注意，读的时候（或者，抄的时候）还是要仔细一些，有一些设置实际上不是最好的设置，可以用出现在底下的更好的配置替代。也算是挡住了一些些伸手党？也许？&lt;/p&gt;
 &lt;h3 id="指纹呜呜呜呜呜怎么硬件还能不开源呀"&gt;指纹：呜呜呜呜呜怎么硬件还能不开源呀
 &lt;/h3&gt;&lt;p&gt;我的笔记本最让我自豪的一点就是她有非常好用的指纹识别。这个本来应该没什么要紧的，但是想到之后就很像折腾一下。特别是回回输入密码，真的有点累。虽然这个本是我自己用，里面也没啥东西，但是还是不太想无密码裸奔。而如果有了指纹，一切都变得熟悉了。啊，那该是多么美妙呀。&lt;/p&gt;
 &lt;p&gt;直到我花了两个小时多把指纹识别都配置的差不多了的时候，我才发现，愚蠢的小米旗下的 Redmi Book 14 使用的指纹识别模块是闭源的，也没有相关的逆向工程尝试，现在没有任何驱动能启用它。&lt;/p&gt;
@@ -224,7 +256,7 @@ data-flex-basis="2304px"
 &lt;p align="right"&gt;Yours, &lt;/p&gt;
 &lt;p align="right"&gt;A Moment&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;谢谢你能看到这里。看完这一大堆废话，说实话也挺累的。如果这些整活儿的内容让你能开心一下，那就太好了。最后，一如既往，就祝您身心健康吧。&lt;/p&gt;</description></item><item><title>从零开始的 Arch Linux 安装</title><link>https://a-moment096.github.io/posts/arch_install/</link><pubDate>Sun, 10 Nov 2024 22:34:55 +0800</pubDate><guid>https://a-moment096.github.io/posts/arch_install/</guid><description>&lt;img src="https://a-moment096.github.io/posts/arch_install/imgs/Reimu_Water.jpg" alt="Featured image of post 从零开始的 Arch Linux 安装" /&gt;&lt;p&gt;&lt;em&gt;久闻 Arch Linux 大名, 以前尝试过在自己的电脑上安装 Arch Linux, 但是无情地失败了. 最近又有了尝试安装的想法, 故顺带做此记录, 以便将来回头嘲讽自己的离谱操作.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;谢谢你能看到这里。看完这一大堆废话，说实话也挺累的。如果这些整活儿的内容让你能开心一下，那就太好了。最后，一如既往，就祝您身心健康吧。&lt;/p&gt;</description></item><item><title>从零开始的 Arch Linux 安装</title><link>https://a-moment096.github.io/posts/arch_install/</link><pubDate>Sun, 10 Nov 2024 22:34:55 +0800</pubDate><guid>https://a-moment096.github.io/posts/arch_install/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post 从零开始的 Arch Linux 安装" /&gt;&lt;p&gt;&lt;em&gt;久闻 Arch Linux 大名, 以前尝试过在自己的电脑上安装 Arch Linux, 但是无情地失败了. 最近又有了尝试安装的想法, 故顺带做此记录, 以便将来回头嘲讽自己的离谱操作.&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id="引子-我与-linux"&gt;引子: 我与 Linux
 &lt;/h2&gt;&lt;p&gt;我认识 Linux 是从疫情在家无所适从的时候, 在自己的戴尔笔记本上安装 Ubuntu 开始的. 在那之前, 我只知道在 Windows 的江山之外, 还有一片名为 Linux 的世外桃源 (是的, 当时还不知道有 Mac OS,笑死). 而随着对编程兴趣的逐渐浓厚, 我愈发好奇那个 &amp;ldquo;只有高手才能玩得转&amp;rdquo; 的操作系统究竟是长什么样子. 于是, 在父亲的帮助下, 我在我的戴尔笔记本上划出来一小块硬盘留给 Linux (是的, 那时想安装双系统), 并且安装了 Ubuntu. 这个过程花费了我整整一天, 中间甚至和父亲闹了点矛盾, 把为数不多的精力全都耗光了. 自然, 安装好之后除了打开看了一眼, 安装了个 QQ 然后给同学炫耀之后, 便没了下文, 在随后的哪次格式化硬盘的时候跟着不见了.&lt;/p&gt;
 &lt;p&gt;第二次尝试 Linux 是在英国百无聊赖的时候开始的. 那时又是对电脑感兴趣, 又是好奇 Linux 操作系统是什么样子, 于是便又一次自己尝试安装 Linux. 这次是跟着鸟叔开始的, 故而安装了他的教程里的 CentOS. emmm 这个系统好像是比较老旧了还是怎么样, 目前也不是很火的样子. 鸟叔的教程还是相当细心认真的, 我这种纯小白 (也许) 也懵懵懂懂地在虚拟机上安装好了, 尝试了几个命令, 也感受到了命令行的神奇之处. 然而, 可能是好奇心太旺盛, 抑或是其他的原因, 我的兴趣点很快跑掉了, 因此这次对 Linux 的探索之旅止步于学会用命令行关机 (当然, 现在也已经忘了hhh)&lt;/p&gt;
@@ -236,36 +268,45 @@ data-flex-basis="2304px"
 &lt;h2 id="开始-准备-安装"&gt;开始 (准备) 安装
 &lt;/h2&gt;&lt;h3 id="帅气的开屏-然后进入-shell"&gt;帅气的开屏, 然后进入 Shell
 &lt;/h3&gt;&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/arch_install/imgs/Welcome.png"
-width="642"
-height="555"
-srcset="https://a-moment096.github.io/posts/arch_install/imgs/Welcome_hu_9c204cf385924706.png 480w, https://a-moment096.github.io/posts/arch_install/imgs/Welcome_hu_3b9c1c315d9db805.png 1024w"
-loading="lazy"
-alt="开始安装!"
-class="gallery-image"
-data-flex-grow="115"
-data-flex-basis="277px"
+	width="642"
+	height="555"
+	loading="lazy"
+	
+		alt="开始安装!"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="115"
+		data-flex-basis="277px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;这里我们打开 &lt;a class="link" href="imgs/https://wiki.archlinux.org/title/Installation_guide" &gt;Arch Linux Installation Guide&lt;/a&gt;以便根据官方教程进行安装. 我不打算用 Arch Install, 感觉那个没什么意思 (&lt;del&gt;上次也是这么说的&lt;/del&gt;). 按照小节 1.4.2, 我们使用了光盘介质 (ISO也算是光盘镜像), 所以直接第一个选项就可以了.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/arch_install/imgs/Hacking.png"
-width="1282"
-height="875"
-srcset="https://a-moment096.github.io/posts/arch_install/imgs/Hacking_hu_10177284956d1702.png 480w, https://a-moment096.github.io/posts/arch_install/imgs/Hacking_hu_bc0f2c1f48d52944.png 1024w"
-loading="lazy"
-alt="很帅"
-class="gallery-image"
-data-flex-grow="146"
-data-flex-basis="351px"
+	width="1282"
+	height="875"
+	loading="lazy"
+	
+		alt="很帅"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="146"
+		data-flex-basis="351px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;旋即屏幕闪过很有黑客感觉的画面 (个人猜测是系统自检, 感觉像是 systemd, 因为左边有很多绿色 OK 字样), 然后便进入了如下画面:&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/arch_install/imgs/Install_1.png"
-width="1282"
-height="875"
-srcset="https://a-moment096.github.io/posts/arch_install/imgs/Install_1_hu_ee00e86872897b7d.png 480w, https://a-moment096.github.io/posts/arch_install/imgs/Install_1_hu_61c86b47e385ff4a.png 1024w"
-loading="lazy"
-alt="安装画面1"
-class="gallery-image"
-data-flex-grow="146"
-data-flex-basis="351px"
+	width="1282"
+	height="875"
+	loading="lazy"
+	
+		alt="安装画面1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="146"
+		data-flex-basis="351px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;根据 1.4.3, 我们这是来到了第一个虚拟终端 (Virtual Console), 身份是管理员用户 root, 使用的 Shell 是 Zsh. 感谢虚拟机, 让我不用担心在 root 账户下做的愚蠢操作会害死我的电脑和我自己. 那么我们继续吧~&lt;/p&gt;
 &lt;h3 id="键盘映射和字体-以及验证启动模式"&gt;键盘映射和字体, 以及验证启动模式
@@ -284,38 +325,47 @@ data-flex-basis="351px"
 &lt;p&gt;首先创建分区表. 这里使用 MBR 分区表, 因为默认如此. 根据网上的搜索结果, MBR 也适合我这种磁盘容量比较小的情况. 然后按 &lt;code&gt;n&lt;/code&gt; 进入创建分区引导界面. 这里会询问你的分区类型 (是初始还是拓展), 分区的编号, 以及起始和结束扇区. 第一个分区分给 &lt;code&gt;/boot&lt;/code&gt; 作为启动分区, 结束扇区前的部分一律默认 (初始分区, 1号, 从 2048 扇区开始), 然后通过命令 &lt;code&gt;+1G&lt;/code&gt; 来给第一个分区 1G 的容量. 然后创建第二个分区, 也是前面全部默认, 最后用 &lt;code&gt;+4G&lt;/code&gt; 指定容量为 4G. 这里我把这 4G 作为 Swap (好像就是虚拟内存)分区, 先使用命令 &lt;code&gt;l&lt;/code&gt; 查看每种分区类型的代码 (Swap的代码是 82), 然后 &lt;code&gt;t&lt;/code&gt; 开始改变分区类型, 选择 2 号, 类型写82. 最后把所有的空间分给第三个区, 然后给分区1打上 bootable 的标签 (用命令 &lt;code&gt;a&lt;/code&gt; 然后选 1 号).&lt;/p&gt;
 &lt;p&gt;这个时候可以用 &lt;code&gt;p&lt;/code&gt; 来查看分区结果, 会有一个表格写着所有的内容. 确认无误就可以 &lt;code&gt;w&lt;/code&gt; 来写入分区结果了. 接下来要格式化文件系统, 不然操作系统不知道文件是怎么存放的. 首先用命令 &lt;code&gt;lsblk -f&lt;/code&gt; 来查看现在的磁盘信息 (或者就是刚刚的分区情况). 这里我显示的结果如下:&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/arch_install/imgs/DiskPartition.png"
-width="953"
-height="144"
-srcset="https://a-moment096.github.io/posts/arch_install/imgs/DiskPartition_hu_47af7ef9aa0c6709.png 480w, https://a-moment096.github.io/posts/arch_install/imgs/DiskPartition_hu_ead30a075aaab807.png 1024w"
-loading="lazy"
-alt="lsblk -f 结果"
-class="gallery-image"
-data-flex-grow="661"
-data-flex-basis="1588px"
+	width="953"
+	height="144"
+	loading="lazy"
+	
+		alt="lsblk -f 结果"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="661"
+		data-flex-basis="1588px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;说明之前的 &lt;code&gt;sda&lt;/code&gt; 磁盘已经被分成了三个区域, 且都没有挂载. 现在我发现了一个问题: 我用的是 MBR 分区表, 为什么使用了 GPT分区表推荐的 &lt;code&gt;/boot&lt;/code&gt;呢? 而且之前还说没有开启 EFI, 现在又要搞 EFI 适用的 &lt;code&gt;/boot&lt;/code&gt;, 离谱. 很好, 那就重新分区吧.&lt;/p&gt;
 &lt;p&gt;Waiting&amp;hellip;&lt;/p&gt;
 &lt;p&gt;很好, 在熟练的操作下~~ (指现学)~~, 先用 &lt;code&gt;d&lt;/code&gt; 删除所有分区, 然后创建 4G 的 Swap 分区, 以及 bootable 的主目录分区. 现在的分区结果是这样的:&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/arch_install/imgs/DiskPartition1.png"
-width="950"
-height="130"
-srcset="https://a-moment096.github.io/posts/arch_install/imgs/DiskPartition1_hu_160c786cbefe897b.png 480w, https://a-moment096.github.io/posts/arch_install/imgs/DiskPartition1_hu_86f338df56606e0b.png 1024w"
-loading="lazy"
-alt="新的分区结果"
-class="gallery-image"
-data-flex-grow="730"
-data-flex-basis="1753px"
+	width="950"
+	height="130"
+	loading="lazy"
+	
+		alt="新的分区结果"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="730"
+		data-flex-basis="1753px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;我们采用最经典的 &lt;code&gt;ext4&lt;/code&gt; 文件格式 (其实就是教程里这么推荐的) 来格式化 &lt;code&gt;/dev/sda2&lt;/code&gt;, 命令为: &lt;code&gt;mkfs.ext4 /dev/sda2&lt;/code&gt;; 然后用命令 &lt;code&gt;mkswap /dev/sda1&lt;/code&gt; 将 &lt;code&gt;/dev/sda1&lt;/code&gt;格式化为 &lt;code&gt;swap&lt;/code&gt;. 整体结果如下:&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/arch_install/imgs/DiskFormat.png"
-width="952"
-height="382"
-srcset="https://a-moment096.github.io/posts/arch_install/imgs/DiskFormat_hu_e121748a320fba84.png 480w, https://a-moment096.github.io/posts/arch_install/imgs/DiskFormat_hu_4e8305f1e1271e6b.png 1024w"
-loading="lazy"
-alt="分区格式化"
-class="gallery-image"
-data-flex-grow="249"
-data-flex-basis="598px"
+	width="952"
+	height="382"
+	loading="lazy"
+	
+		alt="分区格式化"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="249"
+		data-flex-basis="598px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;最后, 我们终于要挂载文件系统了. 这个我了解过, 使用 &lt;code&gt;mount&lt;/code&gt; 命令即可挂载硬件到某个目录下. 首先我们挂载根目录, 把根目录挂载到 &lt;code&gt;/mnt&lt;/code&gt; 下: &lt;code&gt;mount /dev/sda2 /mnt&lt;/code&gt;. 因为我没有别的什么文件分区, 只剩下一个 Swap 分区, 所以我们直接使用命令: &lt;code&gt;swapon /dev/sda1&lt;/code&gt; 来启动 Swap.&lt;/p&gt;
 &lt;h2 id="真的要安装了"&gt;真的要安装了
@@ -323,27 +373,33 @@ data-flex-basis="598px"
 &lt;p&gt;首先是要选择镜像. 这次选择的镜像感觉上是给系统使用的 pacman 的镜像源. Arch 已经有一份使用 Reflector 生成 的镜像服务器列表: &lt;code&gt;/etc/pacman.d/mirrorlist&lt;/code&gt;, 可以查看或编辑这个文件以使地理位置最靠近的服务器地址可以被优先使用. 这里我使用 &lt;code&gt;reflector --latest 10 --sort rate&lt;/code&gt; 来按照响应速度排序最近更新的10个服务器. 结果好多都 timeout 了. 尝试命令 &lt;code&gt;refletor --country China --age 12 --sort rate&lt;/code&gt;, 试了两次, 结果又是时好时坏. 不管了, 起码这个时好时坏也算是有源可用. 使用命令 &lt;code&gt;reflector --country China --age 12 --sort rate --save /etc/pacman.d/mirrorlist&lt;/code&gt; 即可把输出的结果保存到 &lt;code&gt;/etc/pacman.d/mirrorlist&lt;/code&gt; 里面.&lt;/p&gt;
 &lt;p&gt;接下来要安装必要的包. 根据教程, 这里安装的包有 &lt;code&gt;base&lt;/code&gt; 包, Linux 内核以及一些常见的固件. 使用命令: &lt;code&gt;pacstrap -K /mnt base linux linux-firmware&lt;/code&gt;. 之后便进入了安装界面.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/arch_install/imgs/Installation.png"
-width="1282"
-height="875"
-srcset="https://a-moment096.github.io/posts/arch_install/imgs/Installation_hu_b4ed61063e36ee7f.png 480w, https://a-moment096.github.io/posts/arch_install/imgs/Installation_hu_3d005f445af7eba6.png 1024w"
-loading="lazy"
-alt="安装界面"
-class="gallery-image"
-data-flex-grow="146"
-data-flex-basis="351px"
+	width="1282"
+	height="875"
+	loading="lazy"
+	
+		alt="安装界面"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="146"
+		data-flex-basis="351px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;看来要安装 127 个包, 不是个小数目. 而且我这里的网速看起来也比较一般. 慢慢等吧. 这个安装进度让我莫名想起安装 $\LaTeX$ 时候的样子.&lt;/p&gt;
 &lt;p&gt;Waiting&amp;hellip;&lt;/p&gt;
 &lt;p&gt;? 后续过程这么快的吗? 127个包看来都不是很大的样子. 安装好之后的样子是这样的:&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/arch_install/imgs/AfterInstall.png"
-width="1282"
-height="875"
-srcset="https://a-moment096.github.io/posts/arch_install/imgs/AfterInstall_hu_a09856a788793695.png 480w, https://a-moment096.github.io/posts/arch_install/imgs/AfterInstall_hu_3c35d008680637fe.png 1024w"
-loading="lazy"
-alt="安装完成"
-class="gallery-image"
-data-flex-grow="146"
-data-flex-basis="351px"
+	width="1282"
+	height="875"
+	loading="lazy"
+	
+		alt="安装完成"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="146"
+		data-flex-basis="351px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;可以看到其实有一些部分是缺失的. 这个应该没什么关系, 毕竟虚拟机可能确实会缺一些不紧要的组件. 这里还可以安装一些别的组件, 比如 CPU 的指令集更新 (&lt;code&gt;microcode&lt;/code&gt;), 使用 RAID 的工具之类. 这里就先跳过了, 之后使用 &lt;code&gt;pacman&lt;/code&gt; 安装需要的内容. &lt;code&gt;microcode&lt;/code&gt; 由于我使用的是虚拟机, 指令集补丁应该存在于主机 (这台Windows) 上,
 所以不需要安装.&lt;/p&gt;
@@ -353,14 +409,17 @@ data-flex-basis="351px"
 &lt;/h3&gt;&lt;p&gt;首先先生成一份分区表文件, 使用命令: &lt;code&gt;genfstab -U /mnt &amp;gt;&amp;gt; /mnt/etc/fstab&lt;/code&gt;. 之后用 &lt;code&gt;cat&lt;/code&gt; 看看结果是否正确, 不对的话需要改一下. &lt;code&gt;fstab&lt;/code&gt; 的 Arch Wiki 页面有一些例子, 这里就不再赘述 (因为我搞的好像没什么问题).&lt;/p&gt;
 &lt;p&gt;接下来 change root 到新系统下: &lt;code&gt;arch-chroot /mnt&lt;/code&gt;. 根据中文 Arch Wiki 的解释, chroot 是 &amp;ldquo;修改当前进程及其子进程的可见根目录的操作&amp;rdquo;. 似乎修改之后进程就会以 &lt;code&gt;/mnt&lt;/code&gt; 为根目录 &lt;code&gt;/&lt;/code&gt;:&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/arch_install/imgs/Chroot.png"
-width="297"
-height="73"
-srcset="https://a-moment096.github.io/posts/arch_install/imgs/Chroot_hu_8fbf951ac932f1bb.png 480w, https://a-moment096.github.io/posts/arch_install/imgs/Chroot_hu_a9d4f17fc95c185e.png 1024w"
-loading="lazy"
-alt="chroot 之后"
-class="gallery-image"
-data-flex-grow="406"
-data-flex-basis="976px"
+	width="297"
+	height="73"
+	loading="lazy"
+	
+		alt="chroot 之后"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="406"
+		data-flex-basis="976px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;我大胆猜测, 现在就是把进程从 ISO 文件中的系统转移到了我虚拟机上的系统. 不过怎么验证这个想法我没什么主意. 下一步吧.&lt;/p&gt;
 &lt;p&gt;现在要设置时区. 国内应该是东8区. 根据教程, 可以使用 &lt;code&gt;timedatectl list-timezones&lt;/code&gt; 来列出可用时区. 然而坏消息是, 列出来的时区因为太多了, 而不知道为什么, 这个终端我没法滚动 (鼠标或者键盘的 &lt;code&gt;Shift + PgUP&lt;/code&gt; 好像都不可以). 经过一番查找, 向上翻页的功能应该是被从内核中砍掉了, 因为没多少人用了, 目前几乎都在用终端模拟器. 好吧, 只好把结果重定向到文件里, 然后再用 Vim 打开试试了. 不过竟然新系统是真的什么都没有, 包括 Vim 或者 Nano 都没有??? 只好退回到安装镜像里看看了. 国内时区使用的是 &lt;code&gt;Asia/Shanghai&lt;/code&gt;, 所以重新 &lt;code&gt;arch-chroot /mnt&lt;/code&gt; 回到根目录, 使用命令 &lt;code&gt;ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime&lt;/code&gt; 命令设置好时区, 然后使用命令 &lt;code&gt;hwclock --systohc&lt;/code&gt; 生成 &lt;code&gt;/etc/adjtime&lt;/code&gt;.&lt;/p&gt;
@@ -394,8 +453,8 @@ data-flex-basis="976px"
 &lt;li&gt;猜测3: 该不会是我自己系统上没有装驱动吧
 &lt;ul&gt;
 &lt;li&gt;坏了, 网上一通搜, 真的是没有装网络服务 &lt;code&gt;dhcpcd&lt;/code&gt; 和 &lt;code&gt;networkmanager&lt;/code&gt;. 乖乖回去用安装镜像进入, &lt;code&gt;mount&lt;/code&gt; 根分区 &lt;code&gt;/dev/sda2&lt;/code&gt; 到安装镜像的 &lt;code&gt;/mnt&lt;/code&gt; 然后 &lt;code&gt;arch-chroot /mnt&lt;/code&gt;, 开始老实安装 &lt;code&gt;dhcpcd&lt;/code&gt; 和 &lt;code&gt;networkmanager&lt;/code&gt;. 这里要感谢&lt;a class="link" href="https://bbs.archlinuxcn.org/viewtopic.php?id=12603" target="_blank" rel="noopener"
-&gt;讨论串&lt;/a&gt;和&lt;a class="link" href="https://www.cnblogs.com/yuxiayizhengwan/p/16576946.html" target="_blank" rel="noopener"
-&gt;一篇博文&lt;/a&gt;.
+ &gt;讨论串&lt;/a&gt;和&lt;a class="link" href="https://www.cnblogs.com/yuxiayizhengwan/p/16576946.html" target="_blank" rel="noopener"
+ &gt;一篇博文&lt;/a&gt;.
 回看安装指引, 这时才明白, 条目 1.7 最底下的 Note 是什么意思了: 网络服务在新装的系统上面是通通没有滴! Okay, 安装完毕, 继续回到 &lt;code&gt;pacman&lt;/code&gt; 上.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -410,14 +469,17 @@ data-flex-basis="976px"
 &lt;p&gt;通过 &lt;code&gt;pacman -S plasma-meta&lt;/code&gt; 安装 plasma. 中间有几处需要选择一些诸如字体, 解码器之类的供应源, 网上没有多少讨论这个的, 所以就基本全部默认了. 然后顺手安装上 &lt;code&gt;zsh&lt;/code&gt;, &lt;code&gt;noto-fonts-cjk/emoji/extra&lt;/code&gt;, &lt;code&gt;bluez-utils&lt;/code&gt; &lt;code&gt;kitty&lt;/code&gt;, &lt;code&gt;konsole&lt;/code&gt; 和 &lt;code&gt;alacritty&lt;/code&gt;. 这里 &lt;code&gt;kitty&lt;/code&gt;, &lt;code&gt;konsole&lt;/code&gt;, &lt;code&gt;alacritty&lt;/code&gt; 三个重复了, 因为我想都试试.&lt;/p&gt;
 &lt;p&gt;首先打开蓝牙: &lt;code&gt;sudo systemctl enable --now bluetooth&lt;/code&gt;, 然后通过 &lt;code&gt;sudo systemctl enable --now sddm&lt;/code&gt; 即可进入 KDE Plasma 桌面. 剩下的就是点点点了, 点点点, 爽! 我必须立刻把任务栏 (这里叫 panel) 移至左边!&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/arch_install/imgs/KDE.png"
-width="2055"
-height="1228"
-srcset="https://a-moment096.github.io/posts/arch_install/imgs/KDE_hu_281af38eee2f8bc4.png 480w, https://a-moment096.github.io/posts/arch_install/imgs/KDE_hu_8c716bb11b939391.png 1024w"
-loading="lazy"
-alt="KDE Plasma 桌面环境"
-class="gallery-image"
-data-flex-grow="167"
-data-flex-basis="401px"
+	width="2055"
+	height="1228"
+	loading="lazy"
+	
+		alt="KDE Plasma 桌面环境"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="167"
+		data-flex-basis="401px"
+	
 &gt;&lt;/p&gt;
 &lt;h3 id="安装别的工具"&gt;安装别的工具……
 &lt;/h3&gt;&lt;h4 id="我中文输入法呢"&gt;我中文输入法呢!
@@ -439,25 +501,31 @@ data-flex-basis="401px"
 &lt;h4 id="终端字体怎么怪怪的-alacritty"&gt;终端字体怎么怪怪的? Alacritty?
 &lt;/h4&gt;&lt;p&gt;听闻 Alacritty 使用 Rust, 性能十分优异, 然而在我满心欢喜地调整系统字体为中文之后, Alacritty 的字体变得惨不忍睹了 &amp;hellip;&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/arch_install/imgs/alacritty_font.png"
-width="304"
-height="99"
-srcset="https://a-moment096.github.io/posts/arch_install/imgs/alacritty_font_hu_a3b07131812e05bf.png 480w, https://a-moment096.github.io/posts/arch_install/imgs/alacritty_font_hu_e2a7dfd664a9f427.png 1024w"
-loading="lazy"
-alt="奇怪的字体"
-class="gallery-image"
-data-flex-grow="307"
-data-flex-basis="736px"
+	width="304"
+	height="99"
+	loading="lazy"
+	
+		alt="奇怪的字体"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="307"
+		data-flex-basis="736px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;这究竟是怎么回事? 在热心群友的帮助下, 我查阅了 Alacritty 的 Arch Wiki, 得到了令人震惊的事实: 我竟然没有配置字体文件. 直接下载安装 &lt;code&gt;ttf-cascadia-mono-nerd&lt;/code&gt; (其实不下载也可以), 然后在家文件夹下创建新文件夹和文件: &lt;code&gt;.config/alacritty/alacritty.toml&lt;/code&gt; 并使用 &lt;code&gt;vim&lt;/code&gt; 修改内容. 格式如下:&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/arch_install/imgs/alacritty_fc.png"
-width="429"
-height="441"
-srcset="https://a-moment096.github.io/posts/arch_install/imgs/alacritty_fc_hu_73434397be4cb22d.png 480w, https://a-moment096.github.io/posts/arch_install/imgs/alacritty_fc_hu_90d0163909e5b392.png 1024w"
-loading="lazy"
-alt="alt text"
-class="gallery-image"
-data-flex-grow="97"
-data-flex-basis="233px"
+	width="429"
+	height="441"
+	loading="lazy"
+	
+		alt="alt text"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="97"
+		data-flex-basis="233px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;保存的时候便会直接应用. 其中 &lt;code&gt;family&lt;/code&gt; 是可以从设置的字体管理部分看到字体族的名字, 输入即可. 这里字体族主要是需要等宽字体族才能正常显示, 选择这款字体是因为我 Windows 上的终端字体也是用的这套 &lt;code&gt;Cascadia&lt;/code&gt;, 很喜欢所以就干脆保持一致了.&lt;/p&gt;
 &lt;h4 id="试试-zsh"&gt;试试 Zsh!

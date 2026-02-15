@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PF Model on A Moment's Rest</title><link>https://a-moment096.github.io/tags/pf-model/</link><description>Recent content in PF Model on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 19 Jan 2026 06:28:39 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/pf-model/index.xml" rel="self" type="application/rss+xml"/><item><title>文献阅读 - Wang-Jin-Khachaturyan2002</title><link>https://a-moment096.github.io/posts/wang-jin-khachaturyan2002/</link><pubDate>Sat, 15 Nov 2025 23:25:19 +0800</pubDate><guid>https://a-moment096.github.io/posts/wang-jin-khachaturyan2002/</guid><description>&lt;img src="https://a-moment096.github.io/posts/PF_Papers/Nev_Alice-2.jpg" alt="Featured image of post 文献阅读 - Wang-Jin-Khachaturyan2002" /&gt;&lt;p&gt;&lt;em&gt;这篇文章算是他们三个人的工作的总结，发在了 J. Appl. Phys. 上，我其实很早就看过这篇，但是当时看得匆忙，一知半解，这次仔细看看&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PF Model on A Moment's Rest</title><link>https://a-moment096.github.io/tags/pf-model/</link><description>Recent content in PF Model on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Sun, 15 Feb 2026 11:05:58 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/pf-model/index.xml" rel="self" type="application/rss+xml"/><item><title>文献阅读 - Wang-Jin-Khachaturyan2002</title><link>https://a-moment096.github.io/posts/wang-jin-khachaturyan2002/</link><pubDate>Sat, 15 Nov 2025 23:25:19 +0800</pubDate><guid>https://a-moment096.github.io/posts/wang-jin-khachaturyan2002/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post 文献阅读 - Wang-Jin-Khachaturyan2002" /&gt;&lt;p&gt;&lt;em&gt;这篇文章算是他们三个人的工作的总结，发在了 J. Appl. Phys. 上，我其实很早就看过这篇，但是当时看得匆忙，一知半解，这次仔细看看&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;图图还是 &lt;a class="link" href="https://x.com/Neve_AI" target="_blank" rel="noopener"
-&gt;&lt;strong&gt;Neve_AI&lt;/strong&gt;&lt;/a&gt; 绘制的 AI 图来的，歪头银发小妹妹真的好可爱呀~~&lt;/em&gt;&lt;/p&gt;
+ &gt;&lt;strong&gt;Neve_AI&lt;/strong&gt;&lt;/a&gt; 绘制的 AI 图来的，歪头银发小妹妹真的好可爱呀~~&lt;/em&gt;&lt;/p&gt;
 $$
 \gdef\misfit#1{\varepsilon_{#1}^0(\mathbf{r})}
 \gdef\eigen#1{\varepsilon_{#1}^*0*(\mathbf{r})}
@@ -18,7 +18,7 @@ $$
 $$&lt;p&gt;弹性能由 KS 理论可得：&lt;/p&gt;
 $$
 \begin{align*}
-E^{\mathrm{el}} = &amp;\frac{1}{2}\int_V C_{ijkl}^0 \misfit{ij}\misfit{kl}\dd^3 r \\ &amp;- \avee{ij}\int_V C_{ijkl}^0 \misfit{kl}\dd^3 r + \frac{V}{2}C_{ijkl}^0 \avee{ij}\avee{kl} \\ &amp;- \frac{1}{2}\tilde{\int}\frac{\dd^3 k}{(2\pi)^3}n_i \tilde{\sigma}_{ij}^0(\mathbf{k})\Omega_{jk}(\mathbf{n})\tilde{\sigma}_{kl}^0(\mathbf{k})^* n_l,
+ E^{\mathrm{el}} = &amp;\frac{1}{2}\int_V C_{ijkl}^0 \misfit{ij}\misfit{kl}\dd^3 r \\ &amp;- \avee{ij}\int_V C_{ijkl}^0 \misfit{kl}\dd^3 r + \frac{V}{2}C_{ijkl}^0 \avee{ij}\avee{kl} \\ &amp;- \frac{1}{2}\tilde{\int}\frac{\dd^3 k}{(2\pi)^3}n_i \tilde{\sigma}_{ij}^0(\mathbf{k})\Omega_{jk}(\mathbf{n})\tilde{\sigma}_{kl}^0(\mathbf{k})^* n_l,
 \end{align*}
 $$&lt;p&gt;依旧，这里的 $\tilde{\int}$ 代表在去掉 $\mathbf{k} = \mathbf{0}$ 处 $(2\pi)^3/V$ 的倒空间体积后，在倒空间中的积分，而 $\mathbf{n} = \mathbf{k}/k$ 还是倒空间中点的方向。而 $\Omega_{ij}(\mathbf{n})$ 是格林方程张量，是 $\Omega^{-1}_{ij}(C^0_{ijkl}n_kn_l)$ 的逆张量。这里的 $C_{ijkl}^0$ 是弹性模量，可以把倒空间中的弹性应力和应变通过它连接起来，即 $\tilde{\sigma}_{ij}^{o}(\mathbf{k}) = C_{ijkl}\,\tilde{\varepsilon}_{kl}^{o}(\mathbf{k})$。公式中倒空间应力的星号代表复共轭。这个形式的自由能适用于应变控制下的边界条件。&lt;/p&gt;
 &lt;p&gt;在 KS 理论下的等效应变则可以用本征应变表达为：&lt;/p&gt;
@@ -183,9 +183,9 @@ $$&lt;p&gt;要处理结构不均匀性，可以设置他们的不均匀部分的
 &lt;li&gt;自己写一写这个力学求解器，自己不写怎么知道它怎么起效果的呢？（虽然肉眼可见地难）&lt;/li&gt;
 &lt;li&gt;依旧，学习如何像大佬一样玩弄公式&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;论文阅读环节也许会暂时到此为止，因为下一篇大概是读书笔记（ Toshio Mura 所著的 &lt;em&gt;Micromechanics of Defects in Solids&lt;/em&gt;）。我大概也许能从中刨出所谓的 KS 理论的真身（又或许需要再搭配几篇文章）。然后可能我会考虑用亲爱的 Python 来实现这个算法。&lt;/p&gt;</description></item><item><title>文献阅读 - Jin-Wang-Khachaturyan2001</title><link>https://a-moment096.github.io/posts/jin-wang-khachaturyan2001/</link><pubDate>Thu, 23 Oct 2025 23:25:19 +0800</pubDate><guid>https://a-moment096.github.io/posts/jin-wang-khachaturyan2001/</guid><description>&lt;img src="https://a-moment096.github.io/posts/PF_Papers/Nev_Alice.jpg" alt="Featured image of post 文献阅读 - Jin-Wang-Khachaturyan2001" /&gt;&lt;p&gt;&lt;em&gt;Jin，Wang 和 Khachaturyan 等人在 01 年的时候于 Appl. Phys. Lett. 发表了这篇文章（快报），应该是自此开创了相场的微弹性力学理论。今天就读读它，（尝试）以此为起点学习这个理论吧。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;论文阅读环节也许会暂时到此为止，因为下一篇大概是读书笔记（ Toshio Mura 所著的 &lt;em&gt;Micromechanics of Defects in Solids&lt;/em&gt;）。我大概也许能从中刨出所谓的 KS 理论的真身（又或许需要再搭配几篇文章）。然后可能我会考虑用亲爱的 Python 来实现这个算法。&lt;/p&gt;</description></item><item><title>文献阅读 - Jin-Wang-Khachaturyan2001</title><link>https://a-moment096.github.io/posts/jin-wang-khachaturyan2001/</link><pubDate>Thu, 23 Oct 2025 23:25:19 +0800</pubDate><guid>https://a-moment096.github.io/posts/jin-wang-khachaturyan2001/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post 文献阅读 - Jin-Wang-Khachaturyan2001" /&gt;&lt;p&gt;&lt;em&gt;Jin，Wang 和 Khachaturyan 等人在 01 年的时候于 Appl. Phys. Lett. 发表了这篇文章（快报），应该是自此开创了相场的微弹性力学理论。今天就读读它，（尝试）以此为起点学习这个理论吧。&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;图图还是 &lt;a class="link" href="https://x.com/Neve_AI" target="_blank" rel="noopener"
-&gt;&lt;strong&gt;Neve_AI&lt;/strong&gt;&lt;/a&gt; 绘制的 AI 图来的，真的好可爱呀~~&lt;/em&gt;&lt;/p&gt;
+ &gt;&lt;strong&gt;Neve_AI&lt;/strong&gt;&lt;/a&gt; 绘制的 AI 图来的，真的好可爱呀~~&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id="研究背景"&gt;研究背景
 &lt;/h2&gt;&lt;p&gt;这个理论建立的原因是因为在载荷下对包含裂纹、孔隙的材料进行力学求解时几乎没法得到数学解析解，这主要是因为很多材料都是各向异性的多晶，而材料里的各种复杂缺陷也很难描述，只能用数值计算的方法对材料的真实力学状态进行求解。而相场法正好能解决一些材料的单/多晶问题，如果能用它再解一下材料内部的力学状态就好了。这就引出了本文的主要内容。&lt;/p&gt;
 &lt;h2 id="神秘-ks-理论"&gt;神秘 KS 理论
@@ -193,22 +193,30 @@ $$&lt;p&gt;要处理结构不均匀性，可以设置他们的不均匀部分的
 &lt;h3 id="均匀非均匀应变"&gt;均匀/非均匀应变
 &lt;/h3&gt;&lt;p&gt;这里解释一下什么是均匀和非均匀的应变，如图&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;：&lt;/p&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style="text-align: center"&gt;均匀 Homogeneous&lt;/th&gt;
-&lt;th style="text-align: center"&gt;非均匀 Heterogeneous&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/PF_Papers/Homogeneous-strain-JWK2001.png"
-loading="lazy"
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th style="text-align: center"&gt;均匀 Homogeneous&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;非均匀 Heterogeneous&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;&lt;img src="posts/PF_Papers/Homogeneous-strain-JWK2001.png"
+	
+	
+	loading="lazy"
+	
+	
 &gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/PF_Papers/Heterogeneous-strain-JWK2001.png"
-loading="lazy"
+ &lt;td style="text-align: center"&gt;&lt;img src="posts/PF_Papers/Heterogeneous-strain-JWK2001.png"
+	
+	
+	loading="lazy"
+	
+	
 &gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h3 id="吓人公式"&gt;吓人公式
 &lt;/h3&gt;&lt;p&gt;这个理论给出了应变能泛函和应力分布的准确解，其中应力为：&lt;/p&gt;
@@ -221,7 +229,7 @@ $$&lt;p&gt;这个公式相当吓人，符号很多…… 其中的积分号带�
 &lt;/p&gt;
 $$
 \begin{align*}
-\tilde{\epsilon}_{ij}^{0}(\mathbf{k}) &amp;= \int_{V} \epsilon_{ij}^{0}(\mathbf{r})\, e^{-i\mathbf{k}\cdot\mathbf{r}}\, d^{3}r\\
+\tilde{\epsilon}_{ij}^{0}(\mathbf{k}) &amp;= \int_{V} \epsilon_{ij}^{0}(\mathbf{r})\, e^{-i\mathbf{k}\cdot\mathbf{r}}\, d^{3}r\\ 
 \epsilon^{o}_{ij} &amp;= \frac{1}{V}\int_{V}\epsilon^{o}_{ij}(\mathbf{r})\,\mathrm{d}^3r
 \end{align*}
 $$&lt;p&gt;我们来看这个公式，首先应力分布是一个标量场，自然是用弹性模量 “乘以” 材料本来就有的应变产生的张量 （其实是缩并），再加上一个外加的应力。这里的 $C_{ijkl}$ 没啥问题，重点在于怎么计算后面的应变张量。可以看到这个应变由三个部分组成，一个复杂的倒空间积分结果，减掉上面讲的那个宏观一致而微观不一致的本征应变 $\epsilon_{kl}^{o}(\mathbf{r})$，再加上这个应变的平均值。&lt;/p&gt;
@@ -298,7 +306,7 @@ $$&lt;p&gt;假如把 Allen-Cahn 形式的方程里的能量和本征应变用新
 &lt;ol&gt;
 &lt;li id="fn:1"&gt;
 &lt;p&gt;图片来自：&lt;a class="link" href="https://earth.sdsu.edu/visualstructure/vss/htm_hlp/hom_het.htm" target="_blank" rel="noopener"
-&gt;Visualizing Strain&lt;/a&gt;&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+ &gt;Visualizing Strain&lt;/a&gt;&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:2"&gt;
 &lt;p&gt;A. G. Khachaturyan, Fiz. Tverd. Tela &lt;strong&gt;8&lt;/strong&gt;, 2710 (1966); Sov. Phys. Solid State &lt;strong&gt;8&lt;/strong&gt;, 2163 (1967); A. G. Khachaturyan and G. A. Shatalov, Sov. Phys. JETP &lt;strong&gt;29&lt;/strong&gt;, 557 (1969); A. G. Khachaturyan, &lt;em&gt;Theory of Structural Transformations in Solids&lt;/em&gt; (Wiley, New York, 1983).&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
@@ -313,9 +321,9 @@ $$&lt;p&gt;假如把 Allen-Cahn 形式的方程里的能量和本征应变用新
 &lt;p&gt;Y. M. Jin, A. Artemev, and A. G. Khachaturyan, Acta Mater. &lt;strong&gt;49&lt;/strong&gt;, 2309 (2001).&amp;#160;&lt;a href="#fnref:5" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</description></item><item><title>文献阅读 - Nestler1999</title><link>https://a-moment096.github.io/posts/nestler1999/</link><pubDate>Wed, 22 Oct 2025 18:25:19 +0800</pubDate><guid>https://a-moment096.github.io/posts/nestler1999/</guid><description>&lt;img src="https://a-moment096.github.io/posts/PF_Papers/Nev_Alice.jpg" alt="Featured image of post 文献阅读 - Nestler1999" /&gt;&lt;p&gt;&lt;em&gt;Nestler 在他 1999 年的这篇文章里进一步介绍了他在之前的文献里的模型情况，后面大家用的比较多的结果应该是界面能的部分，这里读（翻译）一下这篇文章，做个笔记。&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;</description></item><item><title>文献阅读 - Nestler1999</title><link>https://a-moment096.github.io/posts/nestler1999/</link><pubDate>Wed, 22 Oct 2025 18:25:19 +0800</pubDate><guid>https://a-moment096.github.io/posts/nestler1999/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post 文献阅读 - Nestler1999" /&gt;&lt;p&gt;&lt;em&gt;Nestler 在他 1999 年的这篇文章里进一步介绍了他在之前的文献里的模型情况，后面大家用的比较多的结果应该是界面能的部分，这里读（翻译）一下这篇文章，做个笔记。&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;图图是 &lt;a class="link" href="https://x.com/Neve_AI" target="_blank" rel="noopener"
-&gt;&lt;strong&gt;Neve_AI&lt;/strong&gt;&lt;/a&gt; 绘制的 AI 图来的，真可爱呀~~&lt;/em&gt;&lt;/p&gt;
+ &gt;&lt;strong&gt;Neve_AI&lt;/strong&gt;&lt;/a&gt; 绘制的 AI 图来的，真可爱呀~~&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id="研究背景"&gt;研究背景
 &lt;/h2&gt;&lt;p&gt;本文主要是在比较尖锐界面的渐进结果以及多相场模型的模拟结果。在前一篇文章 &lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt; 中已经建立了一个模型，通过使用广义 Cahn-Hoffman $\xi$-向量公式在窄界面条件下反推出了界面处的 Gibbs-Thomson-Herring 方程以及各向异性力在多相交接点的守恒。在另一篇文章 &lt;sup id="fnref:2"&gt;&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref"&gt;2&lt;/a&gt;&lt;/sup&gt; 里对多相 Allen-Cahn 方程做了渐进分析，确定了&lt;strong&gt;渐进奇异极限（大概就是网格多粗的时候公式就失效了）&lt;/strong&gt;；另外在另一篇文章 &lt;sup id="fnref:3"&gt;&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref"&gt;3&lt;/a&gt;&lt;/sup&gt; 里给出了这个模型的详细数值分析结果。&lt;/p&gt;
 &lt;p&gt;简单来说这篇文章是这个新模型的一个部分，用来验证渐进行为的。大佬就是牛逼，全部自引用，大概看了一下，这篇文章是篇幅最短的，还好我从这儿看的（逃）&lt;/p&gt;
@@ -397,106 +405,136 @@ $$&lt;p&gt;其中的 $\delta_{\alpha\beta\mu}$ 的选择是让沿 Gibbs 单纯�
 &lt;p&gt;H. Garcke, B. Nestler, B. Stoth, SIAM J. Appl. Math. 60 (1) (1999) 295&amp;#160;&lt;a href="#fnref:3" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&amp;#160;&lt;a href="#fnref1:3" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</description></item><item><title>多相场模型与巨势方程</title><link>https://a-moment096.github.io/posts/mpf_gp/</link><pubDate>Sun, 05 Jan 2025 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/mpf_gp/</guid><description>&lt;img src="https://a-moment096.github.io/posts/mpf_gp/ShoujouRei_MikitoP.png" alt="Featured image of post 多相场模型与巨势方程" /&gt;&lt;p&gt;&lt;em&gt;记录一下目前使用到的两个相场模型，包括它们的推导，假设和缺陷&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;</description></item><item><title>多相场模型与巨势方程</title><link>https://a-moment096.github.io/posts/mpf_gp/</link><pubDate>Sun, 05 Jan 2025 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/mpf_gp/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post 多相场模型与巨势方程" /&gt;&lt;p&gt;&lt;em&gt;记录一下目前使用到的两个相场模型，包括它们的推导，假设和缺陷&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图出自 &lt;a class="link" href="https://twitter.com/katorei_" target="_blank" rel="noopener"
-&gt;かとうれい&lt;/a&gt; 太太， 为 &lt;a class="link" href="https://space.bilibili.com/108833238" target="_blank" rel="noopener"
-&gt;Mikito P&lt;/a&gt; 所作的 &lt;a class="link" href="https://www.bilibili.com/list/ml1197098078?spm_id_from=333.1007.0.0&amp;amp;oid=27304533&amp;amp;bvid=BV1Rs411N7Aq" target="_blank" rel="noopener"
-&gt;少女レイ&lt;/a&gt; 的曲绘&lt;/em&gt;&lt;/p&gt;
+ &gt;かとうれい&lt;/a&gt; 太太， 为 &lt;a class="link" href="https://space.bilibili.com/108833238" target="_blank" rel="noopener"
+ &gt;Mikito P&lt;/a&gt; 所作的 &lt;a class="link" href="https://www.bilibili.com/list/ml1197098078?spm_id_from=333.1007.0.0&amp;amp;oid=27304533&amp;amp;bvid=BV1Rs411N7Aq" target="_blank" rel="noopener"
+ &gt;少女レイ&lt;/a&gt; 的曲绘&lt;/em&gt;&lt;/p&gt;
+
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
 &lt;style type="text/css"&gt;
 [data-scheme="dark"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
-border-bottom-color: var(--card-separator-color);
+ border-bottom-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
-border-color: var(--card-separator-color);
+ border-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-body {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info {
-border-top-color: var(--card-background);
+ border-top-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
-color: var(--card-text-color-tertiary);
+ color: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
-background-color: var(--card-separator-color);
+ background-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
-background-color: var(--accent-color);
+ background-color: var(--accent-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li {
-color: var(--card-text-color-main);
-border-top-color: var(--card-separator-color);
+ color: var(--card-text-color-main);
+ border-top-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc {
-text-shadow: -1px -1px 0 var(--body-background);
+ text-shadow: -1px -1px 0 var(--body-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:before {
-background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+ background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:after {
-background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc p {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
+ 
 [data-scheme="light"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="light"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
 &lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
+
+
 &lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=1334077117" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
 &lt;h2 id="简介"&gt;简介
 &lt;/h2&gt;&lt;p&gt;目前在做的 U-Nb 体系不连续析出的模拟，里面用到了这两个演化方程。之前一直没有仔细思考过这两个演化方程到底是什么来头，为什么这个体系适合使用这两个方程，导致现在想大概修改一下它们也无从下手。这里就作为笔记记录下这两个方程的推导方法，优缺点，以及我个人的一些看法吧。&lt;/p&gt;
 &lt;h2 id="多相场模型"&gt;多相场模型
 &lt;/h2&gt;&lt;h3 id="模型介绍"&gt;模型介绍
 &lt;/h3&gt;&lt;p&gt;多相场模型（或者说是界面场模型，差不多吧）是适用于非保守场的演化方程，来自于 &lt;a class="link" href="https://doi.org/10.1016/S0167-2789%2899%2900129-3" target="_blank" rel="noopener"
-&gt;I. Steinbach 和 F. Pezzolla 的文章&lt;/a&gt;。它的形式为：&lt;/p&gt;
+ &gt;I. Steinbach 和 F. Pezzolla 的文章&lt;/a&gt;。它的形式为：&lt;/p&gt;
 $$
 \frac{\partial \phi_\alpha}{\partial t} = -\frac{1}{\tilde{N}}\sum_{\beta \neq \alpha} \tilde{L}_{\alpha\beta}\left(\frac{\delta }{\delta \phi_\alpha} - \frac{\delta }{\delta \phi_\beta} \right)F,
 $$&lt;p&gt;这里的 $F$ 是自由能泛函，$\tilde{N}$ 是有效序参量的个数，$\tilde{L}_{\alpha\beta}$ 是有效序参量里两相之间的界面移动参数，而括号内的差则是表示一种算符，即&lt;/p&gt;
@@ -504,7 +542,7 @@ $$
 \left(\frac{\delta }{\delta \phi_\beta} - \frac{\delta }{\delta \phi_\alpha} \right)F = \frac{\delta F}{\delta \phi_\beta} - \frac{\delta F}{\delta \phi_\alpha}.
 $$&lt;p&gt;简单来说，这篇文章考虑了使用界面场来描述不同相之间的界面并且演化，而非使用相自身的序参量作为演化参量。虽然最后还是会落到使用相自身的序参量来演化，但是界面场的思想融入到来这个演化模型中。最主要的改进应该是在考虑界面场的同时，考虑每个点处的有效序参量，也就是不为 0 的相的序参量，这样一来还可以简化计算（虽然实际计算过程中也可以只用传统的所有相的计算就是了）。&lt;/p&gt;
 &lt;p&gt;平心而论，这篇文章写的逻辑结构并不是非常清晰，公式推导过程更是灾难，甚至符号都有一些问题，但是谁让这个模型好用呢？那就不多讲废话了，直接开始推导这个方程吧。要注意的是，这里的推导过程和作者的推导过程略有出入，同时也参考了 &lt;a class="link" href="https://doi.org/10.1016/j.commatsci.2023.112047" target="_blank" rel="noopener"
-&gt;Q. Huang et al 的这篇文章&lt;/a&gt;。&lt;/p&gt;
+ &gt;Q. Huang et al 的这篇文章&lt;/a&gt;。&lt;/p&gt;
 &lt;h3 id="模型推导"&gt;模型推导
 &lt;/h3&gt;&lt;p&gt;对多相问题而言，我们引入一个约束：每个点上的所有序参量之和为一常数 1。即：&lt;/p&gt;
 $$
@@ -518,33 +556,33 @@ F[\{\phi\},\{\nabla\phi\}] = \int_\Omega f\left(\{\phi\},\{\nabla\phi\}\right) \
 $$&lt;p&gt;即我们写出了其能量密度形式。我们现在希望能把上面引入的约束进一步引入这个能量泛函内，因此我们使用 Lagrange 乘数法，引入 Lagrange 乘数 $\lambda$ 到自由能密度中，则有：&lt;/p&gt;
 $$
 \begin{aligned}
-l \left(\left\{\phi \right\},\left\{\nabla\phi \right\}, \lambda\right) &amp; = f\left(\left\{\phi \right\},\left\{\nabla\phi \right\}\right) - \lambda\left( \sum_{\alpha = 1}^{N} \phi_\alpha - 1 \right); \\
-\mathcal{L}\left[\left\{\phi \right\},\left\{\nabla\phi \right\}, \lambda\right] &amp;= \int_\Omega l \,\mathrm{d}\omega.
+ l \left(\left\{\phi \right\},\left\{\nabla\phi \right\}, \lambda\right) &amp; = f\left(\left\{\phi \right\},\left\{\nabla\phi \right\}\right) - \lambda\left( \sum_{\alpha = 1}^{N} \phi_\alpha - 1 \right); \\
+ \mathcal{L}\left[\left\{\phi \right\},\left\{\nabla\phi \right\}, \lambda\right] &amp;= \int_\Omega l \,\mathrm{d}\omega.
 \end{aligned}
 $$&lt;p&gt;然后我们令 $\mathcal{L}$ 对 $\phi_\alpha$ 做变分，得到：&lt;/p&gt;
 $$
 \begin{aligned}
-\frac{\delta \mathcal{L}}{\delta \phi_\alpha} &amp; = \frac{\partial l}{\partial \phi_\alpha} - \nabla \cdot \frac{\partial l}{\partial \nabla \phi_\alpha} \\
-&amp; = \frac{\partial f}{\partial \phi_\alpha} - \nabla \cdot \frac{\partial f}{\partial \nabla \phi_\alpha} - \lambda \\
-&amp; = \frac{\delta F}{\delta \phi_\alpha} - \lambda .
-\end{aligned}
+ \frac{\delta \mathcal{L}}{\delta \phi_\alpha} &amp; = \frac{\partial l}{\partial \phi_\alpha} - \nabla \cdot \frac{\partial l}{\partial \nabla \phi_\alpha} \\
+ &amp; = \frac{\partial f}{\partial \phi_\alpha} - \nabla \cdot \frac{\partial f}{\partial \nabla \phi_\alpha} - \lambda \\
+ &amp; = \frac{\delta F}{\delta \phi_\alpha} - \lambda .
+ \end{aligned}
 $$&lt;p&gt;此时我们应用所谓的 “Relaxation Ansatz”，即这个变分导数值为 $\phi_\alpha$ 的演化速率，即：&lt;/p&gt;
 $$
 \begin{aligned}
-\frac{\partial \phi_\alpha}{\partial t} &amp;= -\frac{\delta \mathcal{L}}{\delta \phi_\alpha}\\
-&amp;= -\frac{\delta F}{\delta \phi_\alpha} + \lambda
-\end{aligned}
+ \frac{\partial \phi_\alpha}{\partial t} &amp;= -\frac{\delta \mathcal{L}}{\delta \phi_\alpha}\\
+ &amp;= -\frac{\delta F}{\delta \phi_\alpha} + \lambda
+ \end{aligned}
 $$&lt;p&gt;则根据上面的约束条件，我们能解出 $\lambda$ 为：&lt;/p&gt;
 $$
-\lambda = \frac{1}{N} \sum_{\alpha = 1}^{N} \frac{\delta F}{\delta \phi_\alpha}
+ \lambda = \frac{1}{N} \sum_{\alpha = 1}^{N} \frac{\delta F}{\delta \phi_\alpha}
 $$&lt;p&gt;此时将 $\lambda$ 带入应用 “Relaxation Ansatz” 后的变分结果中，得到：&lt;/p&gt;
 $$
 \begin{aligned}
-\frac{\partial \phi_\alpha}{\partial t} &amp;= -\frac{\delta F}{\delta \phi_\alpha} + \frac{1}{N} \sum_{\beta = 1}^{N} \frac{\delta F}{\delta \phi_\beta} \\
-&amp;= -\frac{N-1}{N} \frac{\delta F}{\delta \phi_\alpha} + \frac{1}{N} \sum_{\beta = 1}^{N} \frac{\delta F}{\delta \phi_\beta} - \frac{\delta F}{\delta \phi_\alpha} \\
-&amp;= -\frac{N-1}{N} \frac{\delta F}{\delta \phi_\alpha} + \frac{1}{N} \sum_{\beta \neq \alpha} \frac{\delta F}{\delta \phi_\beta} \\
-&amp;= - \frac{1}{N} \sum_{\beta \neq \alpha} \left( \frac{\delta }{\delta \phi_\alpha} -\frac{\delta }{\delta \phi_\beta} \right)F \\
-\end{aligned}
+ \frac{\partial \phi_\alpha}{\partial t} &amp;= -\frac{\delta F}{\delta \phi_\alpha} + \frac{1}{N} \sum_{\beta = 1}^{N} \frac{\delta F}{\delta \phi_\beta} \\
+ &amp;= -\frac{N-1}{N} \frac{\delta F}{\delta \phi_\alpha} + \frac{1}{N} \sum_{\beta = 1}^{N} \frac{\delta F}{\delta \phi_\beta} - \frac{\delta F}{\delta \phi_\alpha} \\
+ &amp;= -\frac{N-1}{N} \frac{\delta F}{\delta \phi_\alpha} + \frac{1}{N} \sum_{\beta \neq \alpha} \frac{\delta F}{\delta \phi_\beta} \\
+ &amp;= - \frac{1}{N} \sum_{\beta \neq \alpha} \left( \frac{\delta }{\delta \phi_\alpha} -\frac{\delta }{\delta \phi_\beta} \right)F \\
+ \end{aligned}
 $$&lt;p&gt;最后，我们考虑到由于我们只考虑有效序参量，即不为 0 的序参量，这里的 $N$ 可以修改为 $\tilde{N}$；括号内属于对两相间的界面场的驱动力描述，对于不同的两相驱动力，驱动力大小应该是不同的，所以我们给驱动力前面乘以和两相相关的界面移动参数，$\tilde{L}_{\alpha\beta}$。这样一来结果为：&lt;/p&gt;
 $$
 \frac{\partial \phi_\alpha}{\partial t} = -\frac{1}{\tilde{N}}\sum_{\beta \neq \alpha} \tilde{L}_{\alpha\beta}\left(\frac{\delta }{\delta \phi_\alpha} - \frac{\delta }{\delta \phi_\beta} \right)F,
@@ -558,7 +596,7 @@ $$
 \frac{\partial \phi_\alpha}{\partial t} = \frac{\sum_\beta{L_{\alpha\beta}}}{\sum_\xi\sum_\zeta L_{\xi\zeta}}{\sum_\xi\sum_{\zeta\neq\beta} L_{\xi\zeta}\left( \frac{\delta }{\delta \phi_\beta} -\frac{\delta }{\delta \phi_\zeta} \right)F}
 $$&lt;p&gt;虽然严谨，但是难以理解，而当考虑到这里的移动性参数可以直接集成在 $\tilde{L}_{\alpha\beta}$ 和 $\tilde{N}$ 后，整个式子都会变得更简洁，物理意义也更加明确。&lt;/p&gt;
 &lt;p&gt;另外，在 &lt;a class="link" href="https://doi.org/10.1016/S0167-2789%2899%2900129-3" target="_blank" rel="noopener"
-&gt;I. Steinbach 和 F. Pezzolla 的文章&lt;/a&gt; 里，$\left( \frac{\delta }{\delta \phi_\alpha} -\frac{\delta }{\delta \phi_\beta} \right)F$ 被解释为界面场 $\psi_{\alpha\beta}$，这也是为什么这个模型叫做界面场模型。而这篇文章中的推导过程里，如果考虑使用界面场进行推导的话，可以绕过求取 $\lambda$ 的显式表达，因为这个 $\lambda$ 对所有相都是相同的，而界面场这样差值的定义方式注定会消去 $\lambda$ 的影响。&lt;/p&gt;
+ &gt;I. Steinbach 和 F. Pezzolla 的文章&lt;/a&gt; 里，$\left( \frac{\delta }{\delta \phi_\alpha} -\frac{\delta }{\delta \phi_\beta} \right)F$ 被解释为界面场 $\psi_{\alpha\beta}$，这也是为什么这个模型叫做界面场模型。而这篇文章中的推导过程里，如果考虑使用界面场进行推导的话，可以绕过求取 $\lambda$ 的显式表达，因为这个 $\lambda$ 对所有相都是相同的，而界面场这样差值的定义方式注定会消去 $\lambda$ 的影响。&lt;/p&gt;
 &lt;p&gt;最后，我们指出，这个演化方程并没有对自由能 $F$ 做出任何的约束，因此该模型适用性非常广。事实上，多相场模型的应用极为广泛，经常可以在近年的相场模拟文章中见到。所以，尽管看起来这个模型的推导（在我看来，也许是我的问题）并不足够可靠，但是它很好用。是的，很好用。&lt;/p&gt;
 &lt;h2 id="巨势方程"&gt;巨势方程
 &lt;/h2&gt;&lt;h3 id="模型介绍-1"&gt;模型介绍

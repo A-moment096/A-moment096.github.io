@@ -1,96 +1,126 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Category Theory on A Moment's Rest</title><link>https://a-moment096.github.io/tags/category-theory/</link><description>Recent content in Category Theory on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 19 Jan 2026 06:28:39 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/category-theory/index.xml" rel="self" type="application/rss+xml"/><item><title>线性空间的积与余积</title><link>https://a-moment096.github.io/posts/product_and_coproduct_of_vector_space/</link><pubDate>Sun, 05 Oct 2025 19:55:20 +0800</pubDate><guid>https://a-moment096.github.io/posts/product_and_coproduct_of_vector_space/</guid><description>&lt;img src="https://a-moment096.github.io/posts/product_and_coproduct_of_vector_space/Eyjafjalla.jpg" alt="Featured image of post 线性空间的积与余积" /&gt;&lt;p&gt;&lt;em&gt;线性空间的直积（积）和直和（余积）究竟有什么区别？它们区别的根源在哪里？这个困扰了我许久的问题终于在今天得到了答案，一起看看吧~&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Category Theory on A Moment's Rest</title><link>https://a-moment096.github.io/tags/category-theory/</link><description>Recent content in Category Theory on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Sun, 15 Feb 2026 11:05:58 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/category-theory/index.xml" rel="self" type="application/rss+xml"/><item><title>线性空间的积与余积</title><link>https://a-moment096.github.io/posts/product_and_coproduct_of_vector_space/</link><pubDate>Sun, 05 Oct 2025 19:55:20 +0800</pubDate><guid>https://a-moment096.github.io/posts/product_and_coproduct_of_vector_space/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post 线性空间的积与余积" /&gt;&lt;p&gt;&lt;em&gt;线性空间的直积（积）和直和（余积）究竟有什么区别？它们区别的根源在哪里？这个困扰了我许久的问题终于在今天得到了答案，一起看看吧~&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;选曲为最近拜托朋友从日本买下（还没送到）的 &lt;a class="link" href="https://space.bilibili.com/316381099" target="_blank" rel="noopener"
-&gt;&lt;strong&gt;鹿乃&lt;/strong&gt;&lt;/a&gt; 的专辑 &lt;a class="link" href="https://music.163.com/#/album?id=72378630" target="_blank" rel="noopener"
-&gt;&lt;strong&gt;two&lt;/strong&gt;&lt;/a&gt; 的一首歌，同时也是我很喜欢的 P 主 &lt;a class="link" href="https://www.nicovideo.jp/user/865371" target="_blank" rel="noopener"
-&gt;&lt;strong&gt;電ポルP&lt;/strong&gt;&lt;/a&gt;（Koyori，又称电杆P，因为曲绘经常是电线杆）在 14 年发布的由 v flower 演唱的 &lt;strong&gt;曖昧劣情Lover&lt;/strong&gt;。实在是非常好听，我很喜欢。头图则选择了某神秘群友的群友 &lt;strong&gt;派佬&lt;/strong&gt; 生成的 AI 图，是可爱的艾雅法拉，希望你喜欢~&lt;/em&gt;&lt;/p&gt;
+ &gt;&lt;strong&gt;鹿乃&lt;/strong&gt;&lt;/a&gt; 的专辑 &lt;a class="link" href="https://music.163.com/#/album?id=72378630" target="_blank" rel="noopener"
+ &gt;&lt;strong&gt;two&lt;/strong&gt;&lt;/a&gt; 的一首歌，同时也是我很喜欢的 P 主 &lt;a class="link" href="https://www.nicovideo.jp/user/865371" target="_blank" rel="noopener"
+ &gt;&lt;strong&gt;電ポルP&lt;/strong&gt;&lt;/a&gt;（Koyori，又称电杆P，因为曲绘经常是电线杆）在 14 年发布的由 v flower 演唱的 &lt;strong&gt;曖昧劣情Lover&lt;/strong&gt;。实在是非常好听，我很喜欢。头图则选择了某神秘群友的群友 &lt;strong&gt;派佬&lt;/strong&gt; 生成的 AI 图，是可爱的艾雅法拉，希望你喜欢~&lt;/em&gt;&lt;/p&gt;
+
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
 &lt;style type="text/css"&gt;
 [data-scheme="dark"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
-border-bottom-color: var(--card-separator-color);
+ border-bottom-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
-border-color: var(--card-separator-color);
+ border-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-body {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info {
-border-top-color: var(--card-background);
+ border-top-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
-color: var(--card-text-color-tertiary);
+ color: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
-background-color: var(--card-separator-color);
+ background-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
-background-color: var(--accent-color);
+ background-color: var(--accent-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li {
-color: var(--card-text-color-main);
-border-top-color: var(--card-separator-color);
+ color: var(--card-text-color-main);
+ border-top-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc {
-text-shadow: -1px -1px 0 var(--body-background);
+ text-shadow: -1px -1px 0 var(--body-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:before {
-background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+ background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:after {
-background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc p {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
+ 
 [data-scheme="light"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="light"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
 &lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
+
+
 &lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=1302953067" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
 $$
 \gdef\field#1{\mathbb{#1}}
@@ -113,11 +143,11 @@ $$&lt;h2 id="前言"&gt;前言
 $$
 \begin{aligned}
 +_\times \colon &amp;(V \times W) \times (V \times W) \to V \times W,\\
-&amp;((v_1, w_1), (v_2, w_2)) \longmapsto
+&amp;((v_1, w_1), (v_2, w_2)) \longmapsto 
 (v_1 +_V v_2,\, w_1 +_W w_2);
 \\[1em]
 \cdot_\times \colon &amp;\Bbbk \times (V \times W) \to V \times W,\\
-&amp;(\lambda, (v, w)) \longmapsto
+&amp;(\lambda, (v, w)) \longmapsto 
 (\lambda \cdot_V v,\, \lambda \cdot_W w).
 \end{aligned}
 $$&lt;p&gt;上面两个运算对任意的 $v_1,v_2,v\in V$，$w_1,w_2,w\in W$，$\lambda\in\field{k}$ 都成立。&lt;/p&gt;
@@ -181,8 +211,8 @@ $$&lt;p&gt;上面两个运算对任意的 $v_1,v_2,v\in V$，$w_1,w_2,w\in W$，
 &lt;li&gt;针对某两个对象 $X,Y\in\Ob(\cat{C})$，我们可以从上面这一对映射中得到这两个对象之间的所有态射的集合：$\Hom_\cat{C}(X,Y)\vcentcolon=\space s^{-1}(X)\cap t^{-1}(Y)$。在明确所指范畴的情况下可简记为 $\Hom(X,Y)$。这样的集合也被称为 $\mathrm{Hom-}$ 集；&lt;/li&gt;
 &lt;li&gt;对于任意的一个对象 $X$，一定存在一个态射 $\mathrm{id}_ {X} \in \Hom_{\cat{C}}(X,X),$ 这个态射被称为 $X$ 到自身的恒等态射；&lt;/li&gt;
 &lt;li&gt;给定任意的三个对象 $X,Y,Z\in\Ob(\cat{C})$，有这样在其 $\mathrm{Hom-}$ 集之间的映射，称为&lt;strong&gt;合成映射&lt;/strong&gt;，定义为：
-$$\begin{align*}
-\circ\vcentcolon\space\Hom_\cat{C}(Y,Z) \times \Hom_\cat{C}(X,Y)&amp;\to \Hom_\cat{C}(X,Z)\\
+$$\begin{align*} 
+\circ\vcentcolon\space\Hom_\cat{C}(Y,Z) \times \Hom_\cat{C}(X,Y)&amp;\to \Hom_\cat{C}(X,Z)\\ 
 (f,g)&amp;\mapsto f\circ g\\
 \end{align*}$$
 且当不至于混淆时可以省略中间的 $\circ$，将 $f\circ g$ 简记为 $fg$。&lt;/li&gt;
@@ -271,7 +301,7 @@ $g \circ \iota_i = g_i$。&lt;/p&gt;
 &lt;p&gt;而考虑余积的泛性质，首先如果对任何的 $Y$ 为目标的箭头 $g_i\vcentcolon X_i\to Y$ 都能有一个对象来实现这个映射的分解，这个对象就必须得包含所有 $\{X_i\}_{i\in I}$ 的信息，且每个 $X_i$ 都得能被区分开 (两个空间不能被映射到同一个空间上)。否则这样的分解就无法成功进行：有的地方可能会缺一块。既然如此，每个空间中的元素都会（以某种形式）出现在余积中了，那么它们的出现形式呢？我们第一个想到的自然是和积同样的构造：即啥都不做限制。那么此时考虑那个 &lt;em&gt;存在且唯一&lt;/em&gt; 的箭头，我们取一个有无限个非零分量的向量，它表示每个线性空间都贡献了一个非零的向量，它在被通过那个唯一的箭头带到 $Y$ 上的时候就出现了问题：从 $\{X_i\}_{i\in I}$ 到 $Y$ 的时候，我们从 $X_i$ 中取一个元素之后它只能对应 $Y$ 中一个元素，而它也只能在余积（我们此时假设它是积）上对应一个元素，再把这个元素放到 $Y$ 中。但是 &lt;strong&gt;无限&lt;/strong&gt; 个非零元素会导致 &lt;strong&gt;这个从余积到 $Y$ 的箭头不唯一&lt;/strong&gt;，因为我们有无限多个槽位，可以任意安排除必须对应的向量之外的所有向量随心所欲地放在不同的 $Y$ 中，形成不同的态射。&lt;/p&gt;
 &lt;p&gt;为了弥补这一点，就只能让余积中的元素里每个都只包含有限个 $X_i$ 中的非零元素，剩下的全都置零。这样我们还有办法且是唯一的办法，来将余积中的元素唯一映射到 $Y$ 上。&lt;/p&gt;
 &lt;p&gt;另外，我们还可以从纯范畴论的角度来证明余积只能有有限个非零的分量。它的证明利用了所有 $g_i$ 的像可以张成余积的子空间的特点，并证明了这个张成的子空间其实就是余积本身，由此证明了余积的元素只能是有限个 $X_i$ 中的非零向量构成的（根据张成的定义，只能有有限个向量的线性组合）。这个方法由 MSE 的上 &lt;a class="link" href="https://math.stackexchange.com/questions/523670/infinite-coproduct-of-abelian-groups?noredirect=1&amp;amp;lq=1" target="_blank" rel="noopener"
-&gt;Martin Brandenburg 做的这个回答&lt;/a&gt; 给出的。有趣的点在于，这个回答其实是针对阿贝尔群范畴的，不过由于线性空间本身的确就是一个阿贝尔群，且这个问题的根源也在于阿贝尔群上的加法，所以这里贴的这个问题的解答实际上是完全适用于我们的问题的。同样，由于模本身也是一个阿贝尔群，所以模也有这样的构造，也有这样的问题，和这样的解答。&lt;/p&gt;
+ &gt;Martin Brandenburg 做的这个回答&lt;/a&gt; 给出的。有趣的点在于，这个回答其实是针对阿贝尔群范畴的，不过由于线性空间本身的确就是一个阿贝尔群，且这个问题的根源也在于阿贝尔群上的加法，所以这里贴的这个问题的解答实际上是完全适用于我们的问题的。同样，由于模本身也是一个阿贝尔群，所以模也有这样的构造，也有这样的问题，和这样的解答。&lt;/p&gt;
 &lt;h2 id="后记"&gt;后记
 &lt;/h2&gt;&lt;p&gt;这个问题说实在的，困扰了我挺久的。在我知道线性空间的直积、直和以及范畴论之后，这个问题就时不时弹出来，困扰我几天。然而，偶然的机会，我又系统地了解了一下线性空间中的内容，（因为连续介质力学，谢谢你，线性代数？）了解了一些和线性空间的基、线性相关/无关、子空间的和之间的内容，对这个问题有了一些自己的看法。&lt;/p&gt;
 &lt;p&gt;实际上这个问题在没有引入范畴论前单纯就是一个定义或者概念无法任意拓展产生的问题。由于直和是来源于子空间的直和，强依赖于 &lt;em&gt;有限&lt;/em&gt; 线性组合，这个概念在代数上就是没法拓展到无限，因而连带着直和无论如何都没法自然地拓展到无限个线性空间的情况。而又由于直积的构造和线性空间的性质没有半点关系：他就是单纯地把所有的东西放在不同位置后捏在了一起，结果正好在最简单的逐点的加法定义和数乘定义下能成为一个合法的线性空间，就让它这么成为直积了。&lt;/p&gt;
@@ -279,102 +309,132 @@ $g \circ \iota_i = g_i$。&lt;/p&gt;
 &lt;p&gt;在寻找这个问题的答案的过程中，我还发现了很多有趣的内容。比如 “线性空间总有一组基” 和著名的 AC，即选择公理，是等价的。当我们承认 AC 之后，所有的线性空间，即便是无限维的，也是存在一组基的。而如果我们能给一个无穷维线性空间找出一组基，我们就可以从这组基来构造别的基，而这个操作和某个在承认 AC 之后会出现的神奇现象：巴拿赫-塔斯基分球怪论的操作是非常类似的。另外，我们说的 “总有一组基” 依旧是在我们已有的 &lt;strong&gt;线性组合&lt;/strong&gt; 的定义下的，即 &lt;strong&gt;线性空间中的所有元素都可以被唯一表达为基的线性组合&lt;/strong&gt;，而这里的线性组合总是有限的。&lt;/p&gt;
 &lt;p&gt;所以其实这篇文章我一开始是计划在最后写一些集合论和线性空间的基的内容的。不过总归它们是和主题偏离地有点多的，我还是放弃了。而这篇文章一开始还计划从线性空间的定义开始逐步介绍整个问题，后面我也否定了，因为那样的话这篇文章又会变成超级大长篇。关于线性代数的部分，还是整理一下放在计划中的 &lt;em&gt;张量代数/张量微积分&lt;/em&gt; 系列里面吧。这篇文章的内容我也不是非常满意吧，写的过程中卡了很多壳，有些地方的表述并不令人足够满意。如果您在读的过程中发现有的地方并不通顺，请自由提出批评；如果您有任何的建议，也欢迎提出。&lt;/p&gt;
 &lt;p&gt;另外还要感谢和推荐 &lt;a class="link" href="https://q.uiver.app/" target="_blank" rel="noopener"
-&gt;quiver&lt;/a&gt; 这个工具，本篇文章中的交换图都是使用它绘制的，方便易用，实在是非常不错。它在 GitHub 开源了，感兴趣还可以看看它的 &lt;a class="link" href="https://github.com/varkor/quiver" target="_blank" rel="noopener"
-&gt;仓库&lt;/a&gt;；同时感谢 B站 UP 主 &lt;a class="link" href="https://space.bilibili.com/27733394" target="_blank" rel="noopener"
-&gt;数学わかんない&lt;/a&gt; 的这一期 &lt;a class="link" href="https://www.bilibili.com/video/BV1mJfaYxEQ5" target="_blank" rel="noopener"
-&gt;（科普）直积和直和的不同&amp;ndash;从线性代数到范畴论&lt;/a&gt;，讲得很好，帮了我很多。&lt;/p&gt;
-&lt;p&gt;那么，非常感谢您能看到这里。这样又长又晦涩难懂的文章（也许）能让您愿意看到这儿，我也就心满意足了。最后一如既往地，祝您身体健康，双节愉快~（即便只剩一天了吧大概）&lt;/p&gt;</description></item><item><title>到底啥是函数！？</title><link>https://a-moment096.github.io/posts/concept_of_function/</link><pubDate>Tue, 23 Sep 2025 17:41:51 +0800</pubDate><guid>https://a-moment096.github.io/posts/concept_of_function/</guid><description>&lt;img src="https://a-moment096.github.io/posts/concept_of_function/%E7%AC%94%E4%B8%AD%E7%9A%84%E5%91%93%E5%96%83%E4%B9%8B%E5%A2%83.jpg" alt="Featured image of post 到底啥是函数！？" /&gt;&lt;p&gt;&lt;em&gt;我们平时经常会遇到所谓的 &lt;strong&gt;函数&lt;/strong&gt;，不管是数学、物理，甚至是程序里，都能看到它的身影。然而，它到底是啥呢？你也许自己心里有一个答案。这里我也斗胆对比一下各个教材中对函数的定义，聊一聊这个我们或许很熟悉的概念。&lt;/em&gt;&lt;/p&gt;
+ &gt;quiver&lt;/a&gt; 这个工具，本篇文章中的交换图都是使用它绘制的，方便易用，实在是非常不错。它在 GitHub 开源了，感兴趣还可以看看它的 &lt;a class="link" href="https://github.com/varkor/quiver" target="_blank" rel="noopener"
+ &gt;仓库&lt;/a&gt;；同时感谢 B站 UP 主 &lt;a class="link" href="https://space.bilibili.com/27733394" target="_blank" rel="noopener"
+ &gt;数学わかんない&lt;/a&gt; 的这一期 &lt;a class="link" href="https://www.bilibili.com/video/BV1mJfaYxEQ5" target="_blank" rel="noopener"
+ &gt;（科普）直积和直和的不同&amp;ndash;从线性代数到范畴论&lt;/a&gt;，讲得很好，帮了我很多。&lt;/p&gt;
+&lt;p&gt;那么，非常感谢您能看到这里。这样又长又晦涩难懂的文章（也许）能让您愿意看到这儿，我也就心满意足了。最后一如既往地，祝您身体健康，双节愉快~（即便只剩一天了吧大概）&lt;/p&gt;</description></item><item><title>到底啥是函数！？</title><link>https://a-moment096.github.io/posts/concept_of_function/</link><pubDate>Tue, 23 Sep 2025 17:41:51 +0800</pubDate><guid>https://a-moment096.github.io/posts/concept_of_function/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post 到底啥是函数！？" /&gt;&lt;p&gt;&lt;em&gt;我们平时经常会遇到所谓的 &lt;strong&gt;函数&lt;/strong&gt;，不管是数学、物理，甚至是程序里，都能看到它的身影。然而，它到底是啥呢？你也许自己心里有一个答案。这里我也斗胆对比一下各个教材中对函数的定义，聊一聊这个我们或许很熟悉的概念。&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图依旧选自 &lt;a class="link" href="https://www.pixiv.net/en/users/8605991" target="_blank" rel="noopener"
-&gt;fasnakegod&lt;/a&gt; 大大的 &lt;a class="link" href="https://www.pixiv.net/en/artworks/115191853" target="_blank" rel="noopener"
-&gt;笔中的呓喃之境&lt;/a&gt;，实在是非常好看，Aya 太可爱了。曲选自一首经典的吉他指弹曲：岸部眞明的 《Time Travel》，轻松愉快的一首，我很喜欢（甚至学过）（没学会）。&lt;/em&gt;&lt;/p&gt;
+ &gt;fasnakegod&lt;/a&gt; 大大的 &lt;a class="link" href="https://www.pixiv.net/en/artworks/115191853" target="_blank" rel="noopener"
+ &gt;笔中的呓喃之境&lt;/a&gt;，实在是非常好看，Aya 太可爱了。曲选自一首经典的吉他指弹曲：岸部眞明的 《Time Travel》，轻松愉快的一首，我很喜欢（甚至学过）（没学会）。&lt;/em&gt;&lt;/p&gt;
+
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
 &lt;style type="text/css"&gt;
 [data-scheme="dark"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
-border-bottom-color: var(--card-separator-color);
+ border-bottom-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
-border-color: var(--card-separator-color);
+ border-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-body {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info {
-border-top-color: var(--card-background);
+ border-top-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
-color: var(--card-text-color-tertiary);
+ color: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
-background-color: var(--card-separator-color);
+ background-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
-background-color: var(--accent-color);
+ background-color: var(--accent-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li {
-color: var(--card-text-color-main);
-border-top-color: var(--card-separator-color);
+ color: var(--card-text-color-main);
+ border-top-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc {
-text-shadow: -1px -1px 0 var(--body-background);
+ text-shadow: -1px -1px 0 var(--body-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:before {
-background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+ background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:after {
-background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc p {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
+ 
 [data-scheme="light"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="light"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
 &lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
+
+
 &lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://y.qq.com/yqq/song/000NZt2P0PPeoR" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
 &lt;h2 id="印象中的函数"&gt;印象中的函数
 &lt;/h2&gt;&lt;p&gt;印象之中，函数其实应该是相当常见的。初中的时候就有这么个东西了。&lt;/p&gt;
@@ -406,26 +466,32 @@ $$\left\{y\,\vert\,y = f(x),x\in A\right\}$$&lt;p&gt;叫做这个 &lt;strong&gt;
 &lt;summary&gt;我很难不吐槽新版高中数雪教材&lt;/summary&gt;
 &lt;p&gt;我们来看一看，新的人教版高中数学教材是怎么介绍函数的吧。要看一本书，肯定是首先看它的目录：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/concept_of_function/img/renjiao-toc1.png"
-width="913"
-height="503"
-srcset="https://a-moment096.github.io/posts/concept_of_function/img/renjiao-toc1_hu_93912d716a6f7bec.png 480w, https://a-moment096.github.io/posts/concept_of_function/img/renjiao-toc1_hu_73ce121cda9e4329.png 1024w"
-loading="lazy"
-alt="第一章内容"
-class="gallery-image"
-data-flex-grow="181"
-data-flex-basis="435px"
+	width="913"
+	height="503"
+	loading="lazy"
+	
+		alt="第一章内容"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="181"
+		data-flex-basis="435px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;不错，装帧精美，配图有趣，内容也相当详实，是进入新数学语境的好开端。&lt;/p&gt;
 &lt;p&gt;我们来看第二章……等一下？啊？&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/concept_of_function/img/renjiao-toc23.png"
-width="834"
-height="651"
-srcset="https://a-moment096.github.io/posts/concept_of_function/img/renjiao-toc23_hu_28bbf89194830d52.png 480w, https://a-moment096.github.io/posts/concept_of_function/img/renjiao-toc23_hu_1129a7eb0fe4dcd0.png 1024w"
-loading="lazy"
-alt="？"
-class="gallery-image"
-data-flex-grow="128"
-data-flex-basis="307px"
+	width="834"
+	height="651"
+	loading="lazy"
+	
+		alt="？"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="128"
+		data-flex-basis="307px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;什么叫先介绍一元二次函数，再介绍函数的概念与性质？&lt;/p&gt;
 &lt;p&gt;什么倒反天罡？&lt;/p&gt;
@@ -715,8 +781,8 @@ $$y = f(x) \iff P(x, y)\text{ is true.}$$&lt;/blockquote&gt;
 &lt;p&gt;很明确，它也是持 &lt;em&gt;function = mapping&lt;/em&gt; 的观点的，只不过这里没有使用 &lt;em&gt;mapping&lt;/em&gt; 而是使用了 &lt;em&gt;map&lt;/em&gt;。可能澳洲是喜欢这么讲吧，但 &lt;em&gt;map&lt;/em&gt; 一般用作动词表示映到，而 &lt;em&gt;mapping&lt;/em&gt; 则是动名词形式，意为映射。嘛，没什么大问题。那就让我们最后来看一下法国数学家戈德门特的这本教材吧。&lt;/p&gt;
 &lt;h4 id="godement"&gt;Godement
 &lt;/h4&gt;&lt;p&gt;我在我自己的书库里找这个人名时，只找到了一本 &lt;em&gt;代数学教程&lt;/em&gt;，且是由国内老师翻译的；而我是怎么知道他写的分析教材呢？我是从清华大学刘思齐老师（他有自己的B站主页：&lt;a class="link" href="https://space.bilibili.com/85657899" target="_blank" rel="noopener"
-&gt;我真的不懂分析&lt;/a&gt;）的视频 &lt;a class="link" href="https://www.bilibili.com/video/BV1xp4y1e7Nh/" target="_blank" rel="noopener"
-&gt;如何选择一本适合你的《数学分析》教科书？北京某高校数学老师为你揭示选书的秘密&lt;/a&gt; 中得知的。其实，前面选的一些教材，是从这个视频里了解到的，就包括这次选择的 Godement。考虑到我找到的是英译本，且我不会法语，我就还是以这本英译本为参考吧。&lt;/p&gt;
+ &gt;我真的不懂分析&lt;/a&gt;）的视频 &lt;a class="link" href="https://www.bilibili.com/video/BV1xp4y1e7Nh/" target="_blank" rel="noopener"
+ &gt;如何选择一本适合你的《数学分析》教科书？北京某高校数学老师为你揭示选书的秘密&lt;/a&gt; 中得知的。其实，前面选的一些教材，是从这个视频里了解到的，就包括这次选择的 Godement。考虑到我找到的是英译本，且我不会法语，我就还是以这本英译本为参考吧。&lt;/p&gt;
 &lt;p&gt;从目录上看，这本书首先介绍的是集合论，紧接着就是函数了。然而它的语言，说实话比较长：它不只是定义了函数，它甚至给了一些函数这个定义发展的历史脉络。我们把它的描述放在下面，为了方便阅读我做了折叠，然后在下面进行了一些总结。不想看可以跳过这些文字，说实在的，确实挺长的。&lt;/p&gt;
 &lt;details&gt;
 &lt;summary&gt;函数的定义：Godement&lt;/summary&gt;
@@ -924,103 +990,133 @@ $$\to\ \ \ \text{and}\ \ \ \mapsto.$$&lt;/blockquote&gt;
 &lt;p&gt;其实，私心地讲，我不喜欢“高等数学”这样的说法。这样的说法总给我一种“高等数学比初等数学更高级”的印象，而在我看来，高等数学（大学后的数学）和初等数学（大学前，有时可以放宽到高中前）的主要区别在于，前者更加严格，从某些公理开始得到定理、引理、推论等结论，用定义简化描述；后者则多为介绍性的讲述，以及怎么在有限的知识框架下解决简单问题。不过，我也想不到更好的词汇来表述这两者了……&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</description></item><item><title>蛇年，Snake Lemma！</title><link>https://a-moment096.github.io/posts/snake_lemma/</link><pubDate>Thu, 27 Feb 2025 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/snake_lemma/</guid><description>&lt;img src="https://a-moment096.github.io/posts/snake_lemma/Post%20Shelter-Inaba%20Kumori.png" alt="Featured image of post 蛇年，Snake Lemma！" /&gt;&lt;p&gt;&lt;em&gt;看了好多证明蛇引理的视频，我也来试试~ 蛇年到了，重在参与嘛&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;</description></item><item><title>蛇年，Snake Lemma！</title><link>https://a-moment096.github.io/posts/snake_lemma/</link><pubDate>Thu, 27 Feb 2025 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/snake_lemma/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post 蛇年，Snake Lemma！" /&gt;&lt;p&gt;&lt;em&gt;看了好多证明蛇引理的视频，我也来试试~ 蛇年到了，重在参与嘛&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图出自 &lt;a class="link" href="https://twitter.com/NKNK_NGRMS" target="_blank" rel="noopener"
-&gt;ぬくぬくにぎりめし&lt;/a&gt; 太太， 为 &lt;a class="link" href="https://space.bilibili.com/26040194" target="_blank" rel="noopener"
-&gt;稲葉曇&lt;/a&gt; 所作的 &lt;a class="link" href="https://www.bilibili.com/video/BV1jS4y1y7Yf/" target="_blank" rel="noopener"
-&gt;ポストシェルター&lt;/a&gt; (Post Shelter)的曲绘。支持正版，就只有30秒试听了（）&lt;/em&gt;&lt;/p&gt;
+ &gt;ぬくぬくにぎりめし&lt;/a&gt; 太太， 为 &lt;a class="link" href="https://space.bilibili.com/26040194" target="_blank" rel="noopener"
+ &gt;稲葉曇&lt;/a&gt; 所作的 &lt;a class="link" href="https://www.bilibili.com/video/BV1jS4y1y7Yf/" target="_blank" rel="noopener"
+ &gt;ポストシェルター&lt;/a&gt; (Post Shelter)的曲绘。支持正版，就只有30秒试听了（）&lt;/em&gt;&lt;/p&gt;
+
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
 &lt;style type="text/css"&gt;
 [data-scheme="dark"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
-border-bottom-color: var(--card-separator-color);
+ border-bottom-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
-border-color: var(--card-separator-color);
+ border-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-body {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info {
-border-top-color: var(--card-background);
+ border-top-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
-color: var(--card-text-color-tertiary);
+ color: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
-background-color: var(--card-separator-color);
+ background-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
-background-color: var(--accent-color);
+ background-color: var(--accent-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li {
-color: var(--card-text-color-main);
-border-top-color: var(--card-separator-color);
+ color: var(--card-text-color-main);
+ border-top-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc {
-text-shadow: -1px -1px 0 var(--body-background);
+ text-shadow: -1px -1px 0 var(--body-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:before {
-background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+ background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:after {
-background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc p {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
+ 
 [data-scheme="light"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="light"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
 &lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
+
+
 &lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=1921984877" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
 &lt;h2 id="写在最前"&gt;写在最前
 &lt;/h2&gt;&lt;p&gt;本命年到啦~！作为一个代数爱好者（自称，其实是名词党），最近在B站看到了很多的关于怎么证明蛇引理（Snake Lemma）的视频，比如&lt;a class="link" href="https://www.bilibili.com/video/BV1FZFNezE6D" target="_blank" rel="noopener"
-&gt;这个视频&lt;/a&gt;。以前在自学代数的时候也遇到过这么个引理，但是看到这个部分的时候已经人快晕了（大概就是看完这个之后就抛弃了那本书吧，&lt;em&gt;Algebra: Chapter 0&lt;/em&gt;），所以几乎等于没学过。这次看到这么多关于蛇引理的视频，自然是学习一下，这里也做一个记录吧。在本文中你将看到：&lt;/p&gt;
+ &gt;这个视频&lt;/a&gt;。以前在自学代数的时候也遇到过这么个引理，但是看到这个部分的时候已经人快晕了（大概就是看完这个之后就抛弃了那本书吧，&lt;em&gt;Algebra: Chapter 0&lt;/em&gt;），所以几乎等于没学过。这次看到这么多关于蛇引理的视频，自然是学习一下，这里也做一个记录吧。在本文中你将看到：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;你在说些什么？&lt;/li&gt;
 &lt;li&gt;这么简单的前置竟然也要？&lt;/li&gt;
@@ -1060,7 +1156,7 @@ $$&lt;h2 id="简单介绍"&gt;简单（？）介绍
 &lt;li&gt;群中元素都得有逆元。没错，这里逆元的概念也是和运算相关的。所谓 “逆”，就是要把一个元素 “逆转” 回单位元。可以想象单位元就是某个出发的位置，每个元素都代表着某个让你移动的方式。而某个元素对应的逆元，就像你移动之后让你移动回原点的移动方式。能走出去，也得能走回来。就是这样。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;其实上面的这些内容，经过一些整理的话就可以变成比较严格的群的定义了。然而严格定义谁都能查，这里也就偷个懒啦~ 这里指的指出的是，群上的运算我们一般就叫它乘法。而且在代数的语境下，很多运算我们都叫它乘法！所以在讨论代数结构中的乘法时要注意上下文哦~&lt;/p&gt;
-&lt;details&gt;&lt;summary&gt;所以群的对称意义究竟在哪？&lt;/summary&gt;
+&lt;details&gt;&lt;summary&gt;所以群的对称意义究竟在哪？&lt;/summary&gt; 
 &lt;p&gt;我们讲，集合中的元素位置其实是无所谓的，比如集合 $\{1,2\}$ 和集合 $\{2,1\}$ 是一模一样的。那么，群的对称的意义，就在于群中的元素有两重含义：集合内的一个小不点，以及代表了如何操作这个集合的一个符号。&lt;/p&gt;
 &lt;p&gt;我们提到过，群的运算是需要满足上面一大堆条件的。这些条件指向了这样的一个神奇的结果：两个群中的元素相乘，我们可以有意识地将其中一个元素作为操作方式，将另一个元素看作群中茫茫多（或者很少，也许）元素中的某个元素。而这样的运算结果又是群中的某一个元素。&lt;/p&gt;
 &lt;p&gt;然后我们再想象这样一副图景：桌子上有一副扑克牌，每一张都分开放，放的很整齐。现在你尝试把这些扑克牌重新排列，这个排列方式取决于你开始重排前看到的第一张牌。在重新排列时，你肯定需要一张一张地取，取到之后会根据你看到的第一张牌来思考应该把它放在哪里，最后你就把它放在了对应的位置。在重复54遍 “取-看-放” 的过程之后，你会惊奇地发现：天哪，竟然又得到了一副扑克牌（？）&lt;/p&gt;
@@ -1077,40 +1173,40 @@ $$&lt;h2 id="简单介绍"&gt;简单（？）介绍
 &lt;p&gt;然而实数乘法和矩阵乘法是有区别的：实数乘法满足交换律，而一般的矩阵乘法并不满足交换律。因此，实数乘法实际上构成了交换群。不过由此我们也可以看到，无论是否满足交换律，我们经常给这样满足若干条件的运算起一个 “乘法” 的名字。这也是群运算一般被称为 “乘法” 的原因。&lt;/p&gt;
 &lt;p&gt;但是，不论是实数，还是矩阵，甚至所整数集合、向量等等，它们都有这样的一个运算，我们更加熟悉，且常常称之为 “加法”。这些运算和乘法相比有什么样的特点呢？它们中的一些，在不谈所谓 “交换律” 时，其实和乘法是类似的。然而，在考虑矩阵的加法和乘法时，区别立马就显现了出来：&lt;em&gt;矩阵的加法是满足交换律的，而乘法不满足交换律&lt;/em&gt;。那么我们就这样规定：一般群（或者不满足交换律的群）的运算就称为乘法，而交换群上的运算则称为加法。从记号上来看，我们这里做一个小表格，方便更直接的对比。&lt;/p&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style="text-align: center"&gt;项目&lt;/th&gt;
-&lt;th style="text-align: center"&gt;一般群&lt;/th&gt;
-&lt;th style="text-align: center"&gt;交换群&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;运算&lt;/td&gt;
-&lt;td style="text-align: center"&gt;乘法&lt;/td&gt;
-&lt;td style="text-align: center"&gt;加法&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;记号&lt;/td&gt;
-&lt;td style="text-align: center"&gt;ab&lt;/td&gt;
-&lt;td style="text-align: center"&gt;a+b&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;左陪集&lt;/td&gt;
-&lt;td style="text-align: center"&gt;aH&lt;/td&gt;
-&lt;td style="text-align: center"&gt;a+H&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;单位元&lt;/td&gt;
-&lt;td style="text-align: center"&gt;1&lt;/td&gt;
-&lt;td style="text-align: center"&gt;0&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;交换律&lt;/td&gt;
-&lt;td style="text-align: center"&gt;不满足&lt;/td&gt;
-&lt;td style="text-align: center"&gt;满足&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th style="text-align: center"&gt;项目&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;一般群&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;交换群&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;运算&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;乘法&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;加法&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;记号&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;ab&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;a+b&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;左陪集&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;aH&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;a+H&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;单位元&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;0&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;交换律&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;不满足&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;满足&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;这里要提出的是，上面的区别在不考虑交换性的情况下，仅仅是记号的区别。事实上，如果你愿意，完全也可以使用乘法记号，不过这就需要在文中特别标注出来就是了。&lt;/p&gt;
 &lt;p&gt;最后，这里引出这样一个观点：抽象代数，如研究群、环、域、模的代数结构性质的这些内容，在理解这些代数结构的过程中，最好的例子有两个：一是整数极其衍生结构；二是线性空间以及其上面的矩阵。当然，只是私货而已，如果有什么问题还请见谅。&lt;/p&gt;
@@ -1169,7 +1265,7 @@ $$&lt;p&gt;那么这样一来，单态则是所有陪域上元素的原像只能
 &lt;hr&gt;
 &lt;p&gt;像我们早就熟悉了，就集合层面而言，就是值域 “更代数”的一个名字。而同样由于同态的存在，像也一定是一个群。但是不同于核，像并不总是正规子群。这真是一个悲伤的故事，我们不能再愉快地构造商群了。也许你之前幻想着，既然核可以衡量同态与单态的距离，是不是像也可以衡量同态与满态的距离呢？因为很显然可以看到，像越大越可能是满态，像与陪域相同那就是满态了。然而很可惜，我们不用这种方式。&lt;/p&gt;
 &lt;p&gt;但是我们有三个好消息：第一条是，虽然像不是个正规子群，但是我们依旧可以用像构造商结构！第二条则是，虽然像不能衡量同态的信息，但是它构造的商结构可以！我们还给它一个特别的名字：余核 (Cokernel)。第三条则是，我们其实要研究的是交换群，而对交换群而言，所有的子群都是正规子群的！这样一来，前面讲的商结构也就可以是商群啦。&lt;/p&gt;
-&lt;details&gt;&lt;summary&gt;子群，商群，陪集，商结构，到底是怎么回事？&lt;/summary&gt;
+&lt;details&gt;&lt;summary&gt;子群，商群，陪集，商结构，到底是怎么回事？&lt;/summary&gt; 
 &lt;p&gt;在讲商群时，终究还是无法避免陪集的概念。陪集和商群之间到底是什么样的关系？陪集之间又有什么样的联系？陪集到底是什么样子的东西？&lt;em&gt;商&lt;/em&gt; 究竟是什么？我们讲了这么久的子群，正规子群，它们到底都是啥？这里我们斗胆写一写吧。&lt;/p&gt;
 &lt;p&gt;先看看子群吧，其实子群的概念很简单：一个群的子群，实际上就是子集加上原群的运算。这样一来，子群的单位元一定就是原群的单位元，而子群的运算就是原群的运算了。这个还是相对比较简单的一个概念，麻烦的是所谓的正规子群。而为了讨论正规子群，必须要讨论所谓的陪集。我们把陪集往后放一放，先讲商群中的元素们：陪集。&lt;/p&gt;
 &lt;p&gt;我们已经提到，商群就是对群按照其正规子群的需求进行分类从而得到的一个更小的群。这个更小的群里面是一个个的陪集，我们讲陪集中的元素都是相互等价的，因此，这个更小的群里的元素虽然都是集合，但是完全可以从每个集合中取一个元素来代表这个集合（由于等价关系），这个元素就被称为代表元。所以你可能会见到商群中的元素是用一个个原群中的元素带上标记构成的。但是还请记住，商群中的元素始终都是集合，也就是陪集。&lt;/p&gt;
@@ -1252,8 +1348,8 @@ $$\Ker d_n = \Img{d_{n+1}},$$&lt;p&gt;从这个角度来看也许更好理解正
 &lt;li&gt;针对某两个对象 $X,Y\in\mathrm{Ob}(\mathcal{C})$，我们可以从上面这一对映射中得到这两个对象之间的所有态射的集合：$\mathrm{Hom}_\mathcal{C}(X,Y)\vcentcolon=\space s^{-1}(X)\cap t^{-1}(Y)$。在明确所指范畴的情况下可简记为 $\mathrm{Hom}(X,Y)$。这样的集合也被称为 $\mathrm{Hom-}$ 集；&lt;/li&gt;
 &lt;li&gt;对于任意的一个对象 $X$，一定存在一个态射 $\mathrm{id}_ {X} \in \mathrm{Hom}_{\mathcal{C}}(X,X),$ 这个态射被称为 $X$ 到自身的恒等态射；&lt;/li&gt;
 &lt;li&gt;给定任意的三个对象 $X,Y,Z\in\mathrm{Ob}(\mathcal{C})$，有这样在其 $\mathrm{Hom-}$ 集之间的映射，称为&lt;strong&gt;合成映射&lt;/strong&gt;，定义为：
-$$\begin{align*}
-\circ\vcentcolon\space\mathrm{Hom}_\mathcal{C}(Y,Z) \times \mathrm{Hom}_\mathcal{C}(X,Y)&amp;\to \mathrm{Hom}_\mathcal{C}(X,Z)\\
+$$\begin{align*} 
+\circ\vcentcolon\space\mathrm{Hom}_\mathcal{C}(Y,Z) \times \mathrm{Hom}_\mathcal{C}(X,Y)&amp;\to \mathrm{Hom}_\mathcal{C}(X,Z)\\ 
 (f,g)&amp;\mapsto f\circ g\\
 \end{align*}$$
 且当不至于混淆时可以省略中间的 $\circ$，将 $f\circ g$ 简记为 $fg$。&lt;/li&gt;
@@ -1298,8 +1394,8 @@ $$ --&gt;
 &lt;p&gt;那么我们应该怎么把他改写成使用范畴定义的东西呢？我们抓住范畴论的核心思想：使用态射来研究对象。作为一个同态的核，它在映射之后一定会到单位元上；作为一个群，它一定是同态的定义域的子群。我们可否用这个性质来做文章？答案是肯定的：我们就如此定义，但通过范畴论的语言来描述这个过程。&lt;/p&gt;
 &lt;p&gt;我们定义态射 $\varphi \vcentcolon G\to H$ 的核是这样的一个群范畴 $\mathsf{Grp}$ 中的一个对象 $\Ker \varphi$，这个对象到同态 $\varphi$ 的定义域 $G$ 之间存在一个包含同态&lt;/p&gt;
 $$\begin{align*}
-\iota \vcentcolon \Ker \varphi &amp;\hookrightarrow G\\
-g &amp;\mapsto g
+ \iota \vcentcolon \Ker \varphi &amp;\hookrightarrow G\\
+ g &amp;\mapsto g
 \end{align*}$$&lt;p&gt;（我们这里使用带钩箭头标明它是一个单态）；此外，这个对象满足这样的性质：对于任意的同态 $\alpha\vcentcolon X\to G$，只要满足条件&lt;/p&gt;
 $$\varphi\circ\alpha = 0,$$&lt;p&gt;（此处 $0$ 代表零映射，或者叫平凡映射（Trivial Map），即将所有的元素都映射到单位元 $1_H$ 上），那么同态 $\alpha$ 即可被唯一地分解，即对某个 $\alpha$ 而言，存在唯一的一个同态 $\overline{\alpha}\vcentcolon X\to \Ker \varphi$，满足 $\alpha = \iota\circ\overline{\alpha}$。将这些性质使用交换图来描述的话，就是说下面的这个交换图成立：&lt;/p&gt;
 &lt;figure&gt;
@@ -1373,8 +1469,8 @@ $$\varphi\circ\alpha = 0,$$&lt;p&gt;（此处 $0$ 代表零映射，或者叫平
 &lt;/h4&gt;&lt;p&gt;从交换图上可以看到，$\hat{f'}$ 是从 $\Coker \alpha$ 到 $\Coker \beta$ 上的。而在 $\Coker \alpha$ 中的元素则是众多的以代表元所代表的等价类。那么，在使用 $\hat{f'}$ 作用到 $\Coker \alpha$ 中的一个元素 $\hat{a'}$ 后，得到的则应该是位于 $\Coker \beta$ 中的一个元素，这个元素应该是形如 $b'+\Img \beta$ 这样的等价类，自然也可以被表示为 $\hat{b'}$。这就是我们需要验证的同态，$\hat{f'}$，具体在做的事。&lt;/p&gt;
 &lt;p&gt;让我们写的更加明确一些：我们要定义的 $\hat{f'}$ 应该是这样的：&lt;/p&gt;
 $$\begin{align*}
-\hat{f'}\vcentcolon\space \Coker \alpha &amp; \to \Coker \beta \\
-a' + \Img \alpha &amp; \mapsto b' + \Img \beta,
+ \hat{f'}\vcentcolon\space \Coker \alpha &amp; \to \Coker \beta \\ 
+ a' + \Img \alpha &amp; \mapsto b' + \Img \beta,
 \end{align*}$$&lt;p&gt;其中 $a'\in A'$ 与 $b' \in B'$ 之间的关系有：$f'(a') = b'$。&lt;/p&gt;
 &lt;p&gt;那么就有值得注意的一些问题。两个元素等价时，它们自然属于同一个等价类，但这两个元素本身是可以不同的。假如两个不同但等价的元素在进入等价类后再被商群间的同态所映射，应该会得到一个目标群上的等价类。另外，自然，我们也要验证这个同态的像确实在陪域内。我们开始验证吧。&lt;/p&gt;
 &lt;h4 id="开始验证"&gt;开始验证
@@ -1382,11 +1478,11 @@ a' + \Img \alpha &amp; \mapsto b' + \Img \beta,
 &lt;p&gt;我们理一下思路：我们先选取了两个在 $A'$ 中等价的元素；这两个元素的差，根据等价类划分的规则，必须是属于 $\alpha$ 的像的，那么就一定有一个对应的 $A$ 中的元素 $a$ 在 $\alpha$ 的作用下等于这两个 $A'$ 中元素的差。那么这时，我们就可以使用图表交换的性质了：$f'(\alpha(a)) = \beta(f(a))$。请注意这个地方：右侧显示 $\beta(f(a))$ 是属于 $\beta$ 的像的：$\beta(f(a)) \in \Img \beta$。这就说明了 $f'(\alpha(a)) = f'(a' - a'^* ) \in \Img \beta$。这样，我们就得到了我们所需要的：任取两个 $A'$ 中的等价元素，它们最终被映入了 $B'$ 的等价类，因为 $f' (a') - f'(a'^* ) \in \Img \beta$。&lt;/p&gt;
 &lt;p&gt;那么这样我们就可以进一步进入到对 $\hat{f'}$ 的验证：如果 $a'\in A'$ 且 $a'^* \in A'$ 且二者等价，就有 $a' + \Img \alpha = a'^* + \Img \alpha$。我们希望这两个应该相等的等价类在经过 $\hat{f'}$ 的映射后得到的是同一个 $\Coker \beta$ 中的元素。那我们就直接进行运算：&lt;/p&gt;
 $$\begin{align*}
-\hat{f'}(a' + \Img \alpha) &amp;= f'(a') + \Img \beta\\
-&amp;= f' (a'^* +a'-a'^* ) + \Img \beta\\
-&amp;= f' (a'^* ) + f'(a'-a'^* ) + \Img \beta \\
-&amp;= f' (a'^* )+ \Img \beta\\
-&amp;= \hat{f'}(a'^* + \Img \alpha).
+ \hat{f'}(a' + \Img \alpha) &amp;= f'(a') + \Img \beta\\
+ &amp;= f' (a'^* +a'-a'^* ) + \Img \beta\\
+ &amp;= f' (a'^* ) + f'(a'-a'^* ) + \Img \beta \\
+ &amp;= f' (a'^* )+ \Img \beta\\
+ &amp;= \hat{f'}(a'^* + \Img \alpha).
 \end{align*}$$&lt;p&gt;我们来解释一下上面的运算过程。第一步是使用了我们上面对函数做出的定义；第二步就是单纯地进行了个加减，不过这里的加减能成立必须利用交换群的性质；第三步则是利用了 $f'$ 作为阿贝尔群同态的定义；第四步则要应用到我们刚刚得到的结论： $f' (a') - f'(a'^* ) \in \Img \beta$；第五步则就是单纯运算回以 $\hat{f'}$ 表达的形式，完成我们的证明。&lt;/p&gt;
 &lt;p&gt;自此，我们证明了：两个任意的 $A'$ 中元素，当它们等价时，会且总是会被 $\hat{f'}$ 映射到同一个 $\Img \beta$ 中的元素。这句话还可以换个说法：我们定义的这个同态，是不依赖于等价类代表元的选取的（我们选了两个代表元，结果一样）；或者简单一些：这个同态是良定的。&lt;/p&gt;
 &lt;p&gt;我们完全可以按照相似的逻辑处理 $\hat{g'}$。这得益于我们上面的定义以及验证没有用到除了交换图提供的信息外的任何额外附加信息。所以我们就不特别定义并验证这个 $\hat{g'}$ 了，直接借用这里的定义以及验证方法即可。&lt;/p&gt;
@@ -1460,7 +1556,7 @@ $$A\xrightarrow{f} B \xrightarrow{g} C,$$&lt;p&gt;
 &lt;h3 id="operatornamecoker-beta-处正合性的证明"&gt;$\operatorname{Coker} \beta$ 处正合性的证明
 &lt;/h3&gt;&lt;p&gt;和上面一样，我们证明这样的正合性，会以对应映射的像与核相互包含为切入点进行。这次我们还是先证明这个短链：&lt;/p&gt;
 $$
-\Coker \alpha \xrightarrow{\hat{f'}} \Coker \beta \xrightarrow{\hat{g'}} \Coker \gamma
+\Coker \alpha \xrightarrow{\hat{f'}} \Coker \beta \xrightarrow{\hat{g'}} \Coker \gamma 
 $$&lt;p&gt;是一个链复型（$\Img \hat{f'} \subseteq \Ker \hat{g'}$），再证明在中间的 $\Coker \beta$ 处是正合的（$\Img \hat{f'} \supseteq \Ker \hat{g'}$）。&lt;/p&gt;
 &lt;h4 id="证明-operatornameim-hatf-subseteq-operatornameker-hatg"&gt;证明 $\operatorname{Im} \hat{f'} \subseteq \operatorname{Ker} \hat{g'}$
 &lt;/h4&gt;&lt;p&gt;照旧我们选择 $\Img \hat{f'}$ 中的一个元素，由于 $\Img \hat{f'} \subseteq \Coker \beta$，这个元素将会是等价类 $\hat{b'} = b' + \Img \beta$。我们想要证明，在前面这个条件下的任何 $\hat{b'}$ 都会被 $\hat{g'}$ 映射到 $\hat{0} \in \Coker \gamma$ 上。既然 $\hat{b'}\in\Img\hat{f'}$，我们就可以取到 $\Coker \alpha$ 中的一个元素 $\hat{a'}$，使得 $\hat{f'}(\hat{a'}) = \hat{b'}$。&lt;/p&gt;

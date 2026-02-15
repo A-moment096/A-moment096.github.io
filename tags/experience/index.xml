@@ -1,96 +1,126 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Experience on A Moment's Rest</title><link>https://a-moment096.github.io/tags/experience/</link><description>Recent content in Experience on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 19 Jan 2026 06:28:39 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/experience/index.xml" rel="self" type="application/rss+xml"/><item><title>记拯救用 git-reset 误删的某代码仓库</title><link>https://a-moment096.github.io/posts/rescue_my_repository/</link><pubDate>Sun, 28 Dec 2025 00:13:03 +0800</pubDate><guid>https://a-moment096.github.io/posts/rescue_my_repository/</guid><description>&lt;img src="https://a-moment096.github.io/posts/rescue_my_repository/%E8%BF%B7%E8%BF%AD%E9%A6%99.png" alt="Featured image of post 记拯救用 git-reset 误删的某代码仓库" /&gt;&lt;p&gt;&lt;em&gt;某个笨蛋错误地使用了 &lt;code&gt;git reset --hard&lt;/code&gt; 命令，这是他发生的变化。&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Experience on A Moment's Rest</title><link>https://a-moment096.github.io/tags/experience/</link><description>Recent content in Experience on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Sun, 15 Feb 2026 11:05:58 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/experience/index.xml" rel="self" type="application/rss+xml"/><item><title>记拯救用 git-reset 误删的某代码仓库</title><link>https://a-moment096.github.io/posts/rescue_my_repository/</link><pubDate>Sun, 28 Dec 2025 00:13:03 +0800</pubDate><guid>https://a-moment096.github.io/posts/rescue_my_repository/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post 记拯救用 git-reset 误删的某代码仓库" /&gt;&lt;p&gt;&lt;em&gt;某个笨蛋错误地使用了 &lt;code&gt;git reset --hard&lt;/code&gt; 命令，这是他发生的变化。&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图是可爱的迷迭香！是由 Pixiv 的 &lt;a class="link" href="https://www.pixiv.net/users/38336697" target="_blank" rel="noopener"
-&gt;赌上厨师生涯的拼好饭&lt;/a&gt; 创作的，这里有&lt;a class="link" href="https://www.pixiv.net/artworks/138994056" target="_blank" rel="noopener"
-&gt;原图链接&lt;/a&gt;。选曲为最近听的很多的一首东方同人曲：来自 &lt;a class="link" href="http://www.rd-sounds.com/" target="_blank" rel="noopener"
-&gt;凋叶棕&lt;/a&gt; 的专辑 &lt;strong&gt;望&lt;/strong&gt; 的第一首歌，&lt;strong&gt;encourager&lt;/strong&gt;，曲调积极向上，阳光活泼，我说专辑封面金发的孩子真可爱，你能反驳吗！？&lt;/em&gt;&lt;/p&gt;
+ &gt;赌上厨师生涯的拼好饭&lt;/a&gt; 创作的，这里有&lt;a class="link" href="https://www.pixiv.net/artworks/138994056" target="_blank" rel="noopener"
+ &gt;原图链接&lt;/a&gt;。选曲为最近听的很多的一首东方同人曲：来自 &lt;a class="link" href="http://www.rd-sounds.com/" target="_blank" rel="noopener"
+ &gt;凋叶棕&lt;/a&gt; 的专辑 &lt;strong&gt;望&lt;/strong&gt; 的第一首歌，&lt;strong&gt;encourager&lt;/strong&gt;，曲调积极向上，阳光活泼，我说专辑封面金发的孩子真可爱，你能反驳吗！？&lt;/em&gt;&lt;/p&gt;
+
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
 &lt;style type="text/css"&gt;
 [data-scheme="dark"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
-border-bottom-color: var(--card-separator-color);
+ border-bottom-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
-border-color: var(--card-separator-color);
+ border-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-body {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info {
-border-top-color: var(--card-background);
+ border-top-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
-color: var(--card-text-color-tertiary);
+ color: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
-background-color: var(--card-separator-color);
+ background-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
-background-color: var(--accent-color);
+ background-color: var(--accent-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li {
-color: var(--card-text-color-main);
-border-top-color: var(--card-separator-color);
+ color: var(--card-text-color-main);
+ border-top-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc {
-text-shadow: -1px -1px 0 var(--body-background);
+ text-shadow: -1px -1px 0 var(--body-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:before {
-background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+ background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:after {
-background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc p {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
+ 
 [data-scheme="light"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="light"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
 &lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
+
+
 &lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=28732491" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
 &lt;h2 id="引子"&gt;引子
 &lt;/h2&gt;&lt;p&gt;美妙而快乐的周五，应师兄的提议，我决定将自己用 AI 写出来的深度学习代码放在 Github 上的仓库里。Everything works great! 我的代码跑出来的结果看着海星，放在 Github 上和师兄们分享一下也挺好（就是不太能入米娜桑的法眼了，嘿嘿）。二话不说，先创建个 Git 仓库先，一会儿 Push 到远程就好了，Easy ~&lt;/p&gt;
@@ -122,7 +152,7 @@ background: var(--card-background-selected);
 &lt;p&gt;此时我想到，为什么不 Google 一下呢？（好吧其实是 DuckDuckGo，对不起 DuckDuckGo 真的很好用，再见 Google）我就搜 &lt;code&gt;git reset --recover recover&lt;/code&gt;，结果就遇到了一篇伟大的 Stack Overflow 帖子：&lt;/p&gt;
 &lt;h2 id="还得是-stack-overflow"&gt;还得是 Stack Overflow
 &lt;/h2&gt;&lt;p&gt;搜索结果第一个，&lt;a class="link" href="https://stackoverflow.com/questions/5788037/recover-from-losing-uncommitted-changes-by-git-reset-hard" target="_blank" rel="noopener"
-&gt;这篇 Stack Overflow 帖子&lt;/a&gt; 的提问很直接，高赞回答和我想得一样，有提交历史的情况下可以 &lt;code&gt;git reflog show&lt;/code&gt; 来救一下自己，有趣的是这个回答没有被选为题主认可的回答，反倒是第二个回答，赞数稍低一些些，却被题主选为了最佳回答。这个最初在 2011 年发布的回答讲到：&lt;/p&gt;
+ &gt;这篇 Stack Overflow 帖子&lt;/a&gt; 的提问很直接，高赞回答和我想得一样，有提交历史的情况下可以 &lt;code&gt;git reflog show&lt;/code&gt; 来救一下自己，有趣的是这个回答没有被选为题主认可的回答，反倒是第二个回答，赞数稍低一些些，却被题主选为了最佳回答。这个最初在 2011 年发布的回答讲到：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Previously staged changes (&lt;code&gt;git add&lt;/code&gt;) should be recoverable from index objects, so if you did, use &lt;code&gt;git fsck --lost-found&lt;/code&gt; to locate the objects related to it. (This writes the objects to the &lt;code&gt;.git/lost-found/&lt;/code&gt; directory; from there you can use &lt;code&gt;git show &amp;lt;filename&amp;gt;&lt;/code&gt; to see the contents of each file.)&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -148,25 +178,31 @@ background: var(--card-background-selected);
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;git init .
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这样我们就创建了一个新文件夹，写了一个新文件，并且在有文件的情况下执行了 &lt;code&gt;git init .&lt;/code&gt; 初始化了这个仓库。我们用 &lt;code&gt;git status&lt;/code&gt; 看看：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/rescue_my_repository/git-status.png"
-width="639"
-height="230"
-srcset="https://a-moment096.github.io/posts/rescue_my_repository/git-status_hu_f8b3581f67ed33c.png 480w, https://a-moment096.github.io/posts/rescue_my_repository/git-status_hu_bac6937448684bba.png 1024w"
-loading="lazy"
-alt="Git status 结果"
-class="gallery-image"
-data-flex-grow="277"
-data-flex-basis="666px"
+	width="639"
+	height="230"
+	loading="lazy"
+	
+		alt="Git status 结果"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="277"
+		data-flex-basis="666px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;我们再看看 &lt;code&gt;.git/object&lt;/code&gt; 文件夹：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/rescue_my_repository/eza-git-object.png"
-width="584"
-height="153"
-srcset="https://a-moment096.github.io/posts/rescue_my_repository/eza-git-object_hu_5a80dfc3315edec3.png 480w, https://a-moment096.github.io/posts/rescue_my_repository/eza-git-object_hu_81bf9221fac2d83d.png 1024w"
-loading="lazy"
-alt=".git/object 文件夹"
-class="gallery-image"
-data-flex-grow="381"
-data-flex-basis="916px"
+	width="584"
+	height="153"
+	loading="lazy"
+	
+		alt=".git/object 文件夹"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="381"
+		data-flex-basis="916px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;里面空空如也。我们执行下面的 Git 命令：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;git add .
@@ -174,14 +210,17 @@ data-flex-basis="916px"
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# if you don&amp;#39;t have eza:&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# tree .git/objects&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/rescue_my_repository/after-add.png"
-width="601"
-height="230"
-srcset="https://a-moment096.github.io/posts/rescue_my_repository/after-add_hu_ebdeb877d8b142eb.png 480w, https://a-moment096.github.io/posts/rescue_my_repository/after-add_hu_13e8107f087adf1f.png 1024w"
-loading="lazy"
-alt="添加文件后的 .git/objects"
-class="gallery-image"
-data-flex-grow="261"
-data-flex-basis="627px"
+	width="601"
+	height="230"
+	loading="lazy"
+	
+		alt="添加文件后的 .git/objects"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="261"
+		data-flex-basis="627px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;怎么确定他就是我们要的文件呢？Git 提供了它用来哈希的命令，我们执行 &lt;code&gt;git hash-object ./test.txt&lt;/code&gt;，得到的结果是：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;ce013625030ba8dba906f756967f9e9ca394464a
@@ -191,41 +230,47 @@ data-flex-basis="627px"
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;ls -l
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;eza --tree .git/objects
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/rescue_my_repository/git-reset--hard.png"
-width="521"
-height="231"
-srcset="https://a-moment096.github.io/posts/rescue_my_repository/git-reset--hard_hu_d22a7704f1554c9f.png 480w, https://a-moment096.github.io/posts/rescue_my_repository/git-reset--hard_hu_bf534b23ba2cea95.png 1024w"
-loading="lazy"
-alt="git reset 后"
-class="gallery-image"
-data-flex-grow="225"
-data-flex-basis="541px"
+	width="521"
+	height="231"
+	loading="lazy"
+	
+		alt="git reset 后"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="225"
+		data-flex-basis="541px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;结果很神奇！工作目录里的文件确实被删除掉了，而 &lt;code&gt;.git/objects&lt;/code&gt; 里的内容并没有被删掉。多亏了 &lt;code&gt;git add .&lt;/code&gt; 这个命令，把结果暂存了下来。此时我们尝试 &lt;code&gt;git fsck --lost-found&lt;/code&gt;：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;git fsck --lost-found
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;eza --tree .git/lost-found
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;cat .git/lost-found/other/ce013625030ba8dba906f756967f9e9ca394464a
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/rescue_my_repository/git-fsck--lost-found.png"
-width="602"
-height="284"
-srcset="https://a-moment096.github.io/posts/rescue_my_repository/git-fsck--lost-found_hu_c40c76a586e89ef.png 480w, https://a-moment096.github.io/posts/rescue_my_repository/git-fsck--lost-found_hu_199580ece64b915e.png 1024w"
-loading="lazy"
-alt="使用 git fsck --lost-found 之后"
-class="gallery-image"
-data-flex-grow="211"
-data-flex-basis="508px"
+	width="602"
+	height="284"
+	loading="lazy"
+	
+		alt="使用 git fsck --lost-found 之后"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="211"
+		data-flex-basis="508px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;所以其实 &lt;code&gt;git fsck --lost-found&lt;/code&gt; 大概就是把 &lt;code&gt;git add&lt;/code&gt; 过的文件从 &lt;code&gt;.git/objects&lt;/code&gt; 里找回来。那么 &lt;code&gt;git fsck&lt;/code&gt; 是什么呢？查阅手册，我们看到：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;git-fsck - Verifies the connectivity and validity of the objects in the database&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;--lost-found&lt;/code&gt;&lt;/p&gt;
-&lt;p style="text-indent: 50px"&gt; Write dangling objects into `.git/lost-found/commit/` or `.git/lost-found/other/`, depending on type. If the object is a blob, the contents are written into the file, rather than its object name.
+ &lt;p style="text-indent: 50px"&gt; Write dangling objects into `.git/lost-found/commit/` or `.git/lost-found/other/`, depending on type. If the object is a blob, the contents are written into the file, rather than its object name.
 &lt;/blockquote&gt;
 &lt;p&gt;That&amp;rsquo;s it! &lt;em&gt;fsck&lt;/em&gt; 应该是 &lt;em&gt;filesystem check&lt;/em&gt; 的缩写，而 &lt;code&gt;--lost-found&lt;/code&gt; 也如预料的一样，将 &lt;em&gt;悬垂&lt;/em&gt; 的对象恢复到这两个文件夹里。&lt;/p&gt;
 &lt;h2 id="总结"&gt;总结
 &lt;/h2&gt;&lt;p&gt;这次真的出了一身冷汗，还好习惯性地 &lt;code&gt;git add .&lt;/code&gt; 了一次，不然真的是神仙难救呀。我可不想把美妙的周五时光全都放在文件系统恢复上。当然，最大的教训还是：不要随意用自己了解不充分的命令，特别是这种会对自己文件系统形成半不可逆更改的操作。我自认为对 Git 有点熟悉了，现在看来，根本就是太过自大，属于是半瓶子水晃荡，最后搬石头砸自己的脚了。还得好好学一下呀！&lt;/p&gt;
 &lt;p&gt;不过，毫不谦虚地讲，这次经历我还是有做的好的地方的。起码没有彻底慌乱掉然后干出更加迷惑的操作，比如关机重启彻底删除这样失了智的行为。之前有一次好像也是东西丢了找不到，一时慌乱结果彻底找不回来了。还好那次的文件不算重要，丢了也就丢了。看来这次也算吸取了上次的一点教训，不要手忙脚乱，左右脑互搏。&lt;/p&gt;
 &lt;p&gt;另外就是，DuckDuckGo 真的很好，Stack Overflow 真的很好，没有搜索引擎和这个伟大的论坛，我半个月的心血说不定真的就泡汤了（即便是让 AI 给我干苦力（））&lt;/p&gt;
-&lt;p&gt;希望这次经历能帮到遇到了类似问题的你，或者给你也敲响一次警钟。那么，感谢你读到这里，祝你身心愉快，工作顺利，不出乌龙~&lt;/p&gt;</description></item><item><title>First Blog: 搭建这个博客</title><link>https://a-moment096.github.io/posts/build_blog/</link><pubDate>Fri, 01 Nov 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/build_blog/</guid><description>&lt;img src="https://a-moment096.github.io/posts/build_blog/Reimu.png" alt="Featured image of post First Blog: 搭建这个博客" /&gt;&lt;p&gt;简单记录一下自己搭建博客的经历。&lt;/p&gt;
+&lt;p&gt;希望这次经历能帮到遇到了类似问题的你，或者给你也敲响一次警钟。那么，感谢你读到这里，祝你身心愉快，工作顺利，不出乌龙~&lt;/p&gt;</description></item><item><title>First Blog: 搭建这个博客</title><link>https://a-moment096.github.io/posts/build_blog/</link><pubDate>Fri, 01 Nov 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/build_blog/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post First Blog: 搭建这个博客" /&gt;&lt;p&gt;简单记录一下自己搭建博客的经历。&lt;/p&gt;
 &lt;h2 id="begin-好想搭博客"&gt;Begin: 好想搭博客
 &lt;/h2&gt;&lt;p&gt;网上高强度冲浪的过程中，发现很多人都有自己的博客，特别是在读过几篇博文之后，对会搭建博客的大佬的艳羡之情愈发激烈，同时也很想在网上
 搭一个自己的小窝，记录一下自己的学习和生活（以便于跻身大佬的行列（在心理上））。 于是，在若干的纠结与选择之后，决定尝试用 Hexo + GitHub pages 的方式
@@ -239,13 +284,13 @@ data-flex-basis="508px"
 &lt;/h2&gt;&lt;p&gt;转眼到了10月底，准确来讲就是昨天，10月31日。心血来潮的我再次向Hexo博客发起冲击。然而拦住我的不只是又没有找到好看的主题（这次是按照Github
 的Star数选的，也许是我审美太小众？），还有烦人的网络问题。一会儿是用 &lt;code&gt;npm&lt;/code&gt; 拉取不到内容，一会儿又是 &lt;code&gt;git&lt;/code&gt; 连接不到仓库。虽然后面网上搜索到
 是我科学上网姿势不对，需要跑全局，并且 &lt;code&gt;npm&lt;/code&gt; 换成淘宝源(&lt;a class="link" href="https://npmmirror.com/" target="_blank" rel="noopener"
-&gt;https://npmmirror.com/&lt;/a&gt;)就可以轻松解决，然而接连的 Error 还是耗尽了我的耐心。&lt;/p&gt;
+ &gt;https://npmmirror.com/&lt;/a&gt;)就可以轻松解决，然而接连的 Error 还是耗尽了我的耐心。&lt;/p&gt;
 &lt;p&gt;对吗？真的要搭博客吗？师兄这晚告诉我，可以考虑搞个微信公众号，要吗？&lt;/p&gt;
 &lt;h2 id="-受不了hugo吧"&gt;?: 受不了，Hugo吧
 &lt;/h2&gt;&lt;p&gt;还是不想搞公众号，感觉太公众了。虽然也有博客的功能，但是我的主题这块儿谁来给我补呀（？）。是时，我又想起昨晚网上冲浪时发现的另一个构建框架：
 &lt;em&gt;Hugo&lt;/em&gt;。于是当机立断，立刻冲向 Github 看看有什么好的主题，最后便相中了这款 &lt;strong&gt;stack&lt;/strong&gt;。简约界面深得我意的同时，又满足了我对页面版式的需求（好怪哦）。
 最重要的时，这个主题的模板目录结构很清晰！我也是摸索着添加了几个icon后配置出了令我满意的结果。感谢你，&lt;a class="link" href="https://jimmycai.com/" target="_blank" rel="noopener"
-&gt;Jimmy Cai&lt;/a&gt;!&lt;/p&gt;
+ &gt;Jimmy Cai&lt;/a&gt;!&lt;/p&gt;
 &lt;h2 id="end-好耶"&gt;End: 好耶
 &lt;/h2&gt;&lt;p&gt;第一次搭建博客，踩的坑自己觉得不算少。不过大部分的坑都是因为不熟悉前端造成的。啊，要是我是一个搞计科软工前端XXX的学生那该多好啊，可惜，改不得。
 而且另一个角度来讲，踩坑也是一种学习过程嘛。日后也许会往博客上加点新的玩意儿，搞得更花哨一些~&lt;/p&gt;

@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Microelasticity on A Moment's Rest</title><link>https://a-moment096.github.io/tags/microelasticity/</link><description>Recent content in Microelasticity on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 19 Jan 2026 06:28:39 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/microelasticity/index.xml" rel="self" type="application/rss+xml"/><item><title>文献阅读 - Wang-Jin-Khachaturyan2002</title><link>https://a-moment096.github.io/posts/wang-jin-khachaturyan2002/</link><pubDate>Sat, 15 Nov 2025 23:25:19 +0800</pubDate><guid>https://a-moment096.github.io/posts/wang-jin-khachaturyan2002/</guid><description>&lt;img src="https://a-moment096.github.io/posts/PF_Papers/Nev_Alice-2.jpg" alt="Featured image of post 文献阅读 - Wang-Jin-Khachaturyan2002" /&gt;&lt;p&gt;&lt;em&gt;这篇文章算是他们三个人的工作的总结，发在了 J. Appl. Phys. 上，我其实很早就看过这篇，但是当时看得匆忙，一知半解，这次仔细看看&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Microelasticity on A Moment's Rest</title><link>https://a-moment096.github.io/tags/microelasticity/</link><description>Recent content in Microelasticity on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Sun, 15 Feb 2026 11:05:58 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/microelasticity/index.xml" rel="self" type="application/rss+xml"/><item><title>文献阅读 - Wang-Jin-Khachaturyan2002</title><link>https://a-moment096.github.io/posts/wang-jin-khachaturyan2002/</link><pubDate>Sat, 15 Nov 2025 23:25:19 +0800</pubDate><guid>https://a-moment096.github.io/posts/wang-jin-khachaturyan2002/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post 文献阅读 - Wang-Jin-Khachaturyan2002" /&gt;&lt;p&gt;&lt;em&gt;这篇文章算是他们三个人的工作的总结，发在了 J. Appl. Phys. 上，我其实很早就看过这篇，但是当时看得匆忙，一知半解，这次仔细看看&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;图图还是 &lt;a class="link" href="https://x.com/Neve_AI" target="_blank" rel="noopener"
-&gt;&lt;strong&gt;Neve_AI&lt;/strong&gt;&lt;/a&gt; 绘制的 AI 图来的，歪头银发小妹妹真的好可爱呀~~&lt;/em&gt;&lt;/p&gt;
+ &gt;&lt;strong&gt;Neve_AI&lt;/strong&gt;&lt;/a&gt; 绘制的 AI 图来的，歪头银发小妹妹真的好可爱呀~~&lt;/em&gt;&lt;/p&gt;
 $$
 \gdef\misfit#1{\varepsilon_{#1}^0(\mathbf{r})}
 \gdef\eigen#1{\varepsilon_{#1}^*0*(\mathbf{r})}
@@ -18,7 +18,7 @@ $$
 $$&lt;p&gt;弹性能由 KS 理论可得：&lt;/p&gt;
 $$
 \begin{align*}
-E^{\mathrm{el}} = &amp;\frac{1}{2}\int_V C_{ijkl}^0 \misfit{ij}\misfit{kl}\dd^3 r \\ &amp;- \avee{ij}\int_V C_{ijkl}^0 \misfit{kl}\dd^3 r + \frac{V}{2}C_{ijkl}^0 \avee{ij}\avee{kl} \\ &amp;- \frac{1}{2}\tilde{\int}\frac{\dd^3 k}{(2\pi)^3}n_i \tilde{\sigma}_{ij}^0(\mathbf{k})\Omega_{jk}(\mathbf{n})\tilde{\sigma}_{kl}^0(\mathbf{k})^* n_l,
+ E^{\mathrm{el}} = &amp;\frac{1}{2}\int_V C_{ijkl}^0 \misfit{ij}\misfit{kl}\dd^3 r \\ &amp;- \avee{ij}\int_V C_{ijkl}^0 \misfit{kl}\dd^3 r + \frac{V}{2}C_{ijkl}^0 \avee{ij}\avee{kl} \\ &amp;- \frac{1}{2}\tilde{\int}\frac{\dd^3 k}{(2\pi)^3}n_i \tilde{\sigma}_{ij}^0(\mathbf{k})\Omega_{jk}(\mathbf{n})\tilde{\sigma}_{kl}^0(\mathbf{k})^* n_l,
 \end{align*}
 $$&lt;p&gt;依旧，这里的 $\tilde{\int}$ 代表在去掉 $\mathbf{k} = \mathbf{0}$ 处 $(2\pi)^3/V$ 的倒空间体积后，在倒空间中的积分，而 $\mathbf{n} = \mathbf{k}/k$ 还是倒空间中点的方向。而 $\Omega_{ij}(\mathbf{n})$ 是格林方程张量，是 $\Omega^{-1}_{ij}(C^0_{ijkl}n_kn_l)$ 的逆张量。这里的 $C_{ijkl}^0$ 是弹性模量，可以把倒空间中的弹性应力和应变通过它连接起来，即 $\tilde{\sigma}_{ij}^{o}(\mathbf{k}) = C_{ijkl}\,\tilde{\varepsilon}_{kl}^{o}(\mathbf{k})$。公式中倒空间应力的星号代表复共轭。这个形式的自由能适用于应变控制下的边界条件。&lt;/p&gt;
 &lt;p&gt;在 KS 理论下的等效应变则可以用本征应变表达为：&lt;/p&gt;
@@ -183,9 +183,9 @@ $$&lt;p&gt;要处理结构不均匀性，可以设置他们的不均匀部分的
 &lt;li&gt;自己写一写这个力学求解器，自己不写怎么知道它怎么起效果的呢？（虽然肉眼可见地难）&lt;/li&gt;
 &lt;li&gt;依旧，学习如何像大佬一样玩弄公式&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;论文阅读环节也许会暂时到此为止，因为下一篇大概是读书笔记（ Toshio Mura 所著的 &lt;em&gt;Micromechanics of Defects in Solids&lt;/em&gt;）。我大概也许能从中刨出所谓的 KS 理论的真身（又或许需要再搭配几篇文章）。然后可能我会考虑用亲爱的 Python 来实现这个算法。&lt;/p&gt;</description></item><item><title>文献阅读 - Jin-Wang-Khachaturyan2001</title><link>https://a-moment096.github.io/posts/jin-wang-khachaturyan2001/</link><pubDate>Thu, 23 Oct 2025 23:25:19 +0800</pubDate><guid>https://a-moment096.github.io/posts/jin-wang-khachaturyan2001/</guid><description>&lt;img src="https://a-moment096.github.io/posts/PF_Papers/Nev_Alice.jpg" alt="Featured image of post 文献阅读 - Jin-Wang-Khachaturyan2001" /&gt;&lt;p&gt;&lt;em&gt;Jin，Wang 和 Khachaturyan 等人在 01 年的时候于 Appl. Phys. Lett. 发表了这篇文章（快报），应该是自此开创了相场的微弹性力学理论。今天就读读它，（尝试）以此为起点学习这个理论吧。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;论文阅读环节也许会暂时到此为止，因为下一篇大概是读书笔记（ Toshio Mura 所著的 &lt;em&gt;Micromechanics of Defects in Solids&lt;/em&gt;）。我大概也许能从中刨出所谓的 KS 理论的真身（又或许需要再搭配几篇文章）。然后可能我会考虑用亲爱的 Python 来实现这个算法。&lt;/p&gt;</description></item><item><title>文献阅读 - Jin-Wang-Khachaturyan2001</title><link>https://a-moment096.github.io/posts/jin-wang-khachaturyan2001/</link><pubDate>Thu, 23 Oct 2025 23:25:19 +0800</pubDate><guid>https://a-moment096.github.io/posts/jin-wang-khachaturyan2001/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post 文献阅读 - Jin-Wang-Khachaturyan2001" /&gt;&lt;p&gt;&lt;em&gt;Jin，Wang 和 Khachaturyan 等人在 01 年的时候于 Appl. Phys. Lett. 发表了这篇文章（快报），应该是自此开创了相场的微弹性力学理论。今天就读读它，（尝试）以此为起点学习这个理论吧。&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;图图还是 &lt;a class="link" href="https://x.com/Neve_AI" target="_blank" rel="noopener"
-&gt;&lt;strong&gt;Neve_AI&lt;/strong&gt;&lt;/a&gt; 绘制的 AI 图来的，真的好可爱呀~~&lt;/em&gt;&lt;/p&gt;
+ &gt;&lt;strong&gt;Neve_AI&lt;/strong&gt;&lt;/a&gt; 绘制的 AI 图来的，真的好可爱呀~~&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id="研究背景"&gt;研究背景
 &lt;/h2&gt;&lt;p&gt;这个理论建立的原因是因为在载荷下对包含裂纹、孔隙的材料进行力学求解时几乎没法得到数学解析解，这主要是因为很多材料都是各向异性的多晶，而材料里的各种复杂缺陷也很难描述，只能用数值计算的方法对材料的真实力学状态进行求解。而相场法正好能解决一些材料的单/多晶问题，如果能用它再解一下材料内部的力学状态就好了。这就引出了本文的主要内容。&lt;/p&gt;
 &lt;h2 id="神秘-ks-理论"&gt;神秘 KS 理论
@@ -193,22 +193,30 @@ $$&lt;p&gt;要处理结构不均匀性，可以设置他们的不均匀部分的
 &lt;h3 id="均匀非均匀应变"&gt;均匀/非均匀应变
 &lt;/h3&gt;&lt;p&gt;这里解释一下什么是均匀和非均匀的应变，如图&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;：&lt;/p&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style="text-align: center"&gt;均匀 Homogeneous&lt;/th&gt;
-&lt;th style="text-align: center"&gt;非均匀 Heterogeneous&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/PF_Papers/Homogeneous-strain-JWK2001.png"
-loading="lazy"
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th style="text-align: center"&gt;均匀 Homogeneous&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;非均匀 Heterogeneous&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;&lt;img src="posts/PF_Papers/Homogeneous-strain-JWK2001.png"
+	
+	
+	loading="lazy"
+	
+	
 &gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/PF_Papers/Heterogeneous-strain-JWK2001.png"
-loading="lazy"
+ &lt;td style="text-align: center"&gt;&lt;img src="posts/PF_Papers/Heterogeneous-strain-JWK2001.png"
+	
+	
+	loading="lazy"
+	
+	
 &gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h3 id="吓人公式"&gt;吓人公式
 &lt;/h3&gt;&lt;p&gt;这个理论给出了应变能泛函和应力分布的准确解，其中应力为：&lt;/p&gt;
@@ -221,7 +229,7 @@ $$&lt;p&gt;这个公式相当吓人，符号很多…… 其中的积分号带�
 &lt;/p&gt;
 $$
 \begin{align*}
-\tilde{\epsilon}_{ij}^{0}(\mathbf{k}) &amp;= \int_{V} \epsilon_{ij}^{0}(\mathbf{r})\, e^{-i\mathbf{k}\cdot\mathbf{r}}\, d^{3}r\\
+\tilde{\epsilon}_{ij}^{0}(\mathbf{k}) &amp;= \int_{V} \epsilon_{ij}^{0}(\mathbf{r})\, e^{-i\mathbf{k}\cdot\mathbf{r}}\, d^{3}r\\ 
 \epsilon^{o}_{ij} &amp;= \frac{1}{V}\int_{V}\epsilon^{o}_{ij}(\mathbf{r})\,\mathrm{d}^3r
 \end{align*}
 $$&lt;p&gt;我们来看这个公式，首先应力分布是一个标量场，自然是用弹性模量 “乘以” 材料本来就有的应变产生的张量 （其实是缩并），再加上一个外加的应力。这里的 $C_{ijkl}$ 没啥问题，重点在于怎么计算后面的应变张量。可以看到这个应变由三个部分组成，一个复杂的倒空间积分结果，减掉上面讲的那个宏观一致而微观不一致的本征应变 $\epsilon_{kl}^{o}(\mathbf{r})$，再加上这个应变的平均值。&lt;/p&gt;
@@ -298,7 +306,7 @@ $$&lt;p&gt;假如把 Allen-Cahn 形式的方程里的能量和本征应变用新
 &lt;ol&gt;
 &lt;li id="fn:1"&gt;
 &lt;p&gt;图片来自：&lt;a class="link" href="https://earth.sdsu.edu/visualstructure/vss/htm_hlp/hom_het.htm" target="_blank" rel="noopener"
-&gt;Visualizing Strain&lt;/a&gt;&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+ &gt;Visualizing Strain&lt;/a&gt;&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:2"&gt;
 &lt;p&gt;A. G. Khachaturyan, Fiz. Tverd. Tela &lt;strong&gt;8&lt;/strong&gt;, 2710 (1966); Sov. Phys. Solid State &lt;strong&gt;8&lt;/strong&gt;, 2163 (1967); A. G. Khachaturyan and G. A. Shatalov, Sov. Phys. JETP &lt;strong&gt;29&lt;/strong&gt;, 557 (1969); A. G. Khachaturyan, &lt;em&gt;Theory of Structural Transformations in Solids&lt;/em&gt; (Wiley, New York, 1983).&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;

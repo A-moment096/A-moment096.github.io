@@ -1,99 +1,129 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Type on A Moment's Rest</title><link>https://a-moment096.github.io/tags/type/</link><description>Recent content in Type on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 19 Jan 2026 06:28:39 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/type/index.xml" rel="self" type="application/rss+xml"/><item><title>如何解析 C/C++（比较）复杂的类型？</title><link>https://a-moment096.github.io/posts/simple_type_parsing/</link><pubDate>Thu, 15 Jan 2026 19:35:50 +0800</pubDate><guid>https://a-moment096.github.io/posts/simple_type_parsing/</guid><description>&lt;img src="https://a-moment096.github.io/posts/simple_type_parsing/Science.png" alt="Featured image of post 如何解析 C/C++（比较）复杂的类型？" /&gt;&lt;p&gt;&lt;em&gt;从可爱群友 &lt;a class="link" href="https://mahiro.ink/" target="_blank" rel="noopener"
-&gt;@0xa7973908&lt;/a&gt;的&lt;a class="link" href="https://mahiro.ink/archives/homework" target="_blank" rel="noopener"
-&gt;博客&lt;/a&gt;里了解到了数组指针和指针数组的类型区别，但是这种单纯的记号真的很难背，背后的逻辑究竟是什么样的呢？探究一下吧~&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Type on A Moment's Rest</title><link>https://a-moment096.github.io/tags/type/</link><description>Recent content in Type on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Sun, 15 Feb 2026 11:05:58 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/type/index.xml" rel="self" type="application/rss+xml"/><item><title>如何解析 C/C++（比较）复杂的类型？</title><link>https://a-moment096.github.io/posts/simple_type_parsing/</link><pubDate>Thu, 15 Jan 2026 19:35:50 +0800</pubDate><guid>https://a-moment096.github.io/posts/simple_type_parsing/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post 如何解析 C/C++（比较）复杂的类型？" /&gt;&lt;p&gt;&lt;em&gt;从可爱群友 &lt;a class="link" href="https://mahiro.ink/" target="_blank" rel="noopener"
+ &gt;@0xa7973908&lt;/a&gt;的&lt;a class="link" href="https://mahiro.ink/archives/homework" target="_blank" rel="noopener"
+ &gt;博客&lt;/a&gt;里了解到了数组指针和指针数组的类型区别，但是这种单纯的记号真的很难背，背后的逻辑究竟是什么样的呢？探究一下吧~&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;本期的头图是从歌曲的 MV 中截下来的，是 &lt;a class="link" href="https://x.com/mimi_3mi" target="_blank" rel="noopener"
-&gt;MIMI&lt;/a&gt; 的 &lt;a class="link" href="https://www.bilibili.com/video/BV1nkB7YQE1z/" title="B站链接"
-target="_blank" rel="noopener"
-&gt;サイエンス&lt;/a&gt; (Science，科学)，非常好听，很适合科研狗（）绘制 MV 的是 &lt;a class="link" href="https://x.com/bokarokaku" target="_blank" rel="noopener"
-&gt;3774.&lt;/a&gt; 太太，可爱铁头……&lt;/em&gt;&lt;/p&gt;
+ &gt;MIMI&lt;/a&gt; 的 &lt;a class="link" href="https://www.bilibili.com/video/BV1nkB7YQE1z/" title="B站链接"
+ target="_blank" rel="noopener"
+ &gt;サイエンス&lt;/a&gt; (Science，科学)，非常好听，很适合科研狗（）绘制 MV 的是 &lt;a class="link" href="https://x.com/bokarokaku" target="_blank" rel="noopener"
+ &gt;3774.&lt;/a&gt; 太太，可爱铁头……&lt;/em&gt;&lt;/p&gt;
+
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
 &lt;style type="text/css"&gt;
 [data-scheme="dark"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
-border-bottom-color: var(--card-separator-color);
+ border-bottom-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
-border-color: var(--card-separator-color);
+ border-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-body {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info {
-border-top-color: var(--card-background);
+ border-top-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
-color: var(--card-text-color-tertiary);
+ color: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
-background-color: var(--card-separator-color);
+ background-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
-background-color: var(--accent-color);
+ background-color: var(--accent-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li {
-color: var(--card-text-color-main);
-border-top-color: var(--card-separator-color);
+ color: var(--card-text-color-main);
+ border-top-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc {
-text-shadow: -1px -1px 0 var(--body-background);
+ text-shadow: -1px -1px 0 var(--body-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:before {
-background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+ background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:after {
-background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc p {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
+ 
 [data-scheme="light"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="light"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
 &lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
+
+
 &lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=2656567752" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
 &lt;h2 id="指针数组数组指针"&gt;指针数组？数组指针？
 &lt;/h2&gt;&lt;p&gt;可爱群友的博客里写了这样一些内容：&lt;/p&gt;
@@ -155,160 +185,160 @@ background: var(--card-background-selected);
 &lt;p&gt;等一下，算符优先级真的是这样吗？&lt;/p&gt;
 &lt;h2 id="cc-算符优先级"&gt;C/C++ 算符优先级
 &lt;/h2&gt;&lt;p&gt;我可以拍着胸脯说，没错，优先级是这样的。查阅 &lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_precedence.html" target="_blank" rel="noopener"
-&gt;cppreference: C++ Operator Precedence&lt;/a&gt;，可以看到算符的全部优先级顺序。为方便查阅（也为了水字数），我们把它放过来：&lt;/p&gt;
+ &gt;cppreference: C++ Operator Precedence&lt;/a&gt;，可以看到算符的全部优先级顺序。为方便查阅（也为了水字数），我们把它放过来：&lt;/p&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style="text-align: center"&gt;Precedence&lt;/th&gt;
-&lt;th style="text-align: left"&gt;Operator&lt;/th&gt;
-&lt;th style="text-align: left"&gt;Description&lt;/th&gt;
-&lt;th style="text-align: center"&gt;Associativity&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;1&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;code&gt;a::b&lt;/code&gt;&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/identifiers#Qualified_identifiers" target="_blank" rel="noopener"
-&gt;Scope resolution&lt;/a&gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;2&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;code&gt;a++&lt;/code&gt; &lt;code&gt;a--&lt;/code&gt;&lt;br&gt;&lt;code&gt;type(a)&lt;/code&gt; &lt;code&gt;type{a}&lt;/code&gt;&lt;br&gt;&lt;code&gt;a()&lt;/code&gt;&lt;br&gt;&lt;code&gt;a[]&lt;/code&gt;&lt;br&gt;&lt;code&gt;a.b&lt;/code&gt; &lt;code&gt;a-&amp;gt;b&lt;/code&gt;&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_incdec" target="_blank" rel="noopener"
-&gt;Suffix/postfix increment and decrement&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/explicit_cast" target="_blank" rel="noopener"
-&gt;Functional cast&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_other#Built-in_function_call_operator" target="_blank" rel="noopener"
-&gt;Function call&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_member_access#Built-in_subscript_operator" target="_blank" rel="noopener"
-&gt;Subscript&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_member_access#Built-in_member_access_operators" target="_blank" rel="noopener"
-&gt;Member access&lt;/a&gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;3&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;code&gt;++a&lt;/code&gt; &lt;code&gt;--a&lt;/code&gt;&lt;br&gt;&lt;code&gt;+a&lt;/code&gt; &lt;code&gt;-a&lt;/code&gt;&lt;br&gt;&lt;code&gt;!a&lt;/code&gt; &lt;code&gt;~a&lt;/code&gt;&lt;br&gt;&lt;code&gt;(type)a&lt;/code&gt;&lt;br&gt;&lt;code&gt;*a&lt;/code&gt;&lt;br&gt;&lt;code&gt;&amp;amp;a&lt;/code&gt;&lt;br&gt;&lt;code&gt;sizeof&lt;/code&gt;&lt;br&gt;&lt;code&gt;co_await&lt;/code&gt;&lt;br&gt;&lt;code&gt;new&lt;/code&gt; &lt;code&gt;new[]&lt;/code&gt;&lt;br&gt;&lt;code&gt;delete&lt;/code&gt; &lt;code&gt;delete[]&lt;/code&gt;&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_incdec" target="_blank" rel="noopener"
-&gt;Prefix increment and decrement&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_arithmetic#Unary_arithmetic_operators" target="_blank" rel="noopener"
-&gt;Unary plus and minus&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_logical" target="_blank" rel="noopener"
-&gt;Logical NOT and bitwise NOT&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/explicit_cast" target="_blank" rel="noopener"
-&gt;C-style cast&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_member_access#Built-in_indirection_operator" target="_blank" rel="noopener"
-&gt;Indirection (dereference)&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_member_access#Built-in_address-of_operator" target="_blank" rel="noopener"
-&gt;Address-of&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/sizeof" target="_blank" rel="noopener"
-&gt;Size-of&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/coroutines" target="_blank" rel="noopener"
-&gt;await-expression (C++20)&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/new" target="_blank" rel="noopener"
-&gt;Dynamic memory allocation&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/delete" target="_blank" rel="noopener"
-&gt;Dynamic memory deallocation&lt;/a&gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Right-to-Left ←&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;4&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;code&gt;a.*b&lt;/code&gt; &lt;code&gt;a-&amp;gt;*b&lt;/code&gt;&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_member_access#Built-in_pointer-to-member_access_operators" target="_blank" rel="noopener"
-&gt;Pointer-to-member&lt;/a&gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;5&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;code&gt;a * b&lt;/code&gt; &lt;code&gt;a / b&lt;/code&gt; &lt;code&gt;a % b&lt;/code&gt;&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_arithmetic#Multiplicative_operators" target="_blank" rel="noopener"
-&gt;Multiplication, division, and remainder&lt;/a&gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;6&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;code&gt;a + b&lt;/code&gt; &lt;code&gt;a - b&lt;/code&gt;&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_arithmetic#Additive_operators" target="_blank" rel="noopener"
-&gt;Addition and subtraction&lt;/a&gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;7&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;code&gt;a &amp;lt;&amp;lt; b&lt;/code&gt; &lt;code&gt;a &amp;gt;&amp;gt; b&lt;/code&gt;&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_arithmetic#Bitwise_shift_operators" target="_blank" rel="noopener"
-&gt;Bitwise left shift and right shift&lt;/a&gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;8&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;code&gt;a &amp;lt;=&amp;gt; b&lt;/code&gt;&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_comparison#Three-way_comparison" target="_blank" rel="noopener"
-&gt;Three-way comparison operator (C++20)&lt;/a&gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;9&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;code&gt;a &amp;lt; b&lt;/code&gt; &lt;code&gt;a &amp;lt;= b&lt;/code&gt; &lt;code&gt;a &amp;gt; b&lt;/code&gt; &lt;code&gt;a &amp;gt;= b&lt;/code&gt;&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_comparison" target="_blank" rel="noopener"
-&gt;Relational operators&lt;/a&gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;10&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;code&gt;a == b&lt;/code&gt; &lt;code&gt;a != b&lt;/code&gt;&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_comparison" target="_blank" rel="noopener"
-&gt;Equality operators&lt;/a&gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;11&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;code&gt;a &amp;amp; b&lt;/code&gt;&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_arithmetic#Bitwise_logic_operators" target="_blank" rel="noopener"
-&gt;Bitwise AND&lt;/a&gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;12&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;code&gt;a ^ b&lt;/code&gt;&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_arithmetic#Bitwise_logic_operators" target="_blank" rel="noopener"
-&gt;Bitwise XOR (exclusive or)&lt;/a&gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;13&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;code&gt;a | b&lt;/code&gt;&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_arithmetic#Bitwise_logic_operators" target="_blank" rel="noopener"
-&gt;Bitwise OR (inclusive or)&lt;/a&gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;14&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;code&gt;a &amp;amp;&amp;amp; b&lt;/code&gt;&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_logical" target="_blank" rel="noopener"
-&gt;Logical AND&lt;/a&gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;15&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;code&gt;a || b&lt;/code&gt;&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_logical" target="_blank" rel="noopener"
-&gt;Logical OR&lt;/a&gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;16&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;code&gt;a ? b : c&lt;/code&gt;&lt;br&gt;&lt;code&gt;throw&lt;/code&gt;&lt;br&gt;&lt;code&gt;co_yield&lt;/code&gt;&lt;br&gt;&lt;code&gt;a = b&lt;/code&gt;&lt;br&gt;&lt;code&gt;a += b&lt;/code&gt; &lt;code&gt;a -= b&lt;/code&gt;&lt;br&gt;&lt;code&gt;a *= b&lt;/code&gt; &lt;code&gt;a /= b&lt;/code&gt; &lt;code&gt;a %= b&lt;/code&gt;&lt;br&gt;&lt;code&gt;a &amp;lt;&amp;lt;= b&lt;/code&gt; &lt;code&gt;a &amp;gt;&amp;gt;= b&lt;/code&gt;&lt;br&gt;&lt;code&gt;a &amp;amp;= b&lt;/code&gt; &lt;code&gt;a ^= b&lt;/code&gt; &lt;code&gt;a |= b&lt;/code&gt;&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_other#Conditional_operator" target="_blank" rel="noopener"
-&gt;Ternary conditional&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/throw" target="_blank" rel="noopener"
-&gt;throw operator&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/coroutines" target="_blank" rel="noopener"
-&gt;yield-expression (C++20)&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_assignment#Builtin_direct_assignment" target="_blank" rel="noopener"
-&gt;Direct assignment&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_assignment#Builtin_compound_assignment" target="_blank" rel="noopener"
-&gt;Compound assignment by sum and difference&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_assignment#Builtin_compound_assignment" target="_blank" rel="noopener"
-&gt;Compound assignment by product, quotient, and remainder&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_assignment#Builtin_compound_assignment" target="_blank" rel="noopener"
-&gt;Compound assignment by bitwise left shift and right shift&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_assignment#Builtin_compound_assignment" target="_blank" rel="noopener"
-&gt;Compound assignment by bitwise AND, XOR, and OR&lt;/a&gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Right-to-Left ←&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;17&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;code&gt;a, b&lt;/code&gt;&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_other#Built-in_comma_operator" target="_blank" rel="noopener"
-&gt;Comma operator&lt;/a&gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th style="text-align: center"&gt;Precedence&lt;/th&gt;
+ &lt;th style="text-align: left"&gt;Operator&lt;/th&gt;
+ &lt;th style="text-align: left"&gt;Description&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;Associativity&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;1&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;code&gt;a::b&lt;/code&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/identifiers#Qualified_identifiers" target="_blank" rel="noopener"
+ &gt;Scope resolution&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;2&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;code&gt;a++&lt;/code&gt; &lt;code&gt;a--&lt;/code&gt;&lt;br&gt;&lt;code&gt;type(a)&lt;/code&gt; &lt;code&gt;type{a}&lt;/code&gt;&lt;br&gt;&lt;code&gt;a()&lt;/code&gt;&lt;br&gt;&lt;code&gt;a[]&lt;/code&gt;&lt;br&gt;&lt;code&gt;a.b&lt;/code&gt; &lt;code&gt;a-&amp;gt;b&lt;/code&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_incdec" target="_blank" rel="noopener"
+ &gt;Suffix/postfix increment and decrement&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/explicit_cast" target="_blank" rel="noopener"
+ &gt;Functional cast&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_other#Built-in_function_call_operator" target="_blank" rel="noopener"
+ &gt;Function call&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_member_access#Built-in_subscript_operator" target="_blank" rel="noopener"
+ &gt;Subscript&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_member_access#Built-in_member_access_operators" target="_blank" rel="noopener"
+ &gt;Member access&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;3&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;code&gt;++a&lt;/code&gt; &lt;code&gt;--a&lt;/code&gt;&lt;br&gt;&lt;code&gt;+a&lt;/code&gt; &lt;code&gt;-a&lt;/code&gt;&lt;br&gt;&lt;code&gt;!a&lt;/code&gt; &lt;code&gt;~a&lt;/code&gt;&lt;br&gt;&lt;code&gt;(type)a&lt;/code&gt;&lt;br&gt;&lt;code&gt;*a&lt;/code&gt;&lt;br&gt;&lt;code&gt;&amp;amp;a&lt;/code&gt;&lt;br&gt;&lt;code&gt;sizeof&lt;/code&gt;&lt;br&gt;&lt;code&gt;co_await&lt;/code&gt;&lt;br&gt;&lt;code&gt;new&lt;/code&gt; &lt;code&gt;new[]&lt;/code&gt;&lt;br&gt;&lt;code&gt;delete&lt;/code&gt; &lt;code&gt;delete[]&lt;/code&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_incdec" target="_blank" rel="noopener"
+ &gt;Prefix increment and decrement&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_arithmetic#Unary_arithmetic_operators" target="_blank" rel="noopener"
+ &gt;Unary plus and minus&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_logical" target="_blank" rel="noopener"
+ &gt;Logical NOT and bitwise NOT&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/explicit_cast" target="_blank" rel="noopener"
+ &gt;C-style cast&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_member_access#Built-in_indirection_operator" target="_blank" rel="noopener"
+ &gt;Indirection (dereference)&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_member_access#Built-in_address-of_operator" target="_blank" rel="noopener"
+ &gt;Address-of&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/sizeof" target="_blank" rel="noopener"
+ &gt;Size-of&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/coroutines" target="_blank" rel="noopener"
+ &gt;await-expression (C++20)&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/new" target="_blank" rel="noopener"
+ &gt;Dynamic memory allocation&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/delete" target="_blank" rel="noopener"
+ &gt;Dynamic memory deallocation&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Right-to-Left ←&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;4&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;code&gt;a.*b&lt;/code&gt; &lt;code&gt;a-&amp;gt;*b&lt;/code&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_member_access#Built-in_pointer-to-member_access_operators" target="_blank" rel="noopener"
+ &gt;Pointer-to-member&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;5&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;code&gt;a * b&lt;/code&gt; &lt;code&gt;a / b&lt;/code&gt; &lt;code&gt;a % b&lt;/code&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_arithmetic#Multiplicative_operators" target="_blank" rel="noopener"
+ &gt;Multiplication, division, and remainder&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;6&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;code&gt;a + b&lt;/code&gt; &lt;code&gt;a - b&lt;/code&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_arithmetic#Additive_operators" target="_blank" rel="noopener"
+ &gt;Addition and subtraction&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;7&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;code&gt;a &amp;lt;&amp;lt; b&lt;/code&gt; &lt;code&gt;a &amp;gt;&amp;gt; b&lt;/code&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_arithmetic#Bitwise_shift_operators" target="_blank" rel="noopener"
+ &gt;Bitwise left shift and right shift&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;8&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;code&gt;a &amp;lt;=&amp;gt; b&lt;/code&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_comparison#Three-way_comparison" target="_blank" rel="noopener"
+ &gt;Three-way comparison operator (C++20)&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;9&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;code&gt;a &amp;lt; b&lt;/code&gt; &lt;code&gt;a &amp;lt;= b&lt;/code&gt; &lt;code&gt;a &amp;gt; b&lt;/code&gt; &lt;code&gt;a &amp;gt;= b&lt;/code&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_comparison" target="_blank" rel="noopener"
+ &gt;Relational operators&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;10&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;code&gt;a == b&lt;/code&gt; &lt;code&gt;a != b&lt;/code&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_comparison" target="_blank" rel="noopener"
+ &gt;Equality operators&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;11&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;code&gt;a &amp;amp; b&lt;/code&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_arithmetic#Bitwise_logic_operators" target="_blank" rel="noopener"
+ &gt;Bitwise AND&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;12&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;code&gt;a ^ b&lt;/code&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_arithmetic#Bitwise_logic_operators" target="_blank" rel="noopener"
+ &gt;Bitwise XOR (exclusive or)&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;13&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;code&gt;a | b&lt;/code&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_arithmetic#Bitwise_logic_operators" target="_blank" rel="noopener"
+ &gt;Bitwise OR (inclusive or)&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;14&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;code&gt;a &amp;amp;&amp;amp; b&lt;/code&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_logical" target="_blank" rel="noopener"
+ &gt;Logical AND&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;15&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;code&gt;a || b&lt;/code&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_logical" target="_blank" rel="noopener"
+ &gt;Logical OR&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;16&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;code&gt;a ? b : c&lt;/code&gt;&lt;br&gt;&lt;code&gt;throw&lt;/code&gt;&lt;br&gt;&lt;code&gt;co_yield&lt;/code&gt;&lt;br&gt;&lt;code&gt;a = b&lt;/code&gt;&lt;br&gt;&lt;code&gt;a += b&lt;/code&gt; &lt;code&gt;a -= b&lt;/code&gt;&lt;br&gt;&lt;code&gt;a *= b&lt;/code&gt; &lt;code&gt;a /= b&lt;/code&gt; &lt;code&gt;a %= b&lt;/code&gt;&lt;br&gt;&lt;code&gt;a &amp;lt;&amp;lt;= b&lt;/code&gt; &lt;code&gt;a &amp;gt;&amp;gt;= b&lt;/code&gt;&lt;br&gt;&lt;code&gt;a &amp;amp;= b&lt;/code&gt; &lt;code&gt;a ^= b&lt;/code&gt; &lt;code&gt;a |= b&lt;/code&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_other#Conditional_operator" target="_blank" rel="noopener"
+ &gt;Ternary conditional&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/throw" target="_blank" rel="noopener"
+ &gt;throw operator&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/coroutines" target="_blank" rel="noopener"
+ &gt;yield-expression (C++20)&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_assignment#Builtin_direct_assignment" target="_blank" rel="noopener"
+ &gt;Direct assignment&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_assignment#Builtin_compound_assignment" target="_blank" rel="noopener"
+ &gt;Compound assignment by sum and difference&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_assignment#Builtin_compound_assignment" target="_blank" rel="noopener"
+ &gt;Compound assignment by product, quotient, and remainder&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_assignment#Builtin_compound_assignment" target="_blank" rel="noopener"
+ &gt;Compound assignment by bitwise left shift and right shift&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_assignment#Builtin_compound_assignment" target="_blank" rel="noopener"
+ &gt;Compound assignment by bitwise AND, XOR, and OR&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Right-to-Left ←&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;17&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;code&gt;a, b&lt;/code&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_other#Built-in_comma_operator" target="_blank" rel="noopener"
+ &gt;Comma operator&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;(里面的链接都会链到 &lt;a class="link" href="https://cppreference.com" target="_blank" rel="noopener"
-&gt;cppreference.com&lt;/a&gt; 上，请放心点开。) 其中，最高优先级的是从命名空间中取内容的 &lt;code&gt;::&lt;/code&gt; 算符，而第二优先级的就是调用运算和下标运算了，取地址和解引用运算则在下一级。&lt;/p&gt;
+ &gt;cppreference.com&lt;/a&gt; 上，请放心点开。) 其中，最高优先级的是从命名空间中取内容的 &lt;code&gt;::&lt;/code&gt; 算符，而第二优先级的就是调用运算和下标运算了，取地址和解引用运算则在下一级。&lt;/p&gt;
 &lt;p&gt;那就没问题了。 &lt;code&gt;int *a[N]&lt;/code&gt; 中，&lt;code&gt;a&lt;/code&gt; 的确更先与 &lt;code&gt;[]&lt;/code&gt; 相结合进行运算，而后由 &lt;code&gt;*&lt;/code&gt; 解引用。我们还可以用这套逻辑来解释别的 &lt;em&gt;大多数&lt;/em&gt; 复杂类型。比如把函数，数组和指针等混合在一起套好几层的那种，都可以这样分析出来结果。&lt;/p&gt;
 &lt;p&gt;但是，&lt;code&gt;const&lt;/code&gt; 呢？它不是运算符才对，这要怎么考虑？另外，&lt;code&gt;&amp;amp;&lt;/code&gt; 取地址又要如何考虑？当取地址出现在变量声明里的时候，应该是在定义 C++ 的 &lt;strong&gt;引用&lt;/strong&gt; 才对，这要怎么用算符优先级来解释？&lt;/p&gt;
 &lt;p&gt;所以，算符优先级不能直接解释所有的复杂类型。不过我们可以尝试间接解释一些复杂类型。&lt;/p&gt;
@@ -337,7 +367,7 @@ background: var(--card-background-selected);
 &lt;p&gt;第二个我们依旧从 &lt;code&gt;p2&lt;/code&gt; 开始，首先碰到的是 &lt;code&gt;const&lt;/code&gt;，则说明 &lt;code&gt;p2&lt;/code&gt; 本身不能变，然后对这个不能变的 &lt;code&gt;p2&lt;/code&gt; 我们可以解引用得到一个 &lt;code&gt;int&lt;/code&gt;，因此它是一个永远指向一个整型变量的指针，这个指针不能指向别的东西。&lt;/p&gt;
 &lt;p&gt;第三个呢？我们必须先解引用 &lt;code&gt;p3&lt;/code&gt;，然后得到的东西它是不可变的，不可变对象的类型是一个整型值。因此它和 &lt;code&gt;p1&lt;/code&gt; 是一样的。&lt;/p&gt;
 &lt;p&gt;那么，怎么理解下面这个？&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cpp" data-lang="cpp"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="c1"&gt;// pointer to a const poionter,
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cpp" data-lang="cpp"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="c1"&gt;// pointer to a const poionter, 
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// which again points to a const int
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;我们来分析：首先，它是一个指针，因为第一步得 &lt;code&gt;*p&lt;/code&gt; 解引用；解引用之后得到的东西必须是常量；而这个常量又可以被进一步解引用，所以它是一个 &lt;em&gt;指向常指针&lt;/em&gt; 的一个指针；最后，在层层解引用之后，我们得到的东西是一个整型值，这个整型值是不可变的。如此，&lt;code&gt;p&lt;/code&gt; 是一个 &lt;em&gt;指向整型常指针&lt;/em&gt; 的指针。&lt;/p&gt;
 &lt;h4 id="cv-限定符与函数调用数组下标"&gt;CV 限定符与函数调用/数组下标
@@ -395,12 +425,12 @@ background: var(--card-background-selected);
 &lt;/h2&gt;&lt;p&gt;我们好像是找到了一个百试百灵的屠龙宝刀，不过问题又来了：C/C++ 的类型系统，果真是这样的吗？上面的这个 “规则”，真的是 C/C++ 的设计原则吗？这么去解析变量/函数声明，真的一定没问题吗？&lt;/p&gt;
 &lt;p&gt;好消息是，大部分我们能遇到的，这么个 &lt;em&gt;规则&lt;/em&gt;，或者更好的说法，&lt;em&gt;思想模型&lt;/em&gt;，都是适用的，而且的确 C/C++ 的类型系统设计时，这部分内容的确是 &lt;em&gt;怎么用就怎么声明&lt;/em&gt;。像上面比较 &lt;strong&gt;普通&lt;/strong&gt; 的情况，这套分析方法都是没啥大问题的。&lt;/p&gt;
 &lt;p&gt;可是坏消息是，C/C++ 的类型系统实在是太复杂了。我们这只是用了一些些的 &lt;em&gt;type constructor&lt;/em&gt; 和 CV 限定符 (cv qualifier) 而已，属于 &lt;strong&gt;简单声明&lt;/strong&gt;。实际上，声明系统根据 &lt;a class="link" href="https://en.cppreference.com/w/cpp/language/declarations.html" target="_blank" rel="noopener"
-&gt;cppreference.com-Declarations&lt;/a&gt; 的结果来看，还包含函数定义、模板声明/实现/特化、命名空间定义、属性声明等等更多的东西，而简单声明里一共是有 10 种方式去做声明，我们一点没提；我们的讨论中没有涉及声明中会出现的属性（Attribute），初始化（Initialize），更多的限定符（Qualifier）等等要素；甚至就连基础类型我们都只敢用人畜无害的 &lt;code&gt;int&lt;/code&gt;，没有涉及更复杂的类型，特别是自定义类型。&lt;/p&gt;
+ &gt;cppreference.com-Declarations&lt;/a&gt; 的结果来看，还包含函数定义、模板声明/实现/特化、命名空间定义、属性声明等等更多的东西，而简单声明里一共是有 10 种方式去做声明，我们一点没提；我们的讨论中没有涉及声明中会出现的属性（Attribute），初始化（Initialize），更多的限定符（Qualifier）等等要素；甚至就连基础类型我们都只敢用人畜无害的 &lt;code&gt;int&lt;/code&gt;，没有涉及更复杂的类型，特别是自定义类型。&lt;/p&gt;
 &lt;p&gt;没错，我们的讨论还完全抛开了枚举、联合体、结构体和类。实际上，它们也属于声明系统的一部分，或者说类型系统的一部分。即便是在讨论过的内容里，我们还有没涉及到的细节，比如所谓的 &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt;，右值引用声明，因为我还不够了解什么是右值引用，就不瞎讲了。&lt;/p&gt;
 &lt;p&gt;不过我并不觉得这有什么问题，我们的讨论依旧是有意义的。也许这里的讨论成功窥探到了一些语言设计之初所构想的类型系统设计思路，而且也能方便以后遇到奇怪的复合类型时不会两眼一抹黑。&lt;/p&gt;
 &lt;h2 id="后记"&gt;后记
 &lt;/h2&gt;&lt;p&gt;不得不说，一开始真的没有想到能写这么多，更是没有想到即便写了这么多，也似乎没能穷尽 C/C++ 类型系统的百分之一。在查阅大量的 cppreference 文档之后，我只感觉脑袋发胀，目光呆滞，但是看着自己能分析出来各种丑八怪类型，多少还是有点成就感的。&lt;/p&gt;
 &lt;p&gt;这里要非常感谢可爱群友 &lt;a class="link" href="https://mahiro.ink/" target="_blank" rel="noopener"
-&gt;@0xa793908&lt;/a&gt; 的笔记，没有看到那个笔记内容的话，我是肯定不会想到这么个有趣的问题，并且（也许是）深入到这里的吧。&lt;/p&gt;
+ &gt;@0xa793908&lt;/a&gt; 的笔记，没有看到那个笔记内容的话，我是肯定不会想到这么个有趣的问题，并且（也许是）深入到这里的吧。&lt;/p&gt;
 &lt;p&gt;另外不得不感慨的是 AI 的强大……我的很多例子都是让 AI 举出来之后，我再尝试分析理解，最后得到这么一套解析方法的。虽然说有时候很累，AI 算是比较认死理（偶尔又会出幻觉）的，但是用 AI 去学新东西一定是一个很有前景的学习方法。&lt;/p&gt;
 &lt;p&gt;感谢您能看到这里，这么啰嗦的一大篇能看下来也是很强大了。希望我写的这些东西能帮你解析遇到的奇怪类型，在 “谭浩强” 型考试中能多拿一点分数，哈哈。那么最后，一如既往地，祝您身心健康，工作顺利，天天开心~&lt;/p&gt;</description></item></channel></rss>

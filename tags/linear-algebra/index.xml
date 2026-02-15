@@ -1,95 +1,125 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linear Algebra on A Moment's Rest</title><link>https://a-moment096.github.io/tags/linear-algebra/</link><description>Recent content in Linear Algebra on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 19 Jan 2026 06:28:39 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/linear-algebra/index.xml" rel="self" type="application/rss+xml"/><item><title>线性代数笔记 II</title><link>https://a-moment096.github.io/posts/la_2/</link><pubDate>Mon, 20 Oct 2025 09:03:01 +0800</pubDate><guid>https://a-moment096.github.io/posts/la_2/</guid><description>&lt;img src="https://a-moment096.github.io/posts/Math_Note/Linear_Algebra/Alice.jpg" alt="Featured image of post 线性代数笔记 II" /&gt;&lt;p&gt;&lt;em&gt;书接上回，在搞清楚线性空间大概是个什么情况之后，我们来看看线性空间之间都有什么样子的联系吧~！&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linear Algebra on A Moment's Rest</title><link>https://a-moment096.github.io/tags/linear-algebra/</link><description>Recent content in Linear Algebra on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Sun, 15 Feb 2026 11:05:58 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/linear-algebra/index.xml" rel="self" type="application/rss+xml"/><item><title>线性代数笔记 II</title><link>https://a-moment096.github.io/posts/la_2/</link><pubDate>Mon, 20 Oct 2025 09:03:01 +0800</pubDate><guid>https://a-moment096.github.io/posts/la_2/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post 线性代数笔记 II" /&gt;&lt;p&gt;&lt;em&gt;书接上回，在搞清楚线性空间大概是个什么情况之后，我们来看看线性空间之间都有什么样子的联系吧~！&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图信息请参考上一节，谢谢~ 选曲为 &lt;a class="link" href="https://chata.moo.jp/index.html" target="_blank" rel="noopener"
-&gt;&lt;strong&gt;茶太&lt;/strong&gt;&lt;/a&gt; 和 &lt;a class="link" href="https://www.7uta.com/" target="_blank" rel="noopener"
-&gt;&lt;strong&gt;nayuta&lt;/strong&gt;&lt;/a&gt; 合唱的 &lt;strong&gt;お茶ガール&lt;/strong&gt;，青春阳光有活力，陪伴了我大二啃线性代数的时光……&lt;/em&gt;&lt;/p&gt;
+ &gt;&lt;strong&gt;茶太&lt;/strong&gt;&lt;/a&gt; 和 &lt;a class="link" href="https://www.7uta.com/" target="_blank" rel="noopener"
+ &gt;&lt;strong&gt;nayuta&lt;/strong&gt;&lt;/a&gt; 合唱的 &lt;strong&gt;お茶ガール&lt;/strong&gt;，青春阳光有活力，陪伴了我大二啃线性代数的时光……&lt;/em&gt;&lt;/p&gt;
+
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
 &lt;style type="text/css"&gt;
 [data-scheme="dark"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
-border-bottom-color: var(--card-separator-color);
+ border-bottom-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
-border-color: var(--card-separator-color);
+ border-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-body {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info {
-border-top-color: var(--card-background);
+ border-top-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
-color: var(--card-text-color-tertiary);
+ color: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
-background-color: var(--card-separator-color);
+ background-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
-background-color: var(--accent-color);
+ background-color: var(--accent-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li {
-color: var(--card-text-color-main);
-border-top-color: var(--card-separator-color);
+ color: var(--card-text-color-main);
+ border-top-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc {
-text-shadow: -1px -1px 0 var(--body-background);
+ text-shadow: -1px -1px 0 var(--body-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:before {
-background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+ background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:after {
-background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc p {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
+ 
 [data-scheme="light"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="light"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
 &lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
+
+
 &lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=529668393" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
 $$
 % ===== =====
@@ -101,31 +131,31 @@ $$
 \gdef \vrep #1#2{[\vect{#1}]_{#2}} % coordinate representation [v]_B
 \gdef \rep #1{[\vect{#1}]}
 \gdef \mrep #1#2#3{[{#1}]_{#2}^{#3}} % representation [L]_{C,B}
-%
+% 
 \gdef \iprod #1#2{\langle #1, #2 \rangle} % inner product
 \gdef \mat #1{\mathbf{#1}} % matrix (representation)
-\gdef \field #1{\mathbb{#1}} %
+\gdef \field #1{\mathbb{#1}} % 
 \gdef \xto #1{\xrightarrow{#1}} % arrow with label
 \gdef \xfrom #1{\xleftarrow{#1}} % left arrow with label
 \gdef \Hom {\operatorname{Hom}} % morphisms between A and B
 \gdef \Iso {\operatorname{Iso}}
-\gdef \End {\operatorname{End}} %
-\gdef \Aut {\operatorname{Aut}} %
+\gdef \End {\operatorname{End}} % 
+\gdef \Aut {\operatorname{Aut}} % 
 \gdef \cat #1{\mathsf{#1}} % category symbol: e.g., \cat{Vect}, \cat{Set}
 \gdef \Mat {\operatorname{Mat}}
 \gdef \t {^{\mathsf{T}}}
 \gdef \id {\mat{I}} % identity matrix
-\gdef \R {\field{R}} %
-\gdef \C {\field{C}} %
+\gdef \R {\field{R}} % 
+\gdef \C {\field{C}} % 
 \gdef \ot {\otimes} % tensor product symbol
-\gdef \zero {\vect{0}} %
-\gdef \one {\vect{1}} %
+\gdef \zero {\vect{0}} % 
+\gdef \one {\vect{1}} % 
 \gdef \idop {\mathrm{id}} % identity morphism
 \gdef \comp {\circ} % composition symbol
 \gdef \Set {\cat{Set}} % category of sets
 \gdef \Vectk {\cat{Vect}_{\field{k}}} % category of vector spaces
-\gdef \Vect {\cat{Vect}} %
-%
+\gdef \Vect {\cat{Vect}} % 
+% 
 \gdef \BaseB {\basis{B}{}}
 \gdef \BaseC {\basis{C}{}}
 \gdef \BaseBV {\basis{B}{V}}
@@ -231,7 +261,7 @@ $$(1\cdot L)(\vect{v}) = 1\cdot_W L(\vect{v}) =L(1\cdot_V\vect{v})= L(\vect{v})$
 $$\begin{align*}(r\cdot( S+ T))(\vect{v}) &amp;= ( S+ T)(r\cdot\vect{v})= S(r\cdot\vect{v})+ T(r\cdot\vect{v}) \\ &amp;= r\cdot S(\vect{v})+r\cdot T(\vect{v}) = (r\cdot S)(\vect{v})+(r\cdot T)(\vect{v})\\ &amp;= (r\cdot( S+ T))(\vect{v});\end{align*}$$&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;数量加法对数乘有分配率：对任意 $r,s\in\R, S\in\Hom(V,W)$ 和 $\vect{v}\in V$，下式始终成立：&lt;/p&gt;
-$$\begin{align*}((r+s)\cdot S)(\vect{v}) &amp;= S((r+s)\cdot\vect{v})= S(r\cdot\vect{v}+s\cdot\vect{v}) \\ &amp;= r\cdot S(\vect{v})+s\cdot T(\vect{v}) = (r\cdot S)(\vect{v})+(s\cdot S)(\vect{v})\\ &amp;= (r\cdot S+s\cdot S)(\vect{v});\end{align*}$$&lt;/li&gt;
+$$\begin{align*}((r+s)\cdot S)(\vect{v}) &amp;= S((r+s)\cdot\vect{v})= S(r\cdot\vect{v}+s\cdot\vect{v}) \\ &amp;= r\cdot S(\vect{v})+s\cdot S(\vect{v}) = (r\cdot S)(\vect{v})+(s\cdot S)(\vect{v})\\ &amp;= (r\cdot S+s\cdot S)(\vect{v});\end{align*}$$&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;数量乘法有交换律：对任意 $r,s\in\R, S\in\Hom(V,W)$ 和 $\vect{v}\in V$，下式始终成立：&lt;/p&gt;
 $$((rs)\cdot S)(\vect{v}) = S((rs)\cdot\vect{v}) = S((sr)\cdot\vect{v}) = ((sr)\cdot S)(\vect{v}).$$&lt;/li&gt;
@@ -287,8 +317,8 @@ $$\cvect{\varphi}(\vect{v}) = \sum_i^n\sum_j^n v^j\cvect{\beta}^i(\vect{b}_j)\cv
 $$\cvect{\varphi}(\vect{v}) = \cvect{\varphi}(\sum_j^n v^j \sum_i^n \cvect{\beta}^i(\vect{b}_j)\vect{b}_i),$$&lt;p&gt;又因为 $\vect{v} = \sum_j^n v^j \vect{b}_j$，经过 &lt;em&gt;比较&lt;/em&gt;，我们得到了：&lt;/p&gt;
 $$\sum_i^n \cvect{\beta}^i(\vect{b}_j)\vect{b}_i = \vect{b}_j,$$&lt;p&gt;说明 $\vect{b}_j$ 是基向量的线性组合。可是它本身就已经是基向量了，如果表示成线性组合，就只能是让对应的第 $j$ 个位置的系数为 $1$，其余全部为 $0$。也就是说：&lt;/p&gt;
 $$\cvect{\beta}^i(\vect{b}_j) = \begin{cases}
-1 &amp;\text{if }\ i=j\\
-0 &amp;\text{if }\ i\neq j\\
+ 1 &amp;\text{if }\ i=j\\
+ 0 &amp;\text{if }\ i\neq j\\
 \end{cases}$$&lt;p&gt;我们构造出了一组 $V^*$ 的基！吗？&lt;/p&gt;
 &lt;h4 id="mathcalb-是基的证明"&gt;$\mathcal{B}^*$ 是基的证明
 &lt;/h4&gt;&lt;p&gt;我们上面的构造有一个巨大的漏洞：$f(a) = f(b)$ 从来都不能说明 $a = b$，必须证明 $f$ 是单射才能有这样的结论。然而，我们没有证明上面的余向量 $\cvect{\varphi}$ 是单的。&lt;/p&gt;
@@ -358,10 +388,10 @@ $$\cvect{\varphi}^* (\cvect{\xi}) = \sum_i^n\sum_j^n\varphi^{*i}\xi_j\cvect{\bet
 $$\cvect{\varphi}^* (\cvect{\xi}) = \sum_i^n\sum_j^n \varphi^{*i}\xi_j\delta_i{}^j.$$&lt;p&gt;然而，根据我们前面的评论，$\delta_i{}^j$ 实际上等于 $\delta^i{}_j$ 的。另外，$\varphi^{*i}$ 和 $\xi_j$ 都是 $V^{**}$ 中向量和余向量的线性表出系数，它们都是实数。我们进行一个大胆且神秘的操作：&lt;/p&gt;
 $$\begin{align*}
 \cvect{\varphi}^* (\cvect{\xi}) &amp;= \sum_i^n\sum_j^n \varphi^{*i}\xi_j\delta_i{}^j \\
-&amp;\overset{?}{=} \sum_i^n\sum_j^n\xi_j\varphi^{*i} \delta^j{}_i \\
-&amp;= \sum_j^n\sum_i^n\xi_j\varphi^{*i} \cvect{\beta}^j(\vect{b}_i) \\
-&amp;= \sum_i^n\varphi^{*i}\cvect{\xi}(\vect{b}_i)\\
-&amp;= \cvect{\xi}(\sum_i^n \varphi^{*i}\vect{b}_i).
+ &amp;\overset{?}{=} \sum_i^n\sum_j^n\xi_j\varphi^{*i} \delta^j{}_i \\
+ &amp;= \sum_j^n\sum_i^n\xi_j\varphi^{*i} \cvect{\beta}^j(\vect{b}_i) \\
+ &amp;= \sum_i^n\varphi^{*i}\cvect{\xi}(\vect{b}_i)\\
+ &amp;= \cvect{\xi}(\sum_i^n \varphi^{*i}\vect{b}_i). 
 \end{align*}$$&lt;p&gt;我们有一个等号标上了 $?$，它的前面是单纯的乘法交换律，后面则是我们声称的 &lt;em&gt;两种 Kronecker delta 是同一个的两个形态&lt;/em&gt; 的替换。随后将它展开则是形式化地使用基、对偶基和 $\delta^j{}_i$ 的关系，接着按照 $V^*$ 中的线性组合得到 $\cvect{\xi}$，最后是根据线性映射的性质把求和放进去。&lt;/p&gt;
 &lt;p&gt;我们看这个求和，它是什么？有 $V$ 中的基，有 $V^{**}$ 中的线性组合系数，而这个系数作为实数又完美地可以与基进行组合。所以，最后，一行的结果是什么意思？$\cvect{\varphi}^*$ 在把 $\cvect{\xi}$ 线性地映射到实数，就像是用 $\cvect{\xi}$ 把一个向量 $\vect{v}\in V$ 映射到实数上，而它在 $V$ 的基 $\BaseB = \basev{b}{i}{n}$ 下的表示的系数是 $v^i = \varphi^{*i}$ ！？&lt;/p&gt;
 &lt;p&gt;线性空间和它的双对偶之间，绝对有深厚的关系。似乎我们不管在 $V^{**}$ 选什么基，一个 $\cvect{\varphi^*}\in V^{**}$ 不论在这个基下表示成什么，我们都能在 $V$ 中 &lt;em&gt;对应的基&lt;/em&gt; 下得到一模一样的表示。它们之间可以有 $\Hom(\R,V)$ 与 $V$ 之间那样的 &lt;em&gt;自然同构&lt;/em&gt; 吗？&lt;/p&gt;
@@ -413,102 +443,132 @@ $$\eta_V\vcentcolon V\to V^{**},$$&lt;p&gt; 有下面交换图成立：&lt;/p&gt
 &lt;li&gt;我们定义了双对偶 $V^{**}$ ，并给出所谓的自然同构（求值映射）$\iota:V\to V^{**}$，以此我们可以把 $V$ 和 $V^{**}$ 看成一个空间；&lt;/li&gt;
 &lt;li&gt;从范畴论的视角，说明了为什么单次对偶是不自然的，而双对偶是自然的；&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;单是线性映射本身就已经有非常丰富的性质了。我们这里只研究了 $\Hom(V,W)$ 的两个特例而已，而它又带来了更多的问题：为什么矩阵有这么多的含义，而矩阵乘法我们经常就只定义这一种？对偶和矩阵转置之间究竟有什么关系？那些特别的线性映射又会带来什么样的新东西？我们留到下一章再讨论吧。&lt;/p&gt;</description></item><item><title>线性代数笔记 I</title><link>https://a-moment096.github.io/posts/la_1/</link><pubDate>Mon, 20 Oct 2025 09:00:01 +0800</pubDate><guid>https://a-moment096.github.io/posts/la_1/</guid><description>&lt;img src="https://a-moment096.github.io/posts/Math_Note/Linear_Algebra/Alice.jpg" alt="Featured image of post 线性代数笔记 I" /&gt;&lt;p&gt;&lt;em&gt;一直感觉没有学透线性代数，尤其是学过一些抽象代数之后，更觉得线性代数并不是简单的矩阵运算了。借着需要学连续介质力学的机会，就整理一下自己知道的东西，斗胆谈谈自己对这门学科的理解吧~&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;单是线性映射本身就已经有非常丰富的性质了。我们这里只研究了 $\Hom(V,W)$ 的两个特例而已，而它又带来了更多的问题：为什么矩阵有这么多的含义，而矩阵乘法我们经常就只定义这一种？对偶和矩阵转置之间究竟有什么关系？那些特别的线性映射又会带来什么样的新东西？我们留到下一章再讨论吧。&lt;/p&gt;</description></item><item><title>线性代数笔记 I</title><link>https://a-moment096.github.io/posts/la_1/</link><pubDate>Mon, 20 Oct 2025 09:00:01 +0800</pubDate><guid>https://a-moment096.github.io/posts/la_1/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post 线性代数笔记 I" /&gt;&lt;p&gt;&lt;em&gt;一直感觉没有学透线性代数，尤其是学过一些抽象代数之后，更觉得线性代数并不是简单的矩阵运算了。借着需要学连续介质力学的机会，就整理一下自己知道的东西，斗胆谈谈自己对这门学科的理解吧~&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;选曲是由 &lt;a class="link" href="https://space.bilibili.com/316381099" target="_blank" rel="noopener"
-&gt;&lt;strong&gt;鹿乃&lt;/strong&gt;&lt;/a&gt; 翻唱，收录在专辑 &lt;a class="link" href="https://music.163.com/#/album?id=37542486" target="_blank" rel="noopener"
-&gt;&lt;strong&gt;one&lt;/strong&gt;&lt;/a&gt; 的歌曲 &lt;strong&gt;Calc.&lt;/strong&gt;，原曲是我特别喜欢的一首上古 V 曲，由 &lt;a class="link" href="https://lit.link/en/jimmythumb" target="_blank" rel="noopener"
-&gt;&lt;strong&gt;ジミーサムP&lt;/strong&gt;&lt;/a&gt; 制作并发布在 &lt;em&gt;ニコニコ動画&lt;/em&gt; 上，链接：&lt;a class="link" href="https://www.nicovideo.jp/watch/sm12050471" target="_blank" rel="noopener"
-&gt;Hatsune Miku Original Song「Calc.」&lt;/a&gt;。其实应该算是情歌？但是 Calc. 也很有计算的感觉（）&lt;/em&gt;&lt;/p&gt;
+ &gt;&lt;strong&gt;鹿乃&lt;/strong&gt;&lt;/a&gt; 翻唱，收录在专辑 &lt;a class="link" href="https://music.163.com/#/album?id=37542486" target="_blank" rel="noopener"
+ &gt;&lt;strong&gt;one&lt;/strong&gt;&lt;/a&gt; 的歌曲 &lt;strong&gt;Calc.&lt;/strong&gt;，原曲是我特别喜欢的一首上古 V 曲，由 &lt;a class="link" href="https://lit.link/en/jimmythumb" target="_blank" rel="noopener"
+ &gt;&lt;strong&gt;ジミーサムP&lt;/strong&gt;&lt;/a&gt; 制作并发布在 &lt;em&gt;ニコニコ動画&lt;/em&gt; 上，链接：&lt;a class="link" href="https://www.nicovideo.jp/watch/sm12050471" target="_blank" rel="noopener"
+ &gt;Hatsune Miku Original Song「Calc.」&lt;/a&gt;。其实应该算是情歌？但是 Calc. 也很有计算的感觉（）&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;选图为 &lt;a class="link" href="https://x.com/Neve_AI" target="_blank" rel="noopener"
-&gt;&lt;strong&gt;Neve_AI&lt;/strong&gt;&lt;/a&gt; 绘制的 AI 图，说是爱丽丝来着？反正挺好看的（逃）&lt;/em&gt;&lt;/p&gt;
+ &gt;&lt;strong&gt;Neve_AI&lt;/strong&gt;&lt;/a&gt; 绘制的 AI 图，说是爱丽丝来着？反正挺好看的（逃）&lt;/em&gt;&lt;/p&gt;
+
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
 &lt;style type="text/css"&gt;
 [data-scheme="dark"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
-border-bottom-color: var(--card-separator-color);
+ border-bottom-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
-border-color: var(--card-separator-color);
+ border-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-body {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info {
-border-top-color: var(--card-background);
+ border-top-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
-color: var(--card-text-color-tertiary);
+ color: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
-background-color: var(--card-separator-color);
+ background-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
-background-color: var(--accent-color);
+ background-color: var(--accent-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li {
-color: var(--card-text-color-main);
-border-top-color: var(--card-separator-color);
+ color: var(--card-text-color-main);
+ border-top-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc {
-text-shadow: -1px -1px 0 var(--body-background);
+ text-shadow: -1px -1px 0 var(--body-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:before {
-background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+ background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:after {
-background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc p {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
+ 
 [data-scheme="light"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="light"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
 &lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
+
+
 &lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=537854740" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
 $$
 % ===== =====
@@ -520,30 +580,30 @@ $$
 \gdef \vrep #1#2{[\vect{#1}]_{\basis{#2}{}}} % coordinate representation [v]_B
 \gdef \rep #1{[\vect{#1}]}
 \gdef \mrep #1#2#3{[{#1}]_{\basis{#2}{}}^{\basis{#3}{}}} % representation [L]_{C,B}
-%
+% 
 \gdef \iprod #1#2{\langle #1, #2 \rangle} % inner product
 \gdef \mat #1{\mathbf{#1}} % matrix (representation)
-\gdef \field #1{\mathbb{#1}} %
+\gdef \field #1{\mathbb{#1}} % 
 \gdef \xto #1{\xrightarrow{#1}} % arrow with label
 \gdef \xfrom #1{\xleftarrow{#1}} % left arrow with label
 \gdef \Hom {\operatorname{Hom}} % morphisms between A and B
 \gdef \Iso {\operatorname{Iso}}
-\gdef \End {\operatorname{End}} %
-\gdef \Aut {\operatorname{Aut}} %
+\gdef \End {\operatorname{End}} % 
+\gdef \Aut {\operatorname{Aut}} % 
 \gdef \cat #1{\mathsf{#1}} % category symbol: e.g., \cat{Vect}, \cat{Set}
 \gdef \t {^{\mathsf{T}}}
 \gdef \id {\mat{I}} % identity matrix
-\gdef \R {\field{R}} %
-\gdef \C {\field{C}} %
+\gdef \R {\field{R}} % 
+\gdef \C {\field{C}} % 
 \gdef \ot {\otimes} % tensor product symbol
-\gdef \zero {\vect{0}} %
-\gdef \one {\vect{1}} %
+\gdef \zero {\vect{0}} % 
+\gdef \one {\vect{1}} % 
 \gdef \idop {\mathrm{id}} % identity morphism
 \gdef \comp {\circ} % composition symbol
 \gdef \Set {\cat{Set}} % category of sets
 \gdef \Vectk {\cat{Vect}_{\field{k}}} % category of vector spaces
-\gdef \Vect {\cat{Vect}} %
-%
+\gdef \Vect {\cat{Vect}} % 
+% 
 \gdef \BaseB {\basis{B}{}}
 \gdef \BaseC {\basis{C}{}}
 \gdef \BaseBV {\basis{B}{V}}
@@ -557,70 +617,70 @@ $$&lt;h2 id="前言"&gt;前言
 &lt;!-- &lt;details&gt; --&gt;
 &lt;!-- &lt;summary&gt;符号约定&lt;/summary&gt; --&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style="text-align: center"&gt;含义&lt;/th&gt;
-&lt;th style="text-align: center"&gt;字体/字形&lt;/th&gt;
-&lt;th style="text-align: center"&gt;使用字母&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;标量&lt;/td&gt;
-&lt;td style="text-align: center"&gt;常规字母&lt;/td&gt;
-&lt;td style="text-align: center"&gt;$a$, $b$, $c$, $v^i$, $\varphi_j$, $A^i{}_j$&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;数域&lt;/td&gt;
-&lt;td style="text-align: center"&gt;黑板粗体&lt;/td&gt;
-&lt;td style="text-align: center"&gt;$\Bbbk$, $\field{R}$, $\field{C}$&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;向量&lt;/td&gt;
-&lt;td style="text-align: center"&gt;粗正体字母&lt;/td&gt;
-&lt;td style="text-align: center"&gt;$\vect{u}$, $\vect{v}$, $\vect{w}$, $\vect{x}$, $\vect{y}$, $\vect{z}$&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;余向量&lt;/td&gt;
-&lt;td style="text-align: center"&gt;粗体希腊字母&lt;/td&gt;
-&lt;td style="text-align: center"&gt;$\cvect{\beta}$，$\cvect{\varphi}$，$\cvect{\psi}$，$\cvect{\xi}$&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;集合，向量空间&lt;/td&gt;
-&lt;td style="text-align: center"&gt;大写常规字母&lt;/td&gt;
-&lt;td style="text-align: center"&gt;$U$, $V$, $W$&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;基&lt;/td&gt;
-&lt;td style="text-align: center"&gt;-&lt;/td&gt;
-&lt;td style="text-align: center"&gt;$\basis{B}{V} = \basev{b}{i}{n}$, $\basis{C}{W} = \basev{c}{j}{m}$, $\basis{D}{}$&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;向量表示&lt;/td&gt;
-&lt;td style="text-align: center"&gt;-&lt;/td&gt;
-&lt;td style="text-align: center"&gt;$\vrep{v}{B} = (v^1,\dots,v^n)\t$, $[\vect{u}]$&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;线性映射&lt;/td&gt;
-&lt;td style="text-align: center"&gt;常规字母&lt;/td&gt;
-&lt;td style="text-align: center"&gt;$L$, $R$, $S$, $T$&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;线性映射，同构，自同态，自同构集合&lt;/td&gt;
-&lt;td style="text-align: center"&gt;-&lt;/td&gt;
-&lt;td style="text-align: center"&gt;$\Hom(V,W)$, $\Iso(V,W)$, $\End(V)$, $\Aut(V)$&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;线性空间范畴&lt;/td&gt;
-&lt;td style="text-align: center"&gt;-&lt;/td&gt;
-&lt;td style="text-align: center"&gt;$\Vectk, \Vect$&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;矩阵&lt;/td&gt;
-&lt;td style="text-align: center"&gt;-&lt;/td&gt;
-&lt;td style="text-align: center"&gt;$\mat{A}$, $\mat{B}$, $\mat{C}$, $\mat{P}$, $\mat{Q}$, $\mat{M}$&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th style="text-align: center"&gt;含义&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;字体/字形&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;使用字母&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;标量&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;常规字母&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;$a$, $b$, $c$, $v^i$, $\varphi_j$, $A^i{}_j$&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;数域&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;黑板粗体&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;$\Bbbk$, $\field{R}$, $\field{C}$&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;向量&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;粗正体字母&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;$\vect{u}$, $\vect{v}$, $\vect{w}$, $\vect{x}$, $\vect{y}$, $\vect{z}$&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;余向量&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;粗体希腊字母&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;$\cvect{\beta}$，$\cvect{\varphi}$，$\cvect{\psi}$，$\cvect{\xi}$&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;集合，向量空间&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;大写常规字母&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;$U$, $V$, $W$&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;基&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;-&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;$\basis{B}{V} = \basev{b}{i}{n}$, $\basis{C}{W} = \basev{c}{j}{m}$, $\basis{D}{}$&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;向量表示&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;-&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;$\vrep{v}{B} = (v^1,\dots,v^n)\t$, $[\vect{u}]$&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;线性映射&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;常规字母&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;$L$, $R$, $S$, $T$&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;线性映射，同构，自同态，自同构集合&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;-&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;$\Hom(V,W)$, $\Iso(V,W)$, $\End(V)$, $\Aut(V)$&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;线性空间范畴&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;-&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;$\Vectk, \Vect$&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;矩阵&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;-&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;$\mat{A}$, $\mat{B}$, $\mat{C}$, $\mat{P}$, $\mat{Q}$, $\mat{M}$&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;!-- &lt;/details&gt; --&gt;
 &lt;p&gt;简单来说，我们用黑体代表矩阵和向量，用普通小写字母代表标量，当普通字母带上了上下标则代表对应的矩阵/向量分量。我们符号上严格区分线性映射和矩阵。在线性代数部分我们暂且使用这一套符号。另外，我们不使用爱因斯坦求和约定，直到我们彻底进入张量代数的内容。写清楚具体的求和过程在推导中是有帮助的。&lt;/p&gt;
@@ -729,7 +789,7 @@ $$+_{\R^n}\vcentcolon\R^n\times\R^n\to\R^n,\quad ((r_1,\dots,r_n),(s_1,\dots,s_n
 &lt;p&gt;为什么我们特别要讨论这个向量空间呢？它有很多有趣的地方。首先我们很熟悉它，因为它的三维情形就是我们熟悉的所谓 “三维空间” （不严谨地说）；其次，我们可以借助它来研究一些有趣的观点，比如让任意一个线性空间联系到它上面。&lt;/p&gt;
 &lt;h3 id="r-上的-n-维自由向量空间"&gt;$\R$ 上的 $n$ 维自由向量空间
 &lt;/h3&gt;&lt;p&gt;这里首先感谢 &lt;a class="link" href="https://math.stackexchange.com/questions/18315/free-vector-space-and-vector-space" target="_blank" rel="noopener"
-&gt;MSE上的讨论&lt;/a&gt;，这部分的内容几乎是转述这里的讨论。&lt;/p&gt;
+ &gt;MSE上的讨论&lt;/a&gt;，这部分的内容几乎是转述这里的讨论。&lt;/p&gt;
 &lt;p&gt;设有 $n$ 个元素的集合：$\{1,2,\dots,n\}$，以及它到 $\R$ 上的所有映射：$f\vcentcolon\{1,2,\dots,n\}\to\R$。现在考虑其中的一个映射，它把定义域中的一个元素映射到 $\R$ 中的一个数字上，或者说它给定义域里的 $n$ 个位置都赋予一个实数。不难发现，它其实和我们创造的有序对是差不多的，结果上都是第 $i$ 个位置有一个实数。我们把这些 $f$ 收集起来成为一个集合，然后给它定义加法和数乘。加法就定义为函数的逐点加法，而数乘同样的也定义为逐点数乘。可以验证这样的操作的确能让这个集合成为一个线性空间，而更加巧妙的是，实际上我们是以另一种方式定义了上面的 $\R^n$！&lt;/p&gt;
 &lt;p&gt;然而有趣的地方不止如此，原因在于，这个 $n$ 个元素的集合，我们完全可以不取这个从 $1$ 到 $n$ 的整数集合，而是取我们喜欢的任何一个集合。什么 $\{\text{🍎},\text{🍑},\text{🍐}\}$，$\{\text{昨天},\text{今天},\text{明天}\}$，$\{\text{童年},\text{在人间},\text{我的大学}\}$ …… 我们都可以建立一个从它们到 $\R$ 的映射，然后让它成为一个线性空间，并且值得注意的是，这个集合中的每一个元素都将成为新的线性空间中的 &lt;em&gt;基向量&lt;/em&gt;。&lt;/p&gt;
 &lt;p&gt;我们说称这样一个从具有 $n$ 个元素的集合映射到 $\R$ 的函数全体为所谓的 &lt;strong&gt;自由线性空间&lt;/strong&gt;。并且，借助这个概念，我们还能得到两个事实：&lt;/p&gt;
@@ -754,99 +814,129 @@ $$+_{\R^n}\vcentcolon\R^n\times\R^n\to\R^n,\quad ((r_1,\dots,r_n),(s_1,\dots,s_n
 &lt;li&gt;简单研究了一下线性空间 $\R^n$ 的构造与它的标准基；&lt;/li&gt;
 &lt;li&gt;从一个新视角：“自由线性空间”出发，指出“所有 $n$ 维线性空间彼此同构”。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;这一章我们对线性空间应该有一个基本的认识了。从下章起我们将从深入地讨论线性映射，它自身的一些特点，以及它与线性代数中的重要工具，矩阵，之间有什么样的联系。&lt;/p&gt;</description></item><item><title>线性空间的积与余积</title><link>https://a-moment096.github.io/posts/product_and_coproduct_of_vector_space/</link><pubDate>Sun, 05 Oct 2025 19:55:20 +0800</pubDate><guid>https://a-moment096.github.io/posts/product_and_coproduct_of_vector_space/</guid><description>&lt;img src="https://a-moment096.github.io/posts/product_and_coproduct_of_vector_space/Eyjafjalla.jpg" alt="Featured image of post 线性空间的积与余积" /&gt;&lt;p&gt;&lt;em&gt;线性空间的直积（积）和直和（余积）究竟有什么区别？它们区别的根源在哪里？这个困扰了我许久的问题终于在今天得到了答案，一起看看吧~&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;这一章我们对线性空间应该有一个基本的认识了。从下章起我们将从深入地讨论线性映射，它自身的一些特点，以及它与线性代数中的重要工具，矩阵，之间有什么样的联系。&lt;/p&gt;</description></item><item><title>线性空间的积与余积</title><link>https://a-moment096.github.io/posts/product_and_coproduct_of_vector_space/</link><pubDate>Sun, 05 Oct 2025 19:55:20 +0800</pubDate><guid>https://a-moment096.github.io/posts/product_and_coproduct_of_vector_space/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post 线性空间的积与余积" /&gt;&lt;p&gt;&lt;em&gt;线性空间的直积（积）和直和（余积）究竟有什么区别？它们区别的根源在哪里？这个困扰了我许久的问题终于在今天得到了答案，一起看看吧~&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;选曲为最近拜托朋友从日本买下（还没送到）的 &lt;a class="link" href="https://space.bilibili.com/316381099" target="_blank" rel="noopener"
-&gt;&lt;strong&gt;鹿乃&lt;/strong&gt;&lt;/a&gt; 的专辑 &lt;a class="link" href="https://music.163.com/#/album?id=72378630" target="_blank" rel="noopener"
-&gt;&lt;strong&gt;two&lt;/strong&gt;&lt;/a&gt; 的一首歌，同时也是我很喜欢的 P 主 &lt;a class="link" href="https://www.nicovideo.jp/user/865371" target="_blank" rel="noopener"
-&gt;&lt;strong&gt;電ポルP&lt;/strong&gt;&lt;/a&gt;（Koyori，又称电杆P，因为曲绘经常是电线杆）在 14 年发布的由 v flower 演唱的 &lt;strong&gt;曖昧劣情Lover&lt;/strong&gt;。实在是非常好听，我很喜欢。头图则选择了某神秘群友的群友 &lt;strong&gt;派佬&lt;/strong&gt; 生成的 AI 图，是可爱的艾雅法拉，希望你喜欢~&lt;/em&gt;&lt;/p&gt;
+ &gt;&lt;strong&gt;鹿乃&lt;/strong&gt;&lt;/a&gt; 的专辑 &lt;a class="link" href="https://music.163.com/#/album?id=72378630" target="_blank" rel="noopener"
+ &gt;&lt;strong&gt;two&lt;/strong&gt;&lt;/a&gt; 的一首歌，同时也是我很喜欢的 P 主 &lt;a class="link" href="https://www.nicovideo.jp/user/865371" target="_blank" rel="noopener"
+ &gt;&lt;strong&gt;電ポルP&lt;/strong&gt;&lt;/a&gt;（Koyori，又称电杆P，因为曲绘经常是电线杆）在 14 年发布的由 v flower 演唱的 &lt;strong&gt;曖昧劣情Lover&lt;/strong&gt;。实在是非常好听，我很喜欢。头图则选择了某神秘群友的群友 &lt;strong&gt;派佬&lt;/strong&gt; 生成的 AI 图，是可爱的艾雅法拉，希望你喜欢~&lt;/em&gt;&lt;/p&gt;
+
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
 &lt;style type="text/css"&gt;
 [data-scheme="dark"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
-border-bottom-color: var(--card-separator-color);
+ border-bottom-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
-border-color: var(--card-separator-color);
+ border-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-body {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info {
-border-top-color: var(--card-background);
+ border-top-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
-color: var(--card-text-color-tertiary);
+ color: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
-background-color: var(--card-separator-color);
+ background-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
-background-color: var(--accent-color);
+ background-color: var(--accent-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li {
-color: var(--card-text-color-main);
-border-top-color: var(--card-separator-color);
+ color: var(--card-text-color-main);
+ border-top-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc {
-text-shadow: -1px -1px 0 var(--body-background);
+ text-shadow: -1px -1px 0 var(--body-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:before {
-background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+ background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:after {
-background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc p {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
+ 
 [data-scheme="light"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="light"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
 &lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
+
+
 &lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=1302953067" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
 $$
 \gdef\field#1{\mathbb{#1}}
@@ -869,11 +959,11 @@ $$&lt;h2 id="前言"&gt;前言
 $$
 \begin{aligned}
 +_\times \colon &amp;(V \times W) \times (V \times W) \to V \times W,\\
-&amp;((v_1, w_1), (v_2, w_2)) \longmapsto
+&amp;((v_1, w_1), (v_2, w_2)) \longmapsto 
 (v_1 +_V v_2,\, w_1 +_W w_2);
 \\[1em]
 \cdot_\times \colon &amp;\Bbbk \times (V \times W) \to V \times W,\\
-&amp;(\lambda, (v, w)) \longmapsto
+&amp;(\lambda, (v, w)) \longmapsto 
 (\lambda \cdot_V v,\, \lambda \cdot_W w).
 \end{aligned}
 $$&lt;p&gt;上面两个运算对任意的 $v_1,v_2,v\in V$，$w_1,w_2,w\in W$，$\lambda\in\field{k}$ 都成立。&lt;/p&gt;
@@ -937,8 +1027,8 @@ $$&lt;p&gt;上面两个运算对任意的 $v_1,v_2,v\in V$，$w_1,w_2,w\in W$，
 &lt;li&gt;针对某两个对象 $X,Y\in\Ob(\cat{C})$，我们可以从上面这一对映射中得到这两个对象之间的所有态射的集合：$\Hom_\cat{C}(X,Y)\vcentcolon=\space s^{-1}(X)\cap t^{-1}(Y)$。在明确所指范畴的情况下可简记为 $\Hom(X,Y)$。这样的集合也被称为 $\mathrm{Hom-}$ 集；&lt;/li&gt;
 &lt;li&gt;对于任意的一个对象 $X$，一定存在一个态射 $\mathrm{id}_ {X} \in \Hom_{\cat{C}}(X,X),$ 这个态射被称为 $X$ 到自身的恒等态射；&lt;/li&gt;
 &lt;li&gt;给定任意的三个对象 $X,Y,Z\in\Ob(\cat{C})$，有这样在其 $\mathrm{Hom-}$ 集之间的映射，称为&lt;strong&gt;合成映射&lt;/strong&gt;，定义为：
-$$\begin{align*}
-\circ\vcentcolon\space\Hom_\cat{C}(Y,Z) \times \Hom_\cat{C}(X,Y)&amp;\to \Hom_\cat{C}(X,Z)\\
+$$\begin{align*} 
+\circ\vcentcolon\space\Hom_\cat{C}(Y,Z) \times \Hom_\cat{C}(X,Y)&amp;\to \Hom_\cat{C}(X,Z)\\ 
 (f,g)&amp;\mapsto f\circ g\\
 \end{align*}$$
 且当不至于混淆时可以省略中间的 $\circ$，将 $f\circ g$ 简记为 $fg$。&lt;/li&gt;
@@ -1027,7 +1117,7 @@ $g \circ \iota_i = g_i$。&lt;/p&gt;
 &lt;p&gt;而考虑余积的泛性质，首先如果对任何的 $Y$ 为目标的箭头 $g_i\vcentcolon X_i\to Y$ 都能有一个对象来实现这个映射的分解，这个对象就必须得包含所有 $\{X_i\}_{i\in I}$ 的信息，且每个 $X_i$ 都得能被区分开 (两个空间不能被映射到同一个空间上)。否则这样的分解就无法成功进行：有的地方可能会缺一块。既然如此，每个空间中的元素都会（以某种形式）出现在余积中了，那么它们的出现形式呢？我们第一个想到的自然是和积同样的构造：即啥都不做限制。那么此时考虑那个 &lt;em&gt;存在且唯一&lt;/em&gt; 的箭头，我们取一个有无限个非零分量的向量，它表示每个线性空间都贡献了一个非零的向量，它在被通过那个唯一的箭头带到 $Y$ 上的时候就出现了问题：从 $\{X_i\}_{i\in I}$ 到 $Y$ 的时候，我们从 $X_i$ 中取一个元素之后它只能对应 $Y$ 中一个元素，而它也只能在余积（我们此时假设它是积）上对应一个元素，再把这个元素放到 $Y$ 中。但是 &lt;strong&gt;无限&lt;/strong&gt; 个非零元素会导致 &lt;strong&gt;这个从余积到 $Y$ 的箭头不唯一&lt;/strong&gt;，因为我们有无限多个槽位，可以任意安排除必须对应的向量之外的所有向量随心所欲地放在不同的 $Y$ 中，形成不同的态射。&lt;/p&gt;
 &lt;p&gt;为了弥补这一点，就只能让余积中的元素里每个都只包含有限个 $X_i$ 中的非零元素，剩下的全都置零。这样我们还有办法且是唯一的办法，来将余积中的元素唯一映射到 $Y$ 上。&lt;/p&gt;
 &lt;p&gt;另外，我们还可以从纯范畴论的角度来证明余积只能有有限个非零的分量。它的证明利用了所有 $g_i$ 的像可以张成余积的子空间的特点，并证明了这个张成的子空间其实就是余积本身，由此证明了余积的元素只能是有限个 $X_i$ 中的非零向量构成的（根据张成的定义，只能有有限个向量的线性组合）。这个方法由 MSE 的上 &lt;a class="link" href="https://math.stackexchange.com/questions/523670/infinite-coproduct-of-abelian-groups?noredirect=1&amp;amp;lq=1" target="_blank" rel="noopener"
-&gt;Martin Brandenburg 做的这个回答&lt;/a&gt; 给出的。有趣的点在于，这个回答其实是针对阿贝尔群范畴的，不过由于线性空间本身的确就是一个阿贝尔群，且这个问题的根源也在于阿贝尔群上的加法，所以这里贴的这个问题的解答实际上是完全适用于我们的问题的。同样，由于模本身也是一个阿贝尔群，所以模也有这样的构造，也有这样的问题，和这样的解答。&lt;/p&gt;
+ &gt;Martin Brandenburg 做的这个回答&lt;/a&gt; 给出的。有趣的点在于，这个回答其实是针对阿贝尔群范畴的，不过由于线性空间本身的确就是一个阿贝尔群，且这个问题的根源也在于阿贝尔群上的加法，所以这里贴的这个问题的解答实际上是完全适用于我们的问题的。同样，由于模本身也是一个阿贝尔群，所以模也有这样的构造，也有这样的问题，和这样的解答。&lt;/p&gt;
 &lt;h2 id="后记"&gt;后记
 &lt;/h2&gt;&lt;p&gt;这个问题说实在的，困扰了我挺久的。在我知道线性空间的直积、直和以及范畴论之后，这个问题就时不时弹出来，困扰我几天。然而，偶然的机会，我又系统地了解了一下线性空间中的内容，（因为连续介质力学，谢谢你，线性代数？）了解了一些和线性空间的基、线性相关/无关、子空间的和之间的内容，对这个问题有了一些自己的看法。&lt;/p&gt;
 &lt;p&gt;实际上这个问题在没有引入范畴论前单纯就是一个定义或者概念无法任意拓展产生的问题。由于直和是来源于子空间的直和，强依赖于 &lt;em&gt;有限&lt;/em&gt; 线性组合，这个概念在代数上就是没法拓展到无限，因而连带着直和无论如何都没法自然地拓展到无限个线性空间的情况。而又由于直积的构造和线性空间的性质没有半点关系：他就是单纯地把所有的东西放在不同位置后捏在了一起，结果正好在最简单的逐点的加法定义和数乘定义下能成为一个合法的线性空间，就让它这么成为直积了。&lt;/p&gt;
@@ -1035,8 +1125,8 @@ $g \circ \iota_i = g_i$。&lt;/p&gt;
 &lt;p&gt;在寻找这个问题的答案的过程中，我还发现了很多有趣的内容。比如 “线性空间总有一组基” 和著名的 AC，即选择公理，是等价的。当我们承认 AC 之后，所有的线性空间，即便是无限维的，也是存在一组基的。而如果我们能给一个无穷维线性空间找出一组基，我们就可以从这组基来构造别的基，而这个操作和某个在承认 AC 之后会出现的神奇现象：巴拿赫-塔斯基分球怪论的操作是非常类似的。另外，我们说的 “总有一组基” 依旧是在我们已有的 &lt;strong&gt;线性组合&lt;/strong&gt; 的定义下的，即 &lt;strong&gt;线性空间中的所有元素都可以被唯一表达为基的线性组合&lt;/strong&gt;，而这里的线性组合总是有限的。&lt;/p&gt;
 &lt;p&gt;所以其实这篇文章我一开始是计划在最后写一些集合论和线性空间的基的内容的。不过总归它们是和主题偏离地有点多的，我还是放弃了。而这篇文章一开始还计划从线性空间的定义开始逐步介绍整个问题，后面我也否定了，因为那样的话这篇文章又会变成超级大长篇。关于线性代数的部分，还是整理一下放在计划中的 &lt;em&gt;张量代数/张量微积分&lt;/em&gt; 系列里面吧。这篇文章的内容我也不是非常满意吧，写的过程中卡了很多壳，有些地方的表述并不令人足够满意。如果您在读的过程中发现有的地方并不通顺，请自由提出批评；如果您有任何的建议，也欢迎提出。&lt;/p&gt;
 &lt;p&gt;另外还要感谢和推荐 &lt;a class="link" href="https://q.uiver.app/" target="_blank" rel="noopener"
-&gt;quiver&lt;/a&gt; 这个工具，本篇文章中的交换图都是使用它绘制的，方便易用，实在是非常不错。它在 GitHub 开源了，感兴趣还可以看看它的 &lt;a class="link" href="https://github.com/varkor/quiver" target="_blank" rel="noopener"
-&gt;仓库&lt;/a&gt;；同时感谢 B站 UP 主 &lt;a class="link" href="https://space.bilibili.com/27733394" target="_blank" rel="noopener"
-&gt;数学わかんない&lt;/a&gt; 的这一期 &lt;a class="link" href="https://www.bilibili.com/video/BV1mJfaYxEQ5" target="_blank" rel="noopener"
-&gt;（科普）直积和直和的不同&amp;ndash;从线性代数到范畴论&lt;/a&gt;，讲得很好，帮了我很多。&lt;/p&gt;
+ &gt;quiver&lt;/a&gt; 这个工具，本篇文章中的交换图都是使用它绘制的，方便易用，实在是非常不错。它在 GitHub 开源了，感兴趣还可以看看它的 &lt;a class="link" href="https://github.com/varkor/quiver" target="_blank" rel="noopener"
+ &gt;仓库&lt;/a&gt;；同时感谢 B站 UP 主 &lt;a class="link" href="https://space.bilibili.com/27733394" target="_blank" rel="noopener"
+ &gt;数学わかんない&lt;/a&gt; 的这一期 &lt;a class="link" href="https://www.bilibili.com/video/BV1mJfaYxEQ5" target="_blank" rel="noopener"
+ &gt;（科普）直积和直和的不同&amp;ndash;从线性代数到范畴论&lt;/a&gt;，讲得很好，帮了我很多。&lt;/p&gt;
 &lt;p&gt;那么，非常感谢您能看到这里。这样又长又晦涩难懂的文章（也许）能让您愿意看到这儿，我也就心满意足了。最后一如既往地，祝您身体健康，双节愉快~（即便只剩一天了吧大概）&lt;/p&gt;</description></item></channel></rss>

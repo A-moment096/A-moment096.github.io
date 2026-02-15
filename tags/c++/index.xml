@@ -1,99 +1,129 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>C++ on A Moment's Rest</title><link>https://a-moment096.github.io/tags/c++/</link><description>Recent content in C++ on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 19 Jan 2026 06:28:39 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/c++/index.xml" rel="self" type="application/rss+xml"/><item><title>如何解析 C/C++（比较）复杂的类型？</title><link>https://a-moment096.github.io/posts/simple_type_parsing/</link><pubDate>Thu, 15 Jan 2026 19:35:50 +0800</pubDate><guid>https://a-moment096.github.io/posts/simple_type_parsing/</guid><description>&lt;img src="https://a-moment096.github.io/posts/simple_type_parsing/Science.png" alt="Featured image of post 如何解析 C/C++（比较）复杂的类型？" /&gt;&lt;p&gt;&lt;em&gt;从可爱群友 &lt;a class="link" href="https://mahiro.ink/" target="_blank" rel="noopener"
-&gt;@0xa7973908&lt;/a&gt;的&lt;a class="link" href="https://mahiro.ink/archives/homework" target="_blank" rel="noopener"
-&gt;博客&lt;/a&gt;里了解到了数组指针和指针数组的类型区别，但是这种单纯的记号真的很难背，背后的逻辑究竟是什么样的呢？探究一下吧~&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>C++ on A Moment's Rest</title><link>https://a-moment096.github.io/tags/c++/</link><description>Recent content in C++ on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Sun, 15 Feb 2026 11:05:58 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/c++/index.xml" rel="self" type="application/rss+xml"/><item><title>如何解析 C/C++（比较）复杂的类型？</title><link>https://a-moment096.github.io/posts/simple_type_parsing/</link><pubDate>Thu, 15 Jan 2026 19:35:50 +0800</pubDate><guid>https://a-moment096.github.io/posts/simple_type_parsing/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post 如何解析 C/C++（比较）复杂的类型？" /&gt;&lt;p&gt;&lt;em&gt;从可爱群友 &lt;a class="link" href="https://mahiro.ink/" target="_blank" rel="noopener"
+ &gt;@0xa7973908&lt;/a&gt;的&lt;a class="link" href="https://mahiro.ink/archives/homework" target="_blank" rel="noopener"
+ &gt;博客&lt;/a&gt;里了解到了数组指针和指针数组的类型区别，但是这种单纯的记号真的很难背，背后的逻辑究竟是什么样的呢？探究一下吧~&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;本期的头图是从歌曲的 MV 中截下来的，是 &lt;a class="link" href="https://x.com/mimi_3mi" target="_blank" rel="noopener"
-&gt;MIMI&lt;/a&gt; 的 &lt;a class="link" href="https://www.bilibili.com/video/BV1nkB7YQE1z/" title="B站链接"
-target="_blank" rel="noopener"
-&gt;サイエンス&lt;/a&gt; (Science，科学)，非常好听，很适合科研狗（）绘制 MV 的是 &lt;a class="link" href="https://x.com/bokarokaku" target="_blank" rel="noopener"
-&gt;3774.&lt;/a&gt; 太太，可爱铁头……&lt;/em&gt;&lt;/p&gt;
+ &gt;MIMI&lt;/a&gt; 的 &lt;a class="link" href="https://www.bilibili.com/video/BV1nkB7YQE1z/" title="B站链接"
+ target="_blank" rel="noopener"
+ &gt;サイエンス&lt;/a&gt; (Science，科学)，非常好听，很适合科研狗（）绘制 MV 的是 &lt;a class="link" href="https://x.com/bokarokaku" target="_blank" rel="noopener"
+ &gt;3774.&lt;/a&gt; 太太，可爱铁头……&lt;/em&gt;&lt;/p&gt;
+
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
 &lt;style type="text/css"&gt;
 [data-scheme="dark"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
-border-bottom-color: var(--card-separator-color);
+ border-bottom-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
-border-color: var(--card-separator-color);
+ border-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-body {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info {
-border-top-color: var(--card-background);
+ border-top-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
-color: var(--card-text-color-tertiary);
+ color: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
-background-color: var(--card-separator-color);
+ background-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
-background-color: var(--accent-color);
+ background-color: var(--accent-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li {
-color: var(--card-text-color-main);
-border-top-color: var(--card-separator-color);
+ color: var(--card-text-color-main);
+ border-top-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc {
-text-shadow: -1px -1px 0 var(--body-background);
+ text-shadow: -1px -1px 0 var(--body-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:before {
-background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+ background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:after {
-background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc p {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
+ 
 [data-scheme="light"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="light"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
 &lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
+
+
 &lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=2656567752" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
 &lt;h2 id="指针数组数组指针"&gt;指针数组？数组指针？
 &lt;/h2&gt;&lt;p&gt;可爱群友的博客里写了这样一些内容：&lt;/p&gt;
@@ -155,160 +185,160 @@ background: var(--card-background-selected);
 &lt;p&gt;等一下，算符优先级真的是这样吗？&lt;/p&gt;
 &lt;h2 id="cc-算符优先级"&gt;C/C++ 算符优先级
 &lt;/h2&gt;&lt;p&gt;我可以拍着胸脯说，没错，优先级是这样的。查阅 &lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_precedence.html" target="_blank" rel="noopener"
-&gt;cppreference: C++ Operator Precedence&lt;/a&gt;，可以看到算符的全部优先级顺序。为方便查阅（也为了水字数），我们把它放过来：&lt;/p&gt;
+ &gt;cppreference: C++ Operator Precedence&lt;/a&gt;，可以看到算符的全部优先级顺序。为方便查阅（也为了水字数），我们把它放过来：&lt;/p&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style="text-align: center"&gt;Precedence&lt;/th&gt;
-&lt;th style="text-align: left"&gt;Operator&lt;/th&gt;
-&lt;th style="text-align: left"&gt;Description&lt;/th&gt;
-&lt;th style="text-align: center"&gt;Associativity&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;1&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;code&gt;a::b&lt;/code&gt;&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/identifiers#Qualified_identifiers" target="_blank" rel="noopener"
-&gt;Scope resolution&lt;/a&gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;2&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;code&gt;a++&lt;/code&gt; &lt;code&gt;a--&lt;/code&gt;&lt;br&gt;&lt;code&gt;type(a)&lt;/code&gt; &lt;code&gt;type{a}&lt;/code&gt;&lt;br&gt;&lt;code&gt;a()&lt;/code&gt;&lt;br&gt;&lt;code&gt;a[]&lt;/code&gt;&lt;br&gt;&lt;code&gt;a.b&lt;/code&gt; &lt;code&gt;a-&amp;gt;b&lt;/code&gt;&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_incdec" target="_blank" rel="noopener"
-&gt;Suffix/postfix increment and decrement&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/explicit_cast" target="_blank" rel="noopener"
-&gt;Functional cast&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_other#Built-in_function_call_operator" target="_blank" rel="noopener"
-&gt;Function call&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_member_access#Built-in_subscript_operator" target="_blank" rel="noopener"
-&gt;Subscript&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_member_access#Built-in_member_access_operators" target="_blank" rel="noopener"
-&gt;Member access&lt;/a&gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;3&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;code&gt;++a&lt;/code&gt; &lt;code&gt;--a&lt;/code&gt;&lt;br&gt;&lt;code&gt;+a&lt;/code&gt; &lt;code&gt;-a&lt;/code&gt;&lt;br&gt;&lt;code&gt;!a&lt;/code&gt; &lt;code&gt;~a&lt;/code&gt;&lt;br&gt;&lt;code&gt;(type)a&lt;/code&gt;&lt;br&gt;&lt;code&gt;*a&lt;/code&gt;&lt;br&gt;&lt;code&gt;&amp;amp;a&lt;/code&gt;&lt;br&gt;&lt;code&gt;sizeof&lt;/code&gt;&lt;br&gt;&lt;code&gt;co_await&lt;/code&gt;&lt;br&gt;&lt;code&gt;new&lt;/code&gt; &lt;code&gt;new[]&lt;/code&gt;&lt;br&gt;&lt;code&gt;delete&lt;/code&gt; &lt;code&gt;delete[]&lt;/code&gt;&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_incdec" target="_blank" rel="noopener"
-&gt;Prefix increment and decrement&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_arithmetic#Unary_arithmetic_operators" target="_blank" rel="noopener"
-&gt;Unary plus and minus&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_logical" target="_blank" rel="noopener"
-&gt;Logical NOT and bitwise NOT&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/explicit_cast" target="_blank" rel="noopener"
-&gt;C-style cast&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_member_access#Built-in_indirection_operator" target="_blank" rel="noopener"
-&gt;Indirection (dereference)&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_member_access#Built-in_address-of_operator" target="_blank" rel="noopener"
-&gt;Address-of&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/sizeof" target="_blank" rel="noopener"
-&gt;Size-of&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/coroutines" target="_blank" rel="noopener"
-&gt;await-expression (C++20)&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/new" target="_blank" rel="noopener"
-&gt;Dynamic memory allocation&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/delete" target="_blank" rel="noopener"
-&gt;Dynamic memory deallocation&lt;/a&gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Right-to-Left ←&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;4&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;code&gt;a.*b&lt;/code&gt; &lt;code&gt;a-&amp;gt;*b&lt;/code&gt;&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_member_access#Built-in_pointer-to-member_access_operators" target="_blank" rel="noopener"
-&gt;Pointer-to-member&lt;/a&gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;5&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;code&gt;a * b&lt;/code&gt; &lt;code&gt;a / b&lt;/code&gt; &lt;code&gt;a % b&lt;/code&gt;&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_arithmetic#Multiplicative_operators" target="_blank" rel="noopener"
-&gt;Multiplication, division, and remainder&lt;/a&gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;6&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;code&gt;a + b&lt;/code&gt; &lt;code&gt;a - b&lt;/code&gt;&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_arithmetic#Additive_operators" target="_blank" rel="noopener"
-&gt;Addition and subtraction&lt;/a&gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;7&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;code&gt;a &amp;lt;&amp;lt; b&lt;/code&gt; &lt;code&gt;a &amp;gt;&amp;gt; b&lt;/code&gt;&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_arithmetic#Bitwise_shift_operators" target="_blank" rel="noopener"
-&gt;Bitwise left shift and right shift&lt;/a&gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;8&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;code&gt;a &amp;lt;=&amp;gt; b&lt;/code&gt;&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_comparison#Three-way_comparison" target="_blank" rel="noopener"
-&gt;Three-way comparison operator (C++20)&lt;/a&gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;9&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;code&gt;a &amp;lt; b&lt;/code&gt; &lt;code&gt;a &amp;lt;= b&lt;/code&gt; &lt;code&gt;a &amp;gt; b&lt;/code&gt; &lt;code&gt;a &amp;gt;= b&lt;/code&gt;&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_comparison" target="_blank" rel="noopener"
-&gt;Relational operators&lt;/a&gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;10&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;code&gt;a == b&lt;/code&gt; &lt;code&gt;a != b&lt;/code&gt;&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_comparison" target="_blank" rel="noopener"
-&gt;Equality operators&lt;/a&gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;11&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;code&gt;a &amp;amp; b&lt;/code&gt;&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_arithmetic#Bitwise_logic_operators" target="_blank" rel="noopener"
-&gt;Bitwise AND&lt;/a&gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;12&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;code&gt;a ^ b&lt;/code&gt;&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_arithmetic#Bitwise_logic_operators" target="_blank" rel="noopener"
-&gt;Bitwise XOR (exclusive or)&lt;/a&gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;13&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;code&gt;a | b&lt;/code&gt;&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_arithmetic#Bitwise_logic_operators" target="_blank" rel="noopener"
-&gt;Bitwise OR (inclusive or)&lt;/a&gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;14&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;code&gt;a &amp;amp;&amp;amp; b&lt;/code&gt;&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_logical" target="_blank" rel="noopener"
-&gt;Logical AND&lt;/a&gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;15&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;code&gt;a || b&lt;/code&gt;&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_logical" target="_blank" rel="noopener"
-&gt;Logical OR&lt;/a&gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;16&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;code&gt;a ? b : c&lt;/code&gt;&lt;br&gt;&lt;code&gt;throw&lt;/code&gt;&lt;br&gt;&lt;code&gt;co_yield&lt;/code&gt;&lt;br&gt;&lt;code&gt;a = b&lt;/code&gt;&lt;br&gt;&lt;code&gt;a += b&lt;/code&gt; &lt;code&gt;a -= b&lt;/code&gt;&lt;br&gt;&lt;code&gt;a *= b&lt;/code&gt; &lt;code&gt;a /= b&lt;/code&gt; &lt;code&gt;a %= b&lt;/code&gt;&lt;br&gt;&lt;code&gt;a &amp;lt;&amp;lt;= b&lt;/code&gt; &lt;code&gt;a &amp;gt;&amp;gt;= b&lt;/code&gt;&lt;br&gt;&lt;code&gt;a &amp;amp;= b&lt;/code&gt; &lt;code&gt;a ^= b&lt;/code&gt; &lt;code&gt;a |= b&lt;/code&gt;&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_other#Conditional_operator" target="_blank" rel="noopener"
-&gt;Ternary conditional&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/throw" target="_blank" rel="noopener"
-&gt;throw operator&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/coroutines" target="_blank" rel="noopener"
-&gt;yield-expression (C++20)&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_assignment#Builtin_direct_assignment" target="_blank" rel="noopener"
-&gt;Direct assignment&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_assignment#Builtin_compound_assignment" target="_blank" rel="noopener"
-&gt;Compound assignment by sum and difference&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_assignment#Builtin_compound_assignment" target="_blank" rel="noopener"
-&gt;Compound assignment by product, quotient, and remainder&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_assignment#Builtin_compound_assignment" target="_blank" rel="noopener"
-&gt;Compound assignment by bitwise left shift and right shift&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_assignment#Builtin_compound_assignment" target="_blank" rel="noopener"
-&gt;Compound assignment by bitwise AND, XOR, and OR&lt;/a&gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Right-to-Left ←&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;17&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;code&gt;a, b&lt;/code&gt;&lt;/td&gt;
-&lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_other#Built-in_comma_operator" target="_blank" rel="noopener"
-&gt;Comma operator&lt;/a&gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th style="text-align: center"&gt;Precedence&lt;/th&gt;
+ &lt;th style="text-align: left"&gt;Operator&lt;/th&gt;
+ &lt;th style="text-align: left"&gt;Description&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;Associativity&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;1&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;code&gt;a::b&lt;/code&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/identifiers#Qualified_identifiers" target="_blank" rel="noopener"
+ &gt;Scope resolution&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;2&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;code&gt;a++&lt;/code&gt; &lt;code&gt;a--&lt;/code&gt;&lt;br&gt;&lt;code&gt;type(a)&lt;/code&gt; &lt;code&gt;type{a}&lt;/code&gt;&lt;br&gt;&lt;code&gt;a()&lt;/code&gt;&lt;br&gt;&lt;code&gt;a[]&lt;/code&gt;&lt;br&gt;&lt;code&gt;a.b&lt;/code&gt; &lt;code&gt;a-&amp;gt;b&lt;/code&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_incdec" target="_blank" rel="noopener"
+ &gt;Suffix/postfix increment and decrement&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/explicit_cast" target="_blank" rel="noopener"
+ &gt;Functional cast&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_other#Built-in_function_call_operator" target="_blank" rel="noopener"
+ &gt;Function call&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_member_access#Built-in_subscript_operator" target="_blank" rel="noopener"
+ &gt;Subscript&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_member_access#Built-in_member_access_operators" target="_blank" rel="noopener"
+ &gt;Member access&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;3&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;code&gt;++a&lt;/code&gt; &lt;code&gt;--a&lt;/code&gt;&lt;br&gt;&lt;code&gt;+a&lt;/code&gt; &lt;code&gt;-a&lt;/code&gt;&lt;br&gt;&lt;code&gt;!a&lt;/code&gt; &lt;code&gt;~a&lt;/code&gt;&lt;br&gt;&lt;code&gt;(type)a&lt;/code&gt;&lt;br&gt;&lt;code&gt;*a&lt;/code&gt;&lt;br&gt;&lt;code&gt;&amp;amp;a&lt;/code&gt;&lt;br&gt;&lt;code&gt;sizeof&lt;/code&gt;&lt;br&gt;&lt;code&gt;co_await&lt;/code&gt;&lt;br&gt;&lt;code&gt;new&lt;/code&gt; &lt;code&gt;new[]&lt;/code&gt;&lt;br&gt;&lt;code&gt;delete&lt;/code&gt; &lt;code&gt;delete[]&lt;/code&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_incdec" target="_blank" rel="noopener"
+ &gt;Prefix increment and decrement&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_arithmetic#Unary_arithmetic_operators" target="_blank" rel="noopener"
+ &gt;Unary plus and minus&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_logical" target="_blank" rel="noopener"
+ &gt;Logical NOT and bitwise NOT&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/explicit_cast" target="_blank" rel="noopener"
+ &gt;C-style cast&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_member_access#Built-in_indirection_operator" target="_blank" rel="noopener"
+ &gt;Indirection (dereference)&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_member_access#Built-in_address-of_operator" target="_blank" rel="noopener"
+ &gt;Address-of&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/sizeof" target="_blank" rel="noopener"
+ &gt;Size-of&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/coroutines" target="_blank" rel="noopener"
+ &gt;await-expression (C++20)&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/new" target="_blank" rel="noopener"
+ &gt;Dynamic memory allocation&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/delete" target="_blank" rel="noopener"
+ &gt;Dynamic memory deallocation&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Right-to-Left ←&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;4&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;code&gt;a.*b&lt;/code&gt; &lt;code&gt;a-&amp;gt;*b&lt;/code&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_member_access#Built-in_pointer-to-member_access_operators" target="_blank" rel="noopener"
+ &gt;Pointer-to-member&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;5&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;code&gt;a * b&lt;/code&gt; &lt;code&gt;a / b&lt;/code&gt; &lt;code&gt;a % b&lt;/code&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_arithmetic#Multiplicative_operators" target="_blank" rel="noopener"
+ &gt;Multiplication, division, and remainder&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;6&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;code&gt;a + b&lt;/code&gt; &lt;code&gt;a - b&lt;/code&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_arithmetic#Additive_operators" target="_blank" rel="noopener"
+ &gt;Addition and subtraction&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;7&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;code&gt;a &amp;lt;&amp;lt; b&lt;/code&gt; &lt;code&gt;a &amp;gt;&amp;gt; b&lt;/code&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_arithmetic#Bitwise_shift_operators" target="_blank" rel="noopener"
+ &gt;Bitwise left shift and right shift&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;8&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;code&gt;a &amp;lt;=&amp;gt; b&lt;/code&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_comparison#Three-way_comparison" target="_blank" rel="noopener"
+ &gt;Three-way comparison operator (C++20)&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;9&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;code&gt;a &amp;lt; b&lt;/code&gt; &lt;code&gt;a &amp;lt;= b&lt;/code&gt; &lt;code&gt;a &amp;gt; b&lt;/code&gt; &lt;code&gt;a &amp;gt;= b&lt;/code&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_comparison" target="_blank" rel="noopener"
+ &gt;Relational operators&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;10&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;code&gt;a == b&lt;/code&gt; &lt;code&gt;a != b&lt;/code&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_comparison" target="_blank" rel="noopener"
+ &gt;Equality operators&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;11&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;code&gt;a &amp;amp; b&lt;/code&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_arithmetic#Bitwise_logic_operators" target="_blank" rel="noopener"
+ &gt;Bitwise AND&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;12&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;code&gt;a ^ b&lt;/code&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_arithmetic#Bitwise_logic_operators" target="_blank" rel="noopener"
+ &gt;Bitwise XOR (exclusive or)&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;13&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;code&gt;a | b&lt;/code&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_arithmetic#Bitwise_logic_operators" target="_blank" rel="noopener"
+ &gt;Bitwise OR (inclusive or)&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;14&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;code&gt;a &amp;amp;&amp;amp; b&lt;/code&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_logical" target="_blank" rel="noopener"
+ &gt;Logical AND&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;15&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;code&gt;a || b&lt;/code&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_logical" target="_blank" rel="noopener"
+ &gt;Logical OR&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;16&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;code&gt;a ? b : c&lt;/code&gt;&lt;br&gt;&lt;code&gt;throw&lt;/code&gt;&lt;br&gt;&lt;code&gt;co_yield&lt;/code&gt;&lt;br&gt;&lt;code&gt;a = b&lt;/code&gt;&lt;br&gt;&lt;code&gt;a += b&lt;/code&gt; &lt;code&gt;a -= b&lt;/code&gt;&lt;br&gt;&lt;code&gt;a *= b&lt;/code&gt; &lt;code&gt;a /= b&lt;/code&gt; &lt;code&gt;a %= b&lt;/code&gt;&lt;br&gt;&lt;code&gt;a &amp;lt;&amp;lt;= b&lt;/code&gt; &lt;code&gt;a &amp;gt;&amp;gt;= b&lt;/code&gt;&lt;br&gt;&lt;code&gt;a &amp;amp;= b&lt;/code&gt; &lt;code&gt;a ^= b&lt;/code&gt; &lt;code&gt;a |= b&lt;/code&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_other#Conditional_operator" target="_blank" rel="noopener"
+ &gt;Ternary conditional&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/throw" target="_blank" rel="noopener"
+ &gt;throw operator&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/coroutines" target="_blank" rel="noopener"
+ &gt;yield-expression (C++20)&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_assignment#Builtin_direct_assignment" target="_blank" rel="noopener"
+ &gt;Direct assignment&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_assignment#Builtin_compound_assignment" target="_blank" rel="noopener"
+ &gt;Compound assignment by sum and difference&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_assignment#Builtin_compound_assignment" target="_blank" rel="noopener"
+ &gt;Compound assignment by product, quotient, and remainder&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_assignment#Builtin_compound_assignment" target="_blank" rel="noopener"
+ &gt;Compound assignment by bitwise left shift and right shift&lt;/a&gt;&lt;br&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_assignment#Builtin_compound_assignment" target="_blank" rel="noopener"
+ &gt;Compound assignment by bitwise AND, XOR, and OR&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Right-to-Left ←&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;17&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;code&gt;a, b&lt;/code&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a class="link" href="https://en.cppreference.com/w/cpp/language/operator_other#Built-in_comma_operator" target="_blank" rel="noopener"
+ &gt;Comma operator&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Left-to-Right →&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;(里面的链接都会链到 &lt;a class="link" href="https://cppreference.com" target="_blank" rel="noopener"
-&gt;cppreference.com&lt;/a&gt; 上，请放心点开。) 其中，最高优先级的是从命名空间中取内容的 &lt;code&gt;::&lt;/code&gt; 算符，而第二优先级的就是调用运算和下标运算了，取地址和解引用运算则在下一级。&lt;/p&gt;
+ &gt;cppreference.com&lt;/a&gt; 上，请放心点开。) 其中，最高优先级的是从命名空间中取内容的 &lt;code&gt;::&lt;/code&gt; 算符，而第二优先级的就是调用运算和下标运算了，取地址和解引用运算则在下一级。&lt;/p&gt;
 &lt;p&gt;那就没问题了。 &lt;code&gt;int *a[N]&lt;/code&gt; 中，&lt;code&gt;a&lt;/code&gt; 的确更先与 &lt;code&gt;[]&lt;/code&gt; 相结合进行运算，而后由 &lt;code&gt;*&lt;/code&gt; 解引用。我们还可以用这套逻辑来解释别的 &lt;em&gt;大多数&lt;/em&gt; 复杂类型。比如把函数，数组和指针等混合在一起套好几层的那种，都可以这样分析出来结果。&lt;/p&gt;
 &lt;p&gt;但是，&lt;code&gt;const&lt;/code&gt; 呢？它不是运算符才对，这要怎么考虑？另外，&lt;code&gt;&amp;amp;&lt;/code&gt; 取地址又要如何考虑？当取地址出现在变量声明里的时候，应该是在定义 C++ 的 &lt;strong&gt;引用&lt;/strong&gt; 才对，这要怎么用算符优先级来解释？&lt;/p&gt;
 &lt;p&gt;所以，算符优先级不能直接解释所有的复杂类型。不过我们可以尝试间接解释一些复杂类型。&lt;/p&gt;
@@ -337,7 +367,7 @@ background: var(--card-background-selected);
 &lt;p&gt;第二个我们依旧从 &lt;code&gt;p2&lt;/code&gt; 开始，首先碰到的是 &lt;code&gt;const&lt;/code&gt;，则说明 &lt;code&gt;p2&lt;/code&gt; 本身不能变，然后对这个不能变的 &lt;code&gt;p2&lt;/code&gt; 我们可以解引用得到一个 &lt;code&gt;int&lt;/code&gt;，因此它是一个永远指向一个整型变量的指针，这个指针不能指向别的东西。&lt;/p&gt;
 &lt;p&gt;第三个呢？我们必须先解引用 &lt;code&gt;p3&lt;/code&gt;，然后得到的东西它是不可变的，不可变对象的类型是一个整型值。因此它和 &lt;code&gt;p1&lt;/code&gt; 是一样的。&lt;/p&gt;
 &lt;p&gt;那么，怎么理解下面这个？&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cpp" data-lang="cpp"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="c1"&gt;// pointer to a const poionter,
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cpp" data-lang="cpp"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="c1"&gt;// pointer to a const poionter, 
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// which again points to a const int
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;我们来分析：首先，它是一个指针，因为第一步得 &lt;code&gt;*p&lt;/code&gt; 解引用；解引用之后得到的东西必须是常量；而这个常量又可以被进一步解引用，所以它是一个 &lt;em&gt;指向常指针&lt;/em&gt; 的一个指针；最后，在层层解引用之后，我们得到的东西是一个整型值，这个整型值是不可变的。如此，&lt;code&gt;p&lt;/code&gt; 是一个 &lt;em&gt;指向整型常指针&lt;/em&gt; 的指针。&lt;/p&gt;
 &lt;h4 id="cv-限定符与函数调用数组下标"&gt;CV 限定符与函数调用/数组下标
@@ -395,104 +425,134 @@ background: var(--card-background-selected);
 &lt;/h2&gt;&lt;p&gt;我们好像是找到了一个百试百灵的屠龙宝刀，不过问题又来了：C/C++ 的类型系统，果真是这样的吗？上面的这个 “规则”，真的是 C/C++ 的设计原则吗？这么去解析变量/函数声明，真的一定没问题吗？&lt;/p&gt;
 &lt;p&gt;好消息是，大部分我们能遇到的，这么个 &lt;em&gt;规则&lt;/em&gt;，或者更好的说法，&lt;em&gt;思想模型&lt;/em&gt;，都是适用的，而且的确 C/C++ 的类型系统设计时，这部分内容的确是 &lt;em&gt;怎么用就怎么声明&lt;/em&gt;。像上面比较 &lt;strong&gt;普通&lt;/strong&gt; 的情况，这套分析方法都是没啥大问题的。&lt;/p&gt;
 &lt;p&gt;可是坏消息是，C/C++ 的类型系统实在是太复杂了。我们这只是用了一些些的 &lt;em&gt;type constructor&lt;/em&gt; 和 CV 限定符 (cv qualifier) 而已，属于 &lt;strong&gt;简单声明&lt;/strong&gt;。实际上，声明系统根据 &lt;a class="link" href="https://en.cppreference.com/w/cpp/language/declarations.html" target="_blank" rel="noopener"
-&gt;cppreference.com-Declarations&lt;/a&gt; 的结果来看，还包含函数定义、模板声明/实现/特化、命名空间定义、属性声明等等更多的东西，而简单声明里一共是有 10 种方式去做声明，我们一点没提；我们的讨论中没有涉及声明中会出现的属性（Attribute），初始化（Initialize），更多的限定符（Qualifier）等等要素；甚至就连基础类型我们都只敢用人畜无害的 &lt;code&gt;int&lt;/code&gt;，没有涉及更复杂的类型，特别是自定义类型。&lt;/p&gt;
+ &gt;cppreference.com-Declarations&lt;/a&gt; 的结果来看，还包含函数定义、模板声明/实现/特化、命名空间定义、属性声明等等更多的东西，而简单声明里一共是有 10 种方式去做声明，我们一点没提；我们的讨论中没有涉及声明中会出现的属性（Attribute），初始化（Initialize），更多的限定符（Qualifier）等等要素；甚至就连基础类型我们都只敢用人畜无害的 &lt;code&gt;int&lt;/code&gt;，没有涉及更复杂的类型，特别是自定义类型。&lt;/p&gt;
 &lt;p&gt;没错，我们的讨论还完全抛开了枚举、联合体、结构体和类。实际上，它们也属于声明系统的一部分，或者说类型系统的一部分。即便是在讨论过的内容里，我们还有没涉及到的细节，比如所谓的 &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt;，右值引用声明，因为我还不够了解什么是右值引用，就不瞎讲了。&lt;/p&gt;
 &lt;p&gt;不过我并不觉得这有什么问题，我们的讨论依旧是有意义的。也许这里的讨论成功窥探到了一些语言设计之初所构想的类型系统设计思路，而且也能方便以后遇到奇怪的复合类型时不会两眼一抹黑。&lt;/p&gt;
 &lt;h2 id="后记"&gt;后记
 &lt;/h2&gt;&lt;p&gt;不得不说，一开始真的没有想到能写这么多，更是没有想到即便写了这么多，也似乎没能穷尽 C/C++ 类型系统的百分之一。在查阅大量的 cppreference 文档之后，我只感觉脑袋发胀，目光呆滞，但是看着自己能分析出来各种丑八怪类型，多少还是有点成就感的。&lt;/p&gt;
 &lt;p&gt;这里要非常感谢可爱群友 &lt;a class="link" href="https://mahiro.ink/" target="_blank" rel="noopener"
-&gt;@0xa793908&lt;/a&gt; 的笔记，没有看到那个笔记内容的话，我是肯定不会想到这么个有趣的问题，并且（也许是）深入到这里的吧。&lt;/p&gt;
+ &gt;@0xa793908&lt;/a&gt; 的笔记，没有看到那个笔记内容的话，我是肯定不会想到这么个有趣的问题，并且（也许是）深入到这里的吧。&lt;/p&gt;
 &lt;p&gt;另外不得不感慨的是 AI 的强大……我的很多例子都是让 AI 举出来之后，我再尝试分析理解，最后得到这么一套解析方法的。虽然说有时候很累，AI 算是比较认死理（偶尔又会出幻觉）的，但是用 AI 去学新东西一定是一个很有前景的学习方法。&lt;/p&gt;
-&lt;p&gt;感谢您能看到这里，这么啰嗦的一大篇能看下来也是很强大了。希望我写的这些东西能帮你解析遇到的奇怪类型，在 “谭浩强” 型考试中能多拿一点分数，哈哈。那么最后，一如既往地，祝您身心健康，工作顺利，天天开心~&lt;/p&gt;</description></item><item><title>C++ Vector 的内存布局</title><link>https://a-moment096.github.io/posts/vector_memory_layout/</link><pubDate>Tue, 27 May 2025 09:53:29 +0800</pubDate><guid>https://a-moment096.github.io/posts/vector_memory_layout/</guid><description>&lt;img src="https://a-moment096.github.io/posts/vector_memory_layout/Bamboo_Reimu.jpg" alt="Featured image of post C++ Vector 的内存布局" /&gt;&lt;p&gt;&lt;em&gt;探索一下 C++ 的容器 &lt;code&gt;vector&lt;/code&gt; 的内存布局，也算是解答我自己的一些疑虑咯&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;感谢您能看到这里，这么啰嗦的一大篇能看下来也是很强大了。希望我写的这些东西能帮你解析遇到的奇怪类型，在 “谭浩强” 型考试中能多拿一点分数，哈哈。那么最后，一如既往地，祝您身心健康，工作顺利，天天开心~&lt;/p&gt;</description></item><item><title>C++ Vector 的内存布局</title><link>https://a-moment096.github.io/posts/vector_memory_layout/</link><pubDate>Tue, 27 May 2025 09:53:29 +0800</pubDate><guid>https://a-moment096.github.io/posts/vector_memory_layout/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post C++ Vector 的内存布局" /&gt;&lt;p&gt;&lt;em&gt;探索一下 C++ 的容器 &lt;code&gt;vector&lt;/code&gt; 的内存布局，也算是解答我自己的一些疑虑咯&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图是从网上搜的，尝试寻找出处，未果。很可惜。选曲尝试选择了一首听着比较清淡的曲子 &lt;strong&gt;泪苔&lt;/strong&gt;，感觉比较符合头图清新淡雅的神社氛围。希望你喜欢。&lt;/em&gt;&lt;/p&gt;
+
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
 &lt;style type="text/css"&gt;
 [data-scheme="dark"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
-border-bottom-color: var(--card-separator-color);
+ border-bottom-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
-border-color: var(--card-separator-color);
+ border-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-body {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info {
-border-top-color: var(--card-background);
+ border-top-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
-color: var(--card-text-color-tertiary);
+ color: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
-background-color: var(--card-separator-color);
+ background-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
-background-color: var(--accent-color);
+ background-color: var(--accent-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li {
-color: var(--card-text-color-main);
-border-top-color: var(--card-separator-color);
+ color: var(--card-text-color-main);
+ border-top-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc {
-text-shadow: -1px -1px 0 var(--body-background);
+ text-shadow: -1px -1px 0 var(--body-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:before {
-background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+ background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:after {
-background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc p {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
+ 
 [data-scheme="light"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="light"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
 &lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
+
+
 &lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=26537200" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
 &lt;h2 id="先介绍一下-vector-的基本情况咯"&gt;先介绍一下 &lt;code&gt;vector&lt;/code&gt; 的基本情况咯
 &lt;/h2&gt;&lt;p&gt;&lt;code&gt;vector&lt;/code&gt; 是由 C++ 标准库提供的一个容器模板类。这里不打算仔细介绍什么是容器，模板，什么是类，我们直接指出：&lt;code&gt;vector&lt;/code&gt; 的作用就是一个更好用的数组。“类”是说明它自己带了一些好用的函数，称为“方法”，“模板”就是说它需要接受一个类型作为参数才能成为一个完整的类型，就像数组必须说明是什么东西的数组一样。最后“容器”就是说它是一类经过了特殊优化的模板类，和别的容器一起共用着一些方法与成员，且有一类公共的算法可以用在它们上面。&lt;/p&gt;
@@ -619,7 +679,7 @@ background: var(--card-background-selected);
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&amp;gt; g++ test.cpp -o &lt;span class="nb"&gt;test&lt;/span&gt; -O3 &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; ./test
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;Vector sum: 10000000, Time: &lt;span class="m"&gt;2684&lt;/span&gt; ticks
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;Array sum: 10000000, Time: &lt;span class="m"&gt;2122&lt;/span&gt; ticks
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;&amp;gt; ./test
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;&amp;gt; ./test 
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt;Vector sum: 10000000, Time: &lt;span class="m"&gt;4091&lt;/span&gt; ticks
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;6&lt;/span&gt;&lt;span class="cl"&gt;Array sum: 10000000, Time: &lt;span class="m"&gt;3686&lt;/span&gt; ticks
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;7&lt;/span&gt;&lt;span class="cl"&gt;&amp;gt; ./test
@@ -628,10 +688,10 @@ background: var(--card-background-selected);
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;看来不开启优化的时候，两个方法的差距还是比较明显的，而当开启优化之后，两种方法的差距并不大。然而，使用 &lt;code&gt;vector&lt;/code&gt; 最大的优势在于心智负担小，不用担心奇怪的内存问题，而且如果使用 &lt;code&gt;vector::at&lt;/code&gt; 方法还能自动进行边界检查，在遇到越界问题时会抛出异常，避免程序以奇怪的，错误的方式运行。&lt;/p&gt;
 &lt;h2 id="总结"&gt;总结
 &lt;/h2&gt;&lt;p&gt;希望这篇小短文能帮助你了解 &lt;code&gt;vector&lt;/code&gt; 的特点，或者打消你对 &lt;code&gt;vector&lt;/code&gt; 性能的顾虑。&lt;code&gt;vector&lt;/code&gt; 是用来说明 C++ &lt;strong&gt;Zero-overhead principle&lt;/strong&gt;（零成本抽象原则）的一个很好的例子。&lt;code&gt;vector&lt;/code&gt; 提供了一个动态数组的抽象，它会以最低成本来实现这个东西的特性，避免引入过多额外的性能开销，让调用者可以放心使用，不必担忧性能问题。对零成本抽象感兴趣可以查看 &lt;a class="link" href="https://en.cppreference.com/w/cpp/language/Zero-overhead_principle" target="_blank" rel="noopener"
-&gt;CppReference的介绍&lt;/a&gt;，里面介绍了这一原则的具体情况。&lt;/p&gt;
+ &gt;CppReference的介绍&lt;/a&gt;，里面介绍了这一原则的具体情况。&lt;/p&gt;
 &lt;p&gt;当然，每次使用新的特性，总是会引入一点点的开销。或许你会考虑，辛苦一下自己，让程序能再跑快点。这本身没什么问题，但是要指出的是，警惕提前优化。如果 &lt;code&gt;vector&lt;/code&gt; 并不是制约程序运行效率的关键部分（也就是所谓的&lt;em&gt;性能瓶颈&lt;/em&gt;），那么就先不要管它。当程序遇到了这个瓶颈，且只能通过优化数据结构才能提高性能时，再考虑把 &lt;code&gt;vector&lt;/code&gt; 修改为别的容器或者数据类型，这样做也许会更实际一些。&lt;/p&gt;
 &lt;p&gt;当然，如果这个小短文有什么问题，请直接指出来。本人也不是科班出身，写这篇笔记纯粹是记录一下学习过程。欢迎交流讨论。欢迎大佬拷打，动作轻一些就更好了。&lt;/p&gt;
-&lt;p&gt;那么最后，一如既往，祝您身心健康。&lt;/p&gt;</description></item><item><title>Phase Field: 相场模拟学习笔记 V</title><link>https://a-moment096.github.io/posts/pf_tutorial_5/</link><pubDate>Wed, 25 Dec 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/pf_tutorial_5/</guid><description>&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/Skadi.png" alt="Featured image of post Phase Field: 相场模拟学习笔记 V" /&gt;&lt;p&gt;&lt;em&gt;其实这节就是换成 Allen-Cahn 方程，然后多个变量而已，主要是俺不想实现 Voronoi 结构（逃&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;那么最后，一如既往，祝您身心健康。&lt;/p&gt;</description></item><item><title>Phase Field: 相场模拟学习笔记 V</title><link>https://a-moment096.github.io/posts/pf_tutorial_5/</link><pubDate>Wed, 25 Dec 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/pf_tutorial_5/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post Phase Field: 相场模拟学习笔记 V" /&gt;&lt;p&gt;&lt;em&gt;其实这节就是换成 Allen-Cahn 方程，然后多个变量而已，主要是俺不想实现 Voronoi 结构（逃&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id="简介"&gt;简介
 &lt;/h2&gt;&lt;p&gt;上一部分我们以调幅分解为基础讨论了浓度场在 Cahn-Hilliard 方程下的演化过程。对相场方法而言，另一个无法绕开的演化方程则是针对非保守场变量的 Allen-Cahn 方程。这一部分我们将对晶粒长大过程进行分析，了解 Allen-Cahn 方程并使用它进行晶粒长大过程的模拟。&lt;/p&gt;
 &lt;h2 id="晶粒长大"&gt;晶粒长大
@@ -661,33 +721,43 @@ $$&lt;p&gt;这里需要运用我们已经了解到的泛函导数的相关内容
 &lt;details&gt;&lt;summary&gt;关于 A-C 方程的一些碎碎念&lt;/summary&gt;另外，这个形式的方程非常常见，或者说，水非常深。几乎可以在物理学的许多领域见到这个方程，而对这个方程的描述都各有千秋。有人称其为 Landau–Khalatnikov 方程（描述磁性），有人称之为 Model A（界面动力学，[Theory of dynamic critical phenomena](https://doi.org/10.1103/RevModPhys.49.435)），还有一些奇奇怪怪的名称，但是这些文章几乎都没有对这个方程做出详细的解释。也许这些方程是从某些物理直觉中得到的？又或者这些这些方程有其更深刻的数学/物理背景，但是这些我也无从得知。&lt;/details&gt;
 &lt;h3 id="能量构造"&gt;能量构造
 &lt;/h3&gt;&lt;p&gt;本模拟使用的能量模型来自&lt;a class="link" href="https://doi.org/10.1016/S1359-6454%2896%2900200-5" target="_blank" rel="noopener"
-&gt;D. Fan 与 LQ. Chen 的文章&lt;/a&gt;，其构造如下：
+ &gt;D. Fan 与 LQ. Chen 的文章&lt;/a&gt;，其构造如下：
 &lt;/p&gt;
 $$
-\begin{align*}
-F &amp;= \int_\omega f_{bulk} + f_{int} \,\mathrm{d}\Omega;\\
-f_{bulk}\left(\eta_0,\eta_1,\cdots,\eta_N\right) &amp;= \sum_{i}^{N}\left( -\frac{A}{2}\eta_i^2 + \frac{B}{4}\eta_i^4 \right) + \sum_{i}^{N}\sum_{j\neq{}i}^{N}\eta_i^2\eta_j^2;\\
-f_{int}\left(\nabla\eta_0,\nabla\eta_1,\cdots,\nabla\eta_N\right) &amp;= \sum_{i}^{N}\frac{\kappa_i}{2} \left| \nabla \eta_i \right|^2.
-\end{align*}
+ \begin{align*}
+ F &amp;= \int_\omega f_{bulk} + f_{int} \,\mathrm{d}\Omega;\\
+ f_{bulk}\left(\eta_0,\eta_1,\cdots,\eta_N\right) &amp;= \sum_{i}^{N}\left( -\frac{A}{2}\eta_i^2 + \frac{B}{4}\eta_i^4 \right) + \sum_{i}^{N}\sum_{j\neq{}i}^{N}\eta_i^2\eta_j^2;\\
+ f_{int}\left(\nabla\eta_0,\nabla\eta_1,\cdots,\nabla\eta_N\right) &amp;= \sum_{i}^{N}\frac{\kappa_i}{2} \left| \nabla \eta_i \right|^2.
+ \end{align*}
 $$&lt;p&gt;其中的界面能项我们不再赘述，因为它就是上一部分介绍过的能量而已，只不过这里要加上所有序参量的贡献而已。我们重点放在体能上。和上次相比，体能的部分变化很大，但是也有一些熟悉的部分。我们把这个体能重新整理一下：
 &lt;/p&gt;
 $$
-\begin{align}
-f_{bulk}&amp;= \sum_{i}^{N}\left( -\frac{A}{2}\eta_i^2 + \frac{B}{4}\eta_i^4 \right) + \sum_{i}^{N}\sum_{j\neq{}i}^{N}\eta_i^2\eta_j^2\\
-&amp;=\sum_{i}^{N}\left( -\frac{A}{2}\eta_i^2 + \frac{B}{4}\eta_i^4 \right) + \sum_{i}^{N}\eta_i^2 \sum_{j\neq{}i}^{N} \eta_j^2\\
-&amp;=\sum_{i}^{N}\left(\left( -\frac{A}{2}\eta_i^2 + \frac{B}{4}\eta_i^4 \right) + \eta_i^2 \sum_{j\neq{}i}^{N} \eta_j^2\right)\\
-&amp;=\sum_{i}^{N}\left( \left(-\frac{A}{2} + \sum_{j\neq{}i}^{N} \eta_j^2\right) \eta_i^2 + \frac{B}{4}\eta_i^4 \right)\\
-\end{align}
+ \begin{align}
+ f_{bulk}&amp;= \sum_{i}^{N}\left( -\frac{A}{2}\eta_i^2 + \frac{B}{4}\eta_i^4 \right) + \sum_{i}^{N}\sum_{j\neq{}i}^{N}\eta_i^2\eta_j^2\\
+ &amp;=\sum_{i}^{N}\left( -\frac{A}{2}\eta_i^2 + \frac{B}{4}\eta_i^4 \right) + \sum_{i}^{N}\eta_i^2 \sum_{j\neq{}i}^{N} \eta_j^2\\
+ &amp;=\sum_{i}^{N}\left(\left( -\frac{A}{2}\eta_i^2 + \frac{B}{4}\eta_i^4 \right) + \eta_i^2 \sum_{j\neq{}i}^{N} \eta_j^2\right)\\
+ &amp;=\sum_{i}^{N}\left( \left(-\frac{A}{2} + \sum_{j\neq{}i}^{N} \eta_j^2\right) \eta_i^2 + \frac{B}{4}\eta_i^4 \right)\\
+ \end{align}
 $$&lt;p&gt;
 上面第二个等号是由于对 $j (j\neq i)$ 的求和的部分与 $i$ 无关，我们可以把 $\eta_i^2$ 从二重求和中提出来， 然后第三个等号中把对 $i$ 的求和的部分提取合并，最后第四个等号里提出 $\eta_i^2$，把 $\sum_{j\neq{}i}^{N} \eta_j^2$ 作为系数和 $-\dfrac{A}{2}$ 合并。现在我们把目光放在求和里面的这个，关于 $\eta_i$ 的多项式。为简单起见，我们设 $A = B = 1$。下面是这个函数在 $\sum_{j\neq{}i}^{N} \eta_j^2 = 0$ 时候， 即 方程(1) 的第一项的图像（当然，这个假设不够合理，但是我们可以先看看）。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/img/double_well.png"
-loading="lazy"
-alt="双势阱？"
+	
+	
+	loading="lazy"
+	
+		alt="双势阱？"
+	
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;是我们很熟系的双势阱，但是这里有一些问题：序参量实际上不能小于0，也不应该大于1。如果我们只关注 0 到 1 之间的值，不难发现现在这个能量的最低点处在 $\eta = 1$ 的地方。这很合理：在其余的所有序参量（我们简称所有的 j ，对应的本个序参量则为 i）都为 0 的情况下，或者说在没有任何 j 的点，i 占据该点是理所应当的。考虑到每个序参量都是平权的，这说明了这个方程是符合体相内部的热力学要求的。接下来我们考察当这个求和项不为 0 的情况。j 求和的值的变化范围我们先设为 0 到 2。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/img/a03.png"
-loading="lazy"
-alt="j 的和为0.3时的图像"
+	
+	
+	loading="lazy"
+	
+		alt="j 的和为0.3时的图像"
+	
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;可以看到，当 j 不为 0 时，结果也是合理的，这里 i 的值也不在 1 处取到最小值，而是在 0 到 1 之间的区域取到最小值了。感兴趣的话您可以自行尝试绘制这里的图像，然后调整这些值，观察序参量-能量曲线的最低点位置。当然，我们也可以使用更数学一些的方式来研究这里的最低点取值情况，不过图像方法更加直观一些就是了。最后来简单描述一下表达式 (1) 的物理意义：将每个参量都赋予一个类势阱的能量，然后通过第二项的交叉作用将这些能量结合在一起。第二项的二重和即是其他参量对本参量的影响。&lt;/p&gt;
 &lt;h3 id="相场演化方程与扩散方程之间的关系"&gt;相场演化方程与扩散方程之间的关系
@@ -836,42 +906,62 @@ $$&lt;p&gt;这个形式，熟悉吗？如果去掉第二项，那么这个方程
 &lt;h2 id="结果"&gt;结果
 &lt;/h2&gt;&lt;p&gt;和上次一样，这里就贴一下几张截图。&lt;/p&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style="text-align: center"&gt;&lt;/th&gt;
-&lt;th style="text-align: center"&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/img/modified_5.png"
-loading="lazy"
-alt="第5步"
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th style="text-align: center"&gt;&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/img/modified_5.png"
+	
+	
+	loading="lazy"
+	
+		alt="第5步"
+	
+	
 &gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/img/modified_25.png"
-loading="lazy"
-alt="第25步"
+ &lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/img/modified_25.png"
+	
+	
+	loading="lazy"
+	
+		alt="第25步"
+	
+	
 &gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;第5步&lt;/td&gt;
-&lt;td style="text-align: center"&gt;第25步&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/img/modified_75.png"
-loading="lazy"
-alt="第75步"
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;第5步&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;第25步&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/img/modified_75.png"
+	
+	
+	loading="lazy"
+	
+		alt="第75步"
+	
+	
 &gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/img/modified_100.png"
-loading="lazy"
-alt="第100步"
+ &lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/img/modified_100.png"
+	
+	
+	loading="lazy"
+	
+		alt="第100步"
+	
+	
 &gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;第75步&lt;/td&gt;
-&lt;td style="text-align: center"&gt;第150步&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;第75步&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;第150步&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;可以看到，随着时间推进，小晶粒（中间红色部分）被大晶粒（蓝色部分）不断吞并。而且根据步数，可以看到一开始由于两个晶粒的体积近似，演化速率并不大；随着不断的演化，两个晶粒的体积差距越来越大，演化速率也变大了。这符合我们对晶粒长大过程的认知，小晶粒会非常快速地消失，而较大的晶粒则会演化地比较慢。&lt;/p&gt;
 &lt;h2 id="结语"&gt;结语
@@ -879,15 +969,20 @@ alt="第100步"
 &lt;p&gt;和上一个部分一样，对模型和模拟过程更深层的理解是离不开调整参数进行测试的。这两个案例都是比较简单的案例，可调的参数并不多，而且在模拟一开始的时候就已经有了参考的参数了，也不是面对的实际存在的体系，填入的数字的物理意义并没有很大，或者说是比较唯结果论的一些数据。在面对实际物理体系的时候，填参数这块儿是模拟过程最折磨的部分了。如何精确地控制这些参数，让他们配合起来形成一个符合物理特性，而且也能跑出合理结果，这也许是相场方法最麻烦的点。参数的可解释性经常会和参数的数值特性相悖，而能平衡二者的结果几乎都是经过精心设计的。总而言之，多调参数总没错。&lt;/p&gt;
 &lt;p&gt;那么这就是这个教程（自称）系列的最后一部分了。相场方法作为一种材料模拟方法，能做的东西非常多，但是其本身也有一定的限制。它最大的限制就是所谓的扩散界面，这样的界面解决了微分方程不好解的问题，但是也让这个方法很容易滑向物理意义不明确的道路，也经常会因为界面的存在而导致一些模拟发生数值失稳（即便引入界面常常就是希望能解决数值失稳的）。这些特点注定让相场成为一门比较复杂的交叉学科：需要对材料科学有深入的理解，对材料的物理特性有清晰的物理图像，对数值方法有清晰的认知，明白各种方法之间的优缺点选择合适的方法，最后还需要有一定的程序能力来支撑实现模拟。这也许也是相场复杂的地方吧。&lt;/p&gt;
 &lt;p&gt;相场方法并不是一个很新的模拟方法，但是它还有很大的发展空间。不论是比较传统的调幅分解的深入研究模拟，还是使用相场法研究固体力学、电磁学、流体力学这些更复杂的外场，又或者是开发新的程序软件来帮助进行相场模拟，甚至是使用机器学习来辅佐相场计算，这些都是相场正在发展的方向。这个系列的教程希望能够提供相场方法最基础的部分，比如相场的数学基础，程序基础等等。这些内容应该能够成为学习相场过程中比较重要的工具，以便于学习和发展更深层的更复杂的理论/实践。希望阅读本教程的您可以从中有所收获。&lt;/p&gt;
-&lt;p&gt;那么就是这样，最后祝您生活愉快，科研顺利~&lt;/p&gt;</description></item><item><title>Phase Field: 相场模拟学习笔记 IV</title><link>https://a-moment096.github.io/posts/pf_tutorial_4/</link><pubDate>Tue, 24 Dec 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/pf_tutorial_4/</guid><description>&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/Skadi.png" alt="Featured image of post Phase Field: 相场模拟学习笔记 IV" /&gt;&lt;p&gt;&lt;em&gt;终于，真的要做相场模拟了。先从最软的柿子，调幅分解开始吧&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;那么就是这样，最后祝您生活愉快，科研顺利~&lt;/p&gt;</description></item><item><title>Phase Field: 相场模拟学习笔记 IV</title><link>https://a-moment096.github.io/posts/pf_tutorial_4/</link><pubDate>Tue, 24 Dec 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/pf_tutorial_4/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post Phase Field: 相场模拟学习笔记 IV" /&gt;&lt;p&gt;&lt;em&gt;终于，真的要做相场模拟了。先从最软的柿子，调幅分解开始吧&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id="简介"&gt;简介
 &lt;/h2&gt;&lt;p&gt;所以，经过前面三个部分的学习，利用 C++ 进行相场模拟的所有前置几乎全部获得了：公式推导，编程基础，基础算法等，几乎全都拿到手了。这部分开始，我们就正式开始用 C++ 实现相场模拟。我们先从一个很经典且简单的例子开始：A-B 合金的调幅分解。&lt;/p&gt;
 &lt;h2 id="调幅分解"&gt;调幅分解
 &lt;/h2&gt;&lt;p&gt;所以什么是调幅分解？它有什么特殊的地方？为什么相场法的第一个例子是算这么个有点陌生的东西？我们一个一个来解答这些问题。&lt;/p&gt;
 &lt;p&gt;首先值得明确的是，调幅分解是一类相变过程，且这类过程非常适合使用相场法来计算其演化过程。作为相变，我们自然关心其相图和自由能曲线的情况。下面是一副调幅分解的示意图：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/img/energy_pd.jpg"
-loading="lazy"
-alt="调幅分解的相图与自由能曲线"
+	
+	
+	loading="lazy"
+	
+		alt="调幅分解的相图与自由能曲线"
+	
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;从图上可以看到，调幅分解下的自由能曲线十分特殊，呈现一种&lt;em&gt;双势阱&lt;/em&gt;的形貌。再观察这里的相图和自由能曲线，可以看到虚线部分对应于自由能曲线中比较平坦的区域。没错，这个点即为所谓的拐点（Spinodal Point），这也是调幅分解的英文 Spinodal Decomposition 中 “Spinodal” 的来由。由于调幅分解自由能曲线的特殊性，当自由能对成分的二阶偏导小于 0 时，如果成分正好出于混溶间隙里调幅线内，那么任何一点微小的成分扰动都会导致整个体系的稳定性被破坏，产生的自由能差（即所谓的相变驱动力）将增大并将体系演化至自由能曲线中“谷底”的位置，并形成所谓调幅分解的形貌。&lt;/p&gt;
 &lt;p&gt;调幅分解最特殊的地方在于，相场法这个方法几乎可以说是起源于调幅分解过程的。观察调幅分解的自由能曲线，它描述了一个中间态物质由于自身能量最小化的要求从而分散为两个不同组分的物质的过程。这个能量曲线将会是相场法这一计算方法的核心之一，意义在于在给出体系的体自由能描述的情况下，体自由能的最小化将会推动整个体系发生演化。Cahn 和 Hilliard 两人在 Ginzburg-Landau 自由能模型的基础上建立了用来描述调幅分解过程的自由能泛函，并推导出了对这个泛函的演化方程，这个演化方程即为所谓的 Cahn-Hilliard 方程。因此，从调幅分解入手开始了解相场法也许是最理想的选择了。&lt;/p&gt;
@@ -903,8 +998,13 @@ f_{int}\left(\nabla c \right) &amp;= \kappa \left|\nabla c \right| ^2. \\
 $$&lt;p&gt;
 其中，$F$ 即为体系的总能量，由两部分的能量密度积分构成，第一部分为体自由能 $f_{bulk}$，其图像为一个双势阱：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/img/AB_free_energy.png"
-loading="lazy"
-alt="体自由能密度函数图像，其中模型参数选择 A = 1"
+	
+	
+	loading="lazy"
+	
+		alt="体自由能密度函数图像，其中模型参数选择 A = 1"
+	
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;而第二部分则为界面能密度部分，这里采用界面能梯度内积的值。这个能量构造保证了体系有演化的趋势（由体自由能密度驱动），又保证了体系中存在稳定的相界面（由界面能提供，在存在界面区域（梯度不为 0 ）时提高能量从而迫使物质不倾向于汇集在界面处）。这样的总能 $F$ 构造是一类非常经典的构造方法，而能量密度的具体表达式则需要根据体系做更改。&lt;/p&gt;
 &lt;h3 id="演化方程"&gt;演化方程
@@ -924,8 +1024,8 @@ $$
 J = - \nabla \frac{\delta F}{\delta c}.
 $$&lt;p&gt;
 但是考虑到体系内可能存在多种物质，这些物质对化学势均有贡献，反过来所有的化学势都会对某一单一成分组元的演化情况产生影响，因此应该考虑所有的化学势的影响。然后由于不同物质的化学势贡献存在不同，我们使用 $M_{ij}$ 来对这些贡献进行配平。由此，我们便拼凑出了上面的 Cahn-Hilliard 方程。上面的分析和推导过程参考了 &lt;a class="link" href="http://dx.doi.org/10.3934/era.2022143" target="_blank" rel="noopener"
-&gt;这篇 Review&lt;/a&gt; 和 &lt;a class="link" href="https://mogadalai.wordpress.com/2008/09/13/spinodal-decomposition-and-its-modelling-using-cahn-hilliard-equation/" target="_blank" rel="noopener"
-&gt;这篇博文&lt;/a&gt;。&lt;/p&gt;
+ &gt;这篇 Review&lt;/a&gt; 和 &lt;a class="link" href="https://mogadalai.wordpress.com/2008/09/13/spinodal-decomposition-and-its-modelling-using-cahn-hilliard-equation/" target="_blank" rel="noopener"
+ &gt;这篇博文&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;那么，顺着这个思路，要是不要求物质守恒，那么最简形式是什么样的呢？答案已经呼之欲出了，那就是下一节会提到的 Allen-Cahn 方程。也许有人发现，可以把这两个方程与扩散方程做比较。这些内容放在下一个部分吧，要不然没字数水了（）&lt;/p&gt;
 &lt;h2 id="问题分析"&gt;问题分析
 &lt;/h2&gt;&lt;p&gt;我们希望能模拟出调幅分解的过程，在二维条件下可以创建一个模拟域，规定其长宽后在其上每一个点赋予一个浓度 $c$，然后在每个点随机添加噪音来让初始浓度出现一个微小波动。随后我们便可以根据前面所列出的能量以及演化方程来演化该模拟域。考虑到该模拟需要保持物质守恒，我们采用周期性边界条件，即让最右端的点在取其右侧的点的时候反取到最左端的点，而最底端的点取其下方点时取到最上端的点，等。我们先从浓度 $c = 0.4$ 开始，考虑噪音大小为 $0.001$，处理边界条件时使用下标运算来保证获取的是在周期边界条件下的点。&lt;/p&gt;
@@ -1103,42 +1203,62 @@ $$&lt;p&gt;根据这个公式，我们需要先计算浓度的 Laplacian，然�
 &lt;h2 id="结果"&gt;结果
 &lt;/h2&gt;&lt;p&gt;输出的 &lt;code&gt;vtk&lt;/code&gt; 文件需要使用 &lt;em&gt;Paraview&lt;/em&gt; 进行可视化。如果程序无误，那么执行程序后输出的结果将会保存在程序所在文件夹下新创建的子文件夹 &lt;code&gt;result&lt;/code&gt; 中，里面应该是若干个 &lt;code&gt;vtk&lt;/code&gt; 文件。使用 Paraview 打开这些文件之后，则能看到整个体系的演化。这里贴出一些截图。&lt;/p&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style="text-align: center"&gt;&lt;/th&gt;
-&lt;th style="text-align: center"&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/img/Spinodal_5.png"
-loading="lazy"
-alt="alt text"
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th style="text-align: center"&gt;&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/img/Spinodal_5.png"
+	
+	
+	loading="lazy"
+	
+		alt="alt text"
+	
+	
 &gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/img/Spinodal_25.png"
-loading="lazy"
-alt="alt text"
+ &lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/img/Spinodal_25.png"
+	
+	
+	loading="lazy"
+	
+		alt="alt text"
+	
+	
 &gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;第5步&lt;/td&gt;
-&lt;td style="text-align: center"&gt;第25步&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/img/Spinodal_75.png"
-loading="lazy"
-alt="alt text"
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;第5步&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;第25步&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/img/Spinodal_75.png"
+	
+	
+	loading="lazy"
+	
+		alt="alt text"
+	
+	
 &gt;&lt;/td&gt;
-&lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/img/Spinodal_150.png"
-loading="lazy"
-alt="alt text"
+ &lt;td style="text-align: center"&gt;&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/img/Spinodal_150.png"
+	
+	
+	loading="lazy"
+	
+		alt="alt text"
+	
+	
 &gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;第75步&lt;/td&gt;
-&lt;td style="text-align: center"&gt;第150步&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;第75步&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;第150步&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id="总结"&gt;总结
 &lt;/h2&gt;&lt;p&gt;这部分内容相对而言应该是比较少的，因为只要分析好了所使用的能量模型，理解使用的演化方程之后，剩下的工作几乎全都是不断调试，根据调试的结果来观察不同的参数会对模拟结果造成什么样的影响。这里提供几个调参思路吧：&lt;/p&gt;
@@ -1150,7 +1270,7 @@ alt="alt text"
 &lt;li&gt;调整界面能参数。越大的界面能参数会导致越宽的相界面。而该参数太小时可能会发生数值不稳定的现象&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;可以参考这些描述调参，观察参数的影响。调参几乎是相场模拟中必不可少的一环。&lt;/p&gt;
-&lt;p&gt;那么，我们就下一节见吧。&lt;/p&gt;</description></item><item><title>Phase Field: 相场模拟学习笔记 III</title><link>https://a-moment096.github.io/posts/pf_tutorial_3/</link><pubDate>Mon, 23 Dec 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/pf_tutorial_3/</guid><description>&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/Skadi.png" alt="Featured image of post Phase Field: 相场模拟学习笔记 III" /&gt;&lt;p&gt;&lt;em&gt;接上一节内容, 这节会简单介绍 C++ 的一些语法知识, 然后用 C++ 实现一维传热方程的模拟。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;那么，我们就下一节见吧。&lt;/p&gt;</description></item><item><title>Phase Field: 相场模拟学习笔记 III</title><link>https://a-moment096.github.io/posts/pf_tutorial_3/</link><pubDate>Mon, 23 Dec 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/pf_tutorial_3/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post Phase Field: 相场模拟学习笔记 III" /&gt;&lt;p&gt;&lt;em&gt;接上一节内容, 这节会简单介绍 C++ 的一些语法知识, 然后用 C++ 实现一维传热方程的模拟。&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id="c一门高效的适宜科学计算的程序语言"&gt;C++：一门高效的，适宜科学计算的程序语言
 &lt;/h2&gt;&lt;p&gt;C++ 是一门经典的编程语言，于 1979 年由 Bjarne Stroustrup 设计，最初目的是为了成为更好的 C 语言，而后随着自身发展，成为了一门和 C 语言有许多相似之处，而又截然不同的一门语言。 C++ 支持多种编程范式，包括但不限于面向过程，面向对象，函数式，模板元编程等等。 其丰富的生态，高效的算法库以及&lt;em&gt;零成本抽象&lt;/em&gt;的理念让 C++ 极为适合进行各类科学运算。此外，C++ 的语法较为亲民，其多种编程范式也便于不同背景的开发者上手，故我们在这里引入 C++ 作为后续计算使用的程序语言。&lt;/p&gt;
 &lt;h3 id="c-简介"&gt;C++ 简介
@@ -1235,7 +1355,7 @@ alt="alt text"
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// i will be 888 here
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// Below is an error:
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// j = 666;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// j = 666; 
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="控制流循环和判断语句"&gt;控制流，循环和判断语句
 &lt;/h3&gt;&lt;p&gt;首先介绍循环语句。这里仅介绍 &lt;code&gt;for&lt;/code&gt; 循环与 &lt;code&gt;while&lt;/code&gt; 循环。下面是使用 &lt;code&gt;for&lt;/code&gt; 和 &lt;code&gt;while&lt;/code&gt; 循环的例子。&lt;/p&gt;
@@ -1305,7 +1425,7 @@ alt="alt text"
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这里我们首先声明了一个变量 &lt;code&gt;i&lt;/code&gt;，然后创建了一个引用 &lt;code&gt;ri&lt;/code&gt; 作为 &lt;code&gt;i&lt;/code&gt; 的别名。这样一来，我们对 &lt;code&gt;ri&lt;/code&gt; 所做出的&lt;em&gt;任何操作&lt;/em&gt;（应该）都是相当于对 &lt;code&gt;i&lt;/code&gt; 本身所做出的。当 &lt;code&gt;i&lt;/code&gt; 被销毁时，变量 &lt;code&gt;i&lt;/code&gt; 和它的引用 &lt;code&gt;ri&lt;/code&gt; 会一起消失。和指针相比，引用显然要安全的多。但是与此同时，引用也有一些限制：引用不能改变它引用谁。一旦引用被创建，引用本身和引用所指向的内容就绑定死了。此外，由于引用&lt;em&gt;别名&lt;/em&gt;的特性，引用不可能存在空引用，这也就要求了引用的“声明”必须立刻对其初始化，且一经初始化就不可改变。所以这里不应该使用“声明”，“赋值”等描述这一过程，最恰当的描述即为“初始化”。&lt;/p&gt;
 &lt;p&gt;值得注意的时，引用，和指针类似，也可以作为函数参数传入函数内部。当作为函数参数把引用传入函数内部时，引用的“别名”特点依旧保持，函数内对参数的改变依旧会反映在函数外部。一种理解方式是，函数参数列表的默认传参方式是把参数的值复制一份，生成一个临时变量，然后使用该变量；指针传参时把指针的地址复制了一份，然后使用该临时地址可以在不改变地址的情况下改变地址内部的数据；引用传参时，创建了一个临时的引用，由于引用的特性，函数对引用的影响就相当于对变量本身的影响。&lt;/p&gt;
 &lt;p&gt;总之，引用在 C++ 中是更加推荐的使用方式。当然，引用也有别的限制。引用由于终究是变量的“别名”，不会改变变量的内存布局，所以不存在“引用数组”这一数据结构。同时，也不会出现引用的引用，也不会有指针的引用。这主要是因为，引用并不是实际的对象，不会占据内存，因此也没有对应的地址（参考 &lt;a class="link" href="https://stackoverflow.com/questions/1164266/why-are-arrays-of-references-illegal" target="_blank" rel="noopener"
-&gt;Stack Overflow 上的回答&lt;/a&gt;）。&lt;/p&gt;
+ &gt;Stack Overflow 上的回答&lt;/a&gt;）。&lt;/p&gt;
 &lt;p&gt;最后，有人声称引用是必须初始化的常量指针。这一点见仁见智，个人认为可以这么去理解行为，但二者不能划等号，具体实现需要根据不同的编译器去考虑。&lt;/p&gt;
 &lt;h3 id="类模板stl"&gt;类，模板，STL
 &lt;/h3&gt;&lt;p&gt;前面的部分几乎涵盖了所有 C++ 的基础语法。这里再做出一些补充，比如 C++ 的面向对象（类），模板和标准模板库。&lt;/p&gt;
@@ -1375,10 +1495,10 @@ $$ \dfrac{\partial T}{\partial t} = \mu \dfrac{\partial^2 T}{\partial x ^2},$$&l
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 6&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;vector&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;Nx&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;128&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;Nx&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;128&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; 
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;double&lt;/span&gt; &lt;span class="n"&gt;dx&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;1.0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;double&lt;/span&gt; &lt;span class="n"&gt;dt&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0.2&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;double&lt;/span&gt; &lt;span class="n"&gt;mu&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;1.0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;double&lt;/span&gt; &lt;span class="n"&gt;mu&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;1.0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; 
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;12&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;nstep&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;20000&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="c1"&gt;// total iterate time
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;13&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;pstep&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;200&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="c1"&gt;// print result every 200 step
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;14&lt;/span&gt;&lt;span class="cl"&gt;
@@ -1444,8 +1564,13 @@ $$ \dfrac{\partial T}{\partial t} = \mu \dfrac{\partial^2 T}{\partial x ^2},$$&l
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;74&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这里用到了一些技巧，在边界判断处使用下标运算是否越界来判断是否处于边界处，以及使用了 &lt;code&gt;&amp;lt;chrono&amp;gt;&lt;/code&gt; 库来监测程序运行时间。在成功运行并且用输出的 &lt;code&gt;csv&lt;/code&gt; 文件绘制曲线图后结果大致如下：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/img/heat_transfer_result.png"
-loading="lazy"
-alt="传热方程求解结果"
+	
+	
+	loading="lazy"
+	
+		alt="传热方程求解结果"
+	
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;可以看到这个结果还是比较符合预期的。&lt;/p&gt;
 &lt;h2 id="结语"&gt;结语

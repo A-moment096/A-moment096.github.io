@@ -1,156 +1,197 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Server on A Moment's Rest</title><link>https://a-moment096.github.io/tags/server/</link><description>Recent content in Server on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 19 Jan 2026 06:28:39 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/server/index.xml" rel="self" type="application/rss+xml"/><item><title>搭建 FRP 服务</title><link>https://a-moment096.github.io/posts/frp_depoly/</link><pubDate>Wed, 23 Jul 2025 13:26:16 +0800</pubDate><guid>https://a-moment096.github.io/posts/frp_depoly/</guid><description>&lt;img src="https://a-moment096.github.io/posts/frp_depoly/BagPipe.jpg" alt="Featured image of post 搭建 FRP 服务" /&gt;&lt;p&gt;&lt;em&gt;怎么连接个服务器还得先用 ToDesk 连上个 Windows 电脑，再从这个电脑上 ssh 进服务器呀！？受不鸟，自己搭个 FRP 服务吧&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Server on A Moment's Rest</title><link>https://a-moment096.github.io/tags/server/</link><description>Recent content in Server on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Sun, 15 Feb 2026 11:05:58 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/server/index.xml" rel="self" type="application/rss+xml"/><item><title>搭建 FRP 服务</title><link>https://a-moment096.github.io/posts/frp_depoly/</link><pubDate>Wed, 23 Jul 2025 13:26:16 +0800</pubDate><guid>https://a-moment096.github.io/posts/frp_depoly/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post 搭建 FRP 服务" /&gt;&lt;p&gt;&lt;em&gt;怎么连接个服务器还得先用 ToDesk 连上个 Windows 电脑，再从这个电脑上 ssh 进服务器呀！？受不鸟，自己搭个 FRP 服务吧&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;图为可爱的风笛小姐，据不可靠消息，应该是来自于画师 &lt;a class="link" href="https://weibo.com/u/5979033109" target="_blank" rel="noopener"
-&gt;Liyu黎&lt;/a&gt; 老师画的 2022 音律联觉的贺图。既然如此，就配一首风笛小姐的个人 EP：《故乡的风》吧。&lt;/em&gt;&lt;/p&gt;
+ &gt;Liyu黎&lt;/a&gt; 老师画的 2022 音律联觉的贺图。既然如此，就配一首风笛小姐的个人 EP：《故乡的风》吧。&lt;/em&gt;&lt;/p&gt;
+
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
 &lt;style type="text/css"&gt;
 [data-scheme="dark"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
-border-bottom-color: var(--card-separator-color);
+ border-bottom-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
-border-color: var(--card-separator-color);
+ border-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-body {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info {
-border-top-color: var(--card-background);
+ border-top-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
-color: var(--card-text-color-tertiary);
+ color: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
-background-color: var(--card-separator-color);
+ background-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
-background-color: var(--accent-color);
+ background-color: var(--accent-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li {
-color: var(--card-text-color-main);
-border-top-color: var(--card-separator-color);
+ color: var(--card-text-color-main);
+ border-top-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc {
-text-shadow: -1px -1px 0 var(--body-background);
+ text-shadow: -1px -1px 0 var(--body-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:before {
-background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+ background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:after {
-background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc p {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
+ 
 [data-scheme="light"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="light"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
 &lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
+
+
 &lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/album?id=86572348" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
 &lt;h2 id="引子为什么要跳板机"&gt;引子：为什么要跳板机
 &lt;/h2&gt;&lt;p&gt;为了方便提交任务，做相场计算，组里配了一台计算服务器，一个管理节点+两个计算节点，劲呀！然而坏消息是：组里没有多余的空间放置服务器了，只能托管到另一个老师那里。&lt;/p&gt;
 &lt;p&gt;OK，没什么关系，给服务器配个公网IP，那不就和在自己组里一样咯？可是实际上并没有那样的好事，公网IP也不是想申请就申请的。课题组内貌似对网络配置这块不了解，也不打算了解，所以就只能交给装机的小哥处理。而他和那边老师协商后，决定采用的方案是：使用 ToDesk 连接到和服务器处于同一公网下的 Windows 电脑，再用那个 Windows 电脑 SSH 到服务器上。整体过程大概是这样的：&lt;/p&gt;
 &lt;figure class="mermaid-container"&gt;
-&lt;div class="mermaid"&gt;graph LR
-subgraph "内网环境1"
-Client[客户端&lt;br/&gt;我的电脑]
-end
-subgraph "内网环境2"
-OtherUser[其他用户]
-end
-subgraph "内网环境3"
-Windows[Windows电脑&lt;br/&gt;ToDesk远控]
-Compute[计算服务器&lt;br/&gt;无公网IP]
-end
-Client --&gt;|ToDesk远控| Windows
-Windows --&gt;|局域网SSH| Compute
-OtherUser -.-&gt;|❌&lt;br/&gt;无法连接| Windows
-classDef public fill:#e1f5fe
-classDef private fill:#fff3e0
-classDef deprecated fill:#ffebee
-classDef forbidden stroke:#f44336,stroke-width:2px,stroke-dasharray:5
-class Client public
-class Compute private
-class Windows deprecated
-class OtherUser forbidden
-&lt;/div&gt;
-&lt;figcaption&gt;通过 Windows ToDesk 跳板连接示意图&lt;/figcaption&gt;
+ &lt;div class="mermaid"&gt;graph LR
+ subgraph "内网环境1"
+ Client[客户端&lt;br/&gt;我的电脑]
+ end
+
+ subgraph "内网环境2"
+ OtherUser[其他用户]
+ end
+
+ subgraph "内网环境3"
+ Windows[Windows电脑&lt;br/&gt;ToDesk远控]
+ Compute[计算服务器&lt;br/&gt;无公网IP]
+ end
+ 
+ Client --&gt;|ToDesk远控| Windows
+ Windows --&gt;|局域网SSH| Compute
+ OtherUser -.-&gt;|❌&lt;br/&gt;无法连接| Windows
+ 
+ classDef public fill:#e1f5fe
+ classDef private fill:#fff3e0
+ classDef deprecated fill:#ffebee
+ classDef forbidden stroke:#f44336,stroke-width:2px,stroke-dasharray:5
+ 
+ class Client public
+ class Compute private
+ class Windows deprecated
+ class OtherUser forbidden
+ &lt;/div&gt;
+ &lt;figcaption&gt;通过 Windows ToDesk 跳板连接示意图&lt;/figcaption&gt;
 &lt;/figure&gt;&lt;p&gt;这个方案，说实在的感觉很蠢。一个服务器，搭载着多用户操作系统，竟然必须用 Windows 做跳板然后跳过去！？这不就意味着，如果有两个人同时使用服务器，我就会和对方产生会话冲突？而且如果有人盯着那台 Windows 电脑的屏幕，我的操作不就暴露地清清楚楚了！？怎么想都是很愚蠢的做法，不过也能理解：这应该（也许）是一个临时的解决方案。而后面谁来解决这个问题呢？&lt;/p&gt;
 &lt;p&gt;那必须是我了！我们可以搭建一个 FRP（快速反向代理） 服务，让流量通过一个跳板服务器转发到计算服务器上，不再蠢蠢地堵在同一台 Windows 设备上。这样一来，每个人都可以自己自由地连接上这个服务器，只需要把流量交给反代服务器（跳板服务器），让它处理转发端口之类的，就可以啦。搞好之后的示意图大概是：&lt;/p&gt;
 &lt;figure class="mermaid-container"&gt;
-&lt;div class="mermaid"&gt;graph LR
-subgraph "内网环境1"
-Client[客户端&lt;br/&gt;我的电脑]
-end
-subgraph "内网环境2"
-OtherUser[其他用户]
-end
-subgraph "外网环境"
-FRPServer[FRP服务端&lt;br/&gt;公网IP中转]
-end
-subgraph "内网环境3"
-Compute[计算服务器&lt;br/&gt;无公网IP]
-end
-Client --&gt;|SSH| FRPServer
-OtherUser --&gt;|SSH| FRPServer
-FRPServer --&gt;|FRP客户端&lt;br/&gt;反向代理| Compute
-classDef public fill:#e1f5fe,stroke:#039be5
-classDef private fill:#fff3e0,stroke:#fb8c00
-classDef server fill:#e8f5e9,stroke:#43a047,stroke-width:2px
-class Client,OtherUser public
-class Compute private
-class FRPServer server
-&lt;/div&gt;
-&lt;figcaption&gt;FRP 内网穿透网络架构示意图&lt;/figcaption&gt;
+ &lt;div class="mermaid"&gt;graph LR
+ subgraph "内网环境1"
+ Client[客户端&lt;br/&gt;我的电脑]
+ end
+ 
+ subgraph "内网环境2"
+ OtherUser[其他用户]
+ end
+
+ subgraph "外网环境"
+ FRPServer[FRP服务端&lt;br/&gt;公网IP中转]
+ end
+ 
+ subgraph "内网环境3"
+ Compute[计算服务器&lt;br/&gt;无公网IP]
+ end
+
+ Client --&gt;|SSH| FRPServer
+ OtherUser --&gt;|SSH| FRPServer
+ FRPServer --&gt;|FRP客户端&lt;br/&gt;反向代理| Compute
+ 
+ classDef public fill:#e1f5fe,stroke:#039be5
+ classDef private fill:#fff3e0,stroke:#fb8c00
+ classDef server fill:#e8f5e9,stroke:#43a047,stroke-width:2px
+ 
+ class Client,OtherUser public
+ class Compute private
+ class FRPServer server
+ &lt;/div&gt;
+ &lt;figcaption&gt;FRP 内网穿透网络架构示意图&lt;/figcaption&gt;
 &lt;/figure&gt;&lt;p&gt;嗯哼，那就开始吧~&lt;/p&gt;
 &lt;h2 id="搭建也许需要个-tldr"&gt;搭建：也许需要个 TL;DR
 &lt;/h2&gt;&lt;p&gt;我觉得也许应该先写一下 FRP 技术是什么以及介绍一下这中间的网络通信过程是什么样的，然而我相信，来看这个博文的朋友应该都是需要一份切实可行的执行过程的。所以下面的第一步是：&lt;/p&gt;
 &lt;h3 id="tldr"&gt;TL;DR
 &lt;/h3&gt;&lt;p&gt;&lt;em&gt;下面的流程大量参考自开源教程：&lt;a class="link" href="https://github.com/CNFlyCat/UsefulTutorials/" target="_blank" rel="noopener"
-&gt;Frp内网穿透搭建教学&lt;/a&gt;，内容非常详细，感觉这里不清楚的可以去看看&lt;/em&gt;&lt;/p&gt;
+ &gt;Frp内网穿透搭建教学&lt;/a&gt;，内容非常详细，感觉这里不清楚的可以去看看&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;下面是我的解决过程：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;租个服务器：在阿里云用学生认证白嫖三个月的便宜服务器，有个公网IP就行，待会儿会用这个IP&lt;/li&gt;
@@ -198,22 +239,25 @@ class FRPServer server
 &lt;h3 id="流程图"&gt;流程图
 &lt;/h3&gt;&lt;p&gt;&lt;del&gt;这个人在尝试过 Mermaid 之后就什么都想画个图了，原谅他吧。&lt;/del&gt;&lt;/p&gt;
 &lt;figure class="mermaid-container"&gt;
-&lt;div class="mermaid"&gt;flowchart TD
-B[使用ToDesk连接服务器\n获取公网IP：curl ifconfig.me`]
-B --&gt; C[下载frp工具\nwget/curl下载压缩包]
-C --&gt; D[解压frp压缩包\ntar xzf命令]
-D --&gt; E[配置frpc.toml\n设置serverAddr/serverPort等参数]
-E --&gt; F[启动frpc客户端\n./frpc -c ./frpc.toml]
-A[租用阿里云服务器\n获取公网IP] --&gt; H[配置frps.toml\n仅设置bindPort=7000]
-H --&gt; I[启动frps服务端\n./frps -c ./frps.toml]
-F --&gt; J[连接测试]
-I --&gt; J
-J --&gt; K[第三台电脑测试\nssh username@公网IP -p 6000]
-style A fill:#f9f,stroke:#333
-style B fill:#f9f,stroke:#333
-style K fill:#bbf,stroke:#333
-&lt;/div&gt;
-&lt;figcaption&gt;&lt;/figcaption&gt;
+ &lt;div class="mermaid"&gt;flowchart TD
+ B[使用ToDesk连接服务器\n获取公网IP：curl ifconfig.me`]
+ B --&gt; C[下载frp工具\nwget/curl下载压缩包]
+ C --&gt; D[解压frp压缩包\ntar xzf命令]
+ D --&gt; E[配置frpc.toml\n设置serverAddr/serverPort等参数]
+ E --&gt; F[启动frpc客户端\n./frpc -c ./frpc.toml]
+ 
+ A[租用阿里云服务器\n获取公网IP] --&gt; H[配置frps.toml\n仅设置bindPort=7000]
+ H --&gt; I[启动frps服务端\n./frps -c ./frps.toml]
+ 
+ F --&gt; J[连接测试]
+ I --&gt; J
+ J --&gt; K[第三台电脑测试\nssh username@公网IP -p 6000]
+ 
+ style A fill:#f9f,stroke:#333
+ style B fill:#f9f,stroke:#333
+ style K fill:#bbf,stroke:#333
+ &lt;/div&gt;
+ &lt;figcaption&gt;&lt;/figcaption&gt;
 &lt;/figure&gt;&lt;p&gt;&lt;del&gt;（感觉上面的流程描述还是不如图清晰呀，还是图好）&lt;/del&gt;&lt;/p&gt;
 &lt;p&gt;所以，大概就是这样啦。如果你是误打误撞进了这个博客，正好想搭建一个 FRP 服务，上面的内容应该就足够啦。希望可以帮到你~&lt;/p&gt;
 &lt;h2 id="解说环节"&gt;解说环节
@@ -222,30 +266,33 @@ style K fill:#bbf,stroke:#333
 &lt;/h3&gt;&lt;p&gt;当遇到一个奇怪的，有着英文缩写的概念时，最应该从这个缩写的含义来展开。FRP，全称 Fast Reverse Proxy，也就是 “快速反向代理”。也许有人要问了，什么是代理，什么是反向代理，什么又是 “快速反向代理”？&lt;/p&gt;
 &lt;p&gt;很可惜，我也是超级小白，只能斗胆分享一下自己的看法。代理这个词，一听就知道大概是什么样的过程：代替某个东西来受理某项业务。实际上在我的理解里，就是这么回事。不过在谈 “反向代理” 前，还是先聊聊可能大家更熟一些的 &lt;em&gt;正向代理&lt;/em&gt; 吧。它是指把流量交给某个服务，让所有服务的流量都从这里出去。大概就是：&lt;/p&gt;
 &lt;figure class="mermaid-container"&gt;
-&lt;div class="mermaid"&gt;graph TB
-%% 正向代理
-subgraph "正向代理"
-User1[客户端] --&gt;|"1. 主动配置代理
-(如浏览器设置)"| FProxy[正向代理服务器]
-FProxy --&gt;|"2. 代访互联网"| Internet[目标网站]
-end
-classDef proxy fill:#c8e6c9,stroke:#4caf50
-class FProxy,RProxy proxy
-&lt;/div&gt;
-&lt;figcaption&gt;正向代理示意图&lt;/figcaption&gt;
+ &lt;div class="mermaid"&gt;graph TB
+ %% 正向代理
+ subgraph "正向代理"
+ User1[客户端] --&gt;|"1. 主动配置代理
+ (如浏览器设置)"| FProxy[正向代理服务器]
+ FProxy --&gt;|"2. 代访互联网"| Internet[目标网站]
+ end
+
+ classDef proxy fill:#c8e6c9,stroke:#4caf50
+ class FProxy,RProxy proxy
+ &lt;/div&gt;
+ &lt;figcaption&gt;正向代理示意图&lt;/figcaption&gt;
 &lt;/figure&gt;&lt;p&gt;这里正向代理服务器就是中间的一层马甲，代替客户端进行访问，访问后再把内容反传给客户端。这样一来，目标网站就不太容易知道代理服务器的背后是谁，形成了一定的匿名性。&lt;/p&gt;
 &lt;p&gt;那么反向代理呢？与正向代理正好相反，正向代理是由代理服务器做客户端的马甲，而反向代理则是让代理服务器给目标服务器打工。反代服务器会接收到客户端的请求再告诉服务端，反代服务器会负责把内容转发到对应的位置，交给服务端，而服务端后面要与客户端通信，还是得走反代服务器。图形表示的话就是这样的：&lt;/p&gt;
 &lt;figure class="mermaid-container"&gt;
-&lt;div class="mermaid"&gt;graph TB
-%% 反向代理
-subgraph "反向代理"
-User2[客户端] --&gt;|"1. 直接访问"| RProxy[反向代理服务器]
-RProxy --&gt;|"2. 转发给内网"| Backend[后端服务器]
-end
-classDef proxy fill:#c8e6c9,stroke:#4caf50
-class FProxy,RProxy proxy
-&lt;/div&gt;
-&lt;figcaption&gt;反向代理示意图&lt;/figcaption&gt;
+ &lt;div class="mermaid"&gt;graph TB
+
+ %% 反向代理
+ subgraph "反向代理" 
+ User2[客户端] --&gt;|"1. 直接访问"| RProxy[反向代理服务器]
+ RProxy --&gt;|"2. 转发给内网"| Backend[后端服务器]
+ end
+
+ classDef proxy fill:#c8e6c9,stroke:#4caf50
+ class FProxy,RProxy proxy
+ &lt;/div&gt;
+ &lt;figcaption&gt;反向代理示意图&lt;/figcaption&gt;
 &lt;/figure&gt;&lt;p&gt;也就是说，正向代理的情况下，目标网站只知道有个服务器在访问它；反向代理情况下，客户端不直接连到后端服务器，而是直接连接到反代服务器上。我们的需求，是让自己的电脑能跨过计算服务器的内网屏障，用 SSH 连接上去。因此，我们要做的是让服务器想办法把我的请求告诉计算服务器，也就是采用反向代理，让反代服务器从一个端口接收我的请求流量，然后走另一个端口，把流量转发给计算服务器负责监听 SSH 请求的端口，就可以了。&lt;/p&gt;
 &lt;p&gt;那么 “快速反向代理” 又是啥？就我浅薄的认知而言，“反向代理” 不是一个特别特殊的东西，很多人都可以尝试自己的实现方式。而 “FRP” 是其中一个非常受欢迎的选择。至于 “快速”， 应该是说它速度快？由于我只知道这么一个，所以咱们还是不要深究了。&lt;/p&gt;
 &lt;p&gt;当你下载好 FRP 的包后，你应该会看到里面没有多少文件。两个可执行文件：一个 &lt;code&gt;frpc&lt;/code&gt; 作为客户端，一个 &lt;code&gt;frps&lt;/code&gt; 作为服务端，以及对应的配置文件，几乎就这样，内容很简单。它的工作方式，就是在让 &lt;code&gt;frps&lt;/code&gt; 接收流量，然后转发到拥有 &lt;code&gt;frpc&lt;/code&gt; 的设备上。请注意，虽然这里说是 “客户端”，但实际上是那个计算服务器，而非本地的电脑。本地电脑要做的几乎只有保证自己能 &lt;code&gt;ssh&lt;/code&gt; 上别的机器，这就可以了。&lt;/p&gt;

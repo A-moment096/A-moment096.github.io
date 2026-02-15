@@ -1,93 +1,123 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Data Structure on A Moment's Rest</title><link>https://a-moment096.github.io/tags/data-structure/</link><description>Recent content in Data Structure on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 19 Jan 2026 06:28:39 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/data-structure/index.xml" rel="self" type="application/rss+xml"/><item><title>C++ Vector 的内存布局</title><link>https://a-moment096.github.io/posts/vector_memory_layout/</link><pubDate>Tue, 27 May 2025 09:53:29 +0800</pubDate><guid>https://a-moment096.github.io/posts/vector_memory_layout/</guid><description>&lt;img src="https://a-moment096.github.io/posts/vector_memory_layout/Bamboo_Reimu.jpg" alt="Featured image of post C++ Vector 的内存布局" /&gt;&lt;p&gt;&lt;em&gt;探索一下 C++ 的容器 &lt;code&gt;vector&lt;/code&gt; 的内存布局，也算是解答我自己的一些疑虑咯&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Data Structure on A Moment's Rest</title><link>https://a-moment096.github.io/tags/data-structure/</link><description>Recent content in Data Structure on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Sun, 15 Feb 2026 11:05:58 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/data-structure/index.xml" rel="self" type="application/rss+xml"/><item><title>C++ Vector 的内存布局</title><link>https://a-moment096.github.io/posts/vector_memory_layout/</link><pubDate>Tue, 27 May 2025 09:53:29 +0800</pubDate><guid>https://a-moment096.github.io/posts/vector_memory_layout/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post C++ Vector 的内存布局" /&gt;&lt;p&gt;&lt;em&gt;探索一下 C++ 的容器 &lt;code&gt;vector&lt;/code&gt; 的内存布局，也算是解答我自己的一些疑虑咯&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图是从网上搜的，尝试寻找出处，未果。很可惜。选曲尝试选择了一首听着比较清淡的曲子 &lt;strong&gt;泪苔&lt;/strong&gt;，感觉比较符合头图清新淡雅的神社氛围。希望你喜欢。&lt;/em&gt;&lt;/p&gt;
+
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
 &lt;style type="text/css"&gt;
 [data-scheme="dark"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
-border-bottom-color: var(--card-separator-color);
+ border-bottom-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
-border-color: var(--card-separator-color);
+ border-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-body {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info {
-border-top-color: var(--card-background);
+ border-top-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
-color: var(--card-text-color-tertiary);
+ color: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
-background-color: var(--card-separator-color);
+ background-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
-background-color: var(--accent-color);
+ background-color: var(--accent-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li {
-color: var(--card-text-color-main);
-border-top-color: var(--card-separator-color);
+ color: var(--card-text-color-main);
+ border-top-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc {
-text-shadow: -1px -1px 0 var(--body-background);
+ text-shadow: -1px -1px 0 var(--body-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:before {
-background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+ background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:after {
-background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc p {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
+ 
 [data-scheme="light"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="light"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
 &lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
+
+
 &lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=26537200" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
 &lt;h2 id="先介绍一下-vector-的基本情况咯"&gt;先介绍一下 &lt;code&gt;vector&lt;/code&gt; 的基本情况咯
 &lt;/h2&gt;&lt;p&gt;&lt;code&gt;vector&lt;/code&gt; 是由 C++ 标准库提供的一个容器模板类。这里不打算仔细介绍什么是容器，模板，什么是类，我们直接指出：&lt;code&gt;vector&lt;/code&gt; 的作用就是一个更好用的数组。“类”是说明它自己带了一些好用的函数，称为“方法”，“模板”就是说它需要接受一个类型作为参数才能成为一个完整的类型，就像数组必须说明是什么东西的数组一样。最后“容器”就是说它是一类经过了特殊优化的模板类，和别的容器一起共用着一些方法与成员，且有一类公共的算法可以用在它们上面。&lt;/p&gt;
@@ -214,7 +244,7 @@ background: var(--card-background-selected);
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&amp;gt; g++ test.cpp -o &lt;span class="nb"&gt;test&lt;/span&gt; -O3 &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; ./test
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;Vector sum: 10000000, Time: &lt;span class="m"&gt;2684&lt;/span&gt; ticks
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;Array sum: 10000000, Time: &lt;span class="m"&gt;2122&lt;/span&gt; ticks
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;&amp;gt; ./test
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;&amp;gt; ./test 
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt;Vector sum: 10000000, Time: &lt;span class="m"&gt;4091&lt;/span&gt; ticks
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;6&lt;/span&gt;&lt;span class="cl"&gt;Array sum: 10000000, Time: &lt;span class="m"&gt;3686&lt;/span&gt; ticks
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;7&lt;/span&gt;&lt;span class="cl"&gt;&amp;gt; ./test
@@ -223,7 +253,7 @@ background: var(--card-background-selected);
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;看来不开启优化的时候，两个方法的差距还是比较明显的，而当开启优化之后，两种方法的差距并不大。然而，使用 &lt;code&gt;vector&lt;/code&gt; 最大的优势在于心智负担小，不用担心奇怪的内存问题，而且如果使用 &lt;code&gt;vector::at&lt;/code&gt; 方法还能自动进行边界检查，在遇到越界问题时会抛出异常，避免程序以奇怪的，错误的方式运行。&lt;/p&gt;
 &lt;h2 id="总结"&gt;总结
 &lt;/h2&gt;&lt;p&gt;希望这篇小短文能帮助你了解 &lt;code&gt;vector&lt;/code&gt; 的特点，或者打消你对 &lt;code&gt;vector&lt;/code&gt; 性能的顾虑。&lt;code&gt;vector&lt;/code&gt; 是用来说明 C++ &lt;strong&gt;Zero-overhead principle&lt;/strong&gt;（零成本抽象原则）的一个很好的例子。&lt;code&gt;vector&lt;/code&gt; 提供了一个动态数组的抽象，它会以最低成本来实现这个东西的特性，避免引入过多额外的性能开销，让调用者可以放心使用，不必担忧性能问题。对零成本抽象感兴趣可以查看 &lt;a class="link" href="https://en.cppreference.com/w/cpp/language/Zero-overhead_principle" target="_blank" rel="noopener"
-&gt;CppReference的介绍&lt;/a&gt;，里面介绍了这一原则的具体情况。&lt;/p&gt;
+ &gt;CppReference的介绍&lt;/a&gt;，里面介绍了这一原则的具体情况。&lt;/p&gt;
 &lt;p&gt;当然，每次使用新的特性，总是会引入一点点的开销。或许你会考虑，辛苦一下自己，让程序能再跑快点。这本身没什么问题，但是要指出的是，警惕提前优化。如果 &lt;code&gt;vector&lt;/code&gt; 并不是制约程序运行效率的关键部分（也就是所谓的&lt;em&gt;性能瓶颈&lt;/em&gt;），那么就先不要管它。当程序遇到了这个瓶颈，且只能通过优化数据结构才能提高性能时，再考虑把 &lt;code&gt;vector&lt;/code&gt; 修改为别的容器或者数据类型，这样做也许会更实际一些。&lt;/p&gt;
 &lt;p&gt;当然，如果这个小短文有什么问题，请直接指出来。本人也不是科班出身，写这篇笔记纯粹是记录一下学习过程。欢迎交流讨论。欢迎大佬拷打，动作轻一些就更好了。&lt;/p&gt;
 &lt;p&gt;那么最后，一如既往，祝您身心健康。&lt;/p&gt;</description></item></channel></rss>

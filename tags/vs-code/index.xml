@@ -1,96 +1,126 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VS Code on A Moment's Rest</title><link>https://a-moment096.github.io/tags/vs-code/</link><description>Recent content in VS Code on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 19 Jan 2026 06:28:39 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/vs-code/index.xml" rel="self" type="application/rss+xml"/><item><title>VS Code 也许其实是 IDE</title><link>https://a-moment096.github.io/posts/vsc_remote/</link><pubDate>Wed, 17 Sep 2025 14:35:38 +0800</pubDate><guid>https://a-moment096.github.io/posts/vsc_remote/</guid><description>&lt;img src="https://a-moment096.github.io/posts/vsc_remote/%E7%8C%9B%E7%8B%AC%E3%81%8C%E8%A5%B2%E3%81%86.png" alt="Featured image of post VS Code 也许其实是 IDE" /&gt;&lt;p&gt;&lt;em&gt;虽然 VS Code&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt; 严格来讲是编辑器（Editor），然而其实它更像是一个伪装起来的集成开发环境（IDE，Integrated Development Environment）。而且，它最强大的功能其实在于它强大的远程功能。这次我们就来聊聊怎么把 VS Code 配置成一个堪比 Visual Studio 的多用途 IDE 吧&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VS Code on A Moment's Rest</title><link>https://a-moment096.github.io/tags/vs-code/</link><description>Recent content in VS Code on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Sun, 15 Feb 2026 11:05:58 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/vs-code/index.xml" rel="self" type="application/rss+xml"/><item><title>VS Code 也许其实是 IDE</title><link>https://a-moment096.github.io/posts/vsc_remote/</link><pubDate>Wed, 17 Sep 2025 14:35:38 +0800</pubDate><guid>https://a-moment096.github.io/posts/vsc_remote/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post VS Code 也许其实是 IDE" /&gt;&lt;p&gt;&lt;em&gt;虽然 VS Code&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt; 严格来讲是编辑器（Editor），然而其实它更像是一个伪装起来的集成开发环境（IDE，Integrated Development Environment）。而且，它最强大的功能其实在于它强大的远程功能。这次我们就来聊聊怎么把 VS Code 配置成一个堪比 Visual Studio 的多用途 IDE 吧&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;本次挑选的歌曲是光受好评，翻唱无数，且我自己很喜欢的一首术曲：由 P主 &lt;a class="link" href="https://twitter.com/hihumi_v" target="_blank" rel="noopener"
-&gt;一二三&lt;/a&gt; 做词曲的 &lt;strong&gt;猛独が襲う&lt;/strong&gt;。中午偶然听到了这首，感觉非常不错，就选择是她了。头图就顺手选择同样很好看的这首歌的 MV，由 &lt;a class="link" href="https://twitter.com/kyu_fu" target="_blank" rel="noopener"
-&gt;休符&lt;/a&gt; 所绘，实在是非常好看~ 另外还要特别指出，这首歌无敌的吉他是由 &lt;a class="link" href="https://twitter.com/junjun_mimi03" target="_blank" rel="noopener"
-&gt;じゅみ&lt;/a&gt; 演奏的。我必须立刻承认这首歌的吉他是我最喜欢的部分（）&lt;/em&gt;&lt;/p&gt;
+ &gt;一二三&lt;/a&gt; 做词曲的 &lt;strong&gt;猛独が襲う&lt;/strong&gt;。中午偶然听到了这首，感觉非常不错，就选择是她了。头图就顺手选择同样很好看的这首歌的 MV，由 &lt;a class="link" href="https://twitter.com/kyu_fu" target="_blank" rel="noopener"
+ &gt;休符&lt;/a&gt; 所绘，实在是非常好看~ 另外还要特别指出，这首歌无敌的吉他是由 &lt;a class="link" href="https://twitter.com/junjun_mimi03" target="_blank" rel="noopener"
+ &gt;じゅみ&lt;/a&gt; 演奏的。我必须立刻承认这首歌的吉他是我最喜欢的部分（）&lt;/em&gt;&lt;/p&gt;
+
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
 &lt;style type="text/css"&gt;
 [data-scheme="dark"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
-border-bottom-color: var(--card-separator-color);
+ border-bottom-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
-border-color: var(--card-separator-color);
+ border-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-body {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info {
-border-top-color: var(--card-background);
+ border-top-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
-color: var(--card-text-color-tertiary);
+ color: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
-background-color: var(--card-separator-color);
+ background-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
-background-color: var(--accent-color);
+ background-color: var(--accent-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li {
-color: var(--card-text-color-main);
-border-top-color: var(--card-separator-color);
+ color: var(--card-text-color-main);
+ border-top-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc {
-text-shadow: -1px -1px 0 var(--body-background);
+ text-shadow: -1px -1px 0 var(--body-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:before {
-background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+ background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:after {
-background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc p {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
+ 
 [data-scheme="light"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="light"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
 &lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
+
+
 &lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=487379581" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
 &lt;h2 id="介绍一下先"&gt;介绍一下先
 &lt;/h2&gt;&lt;p&gt;VS Code，一款备受瞩目的编辑器，由 Eric Gamma 于 2011 年开始开发，并于 2015 年 4 月 29 号正式发布&lt;sup id="fnref:2"&gt;&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref"&gt;2&lt;/a&gt;&lt;/sup&gt;。这款基于 Electron 框架（或者，浏览器）的编辑器目前已经成为几乎所有程序开发者工具库中必不可少的一部分了。它除了有美观、现代化的界面以外，开放的态度（VS Code 的基础功能是开源的，其开源打包称为 &lt;em&gt;Code-OSS&lt;/em&gt;）更是吸引了许多开源爱好者的目光。而他杀手锏级别的特点，则是其极其丰富的插件市场以及生态环境，我只能说伟大，无需多言（可惜也只能伟大一点儿，因为插件市场很多插件是微软的版权，可惜）。&lt;/p&gt;
@@ -107,44 +137,53 @@ background: var(--card-background-selected);
 &lt;/h2&gt;&lt;p&gt;其实关于 VS Code 的下载问题，我在 &lt;a class="link" href="https://a-moment096.github.io/posts/vsc_py/" &gt;这篇文章&lt;/a&gt; 中已经提过了。不过如果你不想翻那里的内容，那也可以跟着下面的内容来。&lt;/p&gt;
 &lt;h3 id="我们先下载程序本体"&gt;我们先下载程序本体
 &lt;/h3&gt;&lt;p&gt;我们仅考虑 Windows 端的使用，请使用 GNU/Linux 的朋友自行选择自己家的包管理器以及想安装的版本（毕竟，使用以开源著称的 Linux 的你可能不希望使用 Microsoft 的专有软件：Visual Studio Code）。这里介绍两种下载方式，一种是从官网下载，点&lt;a class="link" href="https://code.visualstudio.com/download" target="_blank" rel="noopener"
-&gt;这个链接&lt;/a&gt; 就会直达下载页面。&lt;/p&gt;
+ &gt;这个链接&lt;/a&gt; 就会直达下载页面。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/vsc_remote/img/VSC_Download.png"
-width="1026"
-height="843"
-srcset="https://a-moment096.github.io/posts/vsc_remote/img/VSC_Download_hu_cc16468639f06cae.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/VSC_Download_hu_7c35e3cb1263d305.png 1024w"
-loading="lazy"
-alt="下载页面"
-class="gallery-image"
-data-flex-grow="121"
-data-flex-basis="292px"
+	width="1026"
+	height="843"
+	loading="lazy"
+	
+		alt="下载页面"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="121"
+		data-flex-basis="292px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;我们可以注意到这里有一个大大的下载按钮，底下还有几个选项，什么用户安装，系统安装，x64 啊 ARM 啊的。如果你不知道该选哪个，点那个大按钮。它会下载用户版的。如果你清楚自己需要什么版本，请自便。这里简单提一下用户安装和系统安装的区别。如果你的电脑只有你一个账户使用，用户安装方便又快捷，不会出错；如果你的电脑有多个账户且你想让每个账户都可以用上 VS Code，请使用系统安装版本。但是这样会有 UAC (User Access Control)的烦恼，且很多时候你修改个什么文件都会让你用管理员权限搞 （即会弹出 UAC）。&lt;/p&gt;
 &lt;p&gt;下好安装包之后打开安装包，先同意它的用户协议，然后是路径（可以不改），要不要添加开始菜单（可以不管），随后会遇到这个页面：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/vsc_remote/img/InstallVSC.png"
-width="597"
-height="465"
-srcset="https://a-moment096.github.io/posts/vsc_remote/img/InstallVSC_hu_27a361c0fb470b88.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/InstallVSC_hu_5ebd1f02e651ba91.png 1024w"
-loading="lazy"
-alt="安装页面"
-class="gallery-image"
-data-flex-grow="128"
-data-flex-basis="308px"
+	width="597"
+	height="465"
+	loading="lazy"
+	
+		alt="安装页面"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="128"
+		data-flex-basis="308px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;这里我推荐选择把 &lt;code&gt;使用 Code 打开&lt;/code&gt; 集成到文件浏览器的选项。不过如果你觉得你的文件管理器右键菜单栏已经够凌乱了，那就算了吧。之后就会让你确定你的安装选项，没问题就安装吧。&lt;/p&gt;
 &lt;p&gt;另一种下载方式我个人不是特别地推荐，即使用 Windows 的包管理器下载。较新的 Windows 版本搭载了一款还不错的包管理器，&lt;code&gt;WinGet&lt;/code&gt;，你可以使用 &lt;code&gt;winget install Microsoft.VisualStudioCode&lt;/code&gt; 来直接使用 &lt;code&gt;winget&lt;/code&gt; 的命令行安装，但是这样的安装方式有个问题：它没有文件浏览器集成（即右键菜单的 “以 VS Code 打开” 这样的选项）。WinGet 给了解决方案，但是有点丑陋：&lt;code&gt;winget install Microsoft.VisualStudioCode --override '/SILENT /mergetasks=&amp;quot;!runcode,addcontextmenufiles,addcontextmenufolders&amp;quot;'&lt;/code&gt;，而这个问题的原因竟出奇地搞笑：传给 WinGet 的默认命令行参数里写错了，把 &lt;code&gt;MERGETASKS&lt;/code&gt; 写成了 &lt;code&gt;MERGETAKS&lt;/code&gt; （少写个 S）。以上信息来自 &lt;a class="link" href="https://github.com/microsoft/winget-cli/discussions/1798" target="_blank" rel="noopener"
-&gt;这个讨论串&lt;/a&gt;，感兴趣可以看看。&lt;/p&gt;
+ &gt;这个讨论串&lt;/a&gt;，感兴趣可以看看。&lt;/p&gt;
 &lt;p&gt;不过无论如何，你这时应该已经安装好了。激动的心，颤抖的手，点开软件准备大展身手的你也许会发现：界面全是英文的。也许你觉得英文界面全对，但是这样还是比较小众的（）那怎么汉化呢？这么牛逼的软件应该有不错的本地化才对呀？别急，解决方案在下面：&lt;/p&gt;
 &lt;h3 id="必须立刻开始安装插件"&gt;必须立刻开始安装插件
 &lt;/h3&gt;&lt;p&gt;考虑到我们是第一次装 VS Code，应该不需要考虑从账户同步安装的插件。所以，我们的第一件事就是，点击左边的插件市场图标，或者快捷键 &lt;code&gt;Ctrl+Shift+X&lt;/code&gt;，打开插件市场。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/vsc_remote/img/Extensions.png"
-width="1026"
-height="843"
-srcset="https://a-moment096.github.io/posts/vsc_remote/img/Extensions_hu_65167833d5ee41ab.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/Extensions_hu_b7956f8bf666ff5b.png 1024w"
-loading="lazy"
-alt="插件市场"
-class="gallery-image"
-data-flex-grow="121"
-data-flex-basis="292px"
+	width="1026"
+	height="843"
+	loading="lazy"
+	
+		alt="插件市场"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="121"
+		data-flex-basis="292px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;如果你需要中文插件，请安装 &lt;strong&gt;Chinese (Simplified)（简体中文）Language Pack for Visual Studio Code&lt;/strong&gt; 的插件（搜索 Chinese Language Pack 就会出来）。是的，VS Code 的所有本地化都是通过微软发布的这个本地化插件实现的。如果你喜欢异域风情，你也可以试试其他语言的本地化插件。&lt;/p&gt;
 &lt;p&gt;下载插件时，如果你是第一次下载某个人/组织打包的插件， VS Code 会问你要不要信任这个插件作者。一般而言，不要瞎装的前提下，这些作者都是可信的。VS Code 的插件是有过投毒历史的，还是请小心行事。&lt;/p&gt;
@@ -153,7 +192,7 @@ data-flex-basis="292px"
 &lt;h2 id="先在本地试试-cc-开发吧"&gt;先在本地试试 C/C++ 开发吧！
 &lt;/h2&gt;&lt;p&gt;在直接开始在远程进行开发前，我们最好先熟悉怎么在本地进行 C/C++ 开发。原因很简单：远程配置我们还没搞，而 C/C++ 开发不管在本地还是在远程都是差不多的。&lt;/p&gt;
 &lt;p&gt;实际上，VS Code 在它的官网上写了很多指南，比如这篇 &lt;a class="link" href="https://code.visualstudio.com/docs/languages/cpp" target="_blank" rel="noopener"
-&gt;C/C++ for Visual Studio Code&lt;/a&gt; 就大概介绍了一下怎么用 VS Code 编写、调试简单的 C/C++ 代码。而后面更是有专门的一部分（从在上面这篇文章的左侧栏就能找到）用多篇指南文章来介绍各个平台、各个编译器下的 C/C++ 开发配置。详细到我觉得我单独写一遍完全是画蛇添足，是没有必要的。&lt;/p&gt;
+ &gt;C/C++ for Visual Studio Code&lt;/a&gt; 就大概介绍了一下怎么用 VS Code 编写、调试简单的 C/C++ 代码。而后面更是有专门的一部分（从在上面这篇文章的左侧栏就能找到）用多篇指南文章来介绍各个平台、各个编译器下的 C/C++ 开发配置。详细到我觉得我单独写一遍完全是画蛇添足，是没有必要的。&lt;/p&gt;
 &lt;p&gt;那么，我们这里写什么呢？我们介绍一下 CMake。不过在这之前，我们不得不介绍一点点 C/C++ 项目构建这件事的历史。&lt;/p&gt;
 &lt;h3 id="cc-项目构建的小小历史"&gt;C/C++ 项目构建的小小历史
 &lt;/h3&gt;&lt;p&gt;虽然在最最最开始的时候，一切都很简单：我们写好源码之后，告诉编译器 “你给我编译了” 就行了。拿我们亲爱的老牌编译器 &lt;code&gt;gcc&lt;/code&gt;（或者 &lt;code&gt;g++&lt;/code&gt;，这个是 C++ 专用的）来说吧，当我们要编译写好的程序的时候，我们只需要 &lt;code&gt;gcc source-code.c&lt;/code&gt; 或者 &lt;code&gt;g++ source-code.cpp&lt;/code&gt; 就可以编译出来一个 &lt;code&gt;a.out&lt;/code&gt; 的文件了。&lt;/p&gt;
@@ -222,88 +261,109 @@ data-flex-basis="292px"
 &lt;h3 id="cmake-集成"&gt;CMake 集成
 &lt;/h3&gt;&lt;p&gt;下面是我维护项目的 CMake 集成工具栏的截图页面：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/vsc_remote/img/CMakeWindow.png"
-width="2560"
-height="1410"
-srcset="https://a-moment096.github.io/posts/vsc_remote/img/CMakeWindow_hu_cca4446fb67f1b41.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/CMakeWindow_hu_b7864f788004f925.png 1024w"
-loading="lazy"
-alt="CMake 集成"
-class="gallery-image"
-data-flex-grow="181"
-data-flex-basis="435px"
+	width="2560"
+	height="1410"
+	loading="lazy"
+	
+		alt="CMake 集成"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="181"
+		data-flex-basis="435px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;先看最左边：侧边栏有个 CMake 的 Logo，它就是 CMake 集成工具的入口，从这里就可以开始点点点了。左边的 &lt;code&gt;PROJECT STATUS&lt;/code&gt;，它描述了现在 CMake 的一些配置。这个项目的文件夹是 TaskScheduler，选择的配置和构建选项我们都还没有选。&lt;/p&gt;
 &lt;p&gt;中间的大页面就是我们的 CMakeLists 了。这个项目中我要编译两个程序：一个 &lt;code&gt;main_cpp&lt;/code&gt;，一个 &lt;code&gt;sim_kernel&lt;/code&gt;，而且下面还有条件编译：如果是 UNIX 平台且不是 APPLE 平台的话，要给 &lt;code&gt;main_cpp&lt;/code&gt; 这个程序链接上 &lt;code&gt;pthread&lt;/code&gt; 这个库。另外我们给项目起名为 &lt;code&gt;SimLauncher&lt;/code&gt;，要求标准是 C++17，输出文件夹我们指定了是 &lt;code&gt;build/bin&lt;/code&gt; 这个文件夹。这些都是比较一目了然的。&lt;/p&gt;
 &lt;p&gt;为了编译这个项目，我们需要选择项目配置和编译配置。我们鼠标放在右边栏 &lt;code&gt;Configure&lt;/code&gt; 里的那个 &lt;code&gt;[No Kit Selected]&lt;/code&gt;，会有一个铅笔图标出现，点它，就会弹出一个顶部对话框，让你选择你要用什么编译套件：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/vsc_remote/img/SelectKits.png"
-width="1370"
-height="452"
-srcset="https://a-moment096.github.io/posts/vsc_remote/img/SelectKits_hu_29b309d1f3733a28.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/SelectKits_hu_bfcae845598074a0.png 1024w"
-loading="lazy"
-alt="选择编译套件"
-class="gallery-image"
-data-flex-grow="303"
-data-flex-basis="727px"
+	width="1370"
+	height="452"
+	loading="lazy"
+	
+		alt="选择编译套件"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="303"
+		data-flex-basis="727px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;由于我们是在 Windows 上且我安装了 VS，自然我有一套 MSVC 的编译套件。这里第一和第二个选项是让扫描一下看看还有没有别的套件；第三个是不手动指定，不知道的话选它也行，我不推荐选就是了；底下四个里，他们的区别主要在于编译的平台架构不一样：&lt;code&gt;amd64&lt;/code&gt;（有时你会看到所谓 &lt;code&gt;x64&lt;/code&gt;，可以当作一个意思）就是说你的 CPU 架构是 64 位的架构，一般我们就选它没问题。而 &lt;code&gt;x86&lt;/code&gt; 则是所谓的 Intel 8086 架构处理器，即 32 位处理器架构。我们不考虑这个，64 位挺好的；可以看到还有两个选项，里面两个都出现了，比如 &lt;code&gt;amd64_x86&lt;/code&gt;，意思是自己的机器是 64 位架构，而编译目标则是 32 位架构。我们用不上这么高级的功能啦。&lt;/p&gt;
 &lt;p&gt;选择好之后，CMake 就会开始进行配置了，结果默认会放在 &lt;code&gt;build&lt;/code&gt; 文件夹里，顺带会把构建、调试和运行目标都设置为了 &lt;code&gt;ALL_BUILD&lt;/code&gt;，即所有的目标都会进行，不止选择某一个。当然，鼠标放上去也会出现小铅笔，自己选就可以。&lt;code&gt;build&lt;/code&gt; 文件夹中的内容我们就不用多管了，感兴趣的话可以自己查一查。&lt;/p&gt;
 &lt;p&gt;配置结束后，我们就可以构建项目啦。鼠标放在 &lt;code&gt;PROJECT OUTLINE&lt;/code&gt; 上就会出现一个小图标：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/vsc_remote/img/Build.png"
-width="738"
-height="988"
-srcset="https://a-moment096.github.io/posts/vsc_remote/img/Build_hu_ef97bec9ad714af1.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/Build_hu_cc7b7e7cca50dec8.png 1024w"
-loading="lazy"
-alt="构建"
-class="gallery-image"
-data-flex-grow="74"
-data-flex-basis="179px"
+	width="738"
+	height="988"
+	loading="lazy"
+	
+		alt="构建"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="74"
+		data-flex-basis="179px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;旁边的小虫子是启动调试的按钮，最左边则是配置所有的目标。我们点这个像是往箱子里装东西的图标，它就是我们要的项目构建按钮。点了之后右边 &lt;code&gt;OUTPUT&lt;/code&gt; 窗口就会出来一堆信息，告诉你你的构建过程执行得怎么样了：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/vsc_remote/img/BuildOutput.png"
-width="1577"
-height="737"
-srcset="https://a-moment096.github.io/posts/vsc_remote/img/BuildOutput_hu_aeff9ee366262d92.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/BuildOutput_hu_1ee3bb25a05d9143.png 1024w"
-loading="lazy"
-alt="构建输出"
-class="gallery-image"
-data-flex-grow="213"
-data-flex-basis="513px"
+	width="1577"
+	height="737"
+	loading="lazy"
+	
+		alt="构建输出"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="213"
+		data-flex-basis="513px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;当你看到最底下出现了 &lt;code&gt;[build] Build finished with exit code 0&lt;/code&gt; 的时候，就像许多程序以返回 0 表示执行无误那样，说明你的构建成功了。由于我们 &lt;code&gt;Configure&lt;/code&gt; 那里选择了 &lt;code&gt;Debug&lt;/code&gt;，以及我们的 &lt;code&gt;CMakeLists.txt&lt;/code&gt; 中我们的编译结果设置在了 &lt;code&gt;build/bin&lt;/code&gt; 文件夹中，我们可以在 &lt;code&gt;build/bin/Debug&lt;/code&gt; 里找到我们的编译结果。&lt;/p&gt;
 &lt;p&gt;当然，我们也可以不手动执行，毕竟手动执行的话得学会手动用调试器调试，我们还是借助 VS Code 集成的功能吧。点刚刚提到的那个小虫子，就可以进行调试了，调试前记得先打个断点，不然程序不会停下来等的。&lt;/p&gt;
 &lt;p&gt;最后可以提一下，你的页面左下角的几个按钮也有个 &lt;code&gt;Build&lt;/code&gt;，小虫子和一个播放键一样的东西，它们分别代表构建、调试和运行，是和 CMake 连着的。你也可以使用底边栏进行这些操作。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/vsc_remote/img/Bottom.png"
-width="841"
-height="121"
-srcset="https://a-moment096.github.io/posts/vsc_remote/img/Bottom_hu_f23f50e8b5482ff7.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/Bottom_hu_76e6a17ac80b1b19.png 1024w"
-loading="lazy"
-alt="底边栏"
-class="gallery-image"
-data-flex-grow="695"
-data-flex-basis="1668px"
+	width="841"
+	height="121"
+	loading="lazy"
+	
+		alt="底边栏"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="695"
+		data-flex-basis="1668px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;介绍完 CMake 集成，我们下来就尝试连接到远程服务器吧！&lt;/p&gt;
 &lt;h3 id="remote-功能"&gt;Remote 功能
 &lt;/h3&gt;&lt;p&gt;实际上 VS Code 的远程功能很像预载的一样。记得上面的那个底边栏吗？最左边的那个蓝色的按钮就是启动远程链接的按钮。我们点击它就会出现类似这样的窗口：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/vsc_remote/img/RemoteConnection.png"
-width="1320"
-height="514"
-srcset="https://a-moment096.github.io/posts/vsc_remote/img/RemoteConnection_hu_c97995dd99f0869c.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/RemoteConnection_hu_f6eecfe2396a4d6e.png 1024w"
-loading="lazy"
-alt="选择你要链接的模式"
-class="gallery-image"
-data-flex-grow="256"
-data-flex-basis="616px"
+	width="1320"
+	height="514"
+	loading="lazy"
+	
+		alt="选择你要链接的模式"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="256"
+		data-flex-basis="616px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;由于我的机子上有 WSL（Windows Subsystem Linux）所以这个页面多出来了链接 WSL 的选项。我们选择 &lt;code&gt;Connect to Host...&lt;/code&gt;，会出现&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/vsc_remote/img/SelectRemote.png"
-width="1329"
-height="502"
-srcset="https://a-moment096.github.io/posts/vsc_remote/img/SelectRemote_hu_15f40a0fb1ea5337.png 480w, https://a-moment096.github.io/posts/vsc_remote/img/SelectRemote_hu_d496b10fbe129530.png 1024w"
-loading="lazy"
-alt="选择远程机器"
-class="gallery-image"
-data-flex-grow="264"
-data-flex-basis="635px"
+	width="1329"
+	height="502"
+	loading="lazy"
+	
+		alt="选择远程机器"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="264"
+		data-flex-basis="635px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;我已经有 5 个选项了，这是因为我的 &lt;code&gt;.ssh/config&lt;/code&gt; 里有这 5 个配置：这个插件实际上会读取这个文件并放在这里。请选择你要连接的服务器，这样就会开始连接了。&lt;/p&gt;
 &lt;p&gt;由于我们是用 VS Code 进行的连接，我们需要先等服务器那边装好 VS Code 的服务端程序，可能需要等一会儿。这个过程取决于网速，一般几分钟就搞好了。连接上了之后就会打开一个新的 VS Code 窗口，但是左下角那里会显示你登录的服务器的名称（别名），而你打开的远程的文件夹也会在标题栏显示服务器的名称（别名）。&lt;/p&gt;
@@ -323,10 +383,10 @@ data-flex-basis="635px"
 &lt;/li&gt;
 &lt;li id="fn:2"&gt;
 &lt;p&gt;消息来源：&lt;a class="link" href="https://dev.to/rajeshkumaryadavdotcom/the-untold-story-of-visual-studio-code-a-revolution-in-software-development-44pp" target="_blank" rel="noopener"
-&gt;The Untold Story of Visual Studio Code: A Revolution in Software Development &lt;/a&gt;，讲了 VS Code 的故事，挺有意思的。&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+ &gt;The Untold Story of Visual Studio Code: A Revolution in Software Development &lt;/a&gt;，讲了 VS Code 的故事，挺有意思的。&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</description></item><item><title>Python + VS Code 快速配置</title><link>https://a-moment096.github.io/posts/vsc_py/</link><pubDate>Fri, 01 Nov 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/vsc_py/</guid><description>&lt;img src="https://a-moment096.github.io/posts/vsc_py/%E5%A6%B9%E7%BA%A2.jpeg" alt="Featured image of post Python + VS Code 快速配置" /&gt;&lt;p&gt;&lt;em&gt;这是一篇写给初学 Python 的同学的教程，帮助使用 VS Code 快速配置好 Python 的开发环境，写于今年9月14日，
+&lt;/div&gt;</description></item><item><title>Python + VS Code 快速配置</title><link>https://a-moment096.github.io/posts/vsc_py/</link><pubDate>Fri, 01 Nov 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/vsc_py/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post Python + VS Code 快速配置" /&gt;&lt;p&gt;&lt;em&gt;这是一篇写给初学 Python 的同学的教程，帮助使用 VS Code 快速配置好 Python 的开发环境，写于今年9月14日，
 先搬运至此并改为 Markdown，作为 Programming部分的第一篇博文&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id="简介"&gt;简介
 &lt;/h2&gt;&lt;p&gt;Python, 一门伟大的语言. 简易的, 贴合人类语言的语法, 丰富的生态, 强
@@ -348,7 +408,7 @@ data-flex-basis="635px"
 释, 也可以通过交互式的方法, 在解释器读取到输入内容后立即执行. 因
 此, Python的语言解释器对学习Python是必要的. 下载Python解释器请前往
 &lt;a class="link" href="https://www.python.org/downloads/" target="_blank" rel="noopener"
-&gt;Python官网&lt;/a&gt; . 初学者可以不用太过在意语言版本的问题 (语言版本过新可
+ &gt;Python官网&lt;/a&gt; . 初学者可以不用太过在意语言版本的问题 (语言版本过新可
 能会导致某些未进行适配的库无法正常使用), 只需要保证您下载的版本
 是Python3即可(版本号以3开头).
 Python3与Python2有着很多基础语法上的
@@ -381,12 +441,12 @@ TO PATH)以避免后续复杂的手动添加环境变量的过程!&lt;/strong&gt
 配合, 可以实现媲美IDE的开发环境搭建.
 笔者推荐由VS Code官方出品的
 在VS Code中使用Python的引导文档: &lt;a class="link" href="https://code.visualstudio.com/docs/languages/python" target="_blank" rel="noopener"
-&gt;Python in Visual Studio Code&lt;/a&gt; , 该文档详
+ &gt;Python in Visual Studio Code&lt;/a&gt; , 该文档详
 细介绍了如何从0开始在VS Code上使用Python, 除了是英文内容外几乎没有
 缺点(当然, 您可以选择网页翻译). 下面笔者将自行介绍如何安装VS Code与
 相关插件.&lt;/p&gt;
 &lt;p&gt;点击 &lt;a class="link" href="https://code.visualstudio.com/" target="_blank" rel="noopener"
-&gt;此处&lt;/a&gt; 即可打开 VS Code 官网. VS Code的安装可以全部选择默认安
+ &gt;此处&lt;/a&gt; 即可打开 VS Code 官网. VS Code的安装可以全部选择默认安
 装, 如此便可使用VS Code的基础功能. 安装插件可以在侧边栏选择或者使用
 快捷键 Ctrl+Shift+X 打开插件市场, 在页面上方框中输入相应关键词即可
 检索相关插件. 如要进行Python开发, 请安装如下插件.&lt;/p&gt;

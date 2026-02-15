@@ -1,103 +1,133 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Math Problems on A Moment's Rest</title><link>https://a-moment096.github.io/tags/math-problems/</link><description>Recent content in Math Problems on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 19 Jan 2026 06:28:39 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/math-problems/index.xml" rel="self" type="application/rss+xml"/><item><title>2025! 非零的最后一位数字是多少？</title><link>https://a-moment096.github.io/posts/factorial_last_digits/</link><pubDate>Mon, 25 Aug 2025 18:01:23 +0800</pubDate><guid>https://a-moment096.github.io/posts/factorial_last_digits/</guid><description>&lt;img src="https://a-moment096.github.io/posts/factorial_last_digits/%E6%B8%85%E6%B0%B4%E5%90%9F.jpg" alt="Featured image of post 2025! 非零的最后一位数字是多少？" /&gt;&lt;p&gt;&lt;em&gt;在知乎上看到了&lt;a class="link" href="https://www.zhihu.com/question/666502327" target="_blank" rel="noopener"
-&gt;这样一个有趣的问题&lt;/a&gt;，以及&lt;a class="link" href="https://www.zhihu.com/question/666502327/answer/18810753693" target="_blank" rel="noopener"
-&gt;很厉害的回答&lt;/a&gt;，实在是很有意思。这里就写一写我的解决这个问题的方法以及当时的心路历程吧。&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Math Problems on A Moment's Rest</title><link>https://a-moment096.github.io/tags/math-problems/</link><description>Recent content in Math Problems on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Sun, 15 Feb 2026 11:05:58 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/math-problems/index.xml" rel="self" type="application/rss+xml"/><item><title>2025! 非零的最后一位数字是多少？</title><link>https://a-moment096.github.io/posts/factorial_last_digits/</link><pubDate>Mon, 25 Aug 2025 18:01:23 +0800</pubDate><guid>https://a-moment096.github.io/posts/factorial_last_digits/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post 2025! 非零的最后一位数字是多少？" /&gt;&lt;p&gt;&lt;em&gt;在知乎上看到了&lt;a class="link" href="https://www.zhihu.com/question/666502327" target="_blank" rel="noopener"
+ &gt;这样一个有趣的问题&lt;/a&gt;，以及&lt;a class="link" href="https://www.zhihu.com/question/666502327/answer/18810753693" target="_blank" rel="noopener"
+ &gt;很厉害的回答&lt;/a&gt;，实在是很有意思。这里就写一写我的解决这个问题的方法以及当时的心路历程吧。&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图出自 &lt;a class="link" href="https://www.pixiv.net/en/users/8605991" target="_blank" rel="noopener"
-&gt;fasnakegod&lt;/a&gt; 大大的 &lt;a class="link" href="https://www.pixiv.net/en/artworks/124177921" target="_blank" rel="noopener"
-&gt;清水吟&lt;/a&gt;，搭配的曲子是 &lt;a class="link" href="https://ddby.jp/" target="_blank" rel="noopener"
-&gt;&lt;strong&gt;DDBY&lt;/strong&gt;&lt;/a&gt; 的 &lt;em&gt;Cramped space&lt;/em&gt;，笛声真的很棒，搭配轻快的鼓组和旋律，给人一种很悠闲放松的感觉呢。希望你也喜欢~&lt;/em&gt;&lt;/p&gt;
+ &gt;fasnakegod&lt;/a&gt; 大大的 &lt;a class="link" href="https://www.pixiv.net/en/artworks/124177921" target="_blank" rel="noopener"
+ &gt;清水吟&lt;/a&gt;，搭配的曲子是 &lt;a class="link" href="https://ddby.jp/" target="_blank" rel="noopener"
+ &gt;&lt;strong&gt;DDBY&lt;/strong&gt;&lt;/a&gt; 的 &lt;em&gt;Cramped space&lt;/em&gt;，笛声真的很棒，搭配轻快的鼓组和旋律，给人一种很悠闲放松的感觉呢。希望你也喜欢~&lt;/em&gt;&lt;/p&gt;
+
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
 &lt;style type="text/css"&gt;
 [data-scheme="dark"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
-border-bottom-color: var(--card-separator-color);
+ border-bottom-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
-border-color: var(--card-separator-color);
+ border-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-body {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info {
-border-top-color: var(--card-background);
+ border-top-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
-color: var(--card-text-color-tertiary);
+ color: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
-background-color: var(--card-separator-color);
+ background-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
-background-color: var(--accent-color);
+ background-color: var(--accent-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li {
-color: var(--card-text-color-main);
-border-top-color: var(--card-separator-color);
+ color: var(--card-text-color-main);
+ border-top-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc {
-text-shadow: -1px -1px 0 var(--body-background);
+ text-shadow: -1px -1px 0 var(--body-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:before {
-background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+ background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:after {
-background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc p {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
+ 
 [data-scheme="light"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="light"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
 &lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
+
+
 &lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=715690" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
 &lt;h2 id="问题介绍"&gt;问题介绍
 &lt;/h2&gt;&lt;p&gt;如果您不想点开那个链接的话，这个问题实际上只有一行：求 2025! 从右向左起第一个不为0的数字是什么。这算是一道奥数题吧，同时也是某本书（&lt;em&gt;具体数学&lt;/em&gt;）上的课后习题。&lt;/p&gt;
 &lt;p&gt;由于 2025! 几乎是没法用计算器简单计算验证的（即便知乎上有神人&lt;a class="link" href="https://www.zhihu.com/question/666502327/answer/18577793245?share_code=8Xj75jf4cL99&amp;amp;utm_psn=1942598977787761098" target="_blank" rel="noopener"
-&gt;算出来了这个值&lt;/a&gt;），我们可以权当这个问题是在问，某个大数字 $n$ 的阶乘：$n!$ 在十进制表示下的，从右至左数第一个非零数字是几。&lt;/p&gt;
+ &gt;算出来了这个值&lt;/a&gt;），我们可以权当这个问题是在问，某个大数字 $n$ 的阶乘：$n!$ 在十进制表示下的，从右至左数第一个非零数字是几。&lt;/p&gt;
 &lt;p&gt;这个待求数字描述起来好麻烦。我们就称这个数字为 $A$ 好了。另外，我们稍微滥用一下符号，用 $A$ 来取出我们要的那个数字，比如数字 $12345000$ 的 $A$ 就记作 $A(12345000) = 5$ 了。另外我们为了方便讨论，把 $n!$ 的结果表示为 $a_k\dots a_3 a_2 a_1$，即给每一位上的数字都编个号。如 $120$ 的 $a_3 = 1$，$a_2 = 2$，$a_1 = 0$。&lt;/p&gt;
 &lt;p&gt;好了，我们现在开始吧，尝试解决这个问题。&lt;/p&gt;
 &lt;h2 id="第一次尝试肯定得和质数有关吧"&gt;第一次尝试：肯定得和质数有关，吧？
@@ -108,30 +138,30 @@ background: var(--card-background-selected);
 &lt;p&gt;好，那我们就把阶乘拆成质因数们吧！然后拆掉里面的每个 $2-5$ 对儿，最后就只剩下最后的一堆结果，我们把它们乘起来看最后一位数字，肯定就是 $A$ 了……&lt;/p&gt;
 &lt;p&gt;对，对吗？算了，我们先算个简单的，我们让 $n = 10$ 看看结果吧。我们先找到质数们。10 以下的质数只有 $2, 3, 5, 7$ 四个，然后把 10 以下的数字们拆成质因数后统计它们的个数，得到：&lt;/p&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style="text-align: center"&gt;质数&lt;/th&gt;
-&lt;th style="text-align: center"&gt;个数&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;2&lt;/td&gt;
-&lt;td style="text-align: center"&gt;8&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;3&lt;/td&gt;
-&lt;td style="text-align: center"&gt;4&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;5&lt;/td&gt;
-&lt;td style="text-align: center"&gt;2&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;7&lt;/td&gt;
-&lt;td style="text-align: center"&gt;1&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th style="text-align: center"&gt;质数&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;个数&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;2&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;8&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;3&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;4&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;5&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;2&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;7&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;然后我们删掉俩 $2$-$5$ 对后把别的乘起来，得到结果是：$36288$ ，所以 $A = 8$&lt;/p&gt;
 &lt;p&gt;OMG 好麻烦，怎么就两对儿？这还只是 $10$ 以下的质数，$100$ 以下的质数有 25 个嘞。这要怎么搞？&lt;/p&gt;
@@ -139,50 +169,50 @@ background: var(--card-background-selected);
 &lt;/h3&gt;&lt;p&gt;但是我们好像也不用算整个结果吧，得到 $A=8$ 就已经 OK 了的样子。而我们想得到 $A$ 好像也只需要关注每一次乘出来的结果的个位数就好？&lt;/p&gt;
 &lt;p&gt;我们看看这四个数字的次幂，它们的个位数都有什么特点：&lt;/p&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style="text-align: center"&gt;质数&lt;/th&gt;
-&lt;th style="text-align: center"&gt;1次&lt;/th&gt;
-&lt;th style="text-align: center"&gt;2次&lt;/th&gt;
-&lt;th style="text-align: center"&gt;3次&lt;/th&gt;
-&lt;th style="text-align: center"&gt;4次&lt;/th&gt;
-&lt;th style="text-align: center"&gt;5次&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;2&lt;/td&gt;
-&lt;td style="text-align: center"&gt;2&lt;/td&gt;
-&lt;td style="text-align: center"&gt;4&lt;/td&gt;
-&lt;td style="text-align: center"&gt;8&lt;/td&gt;
-&lt;td style="text-align: center"&gt;6&lt;/td&gt;
-&lt;td style="text-align: center"&gt;2&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;3&lt;/td&gt;
-&lt;td style="text-align: center"&gt;3&lt;/td&gt;
-&lt;td style="text-align: center"&gt;9&lt;/td&gt;
-&lt;td style="text-align: center"&gt;7&lt;/td&gt;
-&lt;td style="text-align: center"&gt;1&lt;/td&gt;
-&lt;td style="text-align: center"&gt;3&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;5&lt;/td&gt;
-&lt;td style="text-align: center"&gt;5&lt;/td&gt;
-&lt;td style="text-align: center"&gt;5&lt;/td&gt;
-&lt;td style="text-align: center"&gt;5&lt;/td&gt;
-&lt;td style="text-align: center"&gt;5&lt;/td&gt;
-&lt;td style="text-align: center"&gt;5&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;7&lt;/td&gt;
-&lt;td style="text-align: center"&gt;7&lt;/td&gt;
-&lt;td style="text-align: center"&gt;1&lt;/td&gt;
-&lt;td style="text-align: center"&gt;3&lt;/td&gt;
-&lt;td style="text-align: center"&gt;9&lt;/td&gt;
-&lt;td style="text-align: center"&gt;7&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th style="text-align: center"&gt;质数&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;1次&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;2次&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;3次&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;4次&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;5次&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;2&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;2&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;4&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;8&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;6&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;2&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;3&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;3&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;9&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;7&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;3&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;5&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;5&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;5&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;5&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;5&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;5&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;7&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;7&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;3&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;9&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;7&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;好像有点意思，它们的结果是循环的，且实际上只有 $2$-循环 和 $3$-循环两个循环。&lt;/p&gt;
 &lt;p&gt;等一下，我们好像还没考虑别的质数，比如什么 $11$, $13$，$17$， $19$ 等。然而，嘛，我们可以发现，任何大于 $10$ 的质数们的末位只会是 $1, 3,7, 9$ 四个数字，而它们又恰好都在 $3$-循环的样子。&lt;/p&gt;
@@ -249,7 +279,7 @@ $$198260831540444006411614670836189813754477369022726862810627959961272975360000
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 2&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;&amp;#34;&amp;#34; Converts a decimal number to its representation in a given base. &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 3&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 4&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;0&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 5&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 5&lt;/span&gt;&lt;span class="cl"&gt; 
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 6&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;digits&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;digits&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;base&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
@@ -298,9 +328,9 @@ $$198260831540444006411614670836189813754477369022726862810627959961272975360000
 &lt;p&gt;然而，我们的结果对吗？应该是有个答案吧，答案怎么做的呢？&lt;/p&gt;
 &lt;h2 id="终章神秘的算法怎么能这么快"&gt;终章：神秘的算法，怎么能这么快？
 &lt;/h2&gt;&lt;p&gt;我们引入这个问题的时候，就说过知乎上有人发过&lt;a class="link" href="https://www.zhihu.com/question/666502327/answer/18810753693" target="_blank" rel="noopener"
-&gt;一个很厉害的回答&lt;/a&gt;。这个算法令人惊讶的简单，不需要算若干次麻烦的除法，只需要算一次模除以 $4$ 就可以了。这个算法是这样的：&lt;/p&gt;
+ &gt;一个很厉害的回答&lt;/a&gt;。这个算法令人惊讶的简单，不需要算若干次麻烦的除法，只需要算一次模除以 $4$ 就可以了。这个算法是这样的：&lt;/p&gt;
 &lt;p&gt;首先写成 5 进制，然后把每一位偶数加起来得到一个结果 $t$，然后把每一位和自己的位数（从0开始）相乘后相加得到 $x$，最后计算一个判别式 $y = (x+t/2) \mod 4$, 如果 $y = 0$ 则说明结果是 $6$，而剩下的情况则是 $2^{y}$ 即可。这个算法写成 Python 程序则为 （借用上面的转 5 进制算法）&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;quick_method&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;quick_method&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt; 
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 2&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;to_penta&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 3&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;t&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 4&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
@@ -311,13 +341,13 @@ $$198260831540444006411614670836189813754477369022726862810627959961272975360000
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;t&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;d&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;12&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;12&lt;/span&gt;&lt;span class="cl"&gt; 
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;13&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;z&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;14&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;15&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;result&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;z&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;z&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;16&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;result&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这个算法太简洁了…… 对它的解释写在 &lt;a class="link" href="https://oeis.org/w/images/4/48/AlgLastFinal1.txt" target="_blank" rel="noopener"
-&gt;这篇上古网页&lt;/a&gt;里。我实在是燃尽了，看不下去了。不过我认为其基本思路和我的算法应该是差不多的。它应该在求 $S$ 组这一步做出了很大的简化，并且把对余数的处理想办法捏进一个加和里。我也不知道他是怎么做到的。不过这个算法肯定是快的多的，因为它计算 $A(2^{5000}!)$ 是瞬间计算出来的。毕竟，时间复杂度在这里摆着……&lt;/p&gt;
+ &gt;这篇上古网页&lt;/a&gt;里。我实在是燃尽了，看不下去了。不过我认为其基本思路和我的算法应该是差不多的。它应该在求 $S$ 组这一步做出了很大的简化，并且把对余数的处理想办法捏进一个加和里。我也不知道他是怎么做到的。不过这个算法肯定是快的多的，因为它计算 $A(2^{5000}!)$ 是瞬间计算出来的。毕竟，时间复杂度在这里摆着……&lt;/p&gt;
 &lt;p&gt;也许某一天我会回来看这个算法的具体实现是怎么做到的吧！希望我会记得回来看。暂且就到这里吧，这个问题还伤了我不少脑细胞来着。&lt;/p&gt;
 &lt;h2 id="后记"&gt;后记
 &lt;/h2&gt;&lt;p&gt;其实，这个问题的解决并非一帆风顺。一开始我是在百无聊赖的状态下看到这个问题的，一下子就被吸引住了。这个问题实在是很有趣，而我一开始的思路，正如上面那样，尝试了质因数分解和一些有的没的，手动计算了 $A(20!)$ 来尝试寻找规律之类。然而，那天赶着吃饭，在发现可以以 9 个数字为一组进行操作之后就不再细想了。其实 9 个数字为一组的做法是错误的，错误原因直到后来我已经动笔开始写这篇文章的时候，我才后知后觉。好在很快意识到了问题，把 $5$ 这个绊脚石从脚边踢开后就能很好地进行计算了。&lt;/p&gt;

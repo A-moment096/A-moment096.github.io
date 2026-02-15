@@ -1,96 +1,126 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shell on A Moment's Rest</title><link>https://a-moment096.github.io/tags/shell/</link><description>Recent content in Shell on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 19 Jan 2026 06:28:39 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/shell/index.xml" rel="self" type="application/rss+xml"/><item><title>记拯救用 git-reset 误删的某代码仓库</title><link>https://a-moment096.github.io/posts/rescue_my_repository/</link><pubDate>Sun, 28 Dec 2025 00:13:03 +0800</pubDate><guid>https://a-moment096.github.io/posts/rescue_my_repository/</guid><description>&lt;img src="https://a-moment096.github.io/posts/rescue_my_repository/%E8%BF%B7%E8%BF%AD%E9%A6%99.png" alt="Featured image of post 记拯救用 git-reset 误删的某代码仓库" /&gt;&lt;p&gt;&lt;em&gt;某个笨蛋错误地使用了 &lt;code&gt;git reset --hard&lt;/code&gt; 命令，这是他发生的变化。&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shell on A Moment's Rest</title><link>https://a-moment096.github.io/tags/shell/</link><description>Recent content in Shell on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Sun, 15 Feb 2026 11:05:58 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/shell/index.xml" rel="self" type="application/rss+xml"/><item><title>记拯救用 git-reset 误删的某代码仓库</title><link>https://a-moment096.github.io/posts/rescue_my_repository/</link><pubDate>Sun, 28 Dec 2025 00:13:03 +0800</pubDate><guid>https://a-moment096.github.io/posts/rescue_my_repository/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post 记拯救用 git-reset 误删的某代码仓库" /&gt;&lt;p&gt;&lt;em&gt;某个笨蛋错误地使用了 &lt;code&gt;git reset --hard&lt;/code&gt; 命令，这是他发生的变化。&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图是可爱的迷迭香！是由 Pixiv 的 &lt;a class="link" href="https://www.pixiv.net/users/38336697" target="_blank" rel="noopener"
-&gt;赌上厨师生涯的拼好饭&lt;/a&gt; 创作的，这里有&lt;a class="link" href="https://www.pixiv.net/artworks/138994056" target="_blank" rel="noopener"
-&gt;原图链接&lt;/a&gt;。选曲为最近听的很多的一首东方同人曲：来自 &lt;a class="link" href="http://www.rd-sounds.com/" target="_blank" rel="noopener"
-&gt;凋叶棕&lt;/a&gt; 的专辑 &lt;strong&gt;望&lt;/strong&gt; 的第一首歌，&lt;strong&gt;encourager&lt;/strong&gt;，曲调积极向上，阳光活泼，我说专辑封面金发的孩子真可爱，你能反驳吗！？&lt;/em&gt;&lt;/p&gt;
+ &gt;赌上厨师生涯的拼好饭&lt;/a&gt; 创作的，这里有&lt;a class="link" href="https://www.pixiv.net/artworks/138994056" target="_blank" rel="noopener"
+ &gt;原图链接&lt;/a&gt;。选曲为最近听的很多的一首东方同人曲：来自 &lt;a class="link" href="http://www.rd-sounds.com/" target="_blank" rel="noopener"
+ &gt;凋叶棕&lt;/a&gt; 的专辑 &lt;strong&gt;望&lt;/strong&gt; 的第一首歌，&lt;strong&gt;encourager&lt;/strong&gt;，曲调积极向上，阳光活泼，我说专辑封面金发的孩子真可爱，你能反驳吗！？&lt;/em&gt;&lt;/p&gt;
+
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
 &lt;style type="text/css"&gt;
 [data-scheme="dark"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
-border-bottom-color: var(--card-separator-color);
+ border-bottom-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
-border-color: var(--card-separator-color);
+ border-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-body {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info {
-border-top-color: var(--card-background);
+ border-top-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
-color: var(--card-text-color-tertiary);
+ color: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
-background-color: var(--card-separator-color);
+ background-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
-background-color: var(--accent-color);
+ background-color: var(--accent-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li {
-color: var(--card-text-color-main);
-border-top-color: var(--card-separator-color);
+ color: var(--card-text-color-main);
+ border-top-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc {
-text-shadow: -1px -1px 0 var(--body-background);
+ text-shadow: -1px -1px 0 var(--body-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:before {
-background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+ background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:after {
-background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc p {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
+ 
 [data-scheme="light"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="light"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
 &lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
+
+
 &lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=28732491" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
 &lt;h2 id="引子"&gt;引子
 &lt;/h2&gt;&lt;p&gt;美妙而快乐的周五，应师兄的提议，我决定将自己用 AI 写出来的深度学习代码放在 Github 上的仓库里。Everything works great! 我的代码跑出来的结果看着海星，放在 Github 上和师兄们分享一下也挺好（就是不太能入米娜桑的法眼了，嘿嘿）。二话不说，先创建个 Git 仓库先，一会儿 Push 到远程就好了，Easy ~&lt;/p&gt;
@@ -122,7 +152,7 @@ background: var(--card-background-selected);
 &lt;p&gt;此时我想到，为什么不 Google 一下呢？（好吧其实是 DuckDuckGo，对不起 DuckDuckGo 真的很好用，再见 Google）我就搜 &lt;code&gt;git reset --recover recover&lt;/code&gt;，结果就遇到了一篇伟大的 Stack Overflow 帖子：&lt;/p&gt;
 &lt;h2 id="还得是-stack-overflow"&gt;还得是 Stack Overflow
 &lt;/h2&gt;&lt;p&gt;搜索结果第一个，&lt;a class="link" href="https://stackoverflow.com/questions/5788037/recover-from-losing-uncommitted-changes-by-git-reset-hard" target="_blank" rel="noopener"
-&gt;这篇 Stack Overflow 帖子&lt;/a&gt; 的提问很直接，高赞回答和我想得一样，有提交历史的情况下可以 &lt;code&gt;git reflog show&lt;/code&gt; 来救一下自己，有趣的是这个回答没有被选为题主认可的回答，反倒是第二个回答，赞数稍低一些些，却被题主选为了最佳回答。这个最初在 2011 年发布的回答讲到：&lt;/p&gt;
+ &gt;这篇 Stack Overflow 帖子&lt;/a&gt; 的提问很直接，高赞回答和我想得一样，有提交历史的情况下可以 &lt;code&gt;git reflog show&lt;/code&gt; 来救一下自己，有趣的是这个回答没有被选为题主认可的回答，反倒是第二个回答，赞数稍低一些些，却被题主选为了最佳回答。这个最初在 2011 年发布的回答讲到：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Previously staged changes (&lt;code&gt;git add&lt;/code&gt;) should be recoverable from index objects, so if you did, use &lt;code&gt;git fsck --lost-found&lt;/code&gt; to locate the objects related to it. (This writes the objects to the &lt;code&gt;.git/lost-found/&lt;/code&gt; directory; from there you can use &lt;code&gt;git show &amp;lt;filename&amp;gt;&lt;/code&gt; to see the contents of each file.)&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -148,25 +178,31 @@ background: var(--card-background-selected);
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;git init .
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这样我们就创建了一个新文件夹，写了一个新文件，并且在有文件的情况下执行了 &lt;code&gt;git init .&lt;/code&gt; 初始化了这个仓库。我们用 &lt;code&gt;git status&lt;/code&gt; 看看：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/rescue_my_repository/git-status.png"
-width="639"
-height="230"
-srcset="https://a-moment096.github.io/posts/rescue_my_repository/git-status_hu_f8b3581f67ed33c.png 480w, https://a-moment096.github.io/posts/rescue_my_repository/git-status_hu_bac6937448684bba.png 1024w"
-loading="lazy"
-alt="Git status 结果"
-class="gallery-image"
-data-flex-grow="277"
-data-flex-basis="666px"
+	width="639"
+	height="230"
+	loading="lazy"
+	
+		alt="Git status 结果"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="277"
+		data-flex-basis="666px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;我们再看看 &lt;code&gt;.git/object&lt;/code&gt; 文件夹：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/rescue_my_repository/eza-git-object.png"
-width="584"
-height="153"
-srcset="https://a-moment096.github.io/posts/rescue_my_repository/eza-git-object_hu_5a80dfc3315edec3.png 480w, https://a-moment096.github.io/posts/rescue_my_repository/eza-git-object_hu_81bf9221fac2d83d.png 1024w"
-loading="lazy"
-alt=".git/object 文件夹"
-class="gallery-image"
-data-flex-grow="381"
-data-flex-basis="916px"
+	width="584"
+	height="153"
+	loading="lazy"
+	
+		alt=".git/object 文件夹"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="381"
+		data-flex-basis="916px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;里面空空如也。我们执行下面的 Git 命令：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;git add .
@@ -174,14 +210,17 @@ data-flex-basis="916px"
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# if you don&amp;#39;t have eza:&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# tree .git/objects&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/rescue_my_repository/after-add.png"
-width="601"
-height="230"
-srcset="https://a-moment096.github.io/posts/rescue_my_repository/after-add_hu_ebdeb877d8b142eb.png 480w, https://a-moment096.github.io/posts/rescue_my_repository/after-add_hu_13e8107f087adf1f.png 1024w"
-loading="lazy"
-alt="添加文件后的 .git/objects"
-class="gallery-image"
-data-flex-grow="261"
-data-flex-basis="627px"
+	width="601"
+	height="230"
+	loading="lazy"
+	
+		alt="添加文件后的 .git/objects"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="261"
+		data-flex-basis="627px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;怎么确定他就是我们要的文件呢？Git 提供了它用来哈希的命令，我们执行 &lt;code&gt;git hash-object ./test.txt&lt;/code&gt;，得到的结果是：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;ce013625030ba8dba906f756967f9e9ca394464a
@@ -191,138 +230,174 @@ data-flex-basis="627px"
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;ls -l
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;eza --tree .git/objects
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/rescue_my_repository/git-reset--hard.png"
-width="521"
-height="231"
-srcset="https://a-moment096.github.io/posts/rescue_my_repository/git-reset--hard_hu_d22a7704f1554c9f.png 480w, https://a-moment096.github.io/posts/rescue_my_repository/git-reset--hard_hu_bf534b23ba2cea95.png 1024w"
-loading="lazy"
-alt="git reset 后"
-class="gallery-image"
-data-flex-grow="225"
-data-flex-basis="541px"
+	width="521"
+	height="231"
+	loading="lazy"
+	
+		alt="git reset 后"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="225"
+		data-flex-basis="541px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;结果很神奇！工作目录里的文件确实被删除掉了，而 &lt;code&gt;.git/objects&lt;/code&gt; 里的内容并没有被删掉。多亏了 &lt;code&gt;git add .&lt;/code&gt; 这个命令，把结果暂存了下来。此时我们尝试 &lt;code&gt;git fsck --lost-found&lt;/code&gt;：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;git fsck --lost-found
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;eza --tree .git/lost-found
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;cat .git/lost-found/other/ce013625030ba8dba906f756967f9e9ca394464a
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/rescue_my_repository/git-fsck--lost-found.png"
-width="602"
-height="284"
-srcset="https://a-moment096.github.io/posts/rescue_my_repository/git-fsck--lost-found_hu_c40c76a586e89ef.png 480w, https://a-moment096.github.io/posts/rescue_my_repository/git-fsck--lost-found_hu_199580ece64b915e.png 1024w"
-loading="lazy"
-alt="使用 git fsck --lost-found 之后"
-class="gallery-image"
-data-flex-grow="211"
-data-flex-basis="508px"
+	width="602"
+	height="284"
+	loading="lazy"
+	
+		alt="使用 git fsck --lost-found 之后"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="211"
+		data-flex-basis="508px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;所以其实 &lt;code&gt;git fsck --lost-found&lt;/code&gt; 大概就是把 &lt;code&gt;git add&lt;/code&gt; 过的文件从 &lt;code&gt;.git/objects&lt;/code&gt; 里找回来。那么 &lt;code&gt;git fsck&lt;/code&gt; 是什么呢？查阅手册，我们看到：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;git-fsck - Verifies the connectivity and validity of the objects in the database&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;--lost-found&lt;/code&gt;&lt;/p&gt;
-&lt;p style="text-indent: 50px"&gt; Write dangling objects into `.git/lost-found/commit/` or `.git/lost-found/other/`, depending on type. If the object is a blob, the contents are written into the file, rather than its object name.
+ &lt;p style="text-indent: 50px"&gt; Write dangling objects into `.git/lost-found/commit/` or `.git/lost-found/other/`, depending on type. If the object is a blob, the contents are written into the file, rather than its object name.
 &lt;/blockquote&gt;
 &lt;p&gt;That&amp;rsquo;s it! &lt;em&gt;fsck&lt;/em&gt; 应该是 &lt;em&gt;filesystem check&lt;/em&gt; 的缩写，而 &lt;code&gt;--lost-found&lt;/code&gt; 也如预料的一样，将 &lt;em&gt;悬垂&lt;/em&gt; 的对象恢复到这两个文件夹里。&lt;/p&gt;
 &lt;h2 id="总结"&gt;总结
 &lt;/h2&gt;&lt;p&gt;这次真的出了一身冷汗，还好习惯性地 &lt;code&gt;git add .&lt;/code&gt; 了一次，不然真的是神仙难救呀。我可不想把美妙的周五时光全都放在文件系统恢复上。当然，最大的教训还是：不要随意用自己了解不充分的命令，特别是这种会对自己文件系统形成半不可逆更改的操作。我自认为对 Git 有点熟悉了，现在看来，根本就是太过自大，属于是半瓶子水晃荡，最后搬石头砸自己的脚了。还得好好学一下呀！&lt;/p&gt;
 &lt;p&gt;不过，毫不谦虚地讲，这次经历我还是有做的好的地方的。起码没有彻底慌乱掉然后干出更加迷惑的操作，比如关机重启彻底删除这样失了智的行为。之前有一次好像也是东西丢了找不到，一时慌乱结果彻底找不回来了。还好那次的文件不算重要，丢了也就丢了。看来这次也算吸取了上次的一点教训，不要手忙脚乱，左右脑互搏。&lt;/p&gt;
 &lt;p&gt;另外就是，DuckDuckGo 真的很好，Stack Overflow 真的很好，没有搜索引擎和这个伟大的论坛，我半个月的心血说不定真的就泡汤了（即便是让 AI 给我干苦力（））&lt;/p&gt;
-&lt;p&gt;希望这次经历能帮到遇到了类似问题的你，或者给你也敲响一次警钟。那么，感谢你读到这里，祝你身心愉快，工作顺利，不出乌龙~&lt;/p&gt;</description></item><item><title>机器学习用 Ubuntu WSL 配置记录</title><link>https://a-moment096.github.io/posts/wsl_ubuntu_config/</link><pubDate>Sat, 29 Nov 2025 14:28:17 +0800</pubDate><guid>https://a-moment096.github.io/posts/wsl_ubuntu_config/</guid><description>&lt;img src="https://a-moment096.github.io/posts/wsl_ubuntu_config/%E3%83%94%E3%83%B3%E3%82%AF%E3%81%AE%E5%A4%A2.png" alt="Featured image of post 机器学习用 Ubuntu WSL 配置记录" /&gt;&lt;p&gt;&lt;em&gt;某人需要配置环境时做机器学习，这是他配置环境后电脑发生的变化……&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;希望这次经历能帮到遇到了类似问题的你，或者给你也敲响一次警钟。那么，感谢你读到这里，祝你身心愉快，工作顺利，不出乌龙~&lt;/p&gt;</description></item><item><title>机器学习用 Ubuntu WSL 配置记录</title><link>https://a-moment096.github.io/posts/wsl_ubuntu_config/</link><pubDate>Sat, 29 Nov 2025 14:28:17 +0800</pubDate><guid>https://a-moment096.github.io/posts/wsl_ubuntu_config/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post 机器学习用 Ubuntu WSL 配置记录" /&gt;&lt;p&gt;&lt;em&gt;某人需要配置环境时做机器学习，这是他配置环境后电脑发生的变化……&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图选择了可爱的小羊，来自 &lt;a class="link" href="https://www.pixiv.net/users/3402557" target="_blank" rel="noopener"
-&gt;Ruziかねつカーぺット&lt;/a&gt; 太太的 &lt;a class="link" href="https://www.pixiv.net/artworks/112910033#1" target="_blank" rel="noopener"
-&gt;ピンクの夢&lt;/a&gt;，粉粉的，可爱捏&lt;/em&gt;&lt;/p&gt;
+ &gt;Ruziかねつカーぺット&lt;/a&gt; 太太的 &lt;a class="link" href="https://www.pixiv.net/artworks/112910033#1" target="_blank" rel="noopener"
+ &gt;ピンクの夢&lt;/a&gt;，粉粉的，可爱捏&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;选曲为 &lt;a class="link" href="https://www.bilibili.com/video/BV1924y1T7mV/" title="B 站链接"
-target="_blank" rel="noopener"
-&gt;STUDY WITH MIKU -part2-&lt;/a&gt; 改编的 &lt;a class="link" href="https://www.bilibili.com/video/BV1j3411L76S/" title="原曲 B 站链接"
-target="_blank" rel="noopener"
-&gt;さよならプリンセス&lt;/a&gt; (再见公主)，原作是 P 主 &lt;a class="link" href="https://twitter.com/kaivcl" target="_blank" rel="noopener"
-&gt;Kai&lt;/a&gt;，由初音演唱。俏皮的音乐，好听……&lt;/em&gt;&lt;/p&gt;
+ target="_blank" rel="noopener"
+ &gt;STUDY WITH MIKU -part2-&lt;/a&gt; 改编的 &lt;a class="link" href="https://www.bilibili.com/video/BV1j3411L76S/" title="原曲 B 站链接"
+ target="_blank" rel="noopener"
+ &gt;さよならプリンセス&lt;/a&gt; (再见公主)，原作是 P 主 &lt;a class="link" href="https://twitter.com/kaivcl" target="_blank" rel="noopener"
+ &gt;Kai&lt;/a&gt;，由初音演唱。俏皮的音乐，好听……&lt;/em&gt;&lt;/p&gt;
+
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
 &lt;style type="text/css"&gt;
 [data-scheme="dark"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
-border-bottom-color: var(--card-separator-color);
+ border-bottom-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
-border-color: var(--card-separator-color);
+ border-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-body {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info {
-border-top-color: var(--card-background);
+ border-top-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
-color: var(--card-text-color-tertiary);
+ color: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
-background-color: var(--card-separator-color);
+ background-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
-background-color: var(--accent-color);
+ background-color: var(--accent-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li {
-color: var(--card-text-color-main);
-border-top-color: var(--card-separator-color);
+ color: var(--card-text-color-main);
+ border-top-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc {
-text-shadow: -1px -1px 0 var(--body-background);
+ text-shadow: -1px -1px 0 var(--body-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:before {
-background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+ background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:after {
-background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc p {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
+ 
 [data-scheme="light"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="light"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
 &lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
+
+
 &lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=2053344485" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
 &lt;h2 id="前情提要"&gt;前情提要
 &lt;/h2&gt;&lt;p&gt;参加完刚刚在西安举办的材料基因工程大会之后，某人深受触动：&lt;/p&gt;
@@ -335,42 +410,42 @@ background: var(--card-background-selected);
 &lt;h2 id="环境状态--目标"&gt;环境状态 &amp;amp; 目标
 &lt;/h2&gt;&lt;p&gt;下面的表格汇总了我目前的环境状态：&lt;/p&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style="text-align: center"&gt;项目&lt;/th&gt;
-&lt;th style="text-align: center"&gt;状态&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;OS&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Windows 11 Pro&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;GPU&lt;/td&gt;
-&lt;td style="text-align: center"&gt;RTX 5060 Laptop&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;Terminal&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Windows Terminal&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;Shell&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Powershell 7&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;WSL&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Arch Linux（不使用）&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;IDE&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Microsoft VS Code&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;硬盘&lt;/td&gt;
-&lt;td style="text-align: center"&gt;只有C盘&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th style="text-align: center"&gt;项目&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;状态&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;OS&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Windows 11 Pro&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;GPU&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;RTX 5060 Laptop&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;Terminal&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Windows Terminal&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;Shell&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Powershell 7&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;WSL&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Arch Linux（不使用）&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;IDE&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Microsoft VS Code&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;硬盘&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;只有C盘&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;即便微软罪大恶极，经过一些调教之后，Win11 还是变得能用了起来；Windows Terminal 真的很好用，推荐每个人玩了命地用（）；很难想象不用美丽优雅 &lt;strong&gt;兼容部分 GNU/Linux 命令&lt;/strong&gt; 的 Powershell 7（&lt;code&gt;pwsh&lt;/code&gt;）的样子；我们默认打开科学上网且开启虚拟网卡模式，免得 Shell 笨笨地不走代理。&lt;/p&gt;
 &lt;p&gt;我们的目标？自然是搞一个 Ubuntu 的 WSL，再在里面装上 Anaconda 以及 CUDA ，最后创建一个 conda 虚拟环境，在虚拟环境里装上测试用的 PyTorch。&lt;/p&gt;
@@ -425,7 +500,7 @@ background: var(--card-background-selected);
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# tealdeer for tldr&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 5&lt;/span&gt;&lt;span class="cl"&gt;sudo apt install zsh fd-find ripgrep eza bat neovim cmake build-essential git gdb tealdeer
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 6&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# download oh-my-zsh, install and use it&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt;sh -c &lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt;sh -c &lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt; 
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# several zsh plugins&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt;git clone https://github.com/zsh-users/zsh-autosuggestions &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;ZSH_CUSTOM&lt;/span&gt;&lt;span class="k"&gt;:-&lt;/span&gt;&lt;span class="p"&gt;~/.oh-my-zsh/custom&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;/plugins/zsh-autosuggestions
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt;git clone https://github.com/zsh-users/zsh-syntax-highlighting.git &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;ZSH_CUSTOM&lt;/span&gt;&lt;span class="k"&gt;:-&lt;/span&gt;&lt;span class="p"&gt;~/.oh-my-zsh/custom&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;/plugins/zsh-syntax-highlighting
@@ -446,15 +521,15 @@ background: var(--card-background-selected);
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt;autoload -U compinit &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; compinit
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Update when available&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt;zstyle &lt;span class="s1"&gt;&amp;#39;:omz:update&amp;#39;&lt;/span&gt; mode reminder
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt;zstyle &lt;span class="s1"&gt;&amp;#39;:omz:update&amp;#39;&lt;/span&gt; mode reminder 
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;12&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;13&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;plugins&lt;/span&gt;&lt;span class="o"&gt;=(&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;14&lt;/span&gt;&lt;span class="cl"&gt; git
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;15&lt;/span&gt;&lt;span class="cl"&gt; colored-man-pages
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;16&lt;/span&gt;&lt;span class="cl"&gt; zsh-vi-mode
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;17&lt;/span&gt;&lt;span class="cl"&gt; zsh-autosuggestions
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;18&lt;/span&gt;&lt;span class="cl"&gt; zsh-syntax-highlighting
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;19&lt;/span&gt;&lt;span class="cl"&gt; conda-zsh-completion
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;14&lt;/span&gt;&lt;span class="cl"&gt;	git
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;15&lt;/span&gt;&lt;span class="cl"&gt;	colored-man-pages
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;16&lt;/span&gt;&lt;span class="cl"&gt;	zsh-vi-mode
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;17&lt;/span&gt;&lt;span class="cl"&gt;	zsh-autosuggestions
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;18&lt;/span&gt;&lt;span class="cl"&gt;	zsh-syntax-highlighting
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;19&lt;/span&gt;&lt;span class="cl"&gt;	conda-zsh-completion
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;20&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;21&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;22&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;source&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="nv"&gt;$ZSH&lt;/span&gt;&lt;span class="s2"&gt;/oh-my-zsh.sh&amp;#34;&lt;/span&gt;
@@ -484,14 +559,17 @@ background: var(--card-background-selected);
 &lt;h3 id="windows-宿主机的简单配置"&gt;Windows 宿主机的简单配置
 &lt;/h3&gt;&lt;p&gt;由于我使用的是 Windows Terminal，在安装好 Ubuntu WSL 之后关掉 Windows Terminal 再打开，Profiles 里面就出现刚刚设置好的 Ubuntu WSL 了：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/wsl_ubuntu_config/wt-ubuntu-24.04.png"
-width="960"
-height="441"
-srcset="https://a-moment096.github.io/posts/wsl_ubuntu_config/wt-ubuntu-24.04_hu_1569aa756e368b09.png 480w, https://a-moment096.github.io/posts/wsl_ubuntu_config/wt-ubuntu-24.04_hu_6f9b4ea1452c8f9.png 1024w"
-loading="lazy"
-alt="安装好的 WSL"
-class="gallery-image"
-data-flex-grow="217"
-data-flex-basis="522px"
+	width="960"
+	height="441"
+	loading="lazy"
+	
+		alt="安装好的 WSL"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="217"
+		data-flex-basis="522px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;可能你的 Windows Terminal 里有很多别的选项，或者默认的 Shell 等不是 PowerShell，没关系，我们可以进入设置修改。比如让 PowerShell 成为默认 profile&lt;sup id="fnref:2"&gt;&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref"&gt;2&lt;/a&gt;&lt;/sup&gt;，把常用的 profile 顺序提前等等。&lt;/p&gt;
 &lt;p&gt;这里主要想聊一下下面这些设置，请注意要记得保存，用的 GUI 的话右下角有保存按钮，使用 JSON 文件的话要保存文件：&lt;/p&gt;
@@ -508,7 +586,7 @@ data-flex-basis="522px"
 &lt;h3 id="anaconda-的简单介绍"&gt;Anaconda 的简单介绍
 &lt;/h3&gt;&lt;p&gt;所以，Anaconda 是什么？它是 Python 吗？Python 是什么？我已经有 Python 之后还需要装 Anaconda 吗？如果你了解这些概念，请直接跳过吧（）&lt;/p&gt;
 &lt;p&gt;我们先来说说 Python 和包管理。Python 作为一门比较现代的语言，它使用解释器实现逐行的代码运行，且通过包管理器来管理代码中使用到的模块、库之类的东西。然而 Python 其本身只是一个语言，我们常说的 “下载 Python” 实际上是下载了包含 Python 的解释器、包管理器以及运行环境的一个发行版。我们从 &lt;a class="link" href="https://www.python.org" target="_blank" rel="noopener"
-&gt;官网&lt;/a&gt; 下载到的 Python 安装包实际上包括了使用 C 语言实现的 CPython 解释器，从 PyPI，即 Python Package Index 来下载安装对应的包的包管理器 &lt;code&gt;pip&lt;/code&gt;，以及它们的运行所需的环境（如果你勾选了 IDLE 的选项，你还会安装一个小小的 Python IDE）。我们称这样下载到的是 Python 官方发行版。&lt;/p&gt;
+ &gt;官网&lt;/a&gt; 下载到的 Python 安装包实际上包括了使用 C 语言实现的 CPython 解释器，从 PyPI，即 Python Package Index 来下载安装对应的包的包管理器 &lt;code&gt;pip&lt;/code&gt;，以及它们的运行所需的环境（如果你勾选了 IDLE 的选项，你还会安装一个小小的 Python IDE）。我们称这样下载到的是 Python 官方发行版。&lt;/p&gt;
 &lt;p&gt;除了 Python 官方的发行版外，由于 CPython 采用的开源协议，它允许任何人自由地打包并发行自己基于 CPython 的 Python 发行版，实际上也确实有很多不同的基于 CPython 的发行版。其中一个非常出名的发行版即为本次的主角，Anaconda。Anaconda 的 Python 发行版包含了由自己打包的 CPython 解释器，不同于 &lt;code&gt;pip&lt;/code&gt; 的另一款包管理器 &lt;code&gt;conda&lt;/code&gt;，以及由 Anaconda 提供的，预包含了许多科学计算、数据统计库的运行环境。&lt;/p&gt;
 &lt;p&gt;Anaconda 的特点在于 &lt;code&gt;conda&lt;/code&gt; 这款包管理器，它可以选择对应的频道（channel）来安装不同来源的库，且更重要的是，它的库不局限于 Python 使用：它不仅管理 Python 使用的库，还会管理这些库所需要的可能的其他语言的库，进行必要的依赖求解。另外它还集成了虚拟环境管理，不似 Python 官方提供的 venv 这个环境管理工具，这让 &lt;code&gt;conda&lt;/code&gt; 成为了一个 All In One 的管理工具。当然，它还直接地提供了一些做科学计算时常需要的库，如 Numpy, Matplotlib，Pandas 等。如果你只是想享受最纯粹的 &lt;code&gt;conda&lt;/code&gt;，可以考虑安装 Miniconda，不过因为我们就是要做机器学习，所以干脆安装 Anaconda 就挺好的。&lt;/p&gt;
 &lt;p&gt;所以，为什么我们需要 Anaconda？做机器学习没有说必须要用 Anaconda 呀？而且大部分 Python 包都会优先考虑使用 PyPI 分发，而不会先考虑 Anaconda 的包源。使用 Anaconda 的主要原因，除了我看的教程是用的 Anaconda 管理环境之外，还有很重要的一点就是 &lt;code&gt;conda&lt;/code&gt; 管理的不只是包，还有包自身的依赖，以及能直接管理环境。这解决了一个很棘手的问题：依赖地狱。假如你要的包 A 和包 B 都依赖同一个库 C，而 A 要求用老版本的 C 库，B 要求用更新版本的 C 库，而你的电脑已经安装了老 C 库，这时候要怎么办？把这个老 C 库卸载，重装一个新的吗？&lt;code&gt;conda&lt;/code&gt; 提供了一个优雅的方法：虚拟出一个环境，在这个环境中重新安装相容的 A, B 和 C。更重要的是，这个环境不会影响到其他的环境，不用担心装上什么软件之后会毁掉整个电脑上的库。事实上，在机器学习这个较新的，正在发展的领域，机器学习用到的库很有可能发生奇怪的依赖问题。而使用 &lt;code&gt;conda&lt;/code&gt; 就能更方便地解决这类问题。&lt;/p&gt;
@@ -523,14 +601,17 @@ data-flex-basis="522px"
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;./Anaconda3-2025.06-1-Linux-x86_64.sh
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这样就进入安装流程了，首先要先同意它们的协议，我们回车，它会讲我们得同意协议条款，此时我们得明确打出 &lt;code&gt;yes&lt;/code&gt; 并回车，否则：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/wsl_ubuntu_config/yes.png"
-width="1112"
-height="340"
-srcset="https://a-moment096.github.io/posts/wsl_ubuntu_config/yes_hu_61d5cd9533bff928.png 480w, https://a-moment096.github.io/posts/wsl_ubuntu_config/yes_hu_dcce69c234e0e460.png 1024w"
-loading="lazy"
-alt="Type yes here!"
-class="gallery-image"
-data-flex-grow="327"
-data-flex-basis="784px"
+	width="1112"
+	height="340"
+	loading="lazy"
+	
+		alt="Type yes here!"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="327"
+		data-flex-basis="784px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;接下来就是安装位置，默认是安装在家目录的 &lt;code&gt;anaconda3&lt;/code&gt; 这个位置，我们可以选择接受这个位置，或者手打换一个位置安装，这里就直接默认了。然后就是一阵强力的安装，就进入了最后的环节，是否要将 &lt;code&gt;conda&lt;/code&gt; 添加进 Shell 的配置中，每次进入 Shell 就自动启动 &lt;code&gt;conda&lt;/code&gt;。默认是 &lt;code&gt;no&lt;/code&gt;，我们接受默认，待会儿我们手动添加相关内容。&lt;/p&gt;
 &lt;p&gt;这样就完成安装了。不过因为没有在 Shell 中初始化 &lt;code&gt;conda&lt;/code&gt;，我们需要先执行初始化。我们安装好的 &lt;code&gt;conda&lt;/code&gt; 位于 &lt;code&gt;~/anaconda3/bin/conda&lt;/code&gt;，因此我们可以使用命令：&lt;/p&gt;
@@ -555,42 +636,51 @@ data-flex-basis="784px"
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;vim &lt;span class="nv"&gt;$ZSH_CUSTOM&lt;/span&gt;/env/conda_env.zsh
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;然后把刚刚的内容贴进去，然后重启 Shell，就好啦。你应该能看到 Shell 的显示中，左侧有一个 &lt;code&gt;(base)&lt;/code&gt; 的字样，这样就说明我们已经成功启动 &lt;code&gt;conda&lt;/code&gt; 的 &lt;code&gt;base&lt;/code&gt; 环境了。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/wsl_ubuntu_config/base-env.png"
-width="545"
-height="216"
-srcset="https://a-moment096.github.io/posts/wsl_ubuntu_config/base-env_hu_45eb526d95c0db7.png 480w, https://a-moment096.github.io/posts/wsl_ubuntu_config/base-env_hu_c632d45afb4945cb.png 1024w"
-loading="lazy"
-alt="Base Environment"
-class="gallery-image"
-data-flex-grow="252"
-data-flex-basis="605px"
+	width="545"
+	height="216"
+	loading="lazy"
+	
+		alt="Base Environment"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="252"
+		data-flex-basis="605px"
+	
 &gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;我们先不介绍 Anaconda 的具体操作，因为对我们而言，我们还没有完全完成环境配置。接下来要配置的则是所谓的 CUDA。&lt;/p&gt;
 &lt;h2 id="cuda"&gt;CUDA
 &lt;/h2&gt;&lt;p&gt;我刚刚收到了一个坏消息：在我刚写好 CUDA 安装部分的瞬间，鬼使神差地，我看到了 CUDA 官网文档上关于 &amp;ldquo;conda&amp;rdquo; 的部分：&lt;a class="link" href="https://docs.nvidia.com/cuda/cuda-installation-guide-linux/#conda-installation" target="_blank" rel="noopener"
-&gt;Conda Installation&lt;/a&gt;&lt;/p&gt;
+ &gt;Conda Installation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/wsl_ubuntu_config/conda-installation.png"
-width="1500"
-height="1167"
-srcset="https://a-moment096.github.io/posts/wsl_ubuntu_config/conda-installation_hu_1fdfa4d31d89afd2.png 480w, https://a-moment096.github.io/posts/wsl_ubuntu_config/conda-installation_hu_e4178a5c05388e0d.png 1024w"
-loading="lazy"
-alt="Conda Installation"
-class="gallery-image"
-data-flex-grow="128"
-data-flex-basis="308px"
+	width="1500"
+	height="1167"
+	loading="lazy"
+	
+		alt="Conda Installation"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="128"
+		data-flex-basis="308px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;何意味…… 在 &lt;code&gt;conda activate pytorch-test&lt;/code&gt;（我的环境名叫 &lt;code&gt;pytorch-test&lt;/code&gt;）之后使用 &lt;code&gt;where nvcc&lt;/code&gt;，得到了这样的结果：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-zsh" data-lang="zsh"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;/home/amoment/.conda/envs/pytorch/bin/nvcc
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;/usr/local/cuda-13.0/bin/nvcc
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/wsl_ubuntu_config/%E9%9A%BE%E9%81%93%E8%AF%B4.jpg"
-width="214"
-height="236"
-srcset="https://a-moment096.github.io/posts/wsl_ubuntu_config/%E9%9A%BE%E9%81%93%E8%AF%B4_hu_a7bfdb9ea32618bc.jpg 480w, https://a-moment096.github.io/posts/wsl_ubuntu_config/%E9%9A%BE%E9%81%93%E8%AF%B4_hu_24e650e3cd9dbbe7.jpg 1024w"
-loading="lazy"
-alt="难道说！？"
-class="gallery-image"
-data-flex-grow="90"
-data-flex-basis="217px"
+	width="214"
+	height="236"
+	loading="lazy"
+	
+		alt="难道说！？"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="90"
+		data-flex-basis="217px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;算了，写都写了，我们还是介绍一下怎么安装，以及&lt;em&gt;怎么卸载&lt;/em&gt;吧……&lt;/p&gt;
 &lt;h3 id="cuda-的简单介绍"&gt;CUDA 的简单介绍
@@ -599,19 +689,22 @@ data-flex-basis="217px"
 &lt;h3 id="安装-cuda"&gt;安装 CUDA
 &lt;/h3&gt;&lt;p&gt;在开始之前，我们最好先确认我们的设备可以使用 CUDA。首先我们使用 &lt;code&gt;nvidia-smi&lt;/code&gt; 命令，它会显示设备上的 Nvidia 显卡的信息：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/wsl_ubuntu_config/nvidia-smi.png"
-width="1582"
-height="867"
-srcset="https://a-moment096.github.io/posts/wsl_ubuntu_config/nvidia-smi_hu_304bd1f076167b9d.png 480w, https://a-moment096.github.io/posts/wsl_ubuntu_config/nvidia-smi_hu_494f2919a12215b.png 1024w"
-loading="lazy"
-alt="nvidia-smi"
-class="gallery-image"
-data-flex-grow="182"
-data-flex-basis="437px"
+	width="1582"
+	height="867"
+	loading="lazy"
+	
+		alt="nvidia-smi"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="182"
+		data-flex-basis="437px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;可以看到有一大堆的信息在这里，包括我这台设备的显卡，以及对应的 CUDA 版本。如果是比较老的显卡，需要去 &lt;a class="link" href="https://developer.nvidia.com/cuda-gpus" target="_blank" rel="noopener"
-&gt;CUDA GPU Compute Capability&lt;/a&gt; 这里查一下显卡的 Compute Capability，大于等于 3.0 的就是可以正常使用 CUDA 的了。一般来讲只要不是上古显卡都应该是没问题的吧（逃）&lt;/p&gt;
+ &gt;CUDA GPU Compute Capability&lt;/a&gt; 这里查一下显卡的 Compute Capability，大于等于 3.0 的就是可以正常使用 CUDA 的了。一般来讲只要不是上古显卡都应该是没问题的吧（逃）&lt;/p&gt;
 &lt;p&gt;接下来就是正式安装，根据 &lt;a class="link" href="https://docs.nvidia.com/cuda/wsl-user-guide/index.html#cuda-support-for-wsl-2" target="_blank" rel="noopener"
-&gt;官方文档&lt;/a&gt; 的描述，第一步应该删掉老旧的 GPG 密钥：&lt;/p&gt;
+ &gt;官方文档&lt;/a&gt; 的描述，第一步应该删掉老旧的 GPG 密钥：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-zsh" data-lang="zsh"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;sudo apt-key del 7fa2af80
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;接下来我们就可以直接下载 CUDA Toolkit 了。目前最新版本的 Toolkit 是 13.1 版本，下载页面实际上提供的是一串脚本：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-zsh" data-lang="zsh"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;wget https://developer.download.nvidia.com/compute/cuda/repos/wsl-ubuntu/x86_64/cuda-wsl-ubuntu.pin
@@ -687,96 +780,126 @@ data-flex-basis="437px"
 &lt;p&gt;实在是不知道怎么翻译这个词比较好……&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</description></item><item><title>（也许是）一个 Git 教程？其三</title><link>https://a-moment096.github.io/posts/git_3/</link><pubDate>Tue, 26 Aug 2025 18:28:16 +0800</pubDate><guid>https://a-moment096.github.io/posts/git_3/</guid><description>&lt;img src="https://a-moment096.github.io/posts/Shell_Note/Git_How/Tatara%20Kogasa.jpg" alt="Featured image of post （也许是）一个 Git 教程？其三" /&gt;&lt;p&gt;&lt;em&gt;最后一节，聊聊如何在 GitHub 上进行多人协作吧~&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;</description></item><item><title>（也许是）一个 Git 教程？其三</title><link>https://a-moment096.github.io/posts/git_3/</link><pubDate>Tue, 26 Aug 2025 18:28:16 +0800</pubDate><guid>https://a-moment096.github.io/posts/git_3/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post （也许是）一个 Git 教程？其三" /&gt;&lt;p&gt;&lt;em&gt;最后一节，聊聊如何在 GitHub 上进行多人协作吧~&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图信息请参考第一节内容，谢谢~ 选曲依然选到了小伞的个人曲，希望你喜欢！&lt;/em&gt;&lt;/p&gt;
+
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
 &lt;style type="text/css"&gt;
 [data-scheme="dark"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
-border-bottom-color: var(--card-separator-color);
+ border-bottom-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
-border-color: var(--card-separator-color);
+ border-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-body {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info {
-border-top-color: var(--card-background);
+ border-top-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
-color: var(--card-text-color-tertiary);
+ color: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
-background-color: var(--card-separator-color);
+ background-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
-background-color: var(--accent-color);
+ background-color: var(--accent-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li {
-color: var(--card-text-color-main);
-border-top-color: var(--card-separator-color);
+ color: var(--card-text-color-main);
+ border-top-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc {
-text-shadow: -1px -1px 0 var(--body-background);
+ text-shadow: -1px -1px 0 var(--body-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:before {
-background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+ background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:after {
-background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc p {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
+ 
 [data-scheme="light"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="light"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
 &lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
+
+
 &lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=455026" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
 &lt;h2 id="所以git-的远程到底是什么东西"&gt;所以，Git 的远程到底是什么东西？
 &lt;/h2&gt;&lt;p&gt;我们之前提过，Git 通过 &lt;em&gt;远程 (Remote)&lt;/em&gt; 来实现和他人合作。我们甚至已经介绍了一些和远程进行交互的命令了。然而，Git 究竟是怎么实现这一功能的？这个功能有什么特点呢？我们和他人进行协作开发时，有什么要注意的点呢？我们一点点来介绍。我们先系统地介绍一下 &lt;em&gt;远程&lt;/em&gt; 是什么东西吧。&lt;/p&gt;
@@ -790,10 +913,10 @@ background: var(--card-background-selected);
 &lt;h2 id="代码托管平台们"&gt;代码托管平台们
 &lt;/h2&gt;&lt;h3 id="github-the-blessed-one"&gt;GitHub: The blessed one
 &lt;/h3&gt;&lt;p&gt;向您隆重介绍，这个星球最受欢迎代码托管平台，汇集无数人智慧结晶，全世界最大同性（？）交友网站（&lt;a class="link" href="https://www.flysnow.org/2019/01/09/github-milestones" target="_blank" rel="noopener"
-&gt;迫真&lt;/a&gt;，95%以上的用户都是男性），GitHub。第一期其实已经有介绍过，GitHub 和 Git 之间的关系是什么样的，以及大家可以怎么使用 GitHub。这里我们再多聊两句。&lt;/p&gt;
+ &gt;迫真&lt;/a&gt;，95%以上的用户都是男性），GitHub。第一期其实已经有介绍过，GitHub 和 Git 之间的关系是什么样的，以及大家可以怎么使用 GitHub。这里我们再多聊两句。&lt;/p&gt;
 &lt;p&gt;上面我们说 GitHub 是代码仓库，其实是不太严谨的，应该说它是一个代码托管平台，任何人都可以在上面创建自己的仓库，然后把代码放在上面。当然，GitHub 的功能肯定不仅限于此，它上面集成了很多很好用的功能，比如 Issues, Pull Requests, GitHub Actions 等，也提供了非常美观现代化的图形界面，能让大家直观地看到代码仓库的变更历史。它甚至提供了 GitHub Pages 来让开发者可以把静态的网页托管在上面，这让很多项目得以拥有自己的网页，或是用来做文档，或是用来宣传，功能非常多样。顺带一提，本博客就是托管在 GitHub Pages 服务上的。GitHub，伟大无需多言。&lt;/p&gt;
 &lt;p&gt;目前 GitHub 上已经有了 &lt;a class="link" href="https://gitcharts.com/" target="_blank" rel="noopener"
-&gt;2亿6千万以上（268 million+）的公开仓库了&lt;/a&gt;，仓库来源于全世界各地，且每天都有大量的信件仓库，大量的拉取请求，以及大量的代码提交。大家在 GitHub 上的活动已经远不止简单的提交自己的代码这么简单，开发者们会在一个项目内合作开发，设定开发目标，合并他人的拉取请求，为感兴趣的项目做贡献或者提出问题，帮助他人解答问题等等。其仓库类型也是多种多样，有各种语言写成的千奇百怪的项目，也有一些很不错的资源整合项目，甚至你还会看到很多令人难绷的小作文以及互联网记忆。总之，除了托管自己的代码之外，你还可以看看别人的代码，玩玩别人的项目，和别的开发者讨论（&lt;del&gt;吵架&lt;/del&gt;），给别的项目做贡献（&lt;del&gt;改错别字&lt;/del&gt;）。用途多种多样，就看怎么用了。&lt;/p&gt;
+ &gt;2亿6千万以上（268 million+）的公开仓库了&lt;/a&gt;，仓库来源于全世界各地，且每天都有大量的信件仓库，大量的拉取请求，以及大量的代码提交。大家在 GitHub 上的活动已经远不止简单的提交自己的代码这么简单，开发者们会在一个项目内合作开发，设定开发目标，合并他人的拉取请求，为感兴趣的项目做贡献或者提出问题，帮助他人解答问题等等。其仓库类型也是多种多样，有各种语言写成的千奇百怪的项目，也有一些很不错的资源整合项目，甚至你还会看到很多令人难绷的小作文以及互联网记忆。总之，除了托管自己的代码之外，你还可以看看别人的代码，玩玩别人的项目，和别的开发者讨论（&lt;del&gt;吵架&lt;/del&gt;），给别的项目做贡献（&lt;del&gt;改错别字&lt;/del&gt;）。用途多种多样，就看怎么用了。&lt;/p&gt;
 &lt;p&gt;GitHub 起源于 2007 年，至今已经 18 年历史了。18年来，GitHub 变得越来越完善，功能越来越丰富。2018 年的时候微软收购了它，在那之后就成了微软的一个子公司，而 2019 年的时候 GitHub 宣布它支持个人创建任意多个私有仓库，将 GitHub 的受欢迎程度推上了一个新台阶。而就在前不久（2025年8月11日），其 CEO 宣布卸任，GitHub 被合并在微软的 Core AI 部门。我个人认为这应该算是坏消息，毕竟 GitHub 作为全世界最大的代码托管平台，几乎已经是 &lt;em&gt;开源精神&lt;/em&gt; 的代言人了。本来还是一个比较独立的子公司的 GitHub 现在被微软直接合并进一个部门内，怎么想都感觉其独立性要进一步下降了。是在令人感到可惜。但是就目前而言，GitHub 也依旧是同类产品中知名度最高的一个，甚至可以说是某种标准了。所以，还是先用着吧。如果 GitHub 哪一天真倒了的话，肯定还会出现新的继任者的。&lt;/p&gt;
 &lt;h3 id="gitlab-强大的自动化以及自托管"&gt;GitLab: 强大的自动化以及自托管
 &lt;/h3&gt;&lt;p&gt;除了 GitHub 以外，当然还有别的托管平台。其中另一个比较受欢迎的项目就是 GitLab，它除了托管到 GitLab 的服务器上以外，还支持在自己的服务器上自行搭建代码托管平台，其中也支持和 GitHub 类似的很多功能，比如查看源码，Issues, Merge Request（对应 GitHub 中的 Pull Request），CI/CD（持续集成/持续部署）等等。其中的 CI/CD 是 GitLab 最出众的特点，以速度快效率高而著称。而且由于它提供自托管（通过 GitLab Community Edition）的特性，对于那些需要较强独立性的，不希望受到 GitHub 控制的（理由嘛……我也不知道），或者就是某些公司希望保持私密性的项目，GitLab 是一个很不错的选择。有很多项目都是使用 GitLab 进行托管的，比如 KDE，Paraview 等。相较于 GitHub 而言，GitLab 的隐私性还是更强一些。然而坏消息是，GitLab 在 24 年的时候宣布不再直接为中国地区提供服务，转而由本地服务提供商 &lt;em&gt;极狐&lt;/em&gt; 提供。我也很难讲究竟应该用哪个……&lt;/p&gt;
@@ -864,99 +987,129 @@ background: var(--card-background-selected);
 &lt;p&gt;还有人问，现在好用的 VCS（版本控制系统）也早已经不止 Git 一个了，为什么不介绍更新的工具，而是这个老套到甚至有点老掉牙的，对用户并不是非常友好的 Git 呢？我的回答是，它第一没有那么不堪，第二实际上它也许已经成为了某种事实标准，第三它真的很好用。再加上几乎所有的 VCS 都会提供从 Git 仓库转换到其他格式的仓库的功能，这更说明了 Git 在版本控制系统这个领域的重要地位。如果您会使用 Git 的话，相信其他的 VCS 系统也不会难到您。当然，我也很愿意尝试一下别的工具，比如最近风头正盛的，使用 Rust 编写的 Jujutsu。不过这也是后话了。（Git 真的很好用了）&lt;/p&gt;
 &lt;p&gt;这篇都快写完的时候我才意识到，我还没有介绍 Git 怎么查看提交历史。感觉放在这一篇里还是有点尴尬，毕竟这一篇主要还是在讲怎么和其他人协作，而 Git 的历史查看功能放在这里就不太合适了。思来想去，我放在了上一篇里，因为它和分支还是有很大的关系的。如果你看过了上一篇，结果又没有收到上一篇的更新的话，我建议你可以回去看看（）&lt;/p&gt;
 &lt;p&gt;另外，这个系列真的离不开一些工具，比如 &lt;code&gt;tldr&lt;/code&gt;（包名是 &lt;code&gt;tealdeer&lt;/code&gt;，不过其他版本的也很不错），以及 ChatGPT，DeepSeek 等 AI 工具的协助。当然 Git 自带的文档也很不错，在 Linux 上可以直接 &lt;code&gt;man git&lt;/code&gt; 查看总的介绍，使用 &lt;code&gt;man git-add&lt;/code&gt; 这样的格式来查看 Git 各个子命令（这里是 &lt;code&gt;add&lt;/code&gt;）的使用方式。而在 Windows 上，由于没有 &lt;code&gt;man&lt;/code&gt;，你可以使用 &lt;code&gt;git help git-add&lt;/code&gt; 或者更简单的 &lt;code&gt;git add --help&lt;/code&gt; 来查看在安装 Git 时就已经附赠的 Git 的文档。而且 Git 也有自己的 “官方教材”: &lt;a class="link" href="https://git-scm.com/book/id/v2" target="_blank" rel="noopener"
-&gt;&lt;em&gt;ProGit&lt;/em&gt;&lt;/a&gt;，它有多种语言的版本，作为教程而言自然是比 Git 的文档写的好懂的多。不过 Git 的文档写的也很不错就是了。&lt;/p&gt;
+ &gt;&lt;em&gt;ProGit&lt;/em&gt;&lt;/a&gt;，它有多种语言的版本，作为教程而言自然是比 Git 的文档写的好懂的多。不过 Git 的文档写的也很不错就是了。&lt;/p&gt;
 &lt;p&gt;最后，非常感谢您能看到这里。如果你看完了这三篇的话，我更是感激不尽。如果这些文字能帮到你那就太好了，如果没有起太大帮助的话，希望能逗你一笑。哎呀至少笑一下吧，显得这个系列的文章也不是一无是处嘛。&lt;del&gt;（之前写的那个 &lt;a class="link" href="https://a-moment096.github.io/content/posts/Math_Note/Snake_Lemma/index.md" &gt;关于蛇引理的文章&lt;/a&gt; 里也说如果能博读者一笑就好了，结果发现，根本没几个人看呀可恶…… 更别说逗大家笑了，唉，实在是太失败了。）&lt;/del&gt;&lt;/p&gt;
-&lt;p&gt;那么，一如既往地，祝您身心愉快，工作顺利，少出 Bug ~！&lt;/p&gt;</description></item><item><title>（也许是）一个 Git 教程？其二</title><link>https://a-moment096.github.io/posts/git_2/</link><pubDate>Thu, 14 Aug 2025 16:49:16 +0800</pubDate><guid>https://a-moment096.github.io/posts/git_2/</guid><description>&lt;img src="https://a-moment096.github.io/posts/Shell_Note/Git_How/Tatara%20Kogasa.jpg" alt="Featured image of post （也许是）一个 Git 教程？其二" /&gt;&lt;p&gt;&lt;em&gt;上一节已经介绍了平时会怎么用 Git 进行单分支仓库的管理，这一节就来讲讲 Git 要怎么进行多分支协作吧！&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;那么，一如既往地，祝您身心愉快，工作顺利，少出 Bug ~！&lt;/p&gt;</description></item><item><title>（也许是）一个 Git 教程？其二</title><link>https://a-moment096.github.io/posts/git_2/</link><pubDate>Thu, 14 Aug 2025 16:49:16 +0800</pubDate><guid>https://a-moment096.github.io/posts/git_2/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post （也许是）一个 Git 教程？其二" /&gt;&lt;p&gt;&lt;em&gt;上一节已经介绍了平时会怎么用 Git 进行单分支仓库的管理，这一节就来讲讲 Git 要怎么进行多分支协作吧！&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图信息请参考上一节内容，谢谢~ 选曲选到了知名社团 &lt;a class="link" href="https://f-g-s.net/" target="_blank" rel="noopener"
-&gt;Foxtail-Grass-Studio&lt;/a&gt; 对小伞个人曲的翻调，请欣赏~&lt;/em&gt;&lt;/p&gt;
+ &gt;Foxtail-Grass-Studio&lt;/a&gt; 对小伞个人曲的翻调，请欣赏~&lt;/em&gt;&lt;/p&gt;
+
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
 &lt;style type="text/css"&gt;
 [data-scheme="dark"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
-border-bottom-color: var(--card-separator-color);
+ border-bottom-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
-border-color: var(--card-separator-color);
+ border-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-body {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info {
-border-top-color: var(--card-background);
+ border-top-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
-color: var(--card-text-color-tertiary);
+ color: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
-background-color: var(--card-separator-color);
+ background-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
-background-color: var(--accent-color);
+ background-color: var(--accent-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li {
-color: var(--card-text-color-main);
-border-top-color: var(--card-separator-color);
+ color: var(--card-text-color-main);
+ border-top-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc {
-text-shadow: -1px -1px 0 var(--body-background);
+ text-shadow: -1px -1px 0 var(--body-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:before {
-background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+ background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:after {
-background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc p {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
+ 
 [data-scheme="light"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="light"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
 &lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
+
+
 &lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=785695" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
 &lt;h2 id="分支是那个分支吗"&gt;分支，是那个分支吗？
 &lt;/h2&gt;&lt;p&gt;我们上一节已经了解过 Git 在单分支下的日常工作流了。值得注意的是，我们说的是 “单分支”，那么自然，Git 是支持，同时鼓励使用多分支的。那么分支是什么呢？&lt;/p&gt;
@@ -964,23 +1117,23 @@ background: var(--card-background-selected);
 &lt;p&gt;咳咳，不开玩笑了。我们来看看分支具体是什么样的。先来个分支图：&lt;/p&gt;
 &lt;h3 id="一个也许简单的-git-分支示意图"&gt;一个也许简单的 Git 分支示意图
 &lt;/h3&gt;&lt;figure class="mermaid-container"&gt;
-&lt;div class="mermaid"&gt;gitGraph
-commit id: "initial commit"
-commit
-branch feature1
-checkout feature1
-commit id: "new feat1, first commit"
-commit
-checkout main
-merge feature1 id: "merge feature1"
-branch feature2
-checkout feature2
-commit id: "new feat2"
-checkout main
-commit
-merge feature2 id: "finish, merge feat2"
-&lt;/div&gt;
-&lt;figcaption&gt;Git 分支示意图&lt;/figcaption&gt;
+ &lt;div class="mermaid"&gt;gitGraph
+ commit id: "initial commit"
+ commit
+ branch feature1
+ checkout feature1
+ commit id: "new feat1, first commit"
+ commit
+ checkout main
+ merge feature1 id: "merge feature1"
+ branch feature2
+ checkout feature2
+ commit id: "new feat2"
+ checkout main
+ commit
+ merge feature2 id: "finish, merge feat2"
+ &lt;/div&gt;
+ &lt;figcaption&gt;Git 分支示意图&lt;/figcaption&gt;
 &lt;/figure&gt;&lt;p&gt;（嘶，mermaid 竟然直接有 gitGraph 的功能，NB）&lt;/p&gt;
 &lt;p&gt;那么可以看到，我们这里有三条分支：一条 &lt;code&gt;main&lt;/code&gt;， 一条 &lt;code&gt;feature1&lt;/code&gt; 以及一条 &lt;code&gt;feature2&lt;/code&gt;。有时我们开启了一个分支，有时我们又将两个分支进行了合并。上面的图是怎么生成的呢（双关意）？下面是用到的代码：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 1&lt;/span&gt;&lt;span class="cl"&gt;gitGraph
@@ -1044,7 +1197,7 @@ merge feature2 id: "finish, merge feat2"
 &lt;p&gt;这个命令当然没有这么枯燥。事实上，你可以自定义的部分特别多。例如，你可以使用 &lt;code&gt;--graph&lt;/code&gt; 来在每个提交的最左边显示分支图（虽然不是很好辨认），你还可以使用 &lt;code&gt;--all&lt;/code&gt; 来显示所有分支的历史记录。如果想让历史记录不要搞个好多行，而是只想看看每个提交的大概信息的话，你可以使用 &lt;code&gt;--oneline&lt;/code&gt; 来让每个提交都变成短短的一行。上面说的这三个参数你可以组合在一起，来快速浏览提交历史是什么样的。而如果你希望显示全面的信息，比如哪些文件发生了什么更改，你可以使用 &lt;code&gt;--stat&lt;/code&gt; ，这样 Git 就会有个统计信息，告诉你哪些文件发生了什么变化。&lt;/p&gt;
 &lt;p&gt;你看到了提交的时间了吧？&lt;code&gt;git log --before &amp;lt;date&amp;gt; --after &amp;lt;date&amp;gt;&lt;/code&gt; 还可以让你选定只查看某个时间段内的提交！时间的格式则是 &lt;code&gt;yyyy-mm-dd&lt;/code&gt;，实在是非常方便的功能。&lt;/p&gt;
 &lt;p&gt;然而这个命令最神奇的地方在于，你实际上可以自定义输出格式。使用 &lt;code&gt;--pretty&lt;/code&gt; 格式，你就可以用一些字段来控制 Git 日志的输出格式。这里有一个&lt;a class="link" href="https://devhints.io/git-log-format" target="_blank" rel="noopener"
-&gt;参考表&lt;/a&gt;，感兴趣的话可以看看，试用一下。&lt;/p&gt;
+ &gt;参考表&lt;/a&gt;，感兴趣的话可以看看，试用一下。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;分支相关的基本命令我们就先介绍到这里吧。有了上面的介绍，相信你已经可以运用 Git 的分支功能了吧~&lt;/p&gt;
@@ -1078,99 +1231,129 @@ merge feature2 id: "finish, merge feat2"
 &lt;h2 id="后记"&gt;后记
 &lt;/h2&gt;&lt;p&gt;我必须立刻承认我这篇文章离不开 &lt;code&gt;tldr&lt;/code&gt;，准确来说是 &lt;code&gt;tealdeer&lt;/code&gt; 的帮助。很难想象没有 &lt;code&gt;tldr&lt;/code&gt; 我要怎么介绍可用命令。唉，我还是对 Git 不够熟悉。如果里面有任何的错漏，又或是对这个系列有什么建议，请直接告诉我，谢谢，我会及时修改的（球球了，告诉我哪里写的不好吧，呜呜呜）。&lt;/p&gt;
 &lt;p&gt;另外我还想推荐一个很不错的网站，&lt;a class="link" href="https://learngitbranching.js.org/" target="_blank" rel="noopener"
-&gt;Learn Git Branching&lt;/a&gt;，一个让你在实际操作中练习 Git 分支管理的网页，从进行提交，创建分支，合并分支，到变基 (Rebase)，远程库协作等复杂操作，全都有涉猎。我花了一下午通关，收获很大，因此墙裂建议。&lt;/p&gt;
-&lt;p&gt;下一节就是我们的最后一节内容，我打算聊聊 Git 的远程协作功能，以及协作时的注意事项等等。另外，由于深感 Git 命令之繁杂，我有计划做一个小工具来通过问答的方式给出合适的 Git 命令。我暂时将这个工具命名为 &lt;code&gt;Giao&lt;/code&gt;，希望不会难产吧，哈哈。有兴趣的话也可以关注我/给我提建议，谢谢啦。&lt;/p&gt;</description></item><item><title>（也许是）一个 Git 教程？其一</title><link>https://a-moment096.github.io/posts/git_1/</link><pubDate>Mon, 28 Jul 2025 22:49:16 +0800</pubDate><guid>https://a-moment096.github.io/posts/git_1/</guid><description>&lt;img src="https://a-moment096.github.io/posts/Shell_Note/Git_How/Tatara%20Kogasa.jpg" alt="Featured image of post （也许是）一个 Git 教程？其一" /&gt;&lt;p&gt;&lt;em&gt;Git 真的很好用，但是 Git 的命令真的好复杂。简单整理一下，就当写个教程好了~&lt;/em&gt;&lt;/p&gt;
+ &gt;Learn Git Branching&lt;/a&gt;，一个让你在实际操作中练习 Git 分支管理的网页，从进行提交，创建分支，合并分支，到变基 (Rebase)，远程库协作等复杂操作，全都有涉猎。我花了一下午通关，收获很大，因此墙裂建议。&lt;/p&gt;
+&lt;p&gt;下一节就是我们的最后一节内容，我打算聊聊 Git 的远程协作功能，以及协作时的注意事项等等。另外，由于深感 Git 命令之繁杂，我有计划做一个小工具来通过问答的方式给出合适的 Git 命令。我暂时将这个工具命名为 &lt;code&gt;Giao&lt;/code&gt;，希望不会难产吧，哈哈。有兴趣的话也可以关注我/给我提建议，谢谢啦。&lt;/p&gt;</description></item><item><title>（也许是）一个 Git 教程？其一</title><link>https://a-moment096.github.io/posts/git_1/</link><pubDate>Mon, 28 Jul 2025 22:49:16 +0800</pubDate><guid>https://a-moment096.github.io/posts/git_1/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post （也许是）一个 Git 教程？其一" /&gt;&lt;p&gt;&lt;em&gt;Git 真的很好用，但是 Git 的命令真的好复杂。简单整理一下，就当写个教程好了~&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图出自 &lt;a class="link" href="https://www.pixiv.net/en/users/75383094" target="_blank" rel="noopener"
-&gt;夏空&lt;/a&gt; 太太所画的 &lt;a class="link" href="https://www.pixiv.net/en/artworks/116876998" target="_blank" rel="noopener"
-&gt;多多良 小伞&lt;/a&gt;，可爱捏~ 那就来一曲小伞的个人曲吧&lt;/em&gt;&lt;/p&gt;
+ &gt;夏空&lt;/a&gt; 太太所画的 &lt;a class="link" href="https://www.pixiv.net/en/artworks/116876998" target="_blank" rel="noopener"
+ &gt;多多良 小伞&lt;/a&gt;，可爱捏~ 那就来一曲小伞的个人曲吧&lt;/em&gt;&lt;/p&gt;
+
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
 &lt;style type="text/css"&gt;
 [data-scheme="dark"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
-border-bottom-color: var(--card-separator-color);
+ border-bottom-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
-border-color: var(--card-separator-color);
+ border-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-body {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info {
-border-top-color: var(--card-background);
+ border-top-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
-color: var(--card-text-color-tertiary);
+ color: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
-background-color: var(--card-separator-color);
+ background-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
-background-color: var(--accent-color);
+ background-color: var(--accent-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li {
-color: var(--card-text-color-main);
-border-top-color: var(--card-separator-color);
+ color: var(--card-text-color-main);
+ border-top-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc {
-text-shadow: -1px -1px 0 var(--body-background);
+ text-shadow: -1px -1px 0 var(--body-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:before {
-background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+ background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:after {
-background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc p {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
+ 
 [data-scheme="light"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="light"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
 &lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
+
+
 &lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=22636608" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
 &lt;h2 id="git熟悉又陌生的名字-"&gt;Git，熟悉又陌生的名字 ……
 &lt;/h2&gt;&lt;p&gt;也许是所处环境的原因，我身边有很多人不知道 Git 是什么。他们都听过 &lt;em&gt;GitHub&lt;/em&gt;，但很多却只知道上面有好多程序和程序员。虽然也没错，但是并不准确；而当我说我在用 &lt;em&gt;Git&lt;/em&gt; 的时候，会有人把 &lt;em&gt;Git&lt;/em&gt; 和 &lt;em&gt;GitHub&lt;/em&gt; 混为一谈；很多人觉得 Git 很复杂，顺带觉得 GitHub 也很复杂…… 为此，我想分享一下我对 Git 和 GitHub 的理解，聊聊 Git 和 GitHub 都是什么。&lt;/p&gt;
@@ -1246,117 +1429,147 @@ background: var(--card-background-selected);
 &lt;p&gt;这个命令要注意的点是，不要在本地有修改没存的情况下执行 &lt;code&gt;git pull&lt;/code&gt;。如果本地和远程起了冲突，会很麻烦。避免麻烦的最好方式是，先 &lt;code&gt;git pull&lt;/code&gt; 之后再做自己的修改。&lt;/p&gt;
 &lt;h3 id="画个流程图"&gt;画个流程图
 &lt;/h3&gt;&lt;figure class="mermaid-container"&gt;
-&lt;div class="mermaid"&gt;flowchart LR
-A[开始] --&gt; B[git init\n创建新仓库]
-A --&gt; C[git clone\n克隆已有仓库]
-B --&gt; D[在仓库中做出变更]
-C --&gt; D
-D -- 暂时存下 --&gt; E[git add .\n暂存已有变更]
-E -- 满意已暂存内容 --&gt; F[git commit\n提交所有暂存的变更]
-F --&gt; G[git push\n上传至远程仓库]
-G --&gt; H[其他设备: git pull\n从远程获取最新变更]
-H --&gt; D
-F --&gt; D
-&lt;/div&gt;
-&lt;figcaption&gt;Git 日常工作流&lt;/figcaption&gt;
+ &lt;div class="mermaid"&gt;flowchart LR
+ A[开始] --&gt; B[git init\n创建新仓库]
+ A --&gt; C[git clone\n克隆已有仓库]
+ B --&gt; D[在仓库中做出变更]
+ C --&gt; D
+ D -- 暂时存下 --&gt; E[git add .\n暂存已有变更]
+ E -- 满意已暂存内容 --&gt; F[git commit\n提交所有暂存的变更]
+ F --&gt; G[git push\n上传至远程仓库]
+ G --&gt; H[其他设备: git pull\n从远程获取最新变更]
+ H --&gt; D
+ F --&gt; D
+ &lt;/div&gt;
+ &lt;figcaption&gt;Git 日常工作流&lt;/figcaption&gt;
 &lt;/figure&gt;&lt;h2 id="好累先聊到这里吧"&gt;好累，先聊到这里吧
 &lt;/h2&gt;&lt;p&gt;我们已经介绍了 Git 是什么以及日常会用到的功能。我可以说，除了剩下关于 Git 另一个非常强大的功能：分支的两三个命令，以及一两个我觉得好用的命令以外，剩下的命令都是我很不常用的命令了。剩下的命令几乎只有在我搞砸了什么东西的时候临时从网上搜来救火用的，而保持良好的使用习惯的话真的是很少用到这些麻烦/复杂/难以理解的功能的。&lt;/p&gt;
 &lt;p&gt;所以，如果你看到了这里，恭喜你已经掌握了 Git 单分支的工作流程了。就是改文件，暂存，提交，推送。而下一章我们会看看 Git 被吹的神乎其神的分支到底是个啥，再解释 Git 中的一些概念。&lt;/p&gt;
 &lt;p&gt;这里要特别声明的是，这篇文章的比喻借鉴了 &lt;a class="link" href="https://space.bilibili.com/337242418" target="_blank" rel="noopener"
-&gt;HDAlex_John&lt;/a&gt; 的 Git 教程系列：&lt;a class="link" href="https://www.bilibili.com/video/BV1Hkr7YYEh8" target="_blank" rel="noopener"
-&gt;给傻子的 Git 教程&lt;/a&gt;，讲的相当好。好在我不是傻子，看着也不累，哈哈哈哈。（还是自己写起来比较累）&lt;/p&gt;
-&lt;p&gt;那么最后，感谢你看到这里，祝你心情愉悦，生活顺遂！~&lt;/p&gt;</description></item><item><title>使用 rsync 进行同步</title><link>https://a-moment096.github.io/posts/use_rsync/</link><pubDate>Mon, 28 Jul 2025 12:43:39 +0800</pubDate><guid>https://a-moment096.github.io/posts/use_rsync/</guid><description>&lt;img src="https://a-moment096.github.io/posts/use_rsync/%E8%B4%9D%E5%8A%A0%E5%B0%94%E6%B9%96%E7%95%94.jpg" alt="Featured image of post 使用 rsync 进行同步" /&gt;&lt;p&gt;&lt;em&gt;有点受不太了 &lt;code&gt;scp&lt;/code&gt; 和 &lt;code&gt;sftp&lt;/code&gt; 了，也许是食用姿势不对吧，总之我选择 &lt;code&gt;rsync&lt;/code&gt;！&lt;/em&gt;&lt;/p&gt;
+ &gt;HDAlex_John&lt;/a&gt; 的 Git 教程系列：&lt;a class="link" href="https://www.bilibili.com/video/BV1Hkr7YYEh8" target="_blank" rel="noopener"
+ &gt;给傻子的 Git 教程&lt;/a&gt;，讲的相当好。好在我不是傻子，看着也不累，哈哈哈哈。（还是自己写起来比较累）&lt;/p&gt;
+&lt;p&gt;那么最后，感谢你看到这里，祝你心情愉悦，生活顺遂！~&lt;/p&gt;</description></item><item><title>使用 rsync 进行同步</title><link>https://a-moment096.github.io/posts/use_rsync/</link><pubDate>Mon, 28 Jul 2025 12:43:39 +0800</pubDate><guid>https://a-moment096.github.io/posts/use_rsync/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post 使用 rsync 进行同步" /&gt;&lt;p&gt;&lt;em&gt;有点受不太了 &lt;code&gt;scp&lt;/code&gt; 和 &lt;code&gt;sftp&lt;/code&gt; 了，也许是食用姿势不对吧，总之我选择 &lt;code&gt;rsync&lt;/code&gt;！&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;&lt;del&gt;图源找不到诶……从朋友那里薅过来的图，很漂亮就放在这里了&lt;/del&gt; 小爷我找到啦！是出自 &lt;a class="link" href="https://www.pixiv.net/en/users/8605991" target="_blank" rel="noopener"
-&gt;fasnakegod&lt;/a&gt; 大大的 &lt;a class="link" href="https://www.pixiv.net/en/artworks/125739568" target="_blank" rel="noopener"
-&gt;贝加尔湖畔&lt;/a&gt;。既然如此就分享一首钢琴曲吧。一首 &lt;strong&gt;騎士王の誇り&lt;/strong&gt; (骑士王的荣耀) 送给大家。（好像毫无关联诶 kora!）&lt;/em&gt;&lt;/p&gt;
+ &gt;fasnakegod&lt;/a&gt; 大大的 &lt;a class="link" href="https://www.pixiv.net/en/artworks/125739568" target="_blank" rel="noopener"
+ &gt;贝加尔湖畔&lt;/a&gt;。既然如此就分享一首钢琴曲吧。一首 &lt;strong&gt;騎士王の誇り&lt;/strong&gt; (骑士王的荣耀) 送给大家。（好像毫无关联诶 kora!）&lt;/em&gt;&lt;/p&gt;
+
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
 &lt;style type="text/css"&gt;
 [data-scheme="dark"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
-border-bottom-color: var(--card-separator-color);
+ border-bottom-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
-border-color: var(--card-separator-color);
+ border-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-body {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info {
-border-top-color: var(--card-background);
+ border-top-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
-color: var(--card-text-color-tertiary);
+ color: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
-background-color: var(--card-separator-color);
+ background-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
-background-color: var(--accent-color);
+ background-color: var(--accent-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li {
-color: var(--card-text-color-main);
-border-top-color: var(--card-separator-color);
+ color: var(--card-text-color-main);
+ border-top-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc {
-text-shadow: -1px -1px 0 var(--body-background);
+ text-shadow: -1px -1px 0 var(--body-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:before {
-background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+ background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:after {
-background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc p {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
+ 
 [data-scheme="light"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="light"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
 &lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
+
+
 &lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=448119" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
 &lt;h2 id="为什么要选择-rsync-呢"&gt;为什么要选择 &lt;code&gt;rsync&lt;/code&gt; 呢？
 &lt;/h2&gt;&lt;p&gt;有时候我们有多个远程电脑，或者是服务器，上面的文件内容我们希望下载到本地。我们通常有这么几个选择：使用一些功能成熟的，专用于 SSH 连接的终端模拟器，比如 MobaXTerm 这样的软件；或者我们可以使用 &lt;code&gt;scp&lt;/code&gt;，&lt;code&gt;sftp&lt;/code&gt; 这样的工具，但是界面有点简陋，特别是 &lt;code&gt;sftp&lt;/code&gt;，需要反复确认文件名是否输入错误。而且有时我们只需要下载不同的部分，不希望重复下载已经有了的部分。这时候，&lt;code&gt;rsync&lt;/code&gt; 作为 &lt;em&gt;remote sync&lt;/em&gt; 的工具，就到了发挥其作用的地方了。&lt;/p&gt;
@@ -1443,100 +1656,130 @@ background: var(--card-background-selected);
 &lt;ul&gt;
 &lt;li&gt;首先，ChatGPT 和 Deepseek，完全不了解的时候和这些 AI 问一下还是挺好用的；&lt;/li&gt;
 &lt;li&gt;&lt;a class="link" href="https://www.digitalocean.com/community/tutorials/how-to-use-rsync-to-sync-local-and-remote-directories" target="_blank" rel="noopener"
-&gt;rsync tutorial&lt;/a&gt;: 一个简单的 rsync walkthrough，帮了我很多；&lt;/li&gt;
+ &gt;rsync tutorial&lt;/a&gt;: 一个简单的 rsync walkthrough，帮了我很多；&lt;/li&gt;
 &lt;li&gt;&lt;a class="link" href="https://www.geeksforgeeks.org/linux-unix/rsync-command-in-linux-with-examples/" target="_blank" rel="noopener"
-&gt;rsync command in Linux with Examples&lt;/a&gt;: GeeksForGeeks 下的一个博客，内容很丰富。&lt;/li&gt;
+ &gt;rsync command in Linux with Examples&lt;/a&gt;: GeeksForGeeks 下的一个博客，内容很丰富。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;最后，感谢您能看到这里，祝您身体健康，心情愉悦~&lt;/p&gt;</description></item><item><title>上一个命令是什么？</title><link>https://a-moment096.github.io/posts/last_command/</link><pubDate>Sat, 26 Jul 2025 20:09:18 +0800</pubDate><guid>https://a-moment096.github.io/posts/last_command/</guid><description>&lt;img src="https://a-moment096.github.io/posts/last_command/SEASIDE_SOLILOQUIES.png" alt="Featured image of post 上一个命令是什么？" /&gt;&lt;p&gt;&lt;em&gt;曾经总会好奇：怎么获取上一个命令呢？应该很简单才对吧？简单的搜索后，下面是我得到的结果，就记录一下吧&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;最后，感谢您能看到这里，祝您身体健康，心情愉悦~&lt;/p&gt;</description></item><item><title>上一个命令是什么？</title><link>https://a-moment096.github.io/posts/last_command/</link><pubDate>Sat, 26 Jul 2025 20:09:18 +0800</pubDate><guid>https://a-moment096.github.io/posts/last_command/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post 上一个命令是什么？" /&gt;&lt;p&gt;&lt;em&gt;曾经总会好奇：怎么获取上一个命令呢？应该很简单才对吧？简单的搜索后，下面是我得到的结果，就记录一下吧&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图出自 Orangestar 的专辑 &lt;strong&gt;SEASIDE SOLILOQUIES&lt;/strong&gt;, 好看又好听。所以这里贴曲就贴这个专辑的主打歌好了：一首 &lt;strong&gt;Alice in 冷凍庫&lt;/strong&gt;，希望你喜欢。&lt;/em&gt;&lt;/p&gt;
+
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
 &lt;style type="text/css"&gt;
 [data-scheme="dark"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
-border-bottom-color: var(--card-separator-color);
+ border-bottom-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
-border-color: var(--card-separator-color);
+ border-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-body {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info {
-border-top-color: var(--card-background);
+ border-top-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
-color: var(--card-text-color-tertiary);
+ color: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
-background-color: var(--card-separator-color);
+ background-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
-background-color: var(--accent-color);
+ background-color: var(--accent-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li {
-color: var(--card-text-color-main);
-border-top-color: var(--card-separator-color);
+ color: var(--card-text-color-main);
+ border-top-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc {
-text-shadow: -1px -1px 0 var(--body-background);
+ text-shadow: -1px -1px 0 var(--body-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:before {
-background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+ background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:after {
-background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc p {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
+ 
 [data-scheme="light"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="light"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
 &lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
+
+
 &lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=458231453" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
 &lt;h2 id="什么时候要用这个"&gt;什么时候要用这个？
 &lt;/h2&gt;&lt;p&gt;有时候我们写了一长串命令，比如有很麻烦的路径之类的，这时候我们可能会希望用某个符号来自动地填上命令里的某些参数。一个最常见的例子，当我要安装某些软件包的时候，偶尔会忘记加上 &lt;code&gt;sudo&lt;/code&gt; 来以管理员权限运行。这时候把上面的命令复制一遍再补上 &lt;code&gt;sudo&lt;/code&gt; 实在是太慢了，而按下上箭头后在把光标挪到第一行，最后补上 &lt;code&gt;sudo&lt;/code&gt; 总是感觉很累，手的移动距离感觉好远。除此之外，有时输入的一长串命令/参数并运行之后，我需要接着上面的参数继续运行别的命令，此时要是用命令行历史的话，就又得用光标定位之后，再删掉没有用的东西，最后再填上要替换的内容。这实在是太慢了。&lt;/p&gt;
@@ -1549,7 +1792,7 @@ background: var(--card-background-selected);
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;$ &lt;span class="nb"&gt;echo&lt;/span&gt; !! &lt;span class="c1"&gt;# !! 替换了上面整个执行了的命令，也就是替换了 &amp;#34;echo hello bash world&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; hello bash world!
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt;$ &lt;span class="nb"&gt;echo&lt;/span&gt; !-1 &lt;span class="c1"&gt;# 同上,也是替换上面执行的命令，所以替换了 &amp;#34;echo echo hello bash world&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;6&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; hello bash world!
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;6&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; hello bash world! 
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="我要调用历史命令"&gt;我要调用历史命令
 &lt;/h3&gt;&lt;p&gt;我们还可以用 &lt;code&gt;!&amp;lt;num&amp;gt;&lt;/code&gt; 来选择某个历史命令。我们可以先用 &lt;code&gt;head&lt;/code&gt; 来查看一下我们的命令历史里最早有一些什么：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ head ~/.zsh_history &lt;span class="c1"&gt;# 这里我的 zsh 命令历史存在这个文件里，可以用 head 查看前几个命令&lt;/span&gt;
@@ -1589,7 +1832,7 @@ background: var(--card-background-selected);
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt;$ &lt;span class="nb"&gt;echo&lt;/span&gt; !!:-3 &lt;span class="c1"&gt;# 没有 &amp;lt;num1&amp;gt; 则会自动替换为0，相当于 echo echo one two three&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; one two three
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt;$ &lt;span class="nb"&gt;echo&lt;/span&gt; !-2:1-2 &lt;span class="c1"&gt;# 配合 !&amp;lt;num&amp;gt; 使用，相当于 echo one two &lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt;one two
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt;one two 
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt;$ &lt;span class="nb"&gt;echo&lt;/span&gt; !-3:1- &lt;span class="c1"&gt;# 没有 &amp;lt;num2&amp;gt; 则会匹配到除了最后一个参数外的参数，相当于 echo one two three&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;12&lt;/span&gt;&lt;span class="cl"&gt;one two three
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;13&lt;/span&gt;&lt;span class="cl"&gt;$ &lt;span class="nb"&gt;echo&lt;/span&gt; !-4:$ &lt;span class="c1"&gt;# 使用 $ 来获取最后一个参数，相当于 echo four&lt;/span&gt;
@@ -1597,9 +1840,9 @@ background: var(--card-background-selected);
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;15&lt;/span&gt;&lt;span class="cl"&gt;$ &lt;span class="nb"&gt;echo&lt;/span&gt; !-5:3-$ &lt;span class="c1"&gt;# 同样 $ 也支持范围选择，相当于 echo three four&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;16&lt;/span&gt;&lt;span class="cl"&gt;three four
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;17&lt;/span&gt;&lt;span class="cl"&gt;$ &lt;span class="nb"&gt;echo&lt;/span&gt; !-6:* &lt;span class="c1"&gt;# 使用 * 来表示所有的参数，相当于 echo !-6:1-$，也就是 echo one two three four&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;18&lt;/span&gt;&lt;span class="cl"&gt;one two three four
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;18&lt;/span&gt;&lt;span class="cl"&gt;one two three four 
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;19&lt;/span&gt;&lt;span class="cl"&gt;$ &lt;span class="nb"&gt;echo&lt;/span&gt; !:* &lt;span class="c1"&gt;# !: 是在使用冒号时 !!: 或者 !-1: 的简写，相当于 echo one two three four&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;20&lt;/span&gt;&lt;span class="cl"&gt;one two three four
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;20&lt;/span&gt;&lt;span class="cl"&gt;one two three four 
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果没有 &lt;code&gt;&amp;lt;num1&amp;gt;&lt;/code&gt;，则默认从 &lt;code&gt;0&lt;/code&gt; 开始，也就是会包含所有内容；如果没有 &lt;code&gt;&amp;lt;num2&amp;gt;&lt;/code&gt;，则默认停在最后一个参数前。可以使用 &lt;code&gt;*&lt;/code&gt; 来选择所有的参数，使用 &lt;code&gt;$&lt;/code&gt; 选择最后一个参数。&lt;/p&gt;
 &lt;h2 id="我要对字符串做处理"&gt;我要对字符串做处理
 &lt;/h2&gt;&lt;p&gt;在冒号后使用一些字母来做相应的处理。假设有命令 &lt;code&gt;ls /path/to/a/file.txt&lt;/code&gt; 并且我们使用 &lt;code&gt;echo !:1&lt;/code&gt; 尝试调用这个 &lt;code&gt;ls&lt;/code&gt; 的命令，则下面的参数选择器可以做到：&lt;/p&gt;
@@ -1617,156 +1860,156 @@ background: var(--card-background-selected);
 &lt;/h2&gt;&lt;p&gt;下面是一个表格简单描述这些用法&lt;/p&gt;
 &lt;h3 id="命令选择使用-"&gt;命令选择（使用 &lt;code&gt;!&lt;/code&gt;）
 &lt;/h3&gt;&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;语法&lt;/th&gt;
-&lt;th&gt;含义&lt;/th&gt;
-&lt;th&gt;示例&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;!!&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;上一条命令&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;sudo !!&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;!-n&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;倒数第 n 条命令&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;!-2&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;!n&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;第 n 条历史命令&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;!42&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;!字符串&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;最近以该字符串开头的命令&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;!ls&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;!?字符串?&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;最近包含该字符串的命令&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;!?foo?&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;^旧^新&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;将上一条命令中第一个“旧”替换为“新”&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;^cat^bat&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;语法&lt;/th&gt;
+ &lt;th&gt;含义&lt;/th&gt;
+ &lt;th&gt;示例&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;!!&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;上一条命令&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;sudo !!&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;!-n&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;倒数第 n 条命令&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;!-2&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;!n&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;第 n 条历史命令&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;!42&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;!字符串&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;最近以该字符串开头的命令&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;!ls&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;!?字符串?&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;最近包含该字符串的命令&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;!?foo?&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;^旧^新&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;将上一条命令中第一个“旧”替换为“新”&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;^cat^bat&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h3 id="参数选择-使用-"&gt;参数选择 （使用 &lt;code&gt;:&lt;/code&gt;）
 &lt;/h3&gt;&lt;p&gt;下面的示例命令使用 &lt;code&gt;echo file.txt&lt;/code&gt; 来做演示。&lt;/p&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;语法&lt;/th&gt;
-&lt;th&gt;含义&lt;/th&gt;
-&lt;th&gt;示例&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;!!:0&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;上一条命令的命令名&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;!!:0&lt;/code&gt; → &lt;code&gt;echo&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;!!:1&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;第一个参数&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;!!:1&lt;/code&gt; → &lt;code&gt;file.txt&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;!!:2&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;第二个参数&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;!!:$&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;最后一个参数&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;!!:$&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;!!:*&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;所有参数（等同于 &lt;code&gt;!!:1-$&lt;/code&gt;）&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;!!:*&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;!!:1-3&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;第 1 到第 3 个参数&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;!!:1-3&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;!!:2-$&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;从第 2 个到最后一个参数&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;!!:2-$&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;!$&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;上一条命令的最后一个参数 (可以省略冒号)&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;cat !$&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;!*&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;上一条命令的所有参数（可以省略冒号）&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;rm !*&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;语法&lt;/th&gt;
+ &lt;th&gt;含义&lt;/th&gt;
+ &lt;th&gt;示例&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;!!:0&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;上一条命令的命令名&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;!!:0&lt;/code&gt; → &lt;code&gt;echo&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;!!:1&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;第一个参数&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;!!:1&lt;/code&gt; → &lt;code&gt;file.txt&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;!!:2&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;第二个参数&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;!!:$&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;最后一个参数&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;!!:$&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;!!:*&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;所有参数（等同于 &lt;code&gt;!!:1-$&lt;/code&gt;）&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;!!:*&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;!!:1-3&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;第 1 到第 3 个参数&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;!!:1-3&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;!!:2-$&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;从第 2 个到最后一个参数&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;!!:2-$&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;!$&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;上一条命令的最后一个参数 (可以省略冒号)&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;cat !$&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;!*&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;上一条命令的所有参数（可以省略冒号）&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;rm !*&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h3 id="参数修饰"&gt;参数修饰
 &lt;/h3&gt;&lt;p&gt;下面的示例命令使用 &lt;code&gt;echo /path/to/file.txt&lt;/code&gt; 来做演示。&lt;/p&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;修饰符&lt;/th&gt;
-&lt;th&gt;含义&lt;/th&gt;
-&lt;th&gt;示例&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;:p&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;只打印命令，不执行&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;sudo !!:p&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;:q&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;给参数加引号，避免空格或特殊字符问题&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;echo !!:1:q&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;:h&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;获取路径头部（类似 &lt;code&gt;dirname&lt;/code&gt;）&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;echo !!:1:h&lt;/code&gt; → &lt;code&gt;/path/to&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;:t&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;获取路径尾部（类似 &lt;code&gt;basename&lt;/code&gt;）&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;echo !!:1:t&lt;/code&gt; → &lt;code&gt;file.txt&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;:r&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;去掉文件扩展名（保留主名）&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;echo !!:1:r&lt;/code&gt; → &lt;code&gt;file&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;:e&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;获取文件扩展名&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;echo !!:1:e&lt;/code&gt; → &lt;code&gt;txt&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;:s/旧/新/&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;替换第一个出现的子串&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;!!:1:s/foo/bar/&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;:gs/旧/新/&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;替换所有出现的子串&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;!!:1:gs/foo/bar/&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;修饰符&lt;/th&gt;
+ &lt;th&gt;含义&lt;/th&gt;
+ &lt;th&gt;示例&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;:p&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;只打印命令，不执行&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;sudo !!:p&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;:q&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;给参数加引号，避免空格或特殊字符问题&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;echo !!:1:q&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;:h&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;获取路径头部（类似 &lt;code&gt;dirname&lt;/code&gt;）&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;echo !!:1:h&lt;/code&gt; → &lt;code&gt;/path/to&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;:t&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;获取路径尾部（类似 &lt;code&gt;basename&lt;/code&gt;）&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;echo !!:1:t&lt;/code&gt; → &lt;code&gt;file.txt&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;:r&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;去掉文件扩展名（保留主名）&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;echo !!:1:r&lt;/code&gt; → &lt;code&gt;file&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;:e&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;获取文件扩展名&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;echo !!:1:e&lt;/code&gt; → &lt;code&gt;txt&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;:s/旧/新/&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;替换第一个出现的子串&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;!!:1:s/foo/bar/&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;:gs/旧/新/&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;替换所有出现的子串&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;!!:1:gs/foo/bar/&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id="总结"&gt;总结
 &lt;/h2&gt;&lt;p&gt;这里其实应该没有写完，不过就这些已经列出来的方法而言，我个人感觉是已经挺够用的了。毕竟，平时最常用的也就是 &lt;code&gt;sudo !!&lt;/code&gt; 来给 &lt;code&gt;pamcan -Syu&lt;/code&gt; 补上管理员权限而已，或者是在 &lt;code&gt;ls -l /path/to/file&lt;/code&gt; 确定文件/文件夹存在后用 &lt;code&gt;vim&lt;/code&gt; 或者 &lt;code&gt;cd&lt;/code&gt; 打开它罢了。&lt;/p&gt;

@@ -1,101 +1,131 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python on A Moment's Rest</title><link>https://a-moment096.github.io/tags/python/</link><description>Recent content in Python on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 19 Jan 2026 06:28:39 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/python/index.xml" rel="self" type="application/rss+xml"/><item><title>机器学习用 Ubuntu WSL 配置记录</title><link>https://a-moment096.github.io/posts/wsl_ubuntu_config/</link><pubDate>Sat, 29 Nov 2025 14:28:17 +0800</pubDate><guid>https://a-moment096.github.io/posts/wsl_ubuntu_config/</guid><description>&lt;img src="https://a-moment096.github.io/posts/wsl_ubuntu_config/%E3%83%94%E3%83%B3%E3%82%AF%E3%81%AE%E5%A4%A2.png" alt="Featured image of post 机器学习用 Ubuntu WSL 配置记录" /&gt;&lt;p&gt;&lt;em&gt;某人需要配置环境时做机器学习，这是他配置环境后电脑发生的变化……&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python on A Moment's Rest</title><link>https://a-moment096.github.io/tags/python/</link><description>Recent content in Python on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Sun, 15 Feb 2026 11:05:58 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/python/index.xml" rel="self" type="application/rss+xml"/><item><title>机器学习用 Ubuntu WSL 配置记录</title><link>https://a-moment096.github.io/posts/wsl_ubuntu_config/</link><pubDate>Sat, 29 Nov 2025 14:28:17 +0800</pubDate><guid>https://a-moment096.github.io/posts/wsl_ubuntu_config/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post 机器学习用 Ubuntu WSL 配置记录" /&gt;&lt;p&gt;&lt;em&gt;某人需要配置环境时做机器学习，这是他配置环境后电脑发生的变化……&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图选择了可爱的小羊，来自 &lt;a class="link" href="https://www.pixiv.net/users/3402557" target="_blank" rel="noopener"
-&gt;Ruziかねつカーぺット&lt;/a&gt; 太太的 &lt;a class="link" href="https://www.pixiv.net/artworks/112910033#1" target="_blank" rel="noopener"
-&gt;ピンクの夢&lt;/a&gt;，粉粉的，可爱捏&lt;/em&gt;&lt;/p&gt;
+ &gt;Ruziかねつカーぺット&lt;/a&gt; 太太的 &lt;a class="link" href="https://www.pixiv.net/artworks/112910033#1" target="_blank" rel="noopener"
+ &gt;ピンクの夢&lt;/a&gt;，粉粉的，可爱捏&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;选曲为 &lt;a class="link" href="https://www.bilibili.com/video/BV1924y1T7mV/" title="B 站链接"
-target="_blank" rel="noopener"
-&gt;STUDY WITH MIKU -part2-&lt;/a&gt; 改编的 &lt;a class="link" href="https://www.bilibili.com/video/BV1j3411L76S/" title="原曲 B 站链接"
-target="_blank" rel="noopener"
-&gt;さよならプリンセス&lt;/a&gt; (再见公主)，原作是 P 主 &lt;a class="link" href="https://twitter.com/kaivcl" target="_blank" rel="noopener"
-&gt;Kai&lt;/a&gt;，由初音演唱。俏皮的音乐，好听……&lt;/em&gt;&lt;/p&gt;
+ target="_blank" rel="noopener"
+ &gt;STUDY WITH MIKU -part2-&lt;/a&gt; 改编的 &lt;a class="link" href="https://www.bilibili.com/video/BV1j3411L76S/" title="原曲 B 站链接"
+ target="_blank" rel="noopener"
+ &gt;さよならプリンセス&lt;/a&gt; (再见公主)，原作是 P 主 &lt;a class="link" href="https://twitter.com/kaivcl" target="_blank" rel="noopener"
+ &gt;Kai&lt;/a&gt;，由初音演唱。俏皮的音乐，好听……&lt;/em&gt;&lt;/p&gt;
+
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
 &lt;style type="text/css"&gt;
 [data-scheme="dark"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
-border-bottom-color: var(--card-separator-color);
+ border-bottom-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
-border-color: var(--card-separator-color);
+ border-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-body {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info {
-border-top-color: var(--card-background);
+ border-top-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
-color: var(--card-text-color-tertiary);
+ color: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
-background-color: var(--card-separator-color);
+ background-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
-background-color: var(--accent-color);
+ background-color: var(--accent-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li {
-color: var(--card-text-color-main);
-border-top-color: var(--card-separator-color);
+ color: var(--card-text-color-main);
+ border-top-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc {
-text-shadow: -1px -1px 0 var(--body-background);
+ text-shadow: -1px -1px 0 var(--body-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:before {
-background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+ background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:after {
-background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc p {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
+ 
 [data-scheme="light"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="light"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
 &lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
+
+
 &lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=2053344485" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
 &lt;h2 id="前情提要"&gt;前情提要
 &lt;/h2&gt;&lt;p&gt;参加完刚刚在西安举办的材料基因工程大会之后，某人深受触动：&lt;/p&gt;
@@ -108,42 +138,42 @@ background: var(--card-background-selected);
 &lt;h2 id="环境状态--目标"&gt;环境状态 &amp;amp; 目标
 &lt;/h2&gt;&lt;p&gt;下面的表格汇总了我目前的环境状态：&lt;/p&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style="text-align: center"&gt;项目&lt;/th&gt;
-&lt;th style="text-align: center"&gt;状态&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;OS&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Windows 11 Pro&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;GPU&lt;/td&gt;
-&lt;td style="text-align: center"&gt;RTX 5060 Laptop&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;Terminal&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Windows Terminal&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;Shell&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Powershell 7&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;WSL&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Arch Linux（不使用）&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;IDE&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Microsoft VS Code&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;硬盘&lt;/td&gt;
-&lt;td style="text-align: center"&gt;只有C盘&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th style="text-align: center"&gt;项目&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;状态&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;OS&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Windows 11 Pro&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;GPU&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;RTX 5060 Laptop&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;Terminal&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Windows Terminal&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;Shell&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Powershell 7&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;WSL&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Arch Linux（不使用）&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;IDE&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Microsoft VS Code&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;硬盘&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;只有C盘&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;即便微软罪大恶极，经过一些调教之后，Win11 还是变得能用了起来；Windows Terminal 真的很好用，推荐每个人玩了命地用（）；很难想象不用美丽优雅 &lt;strong&gt;兼容部分 GNU/Linux 命令&lt;/strong&gt; 的 Powershell 7（&lt;code&gt;pwsh&lt;/code&gt;）的样子；我们默认打开科学上网且开启虚拟网卡模式，免得 Shell 笨笨地不走代理。&lt;/p&gt;
 &lt;p&gt;我们的目标？自然是搞一个 Ubuntu 的 WSL，再在里面装上 Anaconda 以及 CUDA ，最后创建一个 conda 虚拟环境，在虚拟环境里装上测试用的 PyTorch。&lt;/p&gt;
@@ -198,7 +228,7 @@ background: var(--card-background-selected);
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# tealdeer for tldr&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 5&lt;/span&gt;&lt;span class="cl"&gt;sudo apt install zsh fd-find ripgrep eza bat neovim cmake build-essential git gdb tealdeer
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 6&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# download oh-my-zsh, install and use it&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt;sh -c &lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt;sh -c &lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt; 
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# several zsh plugins&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt;git clone https://github.com/zsh-users/zsh-autosuggestions &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;ZSH_CUSTOM&lt;/span&gt;&lt;span class="k"&gt;:-&lt;/span&gt;&lt;span class="p"&gt;~/.oh-my-zsh/custom&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;/plugins/zsh-autosuggestions
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt;git clone https://github.com/zsh-users/zsh-syntax-highlighting.git &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;ZSH_CUSTOM&lt;/span&gt;&lt;span class="k"&gt;:-&lt;/span&gt;&lt;span class="p"&gt;~/.oh-my-zsh/custom&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;/plugins/zsh-syntax-highlighting
@@ -219,15 +249,15 @@ background: var(--card-background-selected);
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt;autoload -U compinit &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; compinit
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Update when available&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt;zstyle &lt;span class="s1"&gt;&amp;#39;:omz:update&amp;#39;&lt;/span&gt; mode reminder
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt;zstyle &lt;span class="s1"&gt;&amp;#39;:omz:update&amp;#39;&lt;/span&gt; mode reminder 
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;12&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;13&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;plugins&lt;/span&gt;&lt;span class="o"&gt;=(&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;14&lt;/span&gt;&lt;span class="cl"&gt; git
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;15&lt;/span&gt;&lt;span class="cl"&gt; colored-man-pages
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;16&lt;/span&gt;&lt;span class="cl"&gt; zsh-vi-mode
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;17&lt;/span&gt;&lt;span class="cl"&gt; zsh-autosuggestions
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;18&lt;/span&gt;&lt;span class="cl"&gt; zsh-syntax-highlighting
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;19&lt;/span&gt;&lt;span class="cl"&gt; conda-zsh-completion
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;14&lt;/span&gt;&lt;span class="cl"&gt;	git
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;15&lt;/span&gt;&lt;span class="cl"&gt;	colored-man-pages
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;16&lt;/span&gt;&lt;span class="cl"&gt;	zsh-vi-mode
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;17&lt;/span&gt;&lt;span class="cl"&gt;	zsh-autosuggestions
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;18&lt;/span&gt;&lt;span class="cl"&gt;	zsh-syntax-highlighting
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;19&lt;/span&gt;&lt;span class="cl"&gt;	conda-zsh-completion
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;20&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;21&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;22&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;source&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="nv"&gt;$ZSH&lt;/span&gt;&lt;span class="s2"&gt;/oh-my-zsh.sh&amp;#34;&lt;/span&gt;
@@ -257,14 +287,17 @@ background: var(--card-background-selected);
 &lt;h3 id="windows-宿主机的简单配置"&gt;Windows 宿主机的简单配置
 &lt;/h3&gt;&lt;p&gt;由于我使用的是 Windows Terminal，在安装好 Ubuntu WSL 之后关掉 Windows Terminal 再打开，Profiles 里面就出现刚刚设置好的 Ubuntu WSL 了：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/wsl_ubuntu_config/wt-ubuntu-24.04.png"
-width="960"
-height="441"
-srcset="https://a-moment096.github.io/posts/wsl_ubuntu_config/wt-ubuntu-24.04_hu_1569aa756e368b09.png 480w, https://a-moment096.github.io/posts/wsl_ubuntu_config/wt-ubuntu-24.04_hu_6f9b4ea1452c8f9.png 1024w"
-loading="lazy"
-alt="安装好的 WSL"
-class="gallery-image"
-data-flex-grow="217"
-data-flex-basis="522px"
+	width="960"
+	height="441"
+	loading="lazy"
+	
+		alt="安装好的 WSL"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="217"
+		data-flex-basis="522px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;可能你的 Windows Terminal 里有很多别的选项，或者默认的 Shell 等不是 PowerShell，没关系，我们可以进入设置修改。比如让 PowerShell 成为默认 profile&lt;sup id="fnref:2"&gt;&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref"&gt;2&lt;/a&gt;&lt;/sup&gt;，把常用的 profile 顺序提前等等。&lt;/p&gt;
 &lt;p&gt;这里主要想聊一下下面这些设置，请注意要记得保存，用的 GUI 的话右下角有保存按钮，使用 JSON 文件的话要保存文件：&lt;/p&gt;
@@ -281,7 +314,7 @@ data-flex-basis="522px"
 &lt;h3 id="anaconda-的简单介绍"&gt;Anaconda 的简单介绍
 &lt;/h3&gt;&lt;p&gt;所以，Anaconda 是什么？它是 Python 吗？Python 是什么？我已经有 Python 之后还需要装 Anaconda 吗？如果你了解这些概念，请直接跳过吧（）&lt;/p&gt;
 &lt;p&gt;我们先来说说 Python 和包管理。Python 作为一门比较现代的语言，它使用解释器实现逐行的代码运行，且通过包管理器来管理代码中使用到的模块、库之类的东西。然而 Python 其本身只是一个语言，我们常说的 “下载 Python” 实际上是下载了包含 Python 的解释器、包管理器以及运行环境的一个发行版。我们从 &lt;a class="link" href="https://www.python.org" target="_blank" rel="noopener"
-&gt;官网&lt;/a&gt; 下载到的 Python 安装包实际上包括了使用 C 语言实现的 CPython 解释器，从 PyPI，即 Python Package Index 来下载安装对应的包的包管理器 &lt;code&gt;pip&lt;/code&gt;，以及它们的运行所需的环境（如果你勾选了 IDLE 的选项，你还会安装一个小小的 Python IDE）。我们称这样下载到的是 Python 官方发行版。&lt;/p&gt;
+ &gt;官网&lt;/a&gt; 下载到的 Python 安装包实际上包括了使用 C 语言实现的 CPython 解释器，从 PyPI，即 Python Package Index 来下载安装对应的包的包管理器 &lt;code&gt;pip&lt;/code&gt;，以及它们的运行所需的环境（如果你勾选了 IDLE 的选项，你还会安装一个小小的 Python IDE）。我们称这样下载到的是 Python 官方发行版。&lt;/p&gt;
 &lt;p&gt;除了 Python 官方的发行版外，由于 CPython 采用的开源协议，它允许任何人自由地打包并发行自己基于 CPython 的 Python 发行版，实际上也确实有很多不同的基于 CPython 的发行版。其中一个非常出名的发行版即为本次的主角，Anaconda。Anaconda 的 Python 发行版包含了由自己打包的 CPython 解释器，不同于 &lt;code&gt;pip&lt;/code&gt; 的另一款包管理器 &lt;code&gt;conda&lt;/code&gt;，以及由 Anaconda 提供的，预包含了许多科学计算、数据统计库的运行环境。&lt;/p&gt;
 &lt;p&gt;Anaconda 的特点在于 &lt;code&gt;conda&lt;/code&gt; 这款包管理器，它可以选择对应的频道（channel）来安装不同来源的库，且更重要的是，它的库不局限于 Python 使用：它不仅管理 Python 使用的库，还会管理这些库所需要的可能的其他语言的库，进行必要的依赖求解。另外它还集成了虚拟环境管理，不似 Python 官方提供的 venv 这个环境管理工具，这让 &lt;code&gt;conda&lt;/code&gt; 成为了一个 All In One 的管理工具。当然，它还直接地提供了一些做科学计算时常需要的库，如 Numpy, Matplotlib，Pandas 等。如果你只是想享受最纯粹的 &lt;code&gt;conda&lt;/code&gt;，可以考虑安装 Miniconda，不过因为我们就是要做机器学习，所以干脆安装 Anaconda 就挺好的。&lt;/p&gt;
 &lt;p&gt;所以，为什么我们需要 Anaconda？做机器学习没有说必须要用 Anaconda 呀？而且大部分 Python 包都会优先考虑使用 PyPI 分发，而不会先考虑 Anaconda 的包源。使用 Anaconda 的主要原因，除了我看的教程是用的 Anaconda 管理环境之外，还有很重要的一点就是 &lt;code&gt;conda&lt;/code&gt; 管理的不只是包，还有包自身的依赖，以及能直接管理环境。这解决了一个很棘手的问题：依赖地狱。假如你要的包 A 和包 B 都依赖同一个库 C，而 A 要求用老版本的 C 库，B 要求用更新版本的 C 库，而你的电脑已经安装了老 C 库，这时候要怎么办？把这个老 C 库卸载，重装一个新的吗？&lt;code&gt;conda&lt;/code&gt; 提供了一个优雅的方法：虚拟出一个环境，在这个环境中重新安装相容的 A, B 和 C。更重要的是，这个环境不会影响到其他的环境，不用担心装上什么软件之后会毁掉整个电脑上的库。事实上，在机器学习这个较新的，正在发展的领域，机器学习用到的库很有可能发生奇怪的依赖问题。而使用 &lt;code&gt;conda&lt;/code&gt; 就能更方便地解决这类问题。&lt;/p&gt;
@@ -296,14 +329,17 @@ data-flex-basis="522px"
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;./Anaconda3-2025.06-1-Linux-x86_64.sh
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这样就进入安装流程了，首先要先同意它们的协议，我们回车，它会讲我们得同意协议条款，此时我们得明确打出 &lt;code&gt;yes&lt;/code&gt; 并回车，否则：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/wsl_ubuntu_config/yes.png"
-width="1112"
-height="340"
-srcset="https://a-moment096.github.io/posts/wsl_ubuntu_config/yes_hu_61d5cd9533bff928.png 480w, https://a-moment096.github.io/posts/wsl_ubuntu_config/yes_hu_dcce69c234e0e460.png 1024w"
-loading="lazy"
-alt="Type yes here!"
-class="gallery-image"
-data-flex-grow="327"
-data-flex-basis="784px"
+	width="1112"
+	height="340"
+	loading="lazy"
+	
+		alt="Type yes here!"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="327"
+		data-flex-basis="784px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;接下来就是安装位置，默认是安装在家目录的 &lt;code&gt;anaconda3&lt;/code&gt; 这个位置，我们可以选择接受这个位置，或者手打换一个位置安装，这里就直接默认了。然后就是一阵强力的安装，就进入了最后的环节，是否要将 &lt;code&gt;conda&lt;/code&gt; 添加进 Shell 的配置中，每次进入 Shell 就自动启动 &lt;code&gt;conda&lt;/code&gt;。默认是 &lt;code&gt;no&lt;/code&gt;，我们接受默认，待会儿我们手动添加相关内容。&lt;/p&gt;
 &lt;p&gt;这样就完成安装了。不过因为没有在 Shell 中初始化 &lt;code&gt;conda&lt;/code&gt;，我们需要先执行初始化。我们安装好的 &lt;code&gt;conda&lt;/code&gt; 位于 &lt;code&gt;~/anaconda3/bin/conda&lt;/code&gt;，因此我们可以使用命令：&lt;/p&gt;
@@ -328,42 +364,51 @@ data-flex-basis="784px"
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;vim &lt;span class="nv"&gt;$ZSH_CUSTOM&lt;/span&gt;/env/conda_env.zsh
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;然后把刚刚的内容贴进去，然后重启 Shell，就好啦。你应该能看到 Shell 的显示中，左侧有一个 &lt;code&gt;(base)&lt;/code&gt; 的字样，这样就说明我们已经成功启动 &lt;code&gt;conda&lt;/code&gt; 的 &lt;code&gt;base&lt;/code&gt; 环境了。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/wsl_ubuntu_config/base-env.png"
-width="545"
-height="216"
-srcset="https://a-moment096.github.io/posts/wsl_ubuntu_config/base-env_hu_45eb526d95c0db7.png 480w, https://a-moment096.github.io/posts/wsl_ubuntu_config/base-env_hu_c632d45afb4945cb.png 1024w"
-loading="lazy"
-alt="Base Environment"
-class="gallery-image"
-data-flex-grow="252"
-data-flex-basis="605px"
+	width="545"
+	height="216"
+	loading="lazy"
+	
+		alt="Base Environment"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="252"
+		data-flex-basis="605px"
+	
 &gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;我们先不介绍 Anaconda 的具体操作，因为对我们而言，我们还没有完全完成环境配置。接下来要配置的则是所谓的 CUDA。&lt;/p&gt;
 &lt;h2 id="cuda"&gt;CUDA
 &lt;/h2&gt;&lt;p&gt;我刚刚收到了一个坏消息：在我刚写好 CUDA 安装部分的瞬间，鬼使神差地，我看到了 CUDA 官网文档上关于 &amp;ldquo;conda&amp;rdquo; 的部分：&lt;a class="link" href="https://docs.nvidia.com/cuda/cuda-installation-guide-linux/#conda-installation" target="_blank" rel="noopener"
-&gt;Conda Installation&lt;/a&gt;&lt;/p&gt;
+ &gt;Conda Installation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/wsl_ubuntu_config/conda-installation.png"
-width="1500"
-height="1167"
-srcset="https://a-moment096.github.io/posts/wsl_ubuntu_config/conda-installation_hu_1fdfa4d31d89afd2.png 480w, https://a-moment096.github.io/posts/wsl_ubuntu_config/conda-installation_hu_e4178a5c05388e0d.png 1024w"
-loading="lazy"
-alt="Conda Installation"
-class="gallery-image"
-data-flex-grow="128"
-data-flex-basis="308px"
+	width="1500"
+	height="1167"
+	loading="lazy"
+	
+		alt="Conda Installation"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="128"
+		data-flex-basis="308px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;何意味…… 在 &lt;code&gt;conda activate pytorch-test&lt;/code&gt;（我的环境名叫 &lt;code&gt;pytorch-test&lt;/code&gt;）之后使用 &lt;code&gt;where nvcc&lt;/code&gt;，得到了这样的结果：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-zsh" data-lang="zsh"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;/home/amoment/.conda/envs/pytorch/bin/nvcc
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;/usr/local/cuda-13.0/bin/nvcc
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/wsl_ubuntu_config/%E9%9A%BE%E9%81%93%E8%AF%B4.jpg"
-width="214"
-height="236"
-srcset="https://a-moment096.github.io/posts/wsl_ubuntu_config/%E9%9A%BE%E9%81%93%E8%AF%B4_hu_a7bfdb9ea32618bc.jpg 480w, https://a-moment096.github.io/posts/wsl_ubuntu_config/%E9%9A%BE%E9%81%93%E8%AF%B4_hu_24e650e3cd9dbbe7.jpg 1024w"
-loading="lazy"
-alt="难道说！？"
-class="gallery-image"
-data-flex-grow="90"
-data-flex-basis="217px"
+	width="214"
+	height="236"
+	loading="lazy"
+	
+		alt="难道说！？"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="90"
+		data-flex-basis="217px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;算了，写都写了，我们还是介绍一下怎么安装，以及&lt;em&gt;怎么卸载&lt;/em&gt;吧……&lt;/p&gt;
 &lt;h3 id="cuda-的简单介绍"&gt;CUDA 的简单介绍
@@ -372,19 +417,22 @@ data-flex-basis="217px"
 &lt;h3 id="安装-cuda"&gt;安装 CUDA
 &lt;/h3&gt;&lt;p&gt;在开始之前，我们最好先确认我们的设备可以使用 CUDA。首先我们使用 &lt;code&gt;nvidia-smi&lt;/code&gt; 命令，它会显示设备上的 Nvidia 显卡的信息：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/wsl_ubuntu_config/nvidia-smi.png"
-width="1582"
-height="867"
-srcset="https://a-moment096.github.io/posts/wsl_ubuntu_config/nvidia-smi_hu_304bd1f076167b9d.png 480w, https://a-moment096.github.io/posts/wsl_ubuntu_config/nvidia-smi_hu_494f2919a12215b.png 1024w"
-loading="lazy"
-alt="nvidia-smi"
-class="gallery-image"
-data-flex-grow="182"
-data-flex-basis="437px"
+	width="1582"
+	height="867"
+	loading="lazy"
+	
+		alt="nvidia-smi"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="182"
+		data-flex-basis="437px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;可以看到有一大堆的信息在这里，包括我这台设备的显卡，以及对应的 CUDA 版本。如果是比较老的显卡，需要去 &lt;a class="link" href="https://developer.nvidia.com/cuda-gpus" target="_blank" rel="noopener"
-&gt;CUDA GPU Compute Capability&lt;/a&gt; 这里查一下显卡的 Compute Capability，大于等于 3.0 的就是可以正常使用 CUDA 的了。一般来讲只要不是上古显卡都应该是没问题的吧（逃）&lt;/p&gt;
+ &gt;CUDA GPU Compute Capability&lt;/a&gt; 这里查一下显卡的 Compute Capability，大于等于 3.0 的就是可以正常使用 CUDA 的了。一般来讲只要不是上古显卡都应该是没问题的吧（逃）&lt;/p&gt;
 &lt;p&gt;接下来就是正式安装，根据 &lt;a class="link" href="https://docs.nvidia.com/cuda/wsl-user-guide/index.html#cuda-support-for-wsl-2" target="_blank" rel="noopener"
-&gt;官方文档&lt;/a&gt; 的描述，第一步应该删掉老旧的 GPG 密钥：&lt;/p&gt;
+ &gt;官方文档&lt;/a&gt; 的描述，第一步应该删掉老旧的 GPG 密钥：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-zsh" data-lang="zsh"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;sudo apt-key del 7fa2af80
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;接下来我们就可以直接下载 CUDA Toolkit 了。目前最新版本的 Toolkit 是 13.1 版本，下载页面实际上提供的是一串脚本：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-zsh" data-lang="zsh"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;wget https://developer.download.nvidia.com/compute/cuda/repos/wsl-ubuntu/x86_64/cuda-wsl-ubuntu.pin
@@ -460,106 +508,136 @@ data-flex-basis="437px"
 &lt;p&gt;实在是不知道怎么翻译这个词比较好……&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</description></item><item><title>2025! 非零的最后一位数字是多少？</title><link>https://a-moment096.github.io/posts/factorial_last_digits/</link><pubDate>Mon, 25 Aug 2025 18:01:23 +0800</pubDate><guid>https://a-moment096.github.io/posts/factorial_last_digits/</guid><description>&lt;img src="https://a-moment096.github.io/posts/factorial_last_digits/%E6%B8%85%E6%B0%B4%E5%90%9F.jpg" alt="Featured image of post 2025! 非零的最后一位数字是多少？" /&gt;&lt;p&gt;&lt;em&gt;在知乎上看到了&lt;a class="link" href="https://www.zhihu.com/question/666502327" target="_blank" rel="noopener"
-&gt;这样一个有趣的问题&lt;/a&gt;，以及&lt;a class="link" href="https://www.zhihu.com/question/666502327/answer/18810753693" target="_blank" rel="noopener"
-&gt;很厉害的回答&lt;/a&gt;，实在是很有意思。这里就写一写我的解决这个问题的方法以及当时的心路历程吧。&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;</description></item><item><title>2025! 非零的最后一位数字是多少？</title><link>https://a-moment096.github.io/posts/factorial_last_digits/</link><pubDate>Mon, 25 Aug 2025 18:01:23 +0800</pubDate><guid>https://a-moment096.github.io/posts/factorial_last_digits/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post 2025! 非零的最后一位数字是多少？" /&gt;&lt;p&gt;&lt;em&gt;在知乎上看到了&lt;a class="link" href="https://www.zhihu.com/question/666502327" target="_blank" rel="noopener"
+ &gt;这样一个有趣的问题&lt;/a&gt;，以及&lt;a class="link" href="https://www.zhihu.com/question/666502327/answer/18810753693" target="_blank" rel="noopener"
+ &gt;很厉害的回答&lt;/a&gt;，实在是很有意思。这里就写一写我的解决这个问题的方法以及当时的心路历程吧。&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图出自 &lt;a class="link" href="https://www.pixiv.net/en/users/8605991" target="_blank" rel="noopener"
-&gt;fasnakegod&lt;/a&gt; 大大的 &lt;a class="link" href="https://www.pixiv.net/en/artworks/124177921" target="_blank" rel="noopener"
-&gt;清水吟&lt;/a&gt;，搭配的曲子是 &lt;a class="link" href="https://ddby.jp/" target="_blank" rel="noopener"
-&gt;&lt;strong&gt;DDBY&lt;/strong&gt;&lt;/a&gt; 的 &lt;em&gt;Cramped space&lt;/em&gt;，笛声真的很棒，搭配轻快的鼓组和旋律，给人一种很悠闲放松的感觉呢。希望你也喜欢~&lt;/em&gt;&lt;/p&gt;
+ &gt;fasnakegod&lt;/a&gt; 大大的 &lt;a class="link" href="https://www.pixiv.net/en/artworks/124177921" target="_blank" rel="noopener"
+ &gt;清水吟&lt;/a&gt;，搭配的曲子是 &lt;a class="link" href="https://ddby.jp/" target="_blank" rel="noopener"
+ &gt;&lt;strong&gt;DDBY&lt;/strong&gt;&lt;/a&gt; 的 &lt;em&gt;Cramped space&lt;/em&gt;，笛声真的很棒，搭配轻快的鼓组和旋律，给人一种很悠闲放松的感觉呢。希望你也喜欢~&lt;/em&gt;&lt;/p&gt;
+
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
 &lt;style type="text/css"&gt;
 [data-scheme="dark"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
-border-bottom-color: var(--card-separator-color);
+ border-bottom-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
-border-color: var(--card-separator-color);
+ border-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-body {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info {
-border-top-color: var(--card-background);
+ border-top-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
-color: var(--card-text-color-tertiary);
+ color: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
-background-color: var(--card-separator-color);
+ background-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
-background-color: var(--accent-color);
+ background-color: var(--accent-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li {
-color: var(--card-text-color-main);
-border-top-color: var(--card-separator-color);
+ color: var(--card-text-color-main);
+ border-top-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc {
-text-shadow: -1px -1px 0 var(--body-background);
+ text-shadow: -1px -1px 0 var(--body-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:before {
-background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+ background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:after {
-background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc p {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
+ 
 [data-scheme="light"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="light"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
 &lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
+
+
 &lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=715690" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
 &lt;h2 id="问题介绍"&gt;问题介绍
 &lt;/h2&gt;&lt;p&gt;如果您不想点开那个链接的话，这个问题实际上只有一行：求 2025! 从右向左起第一个不为0的数字是什么。这算是一道奥数题吧，同时也是某本书（&lt;em&gt;具体数学&lt;/em&gt;）上的课后习题。&lt;/p&gt;
 &lt;p&gt;由于 2025! 几乎是没法用计算器简单计算验证的（即便知乎上有神人&lt;a class="link" href="https://www.zhihu.com/question/666502327/answer/18577793245?share_code=8Xj75jf4cL99&amp;amp;utm_psn=1942598977787761098" target="_blank" rel="noopener"
-&gt;算出来了这个值&lt;/a&gt;），我们可以权当这个问题是在问，某个大数字 $n$ 的阶乘：$n!$ 在十进制表示下的，从右至左数第一个非零数字是几。&lt;/p&gt;
+ &gt;算出来了这个值&lt;/a&gt;），我们可以权当这个问题是在问，某个大数字 $n$ 的阶乘：$n!$ 在十进制表示下的，从右至左数第一个非零数字是几。&lt;/p&gt;
 &lt;p&gt;这个待求数字描述起来好麻烦。我们就称这个数字为 $A$ 好了。另外，我们稍微滥用一下符号，用 $A$ 来取出我们要的那个数字，比如数字 $12345000$ 的 $A$ 就记作 $A(12345000) = 5$ 了。另外我们为了方便讨论，把 $n!$ 的结果表示为 $a_k\dots a_3 a_2 a_1$，即给每一位上的数字都编个号。如 $120$ 的 $a_3 = 1$，$a_2 = 2$，$a_1 = 0$。&lt;/p&gt;
 &lt;p&gt;好了，我们现在开始吧，尝试解决这个问题。&lt;/p&gt;
 &lt;h2 id="第一次尝试肯定得和质数有关吧"&gt;第一次尝试：肯定得和质数有关，吧？
@@ -570,30 +648,30 @@ background: var(--card-background-selected);
 &lt;p&gt;好，那我们就把阶乘拆成质因数们吧！然后拆掉里面的每个 $2-5$ 对儿，最后就只剩下最后的一堆结果，我们把它们乘起来看最后一位数字，肯定就是 $A$ 了……&lt;/p&gt;
 &lt;p&gt;对，对吗？算了，我们先算个简单的，我们让 $n = 10$ 看看结果吧。我们先找到质数们。10 以下的质数只有 $2, 3, 5, 7$ 四个，然后把 10 以下的数字们拆成质因数后统计它们的个数，得到：&lt;/p&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style="text-align: center"&gt;质数&lt;/th&gt;
-&lt;th style="text-align: center"&gt;个数&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;2&lt;/td&gt;
-&lt;td style="text-align: center"&gt;8&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;3&lt;/td&gt;
-&lt;td style="text-align: center"&gt;4&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;5&lt;/td&gt;
-&lt;td style="text-align: center"&gt;2&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;7&lt;/td&gt;
-&lt;td style="text-align: center"&gt;1&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th style="text-align: center"&gt;质数&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;个数&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;2&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;8&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;3&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;4&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;5&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;2&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;7&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;然后我们删掉俩 $2$-$5$ 对后把别的乘起来，得到结果是：$36288$ ，所以 $A = 8$&lt;/p&gt;
 &lt;p&gt;OMG 好麻烦，怎么就两对儿？这还只是 $10$ 以下的质数，$100$ 以下的质数有 25 个嘞。这要怎么搞？&lt;/p&gt;
@@ -601,50 +679,50 @@ background: var(--card-background-selected);
 &lt;/h3&gt;&lt;p&gt;但是我们好像也不用算整个结果吧，得到 $A=8$ 就已经 OK 了的样子。而我们想得到 $A$ 好像也只需要关注每一次乘出来的结果的个位数就好？&lt;/p&gt;
 &lt;p&gt;我们看看这四个数字的次幂，它们的个位数都有什么特点：&lt;/p&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style="text-align: center"&gt;质数&lt;/th&gt;
-&lt;th style="text-align: center"&gt;1次&lt;/th&gt;
-&lt;th style="text-align: center"&gt;2次&lt;/th&gt;
-&lt;th style="text-align: center"&gt;3次&lt;/th&gt;
-&lt;th style="text-align: center"&gt;4次&lt;/th&gt;
-&lt;th style="text-align: center"&gt;5次&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;2&lt;/td&gt;
-&lt;td style="text-align: center"&gt;2&lt;/td&gt;
-&lt;td style="text-align: center"&gt;4&lt;/td&gt;
-&lt;td style="text-align: center"&gt;8&lt;/td&gt;
-&lt;td style="text-align: center"&gt;6&lt;/td&gt;
-&lt;td style="text-align: center"&gt;2&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;3&lt;/td&gt;
-&lt;td style="text-align: center"&gt;3&lt;/td&gt;
-&lt;td style="text-align: center"&gt;9&lt;/td&gt;
-&lt;td style="text-align: center"&gt;7&lt;/td&gt;
-&lt;td style="text-align: center"&gt;1&lt;/td&gt;
-&lt;td style="text-align: center"&gt;3&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;5&lt;/td&gt;
-&lt;td style="text-align: center"&gt;5&lt;/td&gt;
-&lt;td style="text-align: center"&gt;5&lt;/td&gt;
-&lt;td style="text-align: center"&gt;5&lt;/td&gt;
-&lt;td style="text-align: center"&gt;5&lt;/td&gt;
-&lt;td style="text-align: center"&gt;5&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;7&lt;/td&gt;
-&lt;td style="text-align: center"&gt;7&lt;/td&gt;
-&lt;td style="text-align: center"&gt;1&lt;/td&gt;
-&lt;td style="text-align: center"&gt;3&lt;/td&gt;
-&lt;td style="text-align: center"&gt;9&lt;/td&gt;
-&lt;td style="text-align: center"&gt;7&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th style="text-align: center"&gt;质数&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;1次&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;2次&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;3次&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;4次&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;5次&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;2&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;2&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;4&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;8&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;6&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;2&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;3&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;3&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;9&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;7&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;3&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;5&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;5&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;5&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;5&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;5&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;5&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;7&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;7&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;3&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;9&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;7&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;好像有点意思，它们的结果是循环的，且实际上只有 $2$-循环 和 $3$-循环两个循环。&lt;/p&gt;
 &lt;p&gt;等一下，我们好像还没考虑别的质数，比如什么 $11$, $13$，$17$， $19$ 等。然而，嘛，我们可以发现，任何大于 $10$ 的质数们的末位只会是 $1, 3,7, 9$ 四个数字，而它们又恰好都在 $3$-循环的样子。&lt;/p&gt;
@@ -711,7 +789,7 @@ $$198260831540444006411614670836189813754477369022726862810627959961272975360000
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 2&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;&amp;#34;&amp;#34; Converts a decimal number to its representation in a given base. &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 3&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 4&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;0&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 5&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 5&lt;/span&gt;&lt;span class="cl"&gt; 
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 6&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;digits&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;digits&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;base&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
@@ -760,9 +838,9 @@ $$198260831540444006411614670836189813754477369022726862810627959961272975360000
 &lt;p&gt;然而，我们的结果对吗？应该是有个答案吧，答案怎么做的呢？&lt;/p&gt;
 &lt;h2 id="终章神秘的算法怎么能这么快"&gt;终章：神秘的算法，怎么能这么快？
 &lt;/h2&gt;&lt;p&gt;我们引入这个问题的时候，就说过知乎上有人发过&lt;a class="link" href="https://www.zhihu.com/question/666502327/answer/18810753693" target="_blank" rel="noopener"
-&gt;一个很厉害的回答&lt;/a&gt;。这个算法令人惊讶的简单，不需要算若干次麻烦的除法，只需要算一次模除以 $4$ 就可以了。这个算法是这样的：&lt;/p&gt;
+ &gt;一个很厉害的回答&lt;/a&gt;。这个算法令人惊讶的简单，不需要算若干次麻烦的除法，只需要算一次模除以 $4$ 就可以了。这个算法是这样的：&lt;/p&gt;
 &lt;p&gt;首先写成 5 进制，然后把每一位偶数加起来得到一个结果 $t$，然后把每一位和自己的位数（从0开始）相乘后相加得到 $x$，最后计算一个判别式 $y = (x+t/2) \mod 4$, 如果 $y = 0$ 则说明结果是 $6$，而剩下的情况则是 $2^{y}$ 即可。这个算法写成 Python 程序则为 （借用上面的转 5 进制算法）&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;quick_method&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;quick_method&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt; 
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 2&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;to_penta&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 3&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;t&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 4&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
@@ -773,20 +851,20 @@ $$198260831540444006411614670836189813754477369022726862810627959961272975360000
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;t&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;d&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;12&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;12&lt;/span&gt;&lt;span class="cl"&gt; 
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;13&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;z&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;14&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;15&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;result&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;z&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;z&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;16&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;result&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这个算法太简洁了…… 对它的解释写在 &lt;a class="link" href="https://oeis.org/w/images/4/48/AlgLastFinal1.txt" target="_blank" rel="noopener"
-&gt;这篇上古网页&lt;/a&gt;里。我实在是燃尽了，看不下去了。不过我认为其基本思路和我的算法应该是差不多的。它应该在求 $S$ 组这一步做出了很大的简化，并且把对余数的处理想办法捏进一个加和里。我也不知道他是怎么做到的。不过这个算法肯定是快的多的，因为它计算 $A(2^{5000}!)$ 是瞬间计算出来的。毕竟，时间复杂度在这里摆着……&lt;/p&gt;
+ &gt;这篇上古网页&lt;/a&gt;里。我实在是燃尽了，看不下去了。不过我认为其基本思路和我的算法应该是差不多的。它应该在求 $S$ 组这一步做出了很大的简化，并且把对余数的处理想办法捏进一个加和里。我也不知道他是怎么做到的。不过这个算法肯定是快的多的，因为它计算 $A(2^{5000}!)$ 是瞬间计算出来的。毕竟，时间复杂度在这里摆着……&lt;/p&gt;
 &lt;p&gt;也许某一天我会回来看这个算法的具体实现是怎么做到的吧！希望我会记得回来看。暂且就到这里吧，这个问题还伤了我不少脑细胞来着。&lt;/p&gt;
 &lt;h2 id="后记"&gt;后记
 &lt;/h2&gt;&lt;p&gt;其实，这个问题的解决并非一帆风顺。一开始我是在百无聊赖的状态下看到这个问题的，一下子就被吸引住了。这个问题实在是很有趣，而我一开始的思路，正如上面那样，尝试了质因数分解和一些有的没的，手动计算了 $A(20!)$ 来尝试寻找规律之类。然而，那天赶着吃饭，在发现可以以 9 个数字为一组进行操作之后就不再细想了。其实 9 个数字为一组的做法是错误的，错误原因直到后来我已经动笔开始写这篇文章的时候，我才后知后觉。好在很快意识到了问题，把 $5$ 这个绊脚石从脚边踢开后就能很好地进行计算了。&lt;/p&gt;
 &lt;p&gt;事实上，我在计算时一直在用最后给出的这个 &lt;code&gt;quick_method&lt;/code&gt; 做结果对照。令人欣喜的是，结果是没问题的，我的算法设计顶住了 &lt;em&gt;没有答案&lt;/em&gt; 的压力。毕竟，从最后的这个答案上，能得到的有效信息几乎只有 “记得使用 5 进制”。很难反推出来的啦，这套算法。当然，关于这个问题，我的终极目标当然是吃透这个算法究竟是怎么生效的。不过这也已经是后话了。&lt;/p&gt;
 &lt;p&gt;很明显这个问题是和数论强相关的，尤其和取模运算有很大的关系。然而，这里并没有深究，主要原因一个在于进行进制转换已经很麻烦了，没必要介绍太多数论的内容， 另一个也是我自己的问题：我不会数论，我讲个毛呀。因此，本着有啥写啥，用啥写啥的精神，最后只写出来这么个半吊子。希望看到这篇文章的你感觉还算有点意思吧。&lt;/p&gt;
 &lt;p&gt;还有就是要感谢 [柴(oneis2much)] 佬的细心审稿。谢谢你！&lt;/p&gt;
-&lt;p&gt;那么最后，一如既往地，祝您身心健康，工作顺利，生活愉快。&lt;/p&gt;</description></item><item><title>Phase Field: 相场模拟学习笔记 II</title><link>https://a-moment096.github.io/posts/pf_tutorial_2/</link><pubDate>Fri, 22 Nov 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/pf_tutorial_2/</guid><description>&lt;img src="https://a-moment096.github.io/posts/PF_Tutorial/Skadi.png" alt="Featured image of post Phase Field: 相场模拟学习笔记 II" /&gt;&lt;p&gt;&lt;em&gt;接上一节内容, 这节会简单介绍 Python 的一些语法知识, 以及尝试使用 Python 实现上节所列出来的部分算法.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;那么最后，一如既往地，祝您身心健康，工作顺利，生活愉快。&lt;/p&gt;</description></item><item><title>Phase Field: 相场模拟学习笔记 II</title><link>https://a-moment096.github.io/posts/pf_tutorial_2/</link><pubDate>Fri, 22 Nov 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/pf_tutorial_2/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post Phase Field: 相场模拟学习笔记 II" /&gt;&lt;p&gt;&lt;em&gt;接上一节内容, 这节会简单介绍 Python 的一些语法知识, 以及尝试使用 Python 实现上节所列出来的部分算法.&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id="python-初探索"&gt;Python 初探索
 &lt;/h2&gt;&lt;h3 id="简介"&gt;简介
 &lt;/h3&gt;&lt;p&gt;Python 是一种蟒蛇, 而在编程语境下, Python 则是一门十分受欢迎的编程语言. Python 具有语法友好 (接近英语), 功能强大 (感谢开源与社区), 社区活跃等优秀的特点, 让 Python 成为入门编程的一个好选择.&lt;/p&gt;
@@ -795,13 +873,13 @@ $$198260831540444006411614670836189813754477369022726862810627959961272975360000
 &lt;h3 id="解释器安装与环境配置"&gt;解释器安装与环境配置
 &lt;/h3&gt;&lt;h4 id="python-解释器"&gt;Python 解释器
 &lt;/h4&gt;&lt;p&gt;Python 的运行是需要其解释器的. 目前最新版的 Python 解释器可以直接在 &lt;a class="link" href="https://www.python.org/downloads/" target="_blank" rel="noopener"
-&gt;Python 官网&lt;/a&gt; 下载. Linux 平台用户可以考虑使用各自发行版的包管理器实现 Python 的安装. 安装时请切记选择 &lt;strong&gt;ADD TO PATH&lt;/strong&gt;, 否则可能需要手动调整环境变量以让 Shell 能找到 Python.&lt;/p&gt;
+ &gt;Python 官网&lt;/a&gt; 下载. Linux 平台用户可以考虑使用各自发行版的包管理器实现 Python 的安装. 安装时请切记选择 &lt;strong&gt;ADD TO PATH&lt;/strong&gt;, 否则可能需要手动调整环境变量以让 Shell 能找到 Python.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;解释器&lt;/strong&gt;是什么? 简单来说, 就是&lt;em&gt;逐行&lt;/em&gt;把写的脚本翻译为机器所能理解的代码指令, 然后执行. 所以 Python 是逐行运行的, 这点非常适合 Debug, 也许也是 Python 受人欢迎的原因之一. 与&lt;strong&gt;解释器&lt;/strong&gt;相对的一个概念是&lt;strong&gt;编译器&lt;/strong&gt;. 这里所指的编译器应该是狭义上的编译器, 广义上的编译器应该也包含 Python 这类的解释器. 编译器不会逐行解释代码, 而是将代码作为一个整体, 然后处理翻译, 最后形成机器能阅读并执行的内容后进行执行. 这种方式让编译器可以为代码做出很多的优化, 但是也一定程度上牺牲了 &amp;ldquo;逐行运行&amp;rdquo; 的便利. C/C++, Rust 等语言都是需要编译器进行编译的. 为了弥补无法原生逐行运行的缺陷, 这些语言使用了调试器 (Debugger) 以及调试符号 (Debug Symbol) 等技术来在编译完成后, 根据符号表一一对照并运行代码, 呈现出逐行运行的效果. 然而这种方法依旧会损失一定的运行性能.&lt;/p&gt;
 &lt;p&gt;Python 解释器拥有多个版本, 每个版本对语言的语法都有一定的调整. 有些调整影响巨大 (比如从 Python2 到 Python3 的转变), 另一些可能因为其语法特性不常用, 不会直接影响到用户体验. Python 解释器也不一定是最新版就最好, 需要考虑项目的适配以及对应包的版本需求. 不过在这里我们并不太依赖 Python 解释器的版本, 只要保证是比较新的 Python 解释器版本, 并且主流的科学计算库, 如 &lt;code&gt;numpy&lt;/code&gt;, &lt;code&gt;matplotlib&lt;/code&gt;, &lt;code&gt;scipy&lt;/code&gt; 等即可.&lt;/p&gt;
 &lt;h4 id="编辑器-与-visual-studio-code"&gt;编辑器 与 Visual Studio Code
 &lt;/h4&gt;&lt;p&gt;在安装好 Python 解释器之后其实就已经可以开始 Python 编程了 (没错, 就是传说中的记事本编程). 然而这当然不是最好的方法, 这种方法光是考虑到没有代码高亮就让人很难以接受了. 这里我个人推荐 Visual Studio Code (以下简称 VSC).&lt;/p&gt;
 &lt;p&gt;VSC 功能强大, &lt;a class="link" href="https://code.visualstudio.com/" target="_blank" rel="noopener"
-&gt;安装&lt;/a&gt;方便, 插件生态极其丰富, 通过合理的配置近乎可以达到 IDE (Integrated Development Environment, 集成开发环境) 的水平. 我个人在写简单的 Python 脚本时几乎都是使用 VSC 写的. 一路默认安装后, 根据需要安装中文插件, 然后再在插件页面搜索 Python 即可安装 Python 插件全家桶, 然后就可以开始使用 VSC 写 Python 代码 (脚本)了. VSC 的安装与环境配置也可以参考我之前写的&lt;a class="link" href="https://a-moment096.github.io/posts/vsc_py/" &gt;博客文章&lt;/a&gt;.&lt;/p&gt;
+ &gt;安装&lt;/a&gt;方便, 插件生态极其丰富, 通过合理的配置近乎可以达到 IDE (Integrated Development Environment, 集成开发环境) 的水平. 我个人在写简单的 Python 脚本时几乎都是使用 VSC 写的. 一路默认安装后, 根据需要安装中文插件, 然后再在插件页面搜索 Python 即可安装 Python 插件全家桶, 然后就可以开始使用 VSC 写 Python 代码 (脚本)了. VSC 的安装与环境配置也可以参考我之前写的&lt;a class="link" href="https://a-moment096.github.io/posts/vsc_py/" &gt;博客文章&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;这里没有推荐 IDE, 因为 IDE 对这里仅仅使用 Python 做一些简单应用而言太过 &amp;ldquo;全能&amp;rdquo;, 或者说, 负担太重. 当然, 如果感兴趣, 可以考虑使用大名鼎鼎的 PyCharm. 这里不再赘述.&lt;/p&gt;
 &lt;h4 id="虚拟环境-venv-和-pip"&gt;虚拟环境, venv 和 pip
 &lt;/h4&gt;&lt;p&gt;这里简单介绍一下虚拟环境. 因为 Python 的生态丰富, 可能会碰到某些依赖相互冲突的情况, 尤其是在多人共同开发的情况下, 每个人的开发环境配置不同, 很容易导致依赖冲突. 为解决这种情况, 可以考虑使用 Python 的虚拟环境 &lt;code&gt;virtualenv&lt;/code&gt;. 创建的虚拟环境下有该虚拟环境所自有的一些包, 并且和该虚拟环境以外的部分是相互独立的. 使用 VSC 创建 &lt;code&gt;virtualenv&lt;/code&gt; 虚拟环境非常简单, 只需要 &lt;code&gt;Ctrl+Shift+P&lt;/code&gt; 打开 VSC 的命令, 然后搜索 &lt;code&gt;Python: Create Environment&lt;/code&gt; 即可根据向导一步步搭建虚拟环境.&lt;/p&gt;
@@ -875,13 +953,13 @@ $$198260831540444006411614670836189813754477369022726862810627959961272975360000
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;# Do something, just like in a function&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;do_something&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;12&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;12&lt;/span&gt;&lt;span class="cl"&gt; 
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;13&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;do_something&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;14&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;# Do something&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;15&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;16&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# End of definition&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;17&lt;/span&gt;&lt;span class="cl"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;18&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;my_variable&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;some_class&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;val_1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;val_2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;18&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;my_variable&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;some_class&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;val_1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;val_2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; 
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;19&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;20&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Use Inheritance from some_class&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;21&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;derived_class&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;some_class&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
@@ -1114,7 +1192,7 @@ $$&lt;p&gt;因此, 为了实现这一算法, 该算法实现的函数有如下�
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;46&lt;/span&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;laps&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;至此, 我们使用 Python 实现了我们将在相场模拟中使用的大部分算法. 具体的模拟过程中, 我们可能不需要用函数的方式将这些算法打包起来, 只需要直接实现即可.&lt;/p&gt;
 &lt;h3 id="总结"&gt;总结
-&lt;/h3&gt;&lt;p&gt;这部分内容希望能对上一章节中的算法内容有更进一步的补充, 并且希望能对算法如何实现为代码的过程起到促进理解的作用. 同时, 希望这里介绍的 Python 能成为您日常学习生活中的另一件有利工具, 并且能对编程这门技术有一定的入门理解, 为后续的程序编写提供基本的认识. 下一章节将会介绍如何使用 C++ 来实现这些算法, 并使用 C++ 完成一个小型的模拟, 尝试从这个小型模拟中了解模拟过程中会面临的问题, 以及数据最后的可视化方法.&lt;/p&gt;</description></item><item><title>Python + VS Code 快速配置</title><link>https://a-moment096.github.io/posts/vsc_py/</link><pubDate>Fri, 01 Nov 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/vsc_py/</guid><description>&lt;img src="https://a-moment096.github.io/posts/vsc_py/%E5%A6%B9%E7%BA%A2.jpeg" alt="Featured image of post Python + VS Code 快速配置" /&gt;&lt;p&gt;&lt;em&gt;这是一篇写给初学 Python 的同学的教程，帮助使用 VS Code 快速配置好 Python 的开发环境，写于今年9月14日，
+&lt;/h3&gt;&lt;p&gt;这部分内容希望能对上一章节中的算法内容有更进一步的补充, 并且希望能对算法如何实现为代码的过程起到促进理解的作用. 同时, 希望这里介绍的 Python 能成为您日常学习生活中的另一件有利工具, 并且能对编程这门技术有一定的入门理解, 为后续的程序编写提供基本的认识. 下一章节将会介绍如何使用 C++ 来实现这些算法, 并使用 C++ 完成一个小型的模拟, 尝试从这个小型模拟中了解模拟过程中会面临的问题, 以及数据最后的可视化方法.&lt;/p&gt;</description></item><item><title>Python + VS Code 快速配置</title><link>https://a-moment096.github.io/posts/vsc_py/</link><pubDate>Fri, 01 Nov 2024 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/posts/vsc_py/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post Python + VS Code 快速配置" /&gt;&lt;p&gt;&lt;em&gt;这是一篇写给初学 Python 的同学的教程，帮助使用 VS Code 快速配置好 Python 的开发环境，写于今年9月14日，
 先搬运至此并改为 Markdown，作为 Programming部分的第一篇博文&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id="简介"&gt;简介
 &lt;/h2&gt;&lt;p&gt;Python, 一门伟大的语言. 简易的, 贴合人类语言的语法, 丰富的生态, 强
@@ -1136,7 +1214,7 @@ $$&lt;p&gt;因此, 为了实现这一算法, 该算法实现的函数有如下�
 释, 也可以通过交互式的方法, 在解释器读取到输入内容后立即执行. 因
 此, Python的语言解释器对学习Python是必要的. 下载Python解释器请前往
 &lt;a class="link" href="https://www.python.org/downloads/" target="_blank" rel="noopener"
-&gt;Python官网&lt;/a&gt; . 初学者可以不用太过在意语言版本的问题 (语言版本过新可
+ &gt;Python官网&lt;/a&gt; . 初学者可以不用太过在意语言版本的问题 (语言版本过新可
 能会导致某些未进行适配的库无法正常使用), 只需要保证您下载的版本
 是Python3即可(版本号以3开头).
 Python3与Python2有着很多基础语法上的
@@ -1169,12 +1247,12 @@ TO PATH)以避免后续复杂的手动添加环境变量的过程!&lt;/strong&gt
 配合, 可以实现媲美IDE的开发环境搭建.
 笔者推荐由VS Code官方出品的
 在VS Code中使用Python的引导文档: &lt;a class="link" href="https://code.visualstudio.com/docs/languages/python" target="_blank" rel="noopener"
-&gt;Python in Visual Studio Code&lt;/a&gt; , 该文档详
+ &gt;Python in Visual Studio Code&lt;/a&gt; , 该文档详
 细介绍了如何从0开始在VS Code上使用Python, 除了是英文内容外几乎没有
 缺点(当然, 您可以选择网页翻译). 下面笔者将自行介绍如何安装VS Code与
 相关插件.&lt;/p&gt;
 &lt;p&gt;点击 &lt;a class="link" href="https://code.visualstudio.com/" target="_blank" rel="noopener"
-&gt;此处&lt;/a&gt; 即可打开 VS Code 官网. VS Code的安装可以全部选择默认安
+ &gt;此处&lt;/a&gt; 即可打开 VS Code 官网. VS Code的安装可以全部选择默认安
 装, 如此便可使用VS Code的基础功能. 安装插件可以在侧边栏选择或者使用
 快捷键 Ctrl+Shift+X 打开插件市场, 在页面上方框中输入相应关键词即可
 检索相关插件. 如要进行Python开发, 请安装如下插件.&lt;/p&gt;

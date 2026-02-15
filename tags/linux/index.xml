@@ -1,101 +1,131 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on A Moment's Rest</title><link>https://a-moment096.github.io/tags/linux/</link><description>Recent content in Linux on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 19 Jan 2026 06:28:39 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>机器学习用 Ubuntu WSL 配置记录</title><link>https://a-moment096.github.io/posts/wsl_ubuntu_config/</link><pubDate>Sat, 29 Nov 2025 14:28:17 +0800</pubDate><guid>https://a-moment096.github.io/posts/wsl_ubuntu_config/</guid><description>&lt;img src="https://a-moment096.github.io/posts/wsl_ubuntu_config/%E3%83%94%E3%83%B3%E3%82%AF%E3%81%AE%E5%A4%A2.png" alt="Featured image of post 机器学习用 Ubuntu WSL 配置记录" /&gt;&lt;p&gt;&lt;em&gt;某人需要配置环境时做机器学习，这是他配置环境后电脑发生的变化……&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on A Moment's Rest</title><link>https://a-moment096.github.io/tags/linux/</link><description>Recent content in Linux on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Sun, 15 Feb 2026 11:05:58 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>机器学习用 Ubuntu WSL 配置记录</title><link>https://a-moment096.github.io/posts/wsl_ubuntu_config/</link><pubDate>Sat, 29 Nov 2025 14:28:17 +0800</pubDate><guid>https://a-moment096.github.io/posts/wsl_ubuntu_config/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post 机器学习用 Ubuntu WSL 配置记录" /&gt;&lt;p&gt;&lt;em&gt;某人需要配置环境时做机器学习，这是他配置环境后电脑发生的变化……&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图选择了可爱的小羊，来自 &lt;a class="link" href="https://www.pixiv.net/users/3402557" target="_blank" rel="noopener"
-&gt;Ruziかねつカーぺット&lt;/a&gt; 太太的 &lt;a class="link" href="https://www.pixiv.net/artworks/112910033#1" target="_blank" rel="noopener"
-&gt;ピンクの夢&lt;/a&gt;，粉粉的，可爱捏&lt;/em&gt;&lt;/p&gt;
+ &gt;Ruziかねつカーぺット&lt;/a&gt; 太太的 &lt;a class="link" href="https://www.pixiv.net/artworks/112910033#1" target="_blank" rel="noopener"
+ &gt;ピンクの夢&lt;/a&gt;，粉粉的，可爱捏&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;选曲为 &lt;a class="link" href="https://www.bilibili.com/video/BV1924y1T7mV/" title="B 站链接"
-target="_blank" rel="noopener"
-&gt;STUDY WITH MIKU -part2-&lt;/a&gt; 改编的 &lt;a class="link" href="https://www.bilibili.com/video/BV1j3411L76S/" title="原曲 B 站链接"
-target="_blank" rel="noopener"
-&gt;さよならプリンセス&lt;/a&gt; (再见公主)，原作是 P 主 &lt;a class="link" href="https://twitter.com/kaivcl" target="_blank" rel="noopener"
-&gt;Kai&lt;/a&gt;，由初音演唱。俏皮的音乐，好听……&lt;/em&gt;&lt;/p&gt;
+ target="_blank" rel="noopener"
+ &gt;STUDY WITH MIKU -part2-&lt;/a&gt; 改编的 &lt;a class="link" href="https://www.bilibili.com/video/BV1j3411L76S/" title="原曲 B 站链接"
+ target="_blank" rel="noopener"
+ &gt;さよならプリンセス&lt;/a&gt; (再见公主)，原作是 P 主 &lt;a class="link" href="https://twitter.com/kaivcl" target="_blank" rel="noopener"
+ &gt;Kai&lt;/a&gt;，由初音演唱。俏皮的音乐，好听……&lt;/em&gt;&lt;/p&gt;
+
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
 &lt;style type="text/css"&gt;
 [data-scheme="dark"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
-border-bottom-color: var(--card-separator-color);
+ border-bottom-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
-border-color: var(--card-separator-color);
+ border-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-body {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info {
-border-top-color: var(--card-background);
+ border-top-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
-color: var(--card-text-color-tertiary);
+ color: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
-background-color: var(--card-separator-color);
+ background-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
-background-color: var(--accent-color);
+ background-color: var(--accent-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li {
-color: var(--card-text-color-main);
-border-top-color: var(--card-separator-color);
+ color: var(--card-text-color-main);
+ border-top-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc {
-text-shadow: -1px -1px 0 var(--body-background);
+ text-shadow: -1px -1px 0 var(--body-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:before {
-background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+ background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:after {
-background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc p {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
+ 
 [data-scheme="light"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="light"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
 &lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
+
+
 &lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=2053344485" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
 &lt;h2 id="前情提要"&gt;前情提要
 &lt;/h2&gt;&lt;p&gt;参加完刚刚在西安举办的材料基因工程大会之后，某人深受触动：&lt;/p&gt;
@@ -108,42 +138,42 @@ background: var(--card-background-selected);
 &lt;h2 id="环境状态--目标"&gt;环境状态 &amp;amp; 目标
 &lt;/h2&gt;&lt;p&gt;下面的表格汇总了我目前的环境状态：&lt;/p&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style="text-align: center"&gt;项目&lt;/th&gt;
-&lt;th style="text-align: center"&gt;状态&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;OS&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Windows 11 Pro&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;GPU&lt;/td&gt;
-&lt;td style="text-align: center"&gt;RTX 5060 Laptop&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;Terminal&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Windows Terminal&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;Shell&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Powershell 7&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;WSL&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Arch Linux（不使用）&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;IDE&lt;/td&gt;
-&lt;td style="text-align: center"&gt;Microsoft VS Code&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: center"&gt;硬盘&lt;/td&gt;
-&lt;td style="text-align: center"&gt;只有C盘&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th style="text-align: center"&gt;项目&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;状态&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;OS&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Windows 11 Pro&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;GPU&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;RTX 5060 Laptop&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;Terminal&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Windows Terminal&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;Shell&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Powershell 7&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;WSL&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Arch Linux（不使用）&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;IDE&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;Microsoft VS Code&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;硬盘&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;只有C盘&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;即便微软罪大恶极，经过一些调教之后，Win11 还是变得能用了起来；Windows Terminal 真的很好用，推荐每个人玩了命地用（）；很难想象不用美丽优雅 &lt;strong&gt;兼容部分 GNU/Linux 命令&lt;/strong&gt; 的 Powershell 7（&lt;code&gt;pwsh&lt;/code&gt;）的样子；我们默认打开科学上网且开启虚拟网卡模式，免得 Shell 笨笨地不走代理。&lt;/p&gt;
 &lt;p&gt;我们的目标？自然是搞一个 Ubuntu 的 WSL，再在里面装上 Anaconda 以及 CUDA ，最后创建一个 conda 虚拟环境，在虚拟环境里装上测试用的 PyTorch。&lt;/p&gt;
@@ -198,7 +228,7 @@ background: var(--card-background-selected);
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# tealdeer for tldr&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 5&lt;/span&gt;&lt;span class="cl"&gt;sudo apt install zsh fd-find ripgrep eza bat neovim cmake build-essential git gdb tealdeer
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 6&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# download oh-my-zsh, install and use it&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt;sh -c &lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt;sh -c &lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt; 
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# several zsh plugins&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt;git clone https://github.com/zsh-users/zsh-autosuggestions &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;ZSH_CUSTOM&lt;/span&gt;&lt;span class="k"&gt;:-&lt;/span&gt;&lt;span class="p"&gt;~/.oh-my-zsh/custom&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;/plugins/zsh-autosuggestions
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt;git clone https://github.com/zsh-users/zsh-syntax-highlighting.git &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;ZSH_CUSTOM&lt;/span&gt;&lt;span class="k"&gt;:-&lt;/span&gt;&lt;span class="p"&gt;~/.oh-my-zsh/custom&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;/plugins/zsh-syntax-highlighting
@@ -219,15 +249,15 @@ background: var(--card-background-selected);
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt;autoload -U compinit &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; compinit
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Update when available&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt;zstyle &lt;span class="s1"&gt;&amp;#39;:omz:update&amp;#39;&lt;/span&gt; mode reminder
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt;zstyle &lt;span class="s1"&gt;&amp;#39;:omz:update&amp;#39;&lt;/span&gt; mode reminder 
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;12&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;13&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;plugins&lt;/span&gt;&lt;span class="o"&gt;=(&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;14&lt;/span&gt;&lt;span class="cl"&gt; git
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;15&lt;/span&gt;&lt;span class="cl"&gt; colored-man-pages
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;16&lt;/span&gt;&lt;span class="cl"&gt; zsh-vi-mode
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;17&lt;/span&gt;&lt;span class="cl"&gt; zsh-autosuggestions
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;18&lt;/span&gt;&lt;span class="cl"&gt; zsh-syntax-highlighting
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;19&lt;/span&gt;&lt;span class="cl"&gt; conda-zsh-completion
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;14&lt;/span&gt;&lt;span class="cl"&gt;	git
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;15&lt;/span&gt;&lt;span class="cl"&gt;	colored-man-pages
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;16&lt;/span&gt;&lt;span class="cl"&gt;	zsh-vi-mode
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;17&lt;/span&gt;&lt;span class="cl"&gt;	zsh-autosuggestions
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;18&lt;/span&gt;&lt;span class="cl"&gt;	zsh-syntax-highlighting
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;19&lt;/span&gt;&lt;span class="cl"&gt;	conda-zsh-completion
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;20&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;21&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;22&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;source&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="nv"&gt;$ZSH&lt;/span&gt;&lt;span class="s2"&gt;/oh-my-zsh.sh&amp;#34;&lt;/span&gt;
@@ -257,14 +287,17 @@ background: var(--card-background-selected);
 &lt;h3 id="windows-宿主机的简单配置"&gt;Windows 宿主机的简单配置
 &lt;/h3&gt;&lt;p&gt;由于我使用的是 Windows Terminal，在安装好 Ubuntu WSL 之后关掉 Windows Terminal 再打开，Profiles 里面就出现刚刚设置好的 Ubuntu WSL 了：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/wsl_ubuntu_config/wt-ubuntu-24.04.png"
-width="960"
-height="441"
-srcset="https://a-moment096.github.io/posts/wsl_ubuntu_config/wt-ubuntu-24.04_hu_1569aa756e368b09.png 480w, https://a-moment096.github.io/posts/wsl_ubuntu_config/wt-ubuntu-24.04_hu_6f9b4ea1452c8f9.png 1024w"
-loading="lazy"
-alt="安装好的 WSL"
-class="gallery-image"
-data-flex-grow="217"
-data-flex-basis="522px"
+	width="960"
+	height="441"
+	loading="lazy"
+	
+		alt="安装好的 WSL"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="217"
+		data-flex-basis="522px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;可能你的 Windows Terminal 里有很多别的选项，或者默认的 Shell 等不是 PowerShell，没关系，我们可以进入设置修改。比如让 PowerShell 成为默认 profile&lt;sup id="fnref:2"&gt;&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref"&gt;2&lt;/a&gt;&lt;/sup&gt;，把常用的 profile 顺序提前等等。&lt;/p&gt;
 &lt;p&gt;这里主要想聊一下下面这些设置，请注意要记得保存，用的 GUI 的话右下角有保存按钮，使用 JSON 文件的话要保存文件：&lt;/p&gt;
@@ -281,7 +314,7 @@ data-flex-basis="522px"
 &lt;h3 id="anaconda-的简单介绍"&gt;Anaconda 的简单介绍
 &lt;/h3&gt;&lt;p&gt;所以，Anaconda 是什么？它是 Python 吗？Python 是什么？我已经有 Python 之后还需要装 Anaconda 吗？如果你了解这些概念，请直接跳过吧（）&lt;/p&gt;
 &lt;p&gt;我们先来说说 Python 和包管理。Python 作为一门比较现代的语言，它使用解释器实现逐行的代码运行，且通过包管理器来管理代码中使用到的模块、库之类的东西。然而 Python 其本身只是一个语言，我们常说的 “下载 Python” 实际上是下载了包含 Python 的解释器、包管理器以及运行环境的一个发行版。我们从 &lt;a class="link" href="https://www.python.org" target="_blank" rel="noopener"
-&gt;官网&lt;/a&gt; 下载到的 Python 安装包实际上包括了使用 C 语言实现的 CPython 解释器，从 PyPI，即 Python Package Index 来下载安装对应的包的包管理器 &lt;code&gt;pip&lt;/code&gt;，以及它们的运行所需的环境（如果你勾选了 IDLE 的选项，你还会安装一个小小的 Python IDE）。我们称这样下载到的是 Python 官方发行版。&lt;/p&gt;
+ &gt;官网&lt;/a&gt; 下载到的 Python 安装包实际上包括了使用 C 语言实现的 CPython 解释器，从 PyPI，即 Python Package Index 来下载安装对应的包的包管理器 &lt;code&gt;pip&lt;/code&gt;，以及它们的运行所需的环境（如果你勾选了 IDLE 的选项，你还会安装一个小小的 Python IDE）。我们称这样下载到的是 Python 官方发行版。&lt;/p&gt;
 &lt;p&gt;除了 Python 官方的发行版外，由于 CPython 采用的开源协议，它允许任何人自由地打包并发行自己基于 CPython 的 Python 发行版，实际上也确实有很多不同的基于 CPython 的发行版。其中一个非常出名的发行版即为本次的主角，Anaconda。Anaconda 的 Python 发行版包含了由自己打包的 CPython 解释器，不同于 &lt;code&gt;pip&lt;/code&gt; 的另一款包管理器 &lt;code&gt;conda&lt;/code&gt;，以及由 Anaconda 提供的，预包含了许多科学计算、数据统计库的运行环境。&lt;/p&gt;
 &lt;p&gt;Anaconda 的特点在于 &lt;code&gt;conda&lt;/code&gt; 这款包管理器，它可以选择对应的频道（channel）来安装不同来源的库，且更重要的是，它的库不局限于 Python 使用：它不仅管理 Python 使用的库，还会管理这些库所需要的可能的其他语言的库，进行必要的依赖求解。另外它还集成了虚拟环境管理，不似 Python 官方提供的 venv 这个环境管理工具，这让 &lt;code&gt;conda&lt;/code&gt; 成为了一个 All In One 的管理工具。当然，它还直接地提供了一些做科学计算时常需要的库，如 Numpy, Matplotlib，Pandas 等。如果你只是想享受最纯粹的 &lt;code&gt;conda&lt;/code&gt;，可以考虑安装 Miniconda，不过因为我们就是要做机器学习，所以干脆安装 Anaconda 就挺好的。&lt;/p&gt;
 &lt;p&gt;所以，为什么我们需要 Anaconda？做机器学习没有说必须要用 Anaconda 呀？而且大部分 Python 包都会优先考虑使用 PyPI 分发，而不会先考虑 Anaconda 的包源。使用 Anaconda 的主要原因，除了我看的教程是用的 Anaconda 管理环境之外，还有很重要的一点就是 &lt;code&gt;conda&lt;/code&gt; 管理的不只是包，还有包自身的依赖，以及能直接管理环境。这解决了一个很棘手的问题：依赖地狱。假如你要的包 A 和包 B 都依赖同一个库 C，而 A 要求用老版本的 C 库，B 要求用更新版本的 C 库，而你的电脑已经安装了老 C 库，这时候要怎么办？把这个老 C 库卸载，重装一个新的吗？&lt;code&gt;conda&lt;/code&gt; 提供了一个优雅的方法：虚拟出一个环境，在这个环境中重新安装相容的 A, B 和 C。更重要的是，这个环境不会影响到其他的环境，不用担心装上什么软件之后会毁掉整个电脑上的库。事实上，在机器学习这个较新的，正在发展的领域，机器学习用到的库很有可能发生奇怪的依赖问题。而使用 &lt;code&gt;conda&lt;/code&gt; 就能更方便地解决这类问题。&lt;/p&gt;
@@ -296,14 +329,17 @@ data-flex-basis="522px"
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;./Anaconda3-2025.06-1-Linux-x86_64.sh
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这样就进入安装流程了，首先要先同意它们的协议，我们回车，它会讲我们得同意协议条款，此时我们得明确打出 &lt;code&gt;yes&lt;/code&gt; 并回车，否则：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/wsl_ubuntu_config/yes.png"
-width="1112"
-height="340"
-srcset="https://a-moment096.github.io/posts/wsl_ubuntu_config/yes_hu_61d5cd9533bff928.png 480w, https://a-moment096.github.io/posts/wsl_ubuntu_config/yes_hu_dcce69c234e0e460.png 1024w"
-loading="lazy"
-alt="Type yes here!"
-class="gallery-image"
-data-flex-grow="327"
-data-flex-basis="784px"
+	width="1112"
+	height="340"
+	loading="lazy"
+	
+		alt="Type yes here!"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="327"
+		data-flex-basis="784px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;接下来就是安装位置，默认是安装在家目录的 &lt;code&gt;anaconda3&lt;/code&gt; 这个位置，我们可以选择接受这个位置，或者手打换一个位置安装，这里就直接默认了。然后就是一阵强力的安装，就进入了最后的环节，是否要将 &lt;code&gt;conda&lt;/code&gt; 添加进 Shell 的配置中，每次进入 Shell 就自动启动 &lt;code&gt;conda&lt;/code&gt;。默认是 &lt;code&gt;no&lt;/code&gt;，我们接受默认，待会儿我们手动添加相关内容。&lt;/p&gt;
 &lt;p&gt;这样就完成安装了。不过因为没有在 Shell 中初始化 &lt;code&gt;conda&lt;/code&gt;，我们需要先执行初始化。我们安装好的 &lt;code&gt;conda&lt;/code&gt; 位于 &lt;code&gt;~/anaconda3/bin/conda&lt;/code&gt;，因此我们可以使用命令：&lt;/p&gt;
@@ -328,42 +364,51 @@ data-flex-basis="784px"
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;vim &lt;span class="nv"&gt;$ZSH_CUSTOM&lt;/span&gt;/env/conda_env.zsh
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;然后把刚刚的内容贴进去，然后重启 Shell，就好啦。你应该能看到 Shell 的显示中，左侧有一个 &lt;code&gt;(base)&lt;/code&gt; 的字样，这样就说明我们已经成功启动 &lt;code&gt;conda&lt;/code&gt; 的 &lt;code&gt;base&lt;/code&gt; 环境了。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/wsl_ubuntu_config/base-env.png"
-width="545"
-height="216"
-srcset="https://a-moment096.github.io/posts/wsl_ubuntu_config/base-env_hu_45eb526d95c0db7.png 480w, https://a-moment096.github.io/posts/wsl_ubuntu_config/base-env_hu_c632d45afb4945cb.png 1024w"
-loading="lazy"
-alt="Base Environment"
-class="gallery-image"
-data-flex-grow="252"
-data-flex-basis="605px"
+	width="545"
+	height="216"
+	loading="lazy"
+	
+		alt="Base Environment"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="252"
+		data-flex-basis="605px"
+	
 &gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;我们先不介绍 Anaconda 的具体操作，因为对我们而言，我们还没有完全完成环境配置。接下来要配置的则是所谓的 CUDA。&lt;/p&gt;
 &lt;h2 id="cuda"&gt;CUDA
 &lt;/h2&gt;&lt;p&gt;我刚刚收到了一个坏消息：在我刚写好 CUDA 安装部分的瞬间，鬼使神差地，我看到了 CUDA 官网文档上关于 &amp;ldquo;conda&amp;rdquo; 的部分：&lt;a class="link" href="https://docs.nvidia.com/cuda/cuda-installation-guide-linux/#conda-installation" target="_blank" rel="noopener"
-&gt;Conda Installation&lt;/a&gt;&lt;/p&gt;
+ &gt;Conda Installation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/wsl_ubuntu_config/conda-installation.png"
-width="1500"
-height="1167"
-srcset="https://a-moment096.github.io/posts/wsl_ubuntu_config/conda-installation_hu_1fdfa4d31d89afd2.png 480w, https://a-moment096.github.io/posts/wsl_ubuntu_config/conda-installation_hu_e4178a5c05388e0d.png 1024w"
-loading="lazy"
-alt="Conda Installation"
-class="gallery-image"
-data-flex-grow="128"
-data-flex-basis="308px"
+	width="1500"
+	height="1167"
+	loading="lazy"
+	
+		alt="Conda Installation"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="128"
+		data-flex-basis="308px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;何意味…… 在 &lt;code&gt;conda activate pytorch-test&lt;/code&gt;（我的环境名叫 &lt;code&gt;pytorch-test&lt;/code&gt;）之后使用 &lt;code&gt;where nvcc&lt;/code&gt;，得到了这样的结果：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-zsh" data-lang="zsh"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;/home/amoment/.conda/envs/pytorch/bin/nvcc
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;/usr/local/cuda-13.0/bin/nvcc
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/wsl_ubuntu_config/%E9%9A%BE%E9%81%93%E8%AF%B4.jpg"
-width="214"
-height="236"
-srcset="https://a-moment096.github.io/posts/wsl_ubuntu_config/%E9%9A%BE%E9%81%93%E8%AF%B4_hu_a7bfdb9ea32618bc.jpg 480w, https://a-moment096.github.io/posts/wsl_ubuntu_config/%E9%9A%BE%E9%81%93%E8%AF%B4_hu_24e650e3cd9dbbe7.jpg 1024w"
-loading="lazy"
-alt="难道说！？"
-class="gallery-image"
-data-flex-grow="90"
-data-flex-basis="217px"
+	width="214"
+	height="236"
+	loading="lazy"
+	
+		alt="难道说！？"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="90"
+		data-flex-basis="217px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;算了，写都写了，我们还是介绍一下怎么安装，以及&lt;em&gt;怎么卸载&lt;/em&gt;吧……&lt;/p&gt;
 &lt;h3 id="cuda-的简单介绍"&gt;CUDA 的简单介绍
@@ -372,19 +417,22 @@ data-flex-basis="217px"
 &lt;h3 id="安装-cuda"&gt;安装 CUDA
 &lt;/h3&gt;&lt;p&gt;在开始之前，我们最好先确认我们的设备可以使用 CUDA。首先我们使用 &lt;code&gt;nvidia-smi&lt;/code&gt; 命令，它会显示设备上的 Nvidia 显卡的信息：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/wsl_ubuntu_config/nvidia-smi.png"
-width="1582"
-height="867"
-srcset="https://a-moment096.github.io/posts/wsl_ubuntu_config/nvidia-smi_hu_304bd1f076167b9d.png 480w, https://a-moment096.github.io/posts/wsl_ubuntu_config/nvidia-smi_hu_494f2919a12215b.png 1024w"
-loading="lazy"
-alt="nvidia-smi"
-class="gallery-image"
-data-flex-grow="182"
-data-flex-basis="437px"
+	width="1582"
+	height="867"
+	loading="lazy"
+	
+		alt="nvidia-smi"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="182"
+		data-flex-basis="437px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;可以看到有一大堆的信息在这里，包括我这台设备的显卡，以及对应的 CUDA 版本。如果是比较老的显卡，需要去 &lt;a class="link" href="https://developer.nvidia.com/cuda-gpus" target="_blank" rel="noopener"
-&gt;CUDA GPU Compute Capability&lt;/a&gt; 这里查一下显卡的 Compute Capability，大于等于 3.0 的就是可以正常使用 CUDA 的了。一般来讲只要不是上古显卡都应该是没问题的吧（逃）&lt;/p&gt;
+ &gt;CUDA GPU Compute Capability&lt;/a&gt; 这里查一下显卡的 Compute Capability，大于等于 3.0 的就是可以正常使用 CUDA 的了。一般来讲只要不是上古显卡都应该是没问题的吧（逃）&lt;/p&gt;
 &lt;p&gt;接下来就是正式安装，根据 &lt;a class="link" href="https://docs.nvidia.com/cuda/wsl-user-guide/index.html#cuda-support-for-wsl-2" target="_blank" rel="noopener"
-&gt;官方文档&lt;/a&gt; 的描述，第一步应该删掉老旧的 GPG 密钥：&lt;/p&gt;
+ &gt;官方文档&lt;/a&gt; 的描述，第一步应该删掉老旧的 GPG 密钥：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-zsh" data-lang="zsh"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;sudo apt-key del 7fa2af80
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;接下来我们就可以直接下载 CUDA Toolkit 了。目前最新版本的 Toolkit 是 13.1 版本，下载页面实际上提供的是一串脚本：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-zsh" data-lang="zsh"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;wget https://developer.download.nvidia.com/compute/cuda/repos/wsl-ubuntu/x86_64/cuda-wsl-ubuntu.pin
@@ -460,98 +508,128 @@ data-flex-basis="437px"
 &lt;p&gt;实在是不知道怎么翻译这个词比较好……&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</description></item><item><title>使用 rsync 进行同步</title><link>https://a-moment096.github.io/posts/use_rsync/</link><pubDate>Mon, 28 Jul 2025 12:43:39 +0800</pubDate><guid>https://a-moment096.github.io/posts/use_rsync/</guid><description>&lt;img src="https://a-moment096.github.io/posts/use_rsync/%E8%B4%9D%E5%8A%A0%E5%B0%94%E6%B9%96%E7%95%94.jpg" alt="Featured image of post 使用 rsync 进行同步" /&gt;&lt;p&gt;&lt;em&gt;有点受不太了 &lt;code&gt;scp&lt;/code&gt; 和 &lt;code&gt;sftp&lt;/code&gt; 了，也许是食用姿势不对吧，总之我选择 &lt;code&gt;rsync&lt;/code&gt;！&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;</description></item><item><title>使用 rsync 进行同步</title><link>https://a-moment096.github.io/posts/use_rsync/</link><pubDate>Mon, 28 Jul 2025 12:43:39 +0800</pubDate><guid>https://a-moment096.github.io/posts/use_rsync/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post 使用 rsync 进行同步" /&gt;&lt;p&gt;&lt;em&gt;有点受不太了 &lt;code&gt;scp&lt;/code&gt; 和 &lt;code&gt;sftp&lt;/code&gt; 了，也许是食用姿势不对吧，总之我选择 &lt;code&gt;rsync&lt;/code&gt;！&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;&lt;del&gt;图源找不到诶……从朋友那里薅过来的图，很漂亮就放在这里了&lt;/del&gt; 小爷我找到啦！是出自 &lt;a class="link" href="https://www.pixiv.net/en/users/8605991" target="_blank" rel="noopener"
-&gt;fasnakegod&lt;/a&gt; 大大的 &lt;a class="link" href="https://www.pixiv.net/en/artworks/125739568" target="_blank" rel="noopener"
-&gt;贝加尔湖畔&lt;/a&gt;。既然如此就分享一首钢琴曲吧。一首 &lt;strong&gt;騎士王の誇り&lt;/strong&gt; (骑士王的荣耀) 送给大家。（好像毫无关联诶 kora!）&lt;/em&gt;&lt;/p&gt;
+ &gt;fasnakegod&lt;/a&gt; 大大的 &lt;a class="link" href="https://www.pixiv.net/en/artworks/125739568" target="_blank" rel="noopener"
+ &gt;贝加尔湖畔&lt;/a&gt;。既然如此就分享一首钢琴曲吧。一首 &lt;strong&gt;騎士王の誇り&lt;/strong&gt; (骑士王的荣耀) 送给大家。（好像毫无关联诶 kora!）&lt;/em&gt;&lt;/p&gt;
+
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
 &lt;style type="text/css"&gt;
 [data-scheme="dark"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
-border-bottom-color: var(--card-separator-color);
+ border-bottom-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
-border-color: var(--card-separator-color);
+ border-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-body {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info {
-border-top-color: var(--card-background);
+ border-top-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
-color: var(--card-text-color-tertiary);
+ color: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
-background-color: var(--card-separator-color);
+ background-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
-background-color: var(--accent-color);
+ background-color: var(--accent-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li {
-color: var(--card-text-color-main);
-border-top-color: var(--card-separator-color);
+ color: var(--card-text-color-main);
+ border-top-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc {
-text-shadow: -1px -1px 0 var(--body-background);
+ text-shadow: -1px -1px 0 var(--body-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:before {
-background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+ background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:after {
-background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc p {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
+ 
 [data-scheme="light"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="light"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
 &lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
+
+
 &lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=448119" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
 &lt;h2 id="为什么要选择-rsync-呢"&gt;为什么要选择 &lt;code&gt;rsync&lt;/code&gt; 呢？
 &lt;/h2&gt;&lt;p&gt;有时候我们有多个远程电脑，或者是服务器，上面的文件内容我们希望下载到本地。我们通常有这么几个选择：使用一些功能成熟的，专用于 SSH 连接的终端模拟器，比如 MobaXTerm 这样的软件；或者我们可以使用 &lt;code&gt;scp&lt;/code&gt;，&lt;code&gt;sftp&lt;/code&gt; 这样的工具，但是界面有点简陋，特别是 &lt;code&gt;sftp&lt;/code&gt;，需要反复确认文件名是否输入错误。而且有时我们只需要下载不同的部分，不希望重复下载已经有了的部分。这时候，&lt;code&gt;rsync&lt;/code&gt; 作为 &lt;em&gt;remote sync&lt;/em&gt; 的工具，就到了发挥其作用的地方了。&lt;/p&gt;
@@ -638,100 +716,130 @@ background: var(--card-background-selected);
 &lt;ul&gt;
 &lt;li&gt;首先，ChatGPT 和 Deepseek，完全不了解的时候和这些 AI 问一下还是挺好用的；&lt;/li&gt;
 &lt;li&gt;&lt;a class="link" href="https://www.digitalocean.com/community/tutorials/how-to-use-rsync-to-sync-local-and-remote-directories" target="_blank" rel="noopener"
-&gt;rsync tutorial&lt;/a&gt;: 一个简单的 rsync walkthrough，帮了我很多；&lt;/li&gt;
+ &gt;rsync tutorial&lt;/a&gt;: 一个简单的 rsync walkthrough，帮了我很多；&lt;/li&gt;
 &lt;li&gt;&lt;a class="link" href="https://www.geeksforgeeks.org/linux-unix/rsync-command-in-linux-with-examples/" target="_blank" rel="noopener"
-&gt;rsync command in Linux with Examples&lt;/a&gt;: GeeksForGeeks 下的一个博客，内容很丰富。&lt;/li&gt;
+ &gt;rsync command in Linux with Examples&lt;/a&gt;: GeeksForGeeks 下的一个博客，内容很丰富。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;最后，感谢您能看到这里，祝您身体健康，心情愉悦~&lt;/p&gt;</description></item><item><title>上一个命令是什么？</title><link>https://a-moment096.github.io/posts/last_command/</link><pubDate>Sat, 26 Jul 2025 20:09:18 +0800</pubDate><guid>https://a-moment096.github.io/posts/last_command/</guid><description>&lt;img src="https://a-moment096.github.io/posts/last_command/SEASIDE_SOLILOQUIES.png" alt="Featured image of post 上一个命令是什么？" /&gt;&lt;p&gt;&lt;em&gt;曾经总会好奇：怎么获取上一个命令呢？应该很简单才对吧？简单的搜索后，下面是我得到的结果，就记录一下吧&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;最后，感谢您能看到这里，祝您身体健康，心情愉悦~&lt;/p&gt;</description></item><item><title>上一个命令是什么？</title><link>https://a-moment096.github.io/posts/last_command/</link><pubDate>Sat, 26 Jul 2025 20:09:18 +0800</pubDate><guid>https://a-moment096.github.io/posts/last_command/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post 上一个命令是什么？" /&gt;&lt;p&gt;&lt;em&gt;曾经总会好奇：怎么获取上一个命令呢？应该很简单才对吧？简单的搜索后，下面是我得到的结果，就记录一下吧&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图出自 Orangestar 的专辑 &lt;strong&gt;SEASIDE SOLILOQUIES&lt;/strong&gt;, 好看又好听。所以这里贴曲就贴这个专辑的主打歌好了：一首 &lt;strong&gt;Alice in 冷凍庫&lt;/strong&gt;，希望你喜欢。&lt;/em&gt;&lt;/p&gt;
+
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
 &lt;style type="text/css"&gt;
 [data-scheme="dark"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
-border-bottom-color: var(--card-separator-color);
+ border-bottom-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
-border-color: var(--card-separator-color);
+ border-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-body {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info {
-border-top-color: var(--card-background);
+ border-top-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
-color: var(--card-text-color-tertiary);
+ color: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
-background-color: var(--card-separator-color);
+ background-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
-background-color: var(--accent-color);
+ background-color: var(--accent-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li {
-color: var(--card-text-color-main);
-border-top-color: var(--card-separator-color);
+ color: var(--card-text-color-main);
+ border-top-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc {
-text-shadow: -1px -1px 0 var(--body-background);
+ text-shadow: -1px -1px 0 var(--body-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:before {
-background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+ background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:after {
-background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc p {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
+ 
 [data-scheme="light"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="light"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
 &lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
+
+
 &lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=458231453" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
 &lt;h2 id="什么时候要用这个"&gt;什么时候要用这个？
 &lt;/h2&gt;&lt;p&gt;有时候我们写了一长串命令，比如有很麻烦的路径之类的，这时候我们可能会希望用某个符号来自动地填上命令里的某些参数。一个最常见的例子，当我要安装某些软件包的时候，偶尔会忘记加上 &lt;code&gt;sudo&lt;/code&gt; 来以管理员权限运行。这时候把上面的命令复制一遍再补上 &lt;code&gt;sudo&lt;/code&gt; 实在是太慢了，而按下上箭头后在把光标挪到第一行，最后补上 &lt;code&gt;sudo&lt;/code&gt; 总是感觉很累，手的移动距离感觉好远。除此之外，有时输入的一长串命令/参数并运行之后，我需要接着上面的参数继续运行别的命令，此时要是用命令行历史的话，就又得用光标定位之后，再删掉没有用的东西，最后再填上要替换的内容。这实在是太慢了。&lt;/p&gt;
@@ -744,7 +852,7 @@ background: var(--card-background-selected);
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;$ &lt;span class="nb"&gt;echo&lt;/span&gt; !! &lt;span class="c1"&gt;# !! 替换了上面整个执行了的命令，也就是替换了 &amp;#34;echo hello bash world&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; hello bash world!
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt;$ &lt;span class="nb"&gt;echo&lt;/span&gt; !-1 &lt;span class="c1"&gt;# 同上,也是替换上面执行的命令，所以替换了 &amp;#34;echo echo hello bash world&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;6&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; hello bash world!
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;6&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; hello bash world! 
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="我要调用历史命令"&gt;我要调用历史命令
 &lt;/h3&gt;&lt;p&gt;我们还可以用 &lt;code&gt;!&amp;lt;num&amp;gt;&lt;/code&gt; 来选择某个历史命令。我们可以先用 &lt;code&gt;head&lt;/code&gt; 来查看一下我们的命令历史里最早有一些什么：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ head ~/.zsh_history &lt;span class="c1"&gt;# 这里我的 zsh 命令历史存在这个文件里，可以用 head 查看前几个命令&lt;/span&gt;
@@ -784,7 +892,7 @@ background: var(--card-background-selected);
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt;$ &lt;span class="nb"&gt;echo&lt;/span&gt; !!:-3 &lt;span class="c1"&gt;# 没有 &amp;lt;num1&amp;gt; 则会自动替换为0，相当于 echo echo one two three&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; one two three
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt;$ &lt;span class="nb"&gt;echo&lt;/span&gt; !-2:1-2 &lt;span class="c1"&gt;# 配合 !&amp;lt;num&amp;gt; 使用，相当于 echo one two &lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt;one two
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt;one two 
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt;$ &lt;span class="nb"&gt;echo&lt;/span&gt; !-3:1- &lt;span class="c1"&gt;# 没有 &amp;lt;num2&amp;gt; 则会匹配到除了最后一个参数外的参数，相当于 echo one two three&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;12&lt;/span&gt;&lt;span class="cl"&gt;one two three
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;13&lt;/span&gt;&lt;span class="cl"&gt;$ &lt;span class="nb"&gt;echo&lt;/span&gt; !-4:$ &lt;span class="c1"&gt;# 使用 $ 来获取最后一个参数，相当于 echo four&lt;/span&gt;
@@ -792,9 +900,9 @@ background: var(--card-background-selected);
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;15&lt;/span&gt;&lt;span class="cl"&gt;$ &lt;span class="nb"&gt;echo&lt;/span&gt; !-5:3-$ &lt;span class="c1"&gt;# 同样 $ 也支持范围选择，相当于 echo three four&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;16&lt;/span&gt;&lt;span class="cl"&gt;three four
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;17&lt;/span&gt;&lt;span class="cl"&gt;$ &lt;span class="nb"&gt;echo&lt;/span&gt; !-6:* &lt;span class="c1"&gt;# 使用 * 来表示所有的参数，相当于 echo !-6:1-$，也就是 echo one two three four&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;18&lt;/span&gt;&lt;span class="cl"&gt;one two three four
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;18&lt;/span&gt;&lt;span class="cl"&gt;one two three four 
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;19&lt;/span&gt;&lt;span class="cl"&gt;$ &lt;span class="nb"&gt;echo&lt;/span&gt; !:* &lt;span class="c1"&gt;# !: 是在使用冒号时 !!: 或者 !-1: 的简写，相当于 echo one two three four&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;20&lt;/span&gt;&lt;span class="cl"&gt;one two three four
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;20&lt;/span&gt;&lt;span class="cl"&gt;one two three four 
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果没有 &lt;code&gt;&amp;lt;num1&amp;gt;&lt;/code&gt;，则默认从 &lt;code&gt;0&lt;/code&gt; 开始，也就是会包含所有内容；如果没有 &lt;code&gt;&amp;lt;num2&amp;gt;&lt;/code&gt;，则默认停在最后一个参数前。可以使用 &lt;code&gt;*&lt;/code&gt; 来选择所有的参数，使用 &lt;code&gt;$&lt;/code&gt; 选择最后一个参数。&lt;/p&gt;
 &lt;h2 id="我要对字符串做处理"&gt;我要对字符串做处理
 &lt;/h2&gt;&lt;p&gt;在冒号后使用一些字母来做相应的处理。假设有命令 &lt;code&gt;ls /path/to/a/file.txt&lt;/code&gt; 并且我们使用 &lt;code&gt;echo !:1&lt;/code&gt; 尝试调用这个 &lt;code&gt;ls&lt;/code&gt; 的命令，则下面的参数选择器可以做到：&lt;/p&gt;
@@ -812,313 +920,354 @@ background: var(--card-background-selected);
 &lt;/h2&gt;&lt;p&gt;下面是一个表格简单描述这些用法&lt;/p&gt;
 &lt;h3 id="命令选择使用-"&gt;命令选择（使用 &lt;code&gt;!&lt;/code&gt;）
 &lt;/h3&gt;&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;语法&lt;/th&gt;
-&lt;th&gt;含义&lt;/th&gt;
-&lt;th&gt;示例&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;!!&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;上一条命令&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;sudo !!&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;!-n&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;倒数第 n 条命令&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;!-2&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;!n&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;第 n 条历史命令&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;!42&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;!字符串&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;最近以该字符串开头的命令&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;!ls&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;!?字符串?&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;最近包含该字符串的命令&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;!?foo?&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;^旧^新&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;将上一条命令中第一个“旧”替换为“新”&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;^cat^bat&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;语法&lt;/th&gt;
+ &lt;th&gt;含义&lt;/th&gt;
+ &lt;th&gt;示例&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;!!&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;上一条命令&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;sudo !!&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;!-n&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;倒数第 n 条命令&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;!-2&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;!n&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;第 n 条历史命令&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;!42&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;!字符串&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;最近以该字符串开头的命令&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;!ls&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;!?字符串?&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;最近包含该字符串的命令&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;!?foo?&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;^旧^新&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;将上一条命令中第一个“旧”替换为“新”&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;^cat^bat&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h3 id="参数选择-使用-"&gt;参数选择 （使用 &lt;code&gt;:&lt;/code&gt;）
 &lt;/h3&gt;&lt;p&gt;下面的示例命令使用 &lt;code&gt;echo file.txt&lt;/code&gt; 来做演示。&lt;/p&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;语法&lt;/th&gt;
-&lt;th&gt;含义&lt;/th&gt;
-&lt;th&gt;示例&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;!!:0&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;上一条命令的命令名&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;!!:0&lt;/code&gt; → &lt;code&gt;echo&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;!!:1&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;第一个参数&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;!!:1&lt;/code&gt; → &lt;code&gt;file.txt&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;!!:2&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;第二个参数&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;!!:$&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;最后一个参数&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;!!:$&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;!!:*&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;所有参数（等同于 &lt;code&gt;!!:1-$&lt;/code&gt;）&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;!!:*&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;!!:1-3&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;第 1 到第 3 个参数&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;!!:1-3&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;!!:2-$&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;从第 2 个到最后一个参数&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;!!:2-$&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;!$&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;上一条命令的最后一个参数 (可以省略冒号)&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;cat !$&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;!*&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;上一条命令的所有参数（可以省略冒号）&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;rm !*&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;语法&lt;/th&gt;
+ &lt;th&gt;含义&lt;/th&gt;
+ &lt;th&gt;示例&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;!!:0&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;上一条命令的命令名&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;!!:0&lt;/code&gt; → &lt;code&gt;echo&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;!!:1&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;第一个参数&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;!!:1&lt;/code&gt; → &lt;code&gt;file.txt&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;!!:2&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;第二个参数&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;!!:$&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;最后一个参数&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;!!:$&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;!!:*&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;所有参数（等同于 &lt;code&gt;!!:1-$&lt;/code&gt;）&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;!!:*&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;!!:1-3&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;第 1 到第 3 个参数&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;!!:1-3&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;!!:2-$&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;从第 2 个到最后一个参数&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;!!:2-$&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;!$&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;上一条命令的最后一个参数 (可以省略冒号)&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;cat !$&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;!*&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;上一条命令的所有参数（可以省略冒号）&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;rm !*&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h3 id="参数修饰"&gt;参数修饰
 &lt;/h3&gt;&lt;p&gt;下面的示例命令使用 &lt;code&gt;echo /path/to/file.txt&lt;/code&gt; 来做演示。&lt;/p&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;修饰符&lt;/th&gt;
-&lt;th&gt;含义&lt;/th&gt;
-&lt;th&gt;示例&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;:p&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;只打印命令，不执行&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;sudo !!:p&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;:q&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;给参数加引号，避免空格或特殊字符问题&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;echo !!:1:q&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;:h&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;获取路径头部（类似 &lt;code&gt;dirname&lt;/code&gt;）&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;echo !!:1:h&lt;/code&gt; → &lt;code&gt;/path/to&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;:t&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;获取路径尾部（类似 &lt;code&gt;basename&lt;/code&gt;）&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;echo !!:1:t&lt;/code&gt; → &lt;code&gt;file.txt&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;:r&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;去掉文件扩展名（保留主名）&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;echo !!:1:r&lt;/code&gt; → &lt;code&gt;file&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;:e&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;获取文件扩展名&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;echo !!:1:e&lt;/code&gt; → &lt;code&gt;txt&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;:s/旧/新/&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;替换第一个出现的子串&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;!!:1:s/foo/bar/&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;:gs/旧/新/&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;替换所有出现的子串&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;!!:1:gs/foo/bar/&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;修饰符&lt;/th&gt;
+ &lt;th&gt;含义&lt;/th&gt;
+ &lt;th&gt;示例&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;:p&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;只打印命令，不执行&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;sudo !!:p&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;:q&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;给参数加引号，避免空格或特殊字符问题&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;echo !!:1:q&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;:h&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;获取路径头部（类似 &lt;code&gt;dirname&lt;/code&gt;）&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;echo !!:1:h&lt;/code&gt; → &lt;code&gt;/path/to&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;:t&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;获取路径尾部（类似 &lt;code&gt;basename&lt;/code&gt;）&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;echo !!:1:t&lt;/code&gt; → &lt;code&gt;file.txt&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;:r&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;去掉文件扩展名（保留主名）&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;echo !!:1:r&lt;/code&gt; → &lt;code&gt;file&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;:e&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;获取文件扩展名&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;echo !!:1:e&lt;/code&gt; → &lt;code&gt;txt&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;:s/旧/新/&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;替换第一个出现的子串&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;!!:1:s/foo/bar/&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;:gs/旧/新/&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;替换所有出现的子串&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;!!:1:gs/foo/bar/&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id="总结"&gt;总结
 &lt;/h2&gt;&lt;p&gt;这里其实应该没有写完，不过就这些已经列出来的方法而言，我个人感觉是已经挺够用的了。毕竟，平时最常用的也就是 &lt;code&gt;sudo !!&lt;/code&gt; 来给 &lt;code&gt;pamcan -Syu&lt;/code&gt; 补上管理员权限而已，或者是在 &lt;code&gt;ls -l /path/to/file&lt;/code&gt; 确定文件/文件夹存在后用 &lt;code&gt;vim&lt;/code&gt; 或者 &lt;code&gt;cd&lt;/code&gt; 打开它罢了。&lt;/p&gt;
 &lt;p&gt;还有一点要注意的是，&lt;code&gt;bash&lt;/code&gt; 默认是不会像 &lt;code&gt;zsh&lt;/code&gt; 一样先提供一个预览，让你看看会发生什么的，而是直接就运行命令了。所以也许在 &lt;code&gt;bash&lt;/code&gt; 中使用这个功能时需要额外注意，特别是涉及一些比较危险的动作，比如 &lt;code&gt;rm&lt;/code&gt; 这类命令。此时你可以尝试先用 &lt;code&gt;:p&lt;/code&gt; 来打印出来要运行的命令，没啥问题就可以运行了。印象中应该还有一个办法，来让 &lt;code&gt;bash&lt;/code&gt; 也先提供一个预览而非直接运行。不过，因为我用的是 &lt;code&gt;zsh&lt;/code&gt;，就不纠结这个问题了。也许以后我还会更新这篇文章呢？哈哈。&lt;/p&gt;
-&lt;p&gt;那么，感谢你看到这里，祝您身心愉悦，身体健康~&lt;/p&gt;</description></item><item><title>搭建 FRP 服务</title><link>https://a-moment096.github.io/posts/frp_depoly/</link><pubDate>Wed, 23 Jul 2025 13:26:16 +0800</pubDate><guid>https://a-moment096.github.io/posts/frp_depoly/</guid><description>&lt;img src="https://a-moment096.github.io/posts/frp_depoly/BagPipe.jpg" alt="Featured image of post 搭建 FRP 服务" /&gt;&lt;p&gt;&lt;em&gt;怎么连接个服务器还得先用 ToDesk 连上个 Windows 电脑，再从这个电脑上 ssh 进服务器呀！？受不鸟，自己搭个 FRP 服务吧&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;那么，感谢你看到这里，祝您身心愉悦，身体健康~&lt;/p&gt;</description></item><item><title>搭建 FRP 服务</title><link>https://a-moment096.github.io/posts/frp_depoly/</link><pubDate>Wed, 23 Jul 2025 13:26:16 +0800</pubDate><guid>https://a-moment096.github.io/posts/frp_depoly/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post 搭建 FRP 服务" /&gt;&lt;p&gt;&lt;em&gt;怎么连接个服务器还得先用 ToDesk 连上个 Windows 电脑，再从这个电脑上 ssh 进服务器呀！？受不鸟，自己搭个 FRP 服务吧&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;图为可爱的风笛小姐，据不可靠消息，应该是来自于画师 &lt;a class="link" href="https://weibo.com/u/5979033109" target="_blank" rel="noopener"
-&gt;Liyu黎&lt;/a&gt; 老师画的 2022 音律联觉的贺图。既然如此，就配一首风笛小姐的个人 EP：《故乡的风》吧。&lt;/em&gt;&lt;/p&gt;
+ &gt;Liyu黎&lt;/a&gt; 老师画的 2022 音律联觉的贺图。既然如此，就配一首风笛小姐的个人 EP：《故乡的风》吧。&lt;/em&gt;&lt;/p&gt;
+
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
 &lt;style type="text/css"&gt;
 [data-scheme="dark"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
-border-bottom-color: var(--card-separator-color);
+ border-bottom-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
-border-color: var(--card-separator-color);
+ border-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-body {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info {
-border-top-color: var(--card-background);
+ border-top-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
-color: var(--card-text-color-tertiary);
+ color: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
-background-color: var(--card-separator-color);
+ background-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
-background-color: var(--accent-color);
+ background-color: var(--accent-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li {
-color: var(--card-text-color-main);
-border-top-color: var(--card-separator-color);
+ color: var(--card-text-color-main);
+ border-top-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc {
-text-shadow: -1px -1px 0 var(--body-background);
+ text-shadow: -1px -1px 0 var(--body-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:before {
-background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+ background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:after {
-background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc p {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
+ 
 [data-scheme="light"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="light"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
 &lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
+
+
 &lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/album?id=86572348" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
 &lt;h2 id="引子为什么要跳板机"&gt;引子：为什么要跳板机
 &lt;/h2&gt;&lt;p&gt;为了方便提交任务，做相场计算，组里配了一台计算服务器，一个管理节点+两个计算节点，劲呀！然而坏消息是：组里没有多余的空间放置服务器了，只能托管到另一个老师那里。&lt;/p&gt;
 &lt;p&gt;OK，没什么关系，给服务器配个公网IP，那不就和在自己组里一样咯？可是实际上并没有那样的好事，公网IP也不是想申请就申请的。课题组内貌似对网络配置这块不了解，也不打算了解，所以就只能交给装机的小哥处理。而他和那边老师协商后，决定采用的方案是：使用 ToDesk 连接到和服务器处于同一公网下的 Windows 电脑，再用那个 Windows 电脑 SSH 到服务器上。整体过程大概是这样的：&lt;/p&gt;
 &lt;figure class="mermaid-container"&gt;
-&lt;div class="mermaid"&gt;graph LR
-subgraph "内网环境1"
-Client[客户端&lt;br/&gt;我的电脑]
-end
-subgraph "内网环境2"
-OtherUser[其他用户]
-end
-subgraph "内网环境3"
-Windows[Windows电脑&lt;br/&gt;ToDesk远控]
-Compute[计算服务器&lt;br/&gt;无公网IP]
-end
-Client --&gt;|ToDesk远控| Windows
-Windows --&gt;|局域网SSH| Compute
-OtherUser -.-&gt;|❌&lt;br/&gt;无法连接| Windows
-classDef public fill:#e1f5fe
-classDef private fill:#fff3e0
-classDef deprecated fill:#ffebee
-classDef forbidden stroke:#f44336,stroke-width:2px,stroke-dasharray:5
-class Client public
-class Compute private
-class Windows deprecated
-class OtherUser forbidden
-&lt;/div&gt;
-&lt;figcaption&gt;通过 Windows ToDesk 跳板连接示意图&lt;/figcaption&gt;
+ &lt;div class="mermaid"&gt;graph LR
+ subgraph "内网环境1"
+ Client[客户端&lt;br/&gt;我的电脑]
+ end
+
+ subgraph "内网环境2"
+ OtherUser[其他用户]
+ end
+
+ subgraph "内网环境3"
+ Windows[Windows电脑&lt;br/&gt;ToDesk远控]
+ Compute[计算服务器&lt;br/&gt;无公网IP]
+ end
+ 
+ Client --&gt;|ToDesk远控| Windows
+ Windows --&gt;|局域网SSH| Compute
+ OtherUser -.-&gt;|❌&lt;br/&gt;无法连接| Windows
+ 
+ classDef public fill:#e1f5fe
+ classDef private fill:#fff3e0
+ classDef deprecated fill:#ffebee
+ classDef forbidden stroke:#f44336,stroke-width:2px,stroke-dasharray:5
+ 
+ class Client public
+ class Compute private
+ class Windows deprecated
+ class OtherUser forbidden
+ &lt;/div&gt;
+ &lt;figcaption&gt;通过 Windows ToDesk 跳板连接示意图&lt;/figcaption&gt;
 &lt;/figure&gt;&lt;p&gt;这个方案，说实在的感觉很蠢。一个服务器，搭载着多用户操作系统，竟然必须用 Windows 做跳板然后跳过去！？这不就意味着，如果有两个人同时使用服务器，我就会和对方产生会话冲突？而且如果有人盯着那台 Windows 电脑的屏幕，我的操作不就暴露地清清楚楚了！？怎么想都是很愚蠢的做法，不过也能理解：这应该（也许）是一个临时的解决方案。而后面谁来解决这个问题呢？&lt;/p&gt;
 &lt;p&gt;那必须是我了！我们可以搭建一个 FRP（快速反向代理） 服务，让流量通过一个跳板服务器转发到计算服务器上，不再蠢蠢地堵在同一台 Windows 设备上。这样一来，每个人都可以自己自由地连接上这个服务器，只需要把流量交给反代服务器（跳板服务器），让它处理转发端口之类的，就可以啦。搞好之后的示意图大概是：&lt;/p&gt;
 &lt;figure class="mermaid-container"&gt;
-&lt;div class="mermaid"&gt;graph LR
-subgraph "内网环境1"
-Client[客户端&lt;br/&gt;我的电脑]
-end
-subgraph "内网环境2"
-OtherUser[其他用户]
-end
-subgraph "外网环境"
-FRPServer[FRP服务端&lt;br/&gt;公网IP中转]
-end
-subgraph "内网环境3"
-Compute[计算服务器&lt;br/&gt;无公网IP]
-end
-Client --&gt;|SSH| FRPServer
-OtherUser --&gt;|SSH| FRPServer
-FRPServer --&gt;|FRP客户端&lt;br/&gt;反向代理| Compute
-classDef public fill:#e1f5fe,stroke:#039be5
-classDef private fill:#fff3e0,stroke:#fb8c00
-classDef server fill:#e8f5e9,stroke:#43a047,stroke-width:2px
-class Client,OtherUser public
-class Compute private
-class FRPServer server
-&lt;/div&gt;
-&lt;figcaption&gt;FRP 内网穿透网络架构示意图&lt;/figcaption&gt;
+ &lt;div class="mermaid"&gt;graph LR
+ subgraph "内网环境1"
+ Client[客户端&lt;br/&gt;我的电脑]
+ end
+ 
+ subgraph "内网环境2"
+ OtherUser[其他用户]
+ end
+
+ subgraph "外网环境"
+ FRPServer[FRP服务端&lt;br/&gt;公网IP中转]
+ end
+ 
+ subgraph "内网环境3"
+ Compute[计算服务器&lt;br/&gt;无公网IP]
+ end
+
+ Client --&gt;|SSH| FRPServer
+ OtherUser --&gt;|SSH| FRPServer
+ FRPServer --&gt;|FRP客户端&lt;br/&gt;反向代理| Compute
+ 
+ classDef public fill:#e1f5fe,stroke:#039be5
+ classDef private fill:#fff3e0,stroke:#fb8c00
+ classDef server fill:#e8f5e9,stroke:#43a047,stroke-width:2px
+ 
+ class Client,OtherUser public
+ class Compute private
+ class FRPServer server
+ &lt;/div&gt;
+ &lt;figcaption&gt;FRP 内网穿透网络架构示意图&lt;/figcaption&gt;
 &lt;/figure&gt;&lt;p&gt;嗯哼，那就开始吧~&lt;/p&gt;
 &lt;h2 id="搭建也许需要个-tldr"&gt;搭建：也许需要个 TL;DR
 &lt;/h2&gt;&lt;p&gt;我觉得也许应该先写一下 FRP 技术是什么以及介绍一下这中间的网络通信过程是什么样的，然而我相信，来看这个博文的朋友应该都是需要一份切实可行的执行过程的。所以下面的第一步是：&lt;/p&gt;
 &lt;h3 id="tldr"&gt;TL;DR
 &lt;/h3&gt;&lt;p&gt;&lt;em&gt;下面的流程大量参考自开源教程：&lt;a class="link" href="https://github.com/CNFlyCat/UsefulTutorials/" target="_blank" rel="noopener"
-&gt;Frp内网穿透搭建教学&lt;/a&gt;，内容非常详细，感觉这里不清楚的可以去看看&lt;/em&gt;&lt;/p&gt;
+ &gt;Frp内网穿透搭建教学&lt;/a&gt;，内容非常详细，感觉这里不清楚的可以去看看&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;下面是我的解决过程：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;租个服务器：在阿里云用学生认证白嫖三个月的便宜服务器，有个公网IP就行，待会儿会用这个IP&lt;/li&gt;
@@ -1166,22 +1315,25 @@ class FRPServer server
 &lt;h3 id="流程图"&gt;流程图
 &lt;/h3&gt;&lt;p&gt;&lt;del&gt;这个人在尝试过 Mermaid 之后就什么都想画个图了，原谅他吧。&lt;/del&gt;&lt;/p&gt;
 &lt;figure class="mermaid-container"&gt;
-&lt;div class="mermaid"&gt;flowchart TD
-B[使用ToDesk连接服务器\n获取公网IP：curl ifconfig.me`]
-B --&gt; C[下载frp工具\nwget/curl下载压缩包]
-C --&gt; D[解压frp压缩包\ntar xzf命令]
-D --&gt; E[配置frpc.toml\n设置serverAddr/serverPort等参数]
-E --&gt; F[启动frpc客户端\n./frpc -c ./frpc.toml]
-A[租用阿里云服务器\n获取公网IP] --&gt; H[配置frps.toml\n仅设置bindPort=7000]
-H --&gt; I[启动frps服务端\n./frps -c ./frps.toml]
-F --&gt; J[连接测试]
-I --&gt; J
-J --&gt; K[第三台电脑测试\nssh username@公网IP -p 6000]
-style A fill:#f9f,stroke:#333
-style B fill:#f9f,stroke:#333
-style K fill:#bbf,stroke:#333
-&lt;/div&gt;
-&lt;figcaption&gt;&lt;/figcaption&gt;
+ &lt;div class="mermaid"&gt;flowchart TD
+ B[使用ToDesk连接服务器\n获取公网IP：curl ifconfig.me`]
+ B --&gt; C[下载frp工具\nwget/curl下载压缩包]
+ C --&gt; D[解压frp压缩包\ntar xzf命令]
+ D --&gt; E[配置frpc.toml\n设置serverAddr/serverPort等参数]
+ E --&gt; F[启动frpc客户端\n./frpc -c ./frpc.toml]
+ 
+ A[租用阿里云服务器\n获取公网IP] --&gt; H[配置frps.toml\n仅设置bindPort=7000]
+ H --&gt; I[启动frps服务端\n./frps -c ./frps.toml]
+ 
+ F --&gt; J[连接测试]
+ I --&gt; J
+ J --&gt; K[第三台电脑测试\nssh username@公网IP -p 6000]
+ 
+ style A fill:#f9f,stroke:#333
+ style B fill:#f9f,stroke:#333
+ style K fill:#bbf,stroke:#333
+ &lt;/div&gt;
+ &lt;figcaption&gt;&lt;/figcaption&gt;
 &lt;/figure&gt;&lt;p&gt;&lt;del&gt;（感觉上面的流程描述还是不如图清晰呀，还是图好）&lt;/del&gt;&lt;/p&gt;
 &lt;p&gt;所以，大概就是这样啦。如果你是误打误撞进了这个博客，正好想搭建一个 FRP 服务，上面的内容应该就足够啦。希望可以帮到你~&lt;/p&gt;
 &lt;h2 id="解说环节"&gt;解说环节
@@ -1190,30 +1342,33 @@ style K fill:#bbf,stroke:#333
 &lt;/h3&gt;&lt;p&gt;当遇到一个奇怪的，有着英文缩写的概念时，最应该从这个缩写的含义来展开。FRP，全称 Fast Reverse Proxy，也就是 “快速反向代理”。也许有人要问了，什么是代理，什么是反向代理，什么又是 “快速反向代理”？&lt;/p&gt;
 &lt;p&gt;很可惜，我也是超级小白，只能斗胆分享一下自己的看法。代理这个词，一听就知道大概是什么样的过程：代替某个东西来受理某项业务。实际上在我的理解里，就是这么回事。不过在谈 “反向代理” 前，还是先聊聊可能大家更熟一些的 &lt;em&gt;正向代理&lt;/em&gt; 吧。它是指把流量交给某个服务，让所有服务的流量都从这里出去。大概就是：&lt;/p&gt;
 &lt;figure class="mermaid-container"&gt;
-&lt;div class="mermaid"&gt;graph TB
-%% 正向代理
-subgraph "正向代理"
-User1[客户端] --&gt;|"1. 主动配置代理
-(如浏览器设置)"| FProxy[正向代理服务器]
-FProxy --&gt;|"2. 代访互联网"| Internet[目标网站]
-end
-classDef proxy fill:#c8e6c9,stroke:#4caf50
-class FProxy,RProxy proxy
-&lt;/div&gt;
-&lt;figcaption&gt;正向代理示意图&lt;/figcaption&gt;
+ &lt;div class="mermaid"&gt;graph TB
+ %% 正向代理
+ subgraph "正向代理"
+ User1[客户端] --&gt;|"1. 主动配置代理
+ (如浏览器设置)"| FProxy[正向代理服务器]
+ FProxy --&gt;|"2. 代访互联网"| Internet[目标网站]
+ end
+
+ classDef proxy fill:#c8e6c9,stroke:#4caf50
+ class FProxy,RProxy proxy
+ &lt;/div&gt;
+ &lt;figcaption&gt;正向代理示意图&lt;/figcaption&gt;
 &lt;/figure&gt;&lt;p&gt;这里正向代理服务器就是中间的一层马甲，代替客户端进行访问，访问后再把内容反传给客户端。这样一来，目标网站就不太容易知道代理服务器的背后是谁，形成了一定的匿名性。&lt;/p&gt;
 &lt;p&gt;那么反向代理呢？与正向代理正好相反，正向代理是由代理服务器做客户端的马甲，而反向代理则是让代理服务器给目标服务器打工。反代服务器会接收到客户端的请求再告诉服务端，反代服务器会负责把内容转发到对应的位置，交给服务端，而服务端后面要与客户端通信，还是得走反代服务器。图形表示的话就是这样的：&lt;/p&gt;
 &lt;figure class="mermaid-container"&gt;
-&lt;div class="mermaid"&gt;graph TB
-%% 反向代理
-subgraph "反向代理"
-User2[客户端] --&gt;|"1. 直接访问"| RProxy[反向代理服务器]
-RProxy --&gt;|"2. 转发给内网"| Backend[后端服务器]
-end
-classDef proxy fill:#c8e6c9,stroke:#4caf50
-class FProxy,RProxy proxy
-&lt;/div&gt;
-&lt;figcaption&gt;反向代理示意图&lt;/figcaption&gt;
+ &lt;div class="mermaid"&gt;graph TB
+
+ %% 反向代理
+ subgraph "反向代理" 
+ User2[客户端] --&gt;|"1. 直接访问"| RProxy[反向代理服务器]
+ RProxy --&gt;|"2. 转发给内网"| Backend[后端服务器]
+ end
+
+ classDef proxy fill:#c8e6c9,stroke:#4caf50
+ class FProxy,RProxy proxy
+ &lt;/div&gt;
+ &lt;figcaption&gt;反向代理示意图&lt;/figcaption&gt;
 &lt;/figure&gt;&lt;p&gt;也就是说，正向代理的情况下，目标网站只知道有个服务器在访问它；反向代理情况下，客户端不直接连到后端服务器，而是直接连接到反代服务器上。我们的需求，是让自己的电脑能跨过计算服务器的内网屏障，用 SSH 连接上去。因此，我们要做的是让服务器想办法把我的请求告诉计算服务器，也就是采用反向代理，让反代服务器从一个端口接收我的请求流量，然后走另一个端口，把流量转发给计算服务器负责监听 SSH 请求的端口，就可以了。&lt;/p&gt;
 &lt;p&gt;那么 “快速反向代理” 又是啥？就我浅薄的认知而言，“反向代理” 不是一个特别特殊的东西，很多人都可以尝试自己的实现方式。而 “FRP” 是其中一个非常受欢迎的选择。至于 “快速”， 应该是说它速度快？由于我只知道这么一个，所以咱们还是不要深究了。&lt;/p&gt;
 &lt;p&gt;当你下载好 FRP 的包后，你应该会看到里面没有多少文件。两个可执行文件：一个 &lt;code&gt;frpc&lt;/code&gt; 作为客户端，一个 &lt;code&gt;frps&lt;/code&gt; 作为服务端，以及对应的配置文件，几乎就这样，内容很简单。它的工作方式，就是在让 &lt;code&gt;frps&lt;/code&gt; 接收流量，然后转发到拥有 &lt;code&gt;frpc&lt;/code&gt; 的设备上。请注意，虽然这里说是 “客户端”，但实际上是那个计算服务器，而非本地的电脑。本地电脑要做的几乎只有保证自己能 &lt;code&gt;ssh&lt;/code&gt; 上别的机器，这就可以了。&lt;/p&gt;
@@ -1289,101 +1444,130 @@ class FProxy,RProxy proxy
 &lt;p&gt;实际上，FRP 的使用方式远不局限于我上面写的这些。甚至如果你愿意点进上面贴出的那个教程连接，就会发现他写的会更加详细，配置项会更加复杂。不过，因为我的需求足够简单，所以我的配置也相对简单很多。&lt;/p&gt;
 &lt;p&gt;要提醒的是，防火墙其实也许不用设置得像我这里写的，这么严格。然而一定要留个心眼，毕竟网上坏人真的很多。比如我搭建好 FRP 服务的当天晚上就遭到了大洋彼岸朋友的亲切扫描，扫出端口之后就是一通尝试，用了什么 root，admin，user 等的账户名以及一先干就知道的一大堆弱密码来尝试连接进服务器。好消息是没有试出来，被我用防火墙给 ban 了。但还是给我惊出了一身冷汗。害人之心不可有，防人之心不可无呀。&lt;/p&gt;
 &lt;p&gt;还有要说的是，有一些场景是不可以使用 FRP 服务或者类似的远程访问的服务的。没错，向日葵，ToDesk 这类也不行。网上是有使用类似服务结果酿成大祸的情况的。在使用这类服务前，还是要先三思呀。&lt;/p&gt;
-&lt;p&gt;最后，一如既往地，辛苦你看到这里。感谢您的支持，也同时祝您生活愉快~&lt;/p&gt;</description></item><item><title>安装 Arch Linux，但是笔记本物理机</title><link>https://a-moment096.github.io/posts/arch_on_laptop/</link><pubDate>Fri, 02 May 2025 16:12:04 +0800</pubDate><guid>https://a-moment096.github.io/posts/arch_on_laptop/</guid><description>&lt;img src="https://a-moment096.github.io/posts/arch_on_laptop/imgs/Alice.png" alt="Featured image of post 安装 Arch Linux，但是笔记本物理机" /&gt;&lt;p&gt;&lt;em&gt;之前在虚拟机上面装的 Arch Linux 根本不过瘾（搞笑，你根本就没更完(❌)），这次就把自己的小轻薄改成 Arch 好了。顺带，也记录一下实体机上安装可能会遇到的坑？&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;最后，一如既往地，辛苦你看到这里。感谢您的支持，也同时祝您生活愉快~&lt;/p&gt;</description></item><item><title>安装 Arch Linux，但是笔记本物理机</title><link>https://a-moment096.github.io/posts/arch_on_laptop/</link><pubDate>Fri, 02 May 2025 16:12:04 +0800</pubDate><guid>https://a-moment096.github.io/posts/arch_on_laptop/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post 安装 Arch Linux，但是笔记本物理机" /&gt;&lt;p&gt;&lt;em&gt;之前在虚拟机上面装的 Arch Linux 根本不过瘾（搞笑，你根本就没更完(❌)），这次就把自己的小轻薄改成 Arch 好了。顺带，也记录一下实体机上安装可能会遇到的坑？&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图出自 R Sound Design 的新曲 《アリス？》，一首很轻快的 V曲~&lt;/em&gt;&lt;/p&gt;
-&lt;!--
+&lt;!-- 
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
 &lt;style type="text/css"&gt;
 [data-scheme="dark"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
-border-bottom-color: var(--card-separator-color);
+ border-bottom-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
-border-color: var(--card-separator-color);
+ border-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-body {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info {
-border-top-color: var(--card-background);
+ border-top-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
-color: var(--card-text-color-tertiary);
+ color: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
-background-color: var(--card-separator-color);
+ background-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
-background-color: var(--accent-color);
+ background-color: var(--accent-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li {
-color: var(--card-text-color-main);
-border-top-color: var(--card-separator-color);
+ color: var(--card-text-color-main);
+ border-top-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc {
-text-shadow: -1px -1px 0 var(--body-background);
+ text-shadow: -1px -1px 0 var(--body-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:before {
-background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+ background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:after {
-background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc p {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
+ 
 [data-scheme="light"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="light"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
 &lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
+
+
 &lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=750876" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt; --&gt;
 &lt;p&gt;&lt;em&gt;很可惜 网易云/QQ音乐 都暂时没有这首歌，所以只能劳驾移步B站欣赏了。一旦有更新就会贴在这里的&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;B站&lt;a class="link" href="https://www.bilibili.com/video/BV1UtV5zqEjC/" target="_blank" rel="noopener"
-&gt;投稿&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+ &gt;投稿&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id="引子我好急怎么耗电这么大"&gt;引子：我好急，怎么耗电这么大
 &lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;亲爱的笔记本：&lt;/p&gt;
@@ -1397,14 +1581,17 @@ background: var(--card-background-selected);
 &lt;/h2&gt;&lt;p&gt;首先肯定是先把电脑上已有的资料都备份好。其实说实话没太多文件，主要是两个没打完的 Gal 吧（心虚），因为大部分的文件都其实已经搞到台式机上面了。一开始是想着把这些文件放在一块精心规划的小硬盘上，安装的时候不格式化就行了，但是感觉还是有点点点点危险，所以干脆还是挪到另一台机器上，把这台小本的硬盘全部格式化了得了。不过也许我应该考虑更加智能的备份方案？算了，以后再考虑（挖坑）。&lt;/p&gt;
 &lt;p&gt;其次就是准备启动盘。本来这次想要换一种安装媒介来着，比如光盘？（没错我有光盘刻录机，为了听 CD 买的 ()），结果还是嫌麻烦，放弃了。给虚拟机安装的时候不是已经有了镜像了吗？为什么不直接用呢？至于为什么没有下载最新的（最新的就是昨天刚出的，5月1日版本），是因为我刚准备下载的时候看到最上面一行小字：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/arch_on_laptop/imgs/no_need_for_download.png"
-width="1277"
-height="133"
-srcset="https://a-moment096.github.io/posts/arch_on_laptop/imgs/no_need_for_download_hu_b7fc85415b980f50.png 480w, https://a-moment096.github.io/posts/arch_on_laptop/imgs/no_need_for_download_hu_d693396e5a356e3d.png 1024w"
-loading="lazy"
-alt="安装好再更新不挺好？（滚挂警告）"
-class="gallery-image"
-data-flex-grow="960"
-data-flex-basis="2304px"
+	width="1277"
+	height="133"
+	loading="lazy"
+	
+		alt="安装好再更新不挺好？（滚挂警告）"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="960"
+		data-flex-basis="2304px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;So, why not?&lt;/p&gt;
 &lt;p&gt;镜像依旧是用 &lt;code&gt;rufus&lt;/code&gt; 烧录到陪伴了我6+年的小U盘上，什么格式化之类的 &lt;code&gt;rufus&lt;/code&gt; 会自动帮我搞好的。中间有个小插曲好像是 &lt;code&gt;rufus&lt;/code&gt; 不太支持最新的 syslinux 版本，需要额外下载两个小库。无所谓（）我选择相信。&lt;/p&gt;
@@ -1426,8 +1613,8 @@ data-flex-basis="2304px"
 &lt;p&gt;烂了，没有数据返回。烂完了。&lt;/p&gt;
 &lt;p&gt;（找找办法x2……）&lt;/p&gt;
 &lt;p&gt;顺从。又不是没有别的 WIFI 能用。直接连上办公室 WIFI好了。当然，这里也贴一下我参考了的连接校园网的方法的博文：&lt;a class="link" href="https://www.cnblogs.com/holaworld/p/17839616.html" target="_blank" rel="noopener"
-&gt;链接1&lt;/a&gt; 以及 &lt;a class="link" href="https://www.bilibili.com/opus/852262124483772422" target="_blank" rel="noopener"
-&gt;链接2&lt;/a&gt;。&lt;/p&gt;
+ &gt;链接1&lt;/a&gt; 以及 &lt;a class="link" href="https://www.bilibili.com/opus/852262124483772422" target="_blank" rel="noopener"
+ &gt;链接2&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;最后网络这里还有要设置一下系统时间。用 &lt;code&gt;timedatectl&lt;/code&gt; 就可以。 感谢 &lt;code&gt;zsh&lt;/code&gt; 和这些工具带上的自动补全，&lt;code&gt;timedatectl --help&lt;/code&gt; 一下，跟着感觉走，最后就得到了 &lt;code&gt;timedatectl set-timezone Asia/Shanghai&lt;/code&gt; 了。相当简单。&lt;/p&gt;
 &lt;h3 id="再见我的旧文件们"&gt;再见，我的（旧）文件们
 &lt;/h3&gt;&lt;p&gt;又到了每次装系统最喜欢也最提心吊胆的磁盘分区了。总有一种破后而立的感觉，感觉在磁盘格式化之后，这台电脑就变成全新的了诶。还是一样，&lt;code&gt;fdisk -l&lt;/code&gt; 列一下可用分区。一下出来了一堆呀，删了删了，全部删了。&lt;/p&gt;
@@ -1459,7 +1646,7 @@ data-flex-basis="2304px"
 &lt;/h3&gt;&lt;p&gt;在孜孜不倦的努力以及不厌其烦的打扰 AI 下，我成功找到了在我的小破本上科学上网的方法。这里不多讲，但是核心只有一个：使用 TUN 模式。启用 TUN 之后，一切都对了，全对！感谢 AI，感谢 DeepSeek，感谢 ChatGPT！伟大，无需多言。&lt;/p&gt;
 &lt;h3 id="字体照着教程开抄"&gt;字体：照着教程开抄
 &lt;/h3&gt;&lt;p&gt;之前在虚拟机上进行安装的时候实际上没太注意字体的问题。这次因为是日常自用，还是留意了一下，毕竟每天看着奇形怪状的汉字真的很别扭。字体的设置基本就是参考 &lt;a class="link" href="https://catcat.cc/post/2021-03-07/" target="_blank" rel="noopener"
-&gt;这篇博文&lt;/a&gt;，谢谢你，大佬。不过也要注意，读的时候（或者，抄的时候）还是要仔细一些，有一些设置实际上不是最好的设置，可以用出现在底下的更好的配置替代。也算是挡住了一些些伸手党？也许？&lt;/p&gt;
+ &gt;这篇博文&lt;/a&gt;，谢谢你，大佬。不过也要注意，读的时候（或者，抄的时候）还是要仔细一些，有一些设置实际上不是最好的设置，可以用出现在底下的更好的配置替代。也算是挡住了一些些伸手党？也许？&lt;/p&gt;
 &lt;h3 id="指纹呜呜呜呜呜怎么硬件还能不开源呀"&gt;指纹：呜呜呜呜呜怎么硬件还能不开源呀
 &lt;/h3&gt;&lt;p&gt;我的笔记本最让我自豪的一点就是她有非常好用的指纹识别。这个本来应该没什么要紧的，但是想到之后就很像折腾一下。特别是回回输入密码，真的有点累。虽然这个本是我自己用，里面也没啥东西，但是还是不太想无密码裸奔。而如果有了指纹，一切都变得熟悉了。啊，那该是多么美妙呀。&lt;/p&gt;
 &lt;p&gt;直到我花了两个小时多把指纹识别都配置的差不多了的时候，我才发现，愚蠢的小米旗下的 Redmi Book 14 使用的指纹识别模块是闭源的，也没有相关的逆向工程尝试，现在没有任何驱动能启用它。&lt;/p&gt;
@@ -1515,7 +1702,7 @@ data-flex-basis="2304px"
 &lt;p align="right"&gt;Yours, &lt;/p&gt;
 &lt;p align="right"&gt;A Moment&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;谢谢你能看到这里。看完这一大堆废话，说实话也挺累的。如果这些整活儿的内容让你能开心一下，那就太好了。最后，一如既往，就祝您身心健康吧。&lt;/p&gt;</description></item><item><title>从零开始的 Arch Linux 安装</title><link>https://a-moment096.github.io/posts/arch_install/</link><pubDate>Sun, 10 Nov 2024 22:34:55 +0800</pubDate><guid>https://a-moment096.github.io/posts/arch_install/</guid><description>&lt;img src="https://a-moment096.github.io/posts/arch_install/imgs/Reimu_Water.jpg" alt="Featured image of post 从零开始的 Arch Linux 安装" /&gt;&lt;p&gt;&lt;em&gt;久闻 Arch Linux 大名, 以前尝试过在自己的电脑上安装 Arch Linux, 但是无情地失败了. 最近又有了尝试安装的想法, 故顺带做此记录, 以便将来回头嘲讽自己的离谱操作.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;谢谢你能看到这里。看完这一大堆废话，说实话也挺累的。如果这些整活儿的内容让你能开心一下，那就太好了。最后，一如既往，就祝您身心健康吧。&lt;/p&gt;</description></item><item><title>从零开始的 Arch Linux 安装</title><link>https://a-moment096.github.io/posts/arch_install/</link><pubDate>Sun, 10 Nov 2024 22:34:55 +0800</pubDate><guid>https://a-moment096.github.io/posts/arch_install/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post 从零开始的 Arch Linux 安装" /&gt;&lt;p&gt;&lt;em&gt;久闻 Arch Linux 大名, 以前尝试过在自己的电脑上安装 Arch Linux, 但是无情地失败了. 最近又有了尝试安装的想法, 故顺带做此记录, 以便将来回头嘲讽自己的离谱操作.&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id="引子-我与-linux"&gt;引子: 我与 Linux
 &lt;/h2&gt;&lt;p&gt;我认识 Linux 是从疫情在家无所适从的时候, 在自己的戴尔笔记本上安装 Ubuntu 开始的. 在那之前, 我只知道在 Windows 的江山之外, 还有一片名为 Linux 的世外桃源 (是的, 当时还不知道有 Mac OS,笑死). 而随着对编程兴趣的逐渐浓厚, 我愈发好奇那个 &amp;ldquo;只有高手才能玩得转&amp;rdquo; 的操作系统究竟是长什么样子. 于是, 在父亲的帮助下, 我在我的戴尔笔记本上划出来一小块硬盘留给 Linux (是的, 那时想安装双系统), 并且安装了 Ubuntu. 这个过程花费了我整整一天, 中间甚至和父亲闹了点矛盾, 把为数不多的精力全都耗光了. 自然, 安装好之后除了打开看了一眼, 安装了个 QQ 然后给同学炫耀之后, 便没了下文, 在随后的哪次格式化硬盘的时候跟着不见了.&lt;/p&gt;
 &lt;p&gt;第二次尝试 Linux 是在英国百无聊赖的时候开始的. 那时又是对电脑感兴趣, 又是好奇 Linux 操作系统是什么样子, 于是便又一次自己尝试安装 Linux. 这次是跟着鸟叔开始的, 故而安装了他的教程里的 CentOS. emmm 这个系统好像是比较老旧了还是怎么样, 目前也不是很火的样子. 鸟叔的教程还是相当细心认真的, 我这种纯小白 (也许) 也懵懵懂懂地在虚拟机上安装好了, 尝试了几个命令, 也感受到了命令行的神奇之处. 然而, 可能是好奇心太旺盛, 抑或是其他的原因, 我的兴趣点很快跑掉了, 因此这次对 Linux 的探索之旅止步于学会用命令行关机 (当然, 现在也已经忘了hhh)&lt;/p&gt;
@@ -1527,36 +1714,45 @@ data-flex-basis="2304px"
 &lt;h2 id="开始-准备-安装"&gt;开始 (准备) 安装
 &lt;/h2&gt;&lt;h3 id="帅气的开屏-然后进入-shell"&gt;帅气的开屏, 然后进入 Shell
 &lt;/h3&gt;&lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/arch_install/imgs/Welcome.png"
-width="642"
-height="555"
-srcset="https://a-moment096.github.io/posts/arch_install/imgs/Welcome_hu_9c204cf385924706.png 480w, https://a-moment096.github.io/posts/arch_install/imgs/Welcome_hu_3b9c1c315d9db805.png 1024w"
-loading="lazy"
-alt="开始安装!"
-class="gallery-image"
-data-flex-grow="115"
-data-flex-basis="277px"
+	width="642"
+	height="555"
+	loading="lazy"
+	
+		alt="开始安装!"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="115"
+		data-flex-basis="277px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;这里我们打开 &lt;a class="link" href="imgs/https://wiki.archlinux.org/title/Installation_guide" &gt;Arch Linux Installation Guide&lt;/a&gt;以便根据官方教程进行安装. 我不打算用 Arch Install, 感觉那个没什么意思 (&lt;del&gt;上次也是这么说的&lt;/del&gt;). 按照小节 1.4.2, 我们使用了光盘介质 (ISO也算是光盘镜像), 所以直接第一个选项就可以了.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/arch_install/imgs/Hacking.png"
-width="1282"
-height="875"
-srcset="https://a-moment096.github.io/posts/arch_install/imgs/Hacking_hu_10177284956d1702.png 480w, https://a-moment096.github.io/posts/arch_install/imgs/Hacking_hu_bc0f2c1f48d52944.png 1024w"
-loading="lazy"
-alt="很帅"
-class="gallery-image"
-data-flex-grow="146"
-data-flex-basis="351px"
+	width="1282"
+	height="875"
+	loading="lazy"
+	
+		alt="很帅"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="146"
+		data-flex-basis="351px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;旋即屏幕闪过很有黑客感觉的画面 (个人猜测是系统自检, 感觉像是 systemd, 因为左边有很多绿色 OK 字样), 然后便进入了如下画面:&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/arch_install/imgs/Install_1.png"
-width="1282"
-height="875"
-srcset="https://a-moment096.github.io/posts/arch_install/imgs/Install_1_hu_ee00e86872897b7d.png 480w, https://a-moment096.github.io/posts/arch_install/imgs/Install_1_hu_61c86b47e385ff4a.png 1024w"
-loading="lazy"
-alt="安装画面1"
-class="gallery-image"
-data-flex-grow="146"
-data-flex-basis="351px"
+	width="1282"
+	height="875"
+	loading="lazy"
+	
+		alt="安装画面1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="146"
+		data-flex-basis="351px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;根据 1.4.3, 我们这是来到了第一个虚拟终端 (Virtual Console), 身份是管理员用户 root, 使用的 Shell 是 Zsh. 感谢虚拟机, 让我不用担心在 root 账户下做的愚蠢操作会害死我的电脑和我自己. 那么我们继续吧~&lt;/p&gt;
 &lt;h3 id="键盘映射和字体-以及验证启动模式"&gt;键盘映射和字体, 以及验证启动模式
@@ -1575,38 +1771,47 @@ data-flex-basis="351px"
 &lt;p&gt;首先创建分区表. 这里使用 MBR 分区表, 因为默认如此. 根据网上的搜索结果, MBR 也适合我这种磁盘容量比较小的情况. 然后按 &lt;code&gt;n&lt;/code&gt; 进入创建分区引导界面. 这里会询问你的分区类型 (是初始还是拓展), 分区的编号, 以及起始和结束扇区. 第一个分区分给 &lt;code&gt;/boot&lt;/code&gt; 作为启动分区, 结束扇区前的部分一律默认 (初始分区, 1号, 从 2048 扇区开始), 然后通过命令 &lt;code&gt;+1G&lt;/code&gt; 来给第一个分区 1G 的容量. 然后创建第二个分区, 也是前面全部默认, 最后用 &lt;code&gt;+4G&lt;/code&gt; 指定容量为 4G. 这里我把这 4G 作为 Swap (好像就是虚拟内存)分区, 先使用命令 &lt;code&gt;l&lt;/code&gt; 查看每种分区类型的代码 (Swap的代码是 82), 然后 &lt;code&gt;t&lt;/code&gt; 开始改变分区类型, 选择 2 号, 类型写82. 最后把所有的空间分给第三个区, 然后给分区1打上 bootable 的标签 (用命令 &lt;code&gt;a&lt;/code&gt; 然后选 1 号).&lt;/p&gt;
 &lt;p&gt;这个时候可以用 &lt;code&gt;p&lt;/code&gt; 来查看分区结果, 会有一个表格写着所有的内容. 确认无误就可以 &lt;code&gt;w&lt;/code&gt; 来写入分区结果了. 接下来要格式化文件系统, 不然操作系统不知道文件是怎么存放的. 首先用命令 &lt;code&gt;lsblk -f&lt;/code&gt; 来查看现在的磁盘信息 (或者就是刚刚的分区情况). 这里我显示的结果如下:&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/arch_install/imgs/DiskPartition.png"
-width="953"
-height="144"
-srcset="https://a-moment096.github.io/posts/arch_install/imgs/DiskPartition_hu_47af7ef9aa0c6709.png 480w, https://a-moment096.github.io/posts/arch_install/imgs/DiskPartition_hu_ead30a075aaab807.png 1024w"
-loading="lazy"
-alt="lsblk -f 结果"
-class="gallery-image"
-data-flex-grow="661"
-data-flex-basis="1588px"
+	width="953"
+	height="144"
+	loading="lazy"
+	
+		alt="lsblk -f 结果"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="661"
+		data-flex-basis="1588px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;说明之前的 &lt;code&gt;sda&lt;/code&gt; 磁盘已经被分成了三个区域, 且都没有挂载. 现在我发现了一个问题: 我用的是 MBR 分区表, 为什么使用了 GPT分区表推荐的 &lt;code&gt;/boot&lt;/code&gt;呢? 而且之前还说没有开启 EFI, 现在又要搞 EFI 适用的 &lt;code&gt;/boot&lt;/code&gt;, 离谱. 很好, 那就重新分区吧.&lt;/p&gt;
 &lt;p&gt;Waiting&amp;hellip;&lt;/p&gt;
 &lt;p&gt;很好, 在熟练的操作下~~ (指现学)~~, 先用 &lt;code&gt;d&lt;/code&gt; 删除所有分区, 然后创建 4G 的 Swap 分区, 以及 bootable 的主目录分区. 现在的分区结果是这样的:&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/arch_install/imgs/DiskPartition1.png"
-width="950"
-height="130"
-srcset="https://a-moment096.github.io/posts/arch_install/imgs/DiskPartition1_hu_160c786cbefe897b.png 480w, https://a-moment096.github.io/posts/arch_install/imgs/DiskPartition1_hu_86f338df56606e0b.png 1024w"
-loading="lazy"
-alt="新的分区结果"
-class="gallery-image"
-data-flex-grow="730"
-data-flex-basis="1753px"
+	width="950"
+	height="130"
+	loading="lazy"
+	
+		alt="新的分区结果"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="730"
+		data-flex-basis="1753px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;我们采用最经典的 &lt;code&gt;ext4&lt;/code&gt; 文件格式 (其实就是教程里这么推荐的) 来格式化 &lt;code&gt;/dev/sda2&lt;/code&gt;, 命令为: &lt;code&gt;mkfs.ext4 /dev/sda2&lt;/code&gt;; 然后用命令 &lt;code&gt;mkswap /dev/sda1&lt;/code&gt; 将 &lt;code&gt;/dev/sda1&lt;/code&gt;格式化为 &lt;code&gt;swap&lt;/code&gt;. 整体结果如下:&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/arch_install/imgs/DiskFormat.png"
-width="952"
-height="382"
-srcset="https://a-moment096.github.io/posts/arch_install/imgs/DiskFormat_hu_e121748a320fba84.png 480w, https://a-moment096.github.io/posts/arch_install/imgs/DiskFormat_hu_4e8305f1e1271e6b.png 1024w"
-loading="lazy"
-alt="分区格式化"
-class="gallery-image"
-data-flex-grow="249"
-data-flex-basis="598px"
+	width="952"
+	height="382"
+	loading="lazy"
+	
+		alt="分区格式化"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="249"
+		data-flex-basis="598px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;最后, 我们终于要挂载文件系统了. 这个我了解过, 使用 &lt;code&gt;mount&lt;/code&gt; 命令即可挂载硬件到某个目录下. 首先我们挂载根目录, 把根目录挂载到 &lt;code&gt;/mnt&lt;/code&gt; 下: &lt;code&gt;mount /dev/sda2 /mnt&lt;/code&gt;. 因为我没有别的什么文件分区, 只剩下一个 Swap 分区, 所以我们直接使用命令: &lt;code&gt;swapon /dev/sda1&lt;/code&gt; 来启动 Swap.&lt;/p&gt;
 &lt;h2 id="真的要安装了"&gt;真的要安装了
@@ -1614,27 +1819,33 @@ data-flex-basis="598px"
 &lt;p&gt;首先是要选择镜像. 这次选择的镜像感觉上是给系统使用的 pacman 的镜像源. Arch 已经有一份使用 Reflector 生成 的镜像服务器列表: &lt;code&gt;/etc/pacman.d/mirrorlist&lt;/code&gt;, 可以查看或编辑这个文件以使地理位置最靠近的服务器地址可以被优先使用. 这里我使用 &lt;code&gt;reflector --latest 10 --sort rate&lt;/code&gt; 来按照响应速度排序最近更新的10个服务器. 结果好多都 timeout 了. 尝试命令 &lt;code&gt;refletor --country China --age 12 --sort rate&lt;/code&gt;, 试了两次, 结果又是时好时坏. 不管了, 起码这个时好时坏也算是有源可用. 使用命令 &lt;code&gt;reflector --country China --age 12 --sort rate --save /etc/pacman.d/mirrorlist&lt;/code&gt; 即可把输出的结果保存到 &lt;code&gt;/etc/pacman.d/mirrorlist&lt;/code&gt; 里面.&lt;/p&gt;
 &lt;p&gt;接下来要安装必要的包. 根据教程, 这里安装的包有 &lt;code&gt;base&lt;/code&gt; 包, Linux 内核以及一些常见的固件. 使用命令: &lt;code&gt;pacstrap -K /mnt base linux linux-firmware&lt;/code&gt;. 之后便进入了安装界面.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/arch_install/imgs/Installation.png"
-width="1282"
-height="875"
-srcset="https://a-moment096.github.io/posts/arch_install/imgs/Installation_hu_b4ed61063e36ee7f.png 480w, https://a-moment096.github.io/posts/arch_install/imgs/Installation_hu_3d005f445af7eba6.png 1024w"
-loading="lazy"
-alt="安装界面"
-class="gallery-image"
-data-flex-grow="146"
-data-flex-basis="351px"
+	width="1282"
+	height="875"
+	loading="lazy"
+	
+		alt="安装界面"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="146"
+		data-flex-basis="351px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;看来要安装 127 个包, 不是个小数目. 而且我这里的网速看起来也比较一般. 慢慢等吧. 这个安装进度让我莫名想起安装 $\LaTeX$ 时候的样子.&lt;/p&gt;
 &lt;p&gt;Waiting&amp;hellip;&lt;/p&gt;
 &lt;p&gt;? 后续过程这么快的吗? 127个包看来都不是很大的样子. 安装好之后的样子是这样的:&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/arch_install/imgs/AfterInstall.png"
-width="1282"
-height="875"
-srcset="https://a-moment096.github.io/posts/arch_install/imgs/AfterInstall_hu_a09856a788793695.png 480w, https://a-moment096.github.io/posts/arch_install/imgs/AfterInstall_hu_3c35d008680637fe.png 1024w"
-loading="lazy"
-alt="安装完成"
-class="gallery-image"
-data-flex-grow="146"
-data-flex-basis="351px"
+	width="1282"
+	height="875"
+	loading="lazy"
+	
+		alt="安装完成"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="146"
+		data-flex-basis="351px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;可以看到其实有一些部分是缺失的. 这个应该没什么关系, 毕竟虚拟机可能确实会缺一些不紧要的组件. 这里还可以安装一些别的组件, 比如 CPU 的指令集更新 (&lt;code&gt;microcode&lt;/code&gt;), 使用 RAID 的工具之类. 这里就先跳过了, 之后使用 &lt;code&gt;pacman&lt;/code&gt; 安装需要的内容. &lt;code&gt;microcode&lt;/code&gt; 由于我使用的是虚拟机, 指令集补丁应该存在于主机 (这台Windows) 上,
 所以不需要安装.&lt;/p&gt;
@@ -1644,14 +1855,17 @@ data-flex-basis="351px"
 &lt;/h3&gt;&lt;p&gt;首先先生成一份分区表文件, 使用命令: &lt;code&gt;genfstab -U /mnt &amp;gt;&amp;gt; /mnt/etc/fstab&lt;/code&gt;. 之后用 &lt;code&gt;cat&lt;/code&gt; 看看结果是否正确, 不对的话需要改一下. &lt;code&gt;fstab&lt;/code&gt; 的 Arch Wiki 页面有一些例子, 这里就不再赘述 (因为我搞的好像没什么问题).&lt;/p&gt;
 &lt;p&gt;接下来 change root 到新系统下: &lt;code&gt;arch-chroot /mnt&lt;/code&gt;. 根据中文 Arch Wiki 的解释, chroot 是 &amp;ldquo;修改当前进程及其子进程的可见根目录的操作&amp;rdquo;. 似乎修改之后进程就会以 &lt;code&gt;/mnt&lt;/code&gt; 为根目录 &lt;code&gt;/&lt;/code&gt;:&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/arch_install/imgs/Chroot.png"
-width="297"
-height="73"
-srcset="https://a-moment096.github.io/posts/arch_install/imgs/Chroot_hu_8fbf951ac932f1bb.png 480w, https://a-moment096.github.io/posts/arch_install/imgs/Chroot_hu_a9d4f17fc95c185e.png 1024w"
-loading="lazy"
-alt="chroot 之后"
-class="gallery-image"
-data-flex-grow="406"
-data-flex-basis="976px"
+	width="297"
+	height="73"
+	loading="lazy"
+	
+		alt="chroot 之后"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="406"
+		data-flex-basis="976px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;我大胆猜测, 现在就是把进程从 ISO 文件中的系统转移到了我虚拟机上的系统. 不过怎么验证这个想法我没什么主意. 下一步吧.&lt;/p&gt;
 &lt;p&gt;现在要设置时区. 国内应该是东8区. 根据教程, 可以使用 &lt;code&gt;timedatectl list-timezones&lt;/code&gt; 来列出可用时区. 然而坏消息是, 列出来的时区因为太多了, 而不知道为什么, 这个终端我没法滚动 (鼠标或者键盘的 &lt;code&gt;Shift + PgUP&lt;/code&gt; 好像都不可以). 经过一番查找, 向上翻页的功能应该是被从内核中砍掉了, 因为没多少人用了, 目前几乎都在用终端模拟器. 好吧, 只好把结果重定向到文件里, 然后再用 Vim 打开试试了. 不过竟然新系统是真的什么都没有, 包括 Vim 或者 Nano 都没有??? 只好退回到安装镜像里看看了. 国内时区使用的是 &lt;code&gt;Asia/Shanghai&lt;/code&gt;, 所以重新 &lt;code&gt;arch-chroot /mnt&lt;/code&gt; 回到根目录, 使用命令 &lt;code&gt;ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime&lt;/code&gt; 命令设置好时区, 然后使用命令 &lt;code&gt;hwclock --systohc&lt;/code&gt; 生成 &lt;code&gt;/etc/adjtime&lt;/code&gt;.&lt;/p&gt;
@@ -1685,8 +1899,8 @@ data-flex-basis="976px"
 &lt;li&gt;猜测3: 该不会是我自己系统上没有装驱动吧
 &lt;ul&gt;
 &lt;li&gt;坏了, 网上一通搜, 真的是没有装网络服务 &lt;code&gt;dhcpcd&lt;/code&gt; 和 &lt;code&gt;networkmanager&lt;/code&gt;. 乖乖回去用安装镜像进入, &lt;code&gt;mount&lt;/code&gt; 根分区 &lt;code&gt;/dev/sda2&lt;/code&gt; 到安装镜像的 &lt;code&gt;/mnt&lt;/code&gt; 然后 &lt;code&gt;arch-chroot /mnt&lt;/code&gt;, 开始老实安装 &lt;code&gt;dhcpcd&lt;/code&gt; 和 &lt;code&gt;networkmanager&lt;/code&gt;. 这里要感谢&lt;a class="link" href="https://bbs.archlinuxcn.org/viewtopic.php?id=12603" target="_blank" rel="noopener"
-&gt;讨论串&lt;/a&gt;和&lt;a class="link" href="https://www.cnblogs.com/yuxiayizhengwan/p/16576946.html" target="_blank" rel="noopener"
-&gt;一篇博文&lt;/a&gt;.
+ &gt;讨论串&lt;/a&gt;和&lt;a class="link" href="https://www.cnblogs.com/yuxiayizhengwan/p/16576946.html" target="_blank" rel="noopener"
+ &gt;一篇博文&lt;/a&gt;.
 回看安装指引, 这时才明白, 条目 1.7 最底下的 Note 是什么意思了: 网络服务在新装的系统上面是通通没有滴! Okay, 安装完毕, 继续回到 &lt;code&gt;pacman&lt;/code&gt; 上.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -1701,14 +1915,17 @@ data-flex-basis="976px"
 &lt;p&gt;通过 &lt;code&gt;pacman -S plasma-meta&lt;/code&gt; 安装 plasma. 中间有几处需要选择一些诸如字体, 解码器之类的供应源, 网上没有多少讨论这个的, 所以就基本全部默认了. 然后顺手安装上 &lt;code&gt;zsh&lt;/code&gt;, &lt;code&gt;noto-fonts-cjk/emoji/extra&lt;/code&gt;, &lt;code&gt;bluez-utils&lt;/code&gt; &lt;code&gt;kitty&lt;/code&gt;, &lt;code&gt;konsole&lt;/code&gt; 和 &lt;code&gt;alacritty&lt;/code&gt;. 这里 &lt;code&gt;kitty&lt;/code&gt;, &lt;code&gt;konsole&lt;/code&gt;, &lt;code&gt;alacritty&lt;/code&gt; 三个重复了, 因为我想都试试.&lt;/p&gt;
 &lt;p&gt;首先打开蓝牙: &lt;code&gt;sudo systemctl enable --now bluetooth&lt;/code&gt;, 然后通过 &lt;code&gt;sudo systemctl enable --now sddm&lt;/code&gt; 即可进入 KDE Plasma 桌面. 剩下的就是点点点了, 点点点, 爽! 我必须立刻把任务栏 (这里叫 panel) 移至左边!&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/arch_install/imgs/KDE.png"
-width="2055"
-height="1228"
-srcset="https://a-moment096.github.io/posts/arch_install/imgs/KDE_hu_281af38eee2f8bc4.png 480w, https://a-moment096.github.io/posts/arch_install/imgs/KDE_hu_8c716bb11b939391.png 1024w"
-loading="lazy"
-alt="KDE Plasma 桌面环境"
-class="gallery-image"
-data-flex-grow="167"
-data-flex-basis="401px"
+	width="2055"
+	height="1228"
+	loading="lazy"
+	
+		alt="KDE Plasma 桌面环境"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="167"
+		data-flex-basis="401px"
+	
 &gt;&lt;/p&gt;
 &lt;h3 id="安装别的工具"&gt;安装别的工具……
 &lt;/h3&gt;&lt;h4 id="我中文输入法呢"&gt;我中文输入法呢!
@@ -1730,25 +1947,31 @@ data-flex-basis="401px"
 &lt;h4 id="终端字体怎么怪怪的-alacritty"&gt;终端字体怎么怪怪的? Alacritty?
 &lt;/h4&gt;&lt;p&gt;听闻 Alacritty 使用 Rust, 性能十分优异, 然而在我满心欢喜地调整系统字体为中文之后, Alacritty 的字体变得惨不忍睹了 &amp;hellip;&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/arch_install/imgs/alacritty_font.png"
-width="304"
-height="99"
-srcset="https://a-moment096.github.io/posts/arch_install/imgs/alacritty_font_hu_a3b07131812e05bf.png 480w, https://a-moment096.github.io/posts/arch_install/imgs/alacritty_font_hu_e2a7dfd664a9f427.png 1024w"
-loading="lazy"
-alt="奇怪的字体"
-class="gallery-image"
-data-flex-grow="307"
-data-flex-basis="736px"
+	width="304"
+	height="99"
+	loading="lazy"
+	
+		alt="奇怪的字体"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="307"
+		data-flex-basis="736px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;这究竟是怎么回事? 在热心群友的帮助下, 我查阅了 Alacritty 的 Arch Wiki, 得到了令人震惊的事实: 我竟然没有配置字体文件. 直接下载安装 &lt;code&gt;ttf-cascadia-mono-nerd&lt;/code&gt; (其实不下载也可以), 然后在家文件夹下创建新文件夹和文件: &lt;code&gt;.config/alacritty/alacritty.toml&lt;/code&gt; 并使用 &lt;code&gt;vim&lt;/code&gt; 修改内容. 格式如下:&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/arch_install/imgs/alacritty_fc.png"
-width="429"
-height="441"
-srcset="https://a-moment096.github.io/posts/arch_install/imgs/alacritty_fc_hu_73434397be4cb22d.png 480w, https://a-moment096.github.io/posts/arch_install/imgs/alacritty_fc_hu_90d0163909e5b392.png 1024w"
-loading="lazy"
-alt="alt text"
-class="gallery-image"
-data-flex-grow="97"
-data-flex-basis="233px"
+	width="429"
+	height="441"
+	loading="lazy"
+	
+		alt="alt text"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="97"
+		data-flex-basis="233px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;保存的时候便会直接应用. 其中 &lt;code&gt;family&lt;/code&gt; 是可以从设置的字体管理部分看到字体族的名字, 输入即可. 这里字体族主要是需要等宽字体族才能正常显示, 选择这款字体是因为我 Windows 上的终端字体也是用的这套 &lt;code&gt;Cascadia&lt;/code&gt;, 很喜欢所以就干脆保持一致了.&lt;/p&gt;
 &lt;h4 id="试试-zsh"&gt;试试 Zsh!

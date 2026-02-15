@@ -1,95 +1,125 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Notations on A Moment's Rest</title><link>https://a-moment096.github.io/tags/notations/</link><description>Recent content in Notations on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 19 Jan 2026 06:28:39 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/notations/index.xml" rel="self" type="application/rss+xml"/><item><title>到底啥是函数！？</title><link>https://a-moment096.github.io/posts/concept_of_function/</link><pubDate>Tue, 23 Sep 2025 17:41:51 +0800</pubDate><guid>https://a-moment096.github.io/posts/concept_of_function/</guid><description>&lt;img src="https://a-moment096.github.io/posts/concept_of_function/%E7%AC%94%E4%B8%AD%E7%9A%84%E5%91%93%E5%96%83%E4%B9%8B%E5%A2%83.jpg" alt="Featured image of post 到底啥是函数！？" /&gt;&lt;p&gt;&lt;em&gt;我们平时经常会遇到所谓的 &lt;strong&gt;函数&lt;/strong&gt;，不管是数学、物理，甚至是程序里，都能看到它的身影。然而，它到底是啥呢？你也许自己心里有一个答案。这里我也斗胆对比一下各个教材中对函数的定义，聊一聊这个我们或许很熟悉的概念。&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Notations on A Moment's Rest</title><link>https://a-moment096.github.io/tags/notations/</link><description>Recent content in Notations on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Sun, 15 Feb 2026 11:05:58 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/notations/index.xml" rel="self" type="application/rss+xml"/><item><title>到底啥是函数！？</title><link>https://a-moment096.github.io/posts/concept_of_function/</link><pubDate>Tue, 23 Sep 2025 17:41:51 +0800</pubDate><guid>https://a-moment096.github.io/posts/concept_of_function/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post 到底啥是函数！？" /&gt;&lt;p&gt;&lt;em&gt;我们平时经常会遇到所谓的 &lt;strong&gt;函数&lt;/strong&gt;，不管是数学、物理，甚至是程序里，都能看到它的身影。然而，它到底是啥呢？你也许自己心里有一个答案。这里我也斗胆对比一下各个教材中对函数的定义，聊一聊这个我们或许很熟悉的概念。&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图依旧选自 &lt;a class="link" href="https://www.pixiv.net/en/users/8605991" target="_blank" rel="noopener"
-&gt;fasnakegod&lt;/a&gt; 大大的 &lt;a class="link" href="https://www.pixiv.net/en/artworks/115191853" target="_blank" rel="noopener"
-&gt;笔中的呓喃之境&lt;/a&gt;，实在是非常好看，Aya 太可爱了。曲选自一首经典的吉他指弹曲：岸部眞明的 《Time Travel》，轻松愉快的一首，我很喜欢（甚至学过）（没学会）。&lt;/em&gt;&lt;/p&gt;
+ &gt;fasnakegod&lt;/a&gt; 大大的 &lt;a class="link" href="https://www.pixiv.net/en/artworks/115191853" target="_blank" rel="noopener"
+ &gt;笔中的呓喃之境&lt;/a&gt;，实在是非常好看，Aya 太可爱了。曲选自一首经典的吉他指弹曲：岸部眞明的 《Time Travel》，轻松愉快的一首，我很喜欢（甚至学过）（没学会）。&lt;/em&gt;&lt;/p&gt;
+
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
 &lt;style type="text/css"&gt;
 [data-scheme="dark"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
-border-bottom-color: var(--card-separator-color);
+ border-bottom-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
-border-color: var(--card-separator-color);
+ border-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-body {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info {
-border-top-color: var(--card-background);
+ border-top-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
-color: var(--card-text-color-tertiary);
+ color: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
-background-color: var(--card-separator-color);
+ background-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
-background-color: var(--accent-color);
+ background-color: var(--accent-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li {
-color: var(--card-text-color-main);
-border-top-color: var(--card-separator-color);
+ color: var(--card-text-color-main);
+ border-top-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc {
-text-shadow: -1px -1px 0 var(--body-background);
+ text-shadow: -1px -1px 0 var(--body-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:before {
-background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+ background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:after {
-background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc p {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
+ 
 [data-scheme="light"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="light"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
 &lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
+
+
 &lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://y.qq.com/yqq/song/000NZt2P0PPeoR" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
 &lt;h2 id="印象中的函数"&gt;印象中的函数
 &lt;/h2&gt;&lt;p&gt;印象之中，函数其实应该是相当常见的。初中的时候就有这么个东西了。&lt;/p&gt;
@@ -121,26 +151,32 @@ $$\left\{y\,\vert\,y = f(x),x\in A\right\}$$&lt;p&gt;叫做这个 &lt;strong&gt;
 &lt;summary&gt;我很难不吐槽新版高中数雪教材&lt;/summary&gt;
 &lt;p&gt;我们来看一看，新的人教版高中数学教材是怎么介绍函数的吧。要看一本书，肯定是首先看它的目录：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/concept_of_function/img/renjiao-toc1.png"
-width="913"
-height="503"
-srcset="https://a-moment096.github.io/posts/concept_of_function/img/renjiao-toc1_hu_93912d716a6f7bec.png 480w, https://a-moment096.github.io/posts/concept_of_function/img/renjiao-toc1_hu_73ce121cda9e4329.png 1024w"
-loading="lazy"
-alt="第一章内容"
-class="gallery-image"
-data-flex-grow="181"
-data-flex-basis="435px"
+	width="913"
+	height="503"
+	loading="lazy"
+	
+		alt="第一章内容"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="181"
+		data-flex-basis="435px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;不错，装帧精美，配图有趣，内容也相当详实，是进入新数学语境的好开端。&lt;/p&gt;
 &lt;p&gt;我们来看第二章……等一下？啊？&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://a-moment096.github.io/posts/concept_of_function/img/renjiao-toc23.png"
-width="834"
-height="651"
-srcset="https://a-moment096.github.io/posts/concept_of_function/img/renjiao-toc23_hu_28bbf89194830d52.png 480w, https://a-moment096.github.io/posts/concept_of_function/img/renjiao-toc23_hu_1129a7eb0fe4dcd0.png 1024w"
-loading="lazy"
-alt="？"
-class="gallery-image"
-data-flex-grow="128"
-data-flex-basis="307px"
+	width="834"
+	height="651"
+	loading="lazy"
+	
+		alt="？"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="128"
+		data-flex-basis="307px"
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;什么叫先介绍一元二次函数，再介绍函数的概念与性质？&lt;/p&gt;
 &lt;p&gt;什么倒反天罡？&lt;/p&gt;
@@ -430,8 +466,8 @@ $$y = f(x) \iff P(x, y)\text{ is true.}$$&lt;/blockquote&gt;
 &lt;p&gt;很明确，它也是持 &lt;em&gt;function = mapping&lt;/em&gt; 的观点的，只不过这里没有使用 &lt;em&gt;mapping&lt;/em&gt; 而是使用了 &lt;em&gt;map&lt;/em&gt;。可能澳洲是喜欢这么讲吧，但 &lt;em&gt;map&lt;/em&gt; 一般用作动词表示映到，而 &lt;em&gt;mapping&lt;/em&gt; 则是动名词形式，意为映射。嘛，没什么大问题。那就让我们最后来看一下法国数学家戈德门特的这本教材吧。&lt;/p&gt;
 &lt;h4 id="godement"&gt;Godement
 &lt;/h4&gt;&lt;p&gt;我在我自己的书库里找这个人名时，只找到了一本 &lt;em&gt;代数学教程&lt;/em&gt;，且是由国内老师翻译的；而我是怎么知道他写的分析教材呢？我是从清华大学刘思齐老师（他有自己的B站主页：&lt;a class="link" href="https://space.bilibili.com/85657899" target="_blank" rel="noopener"
-&gt;我真的不懂分析&lt;/a&gt;）的视频 &lt;a class="link" href="https://www.bilibili.com/video/BV1xp4y1e7Nh/" target="_blank" rel="noopener"
-&gt;如何选择一本适合你的《数学分析》教科书？北京某高校数学老师为你揭示选书的秘密&lt;/a&gt; 中得知的。其实，前面选的一些教材，是从这个视频里了解到的，就包括这次选择的 Godement。考虑到我找到的是英译本，且我不会法语，我就还是以这本英译本为参考吧。&lt;/p&gt;
+ &gt;我真的不懂分析&lt;/a&gt;）的视频 &lt;a class="link" href="https://www.bilibili.com/video/BV1xp4y1e7Nh/" target="_blank" rel="noopener"
+ &gt;如何选择一本适合你的《数学分析》教科书？北京某高校数学老师为你揭示选书的秘密&lt;/a&gt; 中得知的。其实，前面选的一些教材，是从这个视频里了解到的，就包括这次选择的 Godement。考虑到我找到的是英译本，且我不会法语，我就还是以这本英译本为参考吧。&lt;/p&gt;
 &lt;p&gt;从目录上看，这本书首先介绍的是集合论，紧接着就是函数了。然而它的语言，说实话比较长：它不只是定义了函数，它甚至给了一些函数这个定义发展的历史脉络。我们把它的描述放在下面，为了方便阅读我做了折叠，然后在下面进行了一些总结。不想看可以跳过这些文字，说实在的，确实挺长的。&lt;/p&gt;
 &lt;details&gt;
 &lt;summary&gt;函数的定义：Godement&lt;/summary&gt;
@@ -639,97 +675,127 @@ $$\to\ \ \ \text{and}\ \ \ \mapsto.$$&lt;/blockquote&gt;
 &lt;p&gt;其实，私心地讲，我不喜欢“高等数学”这样的说法。这样的说法总给我一种“高等数学比初等数学更高级”的印象，而在我看来，高等数学（大学后的数学）和初等数学（大学前，有时可以放宽到高中前）的主要区别在于，前者更加严格，从某些公理开始得到定理、引理、推论等结论，用定义简化描述；后者则多为介绍性的讲述，以及怎么在有限的知识框架下解决简单问题。不过，我也想不到更好的词汇来表述这两者了……&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</description></item><item><title>微积分的符号</title><link>https://a-moment096.github.io/posts/calculus_notation/</link><pubDate>Thu, 24 Jul 2025 15:16:10 +0800</pubDate><guid>https://a-moment096.github.io/posts/calculus_notation/</guid><description>&lt;img src="https://a-moment096.github.io/posts/calculus_notation/Postscript.png" alt="Featured image of post 微积分的符号" /&gt;&lt;p&gt;&lt;em&gt;数学的一大特征大概就是多种多样的符号了吧。提到数学，大家总是能想起各种各样的公式，即便在我心目中，物理也许更能用各式各样的公式凸显自己的高深莫测，然而作为一种逻辑严密的学科，依旧少不了用各种符号来代指各种数学对象。本文就 &lt;strong&gt;微积分&lt;/strong&gt; 这一个子方向，浅谈这些风格迥异的记号，也方便接触不同领域的文献。&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;</description></item><item><title>微积分的符号</title><link>https://a-moment096.github.io/posts/calculus_notation/</link><pubDate>Thu, 24 Jul 2025 15:16:10 +0800</pubDate><guid>https://a-moment096.github.io/posts/calculus_notation/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post 微积分的符号" /&gt;&lt;p&gt;&lt;em&gt;数学的一大特征大概就是多种多样的符号了吧。提到数学，大家总是能想起各种各样的公式，即便在我心目中，物理也许更能用各式各样的公式凸显自己的高深莫测，然而作为一种逻辑严密的学科，依旧少不了用各种符号来代指各种数学对象。本文就 &lt;strong&gt;微积分&lt;/strong&gt; 这一个子方向，浅谈这些风格迥异的记号，也方便接触不同领域的文献。&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;最近很喜欢橘星（Orangestar）的这首 《Postscript》，夏背画的 MV 也很好看。所以就都放上来吧~ 可惜这首歌是要 VIP 的，想畅听的话可以试试&lt;a class="link" href="https://www.bilibili.com/video/BV1Qf421q7RA" target="_blank" rel="noopener"
-&gt;B站链接&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+ &gt;B站链接&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
 &lt;style type="text/css"&gt;
 [data-scheme="dark"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
-border-bottom-color: var(--card-separator-color);
+ border-bottom-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
-border-color: var(--card-separator-color);
+ border-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-body {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info {
-border-top-color: var(--card-background);
+ border-top-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
-color: var(--card-text-color-tertiary);
+ color: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list {
-background-color: var(--card-background);
+ background-color: var(--card-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
-background-color: var(--card-separator-color);
+ background-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
-background-color: var(--accent-color);
+ background-color: var(--accent-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li {
-color: var(--card-text-color-main);
-border-top-color: var(--card-separator-color);
+ color: var(--card-text-color-main);
+ border-top-color: var(--card-separator-color);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc {
-text-shadow: -1px -1px 0 var(--body-background);
+ text-shadow: -1px -1px 0 var(--body-background);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:before {
-background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+ background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc:after {
-background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-lrc p {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
+
 [data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
-fill: var(--card-text-color-tertiary);
+ fill: var(--card-text-color-tertiary);
 }
+
+ 
 [data-scheme="light"] .aplayer {
-background: var(--card-background);
-border: 1px solid var(--card-separator-color);
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
-color: var(--card-text-color-main);
+ color: var(--card-text-color-main);
 }
+
 [data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
-color: var(--card-text-color-secondary);
+ color: var(--card-text-color-secondary);
 }
+
 [data-scheme="light"] .aplayer .aplayer-list li:hover {
-background: var(--card-background-selected);
+ background: var(--card-background-selected);
 }
 &lt;/style&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
+
+
 &lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=2603846010" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
 $$
 \gdef\d{\space\mathrm{d}}
@@ -754,7 +820,7 @@ $$
 $$&lt;p&gt;这里的 $l$ 自然表示的就是积分区域，一条曲线，而 $\d s$ 就是积分的所谓 &lt;em&gt;线元素&lt;/em&gt;了。具体的计算方式我们这里就不再提出。由于曲线是一维的（应该是叫内禀维度吧？），我们可以把在这条曲线上的积分直接看作是单纯的参数函数的积分，因此使用这样的积分符号完全是合理的。我们这里埋一个小坑，即为什么用了 $f$ 而非 $f(x)$ 或者 $f(s)$ 之类的东西作为被积函数。我们以后再谈这个问题。&lt;/p&gt;
 &lt;p&gt;而当你有一个说不清是几维的函数，或者是一个一般意义下的多元函数（定）积分时，你也会使用这个积分符号，用法如：&lt;/p&gt;
 $$
-\int_{\Omega} f({\bf x}) \d^n {\bf x}
+ \int_{\Omega} f({\bf x}) \d^n {\bf x}
 $$&lt;p&gt;这就是在说，给一个 $n$ 元函数 $f({\bf x})$ 进行积分，积分区域为 $\Omega$。这里有几个要点：首先，出现在后面表明被积分变量的 $\d^n {\bf x} $ 应该是&lt;/p&gt;
 $$
 \d x_1 \wedge\mathrm{d} x_2 \dots \wedge\mathrm{d} x_n
@@ -780,9 +846,9 @@ $$&lt;p&gt;就是说这个函数的积分区域是一个小小的直角三角形
 &lt;/h3&gt;&lt;p&gt;我想近乎所有初学微积分的人，都会有这样的一个疑问：$\int$ 还不够说明这个东西是个积分吗？为什么非得要后面 $\d x$ 这样一个尾巴！？然后随着后续的学习，比如换元法，多元积分，以及见识过不是被积变量出现在函数中的情况后，从心理上就接受了这样的写法。毕竟，指明这个积分是对谁做的积分，不也挺好？然后把只有 $\int$ 而没有后面的 $\d x$ 的写法认为是一种简写。这近乎是大多数人对积分符号的看法了吧。&lt;/p&gt;
 &lt;p&gt;但是，我们能合法合规地不要后面的 $\d x$ 吗？毕竟，它是微分呀！为什么非要把微分和积分符号放在一起？这个问题也许在勒贝格积分下或者在微分流形理论下能得到合理的答案，但是倘若我们只是讨论黎曼积分呢？&lt;/p&gt;
 &lt;p&gt;好消息是，&lt;a class="link" href="https://www.bananaspace.org/wiki/%E8%AE%B2%E4%B9%89:%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90" target="_blank" rel="noopener"
-&gt;于品老师的数学分析讲义&lt;/a&gt;里就没有使用传统的 $\int f(x) \d x$ 的记号，而是采用 $\int f$ 作为积分的记号。这里是这么做的：考虑 $\int_I$ 是一个定义在 &lt;strong&gt;黎曼可积函数集合 $\mathcal{R}(I)$&lt;/strong&gt; 上的，到实数域上的映射。那么对于任意一个黎曼可积函数 $f \in \mathcal{R}(I)$，我们都可以合法地写出 $\int_I f$，并称其为 $f$ 的积分。&lt;/p&gt;
+ &gt;于品老师的数学分析讲义&lt;/a&gt;里就没有使用传统的 $\int f(x) \d x$ 的记号，而是采用 $\int f$ 作为积分的记号。这里是这么做的：考虑 $\int_I$ 是一个定义在 &lt;strong&gt;黎曼可积函数集合 $\mathcal{R}(I)$&lt;/strong&gt; 上的，到实数域上的映射。那么对于任意一个黎曼可积函数 $f \in \mathcal{R}(I)$，我们都可以合法地写出 $\int_I f$，并称其为 $f$ 的积分。&lt;/p&gt;
 &lt;p&gt;可惜，我们不计划在这里深究这些技术上的细节，只是介绍一下这些数学符号。不过，感兴趣的话，于品老师的这份讲义写的很不错，很值得一看。关于这部分，可以参考 &lt;a class="link" href="https://www.bananaspace.org/wiki/%E8%AE%B2%E4%B9%89:%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/Riemann_%E7%A7%AF%E5%88%86%E7%9A%84%E5%AE%9A%E4%B9%89" target="_blank" rel="noopener"
-&gt;18. Riemann 积分的定义&lt;/a&gt;。除了于品老师的教材这样处理之外，Terence Tao （陶哲轩）所著的 &lt;em&gt;Analysis&lt;/em&gt; 也采用了这种不在积分中使用 $\d x$ 的做法。感兴趣的话也可以看一看。&lt;/p&gt;
+ &gt;18. Riemann 积分的定义&lt;/a&gt;。除了于品老师的教材这样处理之外，Terence Tao （陶哲轩）所著的 &lt;em&gt;Analysis&lt;/em&gt; 也采用了这种不在积分中使用 $\d x$ 的做法。感兴趣的话也可以看一看。&lt;/p&gt;
 &lt;h2 id="导数混沌恶"&gt;导数：混沌恶！
 &lt;/h2&gt;&lt;p&gt;谈完形式比较符号比较简单的积分，我们再来看看众说纷纭，略显混乱的求导符号们。混乱的原因主要是因为，很多数学家都发明了自己的求导符号。因此，干脆我们这里就以不同的数学家为轴，介绍一下这些符号。&lt;/p&gt;
 &lt;h3 id="莱布尼茨无心的发明神秘的隐含"&gt;莱布尼茨：无心的发明，神秘的隐含
@@ -800,8 +866,8 @@ $$&lt;p&gt;或者我们采用更加“阅读友好”的形式，令 $f(x) = y$�
 $$
 \begin{align*}
 \ddfrac{g(f(x))}{x} &amp;= \ddfrac{g(y)}{x} \\
-&amp;= \ddfrac{g(y)}{y} \ddfrac{y}{x} \\
-&amp;= \ddfrac{g(y)}{y} \ddfrac{f(x)}{x},
+ &amp;= \ddfrac{g(y)}{y} \ddfrac{y}{x} \\
+ &amp;= \ddfrac{g(y)}{y} \ddfrac{f(x)}{x}, 
 \end{align*}
 $$&lt;p&gt;不得不说，真的很像单纯地把除法算式拆成两个除法相乘。&lt;/p&gt;
 &lt;p&gt;然而这个记号也许会引起这样一些误会：为什么不是 $\d f(x) ^n$ “除以” $\d x^n$？它和微分之间究竟有什么联系？为什么是 $\d x^n$ 而非 $\d^n x$？在我学习微积分时，这也是一个困扰了我很久的问题。&lt;/p&gt;
@@ -840,8 +906,8 @@ $$
 (aD^2 + bD + c)y = 0,
 $$&lt;p&gt;这提取出来的算符形式，和所谓的特征方程是否有几分神似？没错，求解这个微分方程实际上就是在求这个括号内的算符的本征函数（类比本征值）。&lt;/p&gt;
 &lt;p&gt;围绕这个算符，我们甚至可以衍生出很多别的很有意思的讨论，比如量子力学中所谓的 “对易”，或者是讨论 “位置与动量的关系” 等等。B站上有人搬运了关于 &lt;a class="link" href="https://www.bilibili.com/video/BV1CdNDz1EcB/" target="_blank" rel="noopener"
-&gt;微分的导数&lt;/a&gt; 的视频，挺有意思的，里面涉及到一些把导数看作算符的观点，感兴趣可以看一下。另外，查阅 &lt;a class="link" href="https://en.wikipedia.org/wiki/Differential_operator" target="_blank" rel="noopener"
-&gt;维基百科&lt;/a&gt;，可以看到还有一种表达算符的写法：$\partial_x$。这种写法偶尔会在偏微分方程中见到，不过总归是不太常见，也可能是我很少遇到微分方程的缘故吧？&lt;/p&gt;
+ &gt;微分的导数&lt;/a&gt; 的视频，挺有意思的，里面涉及到一些把导数看作算符的观点，感兴趣可以看一下。另外，查阅 &lt;a class="link" href="https://en.wikipedia.org/wiki/Differential_operator" target="_blank" rel="noopener"
+ &gt;维基百科&lt;/a&gt;，可以看到还有一种表达算符的写法：$\partial_x$。这种写法偶尔会在偏微分方程中见到，不过总归是不太常见，也可能是我很少遇到微分方程的缘故吧？&lt;/p&gt;
 &lt;h3 id="雅可比多元函数与矩阵"&gt;雅可比：多元函数与矩阵
 &lt;/h3&gt;&lt;p&gt;然而，看过上面的几个记号，竟然没有一个考虑过多元函数的情况。针对这个问题，首先引入符号的是雅克比，他引入四种记号来表示不同的导数：&lt;/p&gt;
 &lt;ul&gt;
@@ -899,7 +965,7 @@ $$&lt;p&gt;这个楔积是何许人也？我们不过多介绍，但是可以说
 &lt;p&gt;然而你要是问我，平时在不那么严谨的语境下，怎么表达一个多重积分？那我可能也是会偷懒省掉这个楔积符号的。毕竟，上下文说明了一切嘛，要相信读者的阅读能力，不是吗？（逃）&lt;/p&gt;
 &lt;h2 id="后记"&gt;后记
 &lt;/h2&gt;&lt;p&gt;首先想说的，是感谢群友 &lt;a class="link" href="https://github.com/Har-W" target="_blank" rel="noopener"
-&gt;Harviiiii&lt;/a&gt; 为本文提供的意见和建议。谢谢你~！&lt;/p&gt;
+ &gt;Harviiiii&lt;/a&gt; 为本文提供的意见和建议。谢谢你~！&lt;/p&gt;
 &lt;p&gt;这篇短文是我在学习有限元方法时遇到的方程带来的问题。具体的内容我已经记不太清了，但是大概就是对某个符号产生了疑惑，然后就像这样，打破砂锅问到底了。其实说实在的，很少会有人对符号，特别是工程上常用的微积分的符号有这么大的疑惑，或者对其严谨性有这么高的要求的。毕竟当它是 “微积分” 而非 “分析学” 的时候，数学就更像是一种工具，好用才是第一要务。&lt;/p&gt;
 &lt;p&gt;然而探索这些符号的过程也是挺有意思的吧，而且说不定也许有审稿人会因为我的符号使用比较规范而高看我一眼呢？哈哈哈。&lt;/p&gt;
 &lt;p&gt;另外要补充的是，实际上这篇文章刻意隐藏了一个很大的坑，不知读到这里的您是否注意到了。那就是：到底那个符号是函数？比如 $y = f(x)$，这个或许初二还是初一就学到了的表达式里，究竟哪个部分是所谓的函数？$y$？$f$？$f(x)$？我们到底应该怎么写一个函数的微分/积分？而且，说到底，&lt;em&gt;函数&lt;/em&gt; 这个概念，貌似也有很多不同的观点吧？是一般的映射？是特殊的映射？是 函&lt;strong&gt;数&lt;/strong&gt;？&lt;/p&gt;
