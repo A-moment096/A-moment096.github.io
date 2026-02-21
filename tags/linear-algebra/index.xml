@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linear Algebra on A Moment's Rest</title><link>https://a-moment096.github.io/tags/linear-algebra/</link><description>Recent content in Linear Algebra on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Sun, 15 Feb 2026 11:05:58 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/linear-algebra/index.xml" rel="self" type="application/rss+xml"/><item><title>线性代数笔记 II</title><link>https://a-moment096.github.io/posts/la_2/</link><pubDate>Mon, 20 Oct 2025 09:03:01 +0800</pubDate><guid>https://a-moment096.github.io/posts/la_2/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post 线性代数笔记 II" /&gt;&lt;p&gt;&lt;em&gt;书接上回，在搞清楚线性空间大概是个什么情况之后，我们来看看线性空间之间都有什么样子的联系吧~！&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linear Algebra on A Moment's Rest</title><link>https://a-moment096.github.io/tags/linear-algebra/</link><description>Recent content in Linear Algebra on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Sat, 21 Feb 2026 14:36:18 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/linear-algebra/index.xml" rel="self" type="application/rss+xml"/><item><title>线性代数笔记 II</title><link>https://a-moment096.github.io/posts/la_2/</link><pubDate>Mon, 20 Oct 2025 09:03:01 +0800</pubDate><guid>https://a-moment096.github.io/posts/la_2/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post 线性代数笔记 II" /&gt;&lt;p&gt;&lt;em&gt;书接上回，在搞清楚线性空间大概是个什么情况之后，我们来看看线性空间之间都有什么样子的联系吧~！&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图信息请参考上一节，谢谢~ 选曲为 &lt;a class="link" href="https://chata.moo.jp/index.html" target="_blank" rel="noopener"
  &gt;&lt;strong&gt;茶太&lt;/strong&gt;&lt;/a&gt; 和 &lt;a class="link" href="https://www.7uta.com/" target="_blank" rel="noopener"
  &gt;&lt;strong&gt;nayuta&lt;/strong&gt;&lt;/a&gt; 合唱的 &lt;strong&gt;お茶ガール&lt;/strong&gt;，青春阳光有活力，陪伴了我大二啃线性代数的时光……&lt;/em&gt;&lt;/p&gt;
@@ -188,12 +188,18 @@ $$\begin{align*} +&amp;\vcentcolon \Mat(m,n)\times \Mat(m,n)\to \Mat(m,n)\\ &amp
 &lt;li&gt;将整个向量直接放入线性映射 $L$ 下，得到 $W$ 中的向量：$L(\vect{v}) = \vect{w}$；&lt;/li&gt;
 &lt;li&gt;将这个过程通过线性映射的特点拆分为下面的步骤：
 &lt;ul&gt;
-&lt;li&gt;先将 $\vect{v}$ 表达为 $V$ 中的基 $\basis{B}{V} = \basev{b}{j}{n}$ 的基向量的线性组合: $$\sum_j^n v^j \vect{b}_{j}$$&lt;/li&gt;
-&lt;li&gt;借助线性映射的定义，有 $$L(\vect{v}) = L(\sum_j^n v^j \vect{b}_j) = \sum_j^n v^j L(\vect{b}_j)$$&lt;/li&gt;
-&lt;li&gt;将 $V$ 中的基向量映射到 $W$ 中后得到新向量: $$L(\vect{b}_j) = \vect{f}_{j} \in W$$&lt;/li&gt;
-&lt;li&gt;将得到的新向量 $\vect{f}_{j}$ 表达为 $W$ 中的基向量 $\basis{C}{W} = \vect{c}_{i}$ 的线性组合: $$\vect{f}_{j} = \sum_i^m A^i{}_j\vect{c}_{i}$$&lt;/li&gt;
-&lt;li&gt;将上面的结果依次带回，得到：$$L(\vect{v}) = \sum_j^n v^j L(\vect{b}_j) = \sum_j^n v^j \vect{f}_{j} = \sum_j^n v^j \sum_i^m A^i{}_j\vect{c}_{i}$$&lt;/li&gt;
-&lt;li&gt;经过整理，我们有 $$L(\vect{v}) = = \sum_j^n\sum_i^m v^jA^i{}_j\vect{c}_{i} = \sum_i^m (\sum_j^n A^i{}_jv^j)\vect{c}_{i} = \sum_i^m w^i \vect{c}_{i} = \vect{w}$$&lt;/li&gt;
+&lt;li&gt;先将 $\vect{v}$ 表达为 $V$ 中的基 $\basis{B}{V} = \basev{b}{j}{n}$ 的基向量的线性组合:
+$$\sum_j^n v^j \vect{b}_{j}$$&lt;/li&gt;
+&lt;li&gt;借助线性映射的定义，有
+$$L(\vect{v}) = L(\sum_j^n v^j \vect{b}_j) = \sum_j^n v^j L(\vect{b}_j)$$&lt;/li&gt;
+&lt;li&gt;将 $V$ 中的基向量映射到 $W$ 中后得到新向量:
+$$L(\vect{b}_j) = \vect{f}_{j} \in W$$&lt;/li&gt;
+&lt;li&gt;将得到的新向量 $\vect{f}_{j}$ 表达为 $W$ 中的基向量 $\basis{C}{W} = \vect{c}_{i}$ 的线性组合:
+$$\vect{f}_{j} = \sum_i^m A^i{}_j\vect{c}_{i}$$&lt;/li&gt;
+&lt;li&gt;将上面的结果依次带回，得到：
+$$L(\vect{v}) = \sum_j^n v^j L(\vect{b}_j) = \sum_j^n v^j \vect{f}_{j} = \sum_j^n v^j \sum_i^m A^i{}_j\vect{c}_{i}$$&lt;/li&gt;
+&lt;li&gt;经过整理，我们有
+$$L(\vect{v}) = = \sum_j^n\sum_i^m v^jA^i{}_j\vect{c}_{i} = \sum_i^m (\sum_j^n A^i{}_jv^j)\vect{c}_{i} = \sum_i^m w^i \vect{c}_{i} = \vect{w}$$&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -284,8 +290,10 @@ $$ \phi\vcentcolon V\to\Hom(\R,V),\quad (\phi(\vect{v}))(r) = r\cdot\vect{v}\ \ 
 &lt;p&gt;[!PROOF]{映射 $\eta$ 是线性空间同构}&lt;/p&gt;
 &lt;p&gt;由于 $\eta$ 两边都是线性空间，且我们已经构造了它的可能逆映射 $\phi$。要验证同构，我们可以证明 $\phi$ 确实是它的逆映射，即 $\phi\comp\eta = \idop_{\Hom(\R,V)}$ 和 $\eta\comp\phi = \idop_{V}$ 都是单位变换:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;对于任意 $f\in \Hom(\R,V)$，对于任意的 $r\in\R$ 我们都能让 $f$ 转一圈回到自己，就能证明第一部分了，而我们有：$$ (\phi\comp\eta)(f(r)) = (\phi\comp\eta(f))(r) = \phi(f(1))(r) = r\cdot f(1) = f(r);$$&lt;/li&gt;
-&lt;li&gt;对于任意的 $\vect{v}\in V$，我们有 $$\eta\comp\phi(\vect{v}) = \eta(\phi(\vect{v})) = \phi(\vect{v})(1) = 1\cdot \vect{v} = \vect{v}.$$
+&lt;li&gt;对于任意 $f\in \Hom(\R,V)$，对于任意的 $r\in\R$ 我们都能让 $f$ 转一圈回到自己，就能证明第一部分了，而我们有：
+$$ (\phi\comp\eta)(f(r)) = (\phi\comp\eta(f))(r) = \phi(f(1))(r) = r\cdot f(1) = f(r);$$&lt;/li&gt;
+&lt;li&gt;对于任意的 $\vect{v}\in V$，我们有
+$$\eta\comp\phi(\vect{v}) = \eta(\phi(\vect{v})) = \phi(\vect{v})(1) = 1\cdot \vect{v} = \vect{v}.$$
 两个式子的最后一个等号都用了线性映射和线性空间的性质，它们之前的等号则都是映射的复合。由此，我们得到它是一个同构。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
@@ -311,7 +319,7 @@ $$\begin{align*} +&amp;\vcentcolon V^*\times V^*\to V^*\\ &amp;\quad(\cvect{\var
 &lt;h4 id="对偶空间的基"&gt;对偶空间的基
 &lt;/h4&gt;&lt;p&gt;我们就取一个余向量 $\cvect{\varphi} \in V^*$，它有线性表出系数 $\varphi_1,\varphi_2,\dots,\varphi_n$，我们虽然不知道 $V^*$ 的基具体是什么样的，那么我们就假设这组基为：$\BaseB^* = \cbasev{\beta}{i}{n}$，于是 $\cvect{\varphi}$ 就可以表达为线性组合：&lt;/p&gt;
 $$\cvect{\varphi} = \sum_i^n \varphi_i\cvect{\beta}^i,$$&lt;p&gt;我们的当务之急是找到 $\cvect{\beta}^i$ 的表达式，它也是 $V^*$ 中的一个余向量，即一个从 $V$ 到 $\R$ 的线性映射。要确定一个映射，最好的方法就是给它喂一个定义域上的值，看看它的结果是什么样的。毫无悬念地，如果我们给它 $\vect{v}\in V$，得到的结果是：&lt;/p&gt;
-$$\cvect{\varphi}(\vect{v}) = \sum_i^n \varphi_i\cvect{\beta}^i(\vect{v}),$$&lt;p&gt;然而 $\vect{v}$ 也是可以表达为 $V$ 的基 $\BaseB^*$ 的线性组合的，我们带入就有：&lt;/p&gt;
+$$\cvect{\varphi}(\vect{v}) = \sum_i^n \varphi_i\cvect{\beta}^i(\vect{v}),$$&lt;p&gt;然而 $\vect{v}$ 也是可以表达为 $V$ 的基 $\BaseB$ 的线性组合的，我们带入就有：&lt;/p&gt;
 $$\cvect{\varphi}(\vect{v}) = \sum_i^n \varphi_i \cvect{\beta}^i(\sum_j^n v^j\vect{b}_j) = \sum_i^n\sum_j^n\varphi_i v^j\cvect{\beta}^i(\vect{b}_j),$$&lt;p&gt;此时我们回忆这些 “线性表出系数” 的原本意义：$V$ 中的基向量被 $\cvect{\varphi}$ 映射后的值，即&lt;/p&gt;
 $$\cvect{\varphi}(\vect{v}) = \sum_i^n\sum_j^n v^j\cvect{\beta}^i(\vect{b}_j)\cvect{\varphi}(\vect{b}_i),$$&lt;p&gt;我们的 $\cvect{\varphi}$ 又一次出现了！更重要的是，$v^i$，$\cvect{\beta}^i(\vect{b}_j)$ 都是 $\R$ 中的实数，因此根据线性映射的性质，我们有&lt;/p&gt;
 $$\cvect{\varphi}(\vect{v}) = \cvect{\varphi}(\sum_j^n v^j \sum_i^n \cvect{\beta}^i(\vect{b}_j)\vect{b}_i),$$&lt;p&gt;又因为 $\vect{v} = \sum_j^n v^j \vect{b}_j$，经过 &lt;em&gt;比较&lt;/em&gt;，我们得到了：&lt;/p&gt;
@@ -348,7 +356,7 @@ $$ \delta \vcentcolon \field{N}\times\field{N}\to \R,$$&lt;p&gt;然后用 $\delt
 &lt;p&gt;线性无关的证明&lt;/p&gt;
 &lt;p&gt;我们取任意一个向量 $\vect{v}\in V$，以及做 $\BaseB^*$ 的线性组合：&lt;/p&gt;
 $$\cvect{\varphi}= \sum_i^n \varphi_i\cvect{\beta}^i,$$&lt;p&gt; 令其等于 $\zero_{V^*}$，则有 &lt;/p&gt;
-$$\begin{align*}\cvect{\varphi}(\vect{v}) &amp;= \sum_i^n\varphi_i \cvect{\beta}^i(\vect{v}) \\ &amp;= \sum_i^n\varphi_i\sum_j^nv^j\cvect{\beta}^i(\vect{b}_j) = \sum_i^n\sum_j^n\varphi_iv^j\delta^i{}_j \\ &amp; =\zero_{V^*}(\vect{v}) = 0_\R \end{align*}.$$&lt;p&gt; 由 Kronecker delta 的定义，有 &lt;/p&gt;
+$$\begin{align*}\cvect{\varphi}(\vect{v}) &amp;= \sum_i^n\varphi_i \cvect{\beta}^i(\vect{v}) \\ &amp;= \sum_i^n\varphi_i\sum_j^nv^j\cvect{\beta}^i(\vect{b}_j) = \sum_i^n\sum_j^n\varphi_iv^j\delta^i{}_j \\ &amp; =\zero_{V^*}(\vect{v}) = 0_\R. \end{align*}$$&lt;p&gt; 由 Kronecker delta 的定义，有 &lt;/p&gt;
 $$\begin{align*}\sum_i^n\sum_j^n\varphi_iv^j\delta^i{}_j &amp;= \sum_i^n\varphi_i(\sum_j^n v^j \delta^i{}_j) \\ &amp;= \sum_i^n\varphi_i (v^1\delta^i{}_1 + v^2\delta^i{}_2 + \dots + v^n\delta^i{}_n) \\ &amp;= \sum_i^n \varphi_iv^i = 0_\R. \end{align*}$$&lt;p&gt; 由于上式对任意的向量 $\vect{v}\in V$ 都成立，必须有 $\varphi_i = 0\quad\forall 1\leq i \leq n$，即向量组 $\BaseB^*$ 的线性组合为 $\zero_{V^*}$ 时，它的线性组合系数全为 $0$。这说明 $\BaseB^*$ 是线性无关的。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -368,7 +376,7 @@ $$\begin{align*} \cvect{\varphi}(\vect{v}) &amp;= \sum_i^n v^i a_i\\ &amp;= \sum
 &lt;p&gt;考虑两个向量 $\vect{u},\vect{v}\in V$，我们给 $V$ 找好一组基 $\BaseB$ 之后，两个向量就可以表达为列向量了。现在我们做这样一件事：把列向量 $\vrep{v}{\BaseB}$ 变成行向量，结果记作 $[\vect{v}^*]_{\BaseB^*}$。具体做法是，把里面每个数字拿出来，然后把对应的基全都变成对偶基，最后再按原样做线性组合，变化后的矩阵表示只改变了数字的排列方向，从原来的纵向变成了横向排列。而根据余向量的含义，它是一个 $V\to \R$ 的线性映射，我们就来计算一下 $\vect{v}^*(\vect{u})$ 的结果。&lt;/p&gt;
 &lt;p&gt;这个计算结果其实挺简单的，就是将它们对应位置的分量相乘然后相加。但是这个意义并不简单：我们给一个线性空间赋予基，把两个向量表达为矩阵；挑选一个向量，把它通过线性空间与对偶空间的同构，唯一地确定了这个向量的对偶向量（余向量），它的矩阵表达只变化了矩阵元的排列方式，从纵向变为横向；我们再利用余向量作为线性映射的含义，将另一个向量映射到了一个数字。这个数字不是别的，就是两个向量的对应位置分量相乘后相加，从矩阵运算的角度来看就是一个行矩阵乘以一个列矩阵，给出了一个实数。&lt;/p&gt;
 &lt;p&gt;我们观察这个过程，可以得到这样的结论：我们可以在给线性空间选定一组基之后，在它的上面定义这样的一个运算，取两个向量之后，让其中一个向量变成对偶向量，然后作用到另一个向量上，给出一个实数。实际上，这定义了所谓的 &lt;strong&gt;内积&lt;/strong&gt;，将两个向量映射到一个实数上，而它是一个双线性映射，对参与运算的两个位置都满足线性性。下一章我们会谈到这个所谓的内积。&lt;/p&gt;
-&lt;p&gt;我们还指出，在选定线性空间的基之后，向量和它的对偶之间的变化在矩阵表示下完全就是更改矩阵元的排列方式。这一点我们后面专门讨论矩阵时会指出，这其实就是所谓的 &lt;strong&gt;矩阵转置&lt;/strong&gt;，而且转置、对偶、线性映射之间又有一些丰富的关系。&lt;/p&gt;
+&lt;p&gt;我们还指出，在选定线性空间的基之后，向量和它的对偶之间的区别在矩阵表示下完全就只是更改了矩阵元的排列方式。这一点我们后面专门讨论矩阵时会指出，这其实就是所谓的 &lt;strong&gt;矩阵转置&lt;/strong&gt;，而且转置、对偶、线性映射之间又有一些丰富的关系。&lt;/p&gt;
 &lt;h2 id="不止对偶"&gt;不止对偶
 &lt;/h2&gt;&lt;p&gt;我们还可以提出一个有趣的问题：对偶空间作为线性空间，它也一定有一个自己的对偶。那这个空间是什么样的呢？&lt;/p&gt;
 &lt;h3 id="双对偶空间"&gt;双对偶空间
@@ -1027,6 +1035,7 @@ $$&lt;p&gt;上面两个运算对任意的 $v_1,v_2,v\in V$，$w_1,w_2,w\in W$，
 &lt;li&gt;针对某两个对象 $X,Y\in\Ob(\cat{C})$，我们可以从上面这一对映射中得到这两个对象之间的所有态射的集合：$\Hom_\cat{C}(X,Y)\vcentcolon=\space s^{-1}(X)\cap t^{-1}(Y)$。在明确所指范畴的情况下可简记为 $\Hom(X,Y)$。这样的集合也被称为 $\mathrm{Hom-}$ 集；&lt;/li&gt;
 &lt;li&gt;对于任意的一个对象 $X$，一定存在一个态射 $\mathrm{id}_ {X} \in \Hom_{\cat{C}}(X,X),$ 这个态射被称为 $X$ 到自身的恒等态射；&lt;/li&gt;
 &lt;li&gt;给定任意的三个对象 $X,Y,Z\in\Ob(\cat{C})$，有这样在其 $\mathrm{Hom-}$ 集之间的映射，称为&lt;strong&gt;合成映射&lt;/strong&gt;，定义为：
+
 $$\begin{align*} 
 \circ\vcentcolon\space\Hom_\cat{C}(Y,Z) \times \Hom_\cat{C}(X,Y)&amp;\to \Hom_\cat{C}(X,Z)\\ 
 (f,g)&amp;\mapsto f\circ g\\
@@ -1035,8 +1044,10 @@ $$\begin{align*}
 &lt;/ul&gt;
 &lt;p&gt;最后，对上面的合成映射而言，有这样的两个要求：&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;结合律：对于任意的态射 $h,g,f\in\Mor(\cat{C})$，如果映射的合成 $f(gh)$ 和 $(fg)h$ 都有定义，那么 $$f(gh) = (fg)h.$$&lt;/li&gt;
+&lt;li&gt;结合律：对于任意的态射 $h,g,f\in\Mor(\cat{C})$，如果映射的合成 $f(gh)$ 和 $(fg)h$ 都有定义，那么
+$$f(gh) = (fg)h.$$&lt;/li&gt;
 &lt;li&gt;对于任意的态射 $f\in\Hom_\cat{C}(X,Y)$，其与恒等映射之间的复合满足关系：
+
 $$f\circ\mathrm{id}_X = f = \mathrm{id}_Y\circ f.$$&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/blockquote&gt;
