@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Note on A Moment's Rest</title><link>https://a-moment096.github.io/tags/note/</link><description>Recent content in Note on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Fri, 06 Mar 2026 15:57:21 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/note/index.xml" rel="self" type="application/rss+xml"/><item><title>线性代数笔记 III</title><link>https://a-moment096.github.io/posts/la_3/</link><pubDate>Fri, 06 Mar 2026 23:45:01 +0800</pubDate><guid>https://a-moment096.github.io/posts/la_3/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post 线性代数笔记 III" /&gt;$$
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Note on A Moment's Rest</title><link>https://a-moment096.github.io/tags/note/</link><description>Recent content in Note on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Sat, 07 Mar 2026 03:34:19 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/tags/note/index.xml" rel="self" type="application/rss+xml"/><item><title>线性代数笔记 III</title><link>https://a-moment096.github.io/posts/la_3/</link><pubDate>Fri, 06 Mar 2026 23:45:01 +0800</pubDate><guid>https://a-moment096.github.io/posts/la_3/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post 线性代数笔记 III" /&gt;$$
 % ===== =====
 \gdef \vect #1{\mathbf{#1}} % abstract vector
 \gdef \cvect #1{\boldsymbol{#1}}
@@ -43,7 +43,7 @@
 \gdef \BaseH {\basis{H}{}}
 $$&lt;p&gt;&lt;em&gt;书接上回，在对 $\Hom(\R,V)$ 以及 $\Hom(V,\R)$ 有了一定认识，且有了 &lt;strong&gt;对偶&lt;/strong&gt; 这样特殊的对象后，我们终于可以出发研究线性映射空间 $\Hom(V,W)$ 了。而矩阵空间 $\Mat(m,n)$ 与线性映射空间之间又有什么样的联系呢？让我们就在这一章里探索一番吧！&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;头图信息参考第一章，感谢~！本次选曲为 &lt;a class="link" href="https://weibo.com/sheeno3rin" target="_blank" rel="noopener"
- &gt;&lt;strong&gt;椎乃味醂&lt;/strong&gt;&lt;/a&gt; 调教，初音未来与重音 Teto演唱，在 2025 VCCL 上拿到第 7 名好成绩的 &lt;a class="link" href="https://www.bilibili.com/video/BV1dGhqzZEkz/" target="_blank" rel="noopener"
+ &gt;&lt;strong&gt;椎乃味醂&lt;/strong&gt;&lt;/a&gt; 调教，初音未来与重音 Teto演唱，在 [VCCL 2025 夏] 上拿到第 7 名好成绩的 &lt;a class="link" href="https://www.bilibili.com/video/BV1dGhqzZEkz/" target="_blank" rel="noopener"
  &gt;まだ知らない君がいる！/存在着我还不曾知晓的你！&lt;/a&gt;（B站链接）。非常强而有力的一首歌。本曲在网易云音乐需要会员，感兴趣可以至 B 站收听并观看精美 MV。原投稿链接（Niconico）：&lt;a class="link" href="https://www.nicovideo.jp/watch/sm45324905" target="_blank" rel="noopener"
  &gt;まだ知らない君がいる！ - 初音ミク･重音テト&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 
