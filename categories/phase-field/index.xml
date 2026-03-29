@@ -604,7 +604,20 @@ $$\frac{\partial c}{\partial t} = M \nabla^2\left( 2Ac(1-c)(1-2c)-\kappa\nabla^2
 &lt;/h2&gt;&lt;p&gt;其实一开始我是希望快速完成 C++ 以及 Python 的实现，然后快进至更有趣的一些语言的。然而在我开始动笔写 C++ 的实现时，我发现缺了很多东西：没有对相场的介绍，没有对模拟的介绍，也没有对语言的介绍。再将它们补充后，我又在想，C++ 的实现能不能再多一些有趣的，我之前没有试过的实现方式？这就成为了第一个案例。而在那之后，我发现 C++ 身为一个支持多范式编程（面向过程，面向对象，函数式，元编程等等）的语言，我竟然只草草地只是加了一些现代 C++ 的工具类之后就用面向过程的方式写完了。于是便有了第二个实现的结果。&lt;/p&gt;
 &lt;p&gt;平心而论，第二种实现因为涉及到的虚函数，抽象类这些平时不怎么用的东西，我也是边学边写的，而且也因为如此，第二份代码的性能略低于第一份，有很大的 Over-engineering 的嫌疑。不过感谢 RAII，从计时器的结果来看二者相差并不大，顶多只有 1s 不到的差距。再者，这里的实现并没有过多地考虑计算效率，（也许）更多地希望代码简洁易懂，所以这儿并没有采用一些激进的计算优化措施，比如用更高效的 C++ 计算库，或者使用单 &lt;code&gt;vector&lt;/code&gt; 来帮助编译器做向量化之类的。不过我们会在别的语言中尝试这些。&lt;/p&gt;
 &lt;p&gt;这篇文章作为本系列的头阵，也许我们后续也会采用类似的方式来记录我是如何用别的语言实现这个模拟（或者其他模拟）的。如果这篇博客让您对相场法有了兴趣，愿意将代码在自己的机器上运行，并观察一下别的边界条件下的演化结果，那么这将是我莫大的荣幸。而若这篇博客的内容有什么错漏，也请海涵并在评论区指出，众多编程语言中我也就熟一点 C++，而且如您所见也写的不怎么好。若您对文章的内容有问题，意见或建议，也欢迎评论区交流~！&lt;/p&gt;
-&lt;p&gt;那么，感谢您能看到这里，祝您生活愉快，happy coding!&lt;/p&gt;</description></item><item><title>文献阅读 - Wang-Jin-Khachaturyan2002</title><link>https://a-moment096.github.io/posts/wang-jin-khachaturyan2002/</link><pubDate>Sat, 15 Nov 2025 23:25:19 +0800</pubDate><guid>https://a-moment096.github.io/posts/wang-jin-khachaturyan2002/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post 文献阅读 - Wang-Jin-Khachaturyan2002" /&gt;&lt;p&gt;&lt;em&gt;这篇文章算是他们三个人的工作的总结，发在了 J. Appl. Phys. 上，我其实很早就看过这篇，但是当时看得匆忙，一知半解，这次仔细看看&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;那么，感谢您能看到这里，祝您生活愉快，happy coding!&lt;/p&gt;
+&lt;!-- 插入 React 相場 Demo --&gt;
+
+ 
+ &lt;div class="react-island" data-component="Impl_Spinodal/simulation" data-props="{&amp;#34;component&amp;#34;:&amp;#34;Impl_Spinodal/simulation&amp;#34;}"&gt;
+ &lt;div class="w-full p-4 border text-center border-dashed animate-pulse"&gt;
+ &lt;div
+ class="border-blue-800 dark:border-amber-300 border-t-transparent! inline-block size-6 animate-spin rounded-full border-3"
+ role="status" aria-label="loading"&gt;
+ &lt;span class="sr-only"&gt;Loading...&lt;/span&gt;
+ &lt;/div&gt;
+ Loading React component...
+ &lt;/div&gt;
+ &lt;/div&gt;</description></item><item><title>文献阅读 - Wang-Jin-Khachaturyan2002</title><link>https://a-moment096.github.io/posts/wang-jin-khachaturyan2002/</link><pubDate>Sat, 15 Nov 2025 23:25:19 +0800</pubDate><guid>https://a-moment096.github.io/posts/wang-jin-khachaturyan2002/</guid><description>&lt;img src="https://a-moment096.github.io/" alt="Featured image of post 文献阅读 - Wang-Jin-Khachaturyan2002" /&gt;&lt;p&gt;&lt;em&gt;这篇文章算是他们三个人的工作的总结，发在了 J. Appl. Phys. 上，我其实很早就看过这篇，但是当时看得匆忙，一知半解，这次仔细看看&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;图图还是 &lt;a class="link" href="https://x.com/Neve_AI" target="_blank" rel="noopener"
  &gt;&lt;strong&gt;Neve_AI&lt;/strong&gt;&lt;/a&gt; 绘制的 AI 图来的，歪头银发小妹妹真的好可爱呀~~&lt;/em&gt;&lt;/p&gt;
 $$
