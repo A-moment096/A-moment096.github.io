@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shell on A Moment's Rest</title><link>https://a-moment096.github.io/en/tags/shell/</link><description>Recent content in Shell on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 26 Jun 2026 15:20:58 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/en/tags/shell/index.xml" rel="self" type="application/rss+xml"/><item><title>Rescuing a Code Repository Accidentally Deleted by git-reset</title><link>https://a-moment096.github.io/en/posts/others/rescue_my_repository/</link><pubDate>Sun, 28 Dec 2025 00:13:03 +0800</pubDate><guid>https://a-moment096.github.io/en/posts/others/rescue_my_repository/</guid><description>&lt;img src="https://a-moment096.github.io/images/%E8%BF%B7%E8%BF%AD%E9%A6%99.png" alt="Featured image of post Rescuing a Code Repository Accidentally Deleted by git-reset" /&gt;&lt;p&gt;&lt;em&gt;Some idiot mistakenly used &lt;code&gt;git reset --hard&lt;/code&gt;. This is what happened to him.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;The header image features adorable Rosemary! Drawn by Pixiv artist &lt;a class="link" href="https://www.pixiv.net/users/38336697" target="_blank" rel="noopener"
+ &gt;赌上厨师生涯的拼好饭&lt;/a&gt;, here&amp;rsquo;s the &lt;a class="link" href="https://www.pixiv.net/artworks/138994056" target="_blank" rel="noopener"
+ &gt;original link&lt;/a&gt;. The track is a Touhou doujin piece I&amp;rsquo;ve been listening to a lot lately: &lt;strong&gt;encourager&lt;/strong&gt;, the first track from &lt;a class="link" href="http://www.rd-sounds.com/" target="_blank" rel="noopener"
+ &gt;凋叶棕 (RD-Sounds)&lt;/a&gt;&amp;rsquo;s album &lt;strong&gt;望 (Bou)&lt;/strong&gt;. The melody is positive and uplifting, bright and cheerful. The blonde kid on the album cover is so cute — can you even argue with that!?&lt;/em&gt;&lt;/p&gt;</description></item><item><title>Setting Up Ubuntu WSL for Machine Learning</title><link>https://a-moment096.github.io/en/posts/others/wsl_ubuntu_config/</link><pubDate>Sat, 29 Nov 2025 14:28:17 +0800</pubDate><guid>https://a-moment096.github.io/en/posts/others/wsl_ubuntu_config/</guid><description>&lt;img src="https://a-moment096.github.io/images/%E3%83%94%E3%83%B3%E3%82%AF%E3%81%AE%E5%A4%A2.png" alt="Featured image of post Setting Up Ubuntu WSL for Machine Learning" /&gt;&lt;p&gt;&lt;em&gt;Someone needed to set up an environment for machine learning. This is what happened to his computer after setting it up&amp;hellip;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;The header image features an adorable sheep, from &lt;a class="link" href="https://www.pixiv.net/artworks/112910033#1" target="_blank" rel="noopener"
+ &gt;ピンクの夢&lt;/a&gt; by &lt;a class="link" href="https://www.pixiv.net/users/3402557" target="_blank" rel="noopener"
+ &gt;Ruziかねつカーぺット&lt;/a&gt;. Pink and cute~&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;The track is &lt;a class="link" href="https://www.bilibili.com/video/BV1j3411L76S/" title="Original Bilibili link"
+ target="_blank" rel="noopener"
+ &gt;さよならプリンセス&lt;/a&gt; (Goodbye Princess) from &lt;a class="link" href="https://www.bilibili.com/video/BV1924y1T7mV/" title="Bilibili link"
+ target="_blank" rel="noopener"
+ &gt;STUDY WITH MIKU -part2-&lt;/a&gt;, originally by producer &lt;a class="link" href="https://twitter.com/kaivcl" target="_blank" rel="noopener"
+ &gt;Kai&lt;/a&gt;, sung by Hatsune Miku. Playful music, so nice&amp;hellip;&lt;/em&gt;&lt;/p&gt;</description></item><item><title>(Maybe) a Git Tutorial? Part Three</title><link>https://a-moment096.github.io/en/posts/shell_note/git_how/git_3/</link><pubDate>Tue, 26 Aug 2025 18:28:16 +0800</pubDate><guid>https://a-moment096.github.io/en/posts/shell_note/git_how/git_3/</guid><description>&lt;img src="https://a-moment096.github.io/images/Tatara-Kogasa.jpg" alt="Featured image of post (Maybe) a Git Tutorial? Part Three" /&gt;&lt;p&gt;&lt;em&gt;The final section &amp;ndash; let&amp;rsquo;s talk about collaborating with others on GitHub~&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;For header image info, please refer to the first section, thanks~ Once again I&amp;rsquo;ve picked a Kogasa character theme for the track. Hope you like it!&lt;/em&gt;&lt;/p&gt;
+
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
+&lt;style type="text/css"&gt;
+[data-scheme="dark"] .aplayer {
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
+}
+
+[data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
+ border-bottom-color: var(--card-separator-color);
+}
+
+[data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
+ border-color: var(--card-separator-color);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-body {
+ background-color: var(--card-background);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-info {
+ border-top-color: var(--card-background);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
+ color: var(--card-text-color-main);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
+ color: var(--card-text-color-secondary);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
+ color: var(--card-text-color-tertiary);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
+ fill: var(--card-text-color-tertiary);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-list {
+ background-color: var(--card-background);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
+ background-color: var(--card-separator-color);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
+ background-color: var(--accent-color);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-list li {
+ color: var(--card-text-color-main);
+ border-top-color: var(--card-separator-color);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-list li:hover {
+ background: var(--card-background-selected);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
+ background: var(--card-background-selected);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
+ color: var(--card-text-color-secondary);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
+ color: var(--card-text-color-secondary);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-lrc {
+ text-shadow: -1px -1px 0 var(--body-background);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-lrc:before {
+ background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-lrc:after {
+ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-lrc p {
+ color: var(--card-text-color-main);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-miniswitcher {
+ background: var(--card-background-selected);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
+ fill: var(--card-text-color-tertiary);
+}
+
+ 
+[data-scheme="light"] .aplayer {
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
+}
+
+[data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
+ color: var(--card-text-color-main);
+}
+
+[data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
+ color: var(--card-text-color-secondary);
+}
+
+[data-scheme="light"] .aplayer .aplayer-list li:hover {
+ background: var(--card-background-selected);
+}
+&lt;/style&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
+
+
+&lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=455026" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
+&lt;h2 id="so-what-exactly-is-gits-remote"&gt;So, What Exactly Is Git&amp;rsquo;s Remote?
+&lt;/h2&gt;&lt;p&gt;We&amp;rsquo;ve mentioned before that Git uses &lt;em&gt;remotes&lt;/em&gt; to enable collaboration with others. We&amp;rsquo;ve even already covered a few commands for interacting with remotes. But how exactly does Git implement this functionality? What are its characteristics? What do we need to watch out for when collaborating on development with others? Let&amp;rsquo;s go through it step by step. First, let&amp;rsquo;s systematically cover what a &lt;em&gt;remote&lt;/em&gt; really is.&lt;/p&gt;</description></item><item><title>(Maybe) a Git Tutorial? Part Two</title><link>https://a-moment096.github.io/en/posts/shell_note/git_how/git_2/</link><pubDate>Thu, 14 Aug 2025 16:49:16 +0800</pubDate><guid>https://a-moment096.github.io/en/posts/shell_note/git_how/git_2/</guid><description>&lt;img src="https://a-moment096.github.io/images/Tatara-Kogasa.jpg" alt="Featured image of post (Maybe) a Git Tutorial? Part Two" /&gt;&lt;p&gt;&lt;em&gt;The previous section covered how you&amp;rsquo;d normally use Git for single-branch repository management. This section is all about how Git handles multi-branch collaboration!&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;For header image info, please refer to the previous section, thanks~ For the track pick, I went with a remix of Kogasa&amp;rsquo;s character theme by the well-known circle &lt;a class="link" href="https://f-g-s.net/" target="_blank" rel="noopener"
+ &gt;Foxtail-Grass-Studio&lt;/a&gt;. Enjoy~&lt;/em&gt;&lt;/p&gt;
+
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
+&lt;style type="text/css"&gt;
+[data-scheme="dark"] .aplayer {
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
+}
+
+[data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
+ border-bottom-color: var(--card-separator-color);
+}
+
+[data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
+ border-color: var(--card-separator-color);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-body {
+ background-color: var(--card-background);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-info {
+ border-top-color: var(--card-background);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
+ color: var(--card-text-color-main);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
+ color: var(--card-text-color-secondary);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
+ color: var(--card-text-color-tertiary);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
+ fill: var(--card-text-color-tertiary);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-list {
+ background-color: var(--card-background);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
+ background-color: var(--card-separator-color);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
+ background-color: var(--accent-color);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-list li {
+ color: var(--card-text-color-main);
+ border-top-color: var(--card-separator-color);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-list li:hover {
+ background: var(--card-background-selected);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
+ background: var(--card-background-selected);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
+ color: var(--card-text-color-secondary);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
+ color: var(--card-text-color-secondary);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-lrc {
+ text-shadow: -1px -1px 0 var(--body-background);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-lrc:before {
+ background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-lrc:after {
+ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-lrc p {
+ color: var(--card-text-color-main);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-miniswitcher {
+ background: var(--card-background-selected);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
+ fill: var(--card-text-color-tertiary);
+}
+
+ 
+[data-scheme="light"] .aplayer {
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
+}
+
+[data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
+ color: var(--card-text-color-main);
+}
+
+[data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
+ color: var(--card-text-color-secondary);
+}
+
+[data-scheme="light"] .aplayer .aplayer-list li:hover {
+ background: var(--card-background-selected);
+}
+&lt;/style&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
+
+
+&lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=785695" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
+&lt;h2 id="branches--those-kind-of-branches"&gt;Branches &amp;ndash; Those Kind of Branches?
+&lt;/h2&gt;&lt;p&gt;We already covered Git&amp;rsquo;s daily workflow under a single branch in the last section. Notably, we said &amp;ldquo;single branch,&amp;rdquo; which naturally implies that Git supports &amp;ndash; and encourages &amp;ndash; the use of multiple branches. So what is a branch, exactly?&lt;/p&gt;</description></item><item><title>(Maybe) a Git Tutorial? Part One</title><link>https://a-moment096.github.io/en/posts/shell_note/git_how/git_1/</link><pubDate>Mon, 28 Jul 2025 22:49:16 +0800</pubDate><guid>https://a-moment096.github.io/en/posts/shell_note/git_how/git_1/</guid><description>&lt;img src="https://a-moment096.github.io/images/Tatara-Kogasa.jpg" alt="Featured image of post (Maybe) a Git Tutorial? Part One" /&gt;&lt;p&gt;&lt;em&gt;Git is really great, but Git&amp;rsquo;s commands are really complicated. Let me do a quick write-up &amp;ndash; might as well call it a tutorial~&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;The header image is by &lt;a class="link" href="https://www.pixiv.net/en/users/75383094" target="_blank" rel="noopener"
+ &gt;Natsuzora&lt;/a&gt; &amp;ndash; it&amp;rsquo;s &lt;a class="link" href="https://www.pixiv.net/en/artworks/116876998" target="_blank" rel="noopener"
+ &gt;Tatara Kogasa&lt;/a&gt;, so cute~ Let&amp;rsquo;s go with Kogasa&amp;rsquo;s character theme for the track.&lt;/em&gt;&lt;/p&gt;
+
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
+&lt;style type="text/css"&gt;
+[data-scheme="dark"] .aplayer {
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
+}
+
+[data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
+ border-bottom-color: var(--card-separator-color);
+}
+
+[data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
+ border-color: var(--card-separator-color);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-body {
+ background-color: var(--card-background);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-info {
+ border-top-color: var(--card-background);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
+ color: var(--card-text-color-main);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
+ color: var(--card-text-color-secondary);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
+ color: var(--card-text-color-tertiary);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
+ fill: var(--card-text-color-tertiary);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-list {
+ background-color: var(--card-background);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
+ background-color: var(--card-separator-color);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
+ background-color: var(--accent-color);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-list li {
+ color: var(--card-text-color-main);
+ border-top-color: var(--card-separator-color);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-list li:hover {
+ background: var(--card-background-selected);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
+ background: var(--card-background-selected);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
+ color: var(--card-text-color-secondary);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
+ color: var(--card-text-color-secondary);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-lrc {
+ text-shadow: -1px -1px 0 var(--body-background);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-lrc:before {
+ background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-lrc:after {
+ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-lrc p {
+ color: var(--card-text-color-main);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-miniswitcher {
+ background: var(--card-background-selected);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
+ fill: var(--card-text-color-tertiary);
+}
+
+ 
+[data-scheme="light"] .aplayer {
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
+}
+
+[data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
+ color: var(--card-text-color-main);
+}
+
+[data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
+ color: var(--card-text-color-secondary);
+}
+
+[data-scheme="light"] .aplayer .aplayer-list li:hover {
+ background: var(--card-background-selected);
+}
+&lt;/style&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
+
+
+&lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=22636608" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
+&lt;h2 id="git-a-name-both-familiar-and-strange"&gt;Git, a Name Both Familiar and Strange&amp;hellip;
+&lt;/h2&gt;&lt;p&gt;Maybe it&amp;rsquo;s just the environment I&amp;rsquo;m in, but a lot of people around me don&amp;rsquo;t know what Git is. They&amp;rsquo;ve all heard of &lt;em&gt;GitHub&lt;/em&gt;, but most only know that there are a ton of programs and programmers on it. That&amp;rsquo;s not exactly wrong, but it&amp;rsquo;s not quite accurate either; and when I say I use &lt;em&gt;Git&lt;/em&gt;, some people conflate &lt;em&gt;Git&lt;/em&gt; with &lt;em&gt;GitHub&lt;/em&gt;; many think Git is very complicated, and by extension think GitHub is also very complicated&amp;hellip; So, I&amp;rsquo;d like to share my understanding of Git and GitHub, and talk about what both Git and GitHub actually are.&lt;/p&gt;</description></item><item><title>Syncing with rsync</title><link>https://a-moment096.github.io/en/posts/shell_note/use_rsync/</link><pubDate>Mon, 28 Jul 2025 12:43:39 +0800</pubDate><guid>https://a-moment096.github.io/en/posts/shell_note/use_rsync/</guid><description>&lt;img src="https://a-moment096.github.io/images/%E8%B4%9D%E5%8A%A0%E5%B0%94%E6%B9%96%E7%95%94.jpg" alt="Featured image of post Syncing with rsync" /&gt;&lt;p&gt;&lt;em&gt;Kinda getting tired of &lt;code&gt;scp&lt;/code&gt; and &lt;code&gt;sftp&lt;/code&gt;. Maybe I&amp;rsquo;ve just been using them wrong, but either way, I&amp;rsquo;m going with &lt;code&gt;rsync&lt;/code&gt;!&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;*&lt;del&gt;Couldn&amp;rsquo;t find the source for this image&amp;hellip; Snagged it from a friend &amp;ndash; it&amp;rsquo;s gorgeous, so I put it here.&lt;/del&gt; Found it! It&amp;rsquo;s by &lt;a class="link" href="https://www.pixiv.net/en/users/8605991" target="_blank" rel="noopener"
+ &gt;fasnakegod&lt;/a&gt; &amp;ndash; &lt;a class="link" href="https://www.pixiv.net/en/artworks/125739568" target="_blank" rel="noopener"
+ &gt;Lake Baikal&lt;/a&gt;. With that, let me share a piano piece. Here&amp;rsquo;s &lt;strong&gt;Kishi Ou no Hokori&lt;/strong&gt; (The Pride of the Knight King) for you all. (Totally unrelated, come on!) *&lt;/p&gt;</description></item><item><title>What Was the Last Command?</title><link>https://a-moment096.github.io/en/posts/shell_note/last_command/</link><pubDate>Sat, 26 Jul 2025 20:09:18 +0800</pubDate><guid>https://a-moment096.github.io/en/posts/shell_note/last_command/</guid><description>&lt;img src="https://a-moment096.github.io/images/SEASIDE_SOLILOQUIES.png" alt="Featured image of post What Was the Last Command?" /&gt;&lt;p&gt;&lt;em&gt;I used to always wonder: how do you get the previous command? Should be simple, right? After a quick search, here&amp;rsquo;s what I found. Let me jot it down.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;The header image is from Orangestar&amp;rsquo;s album &lt;strong&gt;SEASIDE SOLILOQUIES&lt;/strong&gt; &amp;ndash; beautiful art and great music. So for the track pick here, let&amp;rsquo;s go with the title song from that album: &lt;strong&gt;Alice in Reitouko&lt;/strong&gt; (Alice in the Freezer). Hope you enjoy it.&lt;/em&gt;&lt;/p&gt;</description></item></channel></rss>

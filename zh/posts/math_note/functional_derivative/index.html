@@ -1,0 +1,298 @@
+<!doctype html><html lang=zh dir=ltr><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><meta name=description content="相场演化方程究竟应该怎么推，才离正确不远"><title>关于泛函导数和变分法-来自相场公式推导的问题</title><link rel=canonical href=https://a-moment096.github.io/zh/posts/math_note/functional_derivative/><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload as=style href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"><link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"><link rel=stylesheet href=/scss/style.min.0930cba239a72a1883a90ece98162ef5837b26acc9338de59a5816263fdd1885.css><meta property='og:title' content="关于泛函导数和变分法-来自相场公式推导的问题"><meta property='og:description' content="相场演化方程究竟应该怎么推，才离正确不远"><meta property='og:url' content='https://a-moment096.github.io/zh/posts/math_note/functional_derivative/'><meta property='og:site_name' content="A Moment's Rest"><meta property='og:type' content='article'><meta property='article:section' content='Posts'><meta property='article:tag' content='Calculus of Variations'><meta property='article:tag' content='Note'><meta property='article:published_time' content='2025-01-04T00:00:00+08:00'><meta property='article:modified_time' content='2026-06-26T15:20:58+00:00'><meta property='og:image' content='https://a-moment096.github.io/images/HelloWorld-r-906.jpg'><meta name=twitter:title content="关于泛函导数和变分法-来自相场公式推导的问题"><meta name=twitter:description content="相场演化方程究竟应该怎么推，才离正确不远"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content='https://a-moment096.github.io/images/HelloWorld-r-906.jpg'><link rel="shortcut icon" href=/coffee.png><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css integrity=sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV crossorigin=anonymous><script src=https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js integrity=sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8 crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/mhchem.min.js integrity=sha384-F2ptQFZqNJuqfGGl28mIXyQ5kXH48spn7rcoS0Y9psqIKAcZPLd1NzwFlm/bl1mH crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js integrity=sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05 crossorigin=anonymous defer></script><script>window.addEventListener("DOMContentLoaded",()=>{window.Stack&&window.Stack.setupGitHubAlertsEarly&&window.Stack.setupGitHubAlertsEarly();const e=[".main-article",".widget--toc"];e.forEach(e=>{const t=document.querySelector(e);t&&renderMathInElement(t,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}],ignoredClasses:["gist"],ignoredTags:[]})})})</script><link href=/react/assets/style.css rel=stylesheet></head><body class=article-page><script>(function(){const e="StackColorScheme";localStorage.getItem(e)||localStorage.setItem(e,"auto")})()</script><script>(function(){const t="StackColorScheme",e=localStorage.getItem(t),n=window.matchMedia("(prefers-color-scheme: dark)").matches===!0;e=="dark"||e==="auto"&&n?document.documentElement.dataset.scheme="dark":document.documentElement.dataset.scheme="light"})()</script><div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky"><button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label=切换菜单>
+<span class=hamburger-box><span class=hamburger-inner></span></span></button><header><figure class=site-avatar><a href=/zh/><img src=/img/avatar.jpg width=640 height=640 class=site-logo loading=lazy alt=Avatar>
+</a><span class=emoji>💦</span></figure><div class=site-meta><h1 class=site-name><a href=/zh/>A Moment's Rest</a></h1><h2 class=site-description>AMoment 的 Blog</h2></div></header><ol class=menu-social><li><a href=https://github.com/A-moment096 title=GitHub rel=me><svg class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6.0 00-1.3-3.2 4.2 4.2.0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3.0 00-6.2.0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2.0 00-.1 3.2A4.6 4.6.0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a></li><li><a href=https://space.bilibili.com/44789578 title=Bilibili rel=me><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-device-tv"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7m0 2a2 2 0 012-2h14a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M16 3l-4 4-4-4"/></svg></a></li><li><a href=mailto:amoment096@gmail.com title="Contact Me" rel=me><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-mail"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"/><path d="M3 7l9 6 9-6"/></svg></a></li><li><a href=/zh/index.xml target=_blank title=RSS rel=me><svg class="icon icon-tabler icon-tabler-rss" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="5" cy="19" r="1"/><path d="M4 4a16 16 0 0116 16"/><path d="M4 11a9 9 0 019 9"/></svg></a></li></ol><ol class=menu id=main-menu><li><a href=/zh/><svg class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg>
+<span>Home</span></a></li><li><a href=/zh/page/about/><svg class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+<span>About</span></a></li><li><a href=/zh/page/archives/><svg class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+<span>Archives</span></a></li><li><a href=/zh/page/friends/><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-hearts"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14.017 18 12 20l-7.5-7.428A5 5 0 1112 6.006a5 5 0 018.153 5.784"/><path d="M15.99 20l4.197-4.223a2.81 2.81.0 000-3.948 2.747 2.747.0 00-3.91-.007l-.28.282-.279-.283a2.747 2.747.0 00-3.91-.007 2.81 2.81.0 00-.007 3.948L15.983 20z"/></svg>
+<span>Friends</span></a></li><li><a href=/zh/page/links/><svg class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M10 14a3.5 3.5.0 005 0l4-4a3.5 3.5.0 00-5-5l-.5.5"/><path d="M14 10a3.5 3.5.0 00-5 0l-4 4a3.5 3.5.0 005 5l.5-.5"/></svg>
+<span>Links</span></a></li><li><a href=/zh/page/attachments/><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-bookmarks"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 10v11l-5-3-5 3V10a3 3 0 013-3h4a3 3 0 013 3z"/><path d="M11 3h5a3 3 0 013 3v11"/></svg>
+<span>Attachments</span></a></li><li><a href=/zh/page/thoughts/><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-sticker-2"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 4h12a2 2 0 012 2v7h-5a2 2 0 00-2 2v5H6a2 2 0 01-2-2V6a2 2 0 012-2z"/><path d="M20 13v.172a2 2 0 01-.586 1.414l-4.828 4.828A2 2 0 0113.172 20H13"/></svg>
+<span>Thoughts</span></a></li><li><a href=/zh/page/search/><svg class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
+<span>Search</span></a></li><li class=menu-bottom-section><ol class=menu><li id=i18n-switch><svg class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 5h7"/><path d="M9 3v2c0 4.418-2.239 8-5 8"/><path d="M5 9c-.003 2.144 2.952 3.908 6.7 4"/><path d="M12 20l4-9 4 9"/><path d="M19.1 18h-6.2"/></svg>
+<select name=language title=language onchange="window.location.href=this.selectedOptions[0].value"><option value=/zh/posts/math_note/functional_derivative/ selected>中文</option><option value=/en/posts/math_note/functional_derivative/>English</option></select></li><li id=dark-mode-toggle><svg class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="8" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+<svg class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="16" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+<span>暗色模式</span></li></ol></li></ol></aside><aside class="sidebar right-sidebar sticky"><form action=/zh/page/search/ class="search-form widget"><p><label>搜索</label>
+<input name=keyword required placeholder=输入关键词...>
+<button title=搜索>
+<svg class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg></button></p></form><section class="widget archives"><div class=widget-header><div class=widget-icon><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-bookmarks"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 10v11l-5-3-5 3V10a3 3 0 013-3h4a3 3 0 013 3z"/><path d="M11 3h5a3 3 0 013 3v11"/></svg></div><h2 class="widget-title section-title">目录</h2></div><div class=widget-body><div class=widget--toc><nav id=TableOfContents><ol><li><ol><li><a href=#晶体相场公式带来的问题>晶体相场公式带来的问题</a></li><li><a href=#传统相场公式对吗>传统相场公式，对吗？</a></li><li><a href=#重新审视问题omega-是什么>重新审视问题，$\omega$ 是什么？</a></li><li><a href=#死胡同从头开始吧>死胡同？从头开始吧！</a><ol><li><a href=#泛函>泛函</a></li><li><a href=#被积函数泛函的核>被积函数（泛函的核）</a></li><li><a href=#再考察-euler-lagrange-方程>再考察 Euler-Lagrange 方程</a></li><li><a href=#最后一步>最后一步</a></li></ol></li><li><a href=#计算>计算！</a></li><li><a href=#后记>后记</a></li></ol></li></ol></nav></div></div><script>document.addEventListener("DOMContentLoaded",function(){const t=document.querySelector(".widget--toc");if(!t)return;let e=[0,0,0,0,0,0];function s(t,n=1){let o=[];return t.querySelectorAll(":scope > li").forEach(t=>{const i=t.querySelector(":scope > a");if(i){e[n-1]++;for(let t=n;t<6;t++)e[t]=0;let r="",s=[];for(let t=0;t<n;t++)e[t]>0&&s.push(e[t]);r=s.join(".")+". ";const t=document.createElement("div");t.className=`toc-item toc-level-${n}`,t.setAttribute("data-visual-depth",s.length);const a=document.createElement("a");a.href=i.href,a.innerHTML=`<span class="toc-number">${r}</span>${i.textContent}`,t.appendChild(a),o.push(t)}const a=t.querySelector(":scope > ol");a&&(o=o.concat(s(a,n+1)))}),o}const n=t.querySelectorAll("ol");if(n.length===0)return;let o=[];e=[0,0,0,0,0,0],n.length>0&&(o=s(n[0],1)),t.innerHTML="",o.forEach(e=>t.appendChild(e))})</script></section><section class="widget archives"><div class=widget-header><div class=widget-icon><svg class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M9.828 9.172a4 4 0 100 5.656A10 10 0 0012 12a10 10 0 012.172-2.828 4 4 0 110 5.656A10 10 0 0112 12 10 10 0 009.828 9.172"/></svg></div><h2 class="widget-title section-title">归档</h2></div><div class=widget-body><div class=widget-archive--list><div class=archives-year><a href=/zh/page/archives/#2026><span class=year>2026</span>
+<span class=count>7</span></a></div><div class=archives-year><a href=/zh/page/archives/#2025><span class=year>2025</span>
+<span class=count>24</span></a></div><div class=archives-year><a href=/zh/page/archives/#2024><span class=year>2024</span>
+<span class=count>9</span></a></div></div></div></section><section class="widget tagCloud categories"><div class=widget-header><div class=widget-icon><svg class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg></div><h2 class="widget-title section-title">分类</h2></div><div class=widget-body><div class="tagCloud-tags scrollable-tags"><a href=/zh/categories/programming/ class="tag-item category-frequency-5" title="Programming (23 篇文章)">Programming
+<span class=tag-count>23</span>
+</a><a href=/zh/categories/mathematics/ class="tag-item category-frequency-3" title="Mathematics (15 篇文章)">Mathematics
+<span class=tag-count>15</span>
+</a><a href=/zh/categories/phase-field/ class="tag-item category-frequency-3" title="Phase Field (14 篇文章)">Phase Field
+<span class=tag-count>14</span>
+</a><a href=/zh/categories/others/ class="tag-item category-frequency-1" title="Others (5 篇文章)">Others
+<span class=tag-count>5</span></a></div></div></section><section class="widget tagCloud"><div class=widget-header><div class=widget-icon><svg class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11 3l9 9a1.5 1.5.0 010 2l-6 6a1.5 1.5.0 01-2 0L3 11V7a4 4 0 014-4h4"/><circle cx="9" cy="9" r="2"/></svg></div><h2 class="widget-title section-title">标签云</h2></div><div class=widget-body><div class="tagCloud-tags scrollable-tags"><a href=/zh/tags/note/ class="tag-item tag-frequency-5" title="Note (15 篇文章)">Note
+<span class=tag-count>15</span>
+</a><a href=/zh/tags/numerical-analysis/ class="tag-item tag-frequency-3" title="Numerical Analysis (8 篇文章)">Numerical Analysis
+<span class=tag-count>8</span>
+</a><a href=/zh/tags/shell/ class="tag-item tag-frequency-3" title="Shell (7 篇文章)">Shell
+<span class=tag-count>7</span>
+</a><a href=/zh/tags/c++/ class="tag-item tag-frequency-2" title="C++ (6 篇文章)">C++
+<span class=tag-count>6</span>
+</a><a href=/zh/tags/linux/ class="tag-item tag-frequency-2" title="Linux (6 篇文章)">Linux
+<span class=tag-count>6</span>
+</a><a href=/zh/tags/tutorial/ class="tag-item tag-frequency-2" title="Tutorial (6 篇文章)">Tutorial
+<span class=tag-count>6</span>
+</a><a href=/zh/tags/python/ class="tag-item tag-frequency-2" title="Python (5 篇文章)">Python
+<span class=tag-count>5</span>
+</a><a href=/zh/tags/tools/ class="tag-item tag-frequency-2" title="Tools (5 篇文章)">Tools
+<span class=tag-count>5</span>
+</a><a href=/zh/tags/git/ class="tag-item tag-frequency-2" title="Git (4 篇文章)">Git
+<span class=tag-count>4</span>
+</a><a href=/zh/tags/linear-algebra/ class="tag-item tag-frequency-2" title="Linear Algebra (4 篇文章)">Linear Algebra
+<span class=tag-count>4</span>
+</a><a href=/zh/tags/pf-model/ class="tag-item tag-frequency-2" title="PF Model (4 篇文章)">PF Model
+<span class=tag-count>4</span>
+</a><a href=/zh/tags/software/ class="tag-item tag-frequency-2" title="Software (4 篇文章)">Software
+<span class=tag-count>4</span>
+</a><a href=/zh/tags/spinodal-decomposition/ class="tag-item tag-frequency-2" title="Spinodal Decomposition (4 篇文章)">Spinodal Decomposition
+<span class=tag-count>4</span>
+</a><a href=/zh/tags/algebra/ class="tag-item tag-frequency-1" title="Algebra (3 篇文章)">Algebra
+<span class=tag-count>3</span>
+</a><a href=/zh/tags/c/ class="tag-item tag-frequency-1" title="C (3 篇文章)">C
+<span class=tag-count>3</span>
+</a><a href=/zh/tags/category-theory/ class="tag-item tag-frequency-1" title="Category Theory (3 篇文章)">Category Theory
+<span class=tag-count>3</span>
+</a><a href=/zh/tags/paper-reading/ class="tag-item tag-frequency-1" title="Paper Reading (3 篇文章)">Paper Reading
+<span class=tag-count>3</span>
+</a><a href=/zh/tags/vcs/ class="tag-item tag-frequency-1" title="VCS (3 篇文章)">VCS
+<span class=tag-count>3</span>
+</a><a href=/zh/tags/arch/ class="tag-item tag-frequency-1" title="Arch (2 篇文章)">Arch
+<span class=tag-count>2</span>
+</a><a href=/zh/tags/build-blog/ class="tag-item tag-frequency-1" title="Build Blog (2 篇文章)">Build Blog
+<span class=tag-count>2</span>
+</a><a href=/zh/tags/calculus/ class="tag-item tag-frequency-1" title="Calculus (2 篇文章)">Calculus
+<span class=tag-count>2</span>
+</a><a href=/zh/tags/document/ class="tag-item tag-frequency-1" title="Document (2 篇文章)">Document
+<span class=tag-count>2</span>
+</a><a href=/zh/tags/experience/ class="tag-item tag-frequency-1" title="Experience (2 篇文章)">Experience
+<span class=tag-count>2</span>
+</a><a href=/zh/tags/fft/ class="tag-item tag-frequency-1" title="FFT (2 篇文章)">FFT
+<span class=tag-count>2</span>
+</a><a href=/zh/tags/fourier-spectrum/ class="tag-item tag-frequency-1" title="Fourier Spectrum (2 篇文章)">Fourier Spectrum
+<span class=tag-count>2</span>
+</a><a href=/zh/tags/fourier-transformation/ class="tag-item tag-frequency-1" title="Fourier Transformation (2 篇文章)">Fourier Transformation
+<span class=tag-count>2</span>
+</a><a href=/zh/tags/microelasticity/ class="tag-item tag-frequency-1" title="Microelasticity (2 篇文章)">Microelasticity
+<span class=tag-count>2</span>
+</a><a href=/zh/tags/notations/ class="tag-item tag-frequency-1" title="Notations (2 篇文章)">Notations
+<span class=tag-count>2</span>
+</a><a href=/zh/tags/talk/ class="tag-item tag-frequency-1" title="Talk (2 篇文章)">Talk
+<span class=tag-count>2</span>
+</a><a href=/zh/tags/vs-code/ class="tag-item tag-frequency-1" title="VS Code (2 篇文章)">VS Code
+<span class=tag-count>2</span>
+</a><a href=/zh/tags/abstract-algebra/ class="tag-item tag-frequency-1" title="Abstract Algebra (1 篇文章)">Abstract Algebra
+<span class=tag-count>1</span>
+</a><a href=/zh/tags/algorithm/ class="tag-item tag-frequency-1" title="Algorithm (1 篇文章)">Algorithm
+<span class=tag-count>1</span>
+</a><a href=/zh/tags/benchmark/ class="tag-item tag-frequency-1" title="Benchmark (1 篇文章)">Benchmark
+<span class=tag-count>1</span>
+</a><a href=/zh/tags/blog-birthday/ class="tag-item tag-frequency-1" title="Blog Birthday (1 篇文章)">Blog Birthday
+<span class=tag-count>1</span>
+</a><a href=/zh/tags/calculus-of-variations/ class="tag-item tag-frequency-1" title="Calculus of Variations (1 篇文章)">Calculus of Variations
+<span class=tag-count>1</span>
+</a><a href=/zh/tags/cuda/ class="tag-item tag-frequency-1" title="CUDA (1 篇文章)">CUDA
+<span class=tag-count>1</span>
+</a><a href=/zh/tags/data-structure/ class="tag-item tag-frequency-1" title="Data Structure (1 篇文章)">Data Structure
+<span class=tag-count>1</span>
+</a><a href=/zh/tags/interfacial-model/ class="tag-item tag-frequency-1" title="Interfacial Model (1 篇文章)">Interfacial Model
+<span class=tag-count>1</span>
+</a><a href=/zh/tags/javascript/ class="tag-item tag-frequency-1" title="JavaScript (1 篇文章)">JavaScript
+<span class=tag-count>1</span>
+</a><a href=/zh/tags/math-problems/ class="tag-item tag-frequency-1" title="Math Problems (1 篇文章)">Math Problems
+<span class=tag-count>1</span>
+</a><a href=/zh/tags/mathematical-analysis/ class="tag-item tag-frequency-1" title="Mathematical Analysis (1 篇文章)">Mathematical Analysis
+<span class=tag-count>1</span>
+</a><a href=/zh/tags/number-theory/ class="tag-item tag-frequency-1" title="Number Theory (1 篇文章)">Number Theory
+<span class=tag-count>1</span>
+</a><a href=/zh/tags/reading/ class="tag-item tag-frequency-1" title="Reading (1 篇文章)">Reading
+<span class=tag-count>1</span>
+</a><a href=/zh/tags/review/ class="tag-item tag-frequency-1" title="Review (1 篇文章)">Review
+<span class=tag-count>1</span>
+</a><a href=/zh/tags/server/ class="tag-item tag-frequency-1" title="Server (1 篇文章)">Server
+<span class=tag-count>1</span>
+</a><a href=/zh/tags/type/ class="tag-item tag-frequency-1" title="Type (1 篇文章)">Type
+<span class=tag-count>1</span>
+</a><a href=/zh/tags/typescript/ class="tag-item tag-frequency-1" title="TypeScript (1 篇文章)">TypeScript
+<span class=tag-count>1</span>
+</a><a href=/zh/tags/wsl/ class="tag-item tag-frequency-1" title="WSL (1 篇文章)">WSL
+<span class=tag-count>1</span></a></div></div></section></aside><main class="main full-width"><article class="has-image main-article"><header class=article-header><div class=article-image><a href=/zh/posts/math_note/functional_derivative/><img src=/images/HelloWorld-r-906.jpg width height loading=lazy alt="Featured image of post 关于泛函导数和变分法-来自相场公式推导的问题"></a></div><div class=article-details><header class=article-category><a href=/zh/categories/mathematics/ style=background-color:#588edf;color:#fff>Mathematics
+</a><span class=category-tags-separator>|</span><section class=article-tags><a href=/zh/tags/calculus-of-variations/>Calculus of Variations</a>
+<a href=/zh/tags/note/>Note</a></section></header><div class=article-title-wrapper><h2 class=article-title><a href=/zh/posts/math_note/functional_derivative/>关于泛函导数和变分法-来自相场公式推导的问题</a></h2><h3 class=article-subtitle>相场演化方程究竟应该怎么推，才离正确不远</h3><footer class=article-time><div><svg class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg><p></p><time class=article-time--published datetime=2025-01-04T00:00:00+08:00>1月 04, 2025</time></div><div><svg class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+<time class=article-time--reading>阅读时长: 18 分钟</time></div></footer></div></div></header><aside class=article-toc><details><summary><div class=article-toc-title><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6-6 6"/></svg>
+<span>目录</span></div></summary><nav class=toc-nav><ol><li><ol><li><a href=#晶体相场公式带来的问题>晶体相场公式带来的问题</a></li><li><a href=#传统相场公式对吗>传统相场公式，对吗？</a></li><li><a href=#重新审视问题omega-是什么>重新审视问题，$\omega$ 是什么？</a></li><li><a href=#死胡同从头开始吧>死胡同？从头开始吧！</a><ol><li><a href=#泛函>泛函</a></li><li><a href=#被积函数泛函的核>被积函数（泛函的核）</a></li><li><a href=#再考察-euler-lagrange-方程>再考察 Euler-Lagrange 方程</a></li><li><a href=#最后一步>最后一步</a></li></ol></li><li><a href=#计算>计算！</a></li><li><a href=#后记>后记</a></li></ol></li></ol></nav></details></aside><section class=article-content><p><em>本文系拾人牙慧之作，仅为解决公式推导过程中的一些边角料的数学问题，内容如有错漏还请谅解。另外，感谢老大中先生的《变分法基础》第三版。本文的主要内容几乎全部参考本书。</em></p><p><em>头图出自 <a class=link href=https://x.com/amn_amn_/status/1580863274081349632 target=_blank rel=noopener>雨野</a> 太太，为 <a class=link href=https://twitter.com/arukuremu target=_blank rel=noopener>r-906</a> 所作的 <a class=link href=https://www.bilibili.com/video/BV1Ee4y1E7J6/ target=_blank rel=noopener>Hello World!</a> 的曲绘</em></p><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css><style type=text/css>[data-scheme=dark] .aplayer{background:var(--card-background);border:1px solid var(--card-separator-color)}[data-scheme=dark] .aplayer.aplayer-withlist .aplayer-info{border-bottom-color:var(--card-separator-color)}[data-scheme=dark] .aplayer.aplayer-fixed .aplayer-list{border-color:var(--card-separator-color)}[data-scheme=dark] .aplayer .aplayer-body{background-color:var(--card-background)}[data-scheme=dark] .aplayer .aplayer-info{border-top-color:var(--card-background)}[data-scheme=dark] .aplayer .aplayer-info .aplayer-music .aplayer-title{color:var(--card-text-color-main)}[data-scheme=dark] .aplayer .aplayer-info .aplayer-music .aplayer-author{color:var(--card-text-color-secondary)}[data-scheme=dark] .aplayer .aplayer-info .aplayer-controller .aplayer-time{color:var(--card-text-color-tertiary)}[data-scheme=dark] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path{fill:var(--card-text-color-tertiary)}[data-scheme=dark] .aplayer .aplayer-list{background-color:var(--card-background)}[data-scheme=dark] .aplayer .aplayer-list::-webkit-scrollbar-thumb{background-color:var(--card-separator-color)}[data-scheme=dark] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover{background-color:var(--accent-color)}[data-scheme=dark] .aplayer .aplayer-list li{color:var(--card-text-color-main);border-top-color:var(--card-separator-color)}[data-scheme=dark] .aplayer .aplayer-list li:hover{background:var(--card-background-selected)}[data-scheme=dark] .aplayer .aplayer-list li.aplayer-list-light{background:var(--card-background-selected)}[data-scheme=dark] .aplayer .aplayer-list li .aplayer-list-index{color:var(--card-text-color-secondary)}[data-scheme=dark] .aplayer .aplayer-list li .aplayer-list-author{color:var(--card-text-color-secondary)}[data-scheme=dark] .aplayer .aplayer-lrc{text-shadow:-1px -1px 0 var(--body-background)}[data-scheme=dark] .aplayer .aplayer-lrc:before{background:linear-gradient(to bottom,var(--card-background) 0%,transparent 100%)}[data-scheme=dark] .aplayer .aplayer-lrc:after{background:linear-gradient(to bottom,transparent 0%,var(--card-background) 100%)}[data-scheme=dark] .aplayer .aplayer-lrc p{color:var(--card-text-color-main)}[data-scheme=dark] .aplayer .aplayer-miniswitcher{background:var(--card-background-selected)}[data-scheme=dark] .aplayer .aplayer-miniswitcher .aplayer-icon path{fill:var(--card-text-color-tertiary)}[data-scheme=light] .aplayer{background:var(--card-background);border:1px solid var(--card-separator-color)}[data-scheme=light] .aplayer .aplayer-info .aplayer-music .aplayer-title{color:var(--card-text-color-main)}[data-scheme=light] .aplayer .aplayer-info .aplayer-music .aplayer-author{color:var(--card-text-color-secondary)}[data-scheme=light] .aplayer .aplayer-list li:hover{background:var(--card-background-selected)}</style><script src=https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js></script><script src=/js/Meting.min.js></script><meting-js auto="https://music.163.com/#/song?id=2076684514" theme=#2980b9 loop></meting-js><p>2025.06.06 更新：感谢<a class=link href=https://github.com/which-is-my-way target=_blank rel=noopener>@which-is-my-way</a>指正，公式 <a class=link href=#modify>16</a> 补上点乘单位法向量</p><h2 id=晶体相场公式带来的问题>晶体相场公式带来的问题</h2><p>在一个阳光明媚的晚上，师兄找到我问了一个问题：下面的这个相场公式是怎么组装起来的？具体来讲是：从下面的公式（2）和公式（3）是怎么得到公式（4）的：</p>$$
+\begin{align}
+F &= \int_V f \mathrm{d}v\\ &= \int_V \left(\frac{\psi}{2} \omega \left(\nabla ^2\right)\psi + \frac{\psi^4}{4}\right) \mathrm{d}v;\\
+\frac{\partial \psi}{\partial t} &= \nabla^2 \frac{\delta F}{\delta \psi} + \xi;\\
+\frac{\partial \psi}{\partial t} &= \nabla^2 \left( \omega\left( \nabla^2 \right) \psi + \psi^3 \right)+ \xi.
+\end{align}
+$$<p>这里我们做一些简单的背景介绍吧。这个公式来源于<a class=link href=https://doi.org/10.1103/PhysRevE.70.051605 target=_blank rel=noopener>这篇文章</a>，是提出晶体相场理论的文章，其重要性不言而喻，近乎所有的该领域的文章在使用这篇文章的结果时都需要引用这些个公式。我们这里不对晶体相场做太多介绍了（因为我也不了解，虽然也有相场两个字，但是几乎只有最最基础的假设相似而已了），简单介绍一下这些公式（名称）这些方便后面表述。其中公式（1）是指体系总能量可以表达为能量密度对体积的积分（这里先不给出能量和能量密度的参量），这里可以看到总能量实际上是一个泛函；（2）是指能量密度的具体构造，（3）是和传统相场形式相类似的一个演化方程，在传统相场里是 <em>Cahn-Hilliard</em> 方程。而（4）就是将（3）中的变分展开得到的结果，或者说是具体计算过程中使用的公式的显式表达。</p><p>另外我必须提到的一点是，这里列出的公式并不完整，比如 $\omega$ 是什么我并没有做说明，这是为了复述一下我的心路历程（即便是笔记，也不希望太死板，毕竟是从实际问题来的）。当然，后面会把完整的问题复述，以及推导过程完整地列出来的。</p><h2 id=传统相场公式对吗>传统相场公式，对吗？</h2><p>拿到这个公式的时候其实并不是直接从文献拿到的，而是几张图片（大概就是公式（2）（3）和（4））。而我看到公式的第一反应是：这符号不是很对吧？把 $\psi$ 放到括号外面？这不太对吧？然后我便开始按照以往推导传统相场能量变分的方式推导了。我们来看看传统相场公式吧。</p>$$
+\begin{align}
+F(c, \nabla c ) &= \int_{\Omega} f(c, \nabla c )\, \mathrm{d}\omega = \int_{\Omega} f_b(c, \eta) + \kappa_c \left| \nabla c \right|^2 \mathrm{d}\omega;\\
+\frac{\partial c_i}{\partial t} &= \nabla \cdot M_{ij} \nabla \frac{\delta F}{\delta c_j \left( r,t \right)},
+\end{align}
+$$<p>其中，公式（6）即为 Cahn-Hilliard 方程，而公式（5）则是传统相场中的总能构造的一种常见（最基础的）形式，其中 $f$ 是能量密度，$f_b$ 是体自由能密度。可以看到能量泛函是依赖于（?）浓度和浓度的梯度的。对这个公式的推导我们直接使用三维条件下的 Euler-Lagrange 方程：</p>$$
+\begin{align}
+\frac{\delta F\left[ x,y,y' \right]}{\delta x} = \frac{\partial f}{\partial x} - \nabla \cdot \frac{\partial f}{\partial \nabla x}.
+\end{align}
+$$<p>这样一来，这个公式就可以被展开了，只需要按照能量泛函的具体表达形式带入，然后求一下偏导，很快就会得到结果。</p><p>说实话，这是在太棒了，只需要用很多现成（?）的内容，做一些非常简单（?）的推导，就（?）可以得到最后体系的演化方程具体表达形式。那心动不如行动，直接把这一套挪到上面的原始问题吧。很好，我们先对 $\psi$ 求偏导，得到（?）下面的东西：</p>$$
+\frac{\partial f}{\partial \psi} = \frac{1}{2}\omega\left( \nabla^2 \right)\psi + \psi^3,
+$$<p>然后，我们要对 $\nabla \psi$ 求偏导了。嗯，$\nabla \psi$ ……但是这里是 $\nabla^2$ ？话说回来为什么要用 $\omega$ 带括号把 Laplacian 算子包起来呀？啊？</p><p>这对吗？这不对吧？</p><h2 id=重新审视问题omega-是什么>重新审视问题，$\omega$ 是什么？</h2><p>问题看来根本不是我想得那么简单。还是需要从零开始一步步建立起这个问题的合理描述，并找到真正的解决方法。首先要解决的，就是 $\omega(\nabla^2)$ 这个奇怪的写法。假如这个写法是对的，那 $\omega$ 就不是什么参数之类的东西了，就应该是算符的一个函数或者别的什么东西了。</p><p>找到原始文献，查看定义，我们得到了 $\omega$ 的真面目：</p>$$
+\begin{align}
+\omega (\nabla^2) = r + \left(1 + \nabla ^2\right)^2,
+\end{align}
+$$<p>其中的 $r$ 是一个复杂的常数，不用关心。果不其然。$\omega$ 应该解释为一个对 $\nabla^2$ 算子做一种变换得到的新的算子。或者说，它是把算子映射到算子的一个映射。太棒了，我们把这个结果带入公式（1）中的 $f$ 吧：</p>$$
+\begin{align*}
+f &= \frac{\psi}{2} \omega \left(\nabla ^2\right)\psi + \frac{\psi^4}{4}\\
+&= \frac{\psi}{2} \left(r + \left(1 + \nabla ^2\right)^2 \right)\psi + \frac{\psi^4}{4}.
+\end{align*}
+$$<p>等一下，算子中的平方应该怎么解释？常数作用于一个变量应该怎么解释？根据算符的运算规则，我们得知：算符的平方，应该解释为算符作用于被作用量两次，而常数作用应解释为标量乘法。那么我们得到：</p>$$
+\begin{align*}
+f &= \frac{\psi}{2} \left(r\psi + \left(1 + \nabla ^2\right)^2\psi \right) + \frac{\psi^4}{4}\\
+&= r\frac{\psi^2}{2} + \frac{\psi^2}{2} + \psi \nabla^2\psi + \frac{1}{2}\psi\nabla^2\nabla^2\psi + \frac{\psi^4}{4}.
+\end{align*}
+$$<p>啊，看起来头好晕，怎么 Laplacian 也有个平方？我们更换符号：$\Delta = \nabla^2$，就有了：</p>$$
+\begin{align}
+f &= r\frac{\psi^2}{2} + \frac{\psi^2}{2} + \psi \Delta\psi + \frac{1}{2}\psi\Delta\Delta\psi + \frac{\psi^4}{4}.
+\end{align}
+$$<p>好了，这下我们搞清楚了 $\omega$ 到底是什么以及它对公式有何影响，现在我们对 $\psi$ 求的偏导应该就没问题了吧？</p><p>等等，什么是 $\Delta\Delta\psi$ ？对 $\psi$ 求偏导的话要管它吗？就算不管这个东西，这个公式里没有熟悉的 $\nabla\psi$ 呀，那我们的能量密度对 $\nabla\psi$ 求偏导等于 0 ？这不太对吧？话说回来我们的总能量泛函到底依赖于什么变量？再等一下，依赖？对于一个泛函而言，我们只需要找到最符合要求的一个函数就好了呀？这个函数自然就可以通过对坐标求导得到自己的偏导数了，那偏导数就不应该是一个独立变量才对吧，我们对它做偏导数到底是为什么？</p><p>完了，本来以为什么都知道，现在什么都不知道了。变分法，Euler-Lagrange 方程，这些都不应该是现成的吗？Laplacian，奇怪的 $\Delta\Delta\psi$，这些都不是能直接套到已有公式里的吧？</p><h2 id=死胡同从头开始吧>死胡同？从头开始吧！</h2><p>其实 $\Delta\Delta\psi$ 或多或少能想到是怎么个形式，无非就是把 $\Delta$ 作用两次就行了，关键在于这个变量，以及 $\Delta \psi$ 怎么参与到这个泛函构造中的，并且它们应该怎么参与到泛函导数里面。而为了搞清楚这个问题，我们也许必须明白这个泛函的“自变量”都有哪些，或者说，依赖于哪些变量，并且要搞清楚变量函数本身和它对位置的求导之间到底是有着什么样的关系。</p><p>问题很多，我们干脆从头开始，一步步拆解吧，就从<em>泛函是什么</em>这个问题开始。</p><h3 id=泛函>泛函</h3><p>我们讨论的泛函其实是一类特殊的映射，这个映射拥有定义域和陪域，其定义域为在某个空间上定义的全体函数组成的空间（比如，$\mathbb{R} \supseteq \Omega\to\mathbb{R}$ 的函数组成的空间，或者 $\mathbb{R}^3 \supseteq \Omega\to\mathbb{R}$ 的函数空间，根据我们的问题是几维的来确定这些函数的定义域），而泛函的陪域则是一个数域，对于能量而言我们就选择 $\mathbb{R}$ 好了。所以这个映射，从形式上来写，应该就是：</p>$$
+F:\left\{ y \;\Big|\; y: \Omega \to \mathbb{R} \right\} \to \mathbb{R}.
+$$<p>另外我们的泛函的另一个特殊之处在于，它常常可以写成这样一个积分的形式：</p>$$
+F = \int_\Omega f\, \mathrm{d}\omega.
+$$<p>我们常遇到的变分问题，也就是说在求什么样的函数 $\phi \in \left\{ y \\;\Big|\\; y: \Omega \to \mathbb{R} \right\}$ 能够使得将之带入泛函 $F$ 时能让这个泛函取到最小值<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>。甚至我们遇到的问题更加得特殊，因为我们要求函数族 $\left\{ y \\;\Big|\\; y: \Omega \to \mathbb{R} \right\}$ 满足这样的条件：在区域边界 $\partial \Omega$ 上这些函数族内的函数都必须相等，或者换句话说，就是我们的问题是固定边界问题。</p><p>太棒了，但是上面这些叙述，对我们的问题有什么帮助呢？我们把目光聚焦到泛函积分形式中的这个 $f$ 上。它没这里有具体的表达式，只是说明了要对它做积分。它具有什么样的意义呢？</p><h3 id=被积函数泛函的核>被积函数（泛函的核）</h3><p>我们这里指出：这个被积分的东西 $f$ 实际上是对泛函的要求。在部分文献中 $f$ 也称为泛函的核。$f$ 的具体表达形式，将会对最后得到的 $y$ 做出约束，使之满足泛函 $F$ 取到最小值的结果。那么，一个对 $y$ 的约束，要怎么表达它呢？或者说我们应该对 $y$ 做一些什么，来使之成为 $y$ 的约束呢？</p><p>为了用 $f$ 来约束 $y$，我们考虑使用 $f$ 来描述 $y$ 的行为。$y$ 在什么情况下，会得到什么样子的结果，大概就是这样的方式去描述。而我们常常在描述 $y$ 的行为时，会考虑到它的导数的行为，将导数 $y'$ 和 $y$ 二者相互作用时得到的结果结合起来。最后考虑到我们描述 $y$ 时很难避免加入函数自变量 $x \in \Omega$，最后我们得到的 $f$ 就会变成这样的东西：它看起来像是一个关于 $x\in \Omega$，$y : \Omega \to \mathbb{R}$ 以及 $y' : \Omega \to \mathbb{R}^n$ 三个变量的函数（其中 $n$ 的取值取决于考虑的函数的定义域维数）。当存在更多高阶导数参与描述 $y$ 的行为时，这个函数 $f$ 所依赖的变量就更多了。在这个函数中，我们不考虑 $y$ 是和 $y'$ 或者更高阶的导数相关的，因为它们都独立地描述函数 $y$ 的行为。可以这样理解：$y'$ 对函数 $y$ 的约束作用是没法直接用 $y$ 自己或者 $x$ 自己单独去描述的，所以它的影响就应该是独立于 $y$ 和 $x$ 的。这样一来，令 $f$ 对 $y$，$y'$ 等求偏导也是可以理解的了。另外，我们只关注对 $y$ 起实际约束作用的量，假如 $f$ 中不含有 $y'$，我们认为 $f$ 是不显含 $y'$ 的，此时并不是说 $y'$ 不存在了，而是它不参与到对 $y$ 的行为约束中。</p><p>当我们想要求取得到的函数的定义域从一维上升到我们更常遇到的三维时，函数 $y$ 所依赖的变量也就更加复杂了，可能包括 $\nabla y$，$\nabla \cdot y$，$\nabla \cdot \nabla y$ 等等。和上面类似，我们依旧将这些处理为独立存在于 $f$ 中的变量。有了上面这些的铺垫，我们至少能让我们的问题变得更加清楚一些：问题中的能量形式，将其变量依赖状态完整地写出，应该是以下的形式（这里我们按照惯例将<em>双调和算子</em> $\Delta\Delta$ 写成 $\Delta^2$ 的形式，它也可以写作 $\nabla^4$）：</p>$$
+\begin{align}
+F\left[\psi\right] &= \int_V f \left(\psi,\Delta\psi,\Delta\Delta\psi\right) \mathrm{d}v\\ &= \int_V r\frac{\psi^2}{2} + \frac{\psi^2}{2} + \psi \Delta\psi + \frac{1}{2}\psi\Delta\Delta\psi + \frac{\psi^4}{4} \mathrm{d}v.
+\end{align}
+$$<h3 id=再考察-euler-lagrange-方程>再考察 Euler-Lagrange 方程</h3><p>然而上面的一切似乎只是澄清了一些基本事实，并没有对解决这个问题起到非常实质的帮助呀。别灰心，至少我们知道了：上面的 Euler-Lagrange 方程，应该是只适用于 $f(x,y,\nabla y)$的，而对于新的 $f$，我们需要自己想办法得到这样的方程。因此，我们必须深入到变分法的根本，去了解变分法到底是怎么推导出了上面我们用到的 Euler-Lagrange 方程的。为此，我们采用我们一开始认为非常轻易地获得的 Euler-Lagrange 方程所对应的泛函形式来作为例子，自己推导一下它对应的 Euler-Lagrange 方程。</p><p>回忆我们面对的变分法的一般问题：在什么样子的函数 $y$ 下，我们构造出的泛函能够取最小值。我们的函数 $y$ 的定义域是固定的，所以我们要关心的是这个符合要求的函数在每一个点处的值应该是什么样的。不妨假设我们已经有了一个最佳的函数满足要求了，称这个函数为 $\varphi$。此时，由于这个函数已经是最好的，最满足需求的函数了，任何对这个函数某个值的改变，都会让我们的泛函不能取最小值。</p><p>我们来试着把这个结论写成更形式化一些的表达：假设函数 $\varphi : \Omega \to \mathbb{R}$ 是满足泛函 $F$ 的最小值需要的函数，则此时任意函数 $y \neq \varphi$ 都会造成这样的结果：$F[y] - F[\varphi] = \delta F > 0$ ，这里的 $\delta F$ 就是泛函 $F$ 的<em>变分</em>。这里大于 0 是因为我们已经知道了 $F[\varphi]$ 是最小值。反过来讲，当 $\delta F = 0$ 的时候，就能说明此时的函数 $y$ 就是我们需要的函数 $\varphi$。</p><p>这个表达是否让你感到一丝熟悉？我们先继续向下推进。</p><p>可以看到，假如我们把这个不等式用我们之前熟悉的泛函的积分形式展开，并根据积分的线性性合并，得到的结果是：</p>$$
+\delta F = \int_\Omega f(x,y, \nabla y) - f(x,\varphi,\nabla\varphi) \mathrm{d} \,\omega = \int_\Omega \delta f\, \mathrm{d}\omega.
+$$<p>上面的第二个等号是我们把被积函数的差记为了这样对函数的全变分。这个积分不等式的被积分项里，变量 $x$ 没有什么变化，那我们干脆将 $f$ 在现在看作一个二元函数。我们把 $\varphi$ 改写为以 $y$ 为基础加上一个扰动的形式：$\varphi = y+\delta y$，那么我们可以模仿全微分那样，把这里对函数的全变分 $\delta f$ 做全微分式的处理，就可以根据它的两个变量的偏导来写出其全变分的表达式。带入上式，则有：</p>$$
+\delta F = \int_\Omega \delta f\, \mathrm{d}\omega = \int_\Omega \left(\frac{\partial f}{\partial y}\delta y + \frac{\partial f}{\partial \nabla y}\cdot\delta\nabla y \right) \, \mathrm{d}\omega.
+$$<p>这个形式已经是我们很熟悉的形式了，但是还有一些区别。这里我们指出，函数对向量求偏导得到的也是一个向量，所以这里需要用向量内积，其中的技术细节我们不多赘述，我们更关注的是：怎么把 $\delta \nabla y$ 写成别的形式，来进一步向我们的结果前进。注意到 $\nabla$ 是对坐标求导，而 $\delta$ 则是在保持定义域不发生改变的情况下，改变了函数的值。因此二者应该是相互独立的，也意味着两个算符是可以相交换的。再使用点乘的乘积律：$\nabla \cdot (f{\bf{}v}) = f\nabla\cdot{\bf v}+{\bf v}\cdot\nabla f$，这样一通操作，就得到：</p>$$
+\begin{align}
+\delta F = \int_\Omega \delta f\, \mathrm{d}\omega &= \int_\Omega \left(\frac{\partial f}{\partial y}\delta y + \frac{\partial f}{\partial \nabla y}\cdot\nabla\delta y \right) \, \mathrm{d}\omega \\
+&= \int_\Omega \left(\frac{\partial f}{\partial y}\delta y - \nabla \cdot \frac{\partial f}{\partial \nabla y}\delta y \right) \, \mathrm{d}\omega + \int_\Omega \nabla\cdot\left(\frac{\partial f}{\partial \nabla y}\delta y\right) \, \mathrm{d}\omega\\
+&= \int_\Omega \left(\frac{\partial f}{\partial y} - \nabla \cdot \frac{\partial f}{\partial \nabla y} \right)\delta y \, \mathrm{d}\omega + \int_\Omega \nabla\cdot\left(\frac{\partial f}{\partial \nabla y}\delta y\right) \, \mathrm{d}\omega .
+\end{align}
+$$<p>而在式（13）中，最后的积分可以根据多元积分的 Green 公式，化成对区域 $\Omega$ 的边界 $\partial \Omega$ 积分。而此时，由于所有的函数在边界上的值都要相等，即边界 $\partial \Omega$ 上 $\delta y = 0$，这样最后一项积分就化为0了。我们写为下面的结果：</p><span id=modify>$$
+\begin{align}
+\delta F &= \int_\Omega \left(\frac{\partial f}{\partial y} - \nabla \cdot \frac{\partial f}{\partial \nabla y} \right)\delta y \, \mathrm{d}\omega + \int_\Omega \nabla\cdot\left(\frac{\partial f}{\partial \nabla y}\delta y\right) \, \mathrm{d}\omega\\
+&=\int_\Omega \left(\frac{\partial f}{\partial y} - \nabla \cdot \frac{\partial f}{\partial \nabla y} \right)\delta y \, \mathrm{d}\omega + \int_{\partial\Omega} \left(\frac{\partial f}{\partial \nabla y}\delta y\right)\cdot\hat{n} \, \mathrm{d}A\\
+&=\int_\Omega \left(\frac{\partial f}{\partial y} - \nabla \cdot \frac{\partial f}{\partial \nabla y} \right)\delta y \, \mathrm{d}\omega.
+\end{align}
+$$</span>
+这样，我们就距离我们希望得到的形式，Euler-Lagrange 公式只差一步了。注意到这里使用的 $\delta y$ 是任意的，假如 $\delta F = 0$，从积分里的内容来看，只能是括号内的部分等于 0。<p>我们可以看到，上面的过程，可以分为大致四个部分：得到全变分形式，将非目标变分以变分和微分的交换律改写为目标函数变分，消去多余项，由变分任意性得到被积函数内部等于 0。我们因此，可以根据我们已经熟悉的函数导数的概念，将公式（18）中的被积函数括号内这个关键部分定义为泛函的导数，即：</p>$$
+\frac{\delta F}{\delta y} = \frac{\partial f}{\partial y} - \nabla \cdot \frac{\partial f}{\partial \nabla y},
+$$<p>当其为 0 时，</p>$$
+\frac{\delta F}{\delta y} = \frac{\partial f}{\partial y} - \nabla \cdot \frac{\partial f}{\partial \nabla y} = 0,
+$$<p>泛函即取到极值（在我们的情境下即为最小值）。这就是所谓的 Euler-Lagrange 方程。</p><h3 id=最后一步>最后一步</h3><p>现在，我们对泛函的概念做了一些解释，并从头建立起了我们之前使用的 Euler-Lagrange 公式。这里我希望做一些补充说明。可以看到这里的泛函导数并不是直接的“某些东西的商然后做极限”，而是将某个对我们有用的部分定义为了泛函导数。对这个概念最佳的解释，就是它等于 0 时代表泛函的极值，通过解这个方程就能得到令泛函取得极值的极限函数。它不应被解释为变化率或者什么别的内容。</p><p>另外，我们上面用到了“二元函数全微分”这样的类比。平心而论，我自己并不是特别能接受这种说法。另一个可行的解释是，将函数 $y$ 化为 $y = \varphi + \varepsilon\eta$，也就是说我们使用了一个任意函数 $\eta : \Omega \to \mathbb{R}$，让它乘上一个极小的量 $\varepsilon$，这样就相当于用 $\varepsilon\eta$ 形成了一个函数的扰动，即 $\delta y$。我们要求 $\eta$ 是一个任意的函数，而在任何计算过程中都保持 $\eta$ 不变。此时整个式子将会成为只关于 $\varepsilon$ 的一元函数了。对于一个一元函数，其极值点就会出现在导数等于 0 的位置。那么此时对 $\varepsilon$ 求偏导，也能得到和上面类似的结论，并且通过格林公式化简得到最后的结论。当然，这也只是另一种思路，仅供参考。</p><p>最后要提出的是，上面的推导过程是和 $f$ 的表达式强相关的，尤其是其依赖的变量。然而当我们再考察其和变量之间的关系时，可以发现每个变量实际上对应到最后的 Euler-Lagrange 公式中都是相对独立的。比如，$x$ 这个部分没有在公式中出现，$y$ 的部分对应对 $y$ 求偏导，而 $\nabla y$ 的部分则对应着对 $\nabla y$ 求偏导后再对结果做散度。这个结果是可以预想到的：由于全微分公式，或者换成泛函的语境，全变分公式，的性质，是会出现这样的结果。那么我们也自然可以预想到，假如 $f$ 依赖的变量是别的变量，也应该有类似的结论才对。</p><p>到这里，我们近乎完全搞通了我们最后想要解决问题的路径。我们已经得到了泛函具体的表达式，搞清楚了泛函的核（即那个被积函数 $f$）的参数表，得到了对泛函做变分法的具体思路。我们的下一步，或者最后一步，便是真的带进去算了。</p><h2 id=计算>计算！</h2><p>为了读者的精神健康，我们隐藏当 $f$ 依赖情况为 $f(p,\psi,\Delta \psi,\Delta\Delta \psi)$（其中 $p \in V$ 代表位置）时的 Euler-Lagrange 公式的推导，直接给出结果：</p>$$
+\begin{equation}
+\frac{\delta F}{\delta \psi} = \frac{\partial f}{\partial \psi} + \Delta \left(\frac{\partial f}{\partial \Delta \psi}\right)+ \Delta\Delta \left(\frac{\partial f}{\partial \Delta\Delta \psi}\right)
+\end{equation}
+$$<details><summary>如果你愿意看推导过程的话：</summary><p>不，你其实不想看，你只是好奇我到底有没有真的写这些推导过程。事实是：写了，下面就是。</p><p>但是如果你真的想看这个部分，谢谢你，我的努力没有白费。</p><p>我们先根据全变分，写出泛函的核函数变分后的结果：</p>$$
+\begin{align*}
+\delta F & = \delta \int_V f(p,\psi,\Delta\psi,\Delta\Delta\psi) \,\mathrm{d}v \\
+& = \delta \int_V f(p,\psi,\Delta\psi,\Delta\Delta\psi) \,\mathrm{d}v \\
+& = \int_V \delta f(p,\psi,\Delta\psi,\Delta\Delta\psi) \,\mathrm{d}v \\
+& =\int_V \left(\frac{\partial f}{\partial \psi}\right)\delta \psi
++ \left(\frac{\partial f}{\partial \Delta\psi}\right)\delta \Delta\psi
++ \left(\frac{\partial f}{\partial \Delta\Delta\psi}\right)\delta \Delta\Delta\psi \,\mathrm{d}v. \\
+\end{align*}
+$$<p>接下来我们分别考察被积分的每一项。其中第一项的对 $\psi$ 的变分 $\delta\psi$ 已经符合我们的要求了，第二项中的 $\delta \Delta \psi$ 和第三项中的 $\delta \Delta\Delta\psi$ 则需要我们处理为某个函数乘以 $\delta\psi$ 的形式，以便于最后的逻辑处理。</p><p>根据变分与求导和交换的关系，我们有：</p>$$
+\left(\frac{\partial f}{\partial \Delta\psi}\right)\delta \Delta\psi = \left(\frac{\partial f}{\partial \Delta\psi}\right)\Delta \delta \psi = f_1 \Delta\delta\psi;\\
+\left(\frac{\partial f}{\partial \Delta\Delta\psi}\right)\delta \Delta\Delta\psi = \left(\frac{\partial f}{\partial \Delta\Delta\psi}\right) \Delta\Delta\delta\psi = f_2\Delta\Delta\delta\psi,
+$$<p>其中每行公式的第二个等号都是为了护眼做的处理，即将括号中的偏微分用记号表示。我们先看上面第一个式子，这是两个标量函数的乘积，其第二个因式展开应为：</p>$$
+\Delta \delta \psi = \nabla \cdot \nabla \delta\psi,
+$$<p>注意到散度存在恒等式：$\nabla \cdot (f\mathbf{v}) = f\nabla\cdot\mathbf{v} + \nabla f \cdot \mathbf{v}$，其中 $f$ 为标量函数或标量场，$v$ 为向量值函数或向量场，我们可以对上面的结果变换得到：</p>$$
+\begin{align*}
+f_1\nabla \cdot \nabla \delta\psi &= \nabla\cdot(f_1\nabla\delta\psi) - \nabla f_1\cdot \nabla\delta\psi \\
+&= \nabla\cdot(f_1\nabla\delta\psi) - \nabla\cdot(\delta\psi\nabla f_1) + \delta \psi \nabla\cdot\nabla f_1.
+\end{align*}
+$$<p>上式对一个三维区域 $\Omega$ 的积分，根据散度定理，有：</p>$$
+\begin{align*}
+\int_V f_1 \nabla\cdot\nabla\delta\psi \,\mathrm{d}v &= \int_V \nabla\cdot(f_1\nabla\delta\psi)\,\mathrm{d}v -\int_V \nabla\cdot(\delta\psi\nabla f_1) \,\mathrm{d}v+\int_V \delta \psi \nabla\cdot\nabla f_1 \,\mathrm{d}v \\
+&=\int_{\partial V} f_1\nabla\delta\psi\cdot\hat{n}\,\mathrm{d}s - \int_{\partial V} \delta\psi\nabla f_1\cdot\hat{n} \,\mathrm{d}s + \int_{V} \delta \psi \nabla\cdot\nabla f_1 \,\mathrm{d}v\\
+&=\int_{V} \delta \psi \nabla\cdot\nabla f_1 \,\mathrm{d}v.
+\end{align*}
+$$<p>上式第二个等号使用了散度定理，第三个等号则是考虑到在边界处 $\delta\psi = 0$，$\nabla\delta\psi = \mathbf{0}$。这样我们就得到了原变分中被积函数第二项的表达形式。我们现在考虑其中的第三项，即 $f_2\Delta\Delta\delta\psi$。我们先将其中的 $\Delta\delta\psi$ 看作函数标量函数 $\varphi$，则原式写为 $f_2\Delta\varphi$。此时，套用我们上面已经得到的结果，有：</p>$$
+\begin{align*}
+\int_V f_2 \Delta\Delta\delta\psi \,\mathrm{d}v &= \int_V f_2 \Delta\varphi \,\mathrm{d}v\\
+&= \int_{\partial V} f_2\nabla\varphi\cdot\hat{n}\,\mathrm{d}s -\int_{\partial V} \varphi\nabla f_2\cdot\hat{n} \,\mathrm{d}s+\int_V \varphi \nabla\cdot\nabla f_2 \,\mathrm{d}v \\
+&= \int_V \varphi \nabla\cdot\nabla f_2 \,\mathrm{d}v = \int_V \varphi \Delta f_2 \,\mathrm{d}v \\
+&= \int_V \Delta\delta\psi \Delta f_2 \,\mathrm{d}v = \int_V \nabla\cdot\nabla\delta\psi\, \Delta f_2 \,\mathrm{d}v\\
+&= \int_{\partial V} \Delta f_2\nabla\delta\psi \cdot\hat{n}\,\mathrm{d}s -\int_{\partial V} \delta\psi\,\nabla (\Delta f_2)\cdot\hat{n} \,\mathrm{d}s+\int_V \delta\psi \Delta \Delta f_2 \,\mathrm{d}v \\
+&= \int_V \delta\psi \Delta \Delta f_2 \,\mathrm{d}v,
+\end{align*}
+$$<p>其中所有的操作与前面是一样的，不断用恒等式拆开，然后由于在边界上的包含 $\delta\psi$ 的项全部归零，所有对 $V$ 的边界 $\partial V$ 的积分都会变成 0，最后就得到了我们想要的结果。我们把这些积分再合起来，将为了方便所做的记号带回，就有：</p>$$
+\begin{align*}
+\delta F & = \int_V \left(\frac{\partial f}{\partial \psi}\right)\delta \psi
++ \left(\frac{\partial f}{\partial \Delta\psi}\right)\delta \Delta\psi
++ \left(\frac{\partial f}{\partial \Delta\Delta\psi}\right)\delta \Delta\Delta\psi \,\mathrm{d}v \\
+&= \int_V \left(\frac{\partial f}{\partial \psi}\right)\delta \psi
++ \Delta\left(\frac{\partial f}{\partial \Delta\psi}\right)\delta \psi
++ \Delta\Delta\left(\frac{\partial f}{\partial \Delta\Delta\psi}\right)\delta \psi \,\mathrm{d}v \\
+&= \int_V \left(\left(\frac{\partial f}{\partial \psi}\right)
++ \Delta\left(\frac{\partial f}{\partial \Delta\psi}\right)
++ \Delta\Delta\left(\frac{\partial f}{\partial \Delta\Delta\psi}\right)\right)\delta \psi \,\mathrm{d}v.
+\end{align*}
+$$<p>那么，由泛函导数的定义，我们就得到了 Euler-Lagrange 方程：</p>$$
+\frac{\delta F}{\delta \psi} = \frac{\partial f}{\partial \psi} + \Delta \left(\frac{\partial f}{\partial \Delta \psi}\right)+ \Delta\Delta \left(\frac{\partial f}{\partial \Delta\Delta \psi}\right).
+$$</details><p>现在，我们来把式子带进去吧。为了方便，我们先把公式待带入的公式写在下面：</p>$$
+\begin{align}
+F[\psi] &= \int_V f(p,\psi,\Delta\psi,\Delta\Delta\psi) \mathrm{d}v\\
+&= \int_V \left(\frac{\psi}{2} \omega \left(\nabla ^2\right)\psi + \frac{\psi^4}{4}\right) \mathrm{d}v;\\
+\omega (\nabla^2) &= r + \left(1 + \nabla ^2\right)^2;\\
+\frac{\partial \psi}{\partial t} &= \nabla^2 \frac{\delta F}{\delta \psi} + \xi.\\
+\end{align}
+$$<p>我们的目的也就是将公式（21）先带入公式（20）得到能量的具体表达形式，然后将得到的结果带入公式（18）来计算能量变分，最后得到公式（22）的显式表达。其中第一步已经完成了，能量密度的具体表达形式为：</p>$$
+\begin{equation}
+f = r\frac{\psi^2}{2} + \frac{\psi^2}{2} + \psi \Delta\psi + \frac{1}{2}\psi\Delta\Delta\psi + \frac{\psi^4}{4}.
+\end{equation}
+$$<p>我们先对公式（23）计算需要的这些偏导数，得到：</p>$$
+\begin{align}
+\frac{\partial f}{\partial \psi} &= r\psi + \psi + \Delta\psi + \frac{1}{2}\Delta\Delta\psi+\psi^3;\\
+\frac{\partial f}{\partial \Delta \psi} &= \psi;\\
+\frac{\partial f}{\partial \Delta\Delta \psi} &=\frac{1}{2}\psi.
+\end{align}
+$$<p>现在把这些得到的结果，即公式（24-26）带入到我们得到的 Euler-Lagrange 方程（18）中。注意在前面加上对应的 Laplace 算子或者双调和算子。得到的结果为：</p>$$
+\begin{align}
+\frac{\delta F}{\delta \psi} &= r\psi + \psi + \Delta\psi + \frac{1}{2}\Delta\Delta\psi+\psi^3 + \Delta\psi+\frac{1}{2}\Delta\Delta\psi \\
+&=r\psi + \psi + 2\Delta\psi + \Delta\Delta\psi+\psi^3\\
+&=\left(r + \left(1 + 2\Delta + \Delta\Delta\right)\right)\psi+\psi^3\\
+&=\omega(\Delta)\psi + \psi^3.\\
+\end{align}
+$$<p>那么最后，把式（30）带回到式（22）中。此时我们尊重原文，把符号统一，将 $\Delta$ 重写回 $\nabla^2$，就有：</p>$$
+\begin{equation}
+\frac{\partial \psi}{\partial t} = \nabla^2 \left(\omega(\nabla^2)\psi + \psi^3\right) + \xi.
+\end{equation}
+$$<p>这就是我们一开始的目标，式（4）。</p><h2 id=后记>后记</h2><p>其实这个问题一开始就很清楚：只要找到正确的 Euler-Lagrange 公式，带入无脑计算就行了。但是如何找到正确的 Euler-Lagrange 公式则是一个比较棘手的问题。本文的思路启发自老大中先生的《变分法基础》，翻开书，几乎所有的笔墨全都放在了如何去根据泛函的形式来推导出对应的 Euler-Lagrange 方程上。所幸，我们的这个方程形式非常简单，且答案几乎是现成的，只需要找到正确的位置后取用即可。</p><p>那么这篇文章前面的部分有什么用呢？像跳梁小丑一样跳来跳去，最后发现从一开始就不对劲，转而从头开始推导整个公式。如果一开始就找到这个合适的公式，不就好了吗？也许能够找到这个合适的公式确实能立马解决眼前的问题，但是以后呢？如果遇到了一个形式又不太一样的泛函，此时应该怎么推导出其对应的 Euler-Lagrange 方程呢？而且从文章前半部分可以看到：我对变分法的理解，在推导出这个公式以前，是有问题的。我机械地认为就是带入那个人尽皆知的 Euler-Lagrange 方程，然后算算算就好了。旋即就遇到了第一个问题：怎么让 Laplacian 对梯度求导。是的，我当时并不怀疑是公式问题，而是考虑怎么让这个公式能算下去。在网上搜索一段时间之后，我貌似得到了结果，但总归不太满意，因为带入后得不到最后的公式。</p><p>一段迷茫过后，我突然对变量之间的依赖情况产生了疑惑。网上搜寻的结果表明，不能单纯地看作相互关联的变量，或者说单纯的求导关系。最后我得到了上文中的解释，也许我在这部分的解释是错误的，但我用这个方法说服了自己。希望这个观点没有问题。顺带，我得到这个解释或多或少受到了热力学的启发：热力学中的偏导数必须标明哪些变量是固定不变的，这时因为热力学参数张成了一个高维空间，而体系的热力学状态则是这个空间上的一个超平面，热力学状态函数则是这个超平面上定义的场。因此，对热力学状态函数求偏导的时候必须固定求导方向，也就是固定某些变量不变。也许是这样的理解让我将泛函的核理解为了对函数的约束（我也不知道怎么联系上去的，所以说只可谓之<em>启发</em>）。</p><p>然而即便如此，我依旧没法得到最后最关键的公式。此时只能从头开始一步步推导 Euler-Lagrange 公式了。所幸，我找到了老大中先生的这本书，读过一部分之后，遍跳着找到了我需要的答案。感谢这本书，让我少走了不知道多少弯路。</p><p>最后，感谢您能阅读到这里，看这么久的流水账也挺辛苦的。希望这篇流水账一样的文章也能帮助正在阅读的你增进对 Euler-Lagrange 公式和变分法或者泛函导数的理解。</p><p>那么，祝您生活愉快~</p><div class=footnotes role=doc-endnotes><hr><ol><li id=fn:1><p>请容许我这里混淆最小值和极小值，以及最值和极值，因为我们默认需要这个泛函取到的是极小的部分，且这个极小值一定是全局的，即最小值。&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></div></section><footer class=article-footer><section class=article-copyright><svg class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg>
+<span>Licensed under CC BY-NC-SA 4.0</span></section><section class=article-lastmod><svg class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+<span>最后更新于 6月 26, 2026 15:20 UTC</span></section></footer><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css integrity=sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV crossorigin=anonymous><script src=https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js integrity=sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8 crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/mhchem.min.js integrity=sha384-F2ptQFZqNJuqfGGl28mIXyQ5kXH48spn7rcoS0Y9psqIKAcZPLd1NzwFlm/bl1mH crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js integrity=sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05 crossorigin=anonymous defer></script><script>window.addEventListener("DOMContentLoaded",()=>{const e=[".main-article",".widget--toc"];e.forEach(e=>{const t=document.querySelector(e);t&&renderMathInElement(t,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}],ignoredClasses:["gist"]})})})</script></article><aside><h2 class=section-title>相关文章</h2><div class=subsection-list><div class=article-list--tile><article class=has-image><a href=/zh/posts/math_note/linear_algebra/la_3/><div class=article-image><img src=/images/Alice.jpg width height loading=lazy alt="Featured image of post 线性代数笔记 III"></div><div class=article-details><h2 class=article-title>线性代数笔记 III</h2></div></a></article><article class=has-image><a href=/zh/posts/math_note/linear_algebra/la_2/><div class=article-image><img src=/images/Alice.jpg width height loading=lazy alt="Featured image of post 线性代数笔记 II"></div><div class=article-details><h2 class=article-title>线性代数笔记 II</h2></div></a></article><article class=has-image><a href=/zh/posts/math_note/linear_algebra/la_1/><div class=article-image><img src=/images/Alice.jpg width height loading=lazy alt="Featured image of post 线性代数笔记 I"></div><div class=article-details><h2 class=article-title>线性代数笔记 I</h2></div></a></article><article class=has-image><a href=/zh/posts/math_note/product_and_coproduct_of_vector_space/><div class=article-image><img src=/images/Eyjafjalla.jpg width height loading=lazy alt="Featured image of post 线性空间的积与余积"></div><div class=article-details><h2 class=article-title>线性空间的积与余积</h2></div></a></article><article class=has-image><a href=/zh/posts/math_note/snake_lemma/><div class=article-image><img src=/images/Post%20Shelter-Inaba%20Kumori.png width height loading=lazy alt="Featured image of post 蛇年，Snake Lemma！"></div><div class=article-details><h2 class=article-title>蛇年，Snake Lemma！</h2></div></a></article></div></div></aside><script src=https://giscus.app/client.js data-repo=A-moment096/A-moment096.github.io data-repo-id=R_kgDONI9zaw data-category=Announcements data-category-id=DIC_kwDONI9za84C5O4G data-mapping=title data-strict=0 data-reactions-enabled=1 data-emit-metadata=0 data-input-position=top data-theme=light_protanopia data-lang=zh-CN data-loading=lazy crossorigin=anonymous async></script><script>function setGiscusTheme(e){let t=document.querySelector("iframe.giscus-frame");t&&t.contentWindow.postMessage({giscus:{setConfig:{theme:e}}},"https://giscus.app")}(function(){addEventListener("message",t=>{if(event.origin!=="https://giscus.app")return;e()}),window.addEventListener("onColorSchemeChange",e);function e(){setGiscusTheme(document.documentElement.dataset.scheme==="light"?"light_protanopia":"dark_dimmed")}})()</script><footer class=site-footer><section class=copyright>&copy;
+2024 -
+2026 A Moment's Rest</section><section class=powerby><a href="https://icp.gov.moe/?keyword=20257072" target=_blank>萌ICP备20257072号</a><br>使用 <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> 构建<br>主题 <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=4.0.3>Stack</a></b> 由 <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a> 设计</section></footer><script type=module>
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script></main></div><script type=text/javascript src=/ts/main.5bc33972c646050920b5e5d064225bbd7370ca627d7de0b8315736cb9c1dbbe7.js defer></script><script src=https://cdn.jsdelivr.net/gh/zhixuan2333/gh-blog@v0.1.0/js/nprogress.min.js integrity=sha384-bHDlAEUFxsRI7JfULv3DTpL2IXbbgn4JHQJibgo5iiXSK6Iu8muwqHANhun74Cqg crossorigin=anonymous></script><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/zhixuan2333/gh-blog@v0.1.0/css/nprogress.css integrity=sha384-KJyhr2syt5+4M9Pz5dipCvTrtvOmLk/olWVdfhAp858UCa64Ia5GFpTN7+G4BWpE crossorigin=anonymous><script>NProgress.start(),document.addEventListener("readystatechange",()=>{document.readyState==="interactive"&&NProgress.inc(.8),document.readyState==="complete"&&NProgress.done()})</script><div id=back-top><a href=#top title="To Top"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="back-top-icon"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 15l6-6 6 6"/></svg></a></div><style>#back-top{position:fixed;bottom:30px;right:30px;background:var(--card-background);border:1px solid var(--card-separator-color);border-radius:7px;padding:10px;z-index:1000;opacity:0;box-shadow:0 2px 4px transparent;transition:opacity .3s ease,box-shadow .3s ease,background-color .3s ease,right .3s ease}#back-top.show{opacity:1;box-shadow:0 4px 12px rgba(0,0,0,.15)}#back-top a{text-decoration:none;color:var(--card-text-color-main);display:flex;align-items:center;justify-content:center}.back-top-icon{transition:color .3s ease,transform .3s ease}#back-top:hover{background:var(--card-background-selected);box-shadow:0 6px 20px rgba(0,0,0,.25)}#back-top:hover .back-top-icon{color:#fff;transform:translateY(-1px)}[data-scheme=light] #back-top:hover .back-top-icon{color:var(--accent-color)}[data-scheme=dark] #back-top:hover .back-top-icon{color:#fff}</style><script type=text/javascript>document.addEventListener("DOMContentLoaded",function(){var e=document.getElementById("back-top"),n=document.querySelector(".right-sidebar");function t(){if(n&&window.innerWidth>=1024){var t=n.getBoundingClientRect(),s=window.innerWidth-t.right+window.scrollX;e.style.right=s+"px"}else e.style.right="30px"}function s(){document.body.scrollTop>100||document.documentElement.scrollTop>100?(e.classList.add("show"),t()):e.classList.remove("show")}window.addEventListener("resize",t),window.addEventListener("scroll",s),t(),e.onclick=function(e){e.preventDefault(),window.scrollTo({top:0,behavior:"smooth"})}})</script><script>document.addEventListener("DOMContentLoaded",function(){const n=document.body.classList.contains("article-page"),s=document.querySelectorAll(".widget");s.forEach(s=>{const a=s.querySelector(".widget-body"),i=s.querySelector(".widget-header");if(a&&i){const r=s.classList.contains("archives")&&s.querySelector(".widget--toc");n?r?e(i,a):t(i,a):e(i,a),i.addEventListener("click",function(){o(i,a)})}});function o(n,s){const o=s.classList.contains("show");o?t(n,s):e(n,s)}function e(e,t){t.classList.add("show"),e.classList.add("expanded"),t.style.display="block"}function t(e,t){t.classList.remove("show"),e.classList.remove("expanded"),t.style.display="none"}})</script><script type=module src=/react/islands.js></script></body></html>

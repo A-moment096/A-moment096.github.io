@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pages on A Moment's Rest</title><link>https://a-moment096.github.io/en/page/</link><description>Recent content in Pages on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 26 Jun 2026 15:20:58 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/en/page/index.xml" rel="self" type="application/rss+xml"/><item><title>Thoughts</title><link>https://a-moment096.github.io/en/page/thoughts/</link><pubDate>Sat, 02 Nov 2024 14:34:18 +0800</pubDate><guid>https://a-moment096.github.io/en/page/thoughts/</guid><description>&lt;!-- 由 LeanCloud + Artitalk 驱动 --&gt;</description></item><item><title>About</title><link>https://a-moment096.github.io/en/page/about/</link><pubDate>Wed, 09 Oct 2024 14:34:18 +0800</pubDate><guid>https://a-moment096.github.io/en/page/about/</guid><description>&lt;img src="https://a-moment096.github.io/images/Reimu.png" alt="Featured image of post About" /&gt;&lt;h1 id="a-moment-rest-amoments-blog"&gt;A Moment Rest: AMoment&amp;rsquo;s Blog
+&lt;/h1&gt;&lt;p&gt;Welcome! Come and have a rest here~&lt;/p&gt;</description></item><item><title>Archives</title><link>https://a-moment096.github.io/en/page/archives/</link><pubDate>Sun, 06 Mar 2022 00:00:00 +0800</pubDate><guid>https://a-moment096.github.io/en/page/archives/</guid><description/></item><item><title>Attachments</title><link>https://a-moment096.github.io/en/page/attachments/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://a-moment096.github.io/en/page/attachments/</guid><description>&lt;img src="https://a-moment096.github.io/images/%E6%B0%B7%E3%81%AE%E3%83%97%E3%83%AA%E3%83%B3%E3%82%BB%E3%82%B9.jpg" alt="Featured image of post Attachments" /&gt;&lt;p&gt;&lt;em&gt;This illustration is from pixiv artist &lt;a class="link" href="https://www.pixiv.net/users/1460159" target="_blank" rel="noopener"
+ &gt;KANOSE&lt;/a&gt;, link: &lt;a class="link" href="https://www.pixiv.net/artworks/70462748" target="_blank" rel="noopener"
+ &gt;氷のプリンセス&lt;/a&gt;, Princess of Ice! Great!&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id="introduction"&gt;Introduction
+&lt;/h2&gt;&lt;p&gt;You may find some files sitting in my blog posts, and here is a list of these files. You can check and download these mentioned contents here.&lt;/p&gt;
+&lt;p&gt;These files are sorted as how they appear in the posts. Currently they are mainly something used or created by myself.&lt;/p&gt;</description></item><item><title>Friends</title><link>https://a-moment096.github.io/en/page/friends/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://a-moment096.github.io/en/page/friends/</guid><description>&lt;img src="https://a-moment096.github.io/images/%E8%8A%B1%E3%81%A8%E6%B0%B4%E9%A3%B4%E3%80%81%E6%9C%80%E7%B5%82%E9%9B%BB%E8%BB%8A.png" alt="Featured image of post Friends" /&gt;&lt;p&gt;&lt;em&gt;Picture by: &lt;a class="link" href="https://www.pixiv.net/en/users/96825901" target="_blank" rel="noopener"
+ &gt;白ゆき&lt;/a&gt;, titled with &lt;a class="link" href="https://www.pixiv.net/en/artworks/132033239" target="_blank" rel="noopener"
+ &gt;花と水飴、最終電車&lt;/a&gt;. Really beautiful illustrations~ There are a lot of &amp;ldquo;song-illustrations&amp;rdquo; of n-buna&amp;rsquo;s song, and this should be one of them I guess.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Then, why not have a listen to the title track of this album?&lt;/p&gt;
+
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
+&lt;style type="text/css"&gt;
+[data-scheme="dark"] .aplayer {
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
+}
+
+[data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
+ border-bottom-color: var(--card-separator-color);
+}
+
+[data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
+ border-color: var(--card-separator-color);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-body {
+ background-color: var(--card-background);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-info {
+ border-top-color: var(--card-background);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
+ color: var(--card-text-color-main);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
+ color: var(--card-text-color-secondary);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
+ color: var(--card-text-color-tertiary);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
+ fill: var(--card-text-color-tertiary);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-list {
+ background-color: var(--card-background);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
+ background-color: var(--card-separator-color);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
+ background-color: var(--accent-color);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-list li {
+ color: var(--card-text-color-main);
+ border-top-color: var(--card-separator-color);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-list li:hover {
+ background: var(--card-background-selected);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
+ background: var(--card-background-selected);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
+ color: var(--card-text-color-secondary);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
+ color: var(--card-text-color-secondary);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-lrc {
+ text-shadow: -1px -1px 0 var(--body-background);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-lrc:before {
+ background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-lrc:after {
+ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-lrc p {
+ color: var(--card-text-color-main);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-miniswitcher {
+ background: var(--card-background-selected);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
+ fill: var(--card-text-color-tertiary);
+}
+
+ 
+[data-scheme="light"] .aplayer {
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
+}
+
+[data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
+ color: var(--card-text-color-main);
+}
+
+[data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
+ color: var(--card-text-color-secondary);
+}
+
+[data-scheme="light"] .aplayer .aplayer-list li:hover {
+ background: var(--card-background-selected);
+}
+&lt;/style&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
+
+
+&lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=33367346" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
+&lt;hr&gt;
+&lt;p&gt;Welcome to exchange links with me~ You can send your message to &lt;a class="link" href="mailto:amoment096@gmail.com" &gt;my mailbox&lt;/a&gt;, or you can use the comment system under this page.&lt;/p&gt;</description></item><item><title>Links</title><link>https://a-moment096.github.io/en/page/links/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://a-moment096.github.io/en/page/links/</guid><description>&lt;img src="https://a-moment096.github.io/images/star-river.png" alt="Featured image of post Links" /&gt;&lt;p&gt;&lt;em&gt;Theoretically, this page should be updated from time to time. Hope that I remember some links are put here.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This image is a screenshot from ED of &lt;strong&gt;BanG Dream! Ave Mujica&lt;/strong&gt;, and the selected song/image are inspired by &lt;a class="link" href="https://www.bilibili.com/video/BV1DrNJe5ESg/" target="_blank" rel="noopener"
+ &gt;【AI若叶睦】star river（原曲:感情の摩天楼 ～ Cosmic Mind）&lt;/a&gt;, a fine tuned AI cover.&lt;/em&gt;&lt;/p&gt;</description></item><item><title>Search</title><link>https://a-moment096.github.io/en/page/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://a-moment096.github.io/en/page/search/</guid><description/></item></channel></rss>

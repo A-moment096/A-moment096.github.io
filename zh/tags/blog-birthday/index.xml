@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Blog Birthday on A Moment's Rest</title><link>https://a-moment096.github.io/zh/tags/blog-birthday/</link><description>Recent content in Blog Birthday on A Moment's Rest</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Fri, 26 Jun 2026 15:20:58 +0000</lastBuildDate><atom:link href="https://a-moment096.github.io/zh/tags/blog-birthday/index.xml" rel="self" type="application/rss+xml"/><item><title>博客一周年啦！</title><link>https://a-moment096.github.io/zh/posts/others/blog_1st_anniversary/</link><pubDate>Mon, 22 Sep 2025 15:51:11 +0800</pubDate><guid>https://a-moment096.github.io/zh/posts/others/blog_1st_anniversary/</guid><description>&lt;img src="https://a-moment096.github.io/images/bouquet.png" alt="Featured image of post 博客一周年啦！" /&gt;&lt;p&gt;&lt;em&gt;头图取自 &lt;a class="link" href="https://www.pixiv.net/users/2642047" target="_blank" rel="noopener"
+ &gt;アシマ&lt;/a&gt; 所绘的 &lt;a class="link" href="https://www.pixiv.net/artworks/68232005" target="_blank" rel="noopener"
+ &gt;bouquet&lt;/a&gt;，选曲为某游戏插曲 &lt;strong&gt;玉響時間&lt;/strong&gt;，总之就是非常好听，能让整个人身体都松下来的一首，非常好，希望你也喜欢。&lt;/em&gt;&lt;/p&gt;
+
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"&gt;
+&lt;style type="text/css"&gt;
+[data-scheme="dark"] .aplayer {
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
+}
+
+[data-scheme="dark"] .aplayer.aplayer-withlist .aplayer-info {
+ border-bottom-color: var(--card-separator-color);
+}
+
+[data-scheme="dark"] .aplayer.aplayer-fixed .aplayer-list {
+ border-color: var(--card-separator-color);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-body {
+ background-color: var(--card-background);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-info {
+ border-top-color: var(--card-background);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
+ color: var(--card-text-color-main);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
+ color: var(--card-text-color-secondary);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
+ color: var(--card-text-color-tertiary);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
+ fill: var(--card-text-color-tertiary);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-list {
+ background-color: var(--card-background);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb {
+ background-color: var(--card-separator-color);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover {
+ background-color: var(--accent-color);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-list li {
+ color: var(--card-text-color-main);
+ border-top-color: var(--card-separator-color);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-list li:hover {
+ background: var(--card-background-selected);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-list li.aplayer-list-light {
+ background: var(--card-background-selected);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-index {
+ color: var(--card-text-color-secondary);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-list li .aplayer-list-author {
+ color: var(--card-text-color-secondary);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-lrc {
+ text-shadow: -1px -1px 0 var(--body-background);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-lrc:before {
+ background: linear-gradient(to bottom, var(--card-background) 0%, rgba(0,0,0,0) 100%);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-lrc:after {
+ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--card-background) 100%);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-lrc p {
+ color: var(--card-text-color-main);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-miniswitcher {
+ background: var(--card-background-selected);
+}
+
+[data-scheme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
+ fill: var(--card-text-color-tertiary);
+}
+
+ 
+[data-scheme="light"] .aplayer {
+ background: var(--card-background);
+ border: 1px solid var(--card-separator-color);
+}
+
+[data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
+ color: var(--card-text-color-main);
+}
+
+[data-scheme="light"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
+ color: var(--card-text-color-secondary);
+}
+
+[data-scheme="light"] .aplayer .aplayer-list li:hover {
+ background: var(--card-background-selected);
+}
+&lt;/style&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"&gt;&lt;/script&gt;
+
+
+&lt;script src="https://a-moment096.github.io/js/Meting.min.js"&gt;&lt;/script&gt;&lt;meting-js auto="https://music.163.com/#/song?id=1499310887" theme="#2980b9" loop="none"&gt;&lt;/meting-js&gt;
+&lt;p&gt;我决定将 9 月 22 日作为我博客的生日。&lt;/p&gt;</description></item></channel></rss>
